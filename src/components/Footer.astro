@@ -1,0 +1,136 @@
+---
+import Logo from './Logo.astro';
+import { SITE } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap inner">
+    <div class="about">
+      <a class="brand" href="/">
+        <Logo size={30} />
+        <span>I Like Movies</span>
+      </a>
+      <p>
+        A movie and TV tracking app built by one developer in {SITE.operatorCountry}.
+        Free to use, no advertising, no data sold.
+      </p>
+    </div>
+
+    <nav aria-label="Footer">
+      <div class="col">
+        <h2>App</h2>
+        <a href="#discover">Features</a>
+        <a href="#compare">How it compares</a>
+        <a href="#faq">FAQ</a>
+        <a href={SITE.playUrl} rel="noopener">Google Play</a>
+      </div>
+
+      <div class="col">
+        <h2>Legal</h2>
+        <a href={SITE.legal.privacy} rel="noopener">Privacy policy</a>
+        <a href={SITE.legal.terms} rel="noopener">Terms of use</a>
+        <a href={SITE.legal.deleteAccount} rel="noopener">Delete your account</a>
+      </div>
+
+      <div class="col">
+        <h2>Contact</h2>
+        <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="wrap bottom">
+    <p>&copy; {year} I Like Movies. Film and TV metadata provided by TMDB.</p>
+    {/*
+      TMDB's terms require an explicit statement that the product is not
+      endorsed or certified by them wherever their data is used. The site
+      describes an app built on that data, so the attribution belongs here.
+    */}
+    <p class="fine">
+      This product uses the TMDB API but is not endorsed or certified by TMDB.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--ink-border);
+    background: #080b11;
+    padding: clamp(48px, 7vw, 76px) 0 40px;
+    color: var(--text-secondary);
+    font-size: 0.94rem;
+  }
+
+  .inner {
+    display: grid;
+    gap: 44px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+  }
+
+  .about p {
+    max-width: 42ch;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 32px;
+  }
+
+  .col h2 {
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+    font-weight: 700;
+  }
+
+  .col a {
+    display: block;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.15s ease;
+    overflow-wrap: anywhere;
+  }
+
+  .col a:hover {
+    color: var(--gold);
+  }
+
+  .bottom {
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(37, 45, 61, 0.6);
+    font-size: 0.84rem;
+    color: var(--text-muted);
+  }
+
+  .bottom p {
+    margin: 0 0 6px;
+  }
+
+  .fine {
+    opacity: 0.75;
+  }
+
+  @media (min-width: 880px) {
+    .inner {
+      grid-template-columns: 1.1fr 1.4fr;
+      gap: 60px;
+    }
+  }
+</style>

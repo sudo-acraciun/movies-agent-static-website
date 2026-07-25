@@ -1,0 +1,29 @@
+---
+// The "Stacked Light" mark, geometry copied verbatim from the mobile app's
+// src/components/brand/logo-mark.svg so the two never drift. Inlined rather
+// than loaded as an <img> because it is above the fold on every page and a
+// separate request for 600 bytes is a wasted round trip.
+interface Props {
+  size?: number;
+  class?: string;
+}
+const { size = 40, class: className = '' } = Astro.props;
+---
+
+<svg
+  class={className}
+  width={size}
+  height={size}
+  viewBox="0 0 256 256"
+  role="img"
+  aria-label="I Like Movies logo"
+  fill="none"
+>
+  <path d="M 70 64 L 186 64 L 240 224 L 16 224 Z" fill="#C8372D"></path>
+  <path d="M 82 64 L 174 64 L 212 224 L 44 224 Z" fill="#E8833A"></path>
+  <path d="M 96 64 L 160 64 L 184 224 L 72 224 Z" fill="#F5C518"></path>
+  <path d="M 110 64 L 146 64 L 156 224 L 100 224 Z" fill="#FFF8E7"></path>
+  <rect x="64" y="48" width="128" height="22" rx="3" fill="#F5C518"></rect>
+  <rect x="64" y="48" width="128" height="6" fill="#FFF8E7"></rect>
+  <circle cx="128" cy="206" r="14" fill="#0A0D14"></circle>
+</svg>

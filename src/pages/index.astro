@@ -1,0 +1,375 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import FeatureBlock from '../components/FeatureBlock.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import Footer from '../components/Footer.astro';
+import { SITE, FEATURES, CAPABILITIES, FAQS, COMPARISONS } from '../data/site';
+
+// --- Structured data -------------------------------------------------------
+//
+// Three blocks, each doing a different job:
+//
+//   SoftwareApplication  tells a search engine this is an app, on which
+//                        platforms, in which category, at what price. This is
+//                        what produces an app-style result rather than a
+//                        generic page result.
+//   FAQPage              mirrors the visible FAQ exactly. Built from the same
+//                        FAQS array as the rendered markup so the two cannot
+//                        drift apart, which would be a structured-data
+//                        violation rather than a cosmetic bug.
+//   WebSite              names the entity and its publisher, which is what
+//                        disambiguates a small brand from same-named things.
+//
+// aggregateRating is deliberately ABSENT. Google treats review markup with no
+// corresponding real reviews as spam, and the app has no public rating yet.
+// Add it only when the Play rating is real, and only with the real numbers.
+
+const softwareLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: SITE.name,
+  applicationCategory: 'EntertainmentApplication',
+  applicationSubCategory: 'Movie and TV tracking',
+  operatingSystem: 'Android, iOS',
+  url: SITE.url,
+  downloadUrl: SITE.playUrl,
+  installUrl: SITE.playUrl,
+  description: SITE.definition,
+  inLanguage: 'en',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'EUR',
+    availability: 'https://schema.org/InStock',
+  },
+  featureList: [
+    'Personalised film and TV recommendations based on your ratings',
+    'Chat assistant for recommendations in plain language',
+    'Shared household watchlist and watched history',
+    'Streaming availability by country',
+    'TV episode level progress tracking',
+    'Import from Letterboxd and IMDb',
+  ],
+  author: {
+    '@type': 'Person',
+    name: 'Alexandru Craciun',
+  },
+};
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
+};
+
+const siteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.definition,
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+    email: SITE.supportEmail,
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: SITE.operatorCountry,
+    },
+  },
+};
+---
+
+<Layout
+  title="I Like Movies | Free movie and TV tracking app for Android and iOS"
+  description={SITE.definition}
+  path="/"
+  jsonLd={[softwareLd, faqLd, siteLd]}
+>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <Header />
+
+  <main id="main">
+    <Hero />
+
+    {
+      FEATURES.map((feature, index) => (
+        <FeatureBlock feature={feature} flipped={index % 2 === 1} />
+      ))
+    }
+
+    {/* Capabilities. Deliberately keyword-dense in plain language, because
+        long-tail queries like "movie tracker with episode tracking" only
+        match if those exact words exist somewhere in the HTML. */}
+    <section class="section capabilities" id="capabilities">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">And the rest</p>
+          <h2>Small things that decide whether an app sticks.</h2>
+        </div>
+
+        <div class="cards">
+          {
+            CAPABILITIES.map((capability) => (
+              <article class="card">
+                <h3>{capability.title}</h3>
+                <p>{capability.body}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    {/* Comparison. Written factually and without disparagement: comparison
+        content is disproportionately quoted by generative search, and a
+        hostile framing gets quoted too. */}
+    <section class="section compare" id="compare">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">How it compares</p>
+          <h2>Where I Like Movies is different.</h2>
+          <p class="lede">
+            Good apps already exist in this space. They are built for different
+            jobs, and it is worth being clear about which one you need.
+          </p>
+        </div>
+
+        <div class="rows">
+          {
+            COMPARISONS.map((comparison) => (
+              <article class="row">
+                <h3>{comparison.name}</h3>
+                <div class="row-body">
+                  <div>
+                    <span class="label">What it is built for</span>
+                    <p>{comparison.theirFocus}</p>
+                  </div>
+                  <div>
+                    <span class="label">Where I Like Movies differs</span>
+                    <p>{comparison.ourDifference}</p>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    {/* FAQ. The details element gives a native accordion with zero
+        JavaScript, and the answer text stays in the HTML source whether or
+        not it is open, so a crawler reads all of it. A JS accordion would
+        hide it from the ones that do not execute scripts. */}
+    <section class="section faq" id="faq">
+      <div class="wrap narrow">
+        <div class="head">
+          <p class="eyebrow">Questions</p>
+          <h2>Frequently asked questions</h2>
+        </div>
+
+        <div class="faq-list">
+          {
+            FAQS.map((faq, index) => (
+              <details open={index === 0}>
+                <summary>
+                  <h3>{faq.q}</h3>
+                  <span class="chev" aria-hidden="true" />
+                </summary>
+                <p>{faq.a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section final">
+      <div class="wrap cta-card">
+        <h2>Your next film is already on the list.</h2>
+        <p class="lede">
+          Free to download, free to use, and your library imports from
+          Letterboxd or IMDb in a few taps.
+        </p>
+        <StoreButtons size="large" align="center" />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .head {
+    max-width: 62ch;
+    margin-bottom: clamp(36px, 5vw, 56px);
+  }
+
+  .narrow {
+    max-width: 860px;
+  }
+
+  /* Capabilities ---------------------------------------------------------- */
+
+  .capabilities {
+    background:
+      radial-gradient(70% 60% at 50% 0%, rgba(59, 130, 246, 0.09), transparent 70%),
+      #0c1017;
+    border-top: 1px solid var(--ink-border);
+    border-bottom: 1px solid var(--ink-border);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--ink-border);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .card:hover {
+    border-color: rgba(245, 197, 24, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .card h3 {
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.97rem;
+  }
+
+  /* Comparison ------------------------------------------------------------ */
+
+  .rows {
+    display: grid;
+    gap: 18px;
+  }
+
+  .row {
+    border: 1px solid var(--ink-border);
+    border-radius: var(--radius);
+    padding: 28px 26px;
+    background: linear-gradient(180deg, rgba(20, 24, 34, 0.9), rgba(12, 16, 23, 0.9));
+  }
+
+  .row h3 {
+    margin-bottom: 18px;
+    color: var(--gold);
+  }
+
+  .row-body {
+    display: grid;
+    gap: 22px;
+  }
+
+  .label {
+    display: block;
+    font-size: 0.74rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .row-body p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+  }
+
+  @media (min-width: 820px) {
+    .row-body {
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+  }
+
+  /* FAQ ------------------------------------------------------------------- */
+
+  .faq-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  details {
+    border: 1px solid var(--ink-border);
+    border-radius: var(--radius);
+    background: var(--card);
+    padding: 4px 24px;
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    cursor: pointer;
+    padding: 18px 0;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .chev {
+    flex: none;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--text-muted);
+    border-bottom: 2px solid var(--text-muted);
+    transform: rotate(45deg) translate(-2px, -2px);
+    transition: transform 0.2s ease;
+  }
+
+  details[open] .chev {
+    transform: rotate(-135deg) translate(-3px, -3px);
+  }
+
+  details p {
+    margin: 0 0 20px;
+    color: var(--text-secondary);
+    max-width: 70ch;
+  }
+
+  /* Final call to action -------------------------------------------------- */
+
+  .cta-card {
+    text-align: center;
+  }
+
+  .cta-card h2 {
+    margin-bottom: 16px;
+  }
+
+  .cta-card .lede {
+    max-width: 52ch;
+    margin: 0 auto 32px;
+  }
+</style>

@@ -1,0 +1,89 @@
+---
+import PhoneFrame from './PhoneFrame.astro';
+import type { Feature } from '../data/site';
+
+interface Props {
+  feature: Feature;
+  /** Even-indexed blocks put the art on the right, odd on the left. */
+  flipped?: boolean;
+}
+const { feature, flipped = false } = Astro.props;
+---
+
+<section class="feature section" id={feature.id}>
+  <div class:list={['wrap grid', { flipped }]}>
+    <div class="copy">
+      <p class="eyebrow">{feature.eyebrow}</p>
+      <h2>{feature.title}</h2>
+      {feature.body.map((paragraph) => <p class="lede">{paragraph}</p>)}
+
+      <ul class="points">
+        {feature.bullets.map((bullet) => <li>{bullet}</li>)}
+      </ul>
+    </div>
+
+    <div class="art">
+      <PhoneFrame src={feature.screenshot} alt={feature.screenshotAlt} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    gap: clamp(36px, 6vw, 72px);
+    align-items: center;
+  }
+
+  .copy h2 {
+    margin-bottom: 20px;
+  }
+
+  .art {
+    display: flex;
+    justify-content: center;
+  }
+
+  .points {
+    list-style: none;
+    padding: 0;
+    margin: 26px 0 0;
+    display: grid;
+    gap: 14px;
+  }
+
+  .points li {
+    position: relative;
+    padding-left: 32px;
+    color: var(--text);
+    font-size: 1rem;
+  }
+
+  /* Checkmark drawn with a border rather than a glyph so it never falls back
+     to a font that does not carry the character. */
+  .points li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    width: 11px;
+    height: 6px;
+    border-left: 2.5px solid var(--gold);
+    border-bottom: 2.5px solid var(--gold);
+    transform: rotate(-45deg);
+  }
+
+  @media (min-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .grid.flipped .copy {
+      order: 2;
+    }
+
+    .grid.flipped .art {
+      order: 1;
+    }
+  }
+</style>

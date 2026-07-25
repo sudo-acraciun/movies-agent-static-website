@@ -1,0 +1,22 @@
+{
+  "name": "movies-agent-static-website",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Presentation website for the I Like Movies app (ilikemovies.app)",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "assets": "node scripts/generate-assets.mjs",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.0",
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,77 @@
+---
+// A CSS phone bezel wrapped around a screenshot. Drawn in CSS rather than
+// shipped as a device-frame PNG so the frame stays crisp at any density and
+// costs no bytes.
+//
+// width/height are REQUIRED on the img and must match the real asset's aspect
+// ratio: without them the browser cannot reserve space before the image loads,
+// and the resulting layout shift is a Core Web Vitals penalty on the single
+// metric (CLS) that a screenshot-heavy marketing page is most likely to fail.
+interface Props {
+  src: string;
+  alt: string;
+  /** Above-the-fold frames must load eagerly; everything else lazily. */
+  priority?: boolean;
+  class?: string;
+}
+const { src, alt, priority = false, class: className = '' } = Astro.props;
+---
+
+<div class:list={['phone', className]}>
+  <div class="screen">
+    <img
+      src={src}
+      alt={alt}
+      width="390"
+      height="844"
+      loading={priority ? 'eager' : 'lazy'}
+      decoding={priority ? 'sync' : 'async'}
+      fetchpriority={priority ? 'high' : 'auto'}
+    />
+  </div>
+</div>
+
+<style>
+  .phone {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 390 / 844;
+    padding: 10px;
+    border-radius: 42px;
+    background: linear-gradient(160deg, #2b3345, #10141d 55%, #232b3b);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.07),
+      0 40px 80px -30px rgba(0, 0, 0, 0.9);
+  }
+
+  .screen {
+    position: relative;
+    height: 100%;
+    border-radius: 33px;
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  .screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  /* Dynamic-island style cutout. Purely decorative, hidden from the
+     accessibility tree by virtue of being an empty pseudo-element. */
+  .screen::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32%;
+    height: 22px;
+    border-radius: 999px;
+    background: #000;
+    z-index: 2;
+  }
+</style>

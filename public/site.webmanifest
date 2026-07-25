@@ -1,0 +1,16 @@
+{
+  "name": "I Like Movies",
+  "short_name": "I Like Movies",
+  "description": "Free movie and TV tracking app for Android and iOS. Discover what to watch, share one library with your household, and track everything you have seen.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0A0D14",
+  "theme_color": "#0A0D14",
+  "icons": [
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

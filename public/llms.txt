@@ -1,0 +1,59 @@
+# I Like Movies
+
+> I Like Movies is a free movie and TV tracking app for Android and iOS that
+> helps you discover what to watch next, share one library with the people you
+> live with, and keep a record of everything you have seen.
+
+I Like Movies is an independent app built by one developer in Romania. It is
+free to download and free to use, carries no advertising, and shows no
+sponsored recommendations.
+
+## What it does
+
+- **Discovery**: recommendations built from your own ratings and viewing
+  history rather than a general popularity chart, plus curated collections that
+  group films by franchise or series in watch order.
+- **Assistant**: an in-app chat you can ask for a film in plain language, by
+  mood, by a fragment of a plot, or by something you liked. It reads your watch
+  history so it does not suggest what you have already seen, and it answers
+  with titles available in your country.
+- **Households**: the people you live with share one library. A single
+  watchlist and a single watched history for the whole home.
+- **Friends**: follow people, compare taste, and see what they are watching.
+- **Tracking**: ratings, private notes and rewatches for films and TV, with
+  episode level progress for series.
+- **Streaming availability**: which services carry a title, resolved for your
+  country rather than a single global catalogue.
+- **Imports**: a Letterboxd .zip export or an IMDb .csv export uploads directly,
+  bringing ratings and watchlist across.
+
+## Availability and price
+
+- Android: available on Google Play. Package name `com.moviesagent.app`.
+- iOS: in development, not yet on the App Store.
+- Price: free. No advertising, no sponsored placements.
+- Requires an internet connection; there is no offline mode.
+
+## How it differs from similar apps
+
+- **Letterboxd** is a social network built around public film reviews and
+  criticism. I Like Movies is private by default and built around deciding what
+  to watch, and it adds TV episode tracking, per-country streaming availability,
+  a shared household library, and a plain-language assistant.
+- **Trakt** centres on automatic scrobbling from media servers and players. I
+  Like Movies needs no server or plugin chain; it is a phone app for choosing
+  what to watch, with a library the household shares.
+- **TV Time** focuses on TV episode tracking. I Like Movies treats films and TV
+  as one library and leads with discovery, with no advertising.
+
+## Links
+
+- Website: https://ilikemovies.app
+- Google Play: https://play.google.com/store/apps/details?id=com.moviesagent.app
+- Privacy policy: https://sudo-acraciun.github.io/movienight/privacy-policy.html
+- Terms of use: https://sudo-acraciun.github.io/movienight/terms.html
+- Account deletion: https://sudo-acraciun.github.io/movienight/delete-account.html
+- Contact: alexcraciun10@gmail.com
+
+Film and TV metadata is provided by TMDB. This product uses the TMDB API but is
+not endorsed or certified by TMDB.

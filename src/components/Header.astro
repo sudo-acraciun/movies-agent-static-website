@@ -1,0 +1,97 @@
+---
+import Logo from './Logo.astro';
+import { SITE } from '../data/site';
+---
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label={`${SITE.name} home`}>
+      <Logo size={34} />
+      <span>I Like Movies</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <a href="#discover">Features</a>
+      <a href="#compare">Compare</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <a class="cta" href={SITE.playUrl} rel="noopener">Get the app</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    /* Translucent rather than solid so the hero glow reads through it. The
+       solid fallback matters: backdrop-filter is unsupported in some in-app
+       webviews, where a transparent bar would put nav links on top of text. */
+    background: rgba(10, 13, 20, 0.82);
+    backdrop-filter: saturate(150%) blur(14px);
+    border-bottom: 1px solid rgba(37, 45, 61, 0.7);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 68px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: 1.05rem;
+    margin-right: auto;
+  }
+
+  nav {
+    display: none;
+    gap: 28px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.15s ease;
+  }
+
+  nav a:hover {
+    color: var(--text);
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 10px 18px;
+    border-radius: 999px;
+    color: var(--ink);
+    background: linear-gradient(135deg, var(--gold), var(--ember));
+    white-space: nowrap;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease;
+  }
+
+  .cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 26px rgba(245, 197, 24, 0.28);
+  }
+
+  @media (min-width: 860px) {
+    nav {
+      display: flex;
+    }
+  }
+</style>

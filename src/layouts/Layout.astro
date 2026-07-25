@@ -1,0 +1,227 @@
+---
+import { SITE } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path only, resolved against SITE.url for the canonical + og:url tags. */
+  path?: string;
+  /** Extra JSON-LD blocks, already shaped as schema.org objects. */
+  jsonLd?: unknown[];
+}
+
+const { title, description, path = '/', jsonLd = [] } = Astro.props;
+const canonical = new URL(path, SITE.url).href;
+const ogImage = new URL('/og-image.png', SITE.url).href;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icon-180.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0A0D14" />
+
+    {/*
+      Open Graph and Twitter cards are not vanity tags here. Every share of
+      this link happens inside WhatsApp, Discord, Reddit or a DM, and the
+      unfurled preview IS the advert in those contexts. A missing og:image
+      renders as a bare grey link.
+
+      Comment syntax note, applies to every .astro file in this repo: HTML
+      comments in markup are copied verbatim into the shipped page. Expression
+      comments like this one are stripped at build time, so internal notes use
+      this form and never <!-- -->.
+    */}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    {/* is:inline keeps Astro's script pipeline out of these. They are data
+        blocks, not JavaScript, and bundling one would move the structured
+        data out of the HTML a crawler reads. */}
+    {
+      jsonLd.map((block) => (
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(block)} />
+      ))
+    }
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /*
+    Design tokens mirrored from the mobile app's src/constants/brand.ts and
+    src/constants/colors.ts. They are duplicated rather than imported because
+    this is a separate repository with no build-time link to the app. If the
+    app's palette changes, these move with it by hand.
+  */
+  :root {
+    --ink: #0a0d14;
+    --ink-raised: #141822;
+    --ink-border: #252d3d;
+    --card: #141822;
+
+    --crim: #c8372d;
+    --ember: #e8833a;
+    --gold: #f5c518;
+    --brand-white: #fff8e7;
+
+    --primary: #3b82f6;
+    --text: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    --max-width: 1120px;
+    --radius: 16px;
+    --radius-lg: 24px;
+
+    --font: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+      'Helvetica Neue', Arial, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Anchored sections must clear the sticky header or the heading lands
+       underneath it when a nav link is followed. */
+    scroll-padding-top: 88px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin: 0;
+    font-weight: 800;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 6.5vw, 4.2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 4.5vw, 3rem);
+  }
+
+  h3 {
+    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+
+  p {
+    margin: 0 0 1rem;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  img,
+  svg {
+    max-width: 100%;
+    display: block;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .section {
+    padding: clamp(64px, 10vw, 120px) 0;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  .lede {
+    color: var(--text-secondary);
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  }
+
+  /* Keyboard focus must stay visible: the page is almost entirely links and
+     the dark palette hides the browser default outline. */
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 12px 20px;
+    font-weight: 700;
+    z-index: 100;
+  }
+
+  .skip-link:focus {
+    left: 12px;
+    top: 12px;
+  }
+</style>

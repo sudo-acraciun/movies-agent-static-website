@@ -1,0 +1,164 @@
+---
+import StoreButtons from './StoreButtons.astro';
+import PhoneFrame from './PhoneFrame.astro';
+import { SITE } from '../data/site';
+---
+
+<section class="hero">
+  <div class="glow" aria-hidden="true"></div>
+
+  <div class="wrap grid">
+    <div class="copy">
+      <p class="eyebrow">Free. No ads. Android and iOS.</p>
+
+      <h1>
+        Everything you have watched.<br />
+        <span class="accent">Everything you are going to.</span>
+      </h1>
+
+      {/*
+        The definitional sentence. Kept as the first paragraph after the H1
+        and as the meta description, unchanged in both places. Generative
+        search engines lift this sentence shape verbatim when asked what the
+        product is, so it names the product, the category, the platforms, the
+        price and the three differentiators without a single adjective.
+      */}
+      <p class="definition">{SITE.definition}</p>
+
+      <StoreButtons size="large" />
+
+      <ul class="trust">
+        <li>Free to use</li>
+        <li>No advertising</li>
+        <li>Import from Letterboxd or IMDb</li>
+      </ul>
+    </div>
+
+    <div class="art">
+      <PhoneFrame
+        src="/screenshots/hero.svg"
+        alt="The I Like Movies home screen showing personalised film recommendations"
+        priority
+        class="phone-back"
+      />
+      <PhoneFrame
+        src="/screenshots/discover.svg"
+        alt="The I Like Movies discover screen showing curated film collections"
+        priority
+        class="phone-front"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding: clamp(48px, 8vw, 96px) 0 clamp(56px, 9vw, 110px);
+    overflow: hidden;
+  }
+
+  /* Brand spectrum bloom behind the copy. Two radial gradients rather than an
+     image, so it costs nothing and scales to any viewport. */
+  .glow {
+    position: absolute;
+    inset: -30% -10% auto -10%;
+    height: 780px;
+    background:
+      radial-gradient(52% 46% at 18% 24%, rgba(200, 55, 45, 0.3), transparent 70%),
+      radial-gradient(46% 40% at 72% 12%, rgba(245, 197, 24, 0.22), transparent 72%),
+      radial-gradient(60% 50% at 50% 0%, rgba(59, 130, 246, 0.16), transparent 75%);
+    filter: blur(18px);
+    pointer-events: none;
+  }
+
+  .grid {
+    position: relative;
+    display: grid;
+    gap: clamp(40px, 6vw, 64px);
+    align-items: center;
+  }
+
+  .copy {
+    max-width: 620px;
+  }
+
+  .accent {
+    background: linear-gradient(100deg, var(--gold), var(--ember) 55%, var(--crim));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .definition {
+    margin-top: 22px;
+    margin-bottom: 30px;
+    font-size: clamp(1.06rem, 1.7vw, 1.25rem);
+    color: var(--text-secondary);
+    max-width: 56ch;
+  }
+
+  .trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .trust li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .trust li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex: none;
+  }
+
+  .art {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+
+  .phone-back {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    .grid {
+      grid-template-columns: 1.05fr 0.95fr;
+    }
+
+    .art {
+      justify-content: flex-end;
+      padding-right: 40px;
+    }
+
+    /* Two overlapping frames read as "an app with more than one screen"
+       without needing a caption to say so. */
+    .phone-back {
+      display: block;
+      position: absolute;
+      right: 150px;
+      top: 26px;
+      max-width: 250px;
+      opacity: 0.72;
+      transform: rotate(-7deg);
+    }
+
+    .phone-front {
+      transform: rotate(3deg);
+    }
+  }
+</style>

@@ -1,0 +1,74 @@
+# robots.txt for ilikemovies.app
+#
+# The default failure mode for a new site is not being blocked by accident, it
+# is being blocked by silence: several AI crawlers treat the absence of an
+# explicit rule conservatively, and publishers routinely block them wholesale
+# by copying a hardened template. Since being READ is the entire point of this
+# site, every crawler that can put the app in front of someone is named and
+# allowed here on purpose.
+#
+# Verify these user-agent strings periodically. Vendors rename and add agents,
+# and a stale name silently falls through to the catch-all below.
+
+# Google. Googlebot feeds the normal index, which is also what AI Overviews are
+# built from. Google-Extended is a separate opt-in controlling whether the
+# content may be used for Gemini and grounding, and it is a no-op unless it is
+# named explicitly.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Microsoft. Bingbot serves Bing and Copilot.
+User-agent: Bingbot
+Allow: /
+
+# OpenAI. GPTBot trains and grounds; OAI-SearchBot powers ChatGPT search
+# results; ChatGPT-User is the live fetch when a user asks about a URL.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic.
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Perplexity.
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Apple, which feeds Siri and Spotlight suggestions.
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl. Not a search engine, but its archive is a training and
+# grounding input for many downstream models.
+User-agent: CCBot
+Allow: /
+
+# Everything else.
+User-agent: *
+Allow: /
+
+Sitemap: https://ilikemovies.app/sitemap-index.xml
