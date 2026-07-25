@@ -1,32 +1,76 @@
 ---
+// Picture, not Image: Image emits a single format, while Picture emits an
+// AVIF source and a WebP source with a raster fallback, and lets the browser
+// take the first one it understands. AVIF is roughly half the bytes of WebP
+// on this kind of dark, poster-heavy screenshot.
+import { Picture } from 'astro:assets';
+
 // A CSS phone bezel wrapped around a screenshot. Drawn in CSS rather than
 // shipped as a device-frame PNG so the frame stays crisp at any density and
 // costs no bytes.
 //
-// width/height are REQUIRED on the img and must match the real asset's aspect
-// ratio: without them the browser cannot reserve space before the image loads,
-// and the resulting layout shift is a Core Web Vitals penalty on the single
-// metric (CLS) that a screenshot-heavy marketing page is most likely to fail.
+// src is always an ImageMetadata import from src/assets, never a public/ path.
+// That is what routes it through astro:assets, which emits AVIF and WebP with
+// a raster fallback, generates a srcset so a retina phone gets the dense file
+// and a cheap one does not, and reads the true intrinsic size off the file.
+// Anything in public/ would ship byte-for-byte at one size in one format.
+//
+// The aspect ratio comes from the image itself, so the bezel fits whatever the
+// capture happens to be. The six current captures are 912x1956 after cropping,
+// but nothing here depends on that.
+// Why the srcset starts at 600w and not 300w.
+//
+// The frame is roughly 340px wide, so a browser at device-pixel-ratio 1 was
+// picking a 300w file and rendering a phone screenshot at about a third of
+// its original scale. Downsampling a bitmap of TEXT is the worst case for
+// resampling: strokes land between pixels and turn to mush. Starting at 600w
+// means even a 1x display gets a 2x file and downsamples it, which is
+// dramatically sharper for roughly 40 extra kilobytes.
+//
+// quality 92 rather than 90 for the same reason. The cost is small and it
+// lands exactly where the artifacts show, on coloured text against near-black.
 interface Props {
-  src: string;
+  src: ImageMetadata;
   alt: string;
   /** Above-the-fold frames must load eagerly; everything else lazily. */
   priority?: boolean;
+  /**
+   * Breathing room between the top of the screenshot and the bezel.
+   *
+   * On by default. With the device status bar cropped away, a screen whose
+   * app bar sits flush at the top has its title colliding with the corner
+   * radius, which reads as a rendering fault rather than a design.
+   *
+   * Turn it OFF for a screen whose content is meant to bleed to the edge, an
+   * artwork backdrop for instance, where a strip of background above it would
+   * look like a letterbox band instead of breathing room.
+   */
+  topInset?: boolean;
   class?: string;
 }
-const { src, alt, priority = false, class: className = '' } = Astro.props;
+const {
+  src,
+  alt,
+  priority = false,
+  topInset = true,
+  class: className = '',
+} = Astro.props;
+
+const ratio = src.width / src.height;
 ---
 
-<div class:list={['phone', className]}>
-  <div class="screen">
-    <img
+<div class:list={['phone', className]} style={`--shot-ratio:${ratio}`}>
+  <div class:list={['screen', { inset: topInset }]}>
+    <Picture
       src={src}
       alt={alt}
-      width="390"
-      height="844"
+      widths={[600, 900]}
+      sizes="(min-width: 940px) 340px, 62vw"
+      formats={['avif', 'webp']}
+      fallbackFormat="png"
+      quality={92}
       loading={priority ? 'eager' : 'lazy'}
       decoding={priority ? 'sync' : 'async'}
-      fetchpriority={priority ? 'high' : 'auto'}
     />
   </div>
 </div>
@@ -35,8 +79,12 @@ const { src, alt, priority = false, class: className = '' } = Astro.props;
   .phone {
     position: relative;
     width: 100%;
-    max-width: 300px;
-    aspect-ratio: 390 / 844;
+    /* 340, not 300. A phone screenshot shrunk far enough stops being
+       readable no matter how clean the file is, and this is the cheapest
+       readable size that does not dominate the layout. */
+    max-width: 340px;
+    aspect-ratio: var(--shot-ratio);
+    margin-inline: auto;
     padding: 10px;
     border-radius: 42px;
     background: linear-gradient(160deg, #2b3345, #10141d 55%, #232b3b);
@@ -53,25 +101,59 @@ const { src, alt, priority = false, class: className = '' } = Astro.props;
     background: var(--ink);
   }
 
-  .screen img {
+  /*
+    Percentage padding resolves against the element's WIDTH, not its height,
+    which is what makes this scale correctly: the gap stays proportional to
+    the frame at every size instead of being a fixed pixel value that looks
+    right on desktop and enormous on a phone.
+
+    The background behind it is var(--ink), #0A0D14, the same colour the app
+    itself paints behind its app bar, so the strip is indistinguishable from
+    the screenshot continuing upward.
+
+    Cost: box-sizing is border-box, so the image loses this much height and
+    object-fit crops it from the bottom. About 3% of one frame, on content
+    that is already partially cut off at that edge. Nothing readable is lost.
+  */
+  .screen.inset {
+    padding-top: 3%;
+  }
+
+  /* Picture wraps the img in a <picture>, which is display:inline by default
+     and would collapse the height chain. Both need to fill the screen. */
+  .screen :global(picture),
+  .screen :global(img) {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top center;
   }
 
-  /* Dynamic-island style cutout. Purely decorative, hidden from the
-     accessibility tree by virtue of being an empty pseudo-element. */
-  .screen::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 32%;
-    height: 22px;
-    border-radius: 999px;
-    background: #000;
-    z-index: 2;
+  /*
+    No dynamic-island cutout.
+
+    There was one, and it was wrong: an iPhone notch drawn on top of an
+    Android status bar, in a frame showing an Android capture. The real
+    status bar in the screenshot already reads as a device. A plain bezel is
+    honest and does not fight the content.
+  */
+
+  /*
+    Single-column layout only, so desktop sizing is untouched.
+
+    A 300px frame at this aspect ratio is roughly 640px tall, which is most of
+    a phone viewport. Five of them plus section padding is a long scroll for
+    the reader to get through, and the frames are illustration, not content.
+
+    Capping WIDTH by viewport height is the trick: aspect-ratio derives the
+    height from the width, so constraining the width to 55svh of usable height
+    keeps every frame comfortably inside one screen with the copy. svh again
+    rather than vh, so a mobile address bar cannot push it past the fold.
+  */
+  @media (max-width: 899px) {
+    .phone {
+      max-width: min(300px, calc(55svh * var(--shot-ratio)));
+    }
   }
 </style>

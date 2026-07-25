@@ -2,20 +2,47 @@
 import PhoneFrame from './PhoneFrame.astro';
 import type { Feature } from '../data/site';
 
+// One paragraph and three bullets, no more. The eyebrow label these blocks
+// used to carry was repeating the heading a line later, and the second
+// paragraph was asking a phone reader to work through roughly 500 words of
+// feature copy before reaching anything they could act on. The detail that
+// was cut did not disappear from the page: it moved into the FAQ, which is
+// where a reader who wants depth goes on purpose and where generative search
+// looks first.
 interface Props {
   feature: Feature;
+  /** The capture for this block, imported in the page and matched by id. */
+  screenshot: ImageMetadata;
   /** Even-indexed blocks put the art on the right, odd on the left. */
   flipped?: boolean;
 }
-const { feature, flipped = false } = Astro.props;
+const { feature, screenshot, flipped = false } = Astro.props;
 ---
 
-<section class="feature section" id={feature.id}>
+{/*
+  aria-labelledby is what turns this from a plain <section> into a landmark.
+  An unnamed section is not exposed as a region at all, so before this the
+  four feature blocks were invisible to landmark navigation and a screen
+  reader user could only find them by hunting through the headings.
+
+  tabindex="0" puts the section in the Tab order. Non-interactive containers
+  are not usually focusable, and the objection to it is fair: a stop that
+  does nothing is noise. This one is not nothing. Every one of these sections
+  is a paragraph, three bullets and a screenshot with no control anywhere in
+  it, so a keyboard-only visitor previously went from the hero button
+  straight past all four of them into the FAQ. With a name attached, the stop
+  announces "region, <heading>", which is the point of it.
+*/}
+<section
+  class="feature section"
+  id={feature.id}
+  tabindex="0"
+  aria-labelledby={`${feature.id}-title`}
+>
   <div class:list={['wrap grid', { flipped }]}>
     <div class="copy">
-      <p class="eyebrow">{feature.eyebrow}</p>
-      <h2>{feature.title}</h2>
-      {feature.body.map((paragraph) => <p class="lede">{paragraph}</p>)}
+      <h2 id={`${feature.id}-title`}>{feature.title}</h2>
+      <p class="lede">{feature.body}</p>
 
       <ul class="points">
         {feature.bullets.map((bullet) => <li>{bullet}</li>)}
@@ -23,7 +50,7 @@ const { feature, flipped = false } = Astro.props;
     </div>
 
     <div class="art">
-      <PhoneFrame src={feature.screenshot} alt={feature.screenshotAlt} />
+      <PhoneFrame src={screenshot} alt={feature.screenshotAlt} />
     </div>
   </div>
 </section>

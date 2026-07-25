@@ -5,7 +5,25 @@ import Hero from '../components/Hero.astro';
 import FeatureBlock from '../components/FeatureBlock.astro';
 import StoreButtons from '../components/StoreButtons.astro';
 import Footer from '../components/Footer.astro';
-import { SITE, FEATURES, CAPABILITIES, FAQS, COMPARISONS } from '../data/site';
+import { SITE, FEATURES, CAPABILITIES, FAQS, MIGRATIONS } from '../data/site';
+
+// Real captures live in src/assets so astro:assets can process them into AVIF,
+// WebP and a srcset. They are attached here rather than in site.ts because a
+// data module holding image imports would couple copy to assets; site.ts keeps
+// the placeholder path until a real file exists for that screen.
+import discoverShot from '../assets/screenshots/discover.png';
+import assistantShot from '../assets/screenshots/assistant.png';
+import householdShot from '../assets/screenshots/household.png';
+import feedShot from '../assets/screenshots/feed.png';
+
+// Keyed by Feature.id. A screen with no entry here keeps the placeholder
+// path from site.ts, so the page always builds while captures trickle in.
+const SHOTS: Record<string, ImageMetadata> = {
+  discover: discoverShot,
+  assistant: assistantShot,
+  household: householdShot,
+  friends: feedShot,
+};
 
 // --- Structured data -------------------------------------------------------
 //
@@ -45,11 +63,13 @@ const softwareLd = {
     availability: 'https://schema.org/InStock',
   },
   featureList: [
-    'Personalised film and TV recommendations based on your ratings',
-    'Chat assistant for recommendations in plain language',
+    'AI movie and TV recommendations generated from your own ratings',
+    'AI chat assistant for recommendations in plain language',
+    'Follow friends and compare taste',
     'Shared household watchlist and watched history',
     'Streaming availability by country',
     'TV episode level progress tracking',
+    'Viewing statistics by genre and country of origin',
     'Import from Letterboxd and IMDb',
   ],
   author: {
@@ -58,13 +78,17 @@ const softwareLd = {
   },
 };
 
+// Answers are stored as paragraphs for readability and joined back into one
+// string here. The joined text is word-for-word identical to what renders on
+// screen, which is the requirement: structured data that does not match the
+// visible page is a violation, not a shortcut.
 const faqLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: FAQS.map((faq) => ({
     '@type': 'Question',
     name: faq.q,
-    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    acceptedAnswer: { '@type': 'Answer', text: faq.a.join('\n\n') },
   })),
 };
 
@@ -87,32 +111,64 @@ const siteLd = {
 };
 ---
 
+{/*
+  Title notes, since it is the highest-weight string on the page.
+
+  Keyword first, brand last. The brand has no search volume yet, so leading
+  with it spends the most valuable position on a term nobody types. Once
+  people search "I Like Movies" by name this is worth revisiting.
+
+  "tracker" rather than only "tracking app": both are searched, the page said
+  "tracking" six times and "tracker" zero, and the two do not match each other
+  automatically.
+
+  61 characters, which fits the roughly 600px Google renders before it cuts.
+*/}
 <Layout
-  title="I Like Movies | Free movie and TV tracking app for Android and iOS"
-  description={SITE.definition}
+  title="Free movie and TV tracker for Android and iOS | I Like Movies"
+  description={SITE.metaDescription}
   path="/"
   jsonLd={[softwareLd, faqLd, siteLd]}
 >
   <a class="skip-link" href="#main">Skip to content</a>
   <Header />
 
-  <main id="main">
+  {/* tabindex="-1" keeps this out of the Tab order but makes it focusable,
+      which is what the skip link above needs. Following a fragment only
+      moves real focus if the target can hold it; without this, "Skip to
+      content" scrolled the page and left focus on the link, so a screen
+      reader announced nothing and the next Tab carried on through the
+      header. Not in the Tab order, so nobody tabs onto it by accident. */}
+  <main id="main" tabindex="-1">
     <Hero />
 
     {
       FEATURES.map((feature, index) => (
-        <FeatureBlock feature={feature} flipped={index % 2 === 1} />
+        <FeatureBlock
+          feature={feature}
+          screenshot={SHOTS[feature.id]}
+          flipped={index % 2 === 1}
+        />
       ))
     }
 
     {/* Capabilities. Deliberately keyword-dense in plain language, because
         long-tail queries like "movie tracker with episode tracking" only
-        match if those exact words exist somewhere in the HTML. */}
-    <section class="section capabilities" id="capabilities">
+        match if those exact words exist somewhere in the HTML. This grid
+        also carries the tracking vocabulary that lost its own section when
+        the page was shortened. */}
+    <section
+      class="section capabilities"
+      id="capabilities"
+      tabindex="0"
+      aria-labelledby="capabilities-title"
+    >
       <div class="wrap">
         <div class="head">
-          <p class="eyebrow">And the rest</p>
-          <h2>Small things that decide whether an app sticks.</h2>
+          {/* Was "Small things that decide whether an app sticks", which is
+              a nice line that tells neither a reader nor a crawler what the
+              section contains. */}
+          <h2 id="capabilities-title">Everything else: tracking, lists, stats and imports.</h2>
         </div>
 
         <div class="cards">
@@ -128,33 +184,44 @@ const siteLd = {
       </div>
     </section>
 
-    {/* Comparison. Written factually and without disparagement: comparison
-        content is disproportionately quoted by generative search, and a
-        hostile framing gets quoted too. */}
-    <section class="section compare" id="compare">
+    {/* Switching. Framed as migration help rather than a scorecard: the same
+        competitor names carry the same comparative query match, which is the
+        only search a new domain can realistically win, but the content is
+        useful to the reader instead of combative. A hostile framing gets
+        quoted by generative search just as readily as a helpful one. */}
+    <section
+      class="section switching"
+      id="switch"
+      tabindex="0"
+      aria-labelledby="switch-title"
+    >
       <div class="wrap">
         <div class="head">
-          <p class="eyebrow">How it compares</p>
-          <h2>Where I Like Movies is different.</h2>
+          {/* Naming the three apps in the H2 rather than only in the H3s
+              below is the single highest-value heading change on the page.
+              Comparative queries are the only searches a new domain can
+              realistically win, and this is the heading that matches them. */}
+          <h2 id="switch-title">Switching from Letterboxd, IMDb, Trakt or TV Time?</h2>
           <p class="lede">
-            Good apps already exist in this space. They are built for different
-            jobs, and it is worth being clear about which one you need.
+            Every movie tracker is built for a different job, and the good ones
+            are genuinely good. Here is how your library moves across, and what
+            changes once it gets here.
           </p>
         </div>
 
         <div class="rows">
           {
-            COMPARISONS.map((comparison) => (
+            MIGRATIONS.map((migration) => (
               <article class="row">
-                <h3>{comparison.name}</h3>
+                <h3>{migration.name}</h3>
                 <div class="row-body">
                   <div>
-                    <span class="label">What it is built for</span>
-                    <p>{comparison.theirFocus}</p>
+                    <span class="label">Bringing your history</span>
+                    <p>{migration.move}</p>
                   </div>
                   <div>
-                    <span class="label">Where I Like Movies differs</span>
-                    <p>{comparison.ourDifference}</p>
+                    <span class="label">What is different here</span>
+                    <p>{migration.changes}</p>
                   </div>
                 </div>
               </article>
@@ -168,11 +235,10 @@ const siteLd = {
         JavaScript, and the answer text stays in the HTML source whether or
         not it is open, so a crawler reads all of it. A JS accordion would
         hide it from the ones that do not execute scripts. */}
-    <section class="section faq" id="faq">
+    <section class="section faq" id="faq" tabindex="0" aria-labelledby="faq-title">
       <div class="wrap narrow">
         <div class="head">
-          <p class="eyebrow">Questions</p>
-          <h2>Frequently asked questions</h2>
+          <h2 id="faq-title">Frequently asked questions</h2>
         </div>
 
         <div class="faq-list">
@@ -183,7 +249,11 @@ const siteLd = {
                   <h3>{faq.q}</h3>
                   <span class="chev" aria-hidden="true" />
                 </summary>
-                <p>{faq.a}</p>
+                <div class="answer">
+                  {faq.a.map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
               </details>
             ))
           }
@@ -191,9 +261,17 @@ const siteLd = {
       </div>
     </section>
 
-    <section class="section final">
+    {/* The one section that had no id. It needs one now so its heading can
+        name the region, and an anchorable closing call to action is worth
+        having regardless. */}
+    <section
+      class="section final"
+      id="get-the-app"
+      tabindex="0"
+      aria-labelledby="get-the-app-title"
+    >
       <div class="wrap cta-card">
-        <h2>Your next film is already on the list.</h2>
+        <h2 id="get-the-app-title">Your next film is already on the list.</h2>
         <p class="lede">
           Free to download, free to use, and your library imports from
           Letterboxd or IMDb in a few taps.
@@ -257,7 +335,7 @@ const siteLd = {
     font-size: 0.97rem;
   }
 
-  /* Comparison ------------------------------------------------------------ */
+  /* Switching ------------------------------------------------------------- */
 
   .rows {
     display: grid;
@@ -332,6 +410,30 @@ const siteLd = {
     display: none;
   }
 
+  /*
+    The focus ring belongs to the whole card, not to the row inside it.
+
+    details carries 24px of horizontal padding, so the summary is 48px
+    narrower than the card it sits in and the global summary:focus-visible
+    ring landed visibly inset on both sides. It read as a ring around some
+    inner element rather than around the question you are on.
+
+    :has() moves it out to the card, where the 16px radius is already
+    defined. Written as an upgrade rather than a replacement on purpose: a
+    browser without :has() support ignores both rules and keeps the global
+    ring on the summary, which is narrow but still a visible indicator. A
+    plain override would have left those browsers with no indicator at all,
+    which is a worse bug than the one being fixed.
+  */
+  details:has(> summary:focus-visible) {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  details:has(> summary:focus-visible) > summary:focus-visible {
+    outline: none;
+  }
+
   summary h3 {
     font-size: 1.05rem;
     font-weight: 700;
@@ -352,9 +454,20 @@ const siteLd = {
     transform: rotate(-135deg) translate(-3px, -3px);
   }
 
-  details p {
-    margin: 0 0 20px;
-    color: var(--text-secondary);
+  .answer {
+    padding-bottom: 4px;
+  }
+
+  /* One colour for the whole answer.
+     An earlier version brightened the first paragraph to mark it as the
+     standalone answer. On a real three-paragraph answer that reads as two
+     tiers of importance inside a single reply, which is not what is meant
+     and makes the rest look like a footnote. Structure is already carried by
+     the paragraph break and by the first sentence being self-contained; it
+     does not need a colour too. */
+  .answer p {
+    margin: 0 0 16px;
+    color: var(--text-body);
     max-width: 70ch;
   }
 

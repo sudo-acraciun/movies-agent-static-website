@@ -61,17 +61,50 @@ vendors rename and add agents.
 
 ## Screenshots
 
-`public/screenshots/*.svg` are **placeholders**, not real captures. They render
-a labelled panel so a missing asset is obvious rather than silently ugly.
+Six captures live in `src/assets/screenshots/`, each from a real screen:
 
-To replace them:
+| File | App screen | Used by |
+| --- | --- | --- |
+| `library.png` | `app/(tabs)/library.tsx` | hero, back frame |
+| `movie-detail.png` | `app/movies/[id]` | hero, front frame |
+| `discover.png` | `app/(tabs)/discover.tsx` | Discover block |
+| `assistant.png` | `app/chat.tsx` | Assistant block |
+| `feed.png` | `app/(tabs)/feed.tsx` | Friends block |
+| `household.png` | `app/(tabs)/library.tsx`, grouped view | Household block |
 
-1. Capture the eight store screenshots from the launch build.
-2. Drop the five used here into `public/screenshots/` as PNGs.
-3. Update the `screenshot` paths in `src/data/site.ts` from `.svg` to `.png`.
-4. Confirm the intrinsic size in `PhoneFrame.astro` still matches the capture
-   aspect ratio. The `width`/`height` attributes reserve layout space before
-   the image loads; a mismatch reintroduces layout shift.
+The hero uses `library` and `movie-detail` specifically because no section
+below repeats them, so the first thing a visitor scrolls into is new rather
+than a second look at the hero.
+
+They live in `src/assets/`, **not** `public/`. That is what routes them
+through `astro:assets`, which emits AVIF and WebP with a raster fallback at
+two widths and builds a `srcset`. Anything in `public/` ships byte-for-byte at
+one size in one format. Feature blocks are matched to a capture by `Feature.id`
+via the `SHOTS` map in `src/pages/index.astro`.
+
+### Replacing or adding a capture
+
+Raw phone screenshots are not usable as-is: they carry notification badges,
+VPN and Do Not Disturb icons, and the Android navigation bar.
+`scripts/prep-screenshot.mjs` handles both steps.
+
+```bash
+# 1. Find the status-bar icon columns and the gap above the nav bar
+node scripts/prep-screenshot.mjs inspect <raw.png>
+
+# 2. Erase OS chrome and crop, using boxes from step 1
+node scripts/prep-screenshot.mjs clean <raw.png> <out.png> <cropHeight> \
+  '[{"left":186,"top":34,"width":50,"height":82,"what":"notification badge"}]'
+```
+
+The erase is a fill, never a reconstruction. It samples a ring around each box
+and **refuses** if the surroundings are not flat, because a flat fill over
+texture leaves a visible rectangle. In practice the sampled median comes back
+as `#0A0D14`, which is `INK` in the mobile app's `brand.ts`.
+
+Send captures as PNG. A screenshot forwarded through a chat app as a *photo*
+arrives as a recompressed 4:2:0 JPEG, which mangles coloured text on dark
+backgrounds and cannot be recovered. `inspect` warns when the source is a JPEG.
 
 ## Design tokens
 

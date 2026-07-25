@@ -3,6 +3,12 @@
 // src/components/brand/logo-mark.svg so the two never drift. Inlined rather
 // than loaded as an <img> because it is above the fold on every page and a
 // separate request for 600 bytes is a wasted round trip.
+//
+// aria-hidden, not role="img" with a label. Both places this renders sit
+// inside a link that already carries the words "I Like Movies" next to it,
+// and the footer link has no aria-label of its own, so a labelled mark made
+// that link announce as "I Like Movies logo I Like Movies". The mark is
+// decorative wherever the name is already written beside it.
 interface Props {
   size?: number;
   class?: string;
@@ -15,8 +21,7 @@ const { size = 40, class: className = '' } = Astro.props;
   width={size}
   height={size}
   viewBox="0 0 256 256"
-  role="img"
-  aria-label="I Like Movies logo"
+  aria-hidden="true"
   fill="none"
 >
   <path d="M 70 64 L 186 64 L 240 224 L 16 224 Z" fill="#C8372D"></path>

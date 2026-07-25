@@ -2,6 +2,17 @@
 import StoreButtons from './StoreButtons.astro';
 import PhoneFrame from './PhoneFrame.astro';
 import { SITE } from '../data/site';
+
+// Real captures are imported from src/assets so astro:assets can process
+// them. Anything left in public/ is still a placeholder.
+import movieDetailShot from '../assets/screenshots/movie-detail.png';
+import libraryShot from '../assets/screenshots/library.png';
+
+// Screen choice matters here. The hero deliberately shows the library and a
+// film detail page, neither of which appears in any section below it, so the
+// first thing a visitor scrolls into is new rather than a repeat of the hero.
+// They are also the two most poster-dense screens in the app, which is what
+// makes a movie app read as a movie app at a glance.
 ---
 
 <section class="hero">
@@ -9,8 +20,12 @@ import { SITE } from '../data/site';
 
   <div class="wrap grid">
     <div class="copy">
-      <p class="eyebrow">Free. No ads. Android and iOS.</p>
-
+      {/*
+        No eyebrow. The three facts it carried are all still above the fold:
+        "free" and "for Android and iOS" in the definitional sentence, "Free
+        to use" and "No advertising" in the trust row, and the platforms again
+        on the store buttons themselves. It was the third copy of all of it.
+      */}
       <h1>
         Everything you have watched.<br />
         <span class="accent">Everything you are going to.</span>
@@ -34,40 +49,75 @@ import { SITE } from '../data/site';
       </ul>
     </div>
 
+    {/*
+      Each frame sits in a wrapper that Hero itself renders.
+
+      This is not stylistic. Astro scopes a component's styles to the elements
+      that component declares, so a class passed down as a prop lands on the
+      child's root element with the CHILD's scope hash and the parent's rules
+      never match it. That failed silently here: every rule positioning these
+      two frames was dead, and both rendered as plain flex items, same size,
+      no overlap, no gap. Styling a wrapper the parent owns is the fix.
+    */}
     <div class="art">
-      <PhoneFrame
-        src="/screenshots/hero.svg"
-        alt="The I Like Movies home screen showing personalised film recommendations"
-        priority
-        class="phone-back"
-      />
-      <PhoneFrame
-        src="/screenshots/discover.svg"
-        alt="The I Like Movies discover screen showing curated film collections"
-        priority
-        class="phone-front"
-      />
+      <div class="frame frame-back">
+        <PhoneFrame
+          src={libraryShot}
+          alt="The I Like Movies library screen showing a grid of film posters sorted by IMDb rating, with watchlist, watched and collection counts"
+          priority
+        />
+      </div>
+      <div class="frame frame-front">
+        {/* topInset off: this screen opens on a full-bleed backdrop still
+            that is meant to run under the bezel's corners. A strip of flat
+            background above it would read as a letterbox band. */}
+        <PhoneFrame
+          src={movieDetailShot}
+          alt="The film detail screen in I Like Movies showing The Odyssey with its IMDb rating, director, runtime and watchlist controls"
+          priority
+          topInset={false}
+        />
+      </div>
     </div>
   </div>
+
+  <a class="scroll-cue" href="#discover" aria-label="Scroll to features">
+    <span aria-hidden="true"></span>
+  </a>
 </section>
 
 <style>
+  /*
+    The hero fills the viewport rather than sitting at a fixed height, so it
+    lands as one complete image on any screen.
+
+    100svh, not 100vh: on mobile browsers vh is measured against the LARGEST
+    viewport, the one with the address bar retracted, so 100vh overflows by
+    the height of the bar and pushes the buttons under it on first paint.
+    svh measures the smallest state and cannot do that.
+
+    max() with a rem floor keeps it usable on a short landscape window, where
+    a strict viewport height would crush the copy into nothing.
+  */
   .hero {
     position: relative;
-    padding: clamp(48px, 8vw, 96px) 0 clamp(56px, 9vw, 110px);
+    display: flex;
+    align-items: center;
+    min-height: max(100svh, 40rem);
+    padding: clamp(88px, 12vh, 132px) 0 clamp(72px, 10vh, 104px);
     overflow: hidden;
   }
 
-  /* Brand spectrum bloom behind the copy. Two radial gradients rather than an
+  /* Brand spectrum bloom behind the copy. Radial gradients rather than an
      image, so it costs nothing and scales to any viewport. */
   .glow {
     position: absolute;
-    inset: -30% -10% auto -10%;
-    height: 780px;
+    inset: -25% -10% auto -10%;
+    height: 900px;
     background:
-      radial-gradient(52% 46% at 18% 24%, rgba(200, 55, 45, 0.3), transparent 70%),
-      radial-gradient(46% 40% at 72% 12%, rgba(245, 197, 24, 0.22), transparent 72%),
-      radial-gradient(60% 50% at 50% 0%, rgba(59, 130, 246, 0.16), transparent 75%);
+      radial-gradient(52% 46% at 18% 24%, rgba(200, 55, 45, 0.32), transparent 70%),
+      radial-gradient(46% 40% at 72% 12%, rgba(245, 197, 24, 0.24), transparent 72%),
+      radial-gradient(60% 50% at 50% 0%, rgba(59, 130, 246, 0.18), transparent 75%);
     filter: blur(18px);
     pointer-events: none;
   }
@@ -75,12 +125,17 @@ import { SITE } from '../data/site';
   .grid {
     position: relative;
     display: grid;
-    gap: clamp(40px, 6vw, 64px);
+    gap: clamp(40px, 6vw, 72px);
     align-items: center;
+    width: 100%;
   }
 
   .copy {
-    max-width: 620px;
+    max-width: 640px;
+  }
+
+  .copy h1 {
+    font-size: clamp(2.6rem, 7vw, 4.8rem);
   }
 
   .accent {
@@ -91,9 +146,9 @@ import { SITE } from '../data/site';
   }
 
   .definition {
-    margin-top: 22px;
-    margin-bottom: 30px;
-    font-size: clamp(1.06rem, 1.7vw, 1.25rem);
+    margin-top: 24px;
+    margin-bottom: 32px;
+    font-size: clamp(1.08rem, 1.7vw, 1.28rem);
     color: var(--text-secondary);
     max-width: 56ch;
   }
@@ -104,7 +159,7 @@ import { SITE } from '../data/site';
     gap: 10px 26px;
     list-style: none;
     padding: 0;
-    margin: 28px 0 0;
+    margin: 30px 0 0;
     font-size: 0.9rem;
     color: var(--text-muted);
   }
@@ -124,41 +179,106 @@ import { SITE } from '../data/site';
     flex: none;
   }
 
+  /* Art -------------------------------------------------------------------- */
+
   .art {
     position: relative;
     display: flex;
     justify-content: center;
-    padding-bottom: 30px;
   }
 
-  .phone-back {
+  .frame {
+    width: min(300px, 72vw);
+  }
+
+  /* Below the breakpoint only one phone shows. Two overlapping frames on a
+     narrow screen means each is too small to read. */
+  .frame-back {
     display: none;
   }
 
-  @media (min-width: 900px) {
-    .grid {
-      grid-template-columns: 1.05fr 0.95fr;
-    }
-
+  @media (min-width: 940px) {
     .art {
       justify-content: flex-end;
-      padding-right: 40px;
+      padding-right: clamp(0px, 3vw, 48px);
+      min-height: 620px;
+      align-items: center;
     }
 
-    /* Two overlapping frames read as "an app with more than one screen"
-       without needing a caption to say so. */
-    .phone-back {
+    .frame-front {
+      position: relative;
+      z-index: 2;
+      width: clamp(300px, 25vw, 360px);
+      transform: rotate(3deg);
+      filter: drop-shadow(-24px 30px 50px rgba(0, 0, 0, 0.6));
+    }
+
+    /* The back frame is smaller, rotated further and pushed up and left, so
+       the pair reads as depth rather than as two phones in a row. The offset
+       is a percentage of the front frame so the gap holds as the clamp above
+       resizes it. */
+    .frame-back {
       display: block;
       position: absolute;
-      right: 150px;
-      top: 26px;
-      max-width: 250px;
-      opacity: 0.72;
-      transform: rotate(-7deg);
+      z-index: 1;
+      right: 46%;
+      top: 50%;
+      width: clamp(240px, 21vw, 292px);
+      transform: translateY(-58%) rotate(-8deg);
+      opacity: 0.85;
+      filter: drop-shadow(-18px 24px 44px rgba(0, 0, 0, 0.55));
     }
+  }
 
-    .phone-front {
-      transform: rotate(3deg);
+  /* Scroll cue ------------------------------------------------------------- */
+
+  .scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 26px;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 42px;
+    border: 2px solid rgba(148, 163, 184, 0.45);
+    border-radius: 999px;
+    display: none;
+  }
+
+  .scroll-cue span {
+    position: absolute;
+    left: 50%;
+    top: 9px;
+    width: 4px;
+    height: 8px;
+    margin-left: -2px;
+    border-radius: 2px;
+    background: var(--gold);
+    animation: cue 1.9s ease-in-out infinite;
+  }
+
+  @keyframes cue {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    60% {
+      transform: translateY(13px);
+      opacity: 0.15;
+    }
+  }
+
+  /* Only shown where the hero actually fills the screen. On a short window
+     there is no "below the fold" to point at. */
+  @media (min-height: 700px) and (min-width: 700px) {
+    .scroll-cue {
+      display: block;
+    }
+  }
+
+  @media (min-width: 940px) {
+    .grid {
+      grid-template-columns: 1.05fr 0.95fr;
     }
   }
 </style>

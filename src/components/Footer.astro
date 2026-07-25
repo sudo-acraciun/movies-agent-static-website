@@ -12,30 +12,43 @@ const year = new Date().getFullYear();
         <Logo size={30} />
         <span>I Like Movies</span>
       </a>
+      {/*
+        A plain descriptor, nothing else.
+
+        What used to be here named the developer and the country, then
+        repeated "free, no ads" for the third time on one page. The operator
+        country still reaches the readers that use it: addressCountry sits in
+        the WebSite JSON-LD and llms.txt states it outright. Saying it in the
+        footer added nothing a parser reads, and "built by one developer"
+        reads as a risk to someone deciding whether to move years of viewing
+        history into an app.
+      */}
       <p>
-        A movie and TV tracking app built by one developer in {SITE.operatorCountry}.
-        Free to use, no advertising, no data sold.
+        Track what you watch, decide what to watch next, and share one library
+        with the people you live with.
       </p>
     </div>
 
     <nav aria-label="Footer">
       <div class="col">
-        <h2>App</h2>
+        {/* "App" labelled a column of page anchors, which is not what an app
+            is. These are places on this page plus the store link. */}
+        <h3>Explore</h3>
         <a href="#discover">Features</a>
-        <a href="#compare">How it compares</a>
+        <a href="#switch">Switching apps</a>
         <a href="#faq">FAQ</a>
         <a href={SITE.playUrl} rel="noopener">Google Play</a>
       </div>
 
       <div class="col">
-        <h2>Legal</h2>
+        <h3>Legal</h3>
         <a href={SITE.legal.privacy} rel="noopener">Privacy policy</a>
         <a href={SITE.legal.terms} rel="noopener">Terms of use</a>
         <a href={SITE.legal.deleteAccount} rel="noopener">Delete your account</a>
       </div>
 
       <div class="col">
-        <h2>Contact</h2>
+        <h3>Contact</h3>
         <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
       </div>
     </nav>
@@ -48,9 +61,7 @@ const year = new Date().getFullYear();
       endorsed or certified by them wherever their data is used. The site
       describes an app built on that data, so the attribution belongs here.
     */}
-    <p class="fine">
-      This product uses the TMDB API but is not endorsed or certified by TMDB.
-    </p>
+    <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
   </div>
 </footer>
 
@@ -90,7 +101,12 @@ const year = new Date().getFullYear();
     gap: 32px;
   }
 
-  .col h2 {
+  /* h3, not h2. These are labels for three link groups, not page sections.
+     As h2 they sat at the same level as the real content sections and made
+     "App", "Legal" and "Contact" look like major topics in the outline.
+     Kept as headings rather than plain spans because screen reader users
+     navigate footers by heading. */
+  .col h3 {
     font-size: 0.76rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -123,9 +139,10 @@ const year = new Date().getFullYear();
     margin: 0 0 6px;
   }
 
-  .fine {
-    opacity: 0.75;
-  }
+  /* There was a .fine rule here, opacity 0.75 on the TMDB notice, which put
+     it at 2.8:1 and made the one line on the page we are contractually
+     obliged to publish the least readable thing on it. Both paragraphs now
+     take --text-muted from .bottom, which is quiet enough on its own. */
 
   @media (min-width: 880px) {
     .inner {

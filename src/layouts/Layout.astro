@@ -48,6 +48,10 @@ const ogImage = new URL('/og-image.png', SITE.url).href;
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="I Like Movies. Everything you have watched. Everything you are going to."
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -90,7 +94,26 @@ const ogImage = new URL('/og-image.png', SITE.url).href;
     --primary: #3b82f6;
     --text: #ffffff;
     --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+
+    /* Was #64748b, which measured 3.7:1 on the cards and 4.1:1 on the page
+       background. Every place it is used is small text (the hero trust list,
+       the SWITCHING labels, the footer column headings, the copyright line)
+       and none of it is large enough for the 3:1 allowance, so all of it was
+       under the 4.5:1 that WCAG AA asks for body text.
+
+       This lands at 5.1:1 on the cards and 5.6:1 on the footer while keeping
+       a real tonal step below --text-secondary at 6.9:1, which is the whole
+       point of having a third tier. It also lifts the FAQ chevron, a state
+       indicator that has to clear 3:1 in its own right. */
+    --text-muted: #7b8aa1;
+
+    /* Sustained reading, currently the FAQ answers only.
+       --text-secondary is tuned for short supporting lines and sits around
+       5.9:1 against the card background, which is fine for a caption and
+       tiring for four sentences. Pure white is the other extreme: at
+       paragraph length it glares on a near-black background. This sits
+       between them at roughly 11:1. */
+    --text-body: #cbd5e1;
 
     --max-width: 1120px;
     --radius: 16px;
@@ -184,16 +207,6 @@ const ogImage = new URL('/og-image.png', SITE.url).href;
     padding: clamp(64px, 10vw, 120px) 0;
   }
 
-  .eyebrow {
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 14px;
-  }
-
   .lede {
     color: var(--text-secondary);
     font-size: clamp(1.05rem, 1.6vw, 1.2rem);
@@ -207,6 +220,49 @@ const ogImage = new URL('/og-image.png', SITE.url).href;
     outline: 3px solid var(--gold);
     outline-offset: 3px;
     border-radius: 6px;
+  }
+
+  /*
+    Content sections are Tab stops (see the note on tabindex in FeatureBlock),
+    so they need an indicator like any other stop.
+
+    Drawn as a pseudo-element ring rather than an outline, because the ring
+    has to be ROUNDED and an outline cannot be rounded on its own: it follows
+    the element's border-radius, and setting a radius on the section would
+    round the section's real box. That matters for one of these: the
+    capabilities band is full-bleed with its own background and top/bottom
+    borders, so a radius would round a full-viewport-width band on focus and
+    make it look like it had come loose from the page.
+
+    A pseudo-element decouples the two. inset draws it inside the section
+    edge, so it never overhangs the viewport horizontally or doubles up on a
+    section's own border, and border-radius is free to match the rest of the
+    site. border, not box-shadow: Windows High Contrast mode recolours a
+    border and drops a box-shadow entirely.
+  */
+  main section[tabindex] {
+    position: relative;
+  }
+
+  main section[tabindex]:focus-visible {
+    outline: none;
+  }
+
+  main section[tabindex]:focus-visible::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 3px solid var(--gold);
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+  }
+
+  /* main is a focus TARGET for the skip link, not a control. It is focusable
+     so that following the link fires a real focus event and a screen reader
+     announces the landmark; a ring here would outline the entire page. */
+  #main:focus,
+  #main:focus-visible {
+    outline: none;
   }
 
   .skip-link {

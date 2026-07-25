@@ -12,15 +12,34 @@ interface Props {
 }
 const { size = 'default', align = 'left' } = Astro.props;
 const iosLive = SITE.appStoreUrl !== null;
+
+// The "coming soon" span carried an aria-label as well, and on a <span> it
+// was doing nothing at all: aria-label is ignored on an element with no
+// role. Its visible text already says "Coming soon to iPhone".
+//
+// Note on comment placement, which cost two builds to learn: a {/* */}
+// expression comment inside a branch of the ternary below is a parse error
+// ("Expected corresponding JSX closing tag for 'Fragment'"). Notes about the
+// ternary belong up here.
 ---
 
 <div class:list={['store-buttons', size, align]}>
-  <a
-    class="badge badge-play"
-    href={SITE.playUrl}
-    rel="noopener"
-    aria-label={`Download ${SITE.name} on Google Play`}
-  >
+  {/*
+    No aria-label on either badge, deliberately.
+
+    They both carried one, and it read "Download I Like Movies on Google
+    Play" while the visible text said "Get it on Google Play". An aria-label
+    REPLACES the accessible name rather than adding to it, so the name no
+    longer contained the words on screen. That fails WCAG 2.5.3 Label in
+    Name, and the practical cost is real: a voice-control user saying "click
+    Get it on Google Play" gets no match, because the words they can see are
+    not the words the browser is matching against.
+
+    Removing it leaves the name as the inner text, which is correct, which is
+    what the official store badges themselves say, and which needs no
+    maintenance when the brand name changes.
+  */}
+  <a class="badge badge-play" href={SITE.playUrl} rel="noopener">
     <svg viewBox="0 0 24 24" aria-hidden="true" class="badge-icon">
       <path
         d="M3.6 2.3a1.3 1.3 0 0 0-.5 1v17.4c0 .4.2.8.5 1l9.2-9.7L3.6 2.3Z"
@@ -37,12 +56,7 @@ const iosLive = SITE.appStoreUrl !== null;
 
   {
     iosLive ? (
-      <a
-        class="badge badge-apple"
-        href={SITE.appStoreUrl!}
-        rel="noopener"
-        aria-label={`Download ${SITE.name} on the App Store`}
-      >
+      <a class="badge badge-apple" href={SITE.appStoreUrl!} rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true" class="badge-icon">
           <path
             d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85-.7 0-1.85-.83-3-.81-1.55.02-3 .9-3.8 2.3-1.6 2.8-.4 7 1.15 9.3.77 1.13 1.68 2.4 2.87 2.35 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 3 .72 1.24-.02 2.02-1.14 2.78-2.28.88-1.3 1.24-2.57 1.26-2.64-.03-.01-2.4-.92-2.43-3.65ZM14.1 5.6c.62-.76 1.04-1.8.93-2.85-.9.04-2 .6-2.64 1.35-.57.67-1.07 1.74-.94 2.76 1 .08 2.02-.5 2.65-1.26Z"
@@ -55,7 +69,7 @@ const iosLive = SITE.appStoreUrl !== null;
         </span>
       </a>
     ) : (
-      <span class="badge badge-soon" aria-label="Coming soon to the App Store for iPhone">
+      <span class="badge badge-soon">
         <svg viewBox="0 0 24 24" aria-hidden="true" class="badge-icon">
           <path
             d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85-.7 0-1.85-.83-3-.81-1.55.02-3 .9-3.8 2.3-1.6 2.8-.4 7 1.15 9.3.77 1.13 1.68 2.4 2.87 2.35 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 3 .72 1.24-.02 2.02-1.14 2.78-2.28.88-1.3 1.24-2.57 1.26-2.64-.03-.01-2.4-.92-2.43-3.65ZM14.1 5.6c.62-.76 1.04-1.8.93-2.85-.9.04-2 .6-2.64 1.35-.57.67-1.07 1.74-.94 2.76 1 .08 2.02-.5 2.65-1.26Z"
@@ -132,11 +146,27 @@ const iosLive = SITE.appStoreUrl !== null;
 
   /* The unavailable state has to LOOK unavailable. Same silhouette so the
      layout does not shift when iOS goes live, but muted, no hover lift, and
-     default cursor so it never reads as a dead link. */
+     default cursor so it never reads as a dead link.
+
+     This was opacity: 0.5, which is the easy way to say "unavailable" and
+     took the small line down to 2.7:1 against the background. Dimming text
+     past the point of legibility is not a style choice, it is a decision
+     that people with low vision cannot read this badge at all, and the badge
+     is carrying the only statement on the page that iOS is coming.
+
+     Dashed border plus muted colours says the same thing and stays readable:
+     the strong line sits at 7.6:1 and the small one at 5.5:1. currentColor
+     also carries down into the Apple glyph, so it mutes with the text
+     instead of staying bright white next to it. */
   .badge-soon {
-    opacity: 0.5;
     cursor: default;
     background: transparent;
+    border-style: dashed;
+    color: var(--text-secondary);
+  }
+
+  .badge-soon .badge-text small {
+    color: var(--text-muted);
   }
 
   .large .badge {
