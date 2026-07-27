@@ -101,6 +101,10 @@ const iosLive = SITE.appStoreUrl !== null;
     align-items: center;
     gap: 12px;
     padding: 12px 22px 12px 18px;
+    /* The two label lines are sized in em from here, so one font-size on the
+       badge scales both. 1.05rem reproduces exactly what the two lines were
+       set to before. */
+    font-size: 1.05rem;
     border-radius: 14px;
     text-decoration: none;
     border: 1px solid var(--ink-border);
@@ -133,13 +137,13 @@ const iosLive = SITE.appStoreUrl !== null;
   }
 
   .badge-text small {
-    font-size: 0.68rem;
+    font-size: 0.648em;
     letter-spacing: 0.04em;
     color: var(--text-secondary);
   }
 
   .badge-text strong {
-    font-size: 1.05rem;
+    font-size: 1em;
     font-weight: 700;
     letter-spacing: -0.01em;
   }
@@ -169,12 +173,48 @@ const iosLive = SITE.appStoreUrl !== null;
     color: var(--text-muted);
   }
 
+  /*
+    The large pair has to sit on ONE line on a phone, and at its full size it
+    cannot. Measured in a real browser: the Play badge is 186.7px, the iPhone
+    badge 177.3px, plus the 14px gap, so the row needs 378px. The wrap gives
+    it the viewport minus 48px of page padding, which only reaches 378px at a
+    426px viewport. Every phone in use is narrower than that (the capture that
+    prompted this was a 412px device), so every phone wrapped the iPhone badge
+    onto its own line.
+
+    Of that 378px, the text runs are 176px and everything around them, the
+    padding, the icons, the two gaps and the borders, is 202px. So closing the
+    66px shortfall at a 360px viewport with type alone would mean cutting the
+    text to 110px, which is 10.5px type on the page's primary call to action.
+    The room is in the other 202px, so that is what shrinks hard (padding
+    22/28 to 12/15, icon 30 to 24) while the type gives up a tenth of its size
+    and stays readable.
+
+    Both ends are anchored to measurements, not taste: at a 360px viewport
+    the row comes to 292px against 312px available, and 480px is where the
+    full-size row has comfortable room again, so above it nothing changes at
+    all. Between them every value rides the same linear ramp, which is what
+    the negative pixel terms in the calc()s are: the y-intercept of a line
+    through (360px, min) and (480px, max).
+
+    Below 360px the values floor and the row wraps again, which is correct
+    rather than a gap: fitting a 320px screen means type under 14px on the
+    page's primary call to action, and a wrapped pair reads better than an
+    illegible one.
+  */
+  .store-buttons.large {
+    gap: clamp(10px, calc(-2px + 3.334vw), 14px);
+  }
+
   .large .badge {
-    padding: 15px 28px 15px 22px;
+    font-size: clamp(0.95rem, calc(10.4px + 1.334vw), 1.05rem);
+    gap: clamp(8px, calc(-4px + 3.334vw), 12px);
+    padding: clamp(13px, calc(7px + 1.667vw), 15px) clamp(15px, calc(-24px + 10.834vw), 28px)
+      clamp(13px, calc(7px + 1.667vw), 15px) clamp(12px, calc(-18px + 8.334vw), 22px);
   }
 
   .large .badge-icon {
-    width: 30px;
-    height: 30px;
+    width: clamp(24px, calc(6px + 5vw), 30px);
+    height: clamp(24px, calc(6px + 5vw), 30px);
   }
 </style>
