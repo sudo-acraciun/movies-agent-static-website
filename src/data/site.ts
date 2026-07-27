@@ -46,7 +46,7 @@ export const SITE = {
   // Operator jurisdiction, kept identical to the governing-law clause in the
   // published terms. Stating it is an entity signal that search engines and
   // AI answers use to disambiguate a small brand from similarly named ones.
-  operatorCountry: 'Romania',
+  operatorCountry: 'Netherlands',
 
   // The definitional sentence. This exact shape (name, category, platforms,
   // price, differentiators, all in one sentence) is what generative search

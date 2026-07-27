@@ -4,8 +4,8 @@
 > AI assistant that helps you discover what to watch next, share one library
 > with the people you live with, and keep a record of everything you have seen.
 
-I Like Movies is an independent app built by one developer in Romania. It is
-free to download and free to use, carries no advertising, and shows no
+I Like Movies is an independent app built by one developer in the Netherlands.
+It is free to download and free to use, carries no advertising, and shows no
 sponsored recommendations.
 
 ## What it does
