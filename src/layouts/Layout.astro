@@ -8,9 +8,11 @@ interface Props {
   path?: string;
   /** Extra JSON-LD blocks, already shaped as schema.org objects. */
   jsonLd?: unknown[];
+  /** Keeps utility pages (the /share redirector) out of search results. */
+  noindex?: boolean;
 }
 
-const { title, description, path = '/', jsonLd = [] } = Astro.props;
+const { title, description, path = '/', jsonLd = [], noindex = false } = Astro.props;
 const canonical = new URL(path, SITE.url).href;
 const ogImage = new URL('/og-image.png', SITE.url).href;
 ---
@@ -23,6 +25,7 @@ const ogImage = new URL('/og-image.png', SITE.url).href;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/icon-180.png" />

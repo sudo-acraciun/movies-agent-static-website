@@ -8,7 +8,10 @@ import sitemap from '@astrojs/sitemap';
 // tags will advertise a host that does not serve the page.
 export default defineConfig({
   site: 'https://ilikemovies.app',
-  integrations: [sitemap()],
+  // /share is the deep-link redirector for shared titles: a utility page,
+  // noindex'd in its own markup and excluded here so the sitemap only
+  // advertises pages meant to be found.
+  integrations: [sitemap({ filter: (page) => !page.includes('/share') })],
   build: {
     // Emit /faq.html rather than /faq/index.html. GitHub Pages serves both,
     // but flat files keep the crawlable URL identical to the one in the
