@@ -72,7 +72,15 @@ export const SITE = {
   // until the production listing is approved. The iOS one is null rather than
   // a guessed URL, because the app does not exist on the App Store yet and a
   // fabricated link is worse than a disabled button.
-  playUrl: 'https://play.google.com/store/apps/details?id=com.moviesagent.app',
+  //
+  // The referrer param attributes Play installs back to this website with no
+  // JS analytics involved: Play records it verbatim against the install and
+  // the value (a URL-encoded utm_source=ilikemovies.app) is readable from the
+  // Play Installation Referrer API on first launch. Every link on the site
+  // routes through this one constant, so the param reaches every store link
+  // without being repeated anywhere.
+  playUrl:
+    'https://play.google.com/store/apps/details?id=com.moviesagent.app&referrer=utm_source%3Dilikemovies.app',
   appStoreUrl: null as string | null,
 
   legal: {

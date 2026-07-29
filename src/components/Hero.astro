@@ -105,6 +105,11 @@ import libraryShot from '../assets/screenshots/library.png';
     align-items: center;
     min-height: max(100svh, 40rem);
     padding: clamp(88px, 12vh, 132px) 0 clamp(72px, 10vh, 104px);
+    /* Clips .glow's negative inset and the rotated frame-back/frame-front
+       phone illustrations below, the only elements on the site that extend
+       past their container. This is the page's one horizontal-overflow
+       guard now that body no longer carries a blanket overflow-x: hidden;
+       keep it if either of those is ever removed or re-laid-out. */
     overflow: hidden;
   }
 

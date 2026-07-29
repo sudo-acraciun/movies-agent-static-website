@@ -2,6 +2,10 @@
 import Logo from './Logo.astro';
 import { SITE } from '../data/site';
 
+// Runs in frontmatter, so this executes once, at `astro build`, on the build
+// machine's clock, not per request in a browser. The site is static with zero
+// client JS, so this stamps whatever year the site was last built in rather
+// than ticking over live; a redeploy in January is what rolls it forward.
 const year = new Date().getFullYear();
 ---
 
@@ -37,14 +41,14 @@ const year = new Date().getFullYear();
         <a href="#discover">Features</a>
         <a href="#switch">Switching apps</a>
         <a href="#faq">FAQ</a>
-        <a href={SITE.playUrl} rel="noopener">Google Play</a>
+        <a href={SITE.playUrl} target="_blank" rel="noopener">Google Play</a>
       </div>
 
       <div class="col">
         <h3>Legal</h3>
-        <a href={SITE.legal.privacy} rel="noopener">Privacy policy</a>
-        <a href={SITE.legal.terms} rel="noopener">Terms of use</a>
-        <a href={SITE.legal.deleteAccount} rel="noopener">Delete your account</a>
+        <a href={SITE.legal.privacy} target="_blank" rel="noopener">Privacy policy</a>
+        <a href={SITE.legal.terms} target="_blank" rel="noopener">Terms of use</a>
+        <a href={SITE.legal.deleteAccount} target="_blank" rel="noopener">Delete your account</a>
       </div>
 
       <div class="col">

@@ -16,8 +16,10 @@ import assistantShot from '../assets/screenshots/assistant.png';
 import householdShot from '../assets/screenshots/household.png';
 import feedShot from '../assets/screenshots/feed.png';
 
-// Keyed by Feature.id. A screen with no entry here keeps the placeholder
-// path from site.ts, so the page always builds while captures trickle in.
+// Keyed by Feature.id. There is no placeholder fallback: every id in FEATURES
+// must have a matching entry here, or PhoneFrame's `src.width / src.height`
+// runs against undefined and fails the build (Astro renders this page at
+// build time, so that throw happens during `astro build`, not in a browser).
 const SHOTS: Record<string, ImageMetadata> = {
   discover: discoverShot,
   assistant: assistantShot,
