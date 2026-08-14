@@ -55,7 +55,7 @@ export const SITE = {
   // this is the single most-quoted sentence on the site and it is the only
   // one guaranteed to be read.
   definition:
-    'I Like Movies is a free movie and TV tracking app for Android and iOS with an AI assistant that helps you discover what to watch next, share one library with the people you live with, and keep a record of everything you have seen.',
+    'I Like Movies is a free movie and TV app for Android with an AI assistant that helps you discover what to watch next, share one library with the people you live with, and keep a record of everything you have seen. An iPhone version is in development.',
 
   // The meta description is a SEPARATE string, not the definitional sentence.
   // They are built for different readers and cannot be the same text: the
@@ -64,7 +64,7 @@ export const SITE = {
   // mid-clause. This one front-loads the terms someone actually types and
   // stops before the cut.
   metaDescription:
-    'Free movie and TV tracking app for Android and iOS. AI picks from your own ratings, one shared watchlist for your household, and no ads.',
+    'Free movie and TV app for Android. AI picks from your own ratings, one shared watchlist for your household, and no ads. iPhone version in development.',
 
   tagline: 'Everything you have watched. Everything you are going to.',
 

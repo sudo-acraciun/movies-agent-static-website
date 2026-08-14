@@ -51,8 +51,8 @@ const softwareLd = {
   '@type': 'SoftwareApplication',
   name: SITE.name,
   applicationCategory: 'EntertainmentApplication',
-  applicationSubCategory: 'Movie and TV tracking',
-  operatingSystem: 'Android, iOS',
+  applicationSubCategory: 'Movie and TV discovery and tracking',
+  operatingSystem: 'Android',
   url: SITE.url,
   downloadUrl: SITE.playUrl,
   installUrl: SITE.playUrl,
@@ -122,12 +122,15 @@ const siteLd = {
 
   "tracker" rather than only "tracking app": both are searched, the page said
   "tracking" six times and "tracker" zero, and the two do not match each other
-  automatically.
+  automatically. "Find what to watch" leads because discovery is the brand
+  identity; "iOS" is absent because the app is Android-only until the App
+  Store release.
 
-  61 characters, which fits the roughly 600px Google renders before it cuts.
+  72 characters: Google cuts around 600px, so the brand tail may truncate.
+  Acceptable while the brand has no search volume of its own.
 */}
 <Layout
-  title="Free movie and TV tracker for Android and iOS | I Like Movies"
+  title="Find what to watch: AI movie and TV tracker for Android | I Like Movies"
   description={SITE.metaDescription}
   path="/"
   jsonLd={[softwareLd, faqLd, siteLd]}

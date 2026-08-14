@@ -69,7 +69,7 @@ const ogSvg = `
   <rect x="84" y="466" width="180" height="6" rx="3" fill="url(#rule)"/>
 
   <text x="84" y="546" fill="#94A3B8" font-family="Segoe UI, Helvetica, Arial, sans-serif"
-        font-size="31" font-weight="500">Free movie and TV tracking for Android and iOS</text>
+        font-size="31" font-weight="500">Find what to watch, together. Free on Android.</text>
 </svg>`;
 
 async function main() {
@@ -89,7 +89,7 @@ async function main() {
         name: 'I Like Movies',
         short_name: 'I Like Movies',
         description:
-          'Free movie and TV tracking app for Android and iOS. Discover what to watch, share one library with your household, and track everything you have seen.',
+          'Free movie and TV app for Android. Discover what to watch with an AI assistant, share one library with your household, and track everything you have seen.',
         start_url: '/',
         display: 'browser',
         background_color: '#0A0D14',
