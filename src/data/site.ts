@@ -83,10 +83,18 @@ export const SITE = {
     'https://play.google.com/store/apps/details?id=com.moviesagent.app&referrer=utm_source%3Dilikemovies.app',
   appStoreUrl: null as string | null,
 
+  // Root-relative, and on this domain since the migration off
+  // sudo-acraciun.github.io/movienight. That host still serves the documents
+  // as redirect stubs, because the URL is compiled into every app build that
+  // has not taken an over-the-air update, and those installs never stop
+  // existing on their own.
+  //
+  // deleteAccount is the URL in Play Console's data-deletion field, so its
+  // slug cannot be renamed here alone.
   legal: {
-    privacy: 'https://sudo-acraciun.github.io/movienight/privacy-policy.html',
-    terms: 'https://sudo-acraciun.github.io/movienight/terms.html',
-    deleteAccount: 'https://sudo-acraciun.github.io/movienight/delete-account.html',
+    privacy: '/privacy',
+    terms: '/terms',
+    deleteAccount: '/delete-account',
   },
 } as const;
 

@@ -38,17 +38,22 @@ const year = new Date().getFullYear();
         {/* "App" labelled a column of page anchors, which is not what an app
             is. These are places on this page plus the store link. */}
         <h3>Explore</h3>
-        <a href="#discover">Features</a>
-        <a href="#switch">Switching apps</a>
-        <a href="#faq">FAQ</a>
+        {/* Root-relative, not bare fragments: this footer is shared with the
+            legal pages, where "#faq" would resolve against /privacy. */}
+        <a href="/#discover">Features</a>
+        <a href="/#switch">Switching apps</a>
+        <a href="/#faq">FAQ</a>
         <a href={SITE.playUrl} target="_blank" rel="noopener">Google Play</a>
       </div>
 
       <div class="col">
+        {/* No target="_blank" since these moved onto this domain. Forcing a
+            new tab is for leaving the site, and a legal page the reader can
+            back out of is the better behaviour now that it is one of ours. */}
         <h3>Legal</h3>
-        <a href={SITE.legal.privacy} target="_blank" rel="noopener">Privacy policy</a>
-        <a href={SITE.legal.terms} target="_blank" rel="noopener">Terms of use</a>
-        <a href={SITE.legal.deleteAccount} target="_blank" rel="noopener">Delete your account</a>
+        <a href={SITE.legal.privacy}>Privacy policy</a>
+        <a href={SITE.legal.terms}>Terms of use</a>
+        <a href={SITE.legal.deleteAccount}>Delete your account</a>
       </div>
 
       <div class="col">

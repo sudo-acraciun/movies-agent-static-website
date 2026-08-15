@@ -1,0 +1,42 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+
+// Ported verbatim from sudo-acraciun.github.io/movienight/delete-account.html.
+// This URL is what Play Console's "Data deletion" field points at, so its slug
+// is load-bearing: changing it later means editing the Console entry too.
+---
+
+<LegalLayout
+  title="Delete Your Account | I Like Movies"
+  description="How to permanently delete your I Like Movies account and everything tied to it, from inside the app or by email."
+  path="/delete-account"
+  heading="Delete your account"
+  updated="23 June 2026"
+>
+  <p>
+    You can permanently delete your I Like Movies account and the data tied to it at any time.
+    Deletion is immediate and cannot be undone.
+  </p>
+
+  <h2>From inside the app (fastest)</h2>
+  <p>
+    Open the app and go to <strong>Settings → Delete Account</strong>, then confirm. Your account
+    and its data are erased right away.
+  </p>
+
+  <h2>If you can't sign in</h2>
+  <p>
+    Email <a href="mailto:ilikemovies.review@gmail.com">ilikemovies.review@gmail.com</a> from the
+    address tied to your account and ask us to delete it. We'll confirm your request and remove your
+    account within 30 days.
+  </p>
+
+  <h2>What gets deleted</h2>
+  <p>
+    Everything tied to your account: your profile, ratings, reviews, notes, lists, watchlist, friend
+    connections, household membership, messages to the assistant, and any photos you uploaded.
+    Residual copies in encrypted backups are removed on the normal backup rotation (within 30 days).
+  </p>
+
+  <p>See our <a href="/privacy">Privacy Policy</a> for full details on the data we hold.</p>
+</LegalLayout>

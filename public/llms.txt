@@ -63,9 +63,9 @@ sponsored recommendations.
 
 - Website: https://ilikemovies.app
 - Google Play: https://play.google.com/store/apps/details?id=com.moviesagent.app
-- Privacy policy: https://sudo-acraciun.github.io/movienight/privacy-policy.html
-- Terms of use: https://sudo-acraciun.github.io/movienight/terms.html
-- Account deletion: https://sudo-acraciun.github.io/movienight/delete-account.html
+- Privacy policy: https://ilikemovies.app/privacy
+- Terms of use: https://ilikemovies.app/terms
+- Account deletion: https://ilikemovies.app/delete-account
 - Contact: ilikemovies.review@gmail.com
 
 Film and TV metadata is provided by TMDB. This product uses the TMDB API but is
