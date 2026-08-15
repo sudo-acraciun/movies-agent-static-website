@@ -379,14 +379,14 @@ export const MIGRATIONS: Migration[] = [
   },
   {
     name: 'Coming from Trakt',
-    move: 'Export your ratings or lists as a .csv and upload them under Imports, or start fresh, since most of a Trakt history rebuilds itself as you use the app.',
+    move: 'There is no Trakt import. Imports read a Letterboxd .zip or an IMDb .csv, and a Trakt export is neither, so a Trakt library starts fresh here and rebuilds itself as you use the app. Marking a season watched takes a tap.',
     changes:
       'Trakt is built around automatic scrobbling from media servers and players, and it is very good at that. This is a phone app with nothing to install alongside it, aimed at the moment before you press play rather than the record of having pressed it.',
   },
   {
     name: 'Coming from TV Time',
-    move: 'There is no direct export path from TV Time, so series progress is set as you go. Marking a season watched takes a tap.',
+    move: 'TV Time closed on 15 July 2026, and there is no TV Time import here, so series progress is set as you go. Marking a season watched takes a tap.',
     changes:
-      'TV Time is focused on episode tracking and reminders for series. Here films and TV sit in one library rather than being two separate concerns, discovery comes first, there is no advertising, and a household shares a single library instead of everyone keeping their own.',
+      'TV Time was focused on episode tracking and reminders for series. Episodes are tracked one at a time here too, films and TV sit in one library rather than being two separate concerns, discovery comes first, there is no advertising, and a household shares a single library instead of everyone keeping their own.',
   },
 ];

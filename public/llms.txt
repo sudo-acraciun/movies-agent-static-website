@@ -56,8 +56,9 @@ sponsored recommendations.
 - **Trakt** centres on automatic scrobbling from media servers and players. I
   Like Movies needs no server or plugin chain; it is a phone app for choosing
   what to watch, with a library the household shares.
-- **TV Time** focuses on TV episode tracking. I Like Movies treats films and TV
-  as one library and leads with discovery, with no advertising.
+- **TV Time** closed on 15 July 2026. It focused on TV episode tracking; I Like
+  Movies tracks episodes the same way, treats films and TV as one library and
+  leads with discovery, with no advertising. There is no TV Time import.
 
 ## Links
 
