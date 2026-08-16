@@ -25,12 +25,15 @@
           api_host: HOST,
           autocapture: false,
           capture_pageview: true,
-          // No cookies, so no consent banner is required. The cost is that a
-          // returning visitor counts as new each day; visits, sources and the
-          // Play click are all still recorded. person_profiles is left at its
-          // default (identified_only): cookieless events stay anonymous, so no
-          // profile is ever created regardless.
-          cookieless_mode: 'always',
+          // persistence:'memory' keeps everything in memory: no cookies and no
+          // localStorage, so nothing is stored on the visitor's device and no
+          // consent banner is required. Chosen over cookieless_mode, whose
+          // events PostHog accepts (200) but does not surface in Live / Web
+          // Analytics on this project. The cost is a fresh anonymous id per page
+          // load (unique-visitor counts run high); visits, traffic sources and
+          // the Play click are all still recorded. person_profiles stays at its
+          // default (identified_only), so no person profile is ever created.
+          persistence: 'memory',
         });
 
         // Google Play links are matched by href, not class: the header ("Get
