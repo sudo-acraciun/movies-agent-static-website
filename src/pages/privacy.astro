@@ -1,11 +1,12 @@
 ---
 import LegalLayout from '../layouts/LegalLayout.astro';
 
-// Text ported verbatim from the published policy at
-// sudo-acraciun.github.io/movienight/privacy-policy.html. The only edits are
-// the two self-referencing links, which now point at this site. The effective
-// date is deliberately unchanged: moving a document to a new address is not a
-// change of practices, and bumping the date would claim that it was.
+// Text ported from the published app policy at
+// sudo-acraciun.github.io/movienight/privacy-policy.html, with the two
+// self-referencing links pointing at this site. It also carries a "Website
+// analytics" section that the app copy does not: this site runs PostHog
+// (cookieless) while the app does not, so the two policies deliberately
+// diverge on that one point. The date is bumped for that added disclosure.
 ---
 
 <LegalLayout
@@ -13,7 +14,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
   description="What I Like Movies collects, why, who processes it, and how to access, export or delete your data."
   path="/privacy"
   heading="Privacy Policy"
-  updated="27 July 2026"
+  updated="16 August 2026"
 >
   <p>
     I Like Movies (the "app") is a movie-tracking and recommendation app operated by Alexandru
@@ -72,8 +73,8 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 
   <h2>Who we share data with</h2>
   <p>
-    We use a small number of trusted service providers to run the app. We do not sell your data or
-    use it for advertising.
+    We use a small number of trusted service providers to run the app and this website. We do not
+    sell your data or use it for advertising.
   </p>
   <div class="table-scroll">
     <table>
@@ -102,6 +103,13 @@ import LegalLayout from '../layouts/LegalLayout.astro';
       </tr>
       <tr><td>Expo</td><td>Delivers push notifications to your device.</td></tr>
       <tr><td>Sentry</td><td>Collects crash and error diagnostics so we can fix problems.</td></tr>
+      <tr>
+        <td>PostHog</td>
+        <td>
+          Cookieless analytics for this website (ilikemovies.app) only: visit counts and where
+          visitors arrived from, processed in the European Union.
+        </td>
+      </tr>
     </table>
   </div>
 
@@ -111,6 +119,16 @@ import LegalLayout from '../layouts/LegalLayout.astro';
     Sentry and Expo) are based in the United States, so providing the app may involve transferring
     some data there. Where that happens, we rely on those providers' standard data-protection
     safeguards.
+  </p>
+
+  <h2>Website analytics</h2>
+  <p>
+    This website (ilikemovies.app), as distinct from the app, uses PostHog to understand how many
+    people visit, where they arrived from, and whether they tap through to Google Play. It runs
+    without cookies: it stores nothing on your device, does not track you across other sites, and
+    does not build a profile that identifies you. We do not use any of it for advertising and we do
+    not sell it. PostHog processes this for us in the European Union (Frankfurt) under a
+    data-processing agreement.
   </p>
 
   <h2>How long we keep it</h2>

@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../data/site';
+import Analytics from '../components/Analytics.astro';
 
 interface Props {
   title: string;
@@ -70,6 +71,8 @@ const ogImage = new URL('/og-image.png', SITE.url).href;
         <script is:inline type="application/ld+json" set:html={JSON.stringify(block)} />
       ))
     }
+
+    <Analytics />
   </head>
   <body>
     <slot />
