@@ -67,7 +67,7 @@ sponsored recommendations.
 - Privacy policy: https://ilikemovies.app/privacy
 - Terms of use: https://ilikemovies.app/terms
 - Account deletion: https://ilikemovies.app/delete-account
-- Contact: ilikemovies.review@gmail.com
+- Contact: hi@ilikemovies.app
 
 Film and TV metadata is provided by TMDB. This product uses the TMDB API but is
 not endorsed or certified by TMDB.

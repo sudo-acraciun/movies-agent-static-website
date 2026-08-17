@@ -41,7 +41,7 @@ export const SITE = {
   // and the Play Console listing. Four surfaces naming different addresses
   // splits the entity, which is the one signal a small brand cannot afford to
   // fragment. Change this and change all four in the same pass.
-  supportEmail: 'ilikemovies.review@gmail.com',
+  supportEmail: 'hi@ilikemovies.app',
 
   // Operator jurisdiction, kept identical to the governing-law clause in the
   // published terms. Stating it is an entity signal that search engines and
