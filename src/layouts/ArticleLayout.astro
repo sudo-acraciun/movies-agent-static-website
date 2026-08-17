@@ -1,0 +1,174 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { DISCLOSURE } from '../data/comparisons';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path only, forwarded to Layout for the canonical + og:url tags. */
+  path: string;
+  /** The visible H1. Separate from `title`, which carries the brand suffix. */
+  heading: string;
+  /** Extra JSON-LD blocks, forwarded to Layout. */
+  jsonLd?: unknown[];
+}
+
+const { title, description, path, heading, jsonLd = [] } = Astro.props;
+---
+
+<Layout title={title} description={description} path={path} jsonLd={jsonLd}>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <Header />
+  <main id="main" tabindex="-1" class="article">
+    <div class="wrap">
+      <h1>{heading}</h1>
+      {/* The developer-conflict disclosure sits before any claim, on every
+          editorial page, by construction: it is part of the layout, so a page
+          cannot forget it. See the note on DISCLOSURE in comparisons.ts. */}
+      <p class="disclosure">{DISCLOSURE}</p>
+      <slot />
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style is:global>
+  /*
+    is:global with every selector prefixed .article, for the same reason
+    LegalLayout does it: scoped styles cannot reach the page content that
+    arrives through the <slot>.
+  */
+  .article {
+    padding: clamp(48px, 7vw, 80px) 0 clamp(64px, 9vw, 96px);
+  }
+
+  .article .wrap {
+    max-width: 760px;
+  }
+
+  /* The global h1 clamp is sized for the hero, not an article headline. */
+  .article h1 {
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+  }
+
+  .article .disclosure {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    border-left: 3px solid var(--gold);
+    padding: 10px 16px;
+    margin: 22px 0 34px;
+    background: var(--ink-raised);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  .article h2 {
+    font-size: clamp(1.35rem, 2.6vw, 1.7rem);
+    margin: 46px 0 14px;
+  }
+
+  .article h3 {
+    margin: 26px 0 8px;
+  }
+
+  .article p,
+  .article li {
+    color: var(--text-body);
+  }
+
+  .article ul {
+    padding-left: 22px;
+    margin: 0 0 1rem;
+  }
+
+  .article li {
+    margin: 6px 0;
+  }
+
+  .article a {
+    color: var(--gold);
+    text-underline-offset: 3px;
+  }
+
+  /* Same scroll-container pattern as the legal sub-processor table: the
+     feature table must survive 360px without the page scrolling sideways. */
+  .article .table-scroll {
+    overflow-x: auto;
+    margin: 0 0 1rem;
+  }
+
+  .article table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .article th,
+  .article td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--ink-border);
+    vertical-align: top;
+    color: var(--text-body);
+  }
+
+  .article th {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  /* FAQ styling mirrors the homepage FAQ: details/summary, no JS. */
+  .article details {
+    border-bottom: 1px solid var(--ink-border);
+    padding: 4px 0;
+  }
+
+  .article summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text);
+    padding: 12px 0;
+    list-style-position: outside;
+  }
+
+  .article .cta-row {
+    margin: 40px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .article .cta-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 700;
+    /* The page body's 1.65 line-height is for paragraphs; inherited into a
+       pill button it inflates the text box and the label sits visibly off
+       centre. 1.15 matches the store buttons. */
+    line-height: 1.15;
+    padding: 14px 24px;
+    border-radius: 999px;
+    color: var(--ink);
+    background: linear-gradient(135deg, var(--gold), var(--ember));
+  }
+
+  /* The honest-warning panel: used for "there is no importer" and similar
+     expectation-setting. Deliberately louder than body copy; its whole job
+     is to be read before an install happens. */
+  .article .plain-panel {
+    border: 1px solid var(--ink-border);
+    border-left: 3px solid var(--ember);
+    background: var(--ink-raised);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 14px 18px;
+    margin: 0 0 1rem;
+  }
+
+  .article .plain-panel p {
+    margin: 0;
+  }
+</style>

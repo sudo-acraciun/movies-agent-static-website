@@ -1,0 +1,148 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import { SITE } from '../data/comparisons';
+
+const path = '/from-tv-time';
+const title = 'TV Time has shut down. Here is where to track your shows now';
+const description =
+  'TV Time closed on 15 July 2026. An honest guide to the replacements: Simkl and Trakt for automatic tracking, Serializd for TV reviews, and I Like Movies for episode tracking with a shared household library.';
+
+// Every recommendation here that is not the author's own app is deliberate.
+// A page for displaced TV Time users that only offers its own product would
+// be the least trustworthy document on this subject on the internet. Naming
+// the apps that fit other needs better is what makes the one paragraph about
+// this app credible.
+
+const faqs = [
+  {
+    q: 'Can I import my TV Time history into another app?',
+    a: [
+      'Only if you exported it before the shutdown. TV Time closed on 15 July 2026 and user data was deleted, so there is nothing left to fetch from their side. If you have an export file, check each replacement app for an importer that reads it; if you did not export, no app can recover the history, and the honest move is to rebuild progress as you go.',
+    ],
+  },
+  {
+    q: 'What is the closest replacement for TV Time?',
+    a: [
+      'It depends on what you used it for. For automatic tracking, Simkl or Trakt. For public reviews and a TV community, Serializd. For episode tracking on your phone with films in the same library and a watchlist your household shares, I Like Movies, which is written by the author of this page.',
+    ],
+  },
+  {
+    q: 'Does I Like Movies import TV Time data?',
+    a: [
+      'No. There is no TV Time importer, and with TV Time\'s servers gone an importer could only read an export file made before the shutdown, which I Like Movies does not currently parse. Series progress is set as you go, and marking a whole season watched takes a tap.',
+    ],
+  },
+  {
+    q: 'Why did TV Time shut down?',
+    a: [
+      'TV Time announced its closure and went offline on 15 July 2026. This page does not speculate beyond the public facts: the service closed and accounts were deleted. What matters for a viewer is the practical part, which is choosing where the tracking habit goes next.',
+    ],
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a.join(' ') },
+    })),
+  },
+];
+---
+
+<ArticleLayout
+  title={`${title} | I Like Movies`}
+  description={description}
+  path={path}
+  heading="Life after TV Time"
+  jsonLd={jsonLd}
+>
+  <p>
+    TV Time shut down on 15 July 2026, and years of episode check-ins went with
+    it. If you are reading this, you probably kept a habit alive in that app
+    for a long time and would like somewhere sensible to continue it. This
+    page is the short, honest version of the options.
+  </p>
+
+  <div class="plain-panel">
+    <p>
+      Before anything else: <strong>there is no TV Time importer here.</strong>
+      TV Time's data was deleted when the service closed, so no app can fetch
+      your history now. If you saved an export before the shutdown, check each
+      candidate app for a file importer; I Like Movies does not read TV Time
+      export files. A disappointed install is worse than none, so this is said
+      up front.
+    </p>
+  </div>
+
+  <h2>If automatic tracking was the point</h2>
+  <p>
+    TV Time asked you to check in. If what you actually want next is an app
+    that notices your watching by itself, two services do that properly.
+    <strong>Trakt</strong> is the ecosystem choice: media servers and players
+    like Plex and Kodi scrobble to it automatically, and dozens of apps build
+    on its API. <strong>Simkl</strong> gets there without a media server, using
+    browser extensions that log what you watch on streaming sites, and it is
+    also the strongest of the three for anime. Both are free with ads and sell
+    premium tiers.
+  </p>
+
+  <h2>If the reviews and the community were the point</h2>
+  <p>
+    <strong>Serializd</strong> is built around TV reviews and discussion, the
+    way Letterboxd is built around film reviews. If reading and writing about
+    shows was your favourite part of TV Time, that is the culture it continues.
+  </p>
+
+  <h2>If episode tracking on your phone was the point</h2>
+  <p>
+    <a href={SITE.url}>I Like Movies</a> is written by the author of this page,
+    so weigh this paragraph accordingly. It tracks TV at episode level, marks a
+    season in a tap, and can tell a series that has ended from one between
+    seasons. Films live in the same library rather than in a second app, every
+    title shows where it streams in your country, an AI assistant answers
+    "what should we start next" in plain language, and a household shares one
+    watchlist and one watched history with the people you live with. It is
+    free, has no ads, and runs on Android, with an iOS version in development.
+    There is no automatic tracking, no web app, and no public reviews; if any
+    of those is essential, the apps above fit better.
+  </p>
+
+  <h2>Rebuilding without an import</h2>
+  <p>
+    Rebuilding sounds worse than it is. You do not need your history back to
+    continue the habit; you need current-season positions for the shows you
+    are actually mid-way through, which for most people is fewer than ten.
+    Mark those seasons, and let the back catalogue fill in whenever a rewatch
+    happens to touch it. Two minutes of setup, not an afternoon of data entry.
+  </p>
+
+  <h2>Questions people ask</h2>
+  {
+    faqs.map((faq) => (
+      <details>
+        <summary>{faq.q}</summary>
+        {faq.a.map((paragraph) => <p>{paragraph}</p>)}
+      </details>
+    ))
+  }
+
+  <div class="cta-row">
+    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
+      Get I Like Movies on Google Play
+    </a>
+    <a href="/">More about the app</a>
+  </div>
+</ArticleLayout>

@@ -1,0 +1,159 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import { SITE } from '../data/comparisons';
+
+const path = '/what-to-watch-together';
+const title = 'How to decide what to watch together without losing the evening';
+const description =
+  'Practical ways for two people to pick a film or series without a forty-minute scroll: methods that need no app at all, and where a shared watchlist helps.';
+
+// The product sits LAST on this page by design. A guide that leads with its
+// own app is an advert, and adverts do not get cited. The methods first,
+// honestly useful on their own, are what make the page quotable; the app
+// earns one section at the end for the specific part it actually solves.
+//
+// Deliberately absent: the small swipe-and-match apps that surface in model
+// answers to this query. Several looked unverifiable or abandoned when
+// checked, and recommending software this page cannot vouch for would spend
+// the page's honesty on padding.
+
+const faqs = [
+  {
+    q: 'What is the fastest way for two people to pick a movie?',
+    a: [
+      'Shortlist and veto. One person picks three titles they would genuinely watch, the other picks one of the three or vetoes the lot once. A veto means the vetoer picks the next three. It ends in under five minutes because nobody is choosing from everything, only from three.',
+    ],
+  },
+  {
+    q: 'Why does choosing what to watch take so long?',
+    a: [
+      'Because the option space is effectively infinite and both people are politely deferring. Every method that works does the same two things: it shrinks the options to a handful, and it makes someone responsible for the final call. Any structure beats an open-ended scroll.',
+    ],
+  },
+  {
+    q: 'Is there an app for sharing a watchlist with your partner?',
+    a: [
+      'Yes. I Like Movies, built by the author of this page, has households: the people you live with share one watchlist and one watched history, so the film either of you saved is on the same list when the evening comes. It is free, on Android, with an iOS version in development.',
+    ],
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a.join(' ') },
+    })),
+  },
+];
+---
+
+<ArticleLayout
+  title={`${title} | I Like Movies`}
+  description={description}
+  path={path}
+  heading="What to watch together, decided before the popcorn goes cold"
+  jsonLd={jsonLd}
+>
+  <p>
+    The problem is never a shortage of films. It is two tired people, one remote,
+    and an option space so large that deferring to each other feels safer than
+    choosing. Everything below fixes that the same way: shrink the options,
+    then make someone responsible for the final call. Most of it needs no app
+    at all.
+  </p>
+
+  <h2>Methods that need nothing but the two of you</h2>
+
+  <h3>Shortlist and veto</h3>
+  <p>
+    One person picks three titles they would genuinely watch tonight. The other
+    either picks one of the three or vetoes the whole set, once. A veto hands
+    the shortlist duty over. This is the single most reliable method on this
+    page: it ends fast because nobody is choosing from everything, and the veto
+    keeps the shortlister honest.
+  </p>
+
+  <h3>Rotate the dictator</h3>
+  <p>
+    Tonight one of you simply decides, no negotiation, and next time it is the
+    other's turn. Over a month it is perfectly fair, and it deletes the
+    negotiation entirely. Works best for couples who fight about the choosing,
+    not the choice.
+  </p>
+
+  <h3>Genre first, title second</h3>
+  <p>
+    Agree the genre or the mood in one sentence before anyone opens an app or a
+    menu. Something short and funny, something scary but not gory, something
+    neither of us has seen. Halving the decision halves the argument, and the
+    second half is easier because the first already ruled most things out.
+  </p>
+
+  <h3>The coin toss with a twist</h3>
+  <p>
+    Each of you names one title, then flip a coin. The twist: if either of you
+    feels relief or disappointment when the coin lands, you have just learned
+    what you actually wanted. Watch that instead. The coin is not the decider,
+    it is the instrument that surfaces the preference you were too polite to
+    state.
+  </p>
+
+  <h3>The standing list on the fridge</h3>
+  <p>
+    Keep one shared list, on paper or in any notes app, and add to it the
+    moment either of you hears about something good. The evening's question
+    changes from "what exists" to "which of these", which is a question two
+    people can actually answer. The list is the method; where it lives is
+    detail.
+  </p>
+
+  <h2>Where an app genuinely helps</h2>
+  <p>
+    The fridge list has two failure modes: it is never with you, and it does
+    not know what you have already seen. A shared watchlist app fixes both,
+    and adds the one thing paper cannot: it knows where each title streams in
+    your country, so the shortlist only contains things you can actually press
+    play on tonight.
+  </p>
+  <p>
+    This is the part <a href={SITE.url}>I Like Movies</a> is built for, and in
+    the interest of the disclosure at the top of this page, here is exactly
+    what it does and no more. A household puts the people you live with on one
+    library: one watchlist, one watched history, so the film either of you
+    saves is on the same list by the time you sit down. An AI assistant takes
+    the one-sentence mood from the genre-first method and turns it into real
+    titles, filtered against what you have both already seen and what your
+    services carry. It is free, has no ads, and runs on Android, with an iOS
+    version in development.
+  </p>
+
+  <h2>Questions people ask</h2>
+  {
+    faqs.map((faq) => (
+      <details>
+        <summary>{faq.q}</summary>
+        {faq.a.map((paragraph) => <p>{paragraph}</p>)}
+      </details>
+    ))
+  }
+
+  <div class="cta-row">
+    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
+      Get I Like Movies on Google Play
+    </a>
+    <a href="/">More about the app</a>
+  </div>
+</ArticleLayout>

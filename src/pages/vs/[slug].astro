@@ -1,0 +1,120 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { COMPARISONS, NOT_DO, SITE } from '../../data/comparisons';
+
+export function getStaticPaths() {
+  return COMPARISONS.map((comparison) => ({
+    params: { slug: comparison.slug },
+    props: { comparison },
+  }));
+}
+
+const { comparison: c } = Astro.props;
+const path = `/vs/${c.slug}`;
+
+// Article + FAQPage only. Never Review or aggregateRating: the developer
+// scoring his own product would be a lie a parser can read, and the
+// disclosure at the top of the page says as much in prose.
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: c.h1,
+    description: c.metaDescription,
+    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: c.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a.join(' ') },
+    })),
+  },
+];
+---
+
+<ArticleLayout
+  title={c.title}
+  description={c.metaDescription}
+  path={path}
+  heading={c.h1}
+  jsonLd={jsonLd}
+>
+  {c.intro.map((paragraph) => <p>{paragraph}</p>)}
+
+  <h2>Where {c.competitor} is better</h2>
+  {
+    c.betterThere.map((point) => (
+      <>
+        <h3>{point.title}</h3>
+        <p>{point.body}</p>
+      </>
+    ))
+  }
+
+  <h2>What is different in I Like Movies</h2>
+  {
+    c.differences.map((point) => (
+      <>
+        <h3>{point.title}</h3>
+        <p>{point.body}</p>
+      </>
+    ))
+  }
+
+  <h2>Feature by feature</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Feature</th>
+          <th scope="col">I Like Movies</th>
+          <th scope="col">{c.competitor}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          c.table.map((row) => (
+            <tr>
+              <th scope="row">{row.feature}</th>
+              <td>{row.ilm}</td>
+              <td>{row.other}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Moving your library</h2>
+  {c.migration.map((paragraph) => <p>{paragraph}</p>)}
+
+  <h2>What I Like Movies does not do</h2>
+  <ul>
+    {NOT_DO.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <h2>The honest verdict</h2>
+  {c.verdict.map((paragraph) => <p>{paragraph}</p>)}
+
+  <h2>Questions people ask</h2>
+  {
+    c.faqs.map((faq) => (
+      <details>
+        <summary>{faq.q}</summary>
+        {faq.a.map((paragraph) => <p>{paragraph}</p>)}
+      </details>
+    ))
+  }
+
+  <div class="cta-row">
+    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
+      Get I Like Movies on Google Play
+    </a>
+    <a href="/">More about the app</a>
+  </div>
+</ArticleLayout>
