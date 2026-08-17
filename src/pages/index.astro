@@ -284,6 +284,32 @@ const siteLd = {
         <StoreButtons size="large" align="center" />
       </div>
     </section>
+
+    {/* There's An AI For That verification badge.
+
+        Deliberately NOT in the shared Header/Footer: TAAFT verifies the single
+        page that carries this embed, and a shared component would place it on
+        all six pages and let the crawler verify the wrong one. It lives here,
+        inside <main> on the homepage only.
+
+        Do not remove or hide it once verified: TAAFT re-checks for it and
+        un-verifies the listing if it disappears, and hiding it breaks their
+        terms. */}
+    <section class="taaft-strip" aria-label="Verification">
+      <div class="wrap">
+        <a
+          href="https://theresanaiforthat.com/ai/i-like-movies/?ref=featured&v=12297105"
+          target="_blank"
+          rel="nofollow noopener"
+        >
+          <img
+            width="300"
+            src="https://media.theresanaiforthat.com/featured-on-taaft.png?width=600"
+            alt="Featured on There's An AI For That"
+          />
+        </a>
+      </div>
+    </section>
   </main>
 
   <Footer />
@@ -489,5 +515,26 @@ const siteLd = {
   .cta-card .lede {
     max-width: 52ch;
     margin: 0 auto 32px;
+  }
+
+  /* Verification badge ---------------------------------------------------- */
+
+  /* Quiet strip, not another call to action: a hairline above it separates it
+     from the final CTA, and the modest padding keeps it from reading as a
+     second footer. The image carries its own 300px intrinsic width; the global
+     img rule caps it at the viewport on narrow screens. */
+  .taaft-strip {
+    padding: clamp(28px, 4vw, 40px) 0;
+    border-top: 1px solid var(--ink-border);
+    text-align: center;
+  }
+
+  .taaft-strip a {
+    display: inline-block;
+  }
+
+  .taaft-strip img {
+    margin: 0 auto;
+    height: auto;
   }
 </style>
