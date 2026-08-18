@@ -3,10 +3,10 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 
 // Text ported from the published app policy at
 // sudo-acraciun.github.io/movienight/privacy-policy.html, with the two
-// self-referencing links pointing at this site. It also carries a "Website
-// analytics" section that the app copy does not: this site runs PostHog
-// (cookieless) while the app does not, so the two policies deliberately
-// diverge on that one point. The date is bumped for that added disclosure.
+// self-referencing links pointing at this site. Both the app and this
+// website run PostHog (EU, cookieless / no free-text content): the site
+// for visit analytics, the app for product-usage analytics. The
+// "Analytics" section and the App-interactions disclosure cover both.
 ---
 
 <LegalLayout
@@ -14,7 +14,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
   description="What I Like Movies collects, why, who processes it, and how to access, export or delete your data."
   path="/privacy"
   heading="Privacy Policy"
-  updated="16 August 2026"
+  updated="18 August 2026"
 >
   <p>
     I Like Movies (the "app") is a movie-tracking and recommendation app operated by Alexandru
@@ -55,6 +55,13 @@ import LegalLayout from '../layouts/LegalLayout.astro';
       <strong>Technical data</strong> — your IP address and basic request logs, used to keep the
       service running, secure, and free of abuse.
     </li>
+    <li>
+      <strong>How you use the app</strong> — which screens you open and the actions you take (for
+      example rating a title, adding to your watchlist, running a search, or sending an assistant
+      message), tied to your account. Used to understand how the app is used so we can improve it.
+      We never attach the <em>content</em> of what you write — no search terms, note or list text,
+      or message text.
+    </li>
   </ul>
   <p>
     We do <strong>not</strong> access your phone's contacts, and we do not collect location beyond
@@ -68,6 +75,10 @@ import LegalLayout from '../layouts/LegalLayout.astro';
     <li>
       <strong>Notifications and other optional features</strong> — your consent, which you can
       withdraw at any time.
+    </li>
+    <li>
+      <strong>To understand and improve the app</strong> — our legitimate interests, using
+      privacy-preserving analytics that hold no free-text content.
     </li>
   </ul>
 
@@ -106,8 +117,9 @@ import LegalLayout from '../layouts/LegalLayout.astro';
       <tr>
         <td>PostHog</td>
         <td>
-          Cookieless analytics for this website (ilikemovies.app) only: visit counts and where
-          visitors arrived from, processed in the European Union.
+          Analytics, processed in the European Union: cookieless visit counts and referrers for
+          this website, and product-usage events (which features you use, never their content) in
+          the app.
         </td>
       </tr>
     </table>
@@ -121,14 +133,22 @@ import LegalLayout from '../layouts/LegalLayout.astro';
     safeguards.
   </p>
 
-  <h2>Website analytics</h2>
+  <h2>Analytics</h2>
   <p>
-    This website (ilikemovies.app), as distinct from the app, uses PostHog to understand how many
-    people visit, where they arrived from, and whether they tap through to Google Play. It runs
-    without cookies: it stores nothing on your device, does not track you across other sites, and
-    does not build a profile that identifies you. We do not use any of it for advertising and we do
-    not sell it. PostHog processes this for us in the European Union (Frankfurt) under a
-    data-processing agreement.
+    This website (ilikemovies.app) uses PostHog to understand how many people visit, where they
+    arrived from, and whether they tap through to Google Play. It runs without cookies: it stores
+    nothing on your device, does not track you across other sites, and does not build a profile that
+    identifies you.
+  </p>
+  <p>
+    The app uses PostHog to understand which features people use — for example how many titles get
+    rated or added to a watchlist — so we can improve it. These events are tied to your account by a
+    numeric id only; they never carry the content of what you write (no search terms, notes, list
+    names, or message text). You can ask us to stop associating this with your account at any time.
+  </p>
+  <p>
+    We do not use any of this for advertising and we do not sell it. PostHog processes it for us in
+    the European Union (Frankfurt) under a data-processing agreement.
   </p>
 
   <h2>How long we keep it</h2>
