@@ -7,8 +7,8 @@
 // Provenance: the Marvel and Star Wars lists mirror the app's curated
 // franchise tracks (movies-agent-be cmd/seed_franchises, every TMDB id
 // verified there), so the site and the app answer with the same catalogue.
-// Dune has no in-app track; its list is curated here, which is why that
-// page's CTA stays generic instead of claiming a track that does not exist.
+// Dune's track was seeded 2026-08-18 (Villeneuve saga + Prophecy); the page's
+// hasAppTrack flag exists for any future franchise page that lacks one.
 //
 // Editorial rules on top of the site-wide ones (no em dashes, only true
 // claims): series sit in release order at their FIRST season's date, stated
@@ -409,7 +409,7 @@ export const WATCH_ORDERS: WatchOrder[] = [
         ],
       },
     ],
-    hasAppTrack: false,
+    hasAppTrack: true,
     faqs: [
       {
         q: 'Do I need to watch the 1984 Dune before the new movies?',
