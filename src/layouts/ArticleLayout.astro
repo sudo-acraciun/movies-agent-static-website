@@ -13,9 +13,15 @@ interface Props {
   heading: string;
   /** Extra JSON-LD blocks, forwarded to Layout. */
   jsonLd?: unknown[];
+  /**
+   * The developer-conflict disclosure is comparison-specific. Pages that make
+   * no head-to-head claim (the changelog) pass false to suppress it, rather
+   * than rendering a disclaimer for a claim they never make.
+   */
+  disclosure?: boolean;
 }
 
-const { title, description, path, heading, jsonLd = [] } = Astro.props;
+const { title, description, path, heading, jsonLd = [], disclosure = true } = Astro.props;
 ---
 
 <Layout title={title} description={description} path={path} jsonLd={jsonLd}>
@@ -24,10 +30,11 @@ const { title, description, path, heading, jsonLd = [] } = Astro.props;
   <main id="main" tabindex="-1" class="article">
     <div class="wrap">
       <h1>{heading}</h1>
-      {/* The developer-conflict disclosure sits before any claim, on every
-          editorial page, by construction: it is part of the layout, so a page
-          cannot forget it. See the note on DISCLOSURE in comparisons.ts. */}
-      <p class="disclosure">{DISCLOSURE}</p>
+      {/* On comparison pages the developer-conflict disclosure sits before any
+          claim, by construction: part of the layout, so a page cannot forget
+          it. Suppressed where there is no such claim to disclose against. See
+          the note on DISCLOSURE in comparisons.ts. */}
+      {disclosure && <p class="disclosure">{DISCLOSURE}</p>}
       <slot />
     </div>
   </main>

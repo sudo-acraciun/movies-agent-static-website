@@ -1,0 +1,32 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import { CHANGELOG } from '../data/changelog';
+
+const path = '/changelog';
+const title = "What's new in I Like Movies";
+const description =
+  'Recent updates to I Like Movies, grouped by week. Newest first.';
+---
+
+<ArticleLayout
+  title={`${title} | I Like Movies`}
+  description={description}
+  path={path}
+  heading="What's new"
+  disclosure={false}
+>
+  <p>Updates to I Like Movies, newest first.</p>
+
+  {
+    CHANGELOG.map((week) => (
+      <>
+        <h2>{week.week}</h2>
+        <ul>
+          {week.entries.map((entry) => (
+            <li>{entry}</li>
+          ))}
+        </ul>
+      </>
+    ))
+  }
+</ArticleLayout>
