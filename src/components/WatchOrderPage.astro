@@ -1,0 +1,175 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import { SITE } from '../data/site';
+import { WATCH_ORDERS, type WatchOrder } from '../data/watchOrders';
+
+interface Props {
+  order: WatchOrder;
+}
+
+const { order: o } = Astro.props;
+const path = `/${o.slug}`;
+
+// Cross-links: the other watch-order pages. These pages have no footer or
+// header slot, so linking each other is what keeps them from being
+// sitemap-only orphans.
+const others = WATCH_ORDERS.filter((w) => w.slug !== o.slug);
+
+// Article + FAQPage as on the /vs pages, plus ItemList for the primary
+// (first) order, which is the list this page exists to answer with.
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: o.h1,
+    description: o.metaDescription,
+    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${o.franchise} watch order`,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    numberOfItems: o.sections[0].items.length,
+    itemListElement: o.sections[0].items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: `${item.title} (${item.year})`,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: o.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a.join(' ') },
+    })),
+  },
+];
+
+const KIND_LABEL = { film: 'Film', series: 'Series', special: 'Special' } as const;
+---
+
+<ArticleLayout
+  title={o.title}
+  description={o.metaDescription}
+  path={path}
+  heading={o.h1}
+  jsonLd={jsonLd}
+  disclosure={false}
+>
+  {o.intro.map((paragraph) => <p>{paragraph}</p>)}
+
+  {
+    o.sections.map((section) => (
+      <>
+        <h2>{section.heading}</h2>
+        <p>{section.blurb}</p>
+        <ol class="order-list">
+          {section.items.map((item) => (
+            <li>
+              <span class="entry-title">{item.title}</span>
+              <span class="entry-year">({item.year})</span>
+              <span class="entry-kind">{KIND_LABEL[item.kind]}</span>
+              {item.note && <span class="entry-note">{item.note}</span>}
+            </li>
+          ))}
+        </ol>
+      </>
+    ))
+  }
+
+  <h2>Keep your place</h2>
+  {
+    o.hasAppTrack ? (
+      <p>
+        I Like Movies, the free Android app behind this page, carries the{' '}
+        {o.franchise} as a curated track: the same catalogue as above, in watch
+        order, with your progress marked per film and per episode. Ratings and
+        a watchlist come along for everything else you watch.
+      </p>
+    ) : (
+      <p>
+        I Like Movies, the free Android app behind this page, keeps your place
+        in any franchise: mark films and episodes watched, rate them, and keep
+        a watchlist for what is next.
+      </p>
+    )
+  }
+
+  <h2>Questions people ask</h2>
+  {
+    o.faqs.map((faq) => (
+      <details>
+        <summary>{faq.q}</summary>
+        {faq.a.map((paragraph) => <p>{paragraph}</p>)}
+      </details>
+    ))
+  }
+
+  {/* set:text-free inline join: Astro emits whitespace between sibling
+      expressions, which rendered as " , " between links. Comma lives inside
+      the same expression as the anchor to keep them glued. */}
+  <p class="other-orders">
+    More watch orders: {others.map((w, i) => (
+      <span>{i > 0 && ', '}<a href={`/${w.slug}`}>{w.franchise}</a></span>
+    ))}
+  </p>
+
+  <div class="cta-row">
+    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
+      Get I Like Movies on Google Play
+    </a>
+    <a href="/">More about the app</a>
+  </div>
+</ArticleLayout>
+
+<style is:global>
+  /* Prefixed .article like the layout's own rules; these live here because
+     only watch-order pages render an .order-list. */
+  .article .order-list {
+    padding-left: 26px;
+    margin: 0 0 1.5rem;
+  }
+
+  .article .order-list li {
+    margin: 8px 0;
+    color: var(--text-body);
+  }
+
+  .article .entry-title {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .article .entry-year {
+    color: var(--text-secondary);
+    margin-left: 6px;
+  }
+
+  .article .entry-kind {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 1px 8px;
+    border: 1px solid var(--ink-border);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    vertical-align: 2px;
+  }
+
+  .article .entry-note {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  .article .other-orders {
+    margin-top: 2rem;
+  }
+</style>

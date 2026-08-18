@@ -143,9 +143,12 @@ const { title, description, path, heading, jsonLd = [], disclosure = true } = As
   .article .cta-row {
     margin: 40px 0 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    align-items: center;
+    /* Stacked, not side by side: the pill and a plain text link at equal
+       visual rank on one line read as competing actions. Button first,
+       quiet link underneath. */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 
   .article .cta-button {
