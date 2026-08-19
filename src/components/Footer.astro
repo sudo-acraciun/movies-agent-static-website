@@ -72,6 +72,26 @@ const year = new Date().getFullYear();
       describes an app built on that data, so the attribution belongs here.
     */}
     <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+    {/*
+      Launch Llama's crawler verifies this exact anchor href and image src on
+      the live homepage to activate our directory listing, so the snippet stays
+      verbatim from their embed code. Removing or rewriting it un-verifies the
+      listing.
+    */}
+    <a
+      class="launchllama-badge"
+      href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="https://tools.launchllama.co/featured-badge.png?v=2"
+        alt="As seen on Launch Llama Newsletter"
+        width="200"
+        height="50"
+        loading="lazy"
+      />
+    </a>
   </div>
 </footer>
 
@@ -147,6 +167,15 @@ const year = new Date().getFullYear();
 
   .bottom p {
     margin: 0 0 6px;
+  }
+
+  .launchllama-badge {
+    display: inline-block;
+    margin-top: 14px;
+  }
+
+  .launchllama-badge img {
+    display: block;
   }
 
   /* There was a .fine rule here, opacity 0.75 on the TMDB notice, which put
