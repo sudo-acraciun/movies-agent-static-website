@@ -169,13 +169,24 @@ const year = new Date().getFullYear();
     margin: 0 0 6px;
   }
 
+  /* Shrunk and dimmed via CSS only: the anchor/img markup must stay verbatim
+     for Launch Llama's badge verification, so sizing never moves into the
+     width/height attributes. */
   .launchllama-badge {
     display: inline-block;
     margin-top: 14px;
+    opacity: 0.45;
+    transition: opacity 0.15s ease;
+  }
+
+  .launchllama-badge:hover {
+    opacity: 1;
   }
 
   .launchllama-badge img {
     display: block;
+    width: 132px;
+    height: 33px;
   }
 
   /* There was a .fine rule here, opacity 0.75 on the TMDB notice, which put
