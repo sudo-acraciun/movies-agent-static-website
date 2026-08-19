@@ -31,10 +31,12 @@ const SHOTS: Record<string, ImageMetadata> = {
 //
 // Three blocks, each doing a different job:
 //
-//   SoftwareApplication  tells a search engine this is an app, on which
+//   MobileApplication    tells a search engine this is an app, on which
 //                        platforms, in which category, at what price. This is
 //                        what produces an app-style result rather than a
-//                        generic page result.
+//                        generic page result. MobileApplication rather than
+//                        the broader SoftwareApplication because the product
+//                        is a phone app and the subtype says so directly.
 //   FAQPage              mirrors the visible FAQ exactly. Built from the same
 //                        FAQS array as the rendered markup so the two cannot
 //                        drift apart, which would be a structured-data
@@ -46,9 +48,28 @@ const SHOTS: Record<string, ImageMetadata> = {
 // corresponding real reviews as spam, and the app has no public rating yet.
 // Add it only when the Play rating is real, and only with the real numbers.
 
+// Every page that talks about this app as an entity, from this domain's point
+// of view. sameAs is how a search engine learns that the Play listing, the
+// directory pages and the social profiles all describe ONE thing, which is
+// the corroboration a Knowledge Graph node is built from. Only pages we
+// control or have verified live belong here: a dead or wrong URL teaches the
+// engine the wrong entity, which is worse than teaching it nothing.
+//
+// The Play URL is the bare listing, not SITE.playUrl: the referrer parameter
+// exists to attribute installs, and an identity claim should point at the
+// canonical page, not a tracked variant of it.
+const SAME_AS = [
+  'https://play.google.com/store/apps/details?id=com.moviesagent.app',
+  'https://theresanaiforthat.com/ai/i-like-movies/',
+  'https://alternativeto.net/software/i-like-movies/',
+  'https://www.saashub.com/ilikemovies-app',
+  'https://x.com/ilikemoviesapp',
+  'https://www.tiktok.com/@ilikemoviesapp',
+];
+
 const softwareLd = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'MobileApplication',
   name: SITE.name,
   applicationCategory: 'EntertainmentApplication',
   applicationSubCategory: 'Movie and TV discovery and tracking',
@@ -78,6 +99,7 @@ const softwareLd = {
     '@type': 'Person',
     name: 'Alexandru Craciun',
   },
+  sameAs: SAME_AS,
 };
 
 // Answers are stored as paragraphs for readability and joined back into one
@@ -109,6 +131,7 @@ const siteLd = {
       '@type': 'PostalAddress',
       addressCountry: SITE.operatorCountry,
     },
+    sameAs: SAME_AS,
   },
 };
 ---

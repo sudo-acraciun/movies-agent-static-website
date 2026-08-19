@@ -249,6 +249,17 @@ export type Faq = { q: string; a: string[] };
 // not actually in tension here, they just need different markup.
 export const FAQS: Faq[] = [
   {
+    // First on purpose, and the answer opens with SITE.definition verbatim:
+    // "What is I Like Movies?" is the exact question an answer engine asks
+    // about an entity it does not recognise, and the definitional sentence
+    // was written to be lifted whole. One string, two surfaces, no drift.
+    q: 'What is I Like Movies?',
+    a: [
+      SITE.definition,
+      'You rate what you watch, and both the monthly Discover collections and the chat assistant work from that history, so the suggestions are drawn from your own taste rather than a general popularity chart.',
+    ],
+  },
+  {
     q: 'Is I Like Movies free?',
     a: [
       'Yes. I Like Movies is free to download and free to use, with no advertising and no sponsored recommendations.',
