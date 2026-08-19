@@ -302,9 +302,13 @@ const siteLd = {
           target="_blank"
           rel="nofollow noopener"
         >
+          {/* Self-hosted copy of their badge image: hotlinking
+              media.theresanaiforthat.com leaked visitor IP/referrer, which
+              clashes with the site's cookieless posture. The anchor href is
+              what verification checks and stays theirs. */}
           <img
             width="300"
-            src="https://media.theresanaiforthat.com/featured-on-taaft.png?width=600"
+            src="/taaft-badge.png"
             alt="Featured on There's An AI For That"
           />
         </a>
