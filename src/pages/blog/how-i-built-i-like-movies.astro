@@ -1,0 +1,187 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { SITE } from '../../data/site';
+
+const path = '/blog/how-i-built-i-like-movies';
+const title = 'How I built an AI movie tracker as a solo dev';
+const description =
+  'The build story of I Like Movies: a solo-built Android movie tracker in Go, GraphQL and React Native, and the decisions that mattered.';
+
+// This page is the canonical home of the build story. The Dev.to copy sets
+// canonical_url to this URL, so the slug is load-bearing once that post is
+// published: renaming it strands the canonical reference on Dev.to's side.
+//
+// There is deliberately no /blog index. One post does not need a listing
+// page, and an index with one entry reads as abandonment. Add one when there
+// is a second post.
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    author: { '@type': 'Person', name: 'Alexandru Craciun' },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+];
+---
+
+{/* disclosure={false}: the developer-conflict disclosure exists for pages
+    that compare this app to competitors. This page is openly the maker's own
+    story, declared in its first sentence, and makes no head-to-head claim. */}
+<ArticleLayout
+  title={`${title} | I Like Movies`}
+  description={description}
+  path={path}
+  heading={title}
+  jsonLd={jsonLd}
+  disclosure={false}
+>
+  <p>
+    I am a full-stack developer in the Netherlands, a bit over ten years in.
+    For the last year my evenings have gone into one side project: I Like
+    Movies, an Android app for tracking what you watch and deciding what to
+    watch next. It went live on Google Play this summer. This is the honest
+    version of how it got built, what the stack looks like, and the three or
+    four decisions that mattered more than the rest.
+  </p>
+
+  <h2>The problem was never finding a film</h2>
+  <p>
+    Every movie app I tried was built for one person keeping one list. My
+    actual problem was two people on one sofa, each with a watchlist, neither
+    remembering which of us had saved the film worth watching. Picking
+    something to watch with someone else is genuinely harder than picking
+    alone, and no amount of better search fixes it, because search is not the
+    bottleneck. Deciding is.
+  </p>
+  <p>
+    So the app is organised around that. A household shares one library: one
+    watchlist, one watched history, visible to everyone who lives with you.
+    Add a film on your phone in the supermarket and it is on your partner's
+    phone before you are home. That one feature is why the app exists, and it
+    shaped almost every backend decision that followed.
+  </p>
+
+  <h2>The stack, and why it is boring on purpose</h2>
+  <p>
+    The backend is Go, GraphQL via gqlgen, and Postgres. The app is React
+    Native with Expo. Film and TV metadata comes from TMDB. That is close to
+    the most conservative stack you could pick in 2026, and that is the point.
+    A solo project dies when the maintenance load exceeds one person's
+    evenings, so every technology had to be something I could debug at 11pm
+    without a second opinion.
+  </p>
+  <p>
+    Go earned its place. The whole backend is one binary with no framework
+    magic, and the type system plus gqlgen's generated resolvers mean a schema
+    change breaks loudly at compile time instead of quietly in production.
+    Postgres does everything: data, full-text search support, import staging.
+    No microservices, no queue, no Redis. A single process and a single
+    database will carry a consumer app much further than the architecture
+    content industry admits.
+  </p>
+  <p>
+    GraphQL was the decision I second-guessed most and regret least. A
+    tracking app's screens are wildly different shapes of the same data: a
+    film detail page, a friend's profile, a shared watchlist grouped by
+    member, a stats dashboard. With REST I would have ended up with either
+    forty endpoints or one endpoint returning everything. With one schema, the
+    mobile app asks for exactly the shape each screen needs, and the generated
+    types keep both repos honest with each other.
+  </p>
+  <p>
+    Expo, and specifically over-the-air updates, is what makes solo mobile
+    development survivable. A JS-level fix ships to every installed phone in
+    minutes without a store review. When a real user hits a real bug, the loop
+    from report to fixed-on-their-device can be an evening. Native releases
+    still go through Play review, but they are rare.
+  </p>
+
+  <h2>The AI part, without the hype</h2>
+  <p>
+    The headline feature is a chat assistant you can ask for something to
+    watch in plain language. By mood, by half-remembered plot, by "something
+    short and funny for a Tuesday". Under the hood it is an LLM with tool
+    calling, and the tools are where all the actual work lives.
+  </p>
+  <p>
+    The model never answers from its own memory of cinema, because that is how
+    you recommend a film that does not exist. Every title it mentions is
+    resolved against TMDB through tools, checked against your watch history so
+    it never suggests something you have already seen, and checked against
+    streaming availability in your country so the answer is watchable tonight,
+    not in theory. The model does the language understanding. Deterministic
+    code does everything that has a right answer.
+  </p>
+  <p>
+    Two lessons from running an LLM feature in production as one person paying
+    the bill:
+  </p>
+  <p>
+    First, guardrails are a launch feature, not a hardening phase. Rate
+    limits, per-user caps and input constraints went in before the public
+    launch, because a public chat endpoint attached to your API key is an
+    invitation.
+  </p>
+  <p>
+    Second, the best AI features are the small weird ones. The assistant
+    accepts a photo. Point it at a shelf of discs, or a screenshot of
+    someone's list of recommendations, and it reads the titles and offers to
+    add them to your collection, asking for confirmation first. That took a
+    fraction of the chat feature's effort and it is the thing people show
+    other people.
+  </p>
+
+  <h2>What tracking apps get right, so I stole it</h2>
+  <p>
+    I did not pretend the category has no history. People who track their
+    watching are particular about it. Episode-level TV progress, ratings out
+    of five stars, private notes, custom lists, and imports so nobody has to
+    retype years of history. The import path reads a Letterboxd export or an
+    IMDb CSV, stages it, matches titles against TMDB, and works out on its own
+    whether a CSV is a watchlist or a custom list, asking only when the file
+    is genuinely ambiguous.
+  </p>
+  <p>
+    Imports taught me a rule I now apply everywhere: the feature is not the
+    parser, the feature is the trust. Someone uploading ten years of film
+    history needs to believe nothing gets mangled. Most of the import code is
+    not parsing at all. It is matching, deduplication, and refusing to guess.
+  </p>
+
+  <h2>Shipping solo, honestly</h2>
+  <p>Some things that kept this alive for a year of evenings:</p>
+  <p>
+    <strong>A defect pipeline beats motivation.</strong> The app has
+    shake-to-report built in. A user shakes their phone, a report lands in a
+    database table with a screenshot, their route, and the last API operation.
+    My weekend routine is triage, fix, ship OTA. It keeps the work honest,
+    because the queue is real user pain and not my roadmap fantasies.
+  </p>
+  <p>
+    <strong>The first users must be people you cannot disappoint.</strong> My
+    household uses the app daily. There is no faster code review than someone
+    next to you on the sofa hitting your bug in real time.
+  </p>
+  <p>
+    <strong>Cut features in code, not in conversation.</strong> Several built
+    features are dark behind flags or deleted entirely because they did not
+    earn their screen space. Deleting a feature you built alone at midnight
+    hurts. Shipping an app that feels focused is worth it.
+  </p>
+  <p>
+    The app is free, on Android now, with an iPhone version in development. If
+    you have opinions on what a movie tracker should do, I genuinely want
+    them. I built this because I use it, and it gets better fastest when
+    someone tells me where it is wrong.
+  </p>
+  <p>
+    <em>
+      I Like Movies is at <a href="/">ilikemovies.app</a>, and on{' '}
+      <a href={SITE.playUrl} target="_blank" rel="noopener">Google Play</a>.
+    </em>
+  </p>
+</ArticleLayout>
