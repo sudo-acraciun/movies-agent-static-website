@@ -24,6 +24,16 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '19 August 2026',
+    entries: [
+      'TV shows now list the right cast, even for series where it changes each season',
+      'Age ratings for your country, like PG-13, now appear on every title page',
+      'Actor and director pages gained photo galleries',
+      'The assistant now double checks filmographies against the movie database before answering',
+      'Profile photos now show up reliably across the app',
+    ],
+  },
+  {
     week: '12 August 2026',
     entries: [
       'The assistant now understands "recent" and "latest" and replies more reliably',
