@@ -24,6 +24,13 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '24 August 2026',
+    entries: [
+      'Sign-up steps now scroll on tablets and the continue button always stays within reach',
+      'A flaky connection can no longer get you stuck partway through sign-up',
+    ],
+  },
+  {
     week: '19 August 2026',
     entries: [
       'TV shows now list the right cast, even for series where it changes each season',
