@@ -28,6 +28,7 @@ export const CHANGELOG: ChangelogWeek[] = [
     entries: [
       'Sign-up steps now scroll on tablets and the continue button always stays within reach',
       'A flaky connection can no longer get you stuck partway through sign-up',
+      'The sign-in screen got a fresh look with a wall of movie posters',
     ],
   },
   {
