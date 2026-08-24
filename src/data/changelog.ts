@@ -29,6 +29,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Sign-up steps now scroll on tablets and the continue button always stays within reach',
       'A flaky connection can no longer get you stuck partway through sign-up',
       'The sign-in screen got a fresh look with a wall of movie posters',
+      'Notifications about posts that no longer exist now tidy themselves up instead of opening a broken page',
+      'A brief connection hiccup no longer tells you your session expired',
+      'The assistant now speaks stars, so asking for your 5-star movies gets your real favorites',
+      'A friendly pointer now helps new users discover the assistant',
     ],
   },
   {
