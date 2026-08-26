@@ -59,6 +59,7 @@ const jsonLd = [
   heading={t.h1}
   jsonLd={jsonLd}
   disclosure={false}
+  heroImage={t.heroBackdropUrl}
 >
   <p class="theme-week">Weekly collection in the app for the week of {formatWeek(t.weekOf)}.</p>
 
@@ -73,6 +74,7 @@ const jsonLd = [
           <span class="entry-year">({item.year})</span>
           <span class="entry-director">{item.director}</span>
           {i === 0 && <span class="entry-featured">Featured</span>}
+          <span class="entry-blurb">{item.blurb}</span>
         </li>
       ))
     }
@@ -131,7 +133,7 @@ const jsonLd = [
   }
 
   .article .theme-list li {
-    margin: 10px 0;
+    margin: 14px 0;
     color: var(--text-body);
   }
 
@@ -164,6 +166,12 @@ const jsonLd = [
     letter-spacing: 0.06em;
     color: var(--text);
     vertical-align: 2px;
+  }
+
+  .article .theme-list .entry-blurb {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
   }
 
   .article .other-lists {

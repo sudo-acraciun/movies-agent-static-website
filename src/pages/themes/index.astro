@@ -6,6 +6,24 @@ import { WEEKLY_THEMES, formatWeek } from '../../data/themes';
 // The archive index for the weekly themes: unlike the evergreen page types,
 // themes rotate, so they need a listing page of their own. /guides links here
 // (plus the latest few themes) rather than listing every week forever.
+// Grouped by month, newest month first. WEEKLY_THEMES is already newest
+// first, so consecutive same-month entries fold into one group and the flat
+// order (which the ItemList schema mirrors) is unchanged.
+const monthGroups: { label: string; themes: typeof WEEKLY_THEMES }[] = [];
+for (const t of WEEKLY_THEMES) {
+  const label = new Date(`${t.weekOf}T00:00:00Z`).toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+  const last = monthGroups[monthGroups.length - 1];
+  if (last && last.label === label) {
+    last.themes.push(t);
+  } else {
+    monthGroups.push({ label, themes: [t] });
+  }
+}
+
 const path = '/themes';
 const title = 'Weekly movie themes: every past collection from the app | I Like Movies';
 const description =
@@ -50,17 +68,22 @@ const jsonLd = [
     has run, newest first.
   </p>
 
-  <ul class="hub-list">
-    {
-      WEEKLY_THEMES.map((t) => (
-        <li>
-          <a href={`/themes/${t.slug}`}>{t.h1}</a>
-          <p class="theme-date">Week of {formatWeek(t.weekOf)}</p>
-          <p>{t.metaDescription}</p>
-        </li>
-      ))
-    }
-  </ul>
+  {
+    monthGroups.map((group) => (
+      <>
+        <h2>{group.label}</h2>
+        <ul class="hub-list">
+          {group.themes.map((t) => (
+            <li>
+              <a href={`/themes/${t.slug}`}>{t.h1}</a>
+              <p class="theme-date">Week of {formatWeek(t.weekOf)}</p>
+              <p>{t.metaDescription}</p>
+            </li>
+          ))}
+        </ul>
+      </>
+    ))
+  }
 
   <p class="other-lists">
     Browse <a href="/guides">every guide, watch order and comparison</a>.
