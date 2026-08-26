@@ -209,8 +209,12 @@ const jsonLd = [
     transform: translateY(-3px);
   }
 
+  /* Card titles are gold like headings, not blue like prose links: the whole
+     card is the click target, so the title reads as a heading, not a link. */
   .article .hub-list a {
     font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
   }
 
   /* Stretched link: the anchor's hit area expands to cover its card, so the

@@ -126,8 +126,12 @@ const jsonLd = [
     transform: translateY(-3px);
   }
 
+  /* Same card-title treatment as /guides: gold heading, no underline, the
+     stretched link below makes the whole card clickable. */
   .article .hub-list a {
     font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
   }
 
   .article .hub-list a::after {
