@@ -363,6 +363,12 @@ export type Migration = {
   move: string;
   /** What is different once they are here. Factual, no disparagement. */
   changes: string;
+  /**
+   * Deep link to the full standalone page for this competitor, where one
+   * exists (/vs/<slug> or the TV Time guide). IMDb has no such page, so the
+   * field is optional and its row renders without a link.
+   */
+  compare?: { href: string; label: string };
 };
 
 // Framed as migration help rather than a scorecard.
@@ -384,6 +390,7 @@ export const MIGRATIONS: Migration[] = [
     move: 'Request your data export, which arrives as a .zip, and upload it under Imports. Ratings, watched films and your watchlist come across together.',
     changes:
       'Letterboxd is built around public reviews and film criticism as a social activity. Here your notes are private by default, TV series are tracked alongside films at episode level, streaming availability is shown for your country, an AI assistant answers in plain language, and the people you live with can share a single library.',
+    compare: { href: '/vs/letterboxd', label: 'Read the full Letterboxd comparison' },
   },
   {
     // IMDb belongs here and belongs high. It has a larger user base than the
@@ -400,11 +407,13 @@ export const MIGRATIONS: Migration[] = [
     move: 'There is no Trakt import. Imports read a Letterboxd .zip or an IMDb .csv, and a Trakt export is neither, so a Trakt library starts fresh here and rebuilds itself as you use the app. Marking a season watched takes a tap.',
     changes:
       'Trakt is built around automatic scrobbling from media servers and players, and it is very good at that. This is a phone app with nothing to install alongside it, aimed at the moment before you press play rather than the record of having pressed it.',
+    compare: { href: '/vs/trakt', label: 'Read the full Trakt comparison' },
   },
   {
     name: 'Coming from TV Time',
     move: 'TV Time closed on 15 July 2026, and there is no TV Time import here, so series progress is set as you go. Marking a season watched takes a tap.',
     changes:
       'TV Time was focused on episode tracking and reminders for series. Episodes are tracked one at a time here too, films and TV sit in one library rather than being two separate concerns, discovery comes first, there is no advertising, and a household shares a single library instead of everyone keeping their own.',
+    compare: { href: '/from-tv-time', label: 'Read the full guide to life after TV Time' },
   },
 ];

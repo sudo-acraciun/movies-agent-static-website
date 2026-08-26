@@ -252,6 +252,11 @@ const siteLd = {
                     <p>{migration.changes}</p>
                   </div>
                 </div>
+                {migration.compare && (
+                  <p class="row-more">
+                    <a href={migration.compare.href}>{migration.compare.label}</a>
+                  </p>
+                )}
               </article>
             ))
           }
@@ -431,6 +436,18 @@ const siteLd = {
     margin: 0;
     color: var(--text-secondary);
     font-size: 0.98rem;
+  }
+
+  /* Quiet text link, same register as the discover block's guide link: a
+     deep link for the reader who wants the full page, not a second CTA. */
+  .row-more {
+    margin: 16px 0 0;
+    font-size: 0.95rem;
+  }
+
+  .row-more a {
+    color: var(--gold);
+    text-underline-offset: 3px;
   }
 
   @media (min-width: 820px) {
