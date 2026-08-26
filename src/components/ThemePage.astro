@@ -1,0 +1,172 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import { SITE } from '../data/site';
+import { WEEKLY_THEMES, formatWeek, type WeeklyTheme } from '../data/themes';
+
+interface Props {
+  theme: WeeklyTheme;
+}
+
+const { theme: t } = Astro.props;
+const path = `/themes/${t.slug}`;
+
+// WEEKLY_THEMES is newest first, so the chronological neighbours sit at
+// index+1 (the week before) and index-1 (the week after).
+const index = WEEKLY_THEMES.findIndex((o) => o.slug === t.slug);
+const earlier = WEEKLY_THEMES[index + 1];
+const later = index > 0 ? WEEKLY_THEMES[index - 1] : undefined;
+
+// Article + FAQPage as everywhere, plus ItemList mirroring the visible list
+// exactly: same order, same titles. Curated order is not a ranking, so no
+// itemListOrder claim, same as the unranked /list pages.
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: t.h1,
+    description: t.metaDescription,
+    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: t.h1,
+    numberOfItems: t.items.length,
+    itemListElement: t.items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: `${item.title} (${item.year})`,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: t.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a.join(' ') },
+    })),
+  },
+];
+---
+
+<ArticleLayout
+  title={t.title}
+  description={t.metaDescription}
+  path={path}
+  heading={t.h1}
+  jsonLd={jsonLd}
+  disclosure={false}
+>
+  <p class="theme-week">Weekly collection in the app for the week of {formatWeek(t.weekOf)}.</p>
+
+  {t.intro.map((paragraph) => <p>{paragraph}</p>)}
+
+  <h2>The collection</h2>
+  <ol class="theme-list">
+    {
+      t.items.map((item, i) => (
+        <li>
+          <span class="entry-title">{item.title}</span>
+          <span class="entry-year">({item.year})</span>
+          <span class="entry-director">{item.director}</span>
+          {i === 0 && <span class="entry-featured">Featured</span>}
+        </li>
+      ))
+    }
+  </ol>
+
+  <h2>Keep your place</h2>
+  <p>{t.appNote}</p>
+
+  <h2>Questions people ask</h2>
+  {
+    t.faqs.map((faq) => (
+      <details>
+        <summary>{faq.q}</summary>
+        {faq.a.map((paragraph) => <p>{paragraph}</p>)}
+      </details>
+    ))
+  }
+
+  {/* Same inline-join shape as ListiclePage's other-lists line, but themes
+      chain chronologically, so the neighbours come first. */}
+  <p class="other-lists">
+    {earlier && (
+      <span>
+        The week before: <a href={`/themes/${earlier.slug}`}>{earlier.h1}</a>.{' '}
+      </span>
+    )}
+    {later && (
+      <span>
+        The week after: <a href={`/themes/${later.slug}`}>{later.h1}</a>.{' '}
+      </span>
+    )}
+    See <a href="/themes">every weekly theme</a>, or browse{' '}
+    <a href="/guides">every guide, watch order and comparison</a>.
+  </p>
+
+  <div class="cta-row">
+    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
+      Get I Like Movies on Google Play
+    </a>
+    <a href="/">More about the app</a>
+  </div>
+</ArticleLayout>
+
+<style is:global>
+  /* Prefixed .article like the layout's own rules; only /themes pages render
+     a .theme-list. Mirrors the /list pages' rank-list so the two page types
+     read as one system. */
+  .article .theme-week {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+  }
+
+  .article .theme-list {
+    padding-left: 26px;
+    margin: 0 0 1.5rem;
+  }
+
+  .article .theme-list li {
+    margin: 10px 0;
+    color: var(--text-body);
+  }
+
+  .article .theme-list .entry-title {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .article .theme-list .entry-year {
+    color: var(--text-secondary);
+    margin-left: 6px;
+  }
+
+  .article .theme-list .entry-director {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    margin-left: 8px;
+  }
+
+  /* Same chip shape as the /list score chip: the one fact this list type
+     carries per row is which film fronted the week. */
+  .article .theme-list .entry-featured {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 1px 8px;
+    border: 1px solid rgba(245, 197, 24, 0.35);
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    vertical-align: 2px;
+  }
+
+  .article .other-lists {
+    margin-top: 2rem;
+  }
+</style>

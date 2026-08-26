@@ -1,0 +1,132 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { SITE } from '../../data/site';
+import { WEEKLY_THEMES, formatWeek } from '../../data/themes';
+
+// The archive index for the weekly themes: unlike the evergreen page types,
+// themes rotate, so they need a listing page of their own. /guides links here
+// (plus the latest few themes) rather than listing every week forever.
+const path = '/themes';
+const title = 'Weekly movie themes: every past collection from the app | I Like Movies';
+const description =
+  'Every weekly themed collection from the I Like Movies Discover tab, 21 hand-picked films each, from Italian Neorealism to Japanese masters. A new theme lands every Friday.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Weekly movie themes',
+    description,
+    url: new URL(path, SITE.url).href,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListOrder: 'https://schema.org/ItemListOrderDescending',
+      numberOfItems: WEEKLY_THEMES.length,
+      itemListElement: WEEKLY_THEMES.map((t, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: t.h1,
+        url: new URL(`/themes/${t.slug}`, SITE.url).href,
+      })),
+    },
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  path={path}
+  heading="Weekly movie themes"
+  jsonLd={jsonLd}
+  disclosure={false}
+>
+  <p>
+    Every Friday the I Like Movies Discover tab gets a new themed collection:
+    21 hand-picked films around one idea, one featured film in front. The rules
+    behind the curation are strict: no film repeats across the year, at most
+    two films per director per theme, and every theme includes at least one
+    film not in English. This archive republishes each collection once its week
+    has run, newest first.
+  </p>
+
+  <ul class="hub-list">
+    {
+      WEEKLY_THEMES.map((t) => (
+        <li>
+          <a href={`/themes/${t.slug}`}>{t.h1}</a>
+          <p class="theme-date">Week of {formatWeek(t.weekOf)}</p>
+          <p>{t.metaDescription}</p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p class="other-lists">
+    Browse <a href="/guides">every guide, watch order and comparison</a>.
+  </p>
+
+  <div class="cta-row">
+    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
+      Get I Like Movies on Google Play
+    </a>
+    <a href="/">More about the app</a>
+  </div>
+</ArticleLayout>
+
+<style is:global>
+  /* Same card matrix as /guides (and the homepage grid): the archive is a hub
+     of its own, so it reads as one. */
+  .article .hub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .article .hub-list li {
+    position: relative;
+    border: 1px solid var(--ink-border);
+    border-radius: var(--radius);
+    background: var(--card);
+    padding: 20px 22px;
+    margin: 0;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .article .hub-list li:hover {
+    border-color: rgba(245, 197, 24, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .article .hub-list a {
+    font-weight: 700;
+  }
+
+  .article .hub-list a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+  }
+
+  .article .hub-list p {
+    margin: 8px 0 0;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+  }
+
+  .article .hub-list .theme-date {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .article .other-lists {
+    margin-top: 2rem;
+  }
+</style>

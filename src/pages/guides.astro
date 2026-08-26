@@ -4,6 +4,12 @@ import { SITE } from '../data/site';
 import { WATCH_ORDERS } from '../data/watchOrders';
 import { COMPARISONS } from '../data/comparisons';
 import { LISTICLES } from '../data/listicles';
+import { WEEKLY_THEMES, formatWeek } from '../data/themes';
+
+// Themes rotate weekly, so the hub shows only the latest few and hands the
+// rest to the /themes archive index; listing every week here forever would
+// drown the evergreen sections.
+const LATEST_THEMES = WEEKLY_THEMES.slice(0, 4);
 
 // The hub. Every guide-type page on the site is reachable from here, and this
 // page is the ONE the footer links, so a crawler entering anywhere reaches the
@@ -39,6 +45,8 @@ const description =
 const allEntries = [
   ...WATCH_ORDERS.map((w) => ({ path: `/${w.slug}`, name: `${w.franchise} watch order` })),
   ...LISTICLES.map((l) => ({ path: `/list/${l.slug}`, name: l.h1 })),
+  ...LATEST_THEMES.map((t) => ({ path: `/themes/${t.slug}`, name: t.h1 })),
+  { path: '/themes', name: 'Weekly themes archive' },
   ...COMPARISONS.map((c) => ({ path: `/vs/${c.slug}`, name: c.h1 })),
   ...STANDALONE_GUIDES.map((g) => ({ path: g.path, name: g.name })),
 ];
@@ -110,6 +118,26 @@ const jsonLd = [
         </li>
       ))
     }
+  </ul>
+
+  <h2>Weekly themes</h2>
+  <p>
+    Every Friday the app's Discover tab gets a themed collection of 21
+    hand-picked films. The latest weeks are below; the archive holds them all.
+  </p>
+  <ul class="hub-list">
+    {
+      LATEST_THEMES.map((t) => (
+        <li>
+          <a href={`/themes/${t.slug}`}>{t.h1}</a>
+          <p>Week of {formatWeek(t.weekOf)}</p>
+        </li>
+      ))
+    }
+    <li>
+      <a href="/themes">Weekly themes archive</a>
+      <p>Every past collection, {WEEKLY_THEMES.length} weeks and counting, newest first.</p>
+    </li>
   </ul>
 
   <h2>App comparisons</h2>

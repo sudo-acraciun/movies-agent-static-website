@@ -1,0 +1,15 @@
+---
+import ThemePage from '../../components/ThemePage.astro';
+import { WEEKLY_THEMES } from '../../data/themes';
+
+export function getStaticPaths() {
+  return WEEKLY_THEMES.map((theme) => ({
+    params: { slug: theme.slug },
+    props: { theme },
+  }));
+}
+
+const { theme } = Astro.props;
+---
+
+<ThemePage theme={theme} />
