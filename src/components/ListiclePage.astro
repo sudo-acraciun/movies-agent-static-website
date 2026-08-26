@@ -1,0 +1,291 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import { SITE } from '../data/site';
+import { LISTICLES, type Listicle } from '../data/listicles';
+
+interface Props {
+  list: Listicle;
+}
+
+const { list: l } = Astro.props;
+const path = `/list/${l.slug}`;
+
+// Cross-links: the other listicles, linked directly like the watch-order
+// pages link each other; the /guides hub covers the cross-type paths.
+const others = LISTICLES.filter((o) => o.slug !== l.slug);
+
+// Sort controls are progressive enhancement: the HTML ships in the default
+// (score) order, which is what crawlers and the ItemList schema see, and the
+// buttons only re-order the DOM client-side. They render only when every
+// item carries a score, so a scoreless list stays a plain static list.
+const sortable = l.items.every((item) => item.tmdbScore != null);
+
+// Article + FAQPage as everywhere, plus ItemList mirroring the visible list
+// exactly: same order, same titles. itemListOrder only claims an ordering
+// when the page actually ranks.
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: l.h1,
+    description: l.metaDescription,
+    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: l.h1,
+    ...(l.ranked ? { itemListOrder: 'https://schema.org/ItemListOrderAscending' } : {}),
+    numberOfItems: l.items.length,
+    itemListElement: l.items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: `${item.title} (${item.year})`,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: l.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a.join(' ') },
+    })),
+  },
+];
+---
+
+<ArticleLayout
+  title={l.title}
+  description={l.metaDescription}
+  path={path}
+  heading={l.h1}
+  jsonLd={jsonLd}
+  disclosure={false}
+>
+  {l.intro.map((paragraph) => <p>{paragraph}</p>)}
+
+  <div class="list-head">
+    <h2>{l.listHeading}</h2>
+    {
+      sortable && (
+        <div class="rank-controls" role="group" aria-label="Sort the list">
+          <button type="button" data-sort="score" aria-pressed="true">By score</button>
+          <button type="button" data-sort="newest" aria-pressed="false">Newest first</button>
+          <button type="button" data-sort="oldest" aria-pressed="false">Oldest first</button>
+        </div>
+      )
+    }
+  </div>
+
+  {
+    l.ranked ? (
+      <ol class="rank-list">
+        {l.items.map((item, i) => (
+          <li data-score={item.tmdbScore} data-year={item.year} data-rank={i + 1}>
+            <span class="entry-title">{item.title}</span>
+            <span class="entry-year">({item.year})</span>
+            {item.tmdbScore != null && <span class="entry-score">TMDB {item.tmdbScore.toFixed(1)}</span>}
+            {item.runtimeMin != null && <span class="entry-runtime">{item.runtimeMin} min</span>}
+            <span class="entry-blurb">{item.blurb}</span>
+          </li>
+        ))}
+      </ol>
+    ) : (
+      <ul class="rank-list">
+        {l.items.map((item) => (
+          <li data-score={item.tmdbScore} data-year={item.year}>
+            <span class="entry-title">{item.title}</span>
+            <span class="entry-year">({item.year})</span>
+            {item.tmdbScore != null && <span class="entry-score">TMDB {item.tmdbScore.toFixed(1)}</span>}
+            {item.runtimeMin != null && <span class="entry-runtime">{item.runtimeMin} min</span>}
+            <span class="entry-blurb">{item.blurb}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  <h2>Keep your place</h2>
+  <p>{l.appNote}</p>
+
+  <h2>Questions people ask</h2>
+  {
+    l.faqs.map((faq) => (
+      <details>
+        <summary>{faq.q}</summary>
+        {faq.a.map((paragraph) => <p>{paragraph}</p>)}
+      </details>
+    ))
+  }
+
+  {/* Same inline-join shape as WatchOrderPage's other-orders line. */}
+  <p class="other-lists">
+    {others.length > 0 && (
+      <span>
+        More lists: {others.map((o, i) => (
+          <span>{i > 0 && ', '}<a href={`/list/${o.slug}`}>{o.h1}</a></span>
+        ))}.{' '}
+      </span>
+    )}
+    {l.related && (
+      <span>
+        Related: <a href={l.related.href}>{l.related.label}</a>.{' '}
+      </span>
+    )}
+    Or browse <a href="/guides">every guide, watch order and comparison</a>.
+  </p>
+
+  <div class="cta-row">
+    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
+      Get I Like Movies on Google Play
+    </a>
+    <a href="/">More about the app</a>
+  </div>
+</ArticleLayout>
+
+<style is:global>
+  /* Prefixed .article like the layout's own rules; only /list pages render a
+     .rank-list. */
+  .article .rank-list {
+    padding-left: 26px;
+    margin: 0 0 1.5rem;
+  }
+
+  .article .rank-list li {
+    margin: 14px 0;
+    color: var(--text-body);
+  }
+
+  .article .rank-list .entry-title {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .article .rank-list .entry-year {
+    color: var(--text-secondary);
+    margin-left: 6px;
+  }
+
+  /* Same chip shape as the watch-order pages' entry-kind tag, but the score
+     is data the page exists for, so it reads at secondary strength, not
+     muted. */
+  .article .rank-list .entry-score {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 1px 8px;
+    border: 1px solid rgba(245, 197, 24, 0.35);
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    vertical-align: 2px;
+  }
+
+  /* Runtime chip: same shape as the score chip, quieter, because the score
+     leads and the length supports. */
+  .article .rank-list .entry-runtime {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 8px;
+    border: 1px solid var(--ink-border);
+    border-radius: 999px;
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    vertical-align: 2px;
+  }
+
+  .article .rank-list .entry-blurb {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+  }
+
+  .article .other-lists {
+    margin-top: 2rem;
+  }
+
+  /* Heading and sort buttons share one row, buttons pushed to the right;
+     on a narrow screen the buttons wrap under the heading. The h2's global
+     margin moves onto this wrapper so the row spaces like any other h2. */
+  .article .list-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 18px;
+    /* 1.5rem below, the same gap the list itself leaves before the next
+       block, so the head-row spacing matches the page rhythm. */
+    margin: 46px 0 1.5rem;
+  }
+
+  .article .list-head h2 {
+    margin: 0;
+  }
+
+  .article .rank-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .article .rank-controls button {
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--text-secondary);
+    background: var(--ink-raised);
+    border: 1px solid var(--ink-border);
+    border-radius: 999px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .article .rank-controls button:hover {
+    color: var(--text);
+  }
+
+  .article .rank-controls button[aria-pressed='true'] {
+    color: var(--ink);
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+</style>
+
+<script>
+  // Progressive enhancement only: re-orders the already-rendered <li>s. The
+  // shipped HTML order (score) is what no-JS readers, crawlers and the
+  // ItemList schema all see; data-rank preserves the original position so
+  // "By score" restores it exactly.
+  document.querySelectorAll('.rank-controls').forEach((controls) => {
+    // The controls sit inside .list-head; the list is its sibling, so scope
+    // the lookup to the shared article container rather than the parent.
+    const list = controls.closest('.wrap')?.querySelector('.rank-list');
+    if (!list) return;
+
+    const sorters: Record<string, (a: HTMLElement, b: HTMLElement) => number> = {
+      score: (a, b) => Number(a.dataset.rank) - Number(b.dataset.rank),
+      newest: (a, b) => Number(b.dataset.year) - Number(a.dataset.year),
+      oldest: (a, b) => Number(a.dataset.year) - Number(b.dataset.year),
+    };
+
+    controls.querySelectorAll<HTMLButtonElement>('button[data-sort]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const sorter = sorters[button.dataset.sort ?? ''];
+        if (!sorter) return;
+        const items = [...list.querySelectorAll<HTMLElement>(':scope > li')];
+        items.sort(sorter).forEach((item) => list.appendChild(item));
+        controls
+          .querySelectorAll('button[data-sort]')
+          .forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
+      });
+    });
+  });
+</script>

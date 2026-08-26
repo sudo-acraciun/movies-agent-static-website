@@ -1,0 +1,15 @@
+---
+import ListiclePage from '../../components/ListiclePage.astro';
+import { LISTICLES } from '../../data/listicles';
+
+export function getStaticPaths() {
+  return LISTICLES.map((list) => ({
+    params: { slug: list.slug },
+    props: { list },
+  }));
+}
+
+const { list } = Astro.props;
+---
+
+<ListiclePage list={list} />
