@@ -351,6 +351,192 @@ export const COMPARISONS: Comparison[] = [
       },
     ],
   },
+  {
+    slug: 'imdb',
+    competitor: 'IMDb',
+    title: 'I Like Movies vs IMDb, compared by the developer',
+    metaDescription:
+      'An honest comparison of I Like Movies and IMDb: a reference database vs a tracking app, ratings, watchlists, the .csv import path, and where IMDb is simply better.',
+    h1: 'I Like Movies vs IMDb',
+    intro: [
+      'IMDb is the reference. It is where the internet looks up who directed what, and its rating is the closest thing film culture has to a universal score. It also carries a watchlist and lists, which is why people reasonably ask whether it can be their tracker too.',
+      'I Like Movies is a tracker first: built for deciding what to watch tonight and keeping the record afterwards. The honest framing is that these two are different tools that happen to overlap on the watchlist, and this page lays out the overlap.',
+    ],
+    betterThere: [
+      {
+        title: 'The database itself',
+        body: 'Nothing rivals IMDb as a reference: full cast and crew back to the silent era, trivia, goofs, quotes, technical specs, box office. I Like Movies shows the cast and crew that matter for choosing a film; IMDb is where you settle an argument about a gaffer in 1974.',
+      },
+      {
+        title: 'The rating everyone recognises',
+        body: 'An IMDb score is quotable shorthand backed by one of the largest vote bases on the internet. Ratings in I Like Movies are for you and your friends, not a public reference number.',
+      },
+      {
+        title: 'Everywhere, for everyone',
+        body: 'IMDb runs on the web, iOS and Android, with an account that is probably older than some of your devices. I Like Movies is Android only today, with an iOS version in development.',
+      },
+      {
+        title: 'Industry depth',
+        body: 'Release calendars, production status, and IMDbPro underneath for people who work in film. None of that exists here, and none of it will.',
+      },
+    ],
+    differences: [
+      {
+        title: 'Built for tracking, not looking up',
+        body: 'IMDb records what you rate; it is not built around what you have watched. I Like Movies keeps a watched history for films and TV in one library, tracks series at episode level, and can tell a show that has ended from one between seasons.',
+      },
+      {
+        title: 'A household shares one library',
+        body: 'The people you live with can share a single watchlist and watched history, so a film added on one phone is on the other before you sit down. An IMDb watchlist belongs to one account.',
+      },
+      {
+        title: 'Recommendations from your own taste',
+        body: 'Monthly collections are generated from your ratings, and an assistant answers plain-language requests, filtered against what you have seen. IMDb recommends from broad popularity.',
+      },
+      {
+        title: 'Streaming availability for your country',
+        body: 'Every title shows which services carry it where you live. IMDb shows availability too, strongest for the US and tilted toward Amazon; here it is resolved per country as a core feature.',
+      },
+      {
+        title: 'No ads',
+        body: 'IMDb is ad-supported nearly everywhere you look. I Like Movies has no advertising at all.',
+      },
+    ],
+    table: [
+      { feature: 'What it is', ilm: 'A tracking app', other: 'A reference database' },
+      { feature: 'Platforms', ilm: 'Android (iOS in development)', other: 'Web, iOS, Android' },
+      { feature: 'Watched history', ilm: 'Yes, films and TV', other: 'No, ratings and lists' },
+      { feature: 'TV episode progress', ilm: 'Yes, per episode', other: 'Episodes can be rated, not tracked' },
+      { feature: 'Cast, crew and trivia depth', ilm: 'Enough to choose a film', other: 'The deepest there is' },
+      { feature: 'Shared household library', ilm: 'Yes', other: 'No' },
+      { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No, popularity-based' },
+      { feature: 'Export and import', ilm: 'Imports IMDb .csv and Letterboxd .zip', other: 'Exports ratings and lists as .csv' },
+      { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads' },
+    ],
+    migration: [
+      'This is the smoothest migration on the site: export your ratings or your watchlist from IMDb as a .csv file and upload it in I Like Movies under Imports. The app works out on its own whether the file is a watchlist or a custom list, and ratings come across with the titles.',
+      'Your IMDb account is untouched, and there is no reason to close it: IMDb as a reference next to a tracker is a perfectly good pairing.',
+    ],
+    verdict: [
+      'Keep IMDb. That is not a concession, it is the point: as a reference it has no substitute, and nothing here tries to replace it.',
+      'The question is only what tracks your watching. If a ratings list on IMDb has been quietly standing in for a tracker, the .csv import moves it into a real one in a few taps: watched history, episode progress, a household watchlist and recommendations from your own taste, on Android.',
+    ],
+    faqs: [
+      {
+        q: 'Can I import my IMDb ratings and watchlist into I Like Movies?',
+        a: [
+          'Yes. Export your ratings or a list from IMDb as a .csv file and upload it in the app under Imports. The app detects on its own whether the file is a watchlist or a custom list, and your scores are preserved.',
+        ],
+      },
+      {
+        q: 'Does IMDb track TV episodes?',
+        a: [
+          'You can rate individual episodes on IMDb, but there is no progress tracking: nothing records which episodes you have seen or how far into a season you are. I Like Movies tracks that per episode, and marking a whole season watched takes a tap.',
+        ],
+      },
+      {
+        q: 'Is IMDb still worth using alongside a tracker?',
+        a: [
+          'Yes, and this page recommends exactly that. IMDb is the best reference database in existence; a tracker answers a different question. Look things up there, keep your watching record here.',
+        ],
+      },
+      {
+        q: 'Is I Like Movies free?',
+        a: [
+          'Yes, free with no advertising. IMDb is also free, supported by ads, with IMDbPro as a paid tier for industry professionals.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'serializd',
+    competitor: 'Serializd',
+    title: 'I Like Movies vs Serializd, compared by the developer',
+    metaDescription:
+      'An honest comparison of I Like Movies and Serializd: public TV reviews vs a private films-and-TV library, communities, households, and where Serializd is simply better.',
+    h1: 'I Like Movies vs Serializd',
+    intro: [
+      'Serializd is Letterboxd for TV: a place to log shows and seasons, write reviews, and read what a community of TV watchers thought. Since TV Time closed, it is where much of that culture moved.',
+      'I Like Movies tracks TV too, but privately and alongside films, with the people you live with. The two apps overlap on logging and part ways on everything social, and this page lays the split out honestly.',
+    ],
+    betterThere: [
+      {
+        title: 'TV reviews and the community',
+        body: 'Reviews are the product on Serializd: per season, per show, in public, with a community that reads and responds. I Like Movies has private notes and no public reviews at all. If you want your take on a finale read by strangers who care, Serializd is the place built for that.',
+      },
+      {
+        title: 'TV-first culture',
+        body: 'Serializd is made by and for people whose main medium is television, and the whole product reflects it. TV in I Like Movies shares one library with films rather than owning the app.',
+      },
+      {
+        title: 'Reach',
+        body: 'Serializd runs on the web as well as on phones, so your logging is wherever a browser is. I Like Movies is an Android app today, iOS in development, and has no web app.',
+      },
+    ],
+    differences: [
+      {
+        title: 'Films and TV in one library',
+        body: 'Serializd tracks television. I Like Movies keeps films and TV series in a single library with one watched history and one watchlist, tracked to the episode.',
+      },
+      {
+        title: 'Private by default',
+        body: 'Ratings and notes are yours alone; there is no audience and nothing is published. On Serializd, writing for the room is the point.',
+      },
+      {
+        title: 'A household shares one library',
+        body: 'The people you live with share one watchlist and one watched history, so the series either of you started is on the same shelf. Serializd accounts are individual.',
+      },
+      {
+        title: 'Deciding, not just logging',
+        body: 'Monthly collections generated from your own ratings, an assistant that answers plain language, and streaming availability per country: the app leans toward the moment before you press play.',
+      },
+    ],
+    table: [
+      { feature: 'Films', ilm: 'Yes, same library as TV', other: 'No, TV only' },
+      { feature: 'TV episode progress', ilm: 'Yes, per episode', other: 'Logging by season and show' },
+      { feature: 'Public reviews', ilm: 'No, notes are private', other: 'Yes, the core of the app' },
+      { feature: 'Community', ilm: 'Friends and taste comparison', other: 'The TV-review community' },
+      { feature: 'Platforms', ilm: 'Android (iOS in development)', other: 'Web, iOS, Android' },
+      { feature: 'Shared household library', ilm: 'Yes', other: 'No' },
+      { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No' },
+      { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'No' },
+      { feature: 'Price', ilm: 'Free, no ads', other: 'Free to use' },
+    ],
+    migration: [
+      'There is no import path: I Like Movies reads a Letterboxd .zip or an IMDb .csv, and a Serializd export is neither. A TV library starts fresh here.',
+      'Rebuilding is smaller than it sounds: mark the current season of the shows you are actually mid-way through, which for most people is under ten, and let the back catalogue fill in as rewatches touch it.',
+    ],
+    verdict: [
+      'If writing and reading TV reviews is why you log shows, use Serializd. It is the best home that culture has, and a private-notes app is not a substitute for it.',
+      'If you want your TV progress next to your films, shared with your household, private, and pointed at what to watch next, that is what I Like Movies is built for, and the two philosophies are different enough that choosing is easy.',
+    ],
+    faqs: [
+      {
+        q: 'Can I import my Serializd history into I Like Movies?',
+        a: [
+          'No. Imports read a Letterboxd .zip or an IMDb .csv export only, and a Serializd export is neither. Series progress is set as you go, and marking a whole season watched takes a tap.',
+        ],
+      },
+      {
+        q: 'Does Serializd track movies?',
+        a: [
+          'No. Serializd is built for television. I Like Movies keeps films and TV series in one library with a single watched history and watchlist.',
+        ],
+      },
+      {
+        q: 'Which is better after TV Time shut down?',
+        a: [
+          'It depends on what you used TV Time for. If it was the community and the reviews, Serializd continues that culture best. If it was episode-level progress tracking on your phone, I Like Movies covers it with films in the same library and a household to share it with.',
+        ],
+      },
+      {
+        q: 'Is I Like Movies free?',
+        a: [
+          'Yes, free with no advertising. Serializd is free to use as well.',
+        ],
+      },
+    ],
+  },
 ];
 
 // Feeds getStaticPaths and the guides' cross-links.

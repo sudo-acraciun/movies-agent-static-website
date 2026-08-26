@@ -401,6 +401,7 @@ export const MIGRATIONS: Migration[] = [
     move: 'Export your ratings or your watchlist from IMDb as a .csv and upload it under Imports. The app works out which kind of list the file is on its own.',
     changes:
       'IMDb is a reference database with a watchlist attached, and it is still the best place to look up who directed what. This is built for the other half of the problem: choosing something tonight and keeping the record afterwards, with recommendations drawn from your own ratings, streaming availability for your country, and a library your household shares.',
+    compare: { href: '/vs/imdb', label: 'Read the full IMDb comparison' },
   },
   {
     name: 'Coming from Trakt',
