@@ -66,6 +66,58 @@ export function formatWeek(weekOf: string): string {
 // Newest first: the archive index and the /guides hub both read this order.
 export const WEEKLY_THEMES: WeeklyTheme[] = [
   {
+    slug: 'mafia-cinema',
+    title: 'Mafia cinema: 21 essential films from The Godfather to Gomorrah',
+    metaDescription:
+      '21 essential mafia and gangster films, from The Godfather and Once Upon a Time in America to Election, New World and Gomorrah, curated as a weekly collection.',
+    h1: 'Mafia cinema: 21 essential films',
+    weekOf: '2026-08-28',
+    heroBackdropUrl: 'https://image.tmdb.org/t/p/w1280/tSPT36ZKlP2WVHJLM4cQPLSzv3b.jpg',
+    intro: [
+      "No genre has given cinema a deeper mythology of capital and family: Coppola's olive oil and operas, Scorsese's wiseguys, Leone's dynasties remembered through opium smoke, Garrone's Camorra stripped of every last piece of glamour.",
+      'This collection of 21 films runs as the weekly theme in the I Like Movies Discover tab for the week of August 28, 2026, featuring The Godfather. It deliberately leaves America too: Hong Kong (Election), Korea (New World), Japan (Battles Without Honor and Humanity) and Italy\'s own reckonings (Gomorrah, Il Divo).',
+    ],
+    items: [
+      { title: 'The Godfather', year: 1972, director: 'Coppola', cast: 'Marlon Brando, Al Pacino, James Caan', blurb: "An aging don's youngest son, the one meant to stay clean, is pulled into the family business by an assassination attempt; the standard against which American cinema measures itself." },
+      { title: 'The Godfather Part II', year: 1974, director: 'Coppola', cast: 'Al Pacino, Robert Duvall, Diane Keaton', blurb: 'Michael consolidates the empire and loses everything human in it, while flashbacks trace his father\'s rise from Sicilian orphan to Don; the argument-ending sequel.' },
+      { title: 'Casino', year: 1995, director: 'Scorsese', cast: 'Robert De Niro, Sharon Stone, Joe Pesci', blurb: 'A handicapper runs a Las Vegas casino for the mob while his enforcer friend and his hustler wife burn it all down; a glittering, brutal autopsy of how the mob lost Vegas.' },
+      { title: 'The Irishman', year: 2019, director: 'Scorsese', cast: 'Robert De Niro, Al Pacino, Joe Pesci', blurb: "A truck driver becomes a mob hitman and Jimmy Hoffa's confidant across five decades, narrated from a nursing home; three and a half hours about what loyalty leaves you with." },
+      { title: 'Once Upon a Time in America', year: 1984, director: 'Leone', cast: 'Robert De Niro, James Woods, Elizabeth McGovern', blurb: 'Jewish gangsters rise from the Lower East Side through Prohibition, remembered in an opium haze by the survivor who betrayed them; Leone\'s four-hour farewell to cinema.' },
+      { title: 'Scarface', year: 1983, director: 'De Palma', cast: 'Al Pacino, Steven Bauer, Michelle Pfeiffer', blurb: "A Cuban refugee claws his way to the top of Miami's cocaine trade and machine-guns his way out of it; operatic excess that became hip-hop's favorite film." },
+      { title: 'The Untouchables', year: 1987, director: 'De Palma', cast: 'Kevin Costner, Sean Connery, Robert De Niro', blurb: "Eliot Ness assembles a small incorruptible team to bring down Al Capone in Prohibition Chicago; Connery's Oscar, Morricone's score, the station-steps shootout." },
+      { title: 'Donnie Brasco', year: 1997, director: 'Newell', cast: 'Johnny Depp, Al Pacino, Michael Madsen', blurb: 'An FBI agent infiltrates the Bonanno family so deeply that betraying his aging mob mentor starts to feel like the real crime; from a true infiltration.' },
+      { title: 'A Bronx Tale', year: 1993, director: 'De Niro', cast: 'Robert De Niro, Chazz Palminteri, Lillo Brancato', blurb: "A bus driver's son grows up torn between his honest father and the neighborhood boss who half-adopts him; De Niro directing Chazz Palminteri's own childhood." },
+      { title: "Miller's Crossing", year: 1990, director: 'Coen', cast: 'Gabriel Byrne, Marcia Gay Harden, John Turturro', blurb: 'A gang war over one doomed bookie forces a fixer to play both bosses against each other; the Coens\' dense, double-crossing gangster noir.' },
+      { title: 'Eastern Promises', year: 2007, director: 'Cronenberg', cast: 'Viggo Mortensen, Naomi Watts, Vincent Cassel', blurb: "A London midwife holding a dead girl's diary crosses the Russian mob, whose tattooed driver is not what he seems; contains the legendary bathhouse fight." },
+      { title: 'Gomorrah', year: 2008, director: 'Garrone', cast: 'Toni Servillo, Gianfelice Imparato, Maria Nazionale', blurb: "Five threads inside Naples' Camorra, from toxic-waste dumping to teenage soldiers, with every scrap of gangster glamour removed; the book's author still lives under guard." },
+      { title: 'The Long Good Friday', year: 1980, director: 'Mackenzie', cast: 'Bob Hoskins, Helen Mirren, Dave King', blurb: 'A London gang lord about to go legitimate with American money watches his empire get bombed apart over one Good Friday; Bob Hoskins\' star-making slow burn.' },
+      { title: 'The Public Enemy', year: 1931, director: 'Wellman', cast: 'James Cagney, Jean Harlow, Edward Woods', blurb: 'A street kid rises through Prohibition bootlegging, a grapefruit meets a face, and the ending is one of the genre\'s coldest; the 1931 template.' },
+      { title: 'Atlantic City', year: 1980, director: 'Malle', cast: 'Burt Lancaster, Susan Sarandon, Kate Reid', blurb: 'An aging numbers runner who never mattered gets one real chance at crime and romance as old Atlantic City is demolished around him; Burt Lancaster\'s late masterpiece.' },
+      { title: 'Election', year: 2005, director: 'Johnnie To', cast: 'Simon Yam, Tony Leung Ka-fai, Louis Koo', blurb: 'Triad bosses maneuver over the election of a new chairman, and the society\'s ancient baton becomes worth killing for; Hong Kong\'s cold, procedural answer to The Godfather.' },
+      { title: 'New World', year: 2013, director: 'Park Hoon-jung', cast: 'Lee Jung-jae, Choi Min-sik, Hwang Jung-min', blurb: 'A police mole rises so high in a Korean crime conglomerate that both sides prepare to burn him; a succession thriller with an ending people argue about for days.' },
+      { title: 'Battles Without Honor and Humanity', year: 1973, director: 'Fukasaku', cast: 'Bunta Sugawara, Hiroki Matsukata, Kunie Tanaka', blurb: 'Yakuza factions in postwar Hiroshima betray each other in semi-documentary sprawl; the film that demolished Japan\'s honorable-gangster myth.' },
+      { title: 'Il Divo', year: 2008, director: 'Sorrentino', cast: 'Toni Servillo, Anna Bonaiuto, Giulio Bosetti', blurb: 'A surreal portrait of Giulio Andreotti, seven-time Italian prime minister, and the web of Mafia trials and murders around him; Sorrentino at his most electric.' },
+      { title: 'King of New York', year: 1990, director: 'Ferrara', cast: 'Christopher Walken, David Caruso, Laurence Fishburne', blurb: 'A drug lord fresh out of prison sets about funding a hospital with cocaine money while detectives decide the law is not enough; Christopher Walken at his most elegantly reptilian.' },
+      { title: 'The Krays', year: 1990, director: 'Medak', cast: 'Gary Kemp, Martin Kemp, Billie Whitelaw', blurb: "Twin brothers rule London's East End through the sixties with matching suits and psychotic tempers; the true story of Ronnie and Reggie Kray." },
+    ],
+    appNote:
+      'Half of these are three-hour commitments, and a watchlist turns the canon into a plan. Keep the collection in I Like Movies, mark films as you go, and rate them so your recommendations learn your taste. A new themed collection lands in the Discover tab every Friday.',
+    faqs: [
+      {
+        q: 'What should I watch after The Godfather films?',
+        a: [
+          'Once Upon a Time in America for the elegy, Casino for the machinery of the business, and Gomorrah for the corrective: what organized crime looks like with the myth removed.',
+        ],
+      },
+      {
+        q: 'Is Scarface a remake?',
+        a: [
+          "Yes, of Howard Hawks' 1932 gangster classic, relocated from Prohibition Chicago to cocaine-era Miami. De Palma's version was savaged on release and canonized later.",
+        ],
+      },
+    ],
+  },
+  {
     slug: 'female-auteurs',
     title: '21 essential films by female directors, from The Piano to Jeanne Dielman',
     metaDescription:
