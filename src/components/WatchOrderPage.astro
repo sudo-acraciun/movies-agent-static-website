@@ -10,9 +10,9 @@ interface Props {
 const { order: o } = Astro.props;
 const path = `/${o.slug}`;
 
-// Cross-links: the other watch-order pages. These pages have no footer or
-// header slot, so linking each other is what keeps them from being
-// sitemap-only orphans.
+// Cross-links: the other watch-order pages, linked directly because a reader
+// mid-franchise wants the sibling list in one click, not a trip through the
+// /guides hub the footer links.
 const others = WATCH_ORDERS.filter((w) => w.slug !== o.slug);
 
 // Article + FAQPage as on the /vs pages, plus ItemList for the primary
@@ -116,7 +116,7 @@ const KIND_LABEL = { film: 'Film', series: 'Series', special: 'Special' } as con
   <p class="other-orders">
     More watch orders: {others.map((w, i) => (
       <span>{i > 0 && ', '}<a href={`/${w.slug}`}>{w.franchise}</a></span>
-    ))}
+    ))}. Or browse <a href="/guides">every guide and comparison</a>.
   </p>
 
   <div class="cta-row">

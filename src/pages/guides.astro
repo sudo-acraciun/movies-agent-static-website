@@ -1,0 +1,162 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import { SITE } from '../data/site';
+import { WATCH_ORDERS } from '../data/watchOrders';
+import { COMPARISONS } from '../data/comparisons';
+
+// The hub. Every guide-type page on the site is reachable from here, and this
+// page is the ONE the footer links, so a crawler entering anywhere reaches the
+// whole network in two hops. The lists iterate the data modules directly: a
+// new entry in watchOrders.ts or comparisons.ts appears here on the next
+// build with no edit to this file.
+//
+// The standalone guides below have their copy in their own page frontmatter
+// rather than a data module, so they are listed by hand. When a page type
+// grows its own data module (the planned listicles route), iterate the module
+// here instead of extending this array.
+const STANDALONE_GUIDES = [
+  {
+    path: '/from-tv-time',
+    name: 'Life after TV Time',
+    blurb:
+      'TV Time closed in July 2026. Where the tracking habit goes next, including the apps that fit better than this one.',
+  },
+  {
+    path: '/what-to-watch-together',
+    name: 'How to decide what to watch together',
+    blurb:
+      'Ways for two people to pick a film without losing the evening. Most of them need no app at all.',
+  },
+];
+
+const path = '/guides';
+const title = 'Movie and TV guides: watch orders and honest app comparisons | I Like Movies';
+const description =
+  'Franchise watch orders kept up to date, app comparisons written by the developer that say where the other app is better, and practical help deciding what to watch.';
+
+// One flat list of everything the page links, in page order, feeding the
+// ItemList below so the structured data and the visible lists cannot drift.
+const allEntries = [
+  ...WATCH_ORDERS.map((w) => ({ path: `/${w.slug}`, name: `${w.franchise} watch order` })),
+  ...COMPARISONS.map((c) => ({ path: `/vs/${c.slug}`, name: c.h1 })),
+  ...STANDALONE_GUIDES.map((g) => ({ path: g.path, name: g.name })),
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Movie and TV guides',
+    description,
+    url: new URL(path, SITE.url).href,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: allEntries.length,
+      itemListElement: allEntries.map((entry, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: entry.name,
+        url: new URL(entry.path, SITE.url).href,
+      })),
+    },
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  path={path}
+  heading="Movie and TV guides"
+  jsonLd={jsonLd}
+  disclosure={false}
+>
+  <p>
+    Everything on this site that is not about the app itself lives here:
+    franchise watch orders, comparisons with the other tracking apps, and
+    practical guides for the evening's actual problem, which is deciding.
+    All of it is written and kept current by the developer of I Like Movies,
+    and the comparison pages say so before making any claim.
+  </p>
+
+  <h2>Franchise watch orders</h2>
+  <p>
+    Every film and series in a franchise, in the order to watch them, updated
+    as new titles arrive.
+  </p>
+  <ul class="hub-list">
+    {
+      WATCH_ORDERS.map((w) => (
+        <li>
+          <a href={`/${w.slug}`}>{w.franchise} watch order</a>
+          <p>{w.metaDescription}</p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>App comparisons</h2>
+  <p>
+    Written by one side, so each page opens by saying so, names where the other
+    app is the better choice, and scores nothing.
+  </p>
+  <ul class="hub-list">
+    {
+      COMPARISONS.map((c) => (
+        <li>
+          <a href={`/vs/${c.slug}`}>{c.h1}</a>
+          <p>{c.metaDescription}</p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Practical guides</h2>
+  <ul class="hub-list">
+    {
+      STANDALONE_GUIDES.map((g) => (
+        <li>
+          <a href={g.path}>{g.name}</a>
+          <p>{g.blurb}</p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="cta-row">
+    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
+      Get I Like Movies on Google Play
+    </a>
+    <a href="/">More about the app</a>
+  </div>
+</ArticleLayout>
+
+<style is:global>
+  /* Prefixed .article like the layout's own rules; only the hub renders a
+     .hub-list. */
+  .article .hub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: grid;
+    gap: 14px;
+  }
+
+  .article .hub-list li {
+    border: 1px solid var(--ink-border);
+    border-radius: var(--radius);
+    background: var(--ink-raised);
+    padding: 16px 18px;
+    margin: 0;
+  }
+
+  .article .hub-list a {
+    font-weight: 700;
+  }
+
+  .article .hub-list p {
+    margin: 6px 0 0;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+  }
+</style>

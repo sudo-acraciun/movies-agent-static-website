@@ -111,6 +111,15 @@ const jsonLd = [
     ))
   }
 
+  {/* Same inline-join shape as WatchOrderPage's other-orders line: the comma
+      lives inside the expression so Astro's sibling whitespace never renders
+      as " , ". */}
+  <p>
+    More comparisons: {COMPARISONS.filter((other) => other.slug !== c.slug).map((other, i) => (
+      <span>{i > 0 && ', '}<a href={`/vs/${other.slug}`}>{other.competitor}</a></span>
+    ))}. Or browse <a href="/guides">every guide and watch order</a>.
+  </p>
+
   <div class="cta-row">
     <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
       Get I Like Movies on Google Play

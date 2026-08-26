@@ -103,6 +103,12 @@ export type Feature = {
   title: string;
   body: string;
   bullets: string[];
+  /**
+   * Optional contextual link rendered after the bullets. This is how a
+   * homepage section points into the content network without a nav entry:
+   * only the discover block carries one today, into /guides.
+   */
+  link?: { href: string; text: string };
   screenshotAlt: string;
 };
 
@@ -131,6 +137,7 @@ export const FEATURES: Feature[] = [
       'Curated tracks for franchises and long-running series, in watch order',
       'See exactly where a title is streaming in your country before you commit',
     ],
+    link: { href: '/guides', text: 'Browse the free watch order and comparison guides' },
     screenshotAlt:
       "The I Like Movies discover screen showing AI-generated movie collections built from the viewer's own ratings",
   },

@@ -47,6 +47,14 @@ const { feature, screenshot, flipped = false } = Astro.props;
       <ul class="points">
         {feature.bullets.map((bullet) => <li>{bullet}</li>)}
       </ul>
+
+      {
+        feature.link && (
+          <p class="more">
+            <a href={feature.link.href}>{feature.link.text}</a>
+          </p>
+        )
+      }
     </div>
 
     <div class="art">
@@ -98,6 +106,19 @@ const { feature, screenshot, flipped = false } = Astro.props;
     border-left: 2.5px solid var(--gold);
     border-bottom: 2.5px solid var(--gold);
     transform: rotate(-45deg);
+  }
+
+  /* A quiet text link, deliberately not a second CTA: the section's job is
+     still the app, this is a side door for the reader who wants the content
+     first. */
+  .more {
+    margin: 18px 0 0;
+    font-size: 0.95rem;
+  }
+
+  .more a {
+    color: var(--gold);
+    text-underline-offset: 3px;
   }
 
   @media (min-width: 900px) {
