@@ -3,6 +3,7 @@ import ArticleLayout from '../layouts/ArticleLayout.astro';
 import { SITE } from '../data/site';
 import { WATCH_ORDERS } from '../data/watchOrders';
 import { COMPARISONS } from '../data/comparisons';
+import { LISTICLES } from '../data/listicles';
 
 // The hub. Every guide-type page on the site is reachable from here, and this
 // page is the ONE the footer links, so a crawler entering anywhere reaches the
@@ -11,9 +12,8 @@ import { COMPARISONS } from '../data/comparisons';
 // build with no edit to this file.
 //
 // The standalone guides below have their copy in their own page frontmatter
-// rather than a data module, so they are listed by hand. When a page type
-// grows its own data module (the planned listicles route), iterate the module
-// here instead of extending this array.
+// rather than a data module, so they are listed by hand. Any page type with a
+// data module (watch orders, comparisons, listicles) is iterated instead.
 const STANDALONE_GUIDES = [
   {
     path: '/from-tv-time',
@@ -38,6 +38,7 @@ const description =
 // ItemList below so the structured data and the visible lists cannot drift.
 const allEntries = [
   ...WATCH_ORDERS.map((w) => ({ path: `/${w.slug}`, name: `${w.franchise} watch order` })),
+  ...LISTICLES.map((l) => ({ path: `/list/${l.slug}`, name: l.h1 })),
   ...COMPARISONS.map((c) => ({ path: `/vs/${c.slug}`, name: c.h1 })),
   ...STANDALONE_GUIDES.map((g) => ({ path: g.path, name: g.name })),
 ];
@@ -73,8 +74,9 @@ const jsonLd = [
 >
   <p>
     Everything on this site that is not about the app itself lives here:
-    franchise watch orders, comparisons with the other tracking apps, and
-    practical guides for the evening's actual problem, which is deciding.
+    franchise watch orders, ranked lists, comparisons with the other tracking
+    apps, and practical guides for the evening's actual problem, which is
+    deciding.
     All of it is written and kept current by the developer of I Like Movies,
     and the comparison pages say so before making any claim.
   </p>
@@ -90,6 +92,21 @@ const jsonLd = [
         <li>
           <a href={`/${w.slug}`}>{w.franchise} watch order</a>
           <p>{w.metaDescription}</p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Ranked lists and picks</h2>
+  <p>
+    Opinionated lists, each one stating plainly whose opinion it is.
+  </p>
+  <ul class="hub-list">
+    {
+      LISTICLES.map((l) => (
+        <li>
+          <a href={`/list/${l.slug}`}>{l.h1}</a>
+          <p>{l.metaDescription}</p>
         </li>
       ))
     }
@@ -133,29 +150,52 @@ const jsonLd = [
 
 <style is:global>
   /* Prefixed .article like the layout's own rules; only the hub renders a
-     .hub-list. */
+     .hub-list. The cards mirror the homepage capabilities grid (same border,
+     radius and hover treatment) so the two pages read as one system; the
+     article wrap is 760px, so the matrix resolves to two columns here. */
   .article .hub-list {
     list-style: none;
     padding: 0;
     margin: 0 0 1.5rem;
     display: grid;
-    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
   }
 
   .article .hub-list li {
+    /* position: relative anchors the stretched link below, which is what
+       makes the WHOLE card the click target rather than just the title. */
+    position: relative;
     border: 1px solid var(--ink-border);
     border-radius: var(--radius);
-    background: var(--ink-raised);
-    padding: 16px 18px;
+    background: var(--card);
+    padding: 20px 22px;
     margin: 0;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .article .hub-list li:hover {
+    border-color: rgba(245, 197, 24, 0.4);
+    transform: translateY(-3px);
   }
 
   .article .hub-list a {
     font-weight: 700;
   }
 
+  /* Stretched link: the anchor's hit area expands to cover its card, so the
+     card is clickable everywhere and the cursor says so. */
+  .article .hub-list a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+  }
+
   .article .hub-list p {
-    margin: 6px 0 0;
+    margin: 8px 0 0;
     font-size: 0.92rem;
     color: var(--text-secondary);
   }
