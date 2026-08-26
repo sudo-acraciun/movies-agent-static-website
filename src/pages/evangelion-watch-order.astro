@@ -1,0 +1,8 @@
+---
+import WatchOrderPage from '../components/WatchOrderPage.astro';
+import { WATCH_ORDERS } from '../data/watchOrders';
+
+const order = WATCH_ORDERS.find((w) => w.slug === 'evangelion-watch-order')!;
+---
+
+<WatchOrderPage order={order} />
