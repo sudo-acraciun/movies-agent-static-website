@@ -1,6 +1,6 @@
 ---
 import Logo from './Logo.astro';
-import { SITE } from '../data/site';
+import { SITE, SOCIALS } from '../data/site';
 
 // Runs in frontmatter, so this executes once, at `astro build`, on the build
 // machine's clock, not per request in a browser. The site is static with zero
@@ -69,6 +69,16 @@ const year = new Date().getFullYear();
       <div class="col">
         <h3>Contact</h3>
         <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+      </div>
+
+      <div class="col">
+        {/* Renders only profiles that are live with content; the entry rule
+            lives on SOCIALS in site.ts. target="_blank" because these leave
+            the site, same as the Play link above. */}
+        <h3>Follow</h3>
+        {SOCIALS.map((s) => (
+          <a href={s.url} target="_blank" rel="noopener">{s.name}</a>
+        ))}
       </div>
     </nav>
   </div>

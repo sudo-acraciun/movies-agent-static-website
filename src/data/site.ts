@@ -98,6 +98,14 @@ export const SITE = {
   },
 } as const;
 
+// Social profiles the footer links to. Entry rule: a profile appears here only
+// once it is LIVE with content. The accounts all exist under @ilikemoviesapp,
+// but a footer link to an empty profile reads as abandonment to a visitor, so
+// TikTok, Instagram, YouTube and Facebook join this list as each one gets its
+// first posts. Deliberately narrower than SAME_AS in index.astro, which is an
+// identity claim for crawlers and may name an empty-but-real profile.
+export const SOCIALS = [{ name: 'X', url: 'https://x.com/ilikemoviesapp' }] as const;
+
 export type Feature = {
   id: string;
   title: string;
