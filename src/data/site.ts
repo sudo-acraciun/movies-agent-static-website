@@ -104,7 +104,10 @@ export const SITE = {
 // TikTok, Instagram, YouTube and Facebook join this list as each one gets its
 // first posts. Deliberately narrower than SAME_AS in index.astro, which is an
 // identity claim for crawlers and may name an empty-but-real profile.
-export const SOCIALS = [{ name: 'X', url: 'https://x.com/ilikemoviesapp' }] as const;
+export const SOCIALS = [
+  { name: 'X', url: 'https://x.com/ilikemoviesapp' },
+  { name: 'Reddit', url: 'https://www.reddit.com/r/ilikemoviesapp/' },
+] as const;
 
 export type Feature = {
   id: string;
