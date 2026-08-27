@@ -33,6 +33,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'A brief connection hiccup no longer tells you your session expired',
       'The assistant now speaks stars, so asking for your 5-star movies gets your real favorites',
       'A friendly pointer now helps new users discover the assistant',
+      'Signing up is now three quick steps, and moving between them is instant',
+      'A one-time tip on your profile shows where to import your Letterboxd or IMDb history',
     ],
   },
   {
