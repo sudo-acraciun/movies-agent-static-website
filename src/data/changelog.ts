@@ -38,6 +38,13 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Marking a movie as watched now shows the year you watched it, and you can change it any time',
       'Tips you dismiss now stay dismissed',
       'You can now delete your own feed posts, and they disappear for everyone right away',
+      'The Friends page now leads with inviting a friend, and one search box both filters your friends and finds anyone on the app',
+      'Friend requests you sent now sit next to the ones you received, and you can withdraw them',
+      'Invite links now open a proper page with the store button, so friends without the app can install it first',
+      'An invite link tapped before signing up now still brings you to the invite once you are in',
+      'Title pages now open with a Synopsis section, followed by a Details section with awards, Metascore, budget, revenue and spoken languages',
+      'Collections and franchises a title belongs to now have their own Tracks section',
+      'Episode pages got the same Synopsis and Details layout',
     ],
   },
   {
