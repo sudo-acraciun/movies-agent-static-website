@@ -35,6 +35,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'A friendly pointer now helps new users discover the assistant',
       'Signing up is now three quick steps, and moving between them is instant',
       'A one-time tip on your profile shows where to import your Letterboxd or IMDb history',
+      'Marking a movie as watched now shows the year you watched it, and you can change it any time',
+      'Tips you dismiss now stay dismissed',
     ],
   },
   {
