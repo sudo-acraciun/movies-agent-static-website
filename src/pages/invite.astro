@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import { SITE } from '../data/site';
+
+// Deep-link redirector for friend and household invites. An invite is sent
+// through a messenger, and messengers only make https URLs tappable, so the
+// app builds its invite links against this page (/invite?friend=<code>,
+// ?household=<code>, ?householdInvite=<id>) and this page bounces the tap
+// into the app's custom scheme. It also has to serve the recipient who does
+// not have the app yet, which a bare scheme link cannot: that person needs a
+// store link and an instruction to come back to this URL afterwards.
+---
+
+<Layout
+  title={`Invite · ${SITE.name}`}
+  description="Accept a friend or household invite in the I Like Movies app, or get the app first."
+  path="/invite"
+  noindex
+>
+  <main class="share-wrap">
+    <div class="card">
+      <h1>{SITE.name}</h1>
+      <p class="status">Opening the app…</p>
+      <a class="open-btn" href="#" id="manualOpen">Tap to open the app</a>
+      <noscript><p class="status">Enable JavaScript to open the app.</p></noscript>
+      <p class="get-line">
+        Don't have the app yet? Install it and sign in, then tap this link again to accept the
+        invite.
+      </p>
+      <StoreButtons align="center" />
+    </div>
+  </main>
+
+  {/* is:inline: this must run in the page, unbundled, exactly where it
+      stands: it reads the query string and wires #manualOpen, which exists
+      by this point in the document. */}
+  <script is:inline>
+    var params = new URLSearchParams(window.location.search);
+    var target = null;
+    // First match wins. An invite link carries exactly one of these; if a
+    // hand-edited URL carries more, one target still has to be chosen, and a
+    // fixed order is the only choice that behaves the same way every time.
+    if (params.has('friend')) {
+      target = 'moviesagentapp://friend/accept?code=' + encodeURIComponent(params.get('friend'));
+    } else if (params.has('household')) {
+      target = 'moviesagentapp://household/join?code=' + encodeURIComponent(params.get('household'));
+    } else if (params.has('householdInvite')) {
+      target =
+        'moviesagentapp://household/invite?id=' + encodeURIComponent(params.get('householdInvite'));
+    }
+    var openBtn = document.getElementById('manualOpen');
+    if (target) {
+      // Auto-bounce into the app; the anchor stays as the manual fallback
+      // because some in-app webviews block scheme redirects issued from
+      // window.location but honour a user-tapped link.
+      openBtn.href = target;
+      window.location.replace(target);
+    } else {
+      // No invite code in the URL: nothing to open, so only the store buttons
+      // make sense. Hidden via script rather than markup so the noscript path
+      // keeps its explanatory line instead of a dead button.
+      openBtn.style.display = 'none';
+    }
+  </script>
+</Layout>
+
+<style>
+  .share-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .card {
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  /* The global h1 clamp is hero-sized; this is a utility card, not a hero. */
+  .card h1 {
+    font-size: 1.6rem;
+    letter-spacing: -0.015em;
+  }
+
+  .status {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .open-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .open-btn:active {
+    opacity: 0.85;
+  }
+
+  .get-line {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 10px 0 0;
+  }
+</style>
