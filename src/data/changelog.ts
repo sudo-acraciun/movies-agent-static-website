@@ -37,6 +37,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'A one-time tip on your profile shows where to import your Letterboxd or IMDb history',
       'Marking a movie as watched now shows the year you watched it, and you can change it any time',
       'Tips you dismiss now stay dismissed',
+      'You can now delete your own feed posts, and they disappear for everyone right away',
     ],
   },
   {
