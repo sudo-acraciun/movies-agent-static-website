@@ -24,6 +24,16 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '31 August 2026',
+    entries: [
+      'You can now choose who sees what you log, with separate settings for watched titles and ratings, and for your watchlist',
+      'Anything you log while set to Only me stays off your friends feed, and your own posts are marked so you can tell at a glance',
+      'Settings is now a short list of sections, and your streaming services moved to a page of their own',
+      'Title pages now show the IMDb, Rotten Tomatoes and Metacritic marks next to each score',
+      'You can now sort your library by Metascore',
+    ],
+  },
+  {
     week: '24 August 2026',
     entries: [
       'Sign-up steps now scroll on tablets and the continue button always stays within reach',
