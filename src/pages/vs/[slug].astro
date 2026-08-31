@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { COMPARISONS, NOT_DO, SITE } from '../../data/comparisons';
+import { organizationNode, organizationRef, appStubNode, appRef, webSiteRef } from '../../data/schema';
 
 export function getStaticPaths() {
   return COMPARISONS.map((comparison) => ({
@@ -12,17 +13,25 @@ export function getStaticPaths() {
 const { comparison: c } = Astro.props;
 const path = `/vs/${c.slug}`;
 
-// Article + FAQPage only. Never Review or aggregateRating: the developer
-// scoring his own product would be a lie a parser can read, and the
-// disclosure at the top of the page says as much in prose.
+// Article + FAQPage on the page's own content, plus the shared Organization and
+// a compact MobileApplication node (same @id as the homepage's full node, so an
+// engine merges them). Emitting the app entity here puts it directly on the
+// pages that surface for non-brand comparison queries. author/publisher/about
+// reference the shared entities by @id rather than minting anonymous nodes.
+//
+// Never Review or aggregateRating: the developer scoring his own product would
+// be a lie a parser can read, and the disclosure at the top says as much.
+// The BreadcrumbList is added by ArticleLayout from the breadcrumbs prop.
 const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: c.h1,
     description: c.metaDescription,
-    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
-    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    author: organizationRef,
+    publisher: organizationRef,
+    about: appRef,
+    isPartOf: webSiteRef,
     mainEntityOfPage: new URL(path, SITE.url).href,
   },
   {
@@ -34,6 +43,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: faq.a.join(' ') },
     })),
   },
+  organizationNode,
+  appStubNode,
+];
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides' },
+  { label: c.h1 },
 ];
 ---
 
@@ -42,8 +59,14 @@ const jsonLd = [
   description={c.metaDescription}
   path={path}
   heading={c.h1}
+  breadcrumbs={breadcrumbs}
   jsonLd={jsonLd}
 >
+  {/* The exact non-brand query for these pages is "<competitor> alternative",
+      not "vs" or "comparison", so the phrase leads the body in an H2. The
+      balanced view follows immediately in the intro and the "where <competitor>
+      is better" section, so the heading frames the page without overclaiming. */}
+  <h2>I Like Movies as a {c.competitor} alternative</h2>
   {c.intro.map((paragraph) => <p>{paragraph}</p>)}
 
   <h2>Where {c.competitor} is better</h2>

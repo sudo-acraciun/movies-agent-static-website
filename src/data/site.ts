@@ -61,10 +61,12 @@ export const SITE = {
   // They are built for different readers and cannot be the same text: the
   // definition is optimised for being quoted whole and runs 230 characters,
   // while a search snippet is cut at roughly 155 and would truncate it
-  // mid-clause. This one front-loads the terms someone actually types and
-  // stops before the cut.
+  // mid-clause. It now leads with the brand name: Search Console shows the
+  // brand has real volume ("i like movies app" ranks pos 2 and drives nearly
+  // all clicks), so the entity token earns the front position, and the typed
+  // keywords ("movie and TV app for Android") still sit in the first clause.
   metaDescription:
-    'Free movie and TV app for Android. AI picks from your own ratings, one shared watchlist for your household, and no ads. iPhone version in development.',
+    'I Like Movies is a free movie and TV app for Android. AI picks from your ratings, one shared household watchlist, no ads. iPhone version in development.',
 
   tagline: 'Everything you have watched. Everything you are going to.',
 
@@ -422,10 +424,27 @@ export const MIGRATIONS: Migration[] = [
     compare: { href: '/vs/trakt', label: 'Read the full Trakt comparison' },
   },
   {
+    // Simkl carries the most non-brand search impressions of any comparison
+    // page, so it earns a row on the homepage rather than sitting two hops away
+    // behind /guides. No import path, same as the Trakt and TV Time rows.
+    name: 'Coming from Simkl',
+    move: 'There is no Simkl import. Imports read a Letterboxd .zip or an IMDb .csv, and a Simkl export is neither, so a Simkl library starts fresh here. Film ratings that also live on Letterboxd or IMDb come across from those exports, and marking a season watched takes a tap.',
+    changes:
+      'Simkl is strong on anime and can auto-track from browser extensions. This is a phone app with no extensions to install: anime is carried as ordinary TV and films in one library, discovery comes first, there is no advertising, and a household shares a single library.',
+    compare: { href: '/vs/simkl', label: 'Read the full Simkl comparison' },
+  },
+  {
     name: 'Coming from TV Time',
     move: 'TV Time closed on 15 July 2026, and there is no TV Time import here, so series progress is set as you go. Marking a season watched takes a tap.',
     changes:
       'TV Time was focused on episode tracking and reminders for series. Episodes are tracked one at a time here too, films and TV sit in one library rather than being two separate concerns, discovery comes first, there is no advertising, and a household shares a single library instead of everyone keeping their own.',
     compare: { href: '/from-tv-time', label: 'Read the full guide to life after TV Time' },
+  },
+  {
+    name: 'Coming from Serializd',
+    move: 'There is no Serializd import. Imports read a Letterboxd .zip or an IMDb .csv, and a Serializd export is neither, so a TV library starts fresh here. Mark the seasons you are mid-way through, usually a short list, and the rest fills in as you go.',
+    changes:
+      'Serializd is built around public TV reviews. Here notes are private, films and TV sit in one library rather than TV alone, an AI assistant helps you decide what is next, and a household shares one watchlist and watched history.',
+    compare: { href: '/vs/serializd', label: 'Read the full Serializd comparison' },
   },
 ];

@@ -21,11 +21,14 @@ import libraryShot from '../assets/screenshots/library.png';
   <div class="wrap grid">
     <div class="copy">
       {/*
-        No eyebrow. The three facts it carried are all still above the fold:
-        "free" and "for Android" in the definitional sentence, "Free to use"
-        and "No advertising" in the trust row, and the platforms again on the
-        store buttons themselves. It was the third copy of all of it.
+        Brand eyebrow. Search Console now shows the brand name has real volume
+        ("i like movies app" ranks pos 2 and drives nearly all clicks), so the
+        entity token earns a place above the tagline H1. Kept to the name only:
+        the definitional sentence below still carries "free", "for Android" and
+        the differentiators, so this is the brand token the H1 lacked, not a
+        return of the three-fact eyebrow that was cut as redundant.
       */}
+      <p class="eyebrow">I Like Movies</p>
       <h1>
         Everything you have watched.<br />
         <span class="accent">Everything you are going to.</span>
@@ -137,6 +140,15 @@ import libraryShot from '../assets/screenshots/library.png';
 
   .copy {
     max-width: 640px;
+  }
+
+  .eyebrow {
+    margin: 0 0 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
   }
 
   .copy h1 {

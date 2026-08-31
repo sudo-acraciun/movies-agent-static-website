@@ -75,7 +75,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Letterboxd',
     title: 'I Like Movies vs Letterboxd, compared by the developer',
     metaDescription:
-      'An honest comparison of I Like Movies and Letterboxd: TV episode tracking, private notes vs public reviews, households, imports, and where Letterboxd is simply better.',
+      'I Like Movies as a Letterboxd alternative for Android: TV episode tracking, private notes vs public reviews, households, imports, and where Letterboxd is still better.',
     h1: 'I Like Movies vs Letterboxd',
     intro: [
       'Letterboxd is the social network for film lovers. It is where film culture happens online: reviews, lists, diaries, and the pleasure of reading what someone sharper than you thought of the film you just finished.',
@@ -172,7 +172,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Trakt',
     title: 'I Like Movies vs Trakt, compared by the developer',
     metaDescription:
-      'An honest comparison of I Like Movies and Trakt: automatic scrobbling vs a phone-first app, ecosystems, households, AI recommendations, and where Trakt is simply better.',
+      'I Like Movies as a Trakt alternative for Android: automatic scrobbling vs a phone-first app, ecosystems, households, AI recommendations, and where Trakt is still better.',
     h1: 'I Like Movies vs Trakt',
     intro: [
       'Trakt is the tracking backbone of the home-media world. It records what you watch automatically from media servers and players, and a whole ecosystem of apps is built on top of it.',
@@ -264,7 +264,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Simkl',
     title: 'I Like Movies vs Simkl, compared by the developer',
     metaDescription:
-      'An honest comparison of I Like Movies and Simkl: anime tracking, auto-tracking extensions, households, AI recommendations, and where Simkl is simply better.',
+      'I Like Movies as a Simkl alternative for Android: anime tracking, auto-tracking extensions, households, AI recommendations, and where Simkl is still better.',
     h1: 'I Like Movies vs Simkl',
     intro: [
       'Simkl tracks TV, anime and films across the web and mobile, with browser extensions that can record what you watch on streaming sites automatically. It is especially strong for anime.',
@@ -326,6 +326,19 @@ export const COMPARISONS: Comparison[] = [
     ],
     faqs: [
       {
+        q: 'What is Simkl?',
+        a: [
+          'Simkl is a free service for tracking TV, anime and films, with browser extensions that can log what you watch on streaming sites automatically. It is especially popular for anime, and runs on the web and on phones.',
+        ],
+      },
+      {
+        q: 'Is Simkl safe?',
+        a: [
+          'Yes. Simkl is a long-running, legitimate tracking service, and using it is safe in the ordinary sense. It is free with ads and sells premium tiers.',
+          'I Like Movies is a separate app with no ads. Which one fits depends on whether you want anime-first tracking and browser auto-logging, or a private films-and-TV library your household shares.',
+        ],
+      },
+      {
         q: 'Can I import my Simkl history into I Like Movies?',
         a: [
           'No. Imports read a Letterboxd .zip or an IMDb .csv export only. A Simkl library starts fresh here, though film ratings that also exist on Letterboxd or IMDb can come across from those exports.',
@@ -356,7 +369,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'IMDb',
     title: 'I Like Movies vs IMDb, compared by the developer',
     metaDescription:
-      'An honest comparison of I Like Movies and IMDb: a reference database vs a tracking app, ratings, watchlists, the .csv import path, and where IMDb is simply better.',
+      'I Like Movies as an IMDb alternative for tracking on Android: a reference database vs a tracking app, ratings, watchlists, the .csv import path, and where IMDb is still better.',
     h1: 'I Like Movies vs IMDb',
     intro: [
       'IMDb is the reference. It is where the internet looks up who directed what, and its rating is the closest thing film culture has to a universal score. It also carries a watchlist and lists, which is why people reasonably ask whether it can be their tracker too.',
@@ -453,7 +466,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Serializd',
     title: 'I Like Movies vs Serializd, compared by the developer',
     metaDescription:
-      'An honest comparison of I Like Movies and Serializd: public TV reviews vs a private films-and-TV library, communities, households, and where Serializd is simply better.',
+      'I Like Movies as a Serializd alternative for Android: public TV reviews vs a private films-and-TV library, communities, households, and where Serializd is still better.',
     h1: 'I Like Movies vs Serializd',
     intro: [
       'Serializd is Letterboxd for TV: a place to log shows and seasons, write reviews, and read what a community of TV watchers thought. Since TV Time closed, it is where much of that culture moved.',
@@ -533,6 +546,99 @@ export const COMPARISONS: Comparison[] = [
         q: 'Is I Like Movies free?',
         a: [
           'Yes, free with no advertising. Serializd is free to use as well.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'maimovie',
+    competitor: 'Maimovie',
+    title: 'I Like Movies vs Maimovie, compared by the developer',
+    metaDescription:
+      'I Like Movies as a Maimovie alternative for Android: an AI finder vs a library you keep, episode tracking, households, imports, and where Maimovie is still better.',
+    h1: 'I Like Movies vs Maimovie',
+    intro: [
+      'Maimovie is an AI finder for films and TV. You describe what you are in the mood for, and its AI, built on a large set of mood and theme prompts, comes back with titles and where they stream. It is discovery first, and good at it.',
+      'I Like Movies does discovery too, but around a library you keep: a watched history for films and TV together, tracked to the episode, and shared with the people you live with. The overlap is the recommendation; the difference is everything that happens after you pick.',
+    ],
+    betterThere: [
+      {
+        title: 'On iPhone today',
+        body: 'Maimovie is on both iOS and Android now. I Like Movies is Android only today, with an iOS version in development. If you are on an iPhone, Maimovie is the one you can install right now.',
+      },
+      {
+        title: 'Mood and prompt search',
+        body: 'Maimovie is built around a large library of AI prompts for searching by mood, theme and context, and that breadth of ready-made angles is its core strength. I Like Movies has an assistant you ask in your own words, which is a different shape of the same idea rather than a bigger version of it.',
+      },
+      {
+        title: 'A pure finder',
+        body: 'If all you want is a fast answer to "give me something to watch tonight" without keeping a library, Maimovie is pointed straight at that. I Like Movies is built for people who also want to keep the record afterwards.',
+      },
+    ],
+    differences: [
+      {
+        title: 'A library you keep, not just a search',
+        body: 'I Like Movies records what you have watched, films and TV in one library, tracked to the episode, and tells a series that has ended from one between seasons. Maimovie points you at a title; keeping the history afterwards is not what it is for.',
+      },
+      {
+        title: 'Recommendations from your own ratings',
+        body: 'Discover collections are rebuilt monthly from your ratings, your most-watched genre and the director or actor you return to, and the assistant filters against what you have already seen. The more you rate, the more the suggestions are yours rather than the catalogue’s.',
+      },
+      {
+        title: 'A household shares one library',
+        body: 'One watchlist and one watched history for the people you live with, so a film added on one phone is on the other before you sit down. Maimovie is a personal finder.',
+      },
+      {
+        title: 'Bring your history with you',
+        body: 'A Letterboxd .zip or an IMDb .csv imports your ratings and watchlist directly, so a library built over years is not left behind.',
+      },
+      {
+        title: 'No ads',
+        body: 'I Like Movies has no advertising and no sponsored rows. The recommendations answer to you.',
+      },
+    ],
+    table: [
+      { feature: 'What it is', ilm: 'A library you keep', other: 'An AI finder' },
+      { feature: 'Platforms', ilm: 'Android (iOS in development)', other: 'iOS, Android' },
+      { feature: 'Watched history', ilm: 'Yes, films and TV', other: 'Discovery focused' },
+      { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'Not the focus' },
+      { feature: 'AI recommendations', ilm: 'From your own ratings and history', other: 'Yes, prompt and mood based' },
+      { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal' },
+      { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes, across many providers' },
+      { feature: 'Import', ilm: 'Letterboxd .zip, IMDb .csv', other: 'Not a library to import' },
+      { feature: 'Price', ilm: 'Free, no ads', other: 'Free to use' },
+    ],
+    migration: [
+      'There is no Maimovie import, and usually little to move: Maimovie is a finder rather than a library, so there is normally no watched history or ratings export to bring across.',
+      'If your ratings live on Letterboxd or IMDb, import those and the library fills in at once; otherwise it builds up as you rate what you watch.',
+    ],
+    verdict: [
+      'If you want a fast AI finder on iPhone or Android and do not need to keep a library, Maimovie does that well and this page will not pretend otherwise.',
+      'If you want the deciding half and the keeping half in one place, films and TV tracked to the episode, shared with your household, on Android, that is the problem I Like Movies is built for.',
+    ],
+    faqs: [
+      {
+        q: 'What is Maimovie?',
+        a: [
+          'Maimovie is an AI-powered movie and TV finder for iOS and Android that recommends titles from mood and theme prompts and shows where they stream. It is built around discovery rather than keeping a personal library.',
+        ],
+      },
+      {
+        q: 'Can I import my Maimovie history into I Like Movies?',
+        a: [
+          'There is usually nothing to import: Maimovie is a finder rather than a tracker, so it does not keep a watched history or ratings to export, and there is no Maimovie import path. If your ratings live on Letterboxd or IMDb, import those instead.',
+        ],
+      },
+      {
+        q: 'Does I Like Movies recommend films with AI like Maimovie?',
+        a: [
+          'Yes, in two ways. Monthly Discover collections are generated from your own ratings, and an assistant answers plain-language requests filtered against what you have already seen. The difference is that the suggestions are drawn from your own history, not from prompts alone.',
+        ],
+      },
+      {
+        q: 'Is I Like Movies free?',
+        a: [
+          'Yes, free with no advertising. Maimovie is also free to use.',
         ],
       },
     ],

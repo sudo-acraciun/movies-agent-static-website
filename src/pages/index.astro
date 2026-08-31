@@ -6,6 +6,7 @@ import FeatureBlock from '../components/FeatureBlock.astro';
 import StoreButtons from '../components/StoreButtons.astro';
 import Footer from '../components/Footer.astro';
 import { SITE, FEATURES, CAPABILITIES, FAQS, MIGRATIONS } from '../data/site';
+import { mobileApplicationNode, webSiteNode, organizationNode } from '../data/schema';
 
 // Real captures live in src/assets so astro:assets can process them into AVIF,
 // WebP and a srcset. They are attached here rather than in site.ts because a
@@ -29,79 +30,16 @@ const SHOTS: Record<string, ImageMetadata> = {
 
 // --- Structured data -------------------------------------------------------
 //
-// Three blocks, each doing a different job:
+// The MobileApplication, WebSite and Organization nodes are shared and keyed by
+// stable @id in src/data/schema.ts, so every page on the site describes ONE
+// entity a search engine can merge rather than a fresh anonymous node per page.
+// Only the FAQPage is built here, because it mirrors this page's visible FAQ and
+// exists nowhere else.
 //
-//   MobileApplication    tells a search engine this is an app, on which
-//                        platforms, in which category, at what price. This is
-//                        what produces an app-style result rather than a
-//                        generic page result. MobileApplication rather than
-//                        the broader SoftwareApplication because the product
-//                        is a phone app and the subtype says so directly.
-//   FAQPage              mirrors the visible FAQ exactly. Built from the same
-//                        FAQS array as the rendered markup so the two cannot
-//                        drift apart, which would be a structured-data
-//                        violation rather than a cosmetic bug.
-//   WebSite              names the entity and its publisher, which is what
-//                        disambiguates a small brand from same-named things.
+// aggregateRating is deliberately ABSENT everywhere (see schema.ts): review
+// markup with no corresponding real reviews is treated as spam, and the app has
+// no public rating yet.
 //
-// aggregateRating is deliberately ABSENT. Google treats review markup with no
-// corresponding real reviews as spam, and the app has no public rating yet.
-// Add it only when the Play rating is real, and only with the real numbers.
-
-// Every page that talks about this app as an entity, from this domain's point
-// of view. sameAs is how a search engine learns that the Play listing, the
-// directory pages and the social profiles all describe ONE thing, which is
-// the corroboration a Knowledge Graph node is built from. Only pages we
-// control or have verified live belong here: a dead or wrong URL teaches the
-// engine the wrong entity, which is worse than teaching it nothing.
-//
-// The Play URL is the bare listing, not SITE.playUrl: the referrer parameter
-// exists to attribute installs, and an identity claim should point at the
-// canonical page, not a tracked variant of it.
-const SAME_AS = [
-  'https://play.google.com/store/apps/details?id=com.moviesagent.app',
-  'https://theresanaiforthat.com/ai/i-like-movies/',
-  'https://alternativeto.net/software/i-like-movies/',
-  'https://www.saashub.com/ilikemovies-app',
-  'https://x.com/ilikemoviesapp',
-  'https://www.tiktok.com/@ilikemoviesapp',
-];
-
-const softwareLd = {
-  '@context': 'https://schema.org',
-  '@type': 'MobileApplication',
-  name: SITE.name,
-  applicationCategory: 'EntertainmentApplication',
-  applicationSubCategory: 'Movie and TV discovery and tracking',
-  operatingSystem: 'Android',
-  url: SITE.url,
-  downloadUrl: SITE.playUrl,
-  installUrl: SITE.playUrl,
-  description: SITE.definition,
-  inLanguage: 'en',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'EUR',
-    availability: 'https://schema.org/InStock',
-  },
-  featureList: [
-    'AI movie and TV recommendations generated from your own ratings',
-    'AI chat assistant for recommendations in plain language',
-    'Follow friends and compare taste',
-    'Shared household watchlist and watched history',
-    'Streaming availability by country',
-    'TV episode level progress tracking',
-    'Viewing statistics by genre and country of origin',
-    'Import from Letterboxd and IMDb',
-  ],
-  author: {
-    '@type': 'Person',
-    name: 'Alexandru Craciun',
-  },
-  sameAs: SAME_AS,
-};
-
 // Answers are stored as paragraphs for readability and joined back into one
 // string here. The joined text is word-for-word identical to what renders on
 // screen, which is the requirement: structured data that does not match the
@@ -115,33 +53,16 @@ const faqLd = {
     acceptedAnswer: { '@type': 'Answer', text: faq.a.join('\n\n') },
   })),
 };
-
-const siteLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: SITE.name,
-  url: SITE.url,
-  description: SITE.definition,
-  publisher: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-    email: SITE.supportEmail,
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: SITE.operatorCountry,
-    },
-    sameAs: SAME_AS,
-  },
-};
 ---
 
 {/*
   Title notes, since it is the highest-weight string on the page.
 
-  Keyword first, brand last. The brand has no search volume yet, so leading
-  with it spends the most valuable position on a term nobody types. Once
-  people search "I Like Movies" by name this is worth revisiting.
+  Keyword first, brand tail app-qualified. Search Console now shows real volume
+  for the brand: "i like movies app" ranks pos 2 and drives nearly all clicks,
+  so the tail reads "| I Like Movies app" to match that exact winning query
+  rather than "| I Like Movies", which no longer reflects how people type it.
+  Keyword still leads; the change is only the brand tail.
 
   "tracker" rather than only "tracking app": both are searched, the page said
   "tracking" six times and "tracker" zero, and the two do not match each other
@@ -149,14 +70,14 @@ const siteLd = {
   identity; "iOS" is absent because the app is Android-only until the App
   Store release.
 
-  72 characters: Google cuts around 600px, so the brand tail may truncate.
-  Acceptable while the brand has no search volume of its own.
+  Google cuts around 600px, so the brand tail may truncate. Acceptable: the
+  keyword phrase that does the ranking is first, the brand tail is a bonus.
 */}
 <Layout
-  title="Find what to watch: AI movie and TV tracker for Android | I Like Movies"
+  title="Find what to watch: AI movie and TV tracker for Android | I Like Movies app"
   description={SITE.metaDescription}
   path="/"
-  jsonLd={[softwareLd, faqLd, siteLd]}
+  jsonLd={[mobileApplicationNode, faqLd, webSiteNode, organizationNode]}
 >
   <a class="skip-link" href="#main">Skip to content</a>
   <Header />
@@ -225,11 +146,14 @@ const siteLd = {
     >
       <div class="wrap">
         <div class="head">
-          {/* Naming the three apps in the H2 rather than only in the H3s
-              below is the single highest-value heading change on the page.
-              Comparative queries are the only searches a new domain can
-              realistically win, and this is the heading that matches them. */}
-          <h2 id="switch-title">Switching from Letterboxd, IMDb, Trakt or TV Time?</h2>
+          {/* Naming the apps in the H2 rather than only in the H3s below is
+              the single highest-value heading change on the page. Comparative
+              queries are the only searches a new domain can realistically win,
+              and this is the heading that matches them. Simkl is named here
+              because it carries the most non-brand search volume of the set;
+              Serializd has a row below but is left out of the heading to keep
+              it readable. */}
+          <h2 id="switch-title">Switching from Letterboxd, IMDb, Trakt, Simkl or TV Time?</h2>
           <p class="lede">
             Every movie tracker is built for a different job, and the good ones
             are genuinely good. Here is how your library moves across, and what

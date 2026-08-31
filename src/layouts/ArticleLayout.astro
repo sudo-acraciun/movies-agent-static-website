@@ -3,6 +3,7 @@ import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { DISCLOSURE } from '../data/comparisons';
+import { breadcrumbList, type Crumb } from '../data/schema';
 
 interface Props {
   title: string;
@@ -13,6 +14,13 @@ interface Props {
   heading: string;
   /** Extra JSON-LD blocks, forwarded to Layout. */
   jsonLd?: unknown[];
+  /**
+   * Ordered breadcrumb trail (Home > Guides > this page). When passed, it
+   * renders a visible breadcrumb nav above the H1 AND a BreadcrumbList JSON-LD
+   * node, both from this one array so they cannot drift. The last crumb is the
+   * current page and omits its href. Pages that pass nothing are unchanged.
+   */
+  breadcrumbs?: Crumb[];
   /**
    * Full-bleed backdrop rendered above the article, fading into the page
    * background. Decorative only (empty alt): the /themes pages pass the
@@ -28,10 +36,15 @@ interface Props {
   disclosure?: boolean;
 }
 
-const { title, description, path, heading, jsonLd = [], disclosure = true, heroImage } = Astro.props;
+const { title, description, path, heading, jsonLd = [], disclosure = true, heroImage, breadcrumbs } = Astro.props;
+
+// One source feeds both the visible nav and the structured data: append the
+// BreadcrumbList node only when a trail was passed, so other page types are
+// untouched.
+const allJsonLd = breadcrumbs && breadcrumbs.length ? [...jsonLd, breadcrumbList(breadcrumbs)] : jsonLd;
 ---
 
-<Layout title={title} description={description} path={path} jsonLd={jsonLd}>
+<Layout title={title} description={description} path={path} jsonLd={allJsonLd}>
   <a class="skip-link" href="#main">Skip to content</a>
   <Header />
   {
@@ -43,6 +56,22 @@ const { title, description, path, heading, jsonLd = [], disclosure = true, heroI
   }
   <main id="main" tabindex="-1" class="article">
     <div class="wrap">
+      {
+        breadcrumbs && breadcrumbs.length > 0 && (
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            {breadcrumbs.map((crumb, i) => (
+              <span class="crumb">
+                {i > 0 && <span class="sep" aria-hidden="true">/</span>}
+                {crumb.href ? (
+                  <a href={crumb.href}>{crumb.label}</a>
+                ) : (
+                  <span aria-current="page">{crumb.label}</span>
+                )}
+              </span>
+            ))}
+          </nav>
+        )
+      }
       <h1>{heading}</h1>
       {/* On comparison pages the developer-conflict disclosure sits before any
           claim, by construction: part of the layout, so a page cannot forget
@@ -99,6 +128,28 @@ const { title, description, path, heading, jsonLd = [], disclosure = true, heroI
   /* The global h1 clamp is sized for the hero, not an article headline. */
   .article h1 {
     font-size: clamp(2rem, 4.5vw, 2.8rem);
+  }
+
+  /* Breadcrumb trail above the H1. Quiet by design: an orientation aid and an
+     upward link to /guides, not a second navigation. */
+  .article .breadcrumbs {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  .article .breadcrumbs a {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  .article .breadcrumbs .sep {
+    margin: 0 8px;
+    color: var(--text-muted);
+  }
+
+  .article .breadcrumbs [aria-current='page'] {
+    color: var(--text-secondary);
   }
 
   .article .disclosure {
