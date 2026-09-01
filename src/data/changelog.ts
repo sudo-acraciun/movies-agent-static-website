@@ -26,6 +26,7 @@ export const CHANGELOG: ChangelogWeek[] = [
   {
     week: '31 August 2026',
     entries: [
+      'Get a heads-up when a show you are watching has a new episode, one alert a day at most, with an off switch in Settings',
       'You can now choose who sees what you log, with separate settings for watched titles and ratings, and for your watchlist',
       'Anything you log while set to Only me stays off your friends feed, and your own posts are marked so you can tell at a glance',
       'Settings is now a short list of sections, and your streaming services moved to a page of their own',
