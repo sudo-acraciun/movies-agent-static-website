@@ -30,6 +30,9 @@ export const SAME_AS = [
   'https://www.wikidata.org/wiki/Q141150329',
   'https://x.com/ilikemoviesapp',
   'https://www.tiktok.com/@ilikemoviesapp',
+  'https://www.instagram.com/ilikemoviesapp',
+  'https://www.youtube.com/@ilikemoviesapp',
+  'https://www.facebook.com/profile.php?id=61593335430358',
 ];
 
 // Stable entity identifiers. Fragment ids on the canonical origin, so the URI
