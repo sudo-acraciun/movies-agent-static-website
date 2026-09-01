@@ -3,6 +3,7 @@ import ArticleLayout from '../layouts/ArticleLayout.astro';
 import { SITE } from '../data/site';
 import { WATCH_ORDERS } from '../data/watchOrders';
 import { COMPARISONS } from '../data/comparisons';
+import { ROUNDUPS } from '../data/roundups';
 import { LISTICLES } from '../data/listicles';
 import { WEEKLY_THEMES, formatWeek } from '../data/themes';
 
@@ -47,6 +48,7 @@ const allEntries = [
   ...LISTICLES.map((l) => ({ path: `/list/${l.slug}`, name: l.h1 })),
   ...LATEST_THEMES.map((t) => ({ path: `/themes/${t.slug}`, name: t.h1 })),
   { path: '/themes', name: 'Weekly themes archive' },
+  ...ROUNDUPS.map((r) => ({ path: `/best/${r.slug}`, name: r.h1 })),
   ...COMPARISONS.map((c) => ({ path: `/vs/${c.slug}`, name: c.h1 })),
   ...STANDALONE_GUIDES.map((g) => ({ path: g.path, name: g.name })),
 ];
@@ -138,6 +140,23 @@ const jsonLd = [
       <a href="/themes">Weekly themes archive</a>
       <p>Every past collection, {WEEKLY_THEMES.length} weeks and counting, newest first.</p>
     </li>
+  </ul>
+
+  <h2>Best-app roundups</h2>
+  <p>
+    The apps worth knowing for a given job, ranked and compared. Written by the
+    makers of one of them, so each page says so, includes a real comparison
+    table, and credits every other app for what it does best.
+  </p>
+  <ul class="hub-list">
+    {
+      ROUNDUPS.map((r) => (
+        <li>
+          <a href={`/best/${r.slug}`}>{r.h1}</a>
+          <p>{r.metaDescription}</p>
+        </li>
+      ))
+    }
   </ul>
 
   <h2>App comparisons</h2>

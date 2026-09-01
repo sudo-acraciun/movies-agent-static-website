@@ -1,0 +1,254 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { ROUNDUPS } from '../../data/roundups';
+import { SITE } from '../../data/site';
+import { organizationNode, organizationRef, appStubNode, appRef, webSiteRef } from '../../data/schema';
+
+export function getStaticPaths() {
+  return ROUNDUPS.map((roundup) => ({
+    params: { slug: roundup.slug },
+    props: { roundup },
+  }));
+}
+
+const { roundup: r } = Astro.props;
+const path = `/best/${r.slug}`;
+const otherRoundups = ROUNDUPS.filter((other) => other.slug !== r.slug);
+
+// Article + FAQPage on the page's own content, an ItemList for the ranking (a
+// roundup literally IS a ranked list, and the structured data says so), plus the
+// shared Organization and the compact MobileApplication node (same @id as the
+// homepage's full node, so an engine merges them and the app entity lands on the
+// exact page that surfaces for the discovery query). author/publisher/about
+// reference the shared entities by @id.
+//
+// Never Review or aggregateRating: the developer scoring apps including his own
+// is a claim a parser flags, and the roundup's own disclosure says as much. The
+// ItemList carries names and positions only, no rating values.
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: r.h1,
+    description: r.metaDescription,
+    author: organizationRef,
+    publisher: organizationRef,
+    about: appRef,
+    isPartOf: webSiteRef,
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    numberOfItems: r.apps.length,
+    itemListElement: r.apps.map((app) => ({
+      '@type': 'ListItem',
+      position: app.rank,
+      name: app.name,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: r.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a.join(' ') },
+    })),
+  },
+  organizationNode,
+  appStubNode,
+];
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides' },
+  { label: r.h1 },
+];
+---
+
+<ArticleLayout
+  title={r.title}
+  description={r.metaDescription}
+  path={path}
+  heading={r.h1}
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+  disclosure={false}
+>
+  {r.intro.map((paragraph) => <p>{paragraph}</p>)}
+
+  {/* The roundup's own disclosure, not the shared ArticleLayout one: this page
+      ranks, so the shared "scores nothing" line would be false. This says
+      plainly that we publish the page and are one of the apps in it. */}
+  <p class="disclosure">{r.disclosure}</p>
+
+  <p class="updated">Last reviewed {r.updated}.</p>
+
+  <h2>The ranking</h2>
+  {
+    r.apps.map((app) => (
+      <div class:list={['pick', { us: app.isUs }]}>
+        <h3>{app.rank}. {app.name}</h3>
+        <p class="best-for">Best for {app.bestFor}.</p>
+        {app.blurb.map((paragraph) => <p>{paragraph}</p>)}
+        <div class="proscons">
+          <div>
+            <p class="proscons-head">Strengths</p>
+            <ul>{app.pros.map((point) => <li>{point}</li>)}</ul>
+          </div>
+          <div>
+            <p class="proscons-head">Trade-offs</p>
+            <ul>{app.cons.map((point) => <li>{point}</li>)}</ul>
+          </div>
+        </div>
+        {app.isUs && (
+          <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
+            Get I Like Movies on Google Play
+          </a>
+        )}
+      </div>
+    ))
+  }
+
+  <h2>Compared side by side</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Feature</th>
+          {r.tableCols.map((col) => <th scope="col">{col}</th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {
+          r.table.map((row) => (
+            <tr>
+              <th scope="row">{row.feature}</th>
+              {row.cells.map((cell) => <td>{cell}</td>)}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <h2>The honest verdict</h2>
+  {r.verdict.map((paragraph) => <p>{paragraph}</p>)}
+
+  <h2>Questions people ask</h2>
+  {
+    r.faqs.map((faq) => (
+      <details>
+        <summary>{faq.q}</summary>
+        {faq.a.map((paragraph) => <p>{paragraph}</p>)}
+      </details>
+    ))
+  }
+
+  {/* A list, not a comma-run sentence: with several roundups the inline form is
+      unreadable. The "(we compared N)" tail is stripped from the link text since
+      it repeats on every row and adds nothing in a list. The block renders only
+      when another roundup exists, so a single-page state shows just the browse
+      line. */}
+  {otherRoundups.length > 0 && (
+    <>
+      <p class="more-roundups-label">More roundups</p>
+      <ul class="more-roundups">
+        {otherRoundups.map((other) => (
+          <li>
+            <a href={`/best/${other.slug}`}>{other.h1.replace(/\s*\(we compared \d+\)$/, '')}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+  <p>Browse <a href="/guides">every guide and comparison</a>.</p>
+
+  <div class="cta-row">
+    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
+      Get I Like Movies on Google Play
+    </a>
+    <a href="/">More about the app</a>
+  </div>
+</ArticleLayout>
+
+<style is:global>
+  /* Prefixed .article like the layout's own rules, since the content arrives
+     through the <slot> and scoped styles cannot reach it. This block ships
+     only on /best pages, so these overrides never touch the other article
+     types. */
+
+  /* The intro follows the H1 directly here (the disclosure sits lower, unlike
+     the /vs pages), so the title needs its own breathing room. */
+  .article h1 {
+    margin-bottom: 24px;
+  }
+
+  .article .updated {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: -8px;
+  }
+
+  /* Tint our own column so the eye finds it without a loud highlight. By
+     convention I Like Movies is the first entry in `tableCols`, so it is always
+     the second cell in each row (the first is the feature row-header). */
+  .article table th:nth-child(2),
+  .article table td:nth-child(2) {
+    background: rgba(245, 197, 24, 0.07);
+  }
+
+  /* Related roundups as a scannable list. The label doubles as the spacing
+     that clears the FAQ divider above it. */
+  .article .more-roundups-label {
+    margin: 34px 0 8px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .article ul.more-roundups {
+    margin-bottom: 1rem;
+  }
+
+  /* Each ranked app is a card so the ranking reads as a list of picks rather
+     than a wall of prose. Our own entry gets a gold left border to make the
+     "this is us" honest and obvious, not hidden. */
+  .article .pick {
+    border: 1px solid var(--ink-border);
+    border-radius: var(--radius);
+    background: var(--card);
+    padding: 4px 22px 22px;
+    margin: 0 0 20px;
+  }
+
+  .article .pick.us {
+    border-left: 3px solid var(--gold);
+  }
+
+  .article .pick .best-for {
+    color: var(--gold);
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
+
+  /* Strengths and trade-offs sit side by side on a wide card, stacking under
+     the article's 760px wrap on a phone. */
+  .article .proscons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px 28px;
+    margin-top: 8px;
+  }
+
+  .article .proscons-head {
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 4px;
+  }
+
+  .article .pick .cta-button {
+    margin-top: 16px;
+  }
+</style>

@@ -138,9 +138,16 @@ const allJsonLd = breadcrumbs && breadcrumbs.length ? [...jsonLd, breadcrumbList
     margin-bottom: 16px;
   }
 
+  /* Grey, not the blue prose --link: at 0.85rem a saturated blue trail reads
+     cheap against the dark palette, and the breadcrumb is meant to be quiet. */
   .article .breadcrumbs a {
-    color: var(--link);
+    color: var(--text-secondary);
     text-decoration: none;
+  }
+
+  .article .breadcrumbs a:hover {
+    color: var(--text);
+    text-decoration: underline;
   }
 
   .article .breadcrumbs .sep {
@@ -149,7 +156,7 @@ const allJsonLd = breadcrumbs && breadcrumbs.length ? [...jsonLd, breadcrumbList
   }
 
   .article .breadcrumbs [aria-current='page'] {
-    color: var(--text-secondary);
+    color: var(--text-muted);
   }
 
   .article .disclosure {
@@ -222,6 +229,13 @@ const allJsonLd = breadcrumbs && breadcrumbs.length ? [...jsonLd, breadcrumbList
   .article details {
     border-bottom: 1px solid var(--ink-border);
     padding: 4px 0;
+  }
+
+  /* Separate the final FAQ from whatever follows it (a "More reading" or
+     "More comparisons" line on most page types) so that text does not crowd
+     the divider above it. last-of-type, so gaps between FAQs are untouched. */
+  .article details:last-of-type {
+    margin-bottom: 28px;
   }
 
   .article summary {
