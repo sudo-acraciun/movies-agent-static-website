@@ -1,0 +1,142 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { SITE } from '../../data/site';
+
+const path = '/blog';
+const title = 'The I Like Movies blog: build notes and how it works | I Like Movies';
+const description =
+  'Posts from the developer of I Like Movies: how the app was built, and how its parts actually work under the hood.';
+
+// Posts newest first. Listed by hand rather than from a data module: two posts
+// do not need one, and the same inline-list pattern is used for the standalone
+// guides on /guides. Each post owns its copy in its own page frontmatter; the
+// title and description here are kept in sync with it by hand.
+const POSTS = [
+  {
+    path: '/blog/how-the-assistant-checks-every-title',
+    title: 'The assistant that never answers from memory',
+    date: '2026-09-02',
+    blurb:
+      'Every film the assistant recommends is looked up, checked against what you have seen, and filtered to what you can actually stream. Here is how.',
+  },
+  {
+    path: '/blog/how-i-built-i-like-movies',
+    title: 'How I built an AI movie tracker as a solo dev',
+    date: '2026-08-21',
+    blurb:
+      'The build story: a solo-built Android movie tracker in Go, GraphQL and React Native, and the decisions that mattered.',
+  },
+];
+
+// Build-time only (Node), so this runs once at astro build, not per request.
+const fmtDate = (iso) =>
+  new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'The I Like Movies blog',
+    description,
+    url: new URL(path, SITE.url).href,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: POSTS.length,
+      itemListElement: POSTS.map((post, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: post.title,
+        url: new URL(post.path, SITE.url).href,
+      })),
+    },
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  path={path}
+  heading="Blog"
+  jsonLd={jsonLd}
+  disclosure={false}
+>
+  <p>
+    Notes from building and running I Like Movies, written by the developer.
+  </p>
+
+  <ul class="hub-list">
+    {
+      POSTS.map((post) => (
+        <li>
+          <a href={post.path}>{post.title}</a>
+          <p class="post-date">{fmtDate(post.date)}</p>
+          <p>{post.blurb}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ArticleLayout>
+
+<style is:global>
+  /* Same card treatment as the /guides hub list, so the two listing pages read
+     as one system: prefixed .article because the layout's global styles cannot
+     reach slotted page content otherwise. */
+  .article .hub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .article .hub-list li {
+    position: relative;
+    border: 1px solid var(--ink-border);
+    border-radius: var(--radius);
+    background: var(--card);
+    padding: 20px 22px;
+    margin: 0;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .article .hub-list li:hover {
+    border-color: rgba(245, 197, 24, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .article .hub-list a {
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  /* Stretched link: the anchor covers its whole card, so the card is clickable
+     everywhere. */
+  .article .hub-list a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+  }
+
+  .article .hub-list .post-date {
+    margin: 6px 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .article .hub-list p {
+    margin: 8px 0 0;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+  }
+</style>

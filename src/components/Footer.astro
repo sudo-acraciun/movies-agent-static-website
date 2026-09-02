@@ -49,10 +49,12 @@ const year = new Date().getFullYear();
         <a href="/guides">Guides</a>
         <a href="/#faq">FAQ</a>
         <a href="/changelog">Changelog</a>
-        {/* The only internal link to the build-story article, which is the
-            canonical target of the Dev.to republish: without it the page is
-            an orphan reachable through the sitemap alone. */}
-        <a href="/blog/how-i-built-i-like-movies">Build story</a>
+        {/* The blog hub, linked once, same as /guides above: every post hangs
+            off /blog, so linking the hub keeps each one within two clicks of
+            any page without growing this column per post. The posts are the
+            canonical targets of the Dev.to/Medium republishes; the hub keeps
+            them reachable in-site rather than through the sitemap alone. */}
+        <a href="/blog">Blog</a>
         <a href={SITE.playUrl} target="_blank" rel="noopener">Google Play</a>
       </div>
 

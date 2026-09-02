@@ -1,0 +1,178 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { SITE } from '../../data/site';
+
+const path = '/blog/how-the-assistant-checks-every-title';
+const title = 'The assistant that never answers from memory';
+const description =
+  'How the I Like Movies assistant checks every film it recommends against TMDB, your own history, and the streaming services you actually have.';
+
+// Canonical home of this post. The Dev.to, Medium and HackerNoon copies set
+// their canonical URL to this one, so the slug is load-bearing once those are
+// published: renaming it strands the canonical reference on the other side.
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    author: { '@type': 'Person', name: 'Alexandru Craciun' },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+];
+---
+
+{/* disclosure={false}: this is the maker writing about how his own app works,
+    with no head-to-head claim against another product. */}
+<ArticleLayout
+  title={`${title} | I Like Movies`}
+  description={description}
+  path={path}
+  heading={title}
+  jsonLd={jsonLd}
+  disclosure={false}
+>
+  <p>
+    The chat assistant in I Like Movies is a language model with tools, the
+    same kind of thing you have used elsewhere. The difference is a rule I
+    built the whole feature around: it is not allowed to answer a question
+    about films from its own memory. Every title it puts in front of you has
+    been looked up, checked against what you have already watched, and filtered
+    down to what you can actually stream tonight, before you ever see it.
+  </p>
+  <p>
+    That rule exists because of a specific failure. Ask a general chatbot for a
+    film and it will happily give you one, in a confident voice, with a
+    plausible year and a plausible plot. Sometimes the film is real and you
+    cannot watch it anywhere you subscribe. Sometimes the film does not exist
+    at all. Both answers look identical coming out of a model, because a model
+    that is recalling is indistinguishable from a model that is inventing. The
+    only fix is to stop it recalling and make it check. This is how the app
+    does that.
+  </p>
+
+  <h2>The rule it cannot talk its way around</h2>
+  <p>
+    The assistant's instructions are blunt about this. When you ask it to list,
+    count, or rank a person's films, it is told to fetch that filmography from
+    a tool first and work only from what comes back, and never to claim a
+    complete count like "all twelve of her films" without having done so. The
+    same holds for your lists: it is told never to say a list does not exist
+    without calling the tool that reads your lists, and never to confirm that
+    it added or removed something until the tool that does the adding has
+    actually returned.
+  </p>
+  <p>
+    This matters more than it sounds. A model asked for "every film Christopher
+    Nolan directed" will produce a list that feels complete and is quietly
+    wrong, usually by missing whatever is newest, because the newest titles
+    came out after its training data was frozen. The tool that answers this
+    reads the person's credits live and includes unreleased and upcoming
+    titles on purpose. So the count is the real count, and a film announced
+    last month is in the list rather than being denied out of existence.
+  </p>
+
+  <h2>Every title becomes a real record</h2>
+  <p>
+    When the assistant mentions a title, that title gets resolved to a specific
+    entry in the film database before anything happens with it. The lookup
+    tries the cheap path first: your own library and watchlist, already loaded
+    for this conversation, since a title you own is one it already knows the
+    identity of. If it is not there, it searches the film database directly.
+  </p>
+  <p>
+    Two things about that search are deliberate. First, it never guesses
+    whether you meant the film or the television series of the same name. The
+    year you give, or the model supplies, is what separates them, because the
+    same name at the same numeric id can be a film in one place and a show in
+    another, and guessing hands you the wrong thing. Second, if the search
+    comes back with nothing usable, the assistant does not fill the gap with
+    something invented. It tells you it could not find the title and stops.
+    "I couldn't find that, nothing was changed" is a real answer the code can
+    return; a made-up substitute is not.
+  </p>
+
+  <h2>It already knows what you have seen</h2>
+  <p>
+    Before the assistant reads a word of your message, its context has been
+    seeded with your own history: the films and shows you have rated, the ones
+    you own, and every title you have marked as watched. Each of those carries
+    a seen marker, and the rule attached to it is that a seen title is a signal
+    about your taste and never a thing to recommend back to you.
+  </p>
+  <p>
+    The awkward case is someone with years of history, more ratings than fit
+    sensibly into one prompt. Rather than let the older ones fall out of view,
+    where the assistant would no longer know you had seen them, there is a
+    plain name-only roster that carries the overflow, so the never-recommend
+    set stays complete no matter how much you have rated. And the parts of the
+    system that pull candidate suggestions are gated against the full set of
+    what you have watched, independently of anything the prompt trims. The
+    result you feel is simple: it does not suggest a film you have already
+    seen. The work behind that being reliable is most of the effort.
+  </p>
+
+  <h2>Only what you can actually put on tonight</h2>
+  <p>
+    A recommendation you cannot watch is not much better than one that does not
+    exist. So the last check is streaming. Every title on your watchlist knows
+    which services carry it in your country. The app takes that set and
+    intersects it with the services you have told it you actually subscribe to.
+    Only the titles that survive both are eligible when you ask what to watch
+    tonight.
+  </p>
+  <p>
+    In pseudocode the check is nothing clever, which is the point:
+  </p>
+  <p>
+    <em>for each title on your watchlist, keep it only if at least one service
+    that carries it is also a service you have. Otherwise drop it.</em>
+  </p>
+  <p>
+    That is why a "what should I watch tonight" answer cites its source on every
+    line, either "in your library" for something you own or something in the
+    shape of "on Netflix, in your watchlist" for something streamable. If a
+    watchlist title is not on any service you have, it is not offered for
+    tonight, because you cannot watch it tonight. And if you have not told the
+    app which services you have, that whole pool is empty by design, and it
+    falls back to recommending from the titles you own rather than guessing at
+    a subscription you might not hold.
+  </p>
+
+  <h2>The honest version of an assistant feature</h2>
+  <p>
+    A few smaller pieces hold the same line. The prompt carries today's date,
+    so "this year" means the actual current year and not the year the model was
+    trained in. It is told plainly that titles released after its training
+    cutoff still exist, so it never tells you a recent film is not real. And if
+    your library and your streamable watchlist are both empty, it is told to
+    say there is nothing to watch right now and offer to suggest things to add,
+    rather than improvising picks from its own memory and passing them off as
+    available.
+  </p>
+  <p>
+    None of this makes the model less useful. It is still the part that
+    understands "something short and funny for a Tuesday" or the film with the
+    submarine and the cook. It does the language. The facts, which title, have
+    you seen it, can you stream it, are answered by ordinary code that has a
+    right answer and looks it up. Splitting the work that way is the whole
+    trick. The model is good at understanding what you meant and bad at
+    remembering the world exactly; so it is trusted with the first and never
+    the second.
+  </p>
+  <p>
+    If you want the longer story of how the app itself got built, that is
+    written up separately, and the <a href="/guides">free watch orders and app
+    comparisons</a> are kept current by hand for the same reason this assistant
+    checks its work: a wrong answer stated confidently is worse than no answer
+    at all.
+  </p>
+  <p>
+    <em>
+      I Like Movies is at <a href="/">ilikemovies.app</a>, and on{' '}
+      <a href={SITE.playUrl} target="_blank" rel="noopener">Google Play</a>.
+    </em>
+  </p>
+</ArticleLayout>
