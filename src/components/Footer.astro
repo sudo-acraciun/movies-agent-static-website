@@ -33,6 +33,10 @@ const year = new Date().getFullYear();
       </p>
     </div>
 
+    {/* Three desktop columns (see the grid below): the two long lists get a
+        column each (Explore, Follow), and the two short groups (Legal,
+        Contact) share the third, stacked. Keeping each long list in its own
+        column is what stops one column from running far taller than the rest. */}
     <nav aria-label="Footer">
       <div class="col">
         {/* "App" labelled a column of page anchors, which is not what an app
@@ -59,21 +63,6 @@ const year = new Date().getFullYear();
       </div>
 
       <div class="col">
-        {/* No target="_blank" since these moved onto this domain. Forcing a
-            new tab is for leaving the site, and a legal page the reader can
-            back out of is the better behaviour now that it is one of ours. */}
-        <h3>Legal</h3>
-        <a href={SITE.legal.privacy}>Privacy policy</a>
-        <a href={SITE.legal.terms}>Terms of use</a>
-        <a href={SITE.legal.deleteAccount}>Delete your account</a>
-      </div>
-
-      <div class="col">
-        <h3>Contact</h3>
-        <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
-      </div>
-
-      <div class="col">
         {/* Renders only profiles that are live with content; the entry rule
             lives on SOCIALS in site.ts. target="_blank" because these leave
             the site, same as the Play link above. */}
@@ -81,6 +70,21 @@ const year = new Date().getFullYear();
         {SOCIALS.map((s) => (
           <a href={s.url} target="_blank" rel="noopener">{s.name}</a>
         ))}
+      </div>
+
+      {/* Legal and Contact share one column: both are short, so stacking them
+          keeps the three columns close in height. The second heading takes a
+          top margin (.col h3:not(:first-of-type)) to read as its own group. */}
+      <div class="col">
+        {/* No target="_blank" since these moved onto this domain. Forcing a
+            new tab is for leaving the site, and a legal page the reader can
+            back out of is the better behaviour now that it is one of ours. */}
+        <h3>Legal</h3>
+        <a href={SITE.legal.privacy}>Privacy policy</a>
+        <a href={SITE.legal.terms}>Terms of use</a>
+        <a href={SITE.legal.deleteAccount}>Delete your account</a>
+        <h3>Contact</h3>
+        <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
       </div>
     </nav>
   </div>
@@ -166,6 +170,12 @@ const year = new Date().getFullYear();
     font-weight: 700;
   }
 
+  /* A column holding two groups (Legal + Contact) needs air before the second
+     heading so the two do not read as one run-on list. */
+  .col h3:not(:first-of-type) {
+    margin-top: 26px;
+  }
+
   .col a {
     display: block;
     text-decoration: none;
@@ -219,6 +229,14 @@ const year = new Date().getFullYear();
     .inner {
       grid-template-columns: 1.1fr 1.4fr;
       gap: 60px;
+    }
+
+    /* Three columns, overriding the base auto-fit (which dropped a column at
+       this width and wrapped a group onto a second row). The two long lists
+       take a column each; the two short groups share the third, so the
+       columns stay close in height. */
+    nav {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 </style>
