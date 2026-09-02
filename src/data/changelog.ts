@@ -32,6 +32,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Settings is now a short list of sections, and your streaming services moved to a page of their own',
       'Title pages now show the IMDb, Rotten Tomatoes and Metacritic marks next to each score',
       'You can now sort your library by Metascore',
+      'After you have used the app for a while, it may invite you once to rate it on Google Play',
     ],
   },
   {
