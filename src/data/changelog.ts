@@ -34,6 +34,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'You can now sort your library by Metascore',
       'After you have used the app for a while, it may invite you once to rate it on Google Play',
       'Filmmaker pages with several roles now show their role tabs cleanly, and you can swipe across them when there are many',
+      'Your watchlist can now be filtered down to the titles you already own, and your collection to the ones you also plan to watch',
+      "Households now see everyone's owned titles in one collection, with a filter to show just one person's",
+      'A list emptied by your own filters now says so, instead of suggesting you add titles',
     ],
   },
   {
