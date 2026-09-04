@@ -33,6 +33,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Title pages now show the IMDb, Rotten Tomatoes and Metacritic marks next to each score',
       'You can now sort your library by Metascore',
       'After you have used the app for a while, it may invite you once to rate it on Google Play',
+      'Filmmaker pages with several roles now show their role tabs cleanly, and you can swipe across them when there are many',
     ],
   },
   {
