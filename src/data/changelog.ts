@@ -37,6 +37,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Your watchlist can now be filtered down to the titles you already own, and your collection to the ones you also plan to watch',
       "Households now see everyone's owned titles in one collection, with a filter to show just one person's",
       'A list emptied by your own filters now says so, instead of suggesting you add titles',
+      'Your library now opens with a few titles you have seen but never rated, so your first ratings are one tap away',
+      'The assistant now works from what you have seen and saved until you have rated a few titles',
+      "New members get a nudge toward the week's collection a day after joining, and a reminder to rate a few titles later that week",
+      "If you have been away for a week, one reminder points you back to the week's collection",
     ],
   },
   {
