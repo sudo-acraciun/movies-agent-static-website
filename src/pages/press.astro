@@ -98,9 +98,11 @@ const coverage = [
     </table>
   </div>
 
+  <hr />
   <h2>In one sentence</h2>
   <p>{SITE.definition}</p>
 
+  <hr />
   <h2>In a paragraph</h2>
   <p>
     I Like Movies is an independent app built by one developer in the Netherlands. It keeps a
@@ -112,17 +114,7 @@ const coverage = [
     advertising, and shows no sponsored recommendations.
   </p>
 
-  <h2>Coverage</h2>
-  <ul>
-    {
-      coverage.map((c) => (
-        <li>
-          <a href={c.url} target="_blank" rel="noopener">{c.outlet}</a>, {c.piece}
-        </li>
-      ))
-    }
-  </ul>
-
+  <hr />
   <h2>Maker</h2>
   <div class="maker">
     <img
@@ -140,14 +132,8 @@ const coverage = [
     </p>
   </div>
 
+  <hr />
   <h2>Assets</h2>
-  <p>
-    <a class="cta-button" href="/press/ilikemovies-press-kit.zip" download>Download the press kit (zip)</a>
-  </p>
-  <p>
-    The zip holds the app icon, the maker photo, the six screenshots below and this factsheet as
-    plain text.
-  </p>
   <ul>
     <li><a href="/icon-512.png" download="ilikemovies-icon-512.png">App icon, 512 x 512 PNG</a></li>
     <li><a href="/press/alexandru-craciun.jpg" download>Maker photo, Alexandru Crăciun, 400 x 400 JPEG</a></li>
@@ -162,7 +148,27 @@ const coverage = [
   <div class="shots" aria-label="Screenshots">
     {screenshots.map((s) => <img src={s.img.src} width={s.img.width} height={s.img.height} alt={`${s.name} screen of the app`} loading="lazy" />)}
   </div>
+  <p>
+    The zip holds the app icon, the maker photo, the six screenshots and the factsheet as plain
+    text.
+  </p>
+  <p>
+    <a class="cta-button" href="/press/ilikemovies-press-kit.zip" download>Download the press kit (zip)</a>
+  </p>
 
+  <hr />
+  <h2>Coverage</h2>
+  <ul>
+    {
+      coverage.map((c) => (
+        <li>
+          <a href={c.url} target="_blank" rel="noopener">{c.outlet}</a>, {c.piece}
+        </li>
+      ))
+    }
+  </ul>
+
+  <hr />
   <h2>Facts you can check</h2>
   <ul>
     <li>Free, no ads, no in-app purchases at the time of writing.</li>
@@ -174,10 +180,27 @@ const coverage = [
 </ArticleLayout>
 
 <style>
+  /* Section dividers. Seven sections of mixed shape (table, prose, a photo,
+     a grid) ran together; a rule between them gives the eye a place to
+     stop. The heading keeps most of its top margin above the rule and
+     takes a shorter one below it. */
+  hr {
+    border: 0;
+    border-top: 1px solid var(--ink-border);
+    margin: 44px 0 0;
+  }
+
+  hr + h2 {
+    margin-top: 26px;
+  }
+
+  /* The photo's hard edge sits closer to the heading than a line of text
+     does, so it gets a little extra air. */
   .maker {
     display: flex;
     gap: 20px;
     align-items: flex-start;
+    margin-top: 22px;
   }
 
   .maker img {
