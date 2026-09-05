@@ -124,20 +124,33 @@ const coverage = [
   </ul>
 
   <h2>Maker</h2>
-  <p>
-    Full-stack developer in the Netherlands, over ten years in. I Like Movies is my solo project,
-    built because picking something to watch with someone else is harder than picking alone. It
-    answers in plain words from your own ratings, your library and the streaming services you
-    actually pay for.
-  </p>
+  <div class="maker">
+    <img
+      src="/press/alexandru-craciun.jpg"
+      width="400"
+      height="400"
+      alt="Alexandru Crăciun"
+      loading="lazy"
+    />
+    <p>
+      Full-stack developer in the Netherlands, over ten years in. I Like Movies is my solo project,
+      built because picking something to watch with someone else is harder than picking alone. It
+      answers in plain words from your own ratings, your library and the streaming services you
+      actually pay for.
+    </p>
+  </div>
 
   <h2>Assets</h2>
   <p>
     <a class="cta-button" href="/press/ilikemovies-press-kit.zip" download>Download the press kit (zip)</a>
   </p>
-  <p>The zip holds the app icon, the six screenshots below and this factsheet as plain text.</p>
+  <p>
+    The zip holds the app icon, the maker photo, the six screenshots below and this factsheet as
+    plain text.
+  </p>
   <ul>
     <li><a href="/icon-512.png" download="ilikemovies-icon-512.png">App icon, 512 x 512 PNG</a></li>
+    <li><a href="/press/alexandru-craciun.jpg" download>Maker photo, Alexandru Crăciun, 400 x 400 JPEG</a></li>
     {
       screenshots.map((s) => (
         <li>
@@ -161,6 +174,31 @@ const coverage = [
 </ArticleLayout>
 
 <style>
+  .maker {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .maker img {
+    width: 112px;
+    height: 112px;
+    flex: none;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--ink-border);
+  }
+
+  .maker p {
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    .maker {
+      flex-direction: column;
+    }
+  }
+
   .shots {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
