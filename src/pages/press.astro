@@ -13,8 +13,10 @@ import shotHousehold from '../assets/screenshots/household.png';
 // for the recommender-column pitches; the facts here must stay identical to
 // the store listings and the FAQ, so most of them come from SITE.
 //
-// Coverage is links only. Quoting a writer's words back on our own site
-// needs their permission; a link to their public article does not.
+// Coverage quotes one short line per piece, attributed and linked to the
+// source: a quotation of that size for reference sits inside quotation right
+// (NL Auteurswet art. 15a; fair use elsewhere). Courtesy permission requests
+// went to both writers on 2026-09-04; a "no" removes the line, not the link.
 const path = '/press';
 const title = 'Press kit';
 const description =
@@ -48,16 +50,20 @@ const screenshots = [
   { name: 'Household', img: shotHousehold },
 ];
 
-const coverage = [
+const coverage: { quote: string; outlet: string; piece: string; url: string; note?: string }[] = [
   {
+    quote: 'This might be my new favorite movie tracking app.',
     outlet: 'Rich on Tech',
     piece: 'newsletter, 22 August 2026',
     url: 'https://richontech.tv/p/the-best-way-to-stop-a-scam-is-to',
   },
   {
+    quote:
+      'This is where I Like Movies steps in: a personal catalogue of films and TV series that can recommend what is worth watching next, from your own profile and collection.',
     outlet: 'Bug.hr',
     piece: 'App dana, 26 August 2026',
     url: 'https://www.bug.hr/appdana/i-like-movies-osobni-mobilni-filmski-dnevnik-s-prilagodjenim-preporukama-62291',
+    note: 'translated from Croatian',
   },
 ];
 ---
@@ -115,6 +121,22 @@ const coverage = [
   </p>
 
   <hr />
+  <h2>Coverage</h2>
+  <ul class="coverage">
+    {
+      coverage.map((c) => (
+        <li>
+          <p class="quote">“{c.quote}”</p>
+          <p class="source">
+            <a href={c.url} target="_blank" rel="noopener">{c.outlet}</a>, {c.piece}
+            {c.note ? ` (${c.note})` : ''}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <hr />
   <h2>Maker</h2>
   <div class="maker">
     <img
@@ -157,18 +179,6 @@ const coverage = [
   </p>
 
   <hr />
-  <h2>Coverage</h2>
-  <ul>
-    {
-      coverage.map((c) => (
-        <li>
-          <a href={c.url} target="_blank" rel="noopener">{c.outlet}</a>, {c.piece}
-        </li>
-      ))
-    }
-  </ul>
-
-  <hr />
   <h2>Facts you can check</h2>
   <ul>
     <li>Free, no ads, no in-app purchases at the time of writing.</li>
@@ -192,6 +202,29 @@ const coverage = [
 
   hr + h2 {
     margin-top: 26px;
+  }
+
+  .coverage {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+
+  .coverage li {
+    border-left: 3px solid var(--gold);
+    padding: 2px 0 2px 16px;
+    margin: 0 0 18px;
+  }
+
+  .coverage .quote {
+    margin: 0 0 4px;
+    font-size: 1.15rem;
+    color: var(--text);
+  }
+
+  .coverage .source {
+    margin: 0;
+    color: var(--text-secondary);
   }
 
   /* The photo's hard edge sits closer to the heading than a line of text
