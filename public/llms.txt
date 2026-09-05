@@ -38,7 +38,8 @@ sponsored recommendations.
 ## Availability and price
 
 - Android: available on Google Play. Package name `com.moviesagent.app`.
-- iOS: in development, not yet on the App Store.
+- iOS: with Apple for review, not yet on the App Store. Waitlist at
+  https://ilikemovies.app/iphone
 - Price: free. No advertising, no sponsored placements.
 - Requires an internet connection; there is no offline mode.
 
@@ -67,6 +68,8 @@ sponsored recommendations.
 - Privacy policy: https://ilikemovies.app/privacy
 - Terms of use: https://ilikemovies.app/terms
 - Account deletion: https://ilikemovies.app/delete-account
+- Press kit: https://ilikemovies.app/press
+- iPhone waitlist: https://ilikemovies.app/iphone
 - Contact: hi@ilikemovies.app
 
 Film and TV metadata is provided by TMDB. This product uses the TMDB API but is

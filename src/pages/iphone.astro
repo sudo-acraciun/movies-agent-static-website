@@ -1,0 +1,227 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import { SITE } from '../data/site';
+
+// The iPhone waitlist. Every editorial mention so far reached only the
+// Android half of its readers; this page catches the iPhone half with an
+// explicit-consent email capture, the project's only consented list. The
+// form posts to the API's /api/waitlist (see SITE.apiUrl); nothing about it
+// is wired to analytics, the table count is the metric.
+//
+// CONSENT_TEXT is sent along with the address and stored beside it, so the
+// record says exactly what the person agreed to at the time. Change the
+// sentence here and every later row carries the new wording; earlier rows
+// keep theirs.
+const path = '/iphone';
+const title = 'I Like Movies for iPhone';
+const description =
+  'The iPhone version of I Like Movies is with Apple for review. Leave your email and we tell you when it is on the App Store.';
+const CONSENT_TEXT =
+  'Email me when the iPhone app is out. Two emails at most, no newsletter. Remove me any time at hi@ilikemovies.app.';
+---
+
+<ArticleLayout
+  title={`${title} | ${SITE.name}`}
+  description={description}
+  path={path}
+  heading="I Like Movies for iPhone"
+  disclosure={false}
+>
+  <p>
+    The iPhone app is built and is with Apple for review. Leave your address below and we email you
+    the day it reaches the App Store: at most two emails ever, no newsletter. Your library lives on
+    the server, so an account started on Android carries straight over.
+  </p>
+
+  <form id="waitlist" class="waitlist" novalidate>
+    <label for="wl-email">Email address</label>
+    <input
+      id="wl-email"
+      name="email"
+      type="email"
+      required
+      autocomplete="email"
+      inputmode="email"
+      spellcheck="false"
+      placeholder="you@example.com"
+    />
+    {/* Honeypot. Off-screen and out of the tab order, so a person never
+        sees it and a form-filling bot fills it; the API answers such a
+        submission like a success and stores nothing. */}
+    <div class="hp" aria-hidden="true">
+      <label for="wl-website">Website</label>
+      <input id="wl-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    <label class="consent">
+      <input id="wl-consent" name="consent" type="checkbox" required />
+      <span>{CONSENT_TEXT}</span>
+    </label>
+    <button type="submit" class="cta-button" id="wl-submit">Notify me</button>
+    <p class="msg" id="wl-msg" role="status" aria-live="polite"></p>
+  </form>
+  <noscript>
+    <p>
+      The form needs JavaScript. You can also email <a href={`mailto:${SITE.supportEmail}`}
+        >{SITE.supportEmail}</a
+      > with "iPhone" in the subject and we will add you by hand.
+    </p>
+  </noscript>
+
+  <h2>On Android already?</h2>
+  <p>
+    The Android app is on <a href={SITE.playUrl} target="_blank" rel="noopener">Google Play</a> now,
+    free and without ads.
+  </p>
+
+  {/* is:inline + define:vars: the script must run in this page with the API
+      origin and the consent sentence baked in from the frontmatter, so the
+      text stored on the server is the text rendered next to the checkbox. */}
+  <script is:inline define:vars={{ apiUrl: SITE.apiUrl, consentText: CONSENT_TEXT }}>
+    var form = document.getElementById('waitlist');
+    var email = document.getElementById('wl-email');
+    var consent = document.getElementById('wl-consent');
+    var website = document.getElementById('wl-website');
+    var submit = document.getElementById('wl-submit');
+    var msg = document.getElementById('wl-msg');
+
+    function say(text, kind) {
+      msg.textContent = text;
+      msg.className = 'msg' + (kind ? ' ' + kind : '');
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!email.validity.valid) {
+        say('That address does not look right.', 'error');
+        email.focus();
+        return;
+      }
+      if (!consent.checked) {
+        say('Tick the box so we are allowed to email you.', 'error');
+        consent.focus();
+        return;
+      }
+      submit.disabled = true;
+      say('Saving…');
+      fetch(apiUrl + '/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.value,
+          consent: true,
+          consentText: consentText,
+          source: 'iphone-page',
+          website: website.value,
+        }),
+      })
+        .then(function (res) {
+          if (res.status === 204) {
+            form.innerHTML =
+              '<p class="msg done" role="status" tabindex="-1">You are on the list. We email you when the iPhone app is out.</p>';
+            // Keyboard and screen-reader users were on the submit button,
+            // which no longer exists; land them on the confirmation.
+            form.querySelector('.done').focus();
+            return;
+          }
+          submit.disabled = false;
+          if (res.status === 429) {
+            say('Too many tries from this network. Wait a minute and try again.', 'error');
+          } else if (res.status === 400) {
+            say('That address does not look right.', 'error');
+          } else {
+            say(
+              'Could not save that. Email hi@ilikemovies.app with "iPhone" in the subject and we will add you.',
+              'error',
+            );
+          }
+        })
+        .catch(function () {
+          submit.disabled = false;
+          say(
+            'Could not reach the server. Email hi@ilikemovies.app with "iPhone" in the subject and we will add you.',
+            'error',
+          );
+        });
+    });
+  </script>
+</ArticleLayout>
+
+<style>
+  .waitlist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 0 2rem;
+  }
+
+  .waitlist label {
+    font-weight: 600;
+  }
+
+  .waitlist input[type='email'] {
+    font: inherit;
+    color: var(--text);
+    background: var(--ink-raised);
+    border: 1px solid var(--ink-border);
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+
+  .waitlist input[type='email']:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  .consent {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-weight: 400;
+    color: var(--text-body);
+    line-height: 1.5;
+  }
+
+  .consent input {
+    margin-top: 5px;
+    width: 18px;
+    height: 18px;
+    flex: none;
+    accent-color: var(--gold);
+  }
+
+  .waitlist .cta-button {
+    align-self: flex-start;
+    cursor: pointer;
+    border: 0;
+    font: inherit;
+    font-weight: 700;
+  }
+
+  .waitlist .cta-button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+
+  .hp {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .msg {
+    min-height: 1.5em;
+    margin: 0;
+  }
+
+  .msg.error {
+    color: var(--ember);
+  }
+
+  .msg.done {
+    color: var(--gold);
+    font-weight: 600;
+  }
+</style>

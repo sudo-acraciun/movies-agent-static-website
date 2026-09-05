@@ -85,6 +85,12 @@ export const SITE = {
     'https://play.google.com/store/apps/details?id=com.moviesagent.app&referrer=utm_source%3Dilikemovies.app',
   appStoreUrl: null as string | null,
 
+  // The API origin, used by exactly one page: the iPhone waitlist form on
+  // /iphone posts to `${apiUrl}/api/waitlist`. The backend allows that call
+  // only from this site's origin (its WEB_DEEPLINK_BASE_URL), so the two
+  // values are a pair: a different site host needs a backend change too.
+  apiUrl: 'https://api.i-like-movies.app',
+
   // Root-relative, and on this domain since the migration off
   // sudo-acraciun.github.io/movienight. That host still serves the documents
   // as redirect stubs, because the URL is compiled into every app build that

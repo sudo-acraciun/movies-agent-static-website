@@ -1,0 +1,156 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import { SITE } from '../data/site';
+import shotLibrary from '../assets/screenshots/library.png';
+import shotDiscover from '../assets/screenshots/discover.png';
+import shotAssistant from '../assets/screenshots/assistant.png';
+import shotDetail from '../assets/screenshots/movie-detail.png';
+import shotFeed from '../assets/screenshots/feed.png';
+import shotHousehold from '../assets/screenshots/household.png';
+
+// Press page: one URL a journalist or a newsletter writer can open and have
+// everything (facts, assets, bio, contact) without a reply from us. Written
+// for the recommender-column pitches; the facts here must stay identical to
+// the store listings and the FAQ, so most of them come from SITE.
+//
+// Coverage is links only. Quoting a writer's words back on our own site
+// needs their permission; a link to their public article does not.
+const path = '/press';
+const title = 'Press kit';
+const description =
+  'Facts, screenshots, icon and maker bio for I Like Movies, the free movie and TV tracker for Android with an iPhone version in review.';
+
+const screenshots = [
+  { name: 'Library', img: shotLibrary },
+  { name: 'Discover', img: shotDiscover },
+  { name: 'Assistant', img: shotAssistant },
+  { name: 'Title page', img: shotDetail },
+  { name: 'Friends feed', img: shotFeed },
+  { name: 'Household', img: shotHousehold },
+];
+
+const coverage = [
+  {
+    outlet: 'Rich on Tech',
+    piece: 'newsletter, 22 August 2026',
+    url: 'https://richontech.tv/p/the-best-way-to-stop-a-scam-is-to',
+  },
+  {
+    outlet: 'Bug.hr',
+    piece: 'App dana, 26 August 2026',
+    url: 'https://www.bug.hr/appdana/i-like-movies-osobni-mobilni-filmski-dnevnik-s-prilagodjenim-preporukama-62291',
+  },
+];
+---
+
+<ArticleLayout
+  title={`${title} | ${SITE.name}`}
+  description={description}
+  path={path}
+  heading="Press kit"
+  disclosure={false}
+>
+  <p>
+    Everything on this page may be used without asking. For anything else, or for a quick answer,
+    write to <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+  </p>
+
+  <h2>Factsheet</h2>
+  <div class="table-scroll">
+    <table>
+      <tbody>
+        <tr><th>Name</th><td>{SITE.name}</td></tr>
+        <tr><th>What it is</th><td>A free movie and TV tracker that helps you decide what to watch</td></tr>
+        <tr><th>Platforms</th><td>Android on Google Play. iPhone version with Apple for review.</td></tr>
+        <tr><th>Price</th><td>Free. No advertising, no sponsored placements.</td></tr>
+        <tr><th>Launched</th><td>12 August 2026 on Google Play</td></tr>
+        <tr><th>Made by</th><td>Alexandru Crăciun, one developer, {SITE.operatorCountry}</td></tr>
+        <tr><th>Website</th><td><a href={SITE.url}>{SITE.domain}</a></td></tr>
+        <tr><th>Google Play</th><td><a href={SITE.playUrl} target="_blank" rel="noopener">play.google.com</a> (package <code>com.moviesagent.app</code>)</td></tr>
+        <tr><th>Contact</th><td><a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>In one sentence</h2>
+  <p>{SITE.definition}</p>
+
+  <h2>In a paragraph</h2>
+  <p>
+    I Like Movies is an independent app built by one developer in the Netherlands. It keeps a
+    record of every film and series you have seen, with ratings, notes and episode progress, and
+    then uses that record to help you pick the next one: monthly collections built from your own
+    ratings, an assistant you can ask in plain language, and streaming availability resolved for
+    your country. People who live together can share one library, and friends can follow what each
+    other is watching. Letterboxd and IMDb exports import directly. It is free, carries no
+    advertising, and shows no sponsored recommendations.
+  </p>
+
+  <h2>Coverage</h2>
+  <ul>
+    {
+      coverage.map((c) => (
+        <li>
+          <a href={c.url} target="_blank" rel="noopener">{c.outlet}</a>, {c.piece}
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Maker</h2>
+  <p>
+    Full-stack developer in the Netherlands, over ten years in. I Like Movies is my solo project,
+    built because picking something to watch with someone else is harder than picking alone. It
+    answers in plain words from your own ratings, your library and the streaming services you
+    actually pay for.
+  </p>
+
+  <h2>Assets</h2>
+  <p>
+    <a class="cta-button" href="/press/ilikemovies-press-kit.zip" download>Download the press kit (zip)</a>
+  </p>
+  <p>The zip holds the app icon, the six screenshots below and this factsheet as plain text.</p>
+  <ul>
+    <li><a href="/icon-512.png" download="ilikemovies-icon-512.png">App icon, 512 x 512 PNG</a></li>
+    {
+      screenshots.map((s) => (
+        <li>
+          <a href={s.img.src} download>{s.name} screenshot, {s.img.width} x {s.img.height} PNG</a>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="shots" aria-label="Screenshots">
+    {screenshots.map((s) => <img src={s.img.src} width={s.img.width} height={s.img.height} alt={`${s.name} screen of the app`} loading="lazy" />)}
+  </div>
+
+  <h2>Facts you can check</h2>
+  <ul>
+    <li>Free, no ads, no in-app purchases at the time of writing.</li>
+    <li>No account data is sold; the <a href="/privacy">privacy policy</a> lists every processor.</li>
+    <li>Film and TV metadata comes from TMDB. The app uses the TMDB API but is not endorsed or certified by TMDB.</li>
+    <li>Operated from the Netherlands under EU data-protection law.</li>
+    <li>Changes ship most weeks; the <a href="/changelog">changelog</a> lists them.</li>
+  </ul>
+</ArticleLayout>
+
+<style>
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin: 0 0 2rem;
+  }
+
+  .shots img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--ink-border);
+  }
+
+  th {
+    text-align: left;
+    white-space: nowrap;
+  }
+</style>

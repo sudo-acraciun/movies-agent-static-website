@@ -1,0 +1,41 @@
+I Like Movies: press factsheet
+https://ilikemovies.app/press
+
+What it is
+A free movie and TV tracker that helps you decide what to watch. It keeps a
+record of every film and series you have seen, with ratings, notes and episode
+progress, then uses that record to help you pick the next one: monthly
+collections built from your own ratings, an assistant you can ask in plain
+language, and streaming availability resolved for your country. People who
+live together can share one library; friends can follow what each other is
+watching. Letterboxd and IMDb exports import directly.
+
+Platforms
+Android on Google Play (package com.moviesagent.app).
+iPhone version with Apple for review; waitlist at https://ilikemovies.app/iphone
+
+Price
+Free. No advertising, no sponsored placements.
+
+Launched
+12 August 2026 on Google Play.
+
+Made by
+Alexandru Crăciun, one developer, Netherlands.
+Full-stack developer, over ten years in. I Like Movies is a solo project,
+built because picking something to watch with someone else is harder than
+picking alone.
+
+Links
+Website:      https://ilikemovies.app
+Google Play:  https://play.google.com/store/apps/details?id=com.moviesagent.app
+Privacy:      https://ilikemovies.app/privacy
+Changelog:    https://ilikemovies.app/changelog
+Contact:      hi@ilikemovies.app
+
+Assets in this kit
+icon-512.png and six screenshots (library, discover, assistant, movie-detail,
+feed, household), all PNG. Use freely in coverage of the app.
+
+Film and TV metadata is provided by TMDB. This product uses the TMDB API but is
+not endorsed or certified by TMDB.
