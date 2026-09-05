@@ -89,7 +89,10 @@ export const SITE = {
   // /iphone posts to `${apiUrl}/api/waitlist`. The backend allows that call
   // only from this site's origin (its WEB_DEEPLINK_BASE_URL), so the two
   // values are a pair: a different site host needs a backend change too.
-  apiUrl: 'https://api.i-like-movies.app',
+  // PUBLIC_API_URL exists for a local smoke test against a backend on this
+  // machine (`PUBLIC_API_URL=http://localhost:8090 npm run dev`); production
+  // builds never set it.
+  apiUrl: import.meta.env.PUBLIC_API_URL || 'https://api.i-like-movies.app',
 
   // Root-relative, and on this domain since the migration off
   // sudo-acraciun.github.io/movienight. That host still serves the documents

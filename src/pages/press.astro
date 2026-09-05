@@ -19,6 +19,25 @@ const path = '/press';
 const title = 'Press kit';
 const description =
   'Facts, screenshots, icon and maker bio for I Like Movies, the free movie and TV tracker for Android with an iPhone version in review.';
+const mailto = `mailto:${SITE.supportEmail}`;
+
+// Rendered from data, not hand-written rows: an <a href={x}>{y}</a> written
+// directly as the sole content of a <td> made the Astro compiler emit a
+// stray unclosed copy of that anchor after </table>, which turned the three
+// sections below into one link. The same anchor produced from a .map()
+// (as the Coverage list is) compiles cleanly.
+const facts: { label: string; value: string; href?: string; external?: boolean }[] = [
+  { label: 'Name', value: SITE.name },
+  { label: 'What it is', value: 'A free movie and TV tracker that helps you decide what to watch' },
+  { label: 'Platforms', value: 'Android on Google Play. iPhone version with Apple for review.' },
+  { label: 'Price', value: 'Free. No advertising, no sponsored placements.' },
+  { label: 'Launched', value: '12 August 2026 on Google Play' },
+  { label: 'Made by', value: `Alexandru Crăciun, one developer, ${SITE.operatorCountry}` },
+  { label: 'Website', value: SITE.domain, href: SITE.url },
+  { label: 'Google Play', value: 'play.google.com', href: SITE.playUrl, external: true },
+  { label: 'Package name', value: 'com.moviesagent.app' },
+  { label: 'Contact', value: SITE.supportEmail, href: mailto },
+];
 
 const screenshots = [
   { name: 'Library', img: shotLibrary },
@@ -52,22 +71,29 @@ const coverage = [
 >
   <p>
     Everything on this page may be used without asking. For anything else, or for a quick answer,
-    write to <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+    write to <a href={mailto}>{SITE.supportEmail}</a>.
   </p>
 
   <h2>Factsheet</h2>
   <div class="table-scroll">
     <table>
       <tbody>
-        <tr><th>Name</th><td>{SITE.name}</td></tr>
-        <tr><th>What it is</th><td>A free movie and TV tracker that helps you decide what to watch</td></tr>
-        <tr><th>Platforms</th><td>Android on Google Play. iPhone version with Apple for review.</td></tr>
-        <tr><th>Price</th><td>Free. No advertising, no sponsored placements.</td></tr>
-        <tr><th>Launched</th><td>12 August 2026 on Google Play</td></tr>
-        <tr><th>Made by</th><td>Alexandru Crăciun, one developer, {SITE.operatorCountry}</td></tr>
-        <tr><th>Website</th><td><a href={SITE.url}>{SITE.domain}</a></td></tr>
-        <tr><th>Google Play</th><td><a href={SITE.playUrl} target="_blank" rel="noopener">play.google.com</a> (package <code>com.moviesagent.app</code>)</td></tr>
-        <tr><th>Contact</th><td><a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></td></tr>
+        {
+          facts.map((f) => (
+            <tr>
+              <th>{f.label}</th>
+              <td>
+                {f.href ? (
+                  <a href={f.href} target={f.external ? '_blank' : undefined} rel={f.external ? 'noopener' : undefined}>
+                    {f.value}
+                  </a>
+                ) : (
+                  f.value
+                )}
+              </td>
+            </tr>
+          ))
+        }
       </tbody>
     </table>
   </div>
