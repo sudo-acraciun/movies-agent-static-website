@@ -6,8 +6,10 @@ import { SITE } from '../data/site';
 // Deep-link redirector for shared titles. The app's external-share message
 // links here (/share?id=<tmdbId>&mediaType=<movie|tv>) so the URL messengers
 // display carries the brand domain, and this page bounces the click into the
-// app's custom scheme. The legacy movienight redirector stays live untouched:
-// its URL is baked into share messages sent by older builds.
+// app's custom scheme. The Top 4 share card links here too
+// (/share?to=profile): a recipient who has the app lands on their own
+// Profile, where the Top 4 lives. The legacy movienight redirector stays live
+// untouched: its URL is baked into share messages sent by older builds.
 //
 // noindex + the sitemap filter in astro.config.mjs keep this utility page out
 // of search results; it exists only to be tapped from a chat message.
@@ -48,6 +50,10 @@ import { SITE } from '../data/site';
       if (mediaType) {
         target += '?mediaType=' + encodeURIComponent(mediaType);
       }
+    } else if (params.get('to') === 'profile') {
+      // The app allowlists exactly this URL as a tab landing (Profile), so
+      // nothing from the query string travels into the scheme URL.
+      target = 'moviesagentapp://profile';
     }
     var openBtn = document.getElementById('manualOpen');
     if (target) {
