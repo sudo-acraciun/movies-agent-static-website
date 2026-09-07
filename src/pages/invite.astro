@@ -42,7 +42,21 @@ import { SITE } from '../data/site';
     // hand-edited URL carries more, one target still has to be chosen, and a
     // fixed order is the only choice that behaves the same way every time.
     if (params.has('friend')) {
-      target = 'moviesagentapp://friend/accept?code=' + encodeURIComponent(params.get('friend'));
+      var friendCode = encodeURIComponent(params.get('friend'));
+      // source=link tells the app which path carried the code (attribution,
+      // item 102); the app's install-referrer and typed-code paths send
+      // their own values.
+      target = 'moviesagentapp://friend/accept?code=' + friendCode + '&source=link';
+      // The Play badge already carries referrer=utm_source%3Dilikemovies.app
+      // (SITE.playUrl). Appending the invite code inside that same
+      // URL-encoded referrer value hands it to the Play Install Referrer API,
+      // so a recipient WITHOUT the app gets the invite back on first launch
+      // instead of having to find this link again. The suffix decodes to
+      // "&utm_medium=invite&code=<code>" inside the referrer string.
+      var playBadge = document.querySelector('a.badge-play');
+      if (playBadge) {
+        playBadge.href += '%26utm_medium%3Dinvite%26code%3D' + friendCode;
+      }
     } else if (params.has('household')) {
       target = 'moviesagentapp://household/join?code=' + encodeURIComponent(params.get('household'));
     } else if (params.has('householdInvite')) {
