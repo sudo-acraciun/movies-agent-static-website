@@ -49,6 +49,181 @@ export type Listicle = {
 
 export const LISTICLES: Listicle[] = [
   {
+    slug: 'best-horror-movies-hooptober',
+    title: 'The best horror films to watch this Hooptober, ranked by viewer score',
+    metaDescription:
+      'Twenty-one horror films to marathon this Hooptober, ranked by TMDB user score from Alien at 8.2 down to Lake Mungo at 6.1, each with one plain sentence on what it is.',
+    h1: 'The best horror films to watch this Hooptober, ranked',
+    intro: [
+      'This list ranks 21 horror films to marathon through October by their TMDB user score, the community rating on The Movie Database, as of September 2026. TMDB is the same database the I Like Movies app runs on, every score is checkable on a film\'s TMDB page, and ties are broken by release year, older first. Treat a 0.1 gap as a coin flip and anything wider as a real signal.',
+      'Hooptober is the informal October challenge that spread through film communities: watch a run of horror films across the month, with many people aiming for 31. This is a curated cross-section rather than a complete catalogue, so the selection is the editorial act, a spread of eras and subgenres from a 1935 Universal classic to 2024 body horror, from Japanese ghost stories to found-footage dread. The buttons above the list re-sort it by date if you would rather browse chronologically.',
+    ],
+    ranked: true,
+    listHeading: 'The ranking',
+    items: [
+      {
+        title: 'Alien',
+        year: 1979,
+        tmdbScore: 8.2,
+        blurb: 'A commercial towing crew answers a distress call and brings something aboard; Ridley Scott\'s haunted-house film set in deep space.',
+      },
+      {
+        title: 'Jaws',
+        year: 1975,
+        tmdbScore: 7.7,
+        blurb: 'A great white shark shuts down a beach town over a holiday weekend; the film that invented the summer blockbuster and a fear of open water.',
+      },
+      {
+        title: 'Bride of Frankenstein',
+        year: 1935,
+        tmdbScore: 7.5,
+        blurb: 'James Whale gives the monster a mate and a heart; the rare sequel often held to surpass the original.',
+      },
+      {
+        title: 'Dawn of the Dead',
+        year: 1978,
+        tmdbScore: 7.5,
+        blurb: 'Survivors barricade themselves inside a shopping mall as the dead rise; Romero\'s zombie satire of American consumption.',
+      },
+      {
+        title: 'A Nightmare on Elm Street',
+        year: 1984,
+        tmdbScore: 7.4,
+        blurb: 'A burned killer hunts teenagers inside their dreams, where dying asleep means dying for real; Wes Craven\'s sharpest premise.',
+      },
+      {
+        title: 'The Fly',
+        year: 1986,
+        tmdbScore: 7.4,
+        blurb: 'A scientist tests a teleporter on himself and slowly turns into something else; Cronenberg\'s body horror told as a love story.',
+      },
+      {
+        title: 'The Evil Dead',
+        year: 1981,
+        tmdbScore: 7.3,
+        blurb: 'Five friends read aloud from a book of the dead in a remote cabin; Sam Raimi\'s ferocious low-budget debut.',
+      },
+      {
+        title: '28 Days Later',
+        year: 2002,
+        tmdbScore: 7.2,
+        blurb: 'A man wakes from a coma into a London emptied by a rage virus; the film that taught zombies to run.',
+      },
+      {
+        title: 'Ringu',
+        year: 1998,
+        tmdbScore: 7.1,
+        blurb: 'A cursed videotape kills whoever watches it within seven days; the Japanese film that launched the J-horror wave.',
+      },
+      {
+        title: 'The Substance',
+        year: 2024,
+        tmdbScore: 7.1,
+        blurb: 'A fading star injects a black-market drug that spawns a younger version of herself; Coralie Fargeat\'s satire of the beauty industry.',
+      },
+      {
+        title: 'The Descent',
+        year: 2005,
+        tmdbScore: 7.0,
+        blurb: 'Six women on a caving trip get lost underground and find they are not alone; a survival horror that bites well before the creatures appear.',
+      },
+      {
+        title: 'The Host',
+        year: 2006,
+        tmdbScore: 7.0,
+        blurb: 'A river creature drags a girl into the sewers and her chaotic family sets out to get her back; Bong Joon-ho\'s Korean monster movie.',
+      },
+      {
+        title: 'Hellraiser',
+        year: 1987,
+        tmdbScore: 6.9,
+        blurb: 'A puzzle box summons beings who cannot separate pleasure from pain; Clive Barker filming his own novella.',
+      },
+      {
+        title: 'A Girl Walks Home Alone at Night',
+        year: 2014,
+        tmdbScore: 6.8,
+        blurb: 'A skateboarding vampire drifts through an Iranian ghost town; Ana Lily Amirpour\'s black-and-white debut, in Persian.',
+      },
+      {
+        title: 'It Follows',
+        year: 2015,
+        tmdbScore: 6.6,
+        blurb: 'A curse passed on through sex takes the form of someone walking slowly toward you; David Robert Mitchell\'s suburban nightmare.',
+      },
+      {
+        title: 'The Babadook',
+        year: 2014,
+        tmdbScore: 6.5,
+        blurb: 'A grieving mother and her son are stalked by a figure from a pop-up book; Jennifer Kent\'s debut about grief in monster form.',
+      },
+      {
+        title: 'Under the Shadow',
+        year: 2016,
+        tmdbScore: 6.5,
+        blurb: 'A mother and daughter are haunted during the missile strikes of the Iran-Iraq war; Babak Anvari\'s horror set in 1980s Tehran, in Persian.',
+      },
+      {
+        title: 'Saint Maud',
+        year: 2020,
+        tmdbScore: 6.5,
+        blurb: 'A live-in nurse becomes convinced God has charged her with saving her patient\'s soul; Rose Glass\'s debut on faith and isolation.',
+      },
+      {
+        title: 'His House',
+        year: 2020,
+        tmdbScore: 6.4,
+        blurb: 'A refugee couple is housed in a crumbling English home that will not let their past rest; Remi Weekes\'s debut.',
+      },
+      {
+        title: 'Kill List',
+        year: 2011,
+        tmdbScore: 6.2,
+        blurb: 'A former soldier takes a contract-killing job that curdles into something far stranger; Ben Wheatley\'s genre-shifting descent.',
+      },
+      {
+        title: 'Lake Mungo',
+        year: 2009,
+        tmdbScore: 6.1,
+        blurb: 'An Australian family probes their drowned daughter\'s afterlife in a faux documentary; a patient, aching ghost story.',
+      },
+    ],
+    appNote:
+      'Turning a list like this into an October project is exactly what I Like Movies, the free Android app behind this page, is built for: keep the ones you have not seen on your watchlist, rate each film as you go, and see where it is streaming in your country before you press play.',
+    faqs: [
+      {
+        q: 'How is this list ranked?',
+        a: [
+          'By TMDB user score as of September 2026, the community rating on The Movie Database, with ties broken by release year, older first. The films are chosen editorially for a spread of eras and subgenres, then ordered by score; the numbers are printed next to each title and checkable on TMDB.',
+        ],
+      },
+      {
+        q: 'What is Hooptober?',
+        a: [
+          'Hooptober is an informal horror-movie challenge that runs through October: watch a set run of horror films across the month, with many people aiming for 31. There is no official rulebook, so this list works as a starting shelf whether you are going for one film a night or just a few good scares.',
+        ],
+      },
+      {
+        q: 'What is the best horror movie to watch this October?',
+        a: [
+          'By viewer score on this list it is Alien at 8.2, then Jaws at 7.7. If you want the older canon, Bride of Frankenstein and Dawn of the Dead sit at 7.5, and A Nightmare on Elm Street and The Fly at 7.4.',
+        ],
+      },
+      {
+        q: 'Which of these are good for someone new to horror?',
+        a: [
+          'The canonical older entries like Alien and Jaws, and the slow-burn films like The Babadook and It Follows, are gentler starting points than the harsher entries such as Kill List or the claustrophobia of The Descent. Check a content guide where it matters.',
+        ],
+      },
+      {
+        q: 'Where can I stream these films?',
+        a: [
+          'Availability changes constantly and depends on where you live, so this list makes no streaming claims. The I Like Movies app shows where each title is streaming in your own country, which is the fastest way to turn the list into a plan.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'studio-ghibli-films-ranked',
     title: 'Every Studio Ghibli film ranked by viewer score, from Spirited Away down',
     metaDescription:
