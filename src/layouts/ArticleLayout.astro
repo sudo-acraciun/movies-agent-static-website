@@ -125,9 +125,12 @@ const allJsonLd = breadcrumbs && breadcrumbs.length ? [...jsonLd, breadcrumbList
     max-width: 760px;
   }
 
-  /* The global h1 clamp is sized for the hero, not an article headline. */
+  /* The global h1 clamp is sized for the hero, not an article headline. The
+     global h1 also carries no margin, so a page whose first block is a plain
+     paragraph (no disclosure) would otherwise butt it against the headline. */
   .article h1 {
     font-size: clamp(2rem, 4.5vw, 2.8rem);
+    margin-bottom: 20px;
   }
 
   /* Breadcrumb trail above the H1. Quiet by design: an orientation aid and an

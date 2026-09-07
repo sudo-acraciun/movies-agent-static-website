@@ -42,7 +42,7 @@ export type Listicle = {
   items: ListEntry[];
   /** One paragraph on where the app genuinely helps, rendered before the FAQ. */
   appNote: string;
-  /** Optional cross-type link, appended to the "More lists" line. */
+  /** Optional cross-type link, rendered on the browse line under "More lists". */
   related?: { href: string; label: string };
   faqs: { q: string; a: string[] }[];
 };

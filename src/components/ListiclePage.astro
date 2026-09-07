@@ -121,15 +121,22 @@ const jsonLd = [
     ))
   }
 
-  {/* Same inline-join shape as WatchOrderPage's other-orders line. */}
-  <p class="other-lists">
-    {others.length > 0 && (
-      <span>
-        More lists: {others.map((o, i) => (
-          <span>{i > 0 && ', '}<a href={`/list/${o.slug}`}>{o.h1}</a></span>
-        ))}.{' '}
-      </span>
-    )}
+  {/* A list, not a comma-run sentence, same shape as the /best pages' "More
+      roundups" block: list titles are long, so the inline form is unreadable
+      past two entries. Renders only when another list exists. */}
+  {others.length > 0 && (
+    <>
+      <p class="more-lists-label">More lists</p>
+      <ul class="more-lists">
+        {others.map((o) => (
+          <li>
+            <a href={`/list/${o.slug}`}>{o.h1}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+  <p>
     {l.related && (
       <span>
         Related: <a href={l.related.href}>{l.related.label}</a>.{' '}
@@ -205,8 +212,14 @@ const jsonLd = [
     color: var(--text-secondary);
   }
 
-  .article .other-lists {
-    margin-top: 2rem;
+  .article .more-lists-label {
+    margin: 34px 0 8px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .article ul.more-lists {
+    margin-bottom: 1rem;
   }
 
   /* Heading and sort buttons share one row, buttons pushed to the right;
