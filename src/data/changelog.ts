@@ -29,6 +29,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Invite links now bring a friend straight to you: open one, install the app, and the friend request is ready to confirm',
       'Got an invite code instead of a link? Enter it on the Friends page to add the person who sent it',
       'New accounts get a one-time pointer to where friends and family are invited',
+      'Share a rating as a picture to Instagram, WhatsApp and other apps from any title you have rated',
+      'Share your Top 4 the same way, with a share button beside the edit pencil on your profile',
+      'Both pictures are sized for an Instagram Story',
     ],
   },
   {
