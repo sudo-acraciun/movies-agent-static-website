@@ -602,6 +602,12 @@ export const WATCH_ORDERS: WatchOrder[] = [
     hasAppTrack: true,
     faqs: [
       {
+        q: 'What is the order of the Fast and Furious movies?',
+        a: [
+          'In release order: The Fast and the Furious (2001), 2 Fast 2 Furious (2003), Tokyo Drift (2006), Fast & Furious (2009), Fast Five (2011), Fast & Furious 6 (2013), Furious 7 (2015), The Fate of the Furious (2017), Hobbs & Shaw (2019), F9 (2021) and Fast X (2023). That is the order to watch for a first time. The chronological timeline runs the same, except Tokyo Drift moves to ninth, after Fast & Furious 6, whose ending overlaps it.',
+        ],
+      },
+      {
         q: 'Where does Tokyo Drift fit in the Fast and Furious timeline?',
         a: [
           'Ninth: after Fast & Furious 6 and before Furious 7. It was released third, but its story happens years later, and the ending of Fast & Furious 6 replays a scene from it to stitch the timelines together. If you watch chronologically, slot it between those two films.',
