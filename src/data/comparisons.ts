@@ -741,6 +741,215 @@ export const COMPARISONS: Comparison[] = [
       },
     ],
   },
+  {
+    slug: 'justwatch',
+    competitor: 'JustWatch',
+    title: 'I Like Movies vs JustWatch, compared by the developer',
+    metaDescription:
+      'JustWatch alternative that remembers what you watched: films and TV in one private library, per episode, shared with your household, free with no ads.',
+    h1: 'I Like Movies vs JustWatch',
+    intro: [
+      'JustWatch calls itself The Streaming Guide, and that is exactly what it is. It is a where-to-watch search engine with a watchlist attached, on the web, on your phone and on the TV in your living room, across more than a hundred countries. You search a film or show, it tells you where it streams, rents or buys, filtered down to the services you actually pay for, and it can alert you to price drops and new releases. It records what you want to watch, not what you have already seen.',
+      'I Like Movies is a phone app built for the record after you press play as much as the search before it, films and TV together, tracked per episode, private, shared with the people you live with. The two overlap on the watchlist and on the where-to-watch line under a title, and part ways on almost everything else. This page lays the split out.',
+    ],
+    betterThere: [
+      {
+        title: 'Everywhere, including the TV',
+        body: 'JustWatch runs on the web and on living-room TV, Fire TV, Samsung, LG, Apple TV and Xbox, as well as iPhone and Android. I Like Movies is a phone app, Android only today. When you want to check where something streams from the TV you are sitting in front of, JustWatch is there and we are not.',
+      },
+      {
+        title: 'Broader where-to-watch data',
+        body: 'Finding availability is JustWatch’s whole job, and it does it across thousands of providers in more than a hundred countries, with a filter for only the services you subscribe to. That is wider coverage than the streaming line we show on each title, which is a helpful add-on rather than the main event.',
+      },
+      {
+        title: 'Prices and deals',
+        body: 'JustWatch tracks rent and buy prices and runs a daily Price Drops feed, and it can tell you when a watchlisted title lands on a service you already have. I Like Movies shows where a title streams in your country, but it does not track prices or run a deals feed.',
+      },
+      {
+        title: 'Nothing to sign up for',
+        body: 'JustWatch is free, and you can look up where to watch something without making an account, so a quick where can I stream this tonight is instant. I Like Movies asks you to sign in because it keeps your library, ratings and history for you.',
+      },
+    ],
+    differences: [
+      {
+        title: 'It remembers what you watched',
+        body: 'This is the real split. JustWatch keeps a watchlist of titles you mean to get to, and does not record your viewing history or which episodes you have seen. I Like Movies keeps a watched library and tracks TV per episode, so it knows a series that has ended from one that is waiting between seasons.',
+      },
+      {
+        title: 'Films and TV in one library',
+        body: 'Films and shows sit in one place, each show tracked episode by episode rather than marked watched as a single lump. JustWatch is a finder, not a library you fill, so there is no watched shelf to keep in the first place.',
+      },
+      {
+        title: 'A household shares one library',
+        body: 'The people you live with share a single watchlist and watched history, so a film added on one phone is already there on the other before you sit down. A JustWatch watchlist belongs to one personal account.',
+      },
+      {
+        title: 'Private by default, friends not strangers',
+        body: 'Your ratings and notes are private, there are no public reviews, and you can follow friends to compare taste without a feed of strangers. JustWatch surfaces outside ratings from IMDb, and Rotten Tomatoes on the web, as decision signals, but it is not a place you rate or review.',
+      },
+      {
+        title: 'Recommendations from your own ratings',
+        body: 'Each month I Like Movies rebuilds Discover collections from your ratings, your most-watched genre and a director or actor you keep returning to, and you can ask an assistant in plain language for something to watch, filtered against what you have already seen. JustWatch organizes suggestions by streaming service and popularity, its What’s Hot rows.',
+      },
+    ],
+    table: [
+      { feature: 'Platforms', ilm: 'Android (iOS in development), phone only', other: 'Web, iOS, Android, TV (Fire TV, Samsung, LG, Apple TV, Xbox)' },
+      { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads; optional Pro removes ads' },
+      { feature: 'Watched history', ilm: 'Yes, films and TV', other: 'No, records intent not history' },
+      { feature: 'Per-episode tracking', ilm: 'Yes', other: 'No' },
+      { feature: 'Ratings and notes', ilm: 'Yes, private', other: 'No (shows external ratings)' },
+      { feature: 'Household sharing', ilm: 'Yes, one shared library', other: 'No, personal watchlist' },
+      { feature: 'Streaming availability', ilm: 'Per country, on every title', other: 'Core product, thousands of providers, 100+ countries' },
+      { feature: 'Prices and deals', ilm: 'No', other: 'Yes, rent/buy prices and daily Price Drops' },
+      { feature: 'AI recommendations', ilm: 'Yes, from your ratings, plus an assistant', other: 'No (What’s Hot by service and popularity)' },
+      { feature: 'Imports', ilm: 'Letterboxd .zip, IMDb .csv', other: 'Not applicable, no library to import' },
+    ],
+    migration: [
+      'There is nothing to move across. JustWatch keeps a list of titles you mean to watch, not a history of what you have seen or how you rated it, so there is no export to carry over. Your watched library starts fresh in I Like Movies.',
+      'If your history happens to live on Letterboxd or IMDb, that is the part you can bring in, a Letterboxd .zip or an IMDb .csv, and nothing else. Anything that is only on JustWatch you would add here as you go.',
+    ],
+    verdict: [
+      'If the question you keep asking is where can I watch this tonight, JustWatch is the better tool and this page will not pretend otherwise. It reaches the web and the TV in your living room, not just your phone, it covers more providers in more countries than any tracker’s built-in availability line, and it tells you when a title lands on a service you have or drops in price. As a where-to-watch finder it is hard to beat.',
+      'I Like Movies is for the other half of the habit, remembering what you watched and what you thought of it. Films and TV in one library, tracked per episode, private by default, shared with the people you live with, with monthly recommendations rebuilt from your own ratings and an assistant you can ask in plain language. The two are not really rivals, plenty of people keep a finder and a tracker side by side. It is on Android today, with an iPhone version in development.',
+    ],
+    faqs: [
+      {
+        q: 'What is JustWatch?',
+        a: [
+          'JustWatch is a streaming-availability search engine with a watchlist attached, which it calls The Streaming Guide. It works on the web, on iPhone and Android, and on living-room TV, in more than a hundred countries. You search a title and it shows where to stream, rent or buy it, filtered to the services you subscribe to, with price-drop and new-release alerts. It is a where-to-watch finder, not a diary of what you have seen.',
+        ],
+      },
+      {
+        q: 'Does JustWatch track what I have watched?',
+        a: [
+          'No. JustWatch keeps a watchlist of titles you intend to watch and does not record your viewing history or your progress through a season. If you want a watched history for films and TV, tracked per episode, that is what I Like Movies does.',
+        ],
+      },
+      {
+        q: 'Is I Like Movies a JustWatch alternative?',
+        a: [
+          'Partly. Both show where to stream a title in your country. Beyond that they do different jobs. I Like Movies is a private tracker with a shared household library and recommendations built from your own ratings. JustWatch is a where-to-watch finder with the broadest availability data and a deals feed. Plenty of people use both.',
+        ],
+      },
+      {
+        q: 'Can I import my JustWatch list?',
+        a: [
+          'No. JustWatch has no watched-history export, and I Like Movies imports only a Letterboxd .zip or an IMDb .csv. Your library starts fresh here, and you add titles as you go.',
+        ],
+      },
+      {
+        q: 'Which one shows where to stream a film?',
+        a: [
+          'Both. Every title in I Like Movies shows streaming availability for your country. JustWatch does this across more providers and more countries, and it adds rent and buy prices with a daily deals feed, so for pure availability it goes deeper.',
+        ],
+      },
+      {
+        q: 'Is I Like Movies free?',
+        a: [
+          'Yes, it is free with no ads and nothing to upgrade. JustWatch is also free to use, supported by ads, with an optional Pro purchase that removes them.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'matinee',
+    competitor: 'Matinee',
+    title: 'I Like Movies vs Matinee, compared by the developer',
+    metaDescription:
+      'Matinee alternative on Android: films and TV in one private library, a household that shares one watchlist, recommendations built from your own taste, no ads.',
+    h1: 'I Like Movies vs Matinee',
+    intro: [
+      'Matinee is a movie and TV tracker for iPhone and Android, with a film diary, half-star ratings, a social feed of what your friends are watching, and streaming availability across more than 30 services. Its headline is discovery: a natural-language search, an assistant you can ask for picks, and a daily suggestion, with an optional Pro tier that unlocks the smart search and removes the ads. It does that well.',
+      'I Like Movies is a phone app for films and TV together, kept privately, and shared with the people you live with. It is free with no ads, and it leans on the moment before you press play as much as the record after. The two overlap on tracking and part ways on ads, on who sees your ratings, and on who the library belongs to. This page lays the split out.',
+    ],
+    betterThere: [
+      {
+        title: 'On iPhone today',
+        body: 'Matinee is on iPhone and iPad now, and it also runs on Mac and Apple Vision. I Like Movies is Android only today, with an iOS version in development. If you are on an iPhone, Matinee is the one you can install right now.',
+      },
+      {
+        title: 'Discovery you ask in plain words',
+        body: 'Matinee leads with discovery. You search in plain language, ask its assistant for a pick, and it surfaces a suggestion each day, with a smart optimiser that turns your watchlist into one thing to watch tonight. The AI smart search is a Pro feature, and the whole finder is clean and polished.',
+      },
+      {
+        title: 'Filter by the services you pay for',
+        body: 'Matinee shows streaming availability across Netflix, Max, Disney+, Prime Video and more than 30 other services, and it lets you filter your watchlist and recommendations down to the ones you subscribe to. We show where a title streams in your country on the title itself, but we do not filter your lists by subscription the way Matinee does.',
+      },
+      {
+        title: 'A public, social feed',
+        body: 'Matinee is built to be social, closer to a Letterboxd for TV. You follow friends, watch a real-time feed of what they are seeing, and share public reviews and half-star ratings. If a shared, public film life is the point for you, Matinee is made for it and this app is not.',
+      },
+    ],
+    differences: [
+      {
+        title: 'A household shares one library',
+        body: 'The people you live with share a single watchlist and watched history, so a film added on one phone is on the other before you sit down. A Matinee account is personal, and each person keeps their own diary.',
+      },
+      {
+        title: 'Recommendations from your own taste',
+        body: 'Every month I Like Movies rebuilds Discover collections from your ratings, your most-watched genre and a director or actor you keep returning to, and you can ask an assistant in plain words, filtered against what you have already seen. Matinee’s picks are strong too, but they blend in other users and your friends’ activity, where ours stay on your taste alone.',
+      },
+      {
+        title: 'Free, with no ads and nothing to upgrade',
+        body: 'I Like Movies is free, with no ads and no paid tier. Matinee is free to download with ads, and it keeps its smart search and watchlist optimiser behind a Pro subscription. Nothing here is gated or interrupted.',
+      },
+      {
+        title: 'Films and TV in one library',
+        body: 'Films and series live in the same library, tracked to the episode, and the app tells a show that has ended apart from one that is only between seasons. Matinee tracks episodes too, so the small difference here is how an ended and a mid-season series read at a glance.',
+      },
+    ],
+    table: [
+      { feature: 'Platforms', ilm: 'Android, iOS in development', other: 'iOS and Android, also iPad, Mac, Apple Vision' },
+      { feature: 'Films and TV', ilm: 'One library, tracked per episode', other: 'Both, tracked per episode' },
+      { feature: 'Household shared library', ilm: 'Yes, one watchlist and history', other: 'No, a personal diary' },
+      { feature: 'Privacy', ilm: 'Private by default, no public reviews', other: 'Social feed, public reviews' },
+      { feature: 'Recommendations', ilm: 'Monthly Discover from your ratings, plus an assistant you ask', other: 'AI recommendations, blends your taste with friends' },
+      { feature: 'Streaming availability', ilm: 'Per country, on every title', other: '30+ services, filter by your subscriptions' },
+      { feature: 'Ratings', ilm: 'Private ratings and notes', other: 'Half-star public ratings' },
+      { feature: 'Imports', ilm: 'Letterboxd .zip or IMDb .csv', other: 'None listed' },
+      { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads, optional Pro subscription' },
+    ],
+    migration: [
+      'Matinee keeps your diary inside its own account, and I Like Movies imports only a Letterboxd .zip or an IMDb .csv, so there is no direct Matinee import. Your Matinee history would start fresh here.',
+      'If you also log films on Letterboxd, or keep a list on IMDb, export that file and bring it in, and your ratings and watched marks land in one place. Otherwise you rebuild by adding titles as you go, which is quick once your household is sharing a single watchlist.',
+    ],
+    verdict: [
+      'If you want a tracker on iPhone today, or your priority is a social feed and an assistant that finds things to watch, Matinee is the better fit and this page will not pretend otherwise. It is live, actively updated, and it has put real work into discovery and streaming availability.',
+      'If you are on Android, want the people you live with to share one watchlist and one history, want your ratings kept private, and want recommendations built from your own taste with no ads and nothing to upgrade, I Like Movies is built for that. Both track films and TV to the episode, so the real choice is who the library belongs to, and whether your film life is public or private.',
+    ],
+    faqs: [
+      {
+        q: 'What is Matinee?',
+        a: [
+          'Matinee is a movie and TV tracker for iPhone and Android, also on iPad, Mac and Apple Vision. It keeps a film diary, half-star ratings and a social feed of what your friends are watching, with streaming availability across more than 30 services. Its headline is discovery: a natural-language search, an assistant you can ask for picks, and a daily suggestion.',
+        ],
+      },
+      {
+        q: 'Is Matinee free?',
+        a: [
+          'Yes, it is a free download with ads. An optional Matinee Pro subscription unlocks the smart search and the watchlist optimiser and removes the ads. The core logging, watchlist, social and streaming information are free.',
+        ],
+      },
+      {
+        q: 'Does Matinee track TV episodes?',
+        a: [
+          'Yes. You can mark individual episodes as watched, pick up where you left off, and rate seasons. I Like Movies also tracks TV to the episode, in the same library as your films, and it tells a series that has ended apart from one that is only between seasons.',
+        ],
+      },
+      {
+        q: 'Can I import my Matinee history into I Like Movies?',
+        a: [
+          'Not directly. I Like Movies imports a Letterboxd .zip or an IMDb .csv only, so a Matinee library starts fresh here. If you also keep a Letterboxd or IMDb log, export that file and bring it in.',
+        ],
+      },
+      {
+        q: 'Which should I choose?',
+        a: [
+          'Pick Matinee if you are on iPhone today, or you want a public social feed and a strong finder. Pick I Like Movies if you are on Android, want a household to share one watchlist and history, want your ratings kept private, and want no ads. Both track films and TV to the episode.',
+        ],
+      },
+    ],
+  },
 ];
 
 // Feeds getStaticPaths and the guides' cross-links.
