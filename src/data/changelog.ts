@@ -32,6 +32,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Share a rating as a picture to Instagram, WhatsApp and other apps from any title you have rated',
       'Share your Top 4 the same way, with a share button beside the edit pencil on your profile',
       'Both pictures are sized for an Instagram Story',
+      "Links, selected filters and the active tab now use the app's gold, so what you can tap stands out from the rest of the text",
+      'Episode pages open on a swipeable set of stills, with arrows and a tap to view any of them full screen',
+      'Reordering a ranked list now uses the usual back arrow',
+      'A momentary server hiccup while opening a page is retried quietly instead of showing an error',
     ],
   },
   {
