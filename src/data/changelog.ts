@@ -26,6 +26,9 @@ export const CHANGELOG: ChangelogWeek[] = [
   {
     week: '7 September 2026',
     entries: [
+      "Title pages now show how everyone on the app rated a title, side by side with your friends' average",
+      'That score moves the moment you rate, change or clear your own rating',
+      'Your collection and watchlist load faster, especially when coming back from a title',
       'Invite links now bring a friend straight to you: open one, install the app, and the friend request is ready to confirm',
       'Got an invite code instead of a link? Enter it on the Friends page to add the person who sent it',
       'New accounts get a one-time pointer to where friends and family are invited',
