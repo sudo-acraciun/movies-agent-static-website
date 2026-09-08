@@ -643,6 +643,104 @@ export const COMPARISONS: Comparison[] = [
       },
     ],
   },
+  {
+    slug: 'moviebase',
+    competitor: 'Moviebase',
+    title: 'I Like Movies vs Moviebase, compared by the developer',
+    metaDescription:
+      'I Like Movies as a Moviebase alternative for Android: a shared household library, recommendations from your own ratings, no ads, and where Moviebase is still better.',
+    h1: 'I Like Movies vs Moviebase',
+    intro: [
+      'Moviebase is an established tracker for films and TV, on iPhone and Android, built on TMDB data with a release calendar, statistics and two-way Trakt sync. It presents itself as the app that keeps your history after TV Time closed, and it does that well.',
+      'I Like Movies is a phone app aimed at the moment before you press play as much as the record afterwards, for films and TV together, privately, shared with the people you live with. The two overlap on tracking and part ways on sync, ads and who the library belongs to. This page lays the split out.',
+    ],
+    betterThere: [
+      {
+        title: 'On iPhone today',
+        body: 'Moviebase is on both iOS and Android now. I Like Movies is Android only today, with an iOS version in development. If you are on an iPhone, Moviebase is the one you can actually install.',
+      },
+      {
+        title: 'Two-way Trakt sync and the ecosystem',
+        body: 'Moviebase syncs your watched history, ratings and watchlists with Trakt in both directions, so your progress is backed up and follows you across every Trakt-connected app. I Like Movies has no Trakt sync and no scrobbling; the library lives on its own server and stays there. If a Trakt account is the spine of how you track, Moviebase fits into it and this page will save you the switch.',
+      },
+      {
+        title: 'Wider imports',
+        body: 'Moviebase can pull a history in from TV Time, Trakt, Letterboxd and IMDb directly, and from SeriesGuide, Showly and Hobi through Trakt. I Like Movies reads a Letterboxd .zip or an IMDb .csv and nothing else, so a library kept anywhere but those two starts fresh here.',
+      },
+      {
+        title: 'Deeper statistics',
+        body: 'Moviebase breaks down how much you have watched, the genres and networks you favour and the time you have spent, with years of features built around the record itself. Statistics in I Like Movies are lighter; the app spends its weight on deciding what is next rather than charting what is done.',
+      },
+    ],
+    differences: [
+      {
+        title: 'A household shares one library',
+        body: 'The people you live with share a single watchlist and watched history, so a film added on one phone is on the other before you sit down. A Moviebase account is personal, backed up to a personal Trakt account.',
+      },
+      {
+        title: 'Recommendations from your own ratings',
+        body: 'Discover collections are rebuilt monthly from your ratings, your most-watched genre and the director or actor you return to, and an assistant answers plain-language requests filtered against what you have already seen. Moviebase discovers through TMDB and Trakt; here the suggestions are drawn from your own history.',
+      },
+      {
+        title: 'Built for the decision, not only the record',
+        body: 'Streaming availability per country sits on every title, so deciding and finding out you can actually watch it are the same step. The app leans toward what to watch tonight, with the history kept alongside rather than as the main event.',
+      },
+      {
+        title: 'No ads at any tier',
+        body: 'I Like Movies has no advertising and nothing to upgrade away. Moviebase is free with ads and sells a premium upgrade whose headline is removing them.',
+      },
+    ],
+    table: [
+      { feature: 'Platforms', ilm: 'Android (iOS in development)', other: 'iOS, Android' },
+      { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'Yes, per episode' },
+      { feature: 'Two-way Trakt sync', ilm: 'No', other: 'Yes' },
+      { feature: 'Watch statistics', ilm: 'Yes, lighter', other: 'Yes, detailed' },
+      { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal account' },
+      { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'Discovery via TMDB and Trakt' },
+      { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes' },
+      { feature: 'Import', ilm: 'Letterboxd .zip, IMDb .csv', other: 'TV Time, Trakt, Letterboxd, IMDb' },
+      { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads; premium upgrade' },
+    ],
+    migration: [
+      'There is no Moviebase import. Imports read a Letterboxd .zip or an IMDb .csv, and a Moviebase library, even one backed up to Trakt, is neither, so it starts fresh here. If your ratings also live on Letterboxd or IMDb, importing from there carries them across; TV progress is set as you go, and marking a season watched takes a tap.',
+    ],
+    verdict: [
+      'If you want a tracker on iPhone today, your history synced through Trakt across other apps, imports from wherever you kept it, or the deeper statistics of a mature product, Moviebase is the better fit and this page will not pretend otherwise.',
+      'If you want films and TV in one private library your household shares, recommendations built from your own ratings, streaming availability per country and no ads at any point, on Android, that is the problem I Like Movies is built for.',
+    ],
+    faqs: [
+      {
+        q: 'What is Moviebase?',
+        a: [
+          'Moviebase is a movie and TV tracker for iOS and Android, built on TMDB data, with episode tracking, statistics, a release calendar and two-way Trakt sync. It is free with ads and sells a premium upgrade that removes them.',
+        ],
+      },
+      {
+        q: 'Can I import my Moviebase history into I Like Movies?',
+        a: [
+          'No. Imports read a Letterboxd .zip or an IMDb .csv export only, and a Moviebase library is neither, even when it is backed up to Trakt. If your ratings also live on Letterboxd or IMDb, importing from there recovers most of it; otherwise the library builds up as you use the app.',
+        ],
+      },
+      {
+        q: 'Does I Like Movies sync with Trakt like Moviebase?',
+        a: [
+          'No. There is no Trakt sync and no scrobbling of any kind. The library lives on the app’s own server, and you mark films and episodes watched yourself. If a Trakt account is central to how you track, Moviebase is the better choice.',
+        ],
+      },
+      {
+        q: 'Does I Like Movies track TV episodes like Moviebase?',
+        a: [
+          'Yes. TV series are tracked at episode level, with season progress, and the app tells a series that has ended from one between seasons. Marking a whole season watched takes a tap.',
+        ],
+      },
+      {
+        q: 'Is I Like Movies free?',
+        a: [
+          'Yes, free with no advertising and nothing to upgrade. Moviebase is free with ads and sells a premium upgrade that removes them and unlocks extras.',
+        ],
+      },
+    ],
+  },
 ];
 
 // Feeds getStaticPaths and the guides' cross-links.
