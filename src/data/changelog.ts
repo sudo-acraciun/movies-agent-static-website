@@ -39,6 +39,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Episode pages open on a swipeable set of stills, with arrows and a tap to view any of them full screen',
       'Reordering a ranked list now uses the usual back arrow',
       'A momentary server hiccup while opening a page is retried quietly instead of showing an error',
+      'Asking the assistant to add a long list of titles now works: it adds as many as it can in one go, tells you which are still pending, and finishes when you say continue',
+      'An assistant request that takes too long now says so, instead of a generic error',
     ],
   },
   {
