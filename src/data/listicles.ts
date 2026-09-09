@@ -723,4 +723,143 @@ export const LISTICLES: Listicle[] = [
       },
     ],
   },
+  {
+    slug: 'best-dutch-films',
+    title: 'The best Dutch films to watch, ranked by viewer score',
+    metaDescription:
+      'Fifteen notable Dutch films ranked by TMDB user score, from The Vanishing and Black Book at 7.4 down to Riphagen at 6.5, each with one plain sentence on what it is.',
+    h1: 'The best Dutch films, ranked',
+    intro: [
+      "This list ranks 15 notable Dutch films by their TMDB user score, the community rating on The Movie Database, as of September 2026. TMDB is the same database the I Like Movies app runs on, every score is checkable on a film's TMDB page, and ties are broken by release year, older first. Treat a 0.1 gap as a coin flip and anything wider as a real signal. TMDB scores run a little below IMDb, so read them against each other, not against IMDb.",
+      'Dutch cinema is small and travels less than it should, so this is a curated cross-section of the films that did travel: three winners of the Academy Award for Best Foreign Language Film, the Dutch period of Paul Verhoeven before he left for Hollywood, and the wartime dramas the country keeps returning to. It is a starting shelf rather than a full history. The buttons above the list re-sort it by date if you would rather browse chronologically.',
+    ],
+    ranked: true,
+    listHeading: 'The ranking',
+    items: [
+      {
+        title: 'The Vanishing',
+        year: 1988,
+        tmdbScore: 7.4,
+        blurb: "A man whose girlfriend vanished at a motorway rest stop accepts a meeting with her abductor to find out what happened; George Sluizer's original, made before his own Hollywood remake.",
+      },
+      {
+        title: 'Simon',
+        year: 2004,
+        tmdbScore: 7.4,
+        blurb: "A gay dentist recalls his long friendship with Simon, a straight, terminally ill soft-drug dealer; Eddy Terstall's warm, matter-of-fact Amsterdam drama.",
+      },
+      {
+        title: 'Black Book',
+        year: 2006,
+        tmdbScore: 7.4,
+        blurb: "A Jewish singer infiltrates the regional Gestapo for the resistance in the last months of the war; Paul Verhoeven's return to the Netherlands after two decades in Hollywood.",
+      },
+      {
+        title: 'Character',
+        year: 1997,
+        tmdbScore: 7.3,
+        blurb: "A young lawyer is questioned over the death of the ruthless bailiff who was his estranged father; Mike van Diem's period drama, winner of the Academy Award for Best Foreign Language Film.",
+      },
+      {
+        title: 'Soldier of Orange',
+        year: 1977,
+        tmdbScore: 7.1,
+        blurb: "Dutch students take diverging paths through the occupation, from resistance to collaboration; Verhoeven's breakthrough, drawn from Erik Hazelhoff Roelfzema's wartime memoir.",
+      },
+      {
+        title: 'Suskind',
+        year: 2012,
+        tmdbScore: 7.0,
+        blurb: "A Jewish administrator running Amsterdam's deportation theatre smuggles children to safety while trying to shield his own family; a wartime drama based on the real Walter Suskind.",
+      },
+      {
+        title: 'The Northerners',
+        year: 1992,
+        tmdbScore: 6.9,
+        blurb: "Life curdles among the residents of a single unfinished street on the edge of a forest in 1960; Alex van Warmerdam's deadpan comedy of Dutch suburbia.",
+      },
+      {
+        title: "Antonia's Line",
+        year: 1995,
+        tmdbScore: 6.9,
+        blurb: "A matriarch returns to her village after the war and raises four generations of women on her own terms; Marleen Gorris's film, winner of the Academy Award for Best Foreign Language Film.",
+      },
+      {
+        title: 'Turkish Delight',
+        year: 1973,
+        tmdbScore: 6.8,
+        blurb: "A sculptor looks back on his consuming, doomed affair with a free-spirited young woman; Verhoeven's explicit early hit, once voted the best Dutch film of the century.",
+      },
+      {
+        title: 'The Assault',
+        year: 1986,
+        tmdbScore: 6.8,
+        blurb: "A man spends forty years trying to understand the wartime night a collaborator was shot outside his family's house and the Germans razed it; Fons Rademakers's film, winner of the Academy Award for Best Foreign Language Film.",
+      },
+      {
+        title: 'The Fourth Man',
+        year: 1983,
+        tmdbScore: 6.7,
+        blurb: "A bisexual writer suspects the glamorous woman he has taken up with has already buried three husbands; Verhoeven's Hitchcockian thriller of premonition and desire.",
+      },
+      {
+        title: 'Winter in Wartime',
+        year: 2008,
+        tmdbScore: 6.7,
+        blurb: "A boy in the occupied countryside hides a wounded British airman and learns how little he understands the adults around him; Martin Koolhoven's coming-of-age war film.",
+      },
+      {
+        title: 'The Resistance Banker',
+        year: 2018,
+        tmdbScore: 6.7,
+        blurb: "Two brothers secretly bankroll the Dutch resistance by running a fraudulent bank under the occupation's nose; Joram Lursen's fact-based wartime thriller.",
+      },
+      {
+        title: 'Borgman',
+        year: 2013,
+        tmdbScore: 6.5,
+        blurb: "A vagrant talks his way into a wealthy family's home and quietly dismantles their lives; Alex van Warmerdam's unexplained home-invasion parable, in competition at Cannes.",
+      },
+      {
+        title: 'Riphagen',
+        year: 2016,
+        tmdbScore: 6.5,
+        blurb: 'A Dutch con man poses as a resistance ally to rob and betray the Jews he claims to be hiding; a fact-based occupation thriller built around one real collaborator.',
+      },
+    ],
+    appNote:
+      'The I Like Movies app is where a list like this becomes a plan: add any of these to a watchlist, mark the ones you have already seen, and rate them on a five star scale so the app learns which corner of Dutch cinema is yours. It shows where each title is streaming in your own country, and it tracks films and series in one place.',
+    faqs: [
+      {
+        q: 'How is this list ranked?',
+        a: [
+          "By TMDB user score as of September 2026, the community rating on The Movie Database, with ties broken by release year, older first. The films are chosen editorially for a spread of eras and directors, then ordered by score, and every number is checkable on the film's TMDB page. Dutch films collect far fewer votes than Hollywood ones, so treat close scores as roughly equal.",
+        ],
+      },
+      {
+        q: 'What is the best Dutch film?',
+        a: [
+          "By viewer score on this list three titles sit together at the top on 7.4: The Vanishing, Simon and Black Book. Three other entries won the Academy Award for Best Foreign Language Film: Character, Antonia's Line and The Assault. Which is best depends on what you want from an evening.",
+        ],
+      },
+      {
+        q: 'Where should someone start with Dutch cinema?',
+        a: [
+          'The Vanishing for a quiet dread thriller, Black Book for a wartime epic, and Turkish Delight or Soldier of Orange for Paul Verhoeven before he left for Hollywood. Borgman is the way into the stranger, arthouse side.',
+        ],
+      },
+      {
+        q: 'Are these films in Dutch?',
+        a: [
+          'Most are in Dutch, with a few partly in German or English where the story crosses a border. Subtitle availability depends on where you watch, so this list makes no subtitle or streaming claims.',
+        ],
+      },
+      {
+        q: 'Where can I stream these films?',
+        a: [
+          'Availability changes constantly and depends on where you live, so this list makes no streaming claims. The I Like Movies app shows where each title is streaming in your own country, which is the fastest way to turn the list into a plan.',
+        ],
+      },
+    ],
+  },
 ];
