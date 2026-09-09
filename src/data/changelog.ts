@@ -41,6 +41,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'A momentary server hiccup while opening a page is retried quietly instead of showing an error',
       'Asking the assistant to add a long list of titles now works: it adds as many as it can in one go, tells you which are still pending, and finishes when you say continue',
       'An assistant request that takes too long now says so, instead of a generic error',
+      'Get a heads-up when a title on your watchlist arrives on, or leaves, one of your streaming services, one alert a day at most',
+      'Have not picked your services yet? Alerts start with Netflix, Disney Plus, HBO Max and Amazon Prime Video until you choose your own, with a shortcut to set them',
+      'Settings now has a Notifications page with a switch for each kind of alert',
+      'Notifications show the poster of the title they are about',
     ],
   },
   {
