@@ -26,6 +26,10 @@ export const CHANGELOG: ChangelogWeek[] = [
   {
     week: '7 September 2026',
     entries: [
+      'Your profile now leads to a page of your own numbers: the decades your films come from, your top genres, and the directors and actors you watch most',
+      'See how you rate, how many notes you have written, and how your average compares with everyone else',
+      'Every title you rated five stars gets its own row of posters, and only you can see any of it',
+      'The app can now tell you in your notifications when something new arrives',
       "Title pages now show how everyone on the app rated a title, side by side with your friends' average",
       'That score moves the moment you rate, change or clear your own rating',
       'Your collection and watchlist load faster, especially when coming back from a title',
