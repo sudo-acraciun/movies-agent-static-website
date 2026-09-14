@@ -24,6 +24,12 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '14 September 2026',
+    entries: [
+      'I Like Movies is now on iPhone, free on the App Store, with the same library synced across iPhone and Android',
+    ],
+  },
+  {
     week: '7 September 2026',
     entries: [
       'Your profile now leads to a page of your own numbers: the decades your films come from, your top genres, and the directors and actors you watch most',

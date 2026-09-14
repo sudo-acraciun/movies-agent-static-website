@@ -1,0 +1,175 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import { SITE } from '../data/site';
+
+// Evergreen how-to guide targeting informational iPhone intent ("how to track
+// movies on iphone", "movie tracker iphone"). Distinct from the /best roundups,
+// which serve comparison intent. Listed by hand in the /guides STANDALONE_GUIDES
+// array. Names other apps where honest, same as the other standalone guides.
+const path = '/how-to-track-movies-on-iphone';
+const title = 'How to track movies and TV on your iPhone';
+const description =
+  'A practical guide to keeping a record of what you watch on iPhone: marking films and episodes watched, ratings and notes, streaming availability, syncing across devices, and importing an existing library.';
+
+const faqs = [
+  {
+    q: 'What is the best way to track movies on an iPhone?',
+    a: [
+      'Use a dedicated tracker rather than a note or a spreadsheet, so films and TV, episode progress, ratings and a watchlist all live in one place that syncs to your account. Several good ones exist on the App Store; which fits depends on whether you want automatic tracking, a public diary, or a private library your household shares. I Like Movies, which publishes this guide, is the last of those.',
+    ],
+  },
+  {
+    q: 'Can I track TV episodes as well as films on iPhone?',
+    a: [
+      'Yes. A proper tracker records TV at the episode level, so it knows how far into a season you are and can tell a series that has ended from one waiting between seasons. In I Like Movies, films and TV sit in the same library and marking a whole season watched takes a tap.',
+    ],
+  },
+  {
+    q: 'Will my tracking sync to my iPad or a new iPhone?',
+    a: [
+      'It depends where the app stores your data. Apps that sync to an account or to iCloud restore everything when you sign in on a new device; apps that store only on the handset do not. I Like Movies keeps your library on the server, so it follows you to a new iPhone, to an iPad through the same account, and to Android.',
+    ],
+  },
+  {
+    q: 'How do I move my Letterboxd or IMDb history to an iPhone tracker?',
+    a: [
+      'Export it and import it. Letterboxd gives you a .zip and IMDb gives you a .csv; I Like Movies reads both directly under Imports, bringing your ratings and watchlist across so you do not retype years of history. Not every iPhone tracker imports these, so check before you commit.',
+    ],
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a.join(' ') },
+    })),
+  },
+];
+---
+
+<ArticleLayout
+  title={`${title} | ${SITE.name}`}
+  description={description}
+  path={path}
+  heading={title}
+  jsonLd={jsonLd}
+  disclosure={false}
+>
+  <p>
+    Tracking what you watch on an iPhone is worth the small habit: you stop
+    re-watching the first ten minutes of something to check whether you have
+    seen it, you always know which episode is next, and over time you build a
+    record that can actually recommend things back to you. This guide walks
+    through how to do it, what a good tracker should handle, and how to bring an
+    existing library with you. It is written by the makers of I Like Movies, so
+    that app is the worked example, but the steps apply to any tracker you pick.
+  </p>
+
+  <h2>1. Pick a tracker, not a list</h2>
+  <p>
+    A notes app or a spreadsheet works until it does not: it cannot tell you
+    where a film is streaming, it will not remember which episode you are on,
+    and it does nothing with the record afterwards. A real tracker keeps films
+    and TV in one library, syncs to your account, and turns your history into
+    something useful. On iPhone there are several worth knowing, and they split
+    by what they are for. If you want to compare them, the{' '}
+    <a href="/best/movie-tracker-apps-iphone">best movie tracker apps for iPhone</a>{' '}
+    lays the field out; if you are leaving Letterboxd specifically, so does the{' '}
+    <a href="/best/letterboxd-alternatives-iphone">Letterboxd alternatives for iPhone</a>{' '}
+    roundup.
+  </p>
+
+  <h2>2. Mark what you have watched, and what is next</h2>
+  <p>
+    The core of tracking is marking things watched. Add a film and log it in a
+    tap; for a series, mark individual episodes as you go so the app can show
+    you the next one and how much of a season is left. A good tracker
+    distinguishes a show that has ended from one between seasons, so a finished
+    series stops nagging you as if you were behind on it. Keep a watchlist for
+    what you mean to get to, separate from what you have already seen.
+  </p>
+
+  <h2>3. Rate and take notes while it is fresh</h2>
+  <p>
+    A rating is worth more than a memory. Rate a film right after you watch it,
+    and add a private note if you want to remember why: a rewatch, who
+    recommended it, the scene that stayed with you. On iPhone, look for an app
+    where those notes are private by default rather than a public review, unless
+    a public diary is what you are after. In I Like Movies the ratings and notes
+    are yours alone, and they are also what the recommendations are built from.
+  </p>
+
+  <h2>4. Check where it streams before you commit</h2>
+  <p>
+    Deciding what to watch and finding out you can actually watch it should be
+    one step. A tracker that shows streaming availability for your country, on
+    the title itself, saves the detour to a separate search engine. Availability
+    changes by region, so check that the app resolves it for where you are
+    rather than a single global catalogue.
+  </p>
+
+  <h2>5. Make sure it syncs, and back it up</h2>
+  <p>
+    Before you invest years of history in an app, confirm where it stores your
+    data. An app that syncs to an account or to iCloud will restore everything
+    when you sign in on a new iPhone or open it on an iPad; an app that keeps
+    data only on the device will not. I Like Movies keeps your library on the
+    server, so it follows you to a new phone, and to Android on the same
+    account, which is what makes a shared household library across two different
+    phones possible.
+  </p>
+
+  <h2>6. Bring your existing library with you</h2>
+  <p>
+    You do not have to start from zero. If you already track on Letterboxd or
+    IMDb, export your history, a .zip from Letterboxd or a .csv from IMDb, and
+    import it into the new app. I Like Movies reads both directly and carries
+    your ratings and watchlist across. Not every iPhone tracker supports these
+    imports, so if keeping your history matters, check for it before you switch.
+  </p>
+
+  <h2>Doing this in I Like Movies</h2>
+  <p>
+    I Like Movies is a free, ad-free way to do all of the above on iPhone: films
+    and TV in one library tracked per episode, private ratings and notes,
+    per-country streaming availability, monthly recommendations built from your
+    own taste and an assistant you can ask in plain language, a library that
+    syncs across your devices and to Android, and a household that shares one
+    watchlist. It imports Letterboxd and IMDb so you keep what you already have.
+  </p>
+
+  <div class="cta-row">
+    <StoreButtons />
+    <a href="/">More about the app</a>
+  </div>
+
+  <h2>Questions people ask</h2>
+  {
+    faqs.map((faq) => (
+      <details>
+        <summary>{faq.q}</summary>
+        {faq.a.map((paragraph) => <p>{paragraph}</p>)}
+      </details>
+    ))
+  }
+</ArticleLayout>
+
+<style>
+  .cta-row {
+    margin: 1.5rem 0 2rem;
+  }
+</style>

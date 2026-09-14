@@ -941,6 +941,184 @@ export const COMPARISONS: Comparison[] = [
       },
     ],
   },
+  {
+    slug: 'cronica',
+    competitor: 'Cronica',
+    title: 'I Like Movies vs Cronica, compared by the developer',
+    metaDescription:
+      'I Like Movies as a Cronica alternative for iPhone and Android: a shared household library, recommendations and an AI assistant, versus a minimalist iCloud tracker, and where Cronica is still better.',
+    h1: 'I Like Movies vs Cronica',
+    intro: [
+      'Cronica is a clean, open-source watchlist and tracker for the Apple ecosystem: films and TV on iPhone, iPad, Mac, Apple Watch, Apple TV and Vision Pro, synced through your own iCloud, with no account and no social layer. It is deliberately minimal, and good at that.',
+      'I Like Movies is a phone app for iPhone and Android built around deciding what to watch as much as recording it, with recommendations, an assistant, and a library the people you live with can share. The two overlap on tracking and part ways on scope, sync and platform. This page lays the split out.',
+    ],
+    betterThere: [
+      {
+        title: 'Across every Apple device',
+        body: 'Cronica runs on iPhone, iPad, Mac, Apple Watch, Apple TV and Vision Pro and syncs through iCloud. I Like Movies is a phone app for iPhone and Android. If your world is all Apple and you want your tracker on the Watch or the living-room TV, Cronica reaches devices we do not.',
+      },
+      {
+        title: 'Open source and account-free',
+        body: 'Cronica is open source and keeps your data in your own iCloud with no account to create and nothing on someone else’s server. I Like Movies keeps your library on its own server behind an account, which is what lets a household share it. If you want no account and your data staying in iCloud, Cronica is built that way and this app is not.',
+      },
+      {
+        title: 'Minimalist by design',
+        body: 'Cronica is deliberately spare: a watchlist, episode tracking, release alerts and JustWatch streaming links, with no feed and nothing to tune. I Like Movies is a fuller app. If you want just the tracker and none of the rest, Cronica’s focus is the point.',
+      },
+    ],
+    differences: [
+      {
+        title: 'A household shares one library',
+        body: 'The people you live with share a single watchlist and watched history, so a film added on one phone is on the other before you sit down. Cronica is a personal tracker synced to your own iCloud, one library for one person.',
+      },
+      {
+        title: 'Recommendations and an AI assistant',
+        body: 'Discover collections are rebuilt monthly from your ratings, and an assistant answers plain-language requests filtered against what you have already seen. Cronica is a tracker and a watchlist; recommending what is next is not what it is for.',
+      },
+      {
+        title: 'On Android as well, on one account',
+        body: 'The same account works on iPhone and Android, so a mixed-phone household is on one shared library. Cronica is Apple-only, so a household with an Android phone in it cannot all be on it.',
+      },
+      {
+        title: 'Imports your existing library',
+        body: 'A Letterboxd .zip or an IMDb .csv imports your ratings and watchlist directly, so years of history come across. Cronica builds up from search rather than importing those files.',
+      },
+    ],
+    table: [
+      { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iPhone, iPad, Mac, Apple Watch, Apple TV, Vision Pro' },
+      { feature: 'Films and TV in one library', ilm: 'Yes', other: 'Yes' },
+      { feature: 'Episode-level tracking', ilm: 'Yes, per episode', other: 'Yes, per episode' },
+      { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal via iCloud' },
+      { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No' },
+      { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes, via JustWatch' },
+      { feature: 'Import', ilm: 'Letterboxd .zip, IMDb .csv', other: 'None; builds from search' },
+      { feature: 'Price', ilm: 'Free, no ads', other: 'Free, open source' },
+    ],
+    migration: [
+      'There is no Cronica import. Cronica keeps your library in your own iCloud, and I Like Movies reads a Letterboxd .zip or an IMDb .csv, so a Cronica library starts fresh here. If your ratings also live on Letterboxd or IMDb, importing from there recovers most of it; otherwise progress is set as you go, and marking a season watched takes a tap.',
+    ],
+    verdict: [
+      'If your world is entirely Apple and you want a minimal, open-source tracker on every device including the Watch and the TV, with your data in your own iCloud and no account, Cronica is the better fit and this page will not pretend otherwise.',
+      'If you want films and TV in one library shared with your household, recommendations built from your own ratings and an assistant you can ask, and the same account on Android as well as iPhone, that is what I Like Movies is built for.',
+    ],
+    faqs: [
+      {
+        q: 'Is there a Cronica alternative with recommendations?',
+        a: [
+          'I Like Movies covers the same tracking and adds recommendations from your own ratings and an assistant you can ask in plain language, on iPhone and Android. Cronica is a deliberately minimal tracker and watchlist, so if you want suggestions of what to watch next as well as a record of what you have seen, that is the difference.',
+        ],
+      },
+      {
+        q: 'Does Cronica sync across devices?',
+        a: [
+          'Yes, through iCloud across your Apple devices, including iPhone, iPad, Mac, Apple Watch, Apple TV and Vision Pro. I Like Movies syncs through your account instead, which works across iPhone and Android and is what lets a household share one library.',
+        ],
+      },
+      {
+        q: 'Can I import my Cronica library into I Like Movies?',
+        a: [
+          'There is no direct Cronica import. I Like Movies reads a Letterboxd .zip or an IMDb .csv only, so if your ratings also live on one of those, import from there; otherwise a Cronica library is rebuilt as you go, and marking a season watched takes a tap.',
+        ],
+      },
+      {
+        q: 'Is Cronica free?',
+        a: [
+          'Yes, Cronica is free and open source. I Like Movies is also free, with no ads and nothing to upgrade.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'flick',
+    competitor: 'Flick',
+    title: 'I Like Movies vs Flick, compared by the developer',
+    metaDescription:
+      'I Like Movies as a Flick alternative for iPhone and Android: a private films-and-TV library with a shared household, versus a social rating app with visual reviews, and where Flick is still better.',
+    h1: 'I Like Movies vs Flick',
+    intro: [
+      'Flick is a social movie and TV rating app on iPhone and Android. It leans into expression and community: a playful "this or that" rating system, rich reviews you build with stills, clips and gifs, a watch history, personalized picks and a year-in-review, and it imports a Letterboxd library to get you started.',
+      'I Like Movies is a phone app built around a private library and deciding what to watch, shared with the people you live with. The two overlap on rating and tracking, and part ways on whether your film life is public or private. This page lays the split out.',
+    ],
+    betterThere: [
+      {
+        title: 'A social, expressive rating experience',
+        body: 'Flick is built to be shared: public reviews, real discussion, and rich reviews you assemble from stills, clips and gifs. I Like Movies keeps ratings and notes private and has following between friends, not a public feed. If posting your takes and reading other people’s is the point, Flick is made for it and this app is not.',
+      },
+      {
+        title: 'The "this or that" rating game',
+        body: 'Flick’s head-to-head rating turns scoring into something quick and playful, like filling out a bracket for your taste. I Like Movies uses ordinary star ratings. If the act of rating is meant to be fun in itself, Flick does that deliberately.',
+      },
+      {
+        title: 'A social-first newcomer',
+        body: 'Flick is a newer app built around sharing, with a community and a wrapped-style year in review. If you want a fresh, social-first place to rate and talk about films, that is its lane.',
+      },
+    ],
+    differences: [
+      {
+        title: 'Private by default',
+        body: 'Ratings and notes are yours, nothing is published, and there is no feed to perform for. Flick is built around a public, social profile, which is the opposite choice on purpose.',
+      },
+      {
+        title: 'Films and TV in one library, tracked to the episode',
+        body: 'I Like Movies tracks films and TV in one library down to the episode, with a watchlist, and it tells a series that has ended from one between seasons. Flick centres on rating and reviewing rather than episode-level progress.',
+      },
+      {
+        title: 'A household shares one library',
+        body: 'The people you live with share a single watchlist and watched history, so a film added on one phone is on the other before you sit down. Flick profiles are individual.',
+      },
+      {
+        title: 'An assistant and per-country streaming',
+        body: 'Ask an assistant in plain language for something to watch, filtered against what you have already seen, and see where each title streams in your country. Flick offers personalized picks but is a rating app first.',
+      },
+      {
+        title: 'Imports Letterboxd and IMDb',
+        body: 'A Letterboxd .zip or an IMDb .csv imports your ratings and watchlist directly. Flick imports a Letterboxd library; if your history is on IMDb, I Like Movies reads that too.',
+      },
+    ],
+    table: [
+      { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iPhone, Android' },
+      { feature: 'Public reviews and social feed', ilm: 'No, private by default', other: 'Yes, the core of the app' },
+      { feature: 'Films and TV, per-episode tracking', ilm: 'Yes, per episode', other: 'Watch history, rating-first' },
+      { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal profile' },
+      { feature: 'AI recommendations and assistant', ilm: 'Yes, from your own ratings', other: 'Personalized picks' },
+      { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Not a focus' },
+      { feature: 'Import', ilm: 'Letterboxd .zip, IMDb .csv', other: 'Letterboxd' },
+      { feature: 'Price', ilm: 'Free, no ads', other: 'Free with in-app purchases' },
+    ],
+    migration: [
+      'There is no Flick import. Imports read a Letterboxd .zip or an IMDb .csv, and a Flick export is neither, so a Flick library starts fresh here. If your ratings also live on Letterboxd or IMDb, importing from there carries them across; otherwise you rate as you go.',
+    ],
+    verdict: [
+      'If you want a social, expressive rating app where reviews are public and the act of rating is playful, Flick is the better fit and this page will not pretend otherwise. It is built for sharing, and it does that well.',
+      'If you want a private library of films and TV tracked to the episode, a watchlist your household shares, an assistant and per-country streaming, that is what I Like Movies is built for. Both run on iPhone and Android, so the real choice is whether your film life is public or private.',
+    ],
+    faqs: [
+      {
+        q: 'What is the difference between Flick and I Like Movies?',
+        a: [
+          'Flick is a social rating app: public reviews, a playful head-to-head rating system and a community to talk to. I Like Movies is a private tracker: films and TV in one library down to the episode, ratings and notes kept private, a household that shares one watchlist, an assistant and per-country streaming. Both run on iPhone and Android.',
+        ],
+      },
+      {
+        q: 'Is Flick on Android?',
+        a: [
+          'Yes. Flick is on both iPhone and Android, and so is I Like Movies, so the choice between them is about what each is for rather than which phone you carry.',
+        ],
+      },
+      {
+        q: 'Can I import my Flick history into I Like Movies?',
+        a: [
+          'There is no direct Flick import. I Like Movies reads a Letterboxd .zip or an IMDb .csv, so if your ratings also live on one of those, import from there; otherwise a Flick library is rebuilt as you rate and mark things watched.',
+        ],
+      },
+      {
+        q: 'Is I Like Movies free?',
+        a: [
+          'Yes, free with no advertising and nothing to upgrade. Flick is free to download with in-app purchases.',
+        ],
+      },
+    ],
+  },
 ];
 
 // Feeds getStaticPaths and the guides' cross-links.

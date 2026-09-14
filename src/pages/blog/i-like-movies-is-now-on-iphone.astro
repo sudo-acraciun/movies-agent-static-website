@@ -1,0 +1,93 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import StoreButtons from '../../components/StoreButtons.astro';
+import { SITE } from '../../data/site';
+
+// The iPhone launch announcement. Dated post, listed on /blog. Its job is a
+// timely, shareable URL for the launch (Reddit, X, press) and a freshness
+// signal, and to point iPhone readers at the App Store and the /iphone page.
+const path = '/blog/i-like-movies-is-now-on-iphone';
+const title = 'I Like Movies is now on iPhone';
+const description =
+  'I Like Movies is on the App Store. The same free movie and TV tracker, with your library synced across iPhone and Android and shared with your household.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    author: { '@type': 'Person', name: 'Alexandru Craciun' },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+];
+---
+
+<ArticleLayout
+  title={`${title} | ${SITE.name}`}
+  description={description}
+  path={path}
+  heading={title}
+  jsonLd={jsonLd}
+  disclosure={false}
+>
+  <p>
+    I Like Movies is on the App Store. After a year on Android, the same app is
+    now on iPhone, free, with no ads and nothing to upgrade. If you have been
+    waiting for it, this is the day.
+  </p>
+
+  <div class="cta-row">
+    <StoreButtons />
+  </div>
+
+  <h2>The same app, not a cut-down one</h2>
+  <p>
+    The iPhone app is the app, not a lite version of it. Films and TV in one
+    library tracked down to the episode, private ratings and notes, monthly
+    Discover collections built from your own ratings, an assistant you can ask
+    in plain language, streaming availability for your country, and a household
+    that shares one watchlist and one watched history. Everything the Android
+    app does, the iPhone app does.
+  </p>
+
+  <h2>Your library is already there</h2>
+  <p>
+    Because your library lives on the server rather than on the handset, an
+    account you started on Android is already waiting when you sign in on an
+    iPhone, and the other way around. A household now shares one library across
+    both platforms, so a mixed-phone home finally works the way it should: a
+    film one person adds is on everyone's list before the evening starts.
+  </p>
+  <p>
+    Coming from another app, a Letterboxd .zip or an IMDb .csv imports your
+    ratings and watchlist directly, so a library built over years does not start
+    from zero.
+  </p>
+
+  <h2>Where to start</h2>
+  <p>
+    Download it from the <a href={SITE.appStoreUrl} target="_blank" rel="noopener">App Store</a>,
+    or read the <a href="/iphone">iPhone page</a> for what it does and how it
+    compares. If you are weighing it against what you use now, the{' '}
+    <a href="/guides">guides and comparisons</a> lay that out honestly, including
+    where the other app is the better choice.
+  </p>
+  <p>
+    I build this because I use it, and it gets better fastest when someone tells
+    me where it is wrong. If you have opinions on what a movie tracker should do
+    on iPhone, I want them.
+  </p>
+
+  <div class="cta-row">
+    <StoreButtons />
+    <a href="/">More about the app</a>
+  </div>
+</ArticleLayout>
+
+<style>
+  .cta-row {
+    margin: 0 0 2rem;
+  }
+</style>
