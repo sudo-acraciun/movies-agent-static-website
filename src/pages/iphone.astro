@@ -1,23 +1,22 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import { appStubNode } from '../data/schema';
 import { SITE } from '../data/site';
 
-// The iPhone waitlist. Every editorial mention so far reached only the
-// Android half of its readers; this page catches the iPhone half with an
-// explicit-consent email capture, the project's only consented list. The
-// form posts to the API's /api/waitlist (see SITE.apiUrl); nothing about it
-// is wired to analytics, the table count is the metric.
+// The iPhone landing page. It owns the exact-match /iphone URL and the "I Like
+// Movies for iPhone" title, so it is the page that answers iPhone-searcher
+// queries ("movie tracker for iPhone", "Letterboxd alternative for iPhone").
+// It was an email waitlist while the app was in review; now the app is live on
+// the App Store it is a real product page pointed at that intent.
 //
-// CONSENT_TEXT is sent along with the address and stored beside it, so the
-// record says exactly what the person agreed to at the time. Change the
-// sentence here and every later row carries the new wording; earlier rows
-// keep theirs.
+// Schema: the shared appStubNode (same @id as the homepage app node, now
+// operatingSystem "Android, iOS"), so this page reinforces one entity rather
+// than minting a second, drifting app node.
 const path = '/iphone';
 const title = 'I Like Movies for iPhone';
 const description =
-  'The iPhone version of I Like Movies is with Apple for review. Leave your email and we tell you when it is on the App Store.';
-const CONSENT_TEXT =
-  'Email me when the iPhone app is out. Two emails at most, no newsletter. Remove me any time at hi@ilikemovies.app.';
+  'I Like Movies is a free movie and TV tracker for iPhone, on the App Store. Track films and TV, decide what to watch with an AI assistant, and share one library, with no ads.';
 ---
 
 <ArticleLayout
@@ -25,203 +24,82 @@ const CONSENT_TEXT =
   description={description}
   path={path}
   heading="I Like Movies for iPhone"
+  jsonLd={[appStubNode]}
   disclosure={false}
 >
   <p>
-    The iPhone app is built and is with Apple for review. Leave your address below and we email you
-    the day it reaches the App Store: at most two emails ever, no newsletter. Your library lives on
-    the server, so an account started on Android carries straight over.
+    I Like Movies is on the App Store, free, for iPhone. It is a movie and TV
+    tracker built around deciding what to watch next: track films and series in
+    one library down to the episode, keep private ratings and notes, and let an
+    AI assistant answer "what should we watch tonight" in plain language. There
+    are no ads and nothing to upgrade.
   </p>
 
-  <form id="waitlist" class="waitlist" novalidate>
-    <label for="wl-email">Email address</label>
-    <input
-      id="wl-email"
-      name="email"
-      type="email"
-      required
-      autocomplete="email"
-      inputmode="email"
-      spellcheck="false"
-      placeholder="you@example.com"
-    />
-    {/* Honeypot. Off-screen and out of the tab order, so a person never
-        sees it and a form-filling bot fills it; the API answers such a
-        submission like a success and stores nothing. */}
-    <div class="hp" aria-hidden="true">
-      <label for="wl-website">Website</label>
-      <input id="wl-website" name="website" type="text" tabindex="-1" autocomplete="off" />
-    </div>
-    <label class="consent">
-      <input id="wl-consent" name="consent" type="checkbox" required />
-      <span>{CONSENT_TEXT}</span>
-    </label>
-    <button type="submit" class="cta-button" id="wl-submit">Notify me</button>
-    <p class="msg" id="wl-msg" role="status" aria-live="polite"></p>
-  </form>
-  <noscript>
-    <p>
-      The form needs JavaScript. You can also email <a href={`mailto:${SITE.supportEmail}`}
-        >{SITE.supportEmail}</a
-      > with "iPhone" in the subject and we will add you by hand.
-    </p>
-  </noscript>
+  <div class="cta-row">
+    <StoreButtons />
+  </div>
 
-  <h2>On Android already?</h2>
+  <h2>What you get on iPhone</h2>
+  <ul>
+    <li>Films and TV in one library, tracked per episode, with a watchlist and private notes.</li>
+    <li>An AI assistant you ask in plain words, filtered against what you have already seen.</li>
+    <li>Monthly Discover collections built from your own ratings, not a popularity chart.</li>
+    <li>Streaming availability for your country on every title, so you decide and find where to watch in one step.</li>
+    <li>A household that shares one watchlist and one watched history with the people you live with.</li>
+    <li>Import from Letterboxd or IMDb, so a library built over years comes across in a few taps.</li>
+  </ul>
+
+  <h2>A Letterboxd alternative for iPhone, and more</h2>
   <p>
-    The Android app is on <a href={SITE.playUrl} target="_blank" rel="noopener">Google Play</a> now,
-    free and without ads.
+    If you have looked for a Letterboxd alternative for iPhone that also tracks
+    TV, keeps your notes private, and shows where a title streams in your
+    country, this is built for that. Films and TV live in the same library
+    rather than in two apps, and the record is yours rather than a public feed.
+    For how it compares to the apps you may be leaving, see the{' '}
+    <a href="/guides">guides and comparisons</a>.
   </p>
 
-  {/* is:inline + define:vars: the script must run in this page with the API
-      origin and the consent sentence baked in from the frontmatter, so the
-      text stored on the server is the text rendered next to the checkbox. */}
-  <script is:inline define:vars={{ apiUrl: SITE.apiUrl, consentText: CONSENT_TEXT }}>
-    var form = document.getElementById('waitlist');
-    var email = document.getElementById('wl-email');
-    var consent = document.getElementById('wl-consent');
-    var website = document.getElementById('wl-website');
-    var submit = document.getElementById('wl-submit');
-    var msg = document.getElementById('wl-msg');
+  <h2>Questions people ask</h2>
+  <details>
+    <summary>Is I Like Movies on the App Store?</summary>
+    <p>
+      Yes. I Like Movies is on the App Store for iPhone, free, with no ads. It
+      is the same app as on Android, so a feature you read about on Google Play
+      is here too.
+    </p>
+  </details>
+  <details>
+    <summary>Does the iPhone app sync with Android?</summary>
+    <p>
+      Yes. Your library lives on the server, not the handset, so an account
+      started on Android is already there when you sign in on an iPhone, and the
+      other way around. A household shares one library across both platforms.
+    </p>
+  </details>
+  <details>
+    <summary>Is there a Letterboxd alternative for iPhone that tracks TV?</summary>
+    <p>
+      I Like Movies tracks films and TV in one library, down to the episode,
+      with private notes rather than public reviews, streaming availability per
+      country, and an AI assistant. If a public review community is the point for
+      you, Letterboxd is still the place for that; if a private tracker for both
+      films and TV is, this is built for it.
+    </p>
+  </details>
 
-    function say(text, kind) {
-      msg.textContent = text;
-      msg.className = 'msg' + (kind ? ' ' + kind : '');
-    }
-
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      if (!email.validity.valid) {
-        say('That address does not look right.', 'error');
-        email.focus();
-        return;
-      }
-      if (!consent.checked) {
-        say('Tick the box so we are allowed to email you.', 'error');
-        consent.focus();
-        return;
-      }
-      submit.disabled = true;
-      say('Saving…');
-      fetch(apiUrl + '/api/waitlist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: email.value,
-          consent: true,
-          consentText: consentText,
-          source: 'iphone-page',
-          website: website.value,
-        }),
-      })
-        .then(function (res) {
-          if (res.status === 204) {
-            form.innerHTML =
-              '<p class="msg done" role="status" tabindex="-1">You are on the list. We email you when the iPhone app is out.</p>';
-            // Keyboard and screen-reader users were on the submit button,
-            // which no longer exists; land them on the confirmation.
-            form.querySelector('.done').focus();
-            return;
-          }
-          submit.disabled = false;
-          if (res.status === 429) {
-            say('Too many tries from this network. Wait a minute and try again.', 'error');
-          } else if (res.status === 400) {
-            say('That address does not look right.', 'error');
-          } else {
-            say(
-              'Could not save that. Email hi@ilikemovies.app with "iPhone" in the subject and we will add you.',
-              'error',
-            );
-          }
-        })
-        .catch(function () {
-          submit.disabled = false;
-          say(
-            'Could not reach the server. Email hi@ilikemovies.app with "iPhone" in the subject and we will add you.',
-            'error',
-          );
-        });
-    });
-  </script>
+  <h2>On Android?</h2>
+  <p>
+    The Android app is on <a href={SITE.playUrl} target="_blank" rel="noopener">Google Play</a>{' '}
+    too, free and without ads. Your library follows your account across both.
+  </p>
 </ArticleLayout>
 
 <style>
-  .waitlist {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 480px;
+  .cta-row {
     margin: 0 0 2rem;
   }
 
-  .waitlist label {
-    font-weight: 600;
-  }
-
-  .waitlist input[type='email'] {
-    font: inherit;
-    color: var(--text);
-    background: var(--ink-raised);
-    border: 1px solid var(--ink-border);
-    border-radius: 12px;
-    padding: 12px 14px;
-  }
-
-  .waitlist input[type='email']:focus {
-    outline: 2px solid var(--gold);
-    outline-offset: 2px;
-  }
-
-  .consent {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    font-weight: 400;
-    color: var(--text-body);
-    line-height: 1.5;
-  }
-
-  .consent input {
-    margin-top: 5px;
-    width: 18px;
-    height: 18px;
-    flex: none;
-    accent-color: var(--gold);
-  }
-
-  .waitlist .cta-button {
-    align-self: flex-start;
-    cursor: pointer;
-    border: 0;
-    font: inherit;
-    font-weight: 700;
-  }
-
-  .waitlist .cta-button:disabled {
-    opacity: 0.6;
-    cursor: wait;
-  }
-
-  .hp {
-    position: absolute;
-    left: -10000px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-  }
-
-  .msg {
-    min-height: 1.5em;
-    margin: 0;
-  }
-
-  .msg.error {
-    color: var(--ember);
-  }
-
-  .msg.done {
-    color: var(--gold);
-    font-weight: 600;
+  ul {
+    line-height: 1.6;
   }
 </style>

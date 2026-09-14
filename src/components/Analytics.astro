@@ -47,13 +47,14 @@
           // back/forward mouse buttons — a right-click opens a menu, not the app.
           if (event instanceof MouseEvent && event.button > 1) return;
           const link = event.target.closest('a');
-          if (link && link.href.startsWith('https://play.google.com/store')) {
-            posthog.capture('google_play_click', {
-              // Collapse the badge's inter-element whitespace so the property
-              // reads "Get it on Google Play", not a newline-broken string.
-              text: link.textContent?.replace(/\s+/g, ' ').trim(),
-              path: location.pathname,
-            });
+          if (!link) return;
+          // Collapse the badge's inter-element whitespace so the text property
+          // reads "Get it on Google Play", not a newline-broken string.
+          const text = link.textContent?.replace(/\s+/g, ' ').trim();
+          if (link.href.startsWith('https://play.google.com/store')) {
+            posthog.capture('google_play_click', { text, path: location.pathname });
+          } else if (link.href.startsWith('https://apps.apple.com/')) {
+            posthog.capture('app_store_click', { text, path: location.pathname });
           }
         };
         // click for a left/keyboard activation, auxclick for a middle-click

@@ -24,12 +24,12 @@ const POSTS = [
     title: 'How I built an AI movie tracker as a solo dev',
     date: '2026-08-21',
     blurb:
-      'The build story: a solo-built Android movie tracker in Go, GraphQL and React Native, and the decisions that mattered.',
+      'The build story: a solo-built movie tracker for iPhone and Android in Go, GraphQL and React Native, and the decisions that mattered.',
   },
 ];
 
 // Build-time only (Node), so this runs once at astro build, not per request.
-const fmtDate = (iso) =>
+const fmtDate = (iso: string) =>
   new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-GB', {
     day: 'numeric',
     month: 'long',

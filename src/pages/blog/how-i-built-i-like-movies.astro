@@ -5,7 +5,7 @@ import { SITE } from '../../data/site';
 const path = '/blog/how-i-built-i-like-movies';
 const title = 'How I built an AI movie tracker as a solo dev';
 const description =
-  'The build story of I Like Movies: a solo-built Android movie tracker in Go, GraphQL and React Native, and the decisions that mattered.';
+  'The build story of I Like Movies: a solo-built movie tracker for iPhone and Android in Go, GraphQL and React Native, and the decisions that mattered.';
 
 // This page is the canonical home of the build story. The Dev.to copy sets
 // canonical_url to this URL, so the slug is load-bearing once that post is
@@ -41,8 +41,9 @@ const jsonLd = [
   <p>
     I am a full-stack developer in the Netherlands, a bit over ten years in.
     For the last year my evenings have gone into one side project: I Like
-    Movies, an Android app for tracking what you watch and deciding what to
-    watch next. It went live on Google Play this summer. This is the honest
+    Movies, an app for tracking what you watch and deciding what to
+    watch next. It went live on Google Play this summer, and on the App Store
+    in September. This is the honest
     version of how it got built, what the stack looks like, and the three or
     four decisions that mattered more than the rest.
   </p>
@@ -96,7 +97,7 @@ const jsonLd = [
     development survivable. A JS-level fix ships to every installed phone in
     minutes without a store review. When a real user hits a real bug, the loop
     from report to fixed-on-their-device can be an evening. Native releases
-    still go through Play review, but they are rare.
+    still go through store review, but they are rare.
   </p>
 
   <h2>The AI part, without the hype</h2>
@@ -172,15 +173,16 @@ const jsonLd = [
     hurts. Shipping an app that feels focused is worth it.
   </p>
   <p>
-    The app is free, on Android now, with an iPhone version in development. If
+    The app is free, on iPhone and Android. If
     you have opinions on what a movie tracker should do, I genuinely want
     them. I built this because I use it, and it gets better fastest when
     someone tells me where it is wrong.
   </p>
   <p>
     <em>
-      I Like Movies is at <a href="/">ilikemovies.app</a>, and on{' '}
-      <a href={SITE.playUrl} target="_blank" rel="noopener">Google Play</a>.
+      I Like Movies is at <a href="/">ilikemovies.app</a>, on{' '}
+      <a href={SITE.playUrl} target="_blank" rel="noopener">Google Play</a> and on the{' '}
+      <a href={SITE.appStoreUrl} target="_blank" rel="noopener">App Store</a>.
     </em>
   </p>
 </ArticleLayout>

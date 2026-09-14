@@ -19,11 +19,12 @@ import { SITE } from './site';
 // verified live belong here; a dead or wrong URL teaches the wrong entity,
 // which is worse than teaching nothing.
 //
-// The Play URL is the bare listing, not SITE.playUrl: the referrer parameter
+// The store URLs are the bare listings, not SITE.playUrl: the referrer parameter
 // attributes installs, and an identity claim should point at the canonical page
 // rather than a tracked variant of it.
 export const SAME_AS = [
   'https://play.google.com/store/apps/details?id=com.moviesagent.app',
+  'https://apps.apple.com/app/id6805131346',
   'https://theresanaiforthat.com/ai/i-like-movies/',
   'https://alternativeto.net/software/i-like-movies/',
   'https://www.saashub.com/ilikemovies-app',
@@ -77,10 +78,10 @@ export const mobileApplicationNode = {
   name: SITE.name,
   applicationCategory: 'EntertainmentApplication',
   applicationSubCategory: 'Movie and TV discovery and tracking',
-  operatingSystem: 'Android',
+  operatingSystem: 'Android, iOS',
   url: SITE.url,
-  downloadUrl: SITE.playUrl,
-  installUrl: SITE.playUrl,
+  downloadUrl: [SITE.playUrl, SITE.appStoreUrl],
+  installUrl: [SITE.playUrl, SITE.appStoreUrl],
   description: SITE.definition,
   inLanguage: 'en',
   offers: {
@@ -117,7 +118,7 @@ export const appStubNode = {
   '@id': ENTITY_IDS.app,
   name: SITE.name,
   applicationCategory: 'EntertainmentApplication',
-  operatingSystem: 'Android',
+  operatingSystem: 'Android, iOS',
   url: SITE.url,
 };
 

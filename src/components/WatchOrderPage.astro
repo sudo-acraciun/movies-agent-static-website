@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import { SITE } from '../data/site';
 import { WATCH_ORDERS, type WatchOrder } from '../data/watchOrders';
+import StoreButtons from './StoreButtons.astro';
 
 interface Props {
   order: WatchOrder;
@@ -86,14 +87,14 @@ const KIND_LABEL = { film: 'Film', series: 'Series', special: 'Special' } as con
   {
     o.hasAppTrack ? (
       <p>
-        I Like Movies, the free Android app behind this page, carries a curated{' '}
+        I Like Movies, the free iPhone and Android app behind this page, carries a curated{' '}
         {o.franchise} track: the same catalogue as above, in watch order, with
         your progress marked per film and per episode. Ratings and a watchlist
         come along for everything else you watch.
       </p>
     ) : (
       <p>
-        I Like Movies, the free Android app behind this page, keeps your place
+        I Like Movies, the free iPhone and Android app behind this page, keeps your place
         in any franchise: mark films and episodes watched, rate them, and keep
         a watchlist for what is next.
       </p>
@@ -120,9 +121,7 @@ const KIND_LABEL = { film: 'Film', series: 'Series', special: 'Special' } as con
   </p>
 
   <div class="cta-row">
-    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
-      Get I Like Movies on Google Play
-    </a>
+    <StoreButtons />
     <a href="/">More about the app</a>
   </div>
 </ArticleLayout>

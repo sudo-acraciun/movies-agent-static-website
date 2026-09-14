@@ -37,10 +37,10 @@ export const SITE = {
   domain: 'ilikemovies.app',
   url: 'https://ilikemovies.app',
 
-  // Must match the contact address published in the privacy policy, the terms
-  // and the Play Console listing. Four surfaces naming different addresses
-  // splits the entity, which is the one signal a small brand cannot afford to
-  // fragment. Change this and change all four in the same pass.
+  // Must match the contact address published in the privacy policy, the terms,
+  // the Play Console listing and the App Store Connect listing. Surfaces naming
+  // different addresses split the entity, which is the one signal a small brand
+  // cannot afford to fragment. Change this and change all of them in one pass.
   supportEmail: 'hi@ilikemovies.app',
 
   // Operator jurisdiction, kept identical to the governing-law clause in the
@@ -55,7 +55,7 @@ export const SITE = {
   // this is the single most-quoted sentence on the site and it is the only
   // one guaranteed to be read.
   definition:
-    'I Like Movies is a free movie and TV app for Android with an AI assistant that helps you discover what to watch next, share one library with the people you live with, and keep a record of everything you have seen. An iPhone version is in development.',
+    'I Like Movies is a free movie and TV app for iPhone and Android with an AI assistant that helps you discover what to watch next, share one library with the people you live with, and keep a record of everything you have seen.',
 
   // The meta description is a SEPARATE string, not the definitional sentence.
   // They are built for different readers and cannot be the same text: the
@@ -64,16 +64,13 @@ export const SITE = {
   // mid-clause. It now leads with the brand name: Search Console shows the
   // brand has real volume ("i like movies app" ranks pos 2 and drives nearly
   // all clicks), so the entity token earns the front position, and the typed
-  // keywords ("movie and TV app for Android") still sit in the first clause.
+  // keywords ("movie and TV app for iPhone and Android") still sit in the first clause.
   metaDescription:
-    'I Like Movies is a free movie and TV app for Android. AI picks from your ratings, one shared household watchlist, no ads. iPhone version in development.',
+    'I Like Movies is a free movie and TV app for iPhone and Android. AI picks from your ratings, one shared household watchlist, no ads.',
 
   tagline: 'Everything you have watched. Everything you are going to.',
 
-  // Both store URLs. The Android one is correct and permanent; it 404s only
-  // until the production listing is approved. The iOS one is null rather than
-  // a guessed URL, because the app does not exist on the App Store yet and a
-  // fabricated link is worse than a disabled button.
+  // Both store URLs.
   //
   // The referrer param attributes Play installs back to this website with no
   // JS analytics involved: Play records it verbatim against the install and
@@ -81,18 +78,12 @@ export const SITE = {
   // Play Installation Referrer API on first launch. Every link on the site
   // routes through this one constant, so the param reaches every store link
   // without being repeated anywhere.
+  //
+  // The App Store URL is deliberately bare: Apple campaign tokens require an
+  // App Analytics campaign, and an identity-bearing link should stay canonical.
   playUrl:
     'https://play.google.com/store/apps/details?id=com.moviesagent.app&referrer=utm_source%3Dilikemovies.app',
-  appStoreUrl: null as string | null,
-
-  // The API origin, used by exactly one page: the iPhone waitlist form on
-  // /iphone posts to `${apiUrl}/api/waitlist`. The backend allows that call
-  // only from this site's origin (its WEB_DEEPLINK_BASE_URL), so the two
-  // values are a pair: a different site host needs a backend change too.
-  // PUBLIC_API_URL exists for a local smoke test against a backend on this
-  // machine (`PUBLIC_API_URL=http://localhost:8090 npm run dev`); production
-  // builds never set it.
-  apiUrl: import.meta.env.PUBLIC_API_URL || 'https://api.i-like-movies.app',
+  appStoreUrl: 'https://apps.apple.com/app/id6805131346' as string | null,
 
   // Root-relative, and on this domain since the migration off
   // sudo-acraciun.github.io/movienight. That host still serves the documents
@@ -319,8 +310,19 @@ export const FAQS: Faq[] = [
   {
     q: 'Which platforms does I Like Movies run on?',
     a: [
-      'I Like Movies is available for Android on Google Play. An iOS version for iPhone is in development and is not on the App Store yet.',
-      'Your library is stored on the server rather than on the handset, so when the iOS version arrives you will sign in to the same account and find everything already there. The same is true if you replace your Android phone.',
+      'I Like Movies is available for iPhone on the App Store and for Android on Google Play.',
+      'Your library is stored on the server rather than on the handset, so you can sign in on either platform, or on a new phone, and find everything already there.',
+    ],
+  },
+  {
+    // The iPhone-shaped query, kept separate from the platforms answer above.
+    // "movie tracker for iPhone" and "is there an iPhone app" are distinct
+    // searches, and an answer engine matches a question far more readily than
+    // a clause buried in a broader answer.
+    q: 'Is there an iPhone version of I Like Movies?',
+    a: [
+      'Yes. I Like Movies is on the App Store for iPhone. It is the same app as on Android, free and without ads.',
+      'Your library lives on the server, so an account started on Android is already there when you sign in on an iPhone, and the other way around.',
     ],
   },
   {

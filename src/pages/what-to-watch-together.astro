@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
+import StoreButtons from '../components/StoreButtons.astro';
 import { SITE } from '../data/comparisons';
 
 const path = '/what-to-watch-together';
@@ -33,7 +34,7 @@ const faqs = [
   {
     q: 'Is there an app for sharing a watchlist with your partner?',
     a: [
-      'Yes. I Like Movies, built by the author of this page, has households: the people you live with share one watchlist and one watched history, so the film either of you saved is on the same list when the evening comes. It is free, on Android, with an iOS version in development.',
+      'Yes. I Like Movies, built by the author of this page, has households: the people you live with share one watchlist and one watched history, so the film either of you saved is on the same list when the evening comes. It is free, on iPhone and Android.',
     ],
   },
 ];
@@ -136,8 +137,7 @@ const jsonLd = [
     saves is on the same list by the time you sit down. An AI assistant takes
     the one-sentence mood from the genre-first method and turns it into real
     titles, filtered against what you have both already seen and what your
-    services carry. It is free, has no ads, and runs on Android, with an iOS
-    version in development.
+    services carry. It is free, has no ads, and runs on iPhone and Android.
   </p>
 
   <h2>Questions people ask</h2>
@@ -156,9 +156,7 @@ const jsonLd = [
   </p>
 
   <div class="cta-row">
-    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
-      Get I Like Movies on Google Play
-    </a>
+    <StoreButtons />
     <a href="/">More about the app</a>
   </div>
 </ArticleLayout>

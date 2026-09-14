@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import { SITE } from '../data/site';
 import { LISTICLES, type Listicle } from '../data/listicles';
+import StoreButtons from './StoreButtons.astro';
 
 interface Props {
   list: Listicle;
@@ -146,9 +147,7 @@ const jsonLd = [
   </p>
 
   <div class="cta-row">
-    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
-      Get I Like Movies on Google Play
-    </a>
+    <StoreButtons />
     <a href="/">More about the app</a>
   </div>
 </ArticleLayout>

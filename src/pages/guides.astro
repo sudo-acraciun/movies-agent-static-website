@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
+import StoreButtons from '../components/StoreButtons.astro';
 import { SITE } from '../data/site';
 import { WATCH_ORDERS } from '../data/watchOrders';
 import { COMPARISONS } from '../data/comparisons';
@@ -188,9 +189,7 @@ const jsonLd = [
   </ul>
 
   <div class="cta-row">
-    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
-      Get I Like Movies on Google Play
-    </a>
+    <StoreButtons />
     <a href="/">More about the app</a>
   </div>
 </ArticleLayout>

@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import StoreButtons from '../../components/StoreButtons.astro';
 import { ROUNDUPS } from '../../data/roundups';
 import { SITE } from '../../data/site';
 import { organizationNode, organizationRef, appStubNode, appRef, webSiteRef } from '../../data/schema';
@@ -104,9 +105,7 @@ const breadcrumbs = [
           </div>
         </div>
         {app.isUs && (
-          <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
-            Get I Like Movies on Google Play
-          </a>
+          <StoreButtons />
         )}
       </div>
     ))
@@ -167,9 +166,7 @@ const breadcrumbs = [
   <p>Browse <a href="/guides">every guide and comparison</a>.</p>
 
   <div class="cta-row">
-    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
-      Get I Like Movies on Google Play
-    </a>
+    <StoreButtons />
     <a href="/">More about the app</a>
   </div>
 </ArticleLayout>

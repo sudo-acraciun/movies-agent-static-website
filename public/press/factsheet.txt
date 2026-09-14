@@ -11,14 +11,14 @@ live together can share one library; friends can follow what each other is
 watching. Letterboxd and IMDb exports import directly.
 
 Platforms
+iPhone on the App Store (app id 6805131346).
 Android on Google Play (package com.moviesagent.app).
-iPhone version with Apple for review; waitlist at https://ilikemovies.app/iphone
 
 Price
 Free. No advertising, no sponsored placements.
 
 Launched
-12 August 2026 on Google Play.
+12 August 2026 on Google Play. September 2026 on the App Store.
 
 Made by
 Alexandru Crăciun, one developer, Netherlands.
@@ -28,6 +28,7 @@ picking alone.
 
 Links
 Website:      https://ilikemovies.app
+App Store:    https://apps.apple.com/app/id6805131346
 Google Play:  https://play.google.com/store/apps/details?id=com.moviesagent.app
 Privacy:      https://ilikemovies.app/privacy
 Changelog:    https://ilikemovies.app/changelog

@@ -26,7 +26,10 @@ import { SITE } from '../data/site';
       <a href="/#faq">FAQ</a>
     </nav>
 
-    <a class="cta" href={SITE.playUrl} target="_blank" rel="noopener">Get the app</a>
+    {/* Routes to the store-buttons section rather than one store: with the app
+        on both stores, a single hard-coded store link would send iPhone readers
+        to Google Play. Root-relative for the same reason as the nav links. */}
+    <a class="cta" href="/#get-the-app">Get the app</a>
   </div>
 </header>
 

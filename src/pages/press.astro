@@ -20,7 +20,7 @@ import shotHousehold from '../assets/screenshots/household.png';
 const path = '/press';
 const title = 'Press kit';
 const description =
-  'Facts, screenshots, icon and maker bio for I Like Movies, the free movie and TV tracker for Android with an iPhone version in review.';
+  'Facts, screenshots, icon and maker bio for I Like Movies, the free movie and TV tracker for iPhone and Android.';
 const mailto = `mailto:${SITE.supportEmail}`;
 
 // Rendered from data, not hand-written rows: an <a href={x}>{y}</a> written
@@ -31,12 +31,13 @@ const mailto = `mailto:${SITE.supportEmail}`;
 const facts: { label: string; value: string; href?: string; external?: boolean }[] = [
   { label: 'Name', value: SITE.name },
   { label: 'What it is', value: 'A free movie and TV tracker that helps you decide what to watch' },
-  { label: 'Platforms', value: 'Android on Google Play. iPhone version with Apple for review.' },
+  { label: 'Platforms', value: 'iPhone on the App Store and Android on Google Play.' },
   { label: 'Price', value: 'Free. No advertising, no sponsored placements.' },
-  { label: 'Launched', value: '12 August 2026 on Google Play' },
+  { label: 'Launched', value: '12 August 2026 on Google Play, September 2026 on the App Store' },
   { label: 'Made by', value: `Alexandru Crăciun, one developer, ${SITE.operatorCountry}` },
   { label: 'Website', value: SITE.domain, href: SITE.url },
   { label: 'Google Play', value: 'play.google.com', href: SITE.playUrl, external: true },
+  { label: 'App Store', value: 'apps.apple.com', href: SITE.appStoreUrl!, external: true },
   { label: 'Package name', value: 'com.moviesagent.app' },
   { label: 'Contact', value: SITE.supportEmail, href: mailto },
 ];

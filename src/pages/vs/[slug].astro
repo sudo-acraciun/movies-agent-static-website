@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import StoreButtons from '../../components/StoreButtons.astro';
 import { COMPARISONS, NOT_DO, SITE } from '../../data/comparisons';
 import { organizationNode, organizationRef, appStubNode, appRef, webSiteRef } from '../../data/schema';
 
@@ -144,9 +145,7 @@ const breadcrumbs = [
   </p>
 
   <div class="cta-row">
-    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
-      Get I Like Movies on Google Play
-    </a>
+    <StoreButtons />
     <a href="/">More about the app</a>
   </div>
 </ArticleLayout>

@@ -49,9 +49,10 @@ pricing is absent because the freemium entitlement is gated behind
 `aggregateRating` is absent from the JSON-LD because there is no real Play
 rating yet, and inventing one is a Google spam signal.
 
-**The iOS button is disabled, not linked.** `SITE.appStoreUrl` is `null`. When
-the App Store listing exists, setting that one constant turns the "Coming soon"
-badge into a live link everywhere it appears.
+**Both store buttons are live.** `SITE.appStoreUrl` is set (the iOS app is on
+the App Store), so the App Store badge is a live link everywhere it appears,
+alongside Google Play. Clearing that one constant would drop the iOS badge back
+to a non-link "Coming to iPhone" state pointing at `/iphone`.
 
 **`robots.txt` names AI crawlers explicitly.** Being read is the point of this
 site, so `GPTBot`, `OAI-SearchBot`, `ClaudeBot`, `PerplexityBot`,

@@ -189,7 +189,7 @@ export const LISTICLES: Listicle[] = [
       },
     ],
     appNote:
-      'Turning a list like this into an October project is exactly what I Like Movies, the free Android app behind this page, is built for: keep the ones you have not seen on your watchlist, rate each film as you go, and see where it is streaming in your country before you press play.',
+      'Turning a list like this into an October project is exactly what I Like Movies, the free iPhone and Android app behind this page, is built for: keep the ones you have not seen on your watchlist, rate each film as you go, and see where it is streaming in your country before you press play.',
     faqs: [
       {
         q: 'How is this list ranked?',
@@ -382,7 +382,7 @@ export const LISTICLES: Listicle[] = [
       },
     ],
     appNote:
-      'If a list like this turns into a watching project, I Like Movies, the free Android app behind this page, is built for exactly that: keep the films you have not seen on your watchlist, rate them as you go, and see where each one is streaming in your country before you press play.',
+      'If a list like this turns into a watching project, I Like Movies, the free iPhone and Android app behind this page, is built for exactly that: keep the films you have not seen on your watchlist, rate them as you go, and see where each one is streaming in your country before you press play.',
     faqs: [
       {
         q: 'How is this list ranked?',
@@ -515,7 +515,7 @@ export const LISTICLES: Listicle[] = [
       },
     ],
     appNote:
-      'Working through a filmography is exactly what I Like Movies, the free Android app behind this page, is for: put the ones you have not seen on your watchlist, rate as you go, and see where each film streams in your country before you press play.',
+      'Working through a filmography is exactly what I Like Movies, the free iPhone and Android app behind this page, is for: put the ones you have not seen on your watchlist, rate as you go, and see where each film streams in your country before you press play.',
     faqs: [
       {
         q: 'How is this list ranked?',
@@ -691,7 +691,7 @@ export const LISTICLES: Listicle[] = [
       },
     ],
     appNote:
-      'Nights like this are what the watchlist in I Like Movies, the free Android app behind this page, is for: save the ones that appeal now, and when the tired evening arrives the shortlist is already made, with streaming availability for your country shown per title.',
+      'Nights like this are what the watchlist in I Like Movies, the free iPhone and Android app behind this page, is for: save the ones that appeal now, and when the tired evening arrives the shortlist is already made, with streaming availability for your country shown per title.',
     related: {
       href: '/what-to-watch-together',
       label: 'how to decide what to watch together',

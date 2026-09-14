@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
+import StoreButtons from '../components/StoreButtons.astro';
 import { SITE } from '../data/comparisons';
 
 const path = '/from-tv-time';
@@ -115,8 +116,8 @@ const jsonLd = [
     title shows where it streams in your country, an AI assistant answers
     "what should we start next" in plain language, and a household shares one
     watchlist and one watched history with the people you live with. It is
-    free, has no ads, and runs on Android, with an iOS version in development.
-    There is no automatic tracking, no web app, and no public reviews; if any
+    free, has no ads, and runs on iPhone and Android. There is no automatic
+    tracking, no web app, and no public reviews; if any
     of those is essential, the apps above fit better.
   </p>
 
@@ -147,9 +148,7 @@ const jsonLd = [
   </p>
 
   <div class="cta-row">
-    <a class="cta-button" href={SITE.playUrl} target="_blank" rel="noopener">
-      Get I Like Movies on Google Play
-    </a>
+    <StoreButtons />
     <a href="/">More about the app</a>
   </div>
 </ArticleLayout>

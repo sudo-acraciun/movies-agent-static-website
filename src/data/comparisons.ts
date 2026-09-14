@@ -61,7 +61,6 @@ export const DISCLOSURE =
 // do is what makes the rest of the page believable, and it heads off the
 // worst outcome a comparison page can produce: a disappointed install.
 export const NOT_DO: string[] = [
-  'There is no iPhone app yet. I Like Movies is Android only today; an iOS version is in development.',
   'There is no automatic tracking. Nothing scrobbles from a media server, a browser or a streaming app; you mark things watched yourself.',
   'There are no public reviews. Notes are private, and there is no feed of strangers to read.',
   'There is no web app. The library lives on the server, but you reach it from the phone app.',
@@ -75,7 +74,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Letterboxd',
     title: 'I Like Movies vs Letterboxd, compared by the developer',
     metaDescription:
-      'I Like Movies as a Letterboxd alternative for Android: TV episode tracking, private notes vs public reviews, households, imports, and where Letterboxd is still better.',
+      'I Like Movies as a Letterboxd alternative for iPhone and Android: TV episode tracking, private notes vs public reviews, households, imports, and where Letterboxd is still better.',
     h1: 'I Like Movies vs Letterboxd',
     intro: [
       'Letterboxd is the social network for film lovers. It is where film culture happens online: reviews, lists, diaries, and the pleasure of reading what someone sharper than you thought of the film you just finished.',
@@ -91,8 +90,8 @@ export const COMPARISONS: Comparison[] = [
         body: 'Writing and reading reviews is the product on Letterboxd, and the culture around it is genuinely good. Here, notes are private by default and there is no public review at all.',
       },
       {
-        title: 'iPhone, Android and the web',
-        body: 'Letterboxd runs everywhere. I Like Movies is Android only today, with an iOS version in development. If you are on an iPhone, Letterboxd is the one you can actually install.',
+        title: 'A web app',
+        body: 'Letterboxd also runs in the browser. I Like Movies is a phone app for iPhone and Android; there is no web version.',
       },
       {
         title: 'Years of diary culture',
@@ -122,7 +121,7 @@ export const COMPARISONS: Comparison[] = [
       },
     ],
     table: [
-      { feature: 'Platforms', ilm: 'Android (iOS in development)', other: 'iOS, Android, web' },
+      { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iOS, Android, web' },
       { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'No, films only' },
       { feature: 'Public reviews', ilm: 'No, notes are private', other: 'Yes, the core of the app' },
       { feature: 'Community and lists culture', ilm: 'Friends and taste comparison', other: 'The largest film community online' },
@@ -138,7 +137,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If film reviews and the community around them are why you track films, stay on Letterboxd. It is the best at that, and this page will not pretend otherwise.',
-      'If you want films and TV in one private library, a watchlist your household shares, and help deciding what to watch tonight on Android, that is the problem I Like Movies is built for, and the Letterboxd import means you do not start from zero.',
+      'If you want films and TV in one private library, a watchlist your household shares, and help deciding what to watch tonight, that is the problem I Like Movies is built for, and the Letterboxd import means you do not start from zero.',
     ],
     faqs: [
       {
@@ -172,7 +171,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Trakt',
     title: 'I Like Movies vs Trakt, compared by the developer',
     metaDescription:
-      'I Like Movies as a Trakt alternative for Android: automatic scrobbling vs a phone-first app, ecosystems, households, AI recommendations, and where Trakt is still better.',
+      'I Like Movies as a Trakt alternative for iPhone and Android: automatic scrobbling vs a phone-first app, ecosystems, households, AI recommendations, and where Trakt is still better.',
     h1: 'I Like Movies vs Trakt',
     intro: [
       'Trakt is the tracking backbone of the home-media world. It records what you watch automatically from media servers and players, and a whole ecosystem of apps is built on top of it.',
@@ -189,7 +188,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'Cross-platform reach',
-        body: 'Trakt has a full web app and clients on effectively everything. I Like Movies is Android only today, with iOS in development.',
+        body: 'Trakt has a full web app and clients on effectively everything. I Like Movies is a phone app for iPhone and Android.',
       },
       {
         title: 'Depth of history features',
@@ -215,7 +214,7 @@ export const COMPARISONS: Comparison[] = [
       },
     ],
     table: [
-      { feature: 'Platforms', ilm: 'Android (iOS in development)', other: 'Web, iOS, Android, many third-party apps' },
+      { feature: 'Platforms', ilm: 'iPhone, Android', other: 'Web, iOS, Android, many third-party apps' },
       { feature: 'Automatic scrobbling', ilm: 'No', other: 'Yes, from media servers and players' },
       { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'Yes, per episode' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No' },
@@ -264,7 +263,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Simkl',
     title: 'I Like Movies vs Simkl, compared by the developer',
     metaDescription:
-      'I Like Movies as a Simkl alternative for Android: anime tracking, auto-tracking extensions, households, AI recommendations, and where Simkl is still better.',
+      'I Like Movies as a Simkl alternative for iPhone and Android: anime tracking, auto-tracking extensions, households, AI recommendations, and where Simkl is still better.',
     h1: 'I Like Movies vs Simkl',
     intro: [
       'Simkl tracks TV, anime and films across the web and mobile, with browser extensions that can record what you watch on streaming sites automatically. It is especially strong for anime.',
@@ -281,7 +280,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'A web app',
-        body: 'Simkl works in a browser on any machine. I Like Movies is a phone app only, Android today with iOS in development.',
+        body: 'Simkl works in a browser on any machine. I Like Movies is a phone app only.',
       },
       {
         title: 'Import breadth',
@@ -307,7 +306,7 @@ export const COMPARISONS: Comparison[] = [
       },
     ],
     table: [
-      { feature: 'Platforms', ilm: 'Android (iOS in development)', other: 'Web, iOS, Android' },
+      { feature: 'Platforms', ilm: 'iPhone, Android', other: 'Web, iOS, Android' },
       { feature: 'Anime-specific tracking', ilm: 'As ordinary TV and films', other: 'Yes, first-class' },
       { feature: 'Automatic tracking', ilm: 'No', other: 'Yes, via browser extensions' },
       { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'Yes, per episode' },
@@ -369,7 +368,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'IMDb',
     title: 'I Like Movies vs IMDb, compared by the developer',
     metaDescription:
-      'I Like Movies as an IMDb alternative for tracking on Android: a reference database vs a tracking app, ratings, watchlists, the .csv import path, and where IMDb is still better.',
+      'I Like Movies as an IMDb alternative for tracking on iPhone and Android: a reference database vs a tracking app, ratings, watchlists, the .csv import path, and where IMDb is still better.',
     h1: 'I Like Movies vs IMDb',
     intro: [
       'IMDb is the reference. It is where the internet looks up who directed what, and its rating is the closest thing film culture has to a universal score. It also carries a watchlist and lists, which is why people reasonably ask whether it can be their tracker too.',
@@ -385,8 +384,8 @@ export const COMPARISONS: Comparison[] = [
         body: 'An IMDb score is quotable shorthand backed by one of the largest vote bases on the internet. Ratings in I Like Movies are for you and your friends, not a public reference number.',
       },
       {
-        title: 'Everywhere, for everyone',
-        body: 'IMDb runs on the web, iOS and Android, with an account that is probably older than some of your devices. I Like Movies is Android only today, with an iOS version in development.',
+        title: 'Everywhere, including the web',
+        body: 'IMDb runs on the web as well as iOS and Android, with an account that is probably older than some of your devices. I Like Movies is a phone app for iPhone and Android, with no web version.',
       },
       {
         title: 'Industry depth',
@@ -417,7 +416,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     table: [
       { feature: 'What it is', ilm: 'A tracking app', other: 'A reference database' },
-      { feature: 'Platforms', ilm: 'Android (iOS in development)', other: 'Web, iOS, Android' },
+      { feature: 'Platforms', ilm: 'iPhone, Android', other: 'Web, iOS, Android' },
       { feature: 'Watched history', ilm: 'Yes, films and TV', other: 'No, ratings and lists' },
       { feature: 'TV episode progress', ilm: 'Yes, per episode', other: 'Episodes can be rated, not tracked' },
       { feature: 'Cast, crew and trivia depth', ilm: 'Enough to choose a film', other: 'The deepest there is' },
@@ -432,7 +431,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'Keep IMDb. That is not a concession, it is the point: as a reference it has no substitute, and nothing here tries to replace it.',
-      'The question is only what tracks your watching. If a ratings list on IMDb has been quietly standing in for a tracker, the .csv import moves it into a real one in a few taps: watched history, episode progress, a household watchlist and recommendations from your own taste, on Android.',
+      'The question is only what tracks your watching. If a ratings list on IMDb has been quietly standing in for a tracker, the .csv import moves it into a real one in a few taps: watched history, episode progress, a household watchlist and recommendations from your own taste.',
     ],
     faqs: [
       {
@@ -466,7 +465,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Serializd',
     title: 'I Like Movies vs Serializd, compared by the developer',
     metaDescription:
-      'I Like Movies as a Serializd alternative for Android: public TV reviews vs a private films-and-TV library, communities, households, and where Serializd is still better.',
+      'I Like Movies as a Serializd alternative for iPhone and Android: public TV reviews vs a private films-and-TV library, communities, households, and where Serializd is still better.',
     h1: 'I Like Movies vs Serializd',
     intro: [
       'Serializd is Letterboxd for TV: a place to log shows and seasons, write reviews, and read what a community of TV watchers thought. Since TV Time closed, it is where much of that culture moved.',
@@ -483,7 +482,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'Reach',
-        body: 'Serializd runs on the web as well as on phones, so your logging is wherever a browser is. I Like Movies is an Android app today, iOS in development, and has no web app.',
+        body: 'Serializd runs on the web as well as on phones, so your logging is wherever a browser is. I Like Movies is a phone app for iPhone and Android, and has no web app.',
       },
     ],
     differences: [
@@ -509,7 +508,7 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'TV episode progress', ilm: 'Yes, per episode', other: 'Logging by season and show' },
       { feature: 'Public reviews', ilm: 'No, notes are private', other: 'Yes, the core of the app' },
       { feature: 'Community', ilm: 'Friends and taste comparison', other: 'The TV-review community' },
-      { feature: 'Platforms', ilm: 'Android (iOS in development)', other: 'Web, iOS, Android' },
+      { feature: 'Platforms', ilm: 'iPhone, Android', other: 'Web, iOS, Android' },
       { feature: 'Shared household library', ilm: 'Yes', other: 'No' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'No' },
@@ -555,17 +554,13 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Maimovie',
     title: 'I Like Movies vs Maimovie, compared by the developer',
     metaDescription:
-      'I Like Movies as a Maimovie alternative for Android: an AI finder vs a library you keep, episode tracking, households, imports, and where Maimovie is still better.',
+      'I Like Movies as a Maimovie alternative for iPhone and Android: an AI finder vs a library you keep, episode tracking, households, imports, and where Maimovie is still better.',
     h1: 'I Like Movies vs Maimovie',
     intro: [
       'Maimovie is an AI finder for films and TV. You describe what you are in the mood for, and its AI, built on a large set of mood and theme prompts, comes back with titles and where they stream. It is discovery first, and good at it.',
       'I Like Movies does discovery too, but around a library you keep: a watched history for films and TV together, tracked to the episode, and shared with the people you live with. The overlap is the recommendation; the difference is everything that happens after you pick.',
     ],
     betterThere: [
-      {
-        title: 'On iPhone today',
-        body: 'Maimovie is on both iOS and Android now. I Like Movies is Android only today, with an iOS version in development. If you are on an iPhone, Maimovie is the one you can install right now.',
-      },
       {
         title: 'Mood and prompt search',
         body: 'Maimovie is built around a large library of AI prompts for searching by mood, theme and context, and that breadth of ready-made angles is its core strength. I Like Movies has an assistant you ask in your own words, which is a different shape of the same idea rather than a bigger version of it.',
@@ -599,7 +594,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     table: [
       { feature: 'What it is', ilm: 'A library you keep', other: 'An AI finder' },
-      { feature: 'Platforms', ilm: 'Android (iOS in development)', other: 'iOS, Android' },
+      { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iOS, Android' },
       { feature: 'Watched history', ilm: 'Yes, films and TV', other: 'Discovery focused' },
       { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'Not the focus' },
       { feature: 'AI recommendations', ilm: 'From your own ratings and history', other: 'Yes, prompt and mood based' },
@@ -614,7 +609,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If you want a fast AI finder on iPhone or Android and do not need to keep a library, Maimovie does that well and this page will not pretend otherwise.',
-      'If you want the deciding half and the keeping half in one place, films and TV tracked to the episode, shared with your household, on Android, that is the problem I Like Movies is built for.',
+      'If you want the deciding half and the keeping half in one place, films and TV tracked to the episode, shared with your household, that is the problem I Like Movies is built for.',
     ],
     faqs: [
       {
@@ -648,17 +643,13 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Moviebase',
     title: 'I Like Movies vs Moviebase, compared by the developer',
     metaDescription:
-      'I Like Movies as a Moviebase alternative for Android: a shared household library, recommendations from your own ratings, no ads, and where Moviebase is still better.',
+      'I Like Movies as a Moviebase alternative for iPhone and Android: a shared household library, recommendations from your own ratings, no ads, and where Moviebase is still better.',
     h1: 'I Like Movies vs Moviebase',
     intro: [
       'Moviebase is an established tracker for films and TV, on iPhone and Android, built on TMDB data with a release calendar, statistics and two-way Trakt sync. It presents itself as the app that keeps your history after TV Time closed, and it does that well.',
       'I Like Movies is a phone app aimed at the moment before you press play as much as the record afterwards, for films and TV together, privately, shared with the people you live with. The two overlap on tracking and part ways on sync, ads and who the library belongs to. This page lays the split out.',
     ],
     betterThere: [
-      {
-        title: 'On iPhone today',
-        body: 'Moviebase is on both iOS and Android now. I Like Movies is Android only today, with an iOS version in development. If you are on an iPhone, Moviebase is the one you can actually install.',
-      },
       {
         title: 'Two-way Trakt sync and the ecosystem',
         body: 'Moviebase syncs your watched history, ratings and watchlists with Trakt in both directions, so your progress is backed up and follows you across every Trakt-connected app. I Like Movies has no Trakt sync and no scrobbling; the library lives on its own server and stays there. If a Trakt account is the spine of how you track, Moviebase fits into it and this page will save you the switch.',
@@ -691,7 +682,7 @@ export const COMPARISONS: Comparison[] = [
       },
     ],
     table: [
-      { feature: 'Platforms', ilm: 'Android (iOS in development)', other: 'iOS, Android' },
+      { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iOS, Android' },
       { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'Yes, per episode' },
       { feature: 'Two-way Trakt sync', ilm: 'No', other: 'Yes' },
       { feature: 'Watch statistics', ilm: 'Yes, lighter', other: 'Yes, detailed' },
@@ -705,8 +696,8 @@ export const COMPARISONS: Comparison[] = [
       'There is no Moviebase import. Imports read a Letterboxd .zip or an IMDb .csv, and a Moviebase library, even one backed up to Trakt, is neither, so it starts fresh here. If your ratings also live on Letterboxd or IMDb, importing from there carries them across; TV progress is set as you go, and marking a season watched takes a tap.',
     ],
     verdict: [
-      'If you want a tracker on iPhone today, your history synced through Trakt across other apps, imports from wherever you kept it, or the deeper statistics of a mature product, Moviebase is the better fit and this page will not pretend otherwise.',
-      'If you want films and TV in one private library your household shares, recommendations built from your own ratings, streaming availability per country and no ads at any point, on Android, that is the problem I Like Movies is built for.',
+      'If you want your history synced through Trakt across other apps, imports from wherever you kept it, or the deeper statistics of a mature product, Moviebase is the better fit and this page will not pretend otherwise.',
+      'If you want films and TV in one private library your household shares, recommendations built from your own ratings, streaming availability per country and no ads at any point, that is the problem I Like Movies is built for.',
     ],
     faqs: [
       {
@@ -755,7 +746,7 @@ export const COMPARISONS: Comparison[] = [
     betterThere: [
       {
         title: 'Everywhere, including the TV',
-        body: 'JustWatch runs on the web and on living-room TV, Fire TV, Samsung, LG, Apple TV and Xbox, as well as iPhone and Android. I Like Movies is a phone app, Android only today. When you want to check where something streams from the TV you are sitting in front of, JustWatch is there and we are not.',
+        body: 'JustWatch runs on the web and on living-room TV, Fire TV, Samsung, LG, Apple TV and Xbox, as well as iPhone and Android. I Like Movies is a phone app for iPhone and Android. When you want to check where something streams from the TV you are sitting in front of, JustWatch is there and we are not.',
       },
       {
         title: 'Broader where-to-watch data',
@@ -793,7 +784,7 @@ export const COMPARISONS: Comparison[] = [
       },
     ],
     table: [
-      { feature: 'Platforms', ilm: 'Android (iOS in development), phone only', other: 'Web, iOS, Android, TV (Fire TV, Samsung, LG, Apple TV, Xbox)' },
+      { feature: 'Platforms', ilm: 'iPhone, Android, phone only', other: 'Web, iOS, Android, TV (Fire TV, Samsung, LG, Apple TV, Xbox)' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads; optional Pro removes ads' },
       { feature: 'Watched history', ilm: 'Yes, films and TV', other: 'No, records intent not history' },
       { feature: 'Per-episode tracking', ilm: 'Yes', other: 'No' },
@@ -810,7 +801,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If the question you keep asking is where can I watch this tonight, JustWatch is the better tool and this page will not pretend otherwise. It reaches the web and the TV in your living room, not just your phone, it covers more providers in more countries than any tracker’s built-in availability line, and it tells you when a title lands on a service you have or drops in price. As a where-to-watch finder it is hard to beat.',
-      'I Like Movies is for the other half of the habit, remembering what you watched and what you thought of it. Films and TV in one library, tracked per episode, private by default, shared with the people you live with, with monthly recommendations rebuilt from your own ratings and an assistant you can ask in plain language. The two are not really rivals, plenty of people keep a finder and a tracker side by side. It is on Android today, with an iPhone version in development.',
+      'I Like Movies is for the other half of the habit, remembering what you watched and what you thought of it. Films and TV in one library, tracked per episode, private by default, shared with the people you live with, with monthly recommendations rebuilt from your own ratings and an assistant you can ask in plain language. The two are not really rivals, plenty of people keep a finder and a tracker side by side. It is on iPhone and Android.',
     ],
     faqs: [
       {
@@ -856,7 +847,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Matinee',
     title: 'I Like Movies vs Matinee, compared by the developer',
     metaDescription:
-      'Matinee alternative on Android: films and TV in one private library, a household that shares one watchlist, recommendations built from your own taste, no ads.',
+      'Matinee alternative on iPhone and Android: films and TV in one private library, a household that shares one watchlist, recommendations built from your own taste, no ads.',
     h1: 'I Like Movies vs Matinee',
     intro: [
       'Matinee is a movie and TV tracker for iPhone and Android, with a film diary, half-star ratings, a social feed of what your friends are watching, and streaming availability across more than 30 services. Its headline is discovery: a natural-language search, an assistant you can ask for picks, and a daily suggestion, with an optional Pro tier that unlocks the smart search and removes the ads. It does that well.',
@@ -864,8 +855,8 @@ export const COMPARISONS: Comparison[] = [
     ],
     betterThere: [
       {
-        title: 'On iPhone today',
-        body: 'Matinee is on iPhone and iPad now, and it also runs on Mac and Apple Vision. I Like Movies is Android only today, with an iOS version in development. If you are on an iPhone, Matinee is the one you can install right now.',
+        title: 'Across the Apple ecosystem',
+        body: 'Matinee is on iPhone and iPad, and it also runs on Mac and Apple Vision. I Like Movies is a phone app for iPhone and Android, so if you want a tracker on your Mac or iPad, Matinee reaches devices we do not.',
       },
       {
         title: 'Discovery you ask in plain words',
@@ -899,7 +890,7 @@ export const COMPARISONS: Comparison[] = [
       },
     ],
     table: [
-      { feature: 'Platforms', ilm: 'Android, iOS in development', other: 'iOS and Android, also iPad, Mac, Apple Vision' },
+      { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iOS and Android, also iPad, Mac, Apple Vision' },
       { feature: 'Films and TV', ilm: 'One library, tracked per episode', other: 'Both, tracked per episode' },
       { feature: 'Household shared library', ilm: 'Yes, one watchlist and history', other: 'No, a personal diary' },
       { feature: 'Privacy', ilm: 'Private by default, no public reviews', other: 'Social feed, public reviews' },
@@ -914,8 +905,8 @@ export const COMPARISONS: Comparison[] = [
       'If you also log films on Letterboxd, or keep a list on IMDb, export that file and bring it in, and your ratings and watched marks land in one place. Otherwise you rebuild by adding titles as you go, which is quick once your household is sharing a single watchlist.',
     ],
     verdict: [
-      'If you want a tracker on iPhone today, or your priority is a social feed and an assistant that finds things to watch, Matinee is the better fit and this page will not pretend otherwise. It is live, actively updated, and it has put real work into discovery and streaming availability.',
-      'If you are on Android, want the people you live with to share one watchlist and one history, want your ratings kept private, and want recommendations built from your own taste with no ads and nothing to upgrade, I Like Movies is built for that. Both track films and TV to the episode, so the real choice is who the library belongs to, and whether your film life is public or private.',
+      'If your priority is a social feed and an assistant that finds things to watch, or a tracker across the Apple ecosystem, Matinee is the better fit and this page will not pretend otherwise. It is live, actively updated, and it has put real work into discovery and streaming availability.',
+      'If you want the people you live with to share one watchlist and one history, want your ratings kept private, and want recommendations built from your own taste with no ads and nothing to upgrade, I Like Movies is built for that. Both track films and TV to the episode, so the real choice is who the library belongs to, and whether your film life is public or private.',
     ],
     faqs: [
       {
@@ -945,7 +936,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Which should I choose?',
         a: [
-          'Pick Matinee if you are on iPhone today, or you want a public social feed and a strong finder. Pick I Like Movies if you are on Android, want a household to share one watchlist and history, want your ratings kept private, and want no ads. Both track films and TV to the episode.',
+          'Pick Matinee if you want a public social feed and a strong finder, or a tracker across the Apple ecosystem. Pick I Like Movies if you want a household to share one watchlist and history, want your ratings kept private, and want no ads. Both track films and TV to the episode.',
         ],
       },
     ],

@@ -115,7 +115,7 @@ export const ROUNDUPS: Roundup[] = [
         isUs: true,
         bestFor: 'couples who want to decide together and keep one shared library',
         blurb: [
-          'I Like Movies is a free movie and TV app for Android built around a shared household. Two people (or everyone under one roof) share a single watchlist and a single watched history, so what one person adds, the other already sees, and a "compare taste" view shows where two people overlap and where they never will.',
+          'I Like Movies is a free movie and TV app for iPhone and Android built around a shared household. Two people (or everyone under one roof) share a single watchlist and a single watched history, so what one person adds, the other already sees, and a "compare taste" view shows where two people overlap and where they never will.',
           'It fits couples who want more than a one-off pick: the decision is made from a list you both build and keep, and the app is also a full tracker and an AI assistant for the nights you want a suggestion rather than a browse. It is the best fit here when you want the decision to stick, not just tonight.',
         ],
         pros: [
@@ -125,7 +125,7 @@ export const ROUNDUPS: Roundup[] = [
           'Free, with no ads and no sponsored rows',
         ],
         cons: [
-          'Android only today; an iPhone version is in development, so a mixed-phone couple has to wait',
+          'No web app: both of you decide from the phone app, not a browser',
           'No Tinder-style swipe game: deciding is done through shared lists and taste comparison, which some couples find less playful',
         ],
       },
@@ -219,7 +219,7 @@ export const ROUNDUPS: Roundup[] = [
       },
       {
         feature: 'Platform',
-        cells: ['Android (iPhone in development)', 'iPhone, Android, web', 'iPhone, Android', 'Web (any phone)'],
+        cells: ['iPhone, Android', 'iPhone, Android, web', 'iPhone, Android', 'Web (any phone)'],
       },
       {
         feature: 'Price',
@@ -246,7 +246,7 @@ export const ROUNDUPS: Roundup[] = [
       {
         q: 'What about couples on different phones, one iPhone and one Android?',
         a: [
-          'A web-based tool like MatchWatch works from any phone and sidesteps the platform question entirely. TasteRay also runs on iPhone, Android and the web. I Like Movies is Android only for now, with an iPhone version in development, so a mixed-phone couple should check platform support before committing to any single app.',
+          'A web-based tool like MatchWatch works from any phone and sidesteps the platform question entirely. TasteRay and I Like Movies both run on iPhone and Android, so a mixed-phone couple is covered either way; MatchWatch adds the browser if one of you would rather not install anything.',
         ],
       },
       {
@@ -282,7 +282,7 @@ export const ROUNDUPS: Roundup[] = [
         isUs: true,
         bestFor: 'recommendations grounded in your own library, not a popularity chart',
         blurb: [
-          'I Like Movies is a free Android app whose assistant works from your own ratings and full watch history. You ask in plain language, by mood, a fragment of a plot, a photo of a list, or a voice message, and it answers with real titles you have not already seen and can actually stream in your country.',
+          'I Like Movies is a free iPhone and Android app whose assistant works from your own ratings and full watch history. You ask in plain language, by mood, a fragment of a plot, a photo of a list, or a voice message, and it answers with real titles you have not already seen and can actually stream in your country.',
           'Because it is also your tracker, the AI has your real history to draw on rather than a handful of onboarding swipes, and it never suggests a film you have already watched. That grounding is the whole difference between a recommendation and a guess.',
         ],
         pros: [
@@ -292,7 +292,7 @@ export const ROUNDUPS: Roundup[] = [
           'Checks where each pick streams in your country; free, no ads',
         ],
         cons: [
-          'Android only today; an iPhone version is in development',
+          'No web app; it is a phone app for iPhone and Android, not the browser',
           'It is a full tracker first, so it is heavier than a single-purpose recommender',
         ],
       },
@@ -461,7 +461,7 @@ export const ROUNDUPS: Roundup[] = [
         ],
         cons: [
           'Not a public film community; no review culture',
-          'Android only today; an iPhone version is in development',
+          'No web app; it is a phone app for iPhone and Android, not the browser',
         ],
       },
       {
@@ -627,7 +627,7 @@ export const ROUNDUPS: Roundup[] = [
         ],
         cons: [
           'No automatic scrobbling; you mark things watched yourself',
-          'Android only today; an iPhone version is in development',
+          'No web app; it is a phone app for iPhone and Android, not the browser',
         ],
       },
       {
@@ -787,7 +787,7 @@ export const ROUNDUPS: Roundup[] = [
           'History lives on the server and follows you',
         ],
         cons: [
-          'Android only today; an iPhone version is in development',
+          'No web app; it is a phone app for iPhone and Android, not the browser',
           'A paid tier may arrive later, though nothing is paywalled now',
         ],
       },
@@ -991,7 +991,7 @@ export const ROUNDUPS: Roundup[] = [
         ],
         cons: [
           'No airing calendar and no MyAnimeList or AniList sync',
-          'TMDB-based catalogue, not a specialist anime database; Android only',
+          'TMDB-based catalogue, not a specialist anime database',
         ],
       },
       {
@@ -1089,7 +1089,7 @@ export const ROUNDUPS: Roundup[] = [
         bestFor: 'a purpose-built shared household library',
         blurb: [
           'I Like Movies is built around the household. Everyone under one roof shares a single watchlist and a single watched history, live: add a film on your phone and it is on theirs before you sit down, and a taste-comparison view helps you find the overlap. It is a shared library, not a shared list bolted onto a single-user app.',
-          'The limits are honest: a household is the people you live with, not a public group, and the app is Android only today.',
+          'The limits are honest: a household is the people you live with, not a public group.',
         ],
         pros: [
           'One shared watchlist and one shared watched history, live',
@@ -1098,7 +1098,7 @@ export const ROUNDUPS: Roundup[] = [
         ],
         cons: [
           'A household is people you live with, not an open group',
-          'Android only today; an iPhone version is in development',
+          'No web app; it is a phone app for iPhone and Android, not the browser',
         ],
       },
       {
@@ -1240,7 +1240,7 @@ export const ROUNDUPS: Roundup[] = [
         ],
         cons: [
           'A full app, not a one-tap picker',
-          'Android only today; an iPhone version is in development',
+          'No web app; it is a phone app for iPhone and Android, not the browser',
         ],
       },
       {
@@ -1358,6 +1358,328 @@ export const ROUNDUPS: Roundup[] = [
         q: 'Are these apps free?',
         a: [
           'All five have a free way to decide what to watch. I Like Movies, TasteRay and JustWatch are free to use; Movik is free to download with a paid tier for its full features; and swipe apps like Matched are free for the core matching. Check each listing, since free tiers change.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'movie-tracker-apps-iphone',
+    title: 'Best movie tracker apps for iPhone in 2026 | I Like Movies',
+    metaDescription:
+      'The best apps to track the movies and TV you watch on iPhone, compared honestly on one library, episode tracking, cross-device sync, imports and price.',
+    h1: 'Best movie tracker apps for iPhone in 2026 (we compared 5)',
+    query: 'What is the best movie tracker app for iPhone?',
+    updated: 'September 2026',
+    intro: [
+      'A tracker keeps an honest record of what you have watched and what you mean to, films and TV, without turning into a chore. On iPhone the field runs from polished single-purpose trackers to cross-platform apps that also live on the web, and they differ most in how your history is stored and synced.',
+      'This page compares the five worth knowing on iPhone, by how completely they track, how they sync across your devices, and how little work they ask of you.',
+    ],
+    methodology: [
+      'We judged each app on the tracking itself: films and TV in one place, episode-level progress, how things get marked watched, whether your history syncs across your devices and survives a new iPhone, and price. We assessed what each app ships today from its App Store listing and hands-on use.',
+      'We make one of these apps and say so. Where another app tracks better for a particular need, we say that.',
+    ],
+    disclosure:
+      'This roundup is published by the makers of I Like Movies, which ' + OUR_DISCLOSURE_TAIL,
+    apps: [
+      {
+        rank: 1,
+        name: 'I Like Movies',
+        isUs: true,
+        bestFor: 'one free, ad-free library of films and TV, synced across devices and shared with your household',
+        blurb: [
+          'I Like Movies keeps films and TV in a single history down to the episode, with ratings, private notes and statistics, imports from Letterboxd and IMDb, and a library that lives on the server so it is already there when you sign in on another iPhone or on Android. A household shares one watchlist and one watched history, and the same app also handles discovery and an AI assistant.',
+          'It does not scrobble automatically: you mark things watched yourself. For people who want a clean, free, shared record rather than a media-server integration, that is a fair trade.',
+        ],
+        pros: [
+          'Films and TV in one library, tracked by episode',
+          'Ratings, private notes and statistics',
+          'Server-side library that syncs to any iPhone and to Android',
+          'A shared household library; free, no ads',
+        ],
+        cons: [
+          'No automatic scrobbling; you mark things watched yourself',
+          'No web app; it is a phone app for iPhone and Android, not the browser',
+        ],
+      },
+      {
+        rank: 2,
+        name: 'Trakt',
+        bestFor: 'automatic scrobbling and a portable history',
+        blurb: [
+          'Trakt is the backbone the rest of the ecosystem plugs into: it scrobbles automatically from Plex, Kodi, Infuse and other players, exposes an open API, and keeps a history other apps can read. On iPhone many people run a polished third-party Trakt client rather than the official app.',
+        ],
+        pros: [
+          'Automatic scrobbling from media servers and players',
+          'Open, portable history across many apps',
+        ],
+        cons: [
+          'Official iPhone app is basic; a third-party client is better',
+          'Some features require VIP',
+        ],
+      },
+      {
+        rank: 3,
+        name: 'Simkl',
+        bestFor: 'an all-in-one that also covers anime',
+        blurb: [
+          'Simkl tracks films, TV and anime together, can auto-track, and imports widely, with an iPhone app that syncs to the same account as its web and other clients. It is the best single app if your watching spans all three.',
+        ],
+        pros: [
+          'Films, TV and anime in one tracker',
+          'Automatic tracking and broad imports; free core',
+        ],
+        cons: [
+          'Busier interface',
+          'Anime-forward feel',
+        ],
+      },
+      {
+        rank: 4,
+        name: 'Matinee',
+        bestFor: 'a polished iPhone-first tracker with discovery',
+        blurb: [
+          'Matinee is an iPhone-first tracker for films and TV, with a diary, half-star ratings, a social feed and streaming availability across more than 30 services, and it also runs on iPad, Mac and Apple Vision. Its headline is discovery: a natural-language search and a daily pick.',
+          'The smart search and watchlist optimiser sit behind a Pro subscription, and the free tier carries ads.',
+        ],
+        pros: [
+          'Polished, iPhone-first, and across the Apple ecosystem',
+          'Strong discovery and streaming filters',
+        ],
+        cons: [
+          'Smart search and optimiser need Pro',
+          'Free tier has ads',
+        ],
+      },
+      {
+        rank: 5,
+        name: 'Cronica',
+        bestFor: 'a minimalist iPhone tracker with iCloud sync',
+        blurb: [
+          'Cronica is a clean, native iPhone tracker for films and TV, with an Up Next view, release alerts, iCloud sync and JustWatch streaming links. It suits someone who wants something focused and Apple-native rather than a full recommender.',
+        ],
+        pros: [
+          'Clean native design with iCloud sync',
+          'Up Next and release alerts',
+        ],
+        cons: [
+          'iCloud based, so it stays in the Apple ecosystem',
+          'Lighter on discovery and recommendations',
+        ],
+      },
+    ],
+    tableCols: ['I Like Movies', 'Trakt', 'Simkl', 'Matinee'],
+    table: [
+      {
+        feature: 'Films and TV in one library',
+        cells: ['Yes', 'Yes', 'Yes', 'Yes'],
+      },
+      {
+        feature: 'Automatic scrobbling',
+        cells: ['No, you mark it', 'Yes', 'Yes', 'No, you mark it'],
+      },
+      {
+        feature: 'Episode-level tracking',
+        cells: ['Yes', 'Yes', 'Yes', 'Yes'],
+      },
+      {
+        feature: 'Syncs across your devices',
+        cells: ['Yes, via your account', 'Yes', 'Yes', 'Yes'],
+      },
+      {
+        feature: 'Ads',
+        cells: ['None', 'None', 'None on the core', 'Free tier has ads'],
+      },
+      {
+        feature: 'Price',
+        cells: ['Free', 'Free plus VIP', 'Free', 'Free with ads, optional Pro'],
+      },
+    ],
+    verdict: [
+      'If you want one free, ad-free app that tracks films and TV together, syncs to every device on your account and shares with your household, I Like Movies fits best on iPhone. If you want tracking to happen automatically as you watch, Trakt is the backbone to build on. Simkl is the strongest all-in-one when anime is in the mix, Matinee is the most polished iPhone-first tracker with real discovery, and Cronica is the cleanest minimalist option with iCloud sync.',
+    ],
+    faqs: [
+      {
+        q: 'What is the best free movie tracker for iPhone?',
+        a: [
+          'For a free, ad-free tracker of films and TV, I Like Movies and Simkl both qualify, and Cronica is free too. Trakt has a capable free tier; Matinee is free with ads. The best one depends on whether you want a shared household (I Like Movies), automatic scrobbling (Trakt), the widest coverage (Simkl) or a minimalist iCloud app (Cronica).',
+        ],
+      },
+      {
+        q: 'Can I track movies on iPhone without marking each one by hand?',
+        a: [
+          'Yes, with an app that scrobbles. Trakt and Simkl can detect what you play on a connected media server or service and mark it automatically. I Like Movies and Cronica do not scrobble: you mark things watched yourself, which some people prefer for an accurate, deliberate record.',
+        ],
+      },
+      {
+        q: 'Will my history sync to my iPad or a new iPhone?',
+        a: [
+          'It depends where the app stores it. I Like Movies, Trakt and Simkl keep your library on the server, so you sign in anywhere and it is there; Cronica syncs through iCloud across your Apple devices. Always check that a tracker syncs to an account or iCloud rather than only to the device before you invest years of history in it.',
+        ],
+      },
+      {
+        q: 'Do these iPhone apps track TV episodes as well as films?',
+        a: [
+          'Yes. All five track both films and TV, most down to the individual episode and season. If TV episode tracking matters, any of them covers it.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'letterboxd-alternatives-iphone',
+    title: 'Best Letterboxd alternatives for iPhone in 2026 | I Like Movies',
+    metaDescription:
+      'The best Letterboxd alternatives for iPhone, compared honestly: TV alongside film, private tracking, diaries and reviews, and where Letterboxd itself is still the better choice.',
+    h1: 'Best Letterboxd alternatives for iPhone in 2026 (we compared 5)',
+    query: 'What are the best Letterboxd alternatives for iPhone?',
+    updated: 'September 2026',
+    intro: [
+      'Letterboxd is the best film diary and community there is, and on iPhone it is excellent. People look for an alternative for specific reasons: they want TV tracked alongside film, they want their notes private rather than public, or they want streaming availability and recommendations Letterboxd does not do.',
+      'This page compares the five worth knowing on iPhone for someone leaving or supplementing Letterboxd, and it is honest about where Letterboxd itself is still the one to keep.',
+    ],
+    methodology: [
+      'We judged each app on what someone leaving or supplementing Letterboxd on iPhone actually wants: TV as well as film, a diary or review flow, privacy, imports of an existing Letterboxd library, and streaming and recommendation features. We assessed what each app ships today from its App Store listing.',
+      'We make one of these apps and say so. Where Letterboxd or another app is the better fit, we say that.',
+    ],
+    disclosure:
+      'This roundup is published by the makers of I Like Movies, which ' + OUR_DISCLOSURE_TAIL,
+    apps: [
+      {
+        rank: 1,
+        name: 'I Like Movies',
+        isUs: true,
+        bestFor: 'a private tracker for film and TV, shared with your household',
+        blurb: [
+          'I Like Movies is the closest fit if what you want is Letterboxd for iPhone with TV as well as film, kept private, and shared with the people you live with. It tracks films and TV in one library down to the episode, your notes and ratings are private by default rather than public reviews, it shows per-country streaming, and it imports your Letterboxd .zip directly so a library built over years comes across.',
+          'If public reviews and a reading community are why you use Letterboxd, that is the one thing this does not replace.',
+        ],
+        pros: [
+          'Film and TV in one private library, tracked by episode',
+          'Imports your Letterboxd .zip; per-country streaming',
+          'Shared household library; free, no ads',
+        ],
+        cons: [
+          'No public review community; notes are private',
+          'No web app; iPhone and Android only',
+        ],
+      },
+      {
+        rank: 2,
+        name: 'Matinee',
+        bestFor: 'a social film-and-TV diary, closest to Letterboxd for TV',
+        blurb: [
+          'Matinee is the nearest thing to a Letterboxd for TV on iPhone: a diary, half-star ratings, a social feed of what friends are watching, and streaming availability across more than 30 services, also on iPad and Mac. If you want the public-diary feel but with TV included, this is it.',
+        ],
+        pros: [
+          'A social diary and reviews, with TV included',
+          'Strong discovery and streaming filters',
+        ],
+        cons: [
+          'Smart search and optimiser need Pro; free tier has ads',
+          'A public feed, so less private than a tracker',
+        ],
+      },
+      {
+        rank: 3,
+        name: 'Serializd',
+        bestFor: 'public TV reviews, a Letterboxd for television',
+        blurb: [
+          'Serializd is Letterboxd for TV: log shows and seasons, write public reviews, and read a community of TV watchers. Since TV Time closed, much of that culture moved here.',
+        ],
+        pros: [
+          'A real public TV-review community',
+          'Season and show logging',
+        ],
+        cons: [
+          'TV only, no films',
+          'Public reviews, not a private tracker',
+        ],
+      },
+      {
+        rank: 4,
+        name: 'Cronica',
+        bestFor: 'a minimalist private tracker with iCloud sync',
+        blurb: [
+          'Cronica is a clean, native iPhone tracker for films and TV, with an Up Next view, release alerts, iCloud sync and JustWatch streaming links. It suits someone who wants the tidiness of Letterboxd without the social feed.',
+        ],
+        pros: [
+          'Clean native design; iCloud sync',
+          'Up Next and release alerts',
+        ],
+        cons: [
+          'No public community or reviews',
+          'Stays in the Apple ecosystem',
+        ],
+      },
+      {
+        rank: 5,
+        name: 'IMDb',
+        bestFor: 'ratings and the deepest reference database',
+        blurb: [
+          'IMDb is not a diary, but it carries a watchlist and lets you rate, and its database and rating are the reference everyone knows. As a Letterboxd substitute it is a downgrade for diary culture and an upgrade for looking things up.',
+        ],
+        pros: [
+          'The deepest reference database and a known rating',
+          'Free; exports ratings as .csv',
+        ],
+        cons: [
+          'No real diary or private-notes flow',
+          'Ad-supported',
+        ],
+      },
+    ],
+    tableCols: ['I Like Movies', 'Matinee', 'Serializd', 'IMDb'],
+    table: [
+      {
+        feature: 'Tracks film and TV',
+        cells: ['Yes', 'Yes', 'TV only', 'Both, as a database'],
+      },
+      {
+        feature: 'Private by default',
+        cells: ['Yes', 'No, social feed', 'No, public reviews', 'Ratings are public'],
+      },
+      {
+        feature: 'Public review community',
+        cells: ['No', 'Yes', 'Yes', 'Ratings and reviews'],
+      },
+      {
+        feature: 'Imports a Letterboxd library',
+        cells: ['Yes, the .zip', 'No', 'No', 'Its own .csv ratings'],
+      },
+      {
+        feature: 'Streaming availability',
+        cells: ['Per country', '30+ services', 'No', 'Limited'],
+      },
+      {
+        feature: 'Price',
+        cells: ['Free, no ads', 'Free with ads, optional Pro', 'Free', 'Free with ads'],
+      },
+    ],
+    verdict: [
+      'If you want a private tracker for film and TV that imports your Letterboxd library and shares with your household, I Like Movies fits best on iPhone. If you want the public-diary feel with TV included, Matinee is the closest to Letterboxd for television, and Serializd is the place for public TV reviews. Cronica is the tidiest private option, and IMDb is the one to keep for ratings and reference. If public film reviews and the community around them are the point, the honest answer is to stay on Letterboxd, and use one of these alongside it for TV.',
+    ],
+    faqs: [
+      {
+        q: 'Is there a Letterboxd alternative for iPhone that tracks TV?',
+        a: [
+          'Yes. Letterboxd is film only, so if you want TV as well, I Like Movies and Matinee track both films and TV, and Serializd covers TV specifically. I Like Movies keeps them in one private library down to the episode.',
+        ],
+      },
+      {
+        q: 'Can I import my Letterboxd history into these apps?',
+        a: [
+          'I Like Movies imports a Letterboxd .zip export directly, ratings and watchlist included, so your library comes across. Most of the others start fresh, and IMDb works from its own .csv rather than a Letterboxd file. If keeping your existing library matters, that direct import is the difference.',
+        ],
+      },
+      {
+        q: 'Which is the most private Letterboxd alternative on iPhone?',
+        a: [
+          'I Like Movies keeps ratings and notes private by default, and Cronica is a personal tracker synced through your own iCloud. Matinee and Serializd are built around a public feed and public reviews, so they are the opposite of private by design.',
+        ],
+      },
+      {
+        q: 'Should I just stay on Letterboxd?',
+        a: [
+          'If public film reviews and the community around them are why you track films, yes, stay on Letterboxd and add one of these alongside it for TV. If you want TV in the same library, private notes, or streaming and recommendations, switching or supplementing makes sense.',
         ],
       },
     ],
