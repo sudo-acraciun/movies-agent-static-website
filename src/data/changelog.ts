@@ -31,6 +31,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Sub-pages now keep a cleaner top bar: search and the assistant live on the five main tabs, and the assistant stays one tap away at the end of every long list',
       'Going back to the first-time setup screens now shows the titles you already marked, and unticking one removes it',
       'A brief server hiccup during setup no longer loses your picks; the app retries quietly',
+      'Notifications now sit in the top bar on every main tab, next to search and the assistant',
+      'When a title is not streaming in your country, the page now says so and points you to the watchlist alert and your streaming services',
     ],
   },
   {
