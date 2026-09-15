@@ -29,6 +29,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'I Like Movies is now on iPhone, free on the App Store, with the same library synced across iPhone and Android',
       'The app now opens on Discover, so recommendations and the week\'s theme are the first thing you see. Library, Social, Notes and Profile follow in the navigation bar',
       'Sub-pages now keep a cleaner top bar: search and the assistant live on the five main tabs, and the assistant stays one tap away at the end of every long list',
+      'Going back to the first-time setup screens now shows the titles you already marked, and unticking one removes it',
+      'A brief server hiccup during setup no longer loses your picks; the app retries quietly',
     ],
   },
   {
