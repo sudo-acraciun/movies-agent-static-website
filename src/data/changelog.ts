@@ -27,6 +27,7 @@ export const CHANGELOG: ChangelogWeek[] = [
     week: '14 September 2026',
     entries: [
       'I Like Movies is now on iPhone, free on the App Store, with the same library synced across iPhone and Android',
+      'The app now opens on Discover, so recommendations and the week\'s theme are the first thing you see. Library, Social, Notes and Profile follow in the navigation bar',
     ],
   },
   {
