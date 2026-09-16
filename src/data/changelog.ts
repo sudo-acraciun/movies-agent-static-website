@@ -33,6 +33,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'A brief server hiccup during setup no longer loses your picks; the app retries quietly',
       'Notifications now sit in the top bar on every main tab, next to search and the assistant',
       'When a title is not streaming in your country, the page now says so and points you to the watchlist alert and your streaming services',
+      'Your household now has its own page, reached from a home icon beside Chats and Friends on the Social tab: a picture, the people in it, any invitation waiting for you at the top, and inviting from a filterable sheet instead of a long list',
+      'Accounts with friends but no household get a one-time pointer to that page instead of a card at the top of the feed, and buttons now keep their size while they work',
     ],
   },
   {
