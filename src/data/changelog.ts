@@ -36,6 +36,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Your household now has its own page, reached from a home icon beside Chats and Friends on the Social tab: a picture, the people in it, any invitation waiting for you at the top, and inviting from a filterable sheet instead of a long list',
       'Accounts with friends but no household get a one-time pointer to that page instead of a card at the top of the feed, and buttons now keep their size while they work',
       'Ask the assistant to pick something for you and a friend, or for your whole household: type @ to choose the person, and it weighs both your tastes, skips what either of you has seen, and says whose streaming service a title plays on',
+      'Opening an episode now gives you arrows to step straight to the next or previous one, carrying on past the end of a season',
+      'Collections built from your taste now show the score on every film',
     ],
   },
   {
