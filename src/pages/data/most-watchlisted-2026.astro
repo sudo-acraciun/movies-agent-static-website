@@ -242,6 +242,14 @@ const breadcrumbs = [
      on this data page. The card reproduces the app's MovieGridCard: dark tile,
      2:3 poster, rank numeral over the poster, title/year/IMDb below, plus the
      one fact this page exists for, the watchlist count, as a gold chip. */
+  /* Nudge THIS page's hero crop upward so the two figures' heads clear the top
+     edge (the default centre crop clips them). Scoped past the layout's shared
+     `.article-hero img` rule via the extra `body` specificity, so the /themes
+     heroes keep their own centred crop. */
+  body .article-hero img {
+    object-position: center 30%;
+  }
+
   .article .updated {
     color: var(--text-muted);
     font-size: 0.85rem;
