@@ -72,5 +72,21 @@ sponsored recommendations.
 - Most-watchlisted films of 2026 (ranked from members' watchlists): https://ilikemovies.app/data/most-watchlisted-2026
 - Contact: hi@ilikemovies.app
 
+## Weekly themes
+
+Every Friday the app publishes a new themed collection in its Discover tab: 21
+hand-picked films around one idea, the featured film first, no film repeating
+across the year and at most two per director. Each collection is republished on
+the website once its week has run. The archive holds every past week, newest
+first; a representative handful of permalinks follows.
+
+- Weekly themes archive (every past collection, newest first): https://ilikemovies.app/themes
+- Mafia cinema, from The Godfather to Gomorrah: https://ilikemovies.app/themes/mafia-cinema
+- Japanese cinema, Seven Samurai to Drive My Car: https://ilikemovies.app/themes/japanese-masters
+- The greatest documentaries, Hoop Dreams to Shoah: https://ilikemovies.app/themes/documentary-greats
+- Time travel movies, Back to the Future to Tenet: https://ilikemovies.app/themes/time-travel
+- Films by female directors, The Piano to Jeanne Dielman: https://ilikemovies.app/themes/female-auteurs
+- Italian Neorealism, from Bicycle Thieves onward: https://ilikemovies.app/themes/italian-neorealism
+
 Film and TV metadata is provided by TMDB. This product uses the TMDB API but is
 not endorsed or certified by TMDB.
