@@ -1,0 +1,385 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import StoreButtons from '../../components/StoreButtons.astro';
+import { SITE } from '../../data/site';
+import { organizationNode, organizationRef, appStubNode, appRef, webSiteRef } from '../../data/schema';
+
+// A data page, not an editorial one: the ranking is a straight tally pulled from
+// the production database (distinct members with each film on their live
+// watchlist), hardcoded here the same way the /themes copy hardcodes its
+// prod-sourced backdrop. Refresh = re-run the SELECT and replace ITEMS +
+// MEMBER_COUNT + UPDATED. There is no build-time DB access in this repo by
+// design, so the numbers are a snapshot, and the copy says so.
+//
+// The onboarding step suggests a few starter titles, so those carry a head
+// start; they are left in (they really are on people's lists) and the
+// methodology says so plainly rather than quietly dropping them.
+//
+// Presentation reproduces the app's MovieGridCard (poster + rank numeral +
+// title/year + IMDb chip) so web and app read as one product. Posters and the
+// hero backdrop are the prod poster_url / backdrop_url, served at TMDB w342 /
+// w1280. imdb is null for the two unreleased tentpoles; the chip is omitted
+// there rather than shown blank.
+const UPDATED = 'September 2026';
+
+// "500+" is anchored to total members, not to watchlist holders. Kept as a
+// phrase, not the exact number, so a refresh does not require a re-count of the
+// headline every time.
+const MEMBER_COUNT = 'more than 500';
+
+// A top-tracked 2026 film's TMDB backdrop, same source the app's Discover tab
+// and the /themes pages use for their hero. Decorative (empty alt in the
+// layout). Chosen for a landscape composition that crops cleanly in the wide
+// hero strip (the #1 film's is a centred figure that loses its head to the
+// crop).
+const HERO_BACKDROP = 'https://image.tmdb.org/t/p/w1280/i5E9H7Ik0u61ylDDTbmUpTL3Yw.jpg';
+
+const POSTER = 'https://image.tmdb.org/t/p/w342';
+
+type Film = { rank: number; title: string; year: number; watchers: number; imdb: number | null; poster: string };
+
+// Distinct non-internal members with the film on their live watchlist, Sept 2026.
+// Equal counts keep DB order (by title); the visible chip shows the tie honestly.
+const ITEMS: Film[] = [
+  { rank: 1, title: 'Spider-Man: Brand New Day', year: 2026, watchers: 121, imdb: 8.1, poster: `${POSTER}/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg` },
+  { rank: 2, title: '2001: A Space Odyssey', year: 1968, watchers: 90, imdb: 8.3, poster: `${POSTER}/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg` },
+  { rank: 3, title: 'Ford v Ferrari', year: 2019, watchers: 84, imdb: 8.1, poster: `${POSTER}/dR1Ju50iudrOh3YgfwkAU1g2HZe.jpg` },
+  { rank: 4, title: 'Dune: Part Three', year: 2026, watchers: 65, imdb: null, poster: `${POSTER}/d43fvHQsIMa4kpyhKXw0haEJIvI.jpg` },
+  { rank: 5, title: 'The Odyssey', year: 2026, watchers: 64, imdb: 8.5, poster: `${POSTER}/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg` },
+  { rank: 6, title: 'Obsession', year: 2026, watchers: 55, imdb: 8.2, poster: `${POSTER}/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg` },
+  { rank: 7, title: 'Top Gun: Maverick', year: 2022, watchers: 49, imdb: 8.2, poster: `${POSTER}/n0YuM4f5lvGAP6MAW2kBIzugXnc.jpg` },
+  { rank: 8, title: 'Sinners', year: 2025, watchers: 47, imdb: 7.5, poster: `${POSTER}/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg` },
+  { rank: 9, title: 'The Drama', year: 2026, watchers: 45, imdb: 7.2, poster: `${POSTER}/rnIOUhzwJDfgQakx8EjoNyItKgs.jpg` },
+  { rank: 10, title: 'No Country for Old Men', year: 2007, watchers: 43, imdb: 8.2, poster: `${POSTER}/6d5XOczc226jECq0LIX0siKtgHR.jpg` },
+  { rank: 11, title: 'Parasite', year: 2019, watchers: 33, imdb: 8.5, poster: `${POSTER}/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg` },
+  { rank: 12, title: 'Before Sunrise', year: 1995, watchers: 26, imdb: 8.1, poster: `${POSTER}/kf1Jb1c2JAOqjuzA3H4oDM263uB.jpg` },
+  { rank: 13, title: 'City of God', year: 2002, watchers: 23, imdb: 8.6, poster: `${POSTER}/k7eYdWvhYQyRQoU2TB2A2Xu2TfD.jpg` },
+  { rank: 14, title: 'Spirited Away', year: 2001, watchers: 23, imdb: 8.6, poster: `${POSTER}/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg` },
+  { rank: 15, title: 'Everything Everywhere All at Once', year: 2022, watchers: 21, imdb: 7.7, poster: `${POSTER}/u68AjlvlutfEIcpmbYpKcdi09ut.jpg` },
+  { rank: 16, title: 'Avengers: Doomsday', year: 2026, watchers: 10, imdb: null, poster: `${POSTER}/jzPwsojjFStf5lR5Nm07w2hH56G.jpg` },
+  { rank: 17, title: 'Oppenheimer', year: 2023, watchers: 10, imdb: 8.0, poster: `${POSTER}/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg` },
+  { rank: 18, title: 'Project Hail Mary', year: 2026, watchers: 10, imdb: 8.2, poster: `${POSTER}/yihdXomYb5kTeSivtFndMy5iDmf.jpg` },
+  { rank: 19, title: 'The End of Oak Street', year: 2026, watchers: 10, imdb: 6.6, poster: `${POSTER}/fYXqpgPmHMphSF2W30GbTeJVIa5.jpg` },
+  { rank: 20, title: 'Mutiny', year: 2026, watchers: 9, imdb: 6.7, poster: `${POSTER}/pu2VxGlpGwffOx292w18b1tv96j.jpg` },
+  { rank: 21, title: 'Se7en', year: 1995, watchers: 8, imdb: 8.4, poster: `${POSTER}/191nKfP0ehp3uIvWqgPbFmI4lv9.jpg` },
+];
+
+const path = '/data/most-watchlisted-2026';
+const title = 'The most-watchlisted films of 2026, from 500+ watchlists | I Like Movies';
+const metaDescription =
+  'The films I Like Movies members are queuing up for 2026, ranked by how many separate watchlists each one sits on. A live snapshot from the app, refreshed as it moves.';
+const h1 = '500+ film fans, one watchlist: the most-tracked movies of 2026';
+
+const faqs = [
+  {
+    q: 'How is this measured?',
+    a: [
+      'For every film we counted how many separate members currently keep it on their watchlist, and ranked by that number. Nothing is weighted and nothing is paid: it is a straight tally of what people have saved to watch, taken across the app and excluding our own two developer accounts.',
+    ],
+  },
+  {
+    q: 'Why are films that are not out yet on the list?',
+    a: [
+      'A watchlist is where you save what you mean to watch, so the most-anticipated releases of the year rise to the top long before they open. That is the point of tracking them, and it is why a 2026 slate leads a 2026 ranking.',
+    ],
+  },
+  {
+    q: 'Can the app recommend films like these to me?',
+    a: [
+      'Yes. I Like Movies builds each month of recommendations from your own ratings, and its assistant answers for a film in plain language. The ranking here is the crowd’s; your recommendations are yours.',
+    ],
+  },
+];
+
+// Article on the page's own content, plus an ItemList that IS the ranking (a
+// genuine order by watchlist count, so itemListOrder is claimed), plus the
+// FAQPage and the shared Organization + compact app node by @id, same shape as
+// the /best pages. No Review or aggregateRating: the page reports a count, it
+// does not score the films.
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: h1,
+    description: metaDescription,
+    author: organizationRef,
+    publisher: organizationRef,
+    about: appRef,
+    isPartOf: webSiteRef,
+    mainEntityOfPage: new URL(path, SITE.url).href,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: h1,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    numberOfItems: ITEMS.length,
+    itemListElement: ITEMS.map((film) => ({
+      '@type': 'ListItem',
+      position: film.rank,
+      name: `${film.title} (${film.year})`,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a.join(' ') },
+    })),
+  },
+  organizationNode,
+  appStubNode,
+];
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides' },
+  { label: h1 },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={metaDescription}
+  path={path}
+  heading={h1}
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+  disclosure={false}
+  heroImage={HERO_BACKDROP}
+>
+  <p>
+    Everyone using I Like Movies keeps a watchlist: the films they mean to get
+    to. Put {MEMBER_COUNT} of those watchlists together and a picture forms of
+    what film fans are actually queuing up for the year ahead. This is that
+    ranking, drawn straight from the app and refreshed as it moves.
+  </p>
+  <p>
+    Two things stand out. The most-tracked titles are the big 2026 releases
+    people are waiting on, from Spider-Man: Brand New Day to Dune: Part Three.
+    Underneath them sit the modern classics that keep landing on new watchlists,
+    the films people hear about and save for later.
+  </p>
+
+  <p class="updated">Snapshot from {UPDATED}.</p>
+
+  <h2>The ranking</h2>
+  <ol class="poster-grid">
+    {
+      ITEMS.map((film) => (
+        <li class="poster-card">
+          <div class="poster-wrap">
+            <span class="rank-badge">{film.rank}</span>
+            <img
+              class="poster"
+              src={film.poster}
+              alt={`${film.title} poster`}
+              width="342"
+              height="513"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-info">
+            <span class="card-title">{film.title}</span>
+            <span class="card-year">{film.year}</span>
+            <span class="card-meta">
+              {film.imdb != null && (
+                <span class="imdb">
+                  <span class="imdb-badge">IMDb</span>
+                  {film.imdb.toFixed(1)}
+                </span>
+              )}
+              <span class="wl-chip">{film.watchers} watchlists</span>
+            </span>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+
+  <h2>How we counted</h2>
+  <p>
+    For every film we counted how many separate members currently have it on
+    their watchlist, and ranked by that number. Nothing is weighted and nothing
+    is paid: it is a straight tally of what people have saved to watch. The
+    count runs across the app's members and leaves out our own two developer
+    accounts.
+  </p>
+  <p>
+    One honest caveat. When you first set up the app it suggests a handful of
+    titles to start your watchlist, so those carry a head start over films
+    people found on their own. We have left them in rather than quietly drop
+    them, because they really are on people's lists. Everything past the first
+    several entries is unprompted.
+  </p>
+
+  <h2>Questions people ask</h2>
+  {
+    faqs.map((faq) => (
+      <details>
+        <summary>{faq.q}</summary>
+        {faq.a.map((paragraph) => <p>{paragraph}</p>)}
+      </details>
+    ))
+  }
+
+  <p>
+    Browse <a href="/guides">every guide, watch order and comparison</a>, or see
+    the app's <a href="/themes">weekly themes</a>.
+  </p>
+
+  <div class="cta-row">
+    <StoreButtons />
+    <a href="/">More about the app</a>
+  </div>
+</ArticleLayout>
+
+<style is:global>
+  /* Prefixed .article like the layout's own rules, since the content arrives
+     through the <slot> and scoped styles cannot reach it. This block ships only
+     on this data page. The card reproduces the app's MovieGridCard: dark tile,
+     2:3 poster, rank numeral over the poster, title/year/IMDb below, plus the
+     one fact this page exists for, the watchlist count, as a gold chip. */
+  .article .updated {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: -8px;
+  }
+
+  .article .poster-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  /* The app is always three columns; the narrowest phones cannot hold three
+     legible 2:3 posters under the article wrap, so they drop to two. */
+  @media (max-width: 460px) {
+    .article .poster-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  }
+
+  .article .poster-grid li {
+    margin: 0;
+  }
+
+  .article .poster-card {
+    display: flex;
+    flex-direction: column;
+    background: #141822;
+    border: 1px solid #1e2535;
+    border-radius: 10px;
+    overflow: hidden;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .article .poster-card:hover {
+    border-color: rgba(245, 197, 24, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .article .poster-wrap {
+    position: relative;
+  }
+
+  .article .poster {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background: #0f131c;
+  }
+
+  /* Letterboxd-style numeral, same treatment as the app's rankBadge: a dark
+     scrim disc with a thin white outline so it reads on any poster. */
+  .article .rank-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    min-width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.78);
+    border: 1.5px solid rgba(255, 255, 255, 0.9);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  .article .card-info {
+    padding: 8px 10px 10px;
+  }
+
+  /* One line with ellipsis, like the app card, so every card in a row keeps the
+     same height regardless of title length. */
+  .article .card-title {
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .article .card-year {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 1px;
+  }
+
+  .article .card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    margin-top: 8px;
+  }
+
+  .article .imdb {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* The IMDb gold wordmark, same as the app's RatingSourceLogo badge. */
+  .article .imdb-badge {
+    background: #f5c518;
+    color: #000;
+    font-weight: 800;
+    font-size: 0.62rem;
+    letter-spacing: 0.02em;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  .article .wl-chip {
+    display: inline-block;
+    padding: 1px 8px;
+    border: 1px solid rgba(245, 197, 24, 0.35);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+  }
+</style>

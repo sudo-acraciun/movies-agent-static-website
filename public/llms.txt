@@ -69,6 +69,7 @@ sponsored recommendations.
 - Account deletion: https://ilikemovies.app/delete-account
 - Press kit: https://ilikemovies.app/press
 - iPhone page: https://ilikemovies.app/iphone
+- Most-watchlisted films of 2026 (ranked from members' watchlists): https://ilikemovies.app/data/most-watchlisted-2026
 - Contact: hi@ilikemovies.app
 
 Film and TV metadata is provided by TMDB. This product uses the TMDB API but is

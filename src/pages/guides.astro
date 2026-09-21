@@ -22,6 +22,18 @@ const LATEST_THEMES = WEEKLY_THEMES.slice(0, 4);
 // The standalone guides below have their copy in their own page frontmatter
 // rather than a data module, so they are listed by hand. Any page type with a
 // data module (watch orders, comparisons, listicles) is iterated instead.
+// Data pages built from real in-app numbers, listed by hand like the
+// standalone guides: their copy lives in their own page frontmatter, not a
+// data module, so a new one is added here explicitly.
+const DATA_PAGES = [
+  {
+    path: '/data/most-watchlisted-2026',
+    name: 'The most-watchlisted films of 2026',
+    blurb:
+      'What more than 500 film fans are queuing up for the year, ranked by how many watchlists each film sits on. A live snapshot from the app.',
+  },
+];
+
 const STANDALONE_GUIDES = [
   {
     path: '/how-to-track-movies-on-iphone',
@@ -55,6 +67,7 @@ const allEntries = [
   ...LISTICLES.map((l) => ({ path: `/list/${l.slug}`, name: l.h1 })),
   ...LATEST_THEMES.map((t) => ({ path: `/themes/${t.slug}`, name: t.h1 })),
   { path: '/themes', name: 'Weekly themes archive' },
+  ...DATA_PAGES.map((d) => ({ path: d.path, name: d.name })),
   ...ROUNDUPS.map((r) => ({ path: `/best/${r.slug}`, name: r.h1 })),
   ...COMPARISONS.map((c) => ({ path: `/vs/${c.slug}`, name: c.h1 })),
   ...STANDALONE_GUIDES.map((g) => ({ path: g.path, name: g.name })),
@@ -147,6 +160,22 @@ const jsonLd = [
       <a href="/themes">Weekly themes archive</a>
       <p>Every past collection, {WEEKLY_THEMES.length} weeks and counting, newest first.</p>
     </li>
+  </ul>
+
+  <h2>From our members' watchlists</h2>
+  <p>
+    Rankings built from real in-app numbers, not opinion. What the people using
+    the app are actually saving and watching.
+  </p>
+  <ul class="hub-list">
+    {
+      DATA_PAGES.map((d) => (
+        <li>
+          <a href={d.path}>{d.name}</a>
+          <p>{d.blurb}</p>
+        </li>
+      ))
+    }
   </ul>
 
   <h2>Best-app roundups</h2>
