@@ -3,6 +3,7 @@ import ArticleLayout from '../layouts/ArticleLayout.astro';
 import { SITE } from '../data/site';
 import { WATCH_ORDERS, type WatchOrder } from '../data/watchOrders';
 import StoreButtons from './StoreButtons.astro';
+import PosterCardStyles from './PosterCardStyles.astro';
 
 interface Props {
   order: WatchOrder;
@@ -61,7 +62,10 @@ const KIND_LABEL = { film: 'Film', series: 'Series', special: 'Special' } as con
   heading={o.h1}
   jsonLd={jsonLd}
   disclosure={false}
+  heroImage={o.heroBackdrop}
+  heroPosition={o.heroPosition}
 >
+  <PosterCardStyles />
   {o.intro.map((paragraph) => <p>{paragraph}</p>)}
 
   {
@@ -69,13 +73,26 @@ const KIND_LABEL = { film: 'Film', series: 'Series', special: 'Special' } as con
       <>
         <h2>{section.heading}</h2>
         <p>{section.blurb}</p>
-        <ol class="order-list">
+        <ol class="poster-grid">
           {section.items.map((item) => (
-            <li>
-              <span class="entry-title">{item.title}</span>
-              <span class="entry-year">({item.year})</span>
-              <span class="entry-kind">{KIND_LABEL[item.kind]}</span>
-              {item.note && <span class="entry-note">{item.note}</span>}
+            <li class="poster-card">
+              <div class="poster-wrap">
+                {item.kind !== 'film' && <span class="poster-badge">{KIND_LABEL[item.kind]}</span>}
+                {item.posterPath ? (
+                  <img class="poster" src={item.posterPath} alt={`${item.title} poster`} width="342" height="513" loading="lazy" />
+                ) : (
+                  <div class="poster-fallback">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M4 4h16v16H4z M4 9h16 M4 15h16 M9 4v16 M15 4v16" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+              <div class="card-info">
+                <span class="card-title">{item.title}</span>
+                <span class="card-year">{item.year}</span>
+                {item.note && <span class="card-caption">{item.note}</span>}
+              </div>
             </li>
           ))}
         </ol>
@@ -127,47 +144,8 @@ const KIND_LABEL = { film: 'Film', series: 'Series', special: 'Special' } as con
 </ArticleLayout>
 
 <style is:global>
-  /* Prefixed .article like the layout's own rules; these live here because
-     only watch-order pages render an .order-list. */
-  .article .order-list {
-    padding-left: 26px;
-    margin: 0 0 1.5rem;
-  }
-
-  .article .order-list li {
-    margin: 8px 0;
-    color: var(--text-body);
-  }
-
-  .article .entry-title {
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .article .entry-year {
-    color: var(--text-secondary);
-    margin-left: 6px;
-  }
-
-  .article .entry-kind {
-    display: inline-block;
-    margin-left: 10px;
-    padding: 1px 8px;
-    border: 1px solid var(--ink-border);
-    border-radius: 999px;
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    vertical-align: 2px;
-  }
-
-  .article .entry-note {
-    display: block;
-    font-size: 0.88rem;
-    color: var(--text-muted);
-  }
-
+  /* Only watch-order pages render an .other-orders line; the poster grid and
+     card styles are shared (PosterCardStyles). */
   .article .other-orders {
     margin-top: 2rem;
   }

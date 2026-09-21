@@ -3,6 +3,7 @@ import ArticleLayout from '../layouts/ArticleLayout.astro';
 import { SITE } from '../data/site';
 import { LISTICLES, type Listicle } from '../data/listicles';
 import StoreButtons from './StoreButtons.astro';
+import PosterCardStyles from './PosterCardStyles.astro';
 
 interface Props {
   list: Listicle;
@@ -65,7 +66,10 @@ const jsonLd = [
   heading={l.h1}
   jsonLd={jsonLd}
   disclosure={false}
+  heroImage={l.heroBackdrop}
+  heroPosition={l.heroPosition}
 >
+  <PosterCardStyles />
   {l.intro.map((paragraph) => <p>{paragraph}</p>)}
 
   <div class="list-head">
@@ -83,26 +87,57 @@ const jsonLd = [
 
   {
     l.ranked ? (
-      <ol class="rank-list">
+      <ol class="poster-grid">
         {l.items.map((item, i) => (
-          <li data-score={item.tmdbScore} data-year={item.year} data-rank={i + 1}>
-            <span class="entry-title">{item.title}</span>
-            <span class="entry-year">({item.year})</span>
-            {item.tmdbScore != null && <span class="entry-score">TMDB {item.tmdbScore.toFixed(1)}</span>}
-            {item.runtimeMin != null && <span class="entry-runtime">{item.runtimeMin} min</span>}
-            <span class="entry-blurb">{item.blurb}</span>
+          <li class="poster-card" data-score={item.tmdbScore} data-year={item.year} data-rank={i + 1}>
+            <div class="poster-wrap">
+              <span class="rank-badge">{i + 1}</span>
+              {item.posterPath ? (
+                <img class="poster" src={item.posterPath} alt={`${item.title} poster`} width="342" height="513" loading="lazy" />
+              ) : (
+                <div class="poster-fallback">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 4h16v16H4z M4 9h16 M4 15h16 M9 4v16 M15 4v16" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </div>
+              )}
+            </div>
+            <div class="card-info">
+              <span class="card-title">{item.title}</span>
+              <span class="card-year">{item.year}</span>
+              <span class="card-meta">
+                {item.tmdbScore != null && <span class="score-chip">★ {item.tmdbScore.toFixed(1)}</span>}
+                {item.runtimeMin != null && <span class="runtime-chip">{item.runtimeMin} min</span>}
+              </span>
+              <span class="card-caption">{item.blurb}</span>
+            </div>
           </li>
         ))}
       </ol>
     ) : (
-      <ul class="rank-list">
+      <ul class="poster-grid">
         {l.items.map((item) => (
-          <li data-score={item.tmdbScore} data-year={item.year}>
-            <span class="entry-title">{item.title}</span>
-            <span class="entry-year">({item.year})</span>
-            {item.tmdbScore != null && <span class="entry-score">TMDB {item.tmdbScore.toFixed(1)}</span>}
-            {item.runtimeMin != null && <span class="entry-runtime">{item.runtimeMin} min</span>}
-            <span class="entry-blurb">{item.blurb}</span>
+          <li class="poster-card" data-score={item.tmdbScore} data-year={item.year}>
+            <div class="poster-wrap">
+              {item.posterPath ? (
+                <img class="poster" src={item.posterPath} alt={`${item.title} poster`} width="342" height="513" loading="lazy" />
+              ) : (
+                <div class="poster-fallback">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 4h16v16H4z M4 9h16 M4 15h16 M9 4v16 M15 4v16" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </div>
+              )}
+            </div>
+            <div class="card-info">
+              <span class="card-title">{item.title}</span>
+              <span class="card-year">{item.year}</span>
+              <span class="card-meta">
+                {item.tmdbScore != null && <span class="score-chip">★ {item.tmdbScore.toFixed(1)}</span>}
+                {item.runtimeMin != null && <span class="runtime-chip">{item.runtimeMin} min</span>}
+              </span>
+              <span class="card-caption">{item.blurb}</span>
+            </div>
           </li>
         ))}
       </ul>
@@ -153,61 +188,28 @@ const jsonLd = [
 </ArticleLayout>
 
 <style is:global>
-  /* Prefixed .article like the layout's own rules; only /list pages render a
-     .rank-list. */
-  .article .rank-list {
-    padding-left: 26px;
-    margin: 0 0 1.5rem;
-  }
-
-  .article .rank-list li {
-    margin: 14px 0;
-    color: var(--text-body);
-  }
-
-  .article .rank-list .entry-title {
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .article .rank-list .entry-year {
-    color: var(--text-secondary);
-    margin-left: 6px;
-  }
-
-  /* Same chip shape as the watch-order pages' entry-kind tag, but the score
-     is data the page exists for, so it reads at secondary strength, not
-     muted. */
-  .article .rank-list .entry-score {
+  /* Score chip in the card meta: the score is the data this page ranks on, so
+     it reads at full gold strength, same chip as the reference page. */
+  .article .poster-card .score-chip {
     display: inline-block;
-    margin-left: 10px;
     padding: 1px 8px;
     border: 1px solid rgba(245, 197, 24, 0.35);
     border-radius: 999px;
-    font-size: 0.74rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    color: var(--text);
-    vertical-align: 2px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--gold);
   }
 
-  /* Runtime chip: same shape as the score chip, quieter, because the score
-     leads and the length supports. */
-  .article .rank-list .entry-runtime {
+  /* Runtime chip: same shape, quieter, because the score leads and the length
+     supports (only the under-100-minutes list carries it). */
+  .article .poster-card .runtime-chip {
     display: inline-block;
-    margin-left: 8px;
     padding: 1px 8px;
     border: 1px solid var(--ink-border);
     border-radius: 999px;
-    font-size: 0.74rem;
-    letter-spacing: 0.06em;
-    color: var(--text-secondary);
-    vertical-align: 2px;
-  }
-
-  .article .rank-list .entry-blurb {
-    display: block;
-    font-size: 0.92rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
     color: var(--text-secondary);
   }
 
@@ -279,7 +281,7 @@ const jsonLd = [
   document.querySelectorAll('.rank-controls').forEach((controls) => {
     // The controls sit inside .list-head; the list is its sibling, so scope
     // the lookup to the shared article container rather than the parent.
-    const list = controls.closest('.wrap')?.querySelector('.rank-list');
+    const list = controls.closest('.wrap')?.querySelector('.poster-grid');
     if (!list) return;
 
     const sorters: Record<string, (a: HTMLElement, b: HTMLElement) => number> = {

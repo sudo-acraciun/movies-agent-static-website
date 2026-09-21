@@ -1,0 +1,185 @@
+---
+// Shared MovieGridCard reproduction for the film-list article pages
+// (/list, /themes, watch orders). One source for the card CSS so the three
+// renderers read as one system and match the app's card and the
+// owner-approved reference page (src/pages/data/most-watchlisted-2026.astro):
+// dark tile, 2:3 poster, overlays over the poster, title/year/meta below, plus
+// the descriptive caption the pages exist for. Rendered once per page as a
+// style-only component; the per-page markup and page-specific chips/overlays
+// live in each renderer.
+//
+// Prefixed .article like the layout's own rules, since the content arrives
+// through the <slot> and scoped styles cannot reach it. Reuses the reference
+// page's app-card literals (#141822 tile, #1e2535 border, #f5c518 IMDb gold)
+// alongside the site's design tokens.
+---
+
+<style is:global>
+  .article .poster-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  /* The app is always three columns; the narrowest phones cannot hold three
+     legible 2:3 posters under the article wrap, so they drop to two. */
+  @media (max-width: 460px) {
+    .article .poster-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  }
+
+  .article .poster-grid li {
+    margin: 0;
+  }
+
+  .article .poster-card {
+    display: flex;
+    flex-direction: column;
+    background: #141822;
+    border: 1px solid #1e2535;
+    border-radius: 10px;
+    overflow: hidden;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .article .poster-card:hover {
+    border-color: rgba(245, 197, 24, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .article .poster-wrap {
+    position: relative;
+  }
+
+  .article .poster {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background: #0f131c;
+  }
+
+  /* Shown only when a poster never resolved: the app's film glyph on the tile
+     colour, never a broken image. */
+  .article .poster-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 2 / 3;
+    background: #141822;
+    color: #2f3a4f;
+  }
+
+  .article .poster-fallback svg {
+    width: 38%;
+    height: auto;
+  }
+
+  /* Rank numeral over the poster, same treatment as the app's rankBadge: a
+     dark scrim disc with a thin white outline so it reads on any poster. */
+  .article .rank-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    min-width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.78);
+    border: 1.5px solid rgba(255, 255, 255, 0.9);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Status pill over the poster, bottom-left (app status-badge pattern): a
+     dark scrim pill for the kind tag on the watch-order cards. */
+  .article .poster-badge {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .article .card-info {
+    padding: 8px 10px 10px;
+  }
+
+  /* One line with ellipsis, like the app card, so every card in a row keeps
+     the same height regardless of title length. The full title stays in the
+     DOM (and in the ItemList JSON-LD) for crawlers; only the render clips. */
+  .article .card-title {
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .article .card-year {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 1px;
+  }
+
+  .article .card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    margin-top: 8px;
+  }
+
+  .article .imdb {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* The IMDb gold wordmark, same as the app's RatingSourceLogo badge. */
+  .article .imdb-badge {
+    background: #f5c518;
+    color: #000;
+    font-weight: 800;
+    font-size: 0.62rem;
+    letter-spacing: 0.02em;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  /* The descriptive text the pages exist for (blurbs, directors, notes): kept
+     under every card so the poster grid never strips the SEO/GEO copy. */
+  .article .card-caption {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+</style>

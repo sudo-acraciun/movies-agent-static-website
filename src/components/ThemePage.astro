@@ -3,6 +3,7 @@ import ArticleLayout from '../layouts/ArticleLayout.astro';
 import { SITE } from '../data/site';
 import { WEEKLY_THEMES, formatWeek, type WeeklyTheme } from '../data/themes';
 import StoreButtons from './StoreButtons.astro';
+import PosterCardStyles from './PosterCardStyles.astro';
 
 interface Props {
   theme: WeeklyTheme;
@@ -61,22 +62,47 @@ const jsonLd = [
   jsonLd={jsonLd}
   disclosure={false}
   heroImage={t.heroBackdropUrl}
+  heroPosition={t.heroPosition}
 >
+  <PosterCardStyles />
   <p class="theme-week">Weekly collection in the app for the week of {formatWeek(t.weekOf)}.</p>
 
   {t.intro.map((paragraph) => <p>{paragraph}</p>)}
 
   <h2>The collection</h2>
-  <ol class="theme-list">
+  <ol class="poster-grid">
     {
       t.items.map((item, i) => (
-        <li>
-          <span class="entry-title">{item.title}</span>
-          <span class="entry-year">({item.year})</span>
-          <span class="entry-director">{item.director}</span>
-          {i === 0 && <span class="entry-featured">Featured</span>}
-          <span class="entry-blurb">{item.blurb}</span>
-          {item.cast && <span class="entry-cast">Cast: {item.cast}</span>}
+        <li class="poster-card">
+          <div class="poster-wrap">
+            {i === 0 && <span class="featured-badge">Featured</span>}
+            {item.posterPath ? (
+              <img class="poster" src={item.posterPath} alt={`${item.title} poster`} width="342" height="513" loading="lazy" />
+            ) : (
+              <div class="poster-fallback">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 4h16v16H4z M4 9h16 M4 15h16 M9 4v16 M15 4v16" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+            )}
+          </div>
+          <div class="card-info">
+            <span class="card-title">{item.title}</span>
+            <span class="card-year">{item.year}</span>
+            {item.imdbRating != null && (
+              <span class="card-meta">
+                <span class="imdb">
+                  <span class="imdb-badge">IMDb</span>
+                  {item.imdbRating.toFixed(1)}
+                </span>
+              </span>
+            )}
+            <span class="card-caption">
+              <span class="card-director">{item.director}</span>
+              <span class="card-blurb">{item.blurb}</span>
+              {item.cast && <span class="card-cast">Cast: {item.cast}</span>}
+            </span>
+          </div>
         </li>
       ))
     }
@@ -119,66 +145,46 @@ const jsonLd = [
 </ArticleLayout>
 
 <style is:global>
-  /* Prefixed .article like the layout's own rules; only /themes pages render
-     a .theme-list. Mirrors the /list pages' rank-list so the two page types
-     read as one system. */
   .article .theme-week {
     color: var(--text-secondary);
     font-size: 0.92rem;
   }
 
-  .article .theme-list {
-    padding-left: 26px;
-    margin: 0 0 1.5rem;
-  }
-
-  .article .theme-list li {
-    margin: 14px 0;
-    color: var(--text-body);
-  }
-
-  .article .theme-list .entry-title {
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .article .theme-list .entry-year {
-    color: var(--text-secondary);
-    margin-left: 6px;
-  }
-
-  .article .theme-list .entry-director {
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-    margin-left: 8px;
-  }
-
-  /* Same chip shape as the /list score chip: the one fact this list type
-     carries per row is which film fronted the week. */
-  .article .theme-list .entry-featured {
-    display: inline-block;
-    margin-left: 10px;
-    padding: 1px 8px;
-    border: 1px solid rgba(245, 197, 24, 0.35);
+  /* Featured marker over the first film's poster (the film that fronted the
+     week in the app): a gold-outlined pill, top-left, the same gold as the
+     IMDb badge. */
+  .article .featured-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    padding: 2px 8px;
     border-radius: 999px;
-    font-size: 0.74rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    color: var(--text);
-    vertical-align: 2px;
+    background: rgba(0, 0, 0, 0.72);
+    border: 1px solid rgba(245, 197, 24, 0.7);
+    color: var(--gold);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
   }
 
-  .article .theme-list .entry-blurb {
+  /* Director surname above the blurb, muted, as it read in the old list. */
+  .article .card-director {
     display: block;
-    font-size: 0.92rem;
     color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  .article .card-blurb {
+    display: block;
+    margin-top: 3px;
   }
 
   /* Quieter than the blurb: supporting fact, not the pitch. */
-  .article .theme-list .entry-cast {
+  .article .card-cast {
     display: block;
+    margin-top: 4px;
     font-size: 0.82rem;
-    color: var(--text-secondary);
     opacity: 0.8;
   }
 

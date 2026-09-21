@@ -29,6 +29,12 @@ interface Props {
    */
   heroImage?: string;
   /**
+   * Optional CSS object-position for the hero crop (e.g. 'center 20%'). The
+   * default centre crop clips some backdrops (a figure whose head sits at the
+   * top edge); pages pass a per-image value judged against the actual still.
+   */
+  heroPosition?: string;
+  /**
    * The developer-conflict disclosure is comparison-specific. Pages that make
    * no head-to-head claim (the changelog) pass false to suppress it, rather
    * than rendering a disclaimer for a claim they never make.
@@ -36,7 +42,7 @@ interface Props {
   disclosure?: boolean;
 }
 
-const { title, description, path, heading, jsonLd = [], disclosure = true, heroImage, breadcrumbs } = Astro.props;
+const { title, description, path, heading, jsonLd = [], disclosure = true, heroImage, heroPosition, breadcrumbs } = Astro.props;
 
 // One source feeds both the visible nav and the structured data: append the
 // BreadcrumbList node only when a trail was passed, so other page types are
@@ -50,7 +56,13 @@ const allJsonLd = breadcrumbs && breadcrumbs.length ? [...jsonLd, breadcrumbList
   {
     heroImage && (
       <div class="article-hero" aria-hidden="true">
-        <img src={heroImage} alt="" loading="eager" fetchpriority="high" />
+        <img
+          src={heroImage}
+          alt=""
+          loading="eager"
+          fetchpriority="high"
+          style={heroPosition ? `object-position: ${heroPosition}` : undefined}
+        />
       </div>
     )
   }
