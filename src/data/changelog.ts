@@ -27,6 +27,7 @@ export const CHANGELOG: ChangelogWeek[] = [
     week: '21 September 2026',
     entries: [
       'The assistant button in the top bar now gives a short twirl when you open the app, so it is easy to find',
+      'IMDb scores in the Discover lists and in Explore Countries now match the score on each title\'s page, and the countries grid no longer shuffles when you come back from a title',
     ],
   },
   {
