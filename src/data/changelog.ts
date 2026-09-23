@@ -28,6 +28,9 @@ export const CHANGELOG: ChangelogWeek[] = [
     entries: [
       'The assistant button in the top bar now gives a short twirl when you open the app, so it is easy to find',
       'IMDb scores in the Discover lists and in Explore Countries now match the score on each title\'s page, and the countries grid no longer shuffles when you come back from a title',
+      'Series you rated season by season can now be marked as still watching, straight from the title page',
+      'The seasons count on a series page now matches the episode list',
+      'The Friday theme notification now adds a personal line when the week\'s theme includes a film from your own watchlist or ratings',
     ],
   },
   {
