@@ -24,6 +24,12 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '21 September 2026',
+    entries: [
+      'The assistant button in the top bar now gives a short twirl when you open the app, so it is easy to find',
+    ],
+  },
+  {
     week: '14 September 2026',
     entries: [
       'I Like Movies is now on iPhone, free on the App Store, with the same library synced across iPhone and Android',
