@@ -33,6 +33,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'The Friday theme notification now adds a personal line when the week\'s theme includes a film from your own watchlist or ratings',
       'Titles you have watched but never rated now have their own screen, so catching up on ratings takes a few taps',
       'On iPhone, changing your profile or household photo from your library now opens the photo picker every time',
+      'Your favorites on the profile can now be any number up to four, tapping anywhere on the card opens the picker, and unticking them all clears the section',
+      'On iPhone, shaking to report a problem while a sheet is open now still brings up the report form instead of going quiet until a restart',
     ],
   },
   {
