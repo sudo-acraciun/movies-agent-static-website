@@ -26,6 +26,9 @@ export const CHANGELOG: ChangelogWeek[] = [
   {
     week: '21 September 2026',
     entries: [
+      'The button on a series page now reads "Add to Watching" and explains that Watching is what turns on new-episode alerts. After you tick or rate an episode on a series that is still airing, the page offers once to add it for you',
+      'Series you are watching now carry a small green dot on their poster in the library, so they no longer look like titles you have finished',
+      'New accounts are now asked about notifications at the end of setup instead of on the very first screen',
       'The assistant button in the top bar now gives a short twirl when you open the app, so it is easy to find',
       'IMDb scores in the Discover lists and in Explore Countries now match the score on each title\'s page, and the countries grid no longer shuffles when you come back from a title',
       'Series you rated season by season can now be marked as still watching, straight from the title page',
