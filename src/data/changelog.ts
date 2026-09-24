@@ -38,6 +38,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'On iPhone, changing your profile or household photo from your library now opens the photo picker every time',
       'Your favorites on the profile can now be any number up to four, tapping anywhere on the card opens the picker, and unticking them all clears the section',
       'On iPhone, shaking to report a problem while a sheet is open now still brings up the report form instead of going quiet until a restart',
+      'When you come back from a title, the person page and your library stay exactly where you left them, in the same order, instead of reloading and jumping to the top',
     ],
   },
   {
