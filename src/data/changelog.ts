@@ -32,6 +32,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'The seasons count on a series page now matches the episode list',
       'The Friday theme notification now adds a personal line when the week\'s theme includes a film from your own watchlist or ratings',
       'Titles you have watched but never rated now have their own screen, so catching up on ratings takes a few taps',
+      'On iPhone, changing your profile or household photo from your library now opens the photo picker every time',
     ],
   },
   {
