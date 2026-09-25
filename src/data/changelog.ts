@@ -39,6 +39,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Your favorites on the profile can now be any number up to four, tapping anywhere on the card opens the picker, and unticking them all clears the section',
       'On iPhone, shaking to report a problem while a sheet is open now still brings up the report form instead of going quiet until a restart',
       'When you come back from a title, the person page and your library stay exactly where you left them, in the same order, instead of reloading and jumping to the top',
+      'The assistant now opens with suggestions based on you: more films like one you recently loved, and picks from what streams on your services',
+      'You can tell the assistant which streaming services you have, right in the chat, and it saves them for you',
     ],
   },
   {
