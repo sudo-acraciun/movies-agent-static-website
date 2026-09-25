@@ -41,6 +41,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'When you come back from a title, the person page and your library stay exactly where you left them, in the same order, instead of reloading and jumping to the top',
       'The assistant now opens with suggestions based on you: more films like one you recently loved, and picks from what streams on your services',
       'You can tell the assistant which streaming services you have, right in the chat, and it saves them for you',
+      'Your favorites on the profile now show how rare your taste is, from hidden gems to crowd favorites, and the same line travels with the picture when you share them. Friends\' profiles show it too',
     ],
   },
   {
