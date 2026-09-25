@@ -189,7 +189,7 @@ export const FEATURES: Feature[] = [
     // "shared watchlist app" is a real query with real intent, and headings
     // carry more weight than body copy, so the noun belongs in the H2 rather
     // than three sentences below it.
-    title: "Everyone's watchlist, shared on one sofa.",
+    title: 'One shared watchlist for the whole sofa.',
     body: 'Two people, two watchlists, and a half-finished series nobody can agree on. A household puts everyone you live with on one library, so what you add, they see.',
     bullets: [
       'A household shares one watchlist and one watched history',
@@ -197,7 +197,7 @@ export const FEATURES: Feature[] = [
       'No more working out which of you saved the film worth watching',
     ],
     screenshotAlt:
-      "The I Like Movies watchlist picker, switching between the watchlists of each person in the household",
+      "A shared household watchlist in I Like Movies, grouped by member, with each person's saved films listed under their name",
   },
 ];
 
