@@ -45,6 +45,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Tapping a notification about a like or comment on a grouped post, such as several seasons finished at once, now opens that post instead of saying it is no longer available',
       'The Android app now keeps far less in memory during long sessions, to stop a crash that could close it after heavy use',
       'On iPhone, deleting a note now asks you to confirm and then removes it. The same fix brings back deleting a list you just created and removing an editor from a shared list',
+      'The Unwatched filter on your lists and watchlist now also hides titles you marked as watched without rating them, and the Filter button shows when it is on',
+      'On a household member\'s watchlist, the watched marks and filters now show what you have seen, so their picks that are new to you stand out',
     ],
   },
   {
