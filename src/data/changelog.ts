@@ -42,6 +42,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'The assistant now opens with suggestions based on you: more films like one you recently loved, and picks from what streams on your services',
       'You can tell the assistant which streaming services you have, right in the chat, and it saves them for you',
       'Your favorites on the profile now show how rare your taste is, from hidden gems to crowd favorites, and the same line travels with the picture when you share them. Friends\' profiles show it too',
+      'Tapping a notification about a like or comment on a grouped post, such as several seasons finished at once, now opens that post instead of saying it is no longer available',
+      'The Android app now keeps far less in memory during long sessions, to stop a crash that could close it after heavy use',
     ],
   },
   {
