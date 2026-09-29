@@ -32,6 +32,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Picking a profile backdrop on an iPhone no longer hides the title and close button behind the status bar, and the search field stays above the keyboard while you type',
       'Search now finds a film by its original-language title, with or without accents, and shows that title under the name you know it by',
       'Search now forgives a different word order or a missing word, and a small slip in the title of a film you already have',
+      'Movie cards now keep the year on the left and the score on the right, value first and then the IMDb, Rotten Tomatoes or Metacritic logo, so scores line up down every grid',
     ],
   },
   {
