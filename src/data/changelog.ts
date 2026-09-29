@@ -30,6 +30,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'A title\'s IMDb, Rotten Tomatoes and Metacritic scores now stay on its page after you add it to your watchlist or mark it, instead of dropping back to a rougher score',
       'Your watchlist and collection now open on the titles you added most recently, with IMDb scores still on every card, and a title you add or rate shows up at the top straight away',
       'Picking a profile backdrop on an iPhone no longer hides the title and close button behind the status bar, and the search field stays above the keyboard while you type',
+      'Search now finds a film by its original-language title, with or without accents, and shows that title under the name you know it by',
+      'Search now forgives a different word order or a missing word, and a small slip in the title of a film you already have',
     ],
   },
   {
