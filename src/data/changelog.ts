@@ -24,6 +24,13 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '29 September 2026',
+    entries: [
+      'Tapping a grouped post in Social, such as several titles added to a watchlist at once, now opens the title shown on the card instead of the newest one in the group',
+      'A title\'s IMDb, Rotten Tomatoes and Metacritic scores now stay on its page after you add it to your watchlist or mark it, instead of dropping back to a rougher score',
+    ],
+  },
+  {
     week: '21 September 2026',
     entries: [
       'The button on a series page now reads "Add to Watching" and explains that Watching is what turns on new-episode alerts. After you tick or rate an episode on a series that is still airing, the page offers once to add it for you',
