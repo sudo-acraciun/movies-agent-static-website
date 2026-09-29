@@ -29,6 +29,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Tapping a grouped post in Social, such as several titles added to a watchlist at once, now opens the title shown on the card instead of the newest one in the group',
       'A title\'s IMDb, Rotten Tomatoes and Metacritic scores now stay on its page after you add it to your watchlist or mark it, instead of dropping back to a rougher score',
       'Your watchlist and collection now open on the titles you added most recently, with IMDb scores still on every card, and a title you add or rate shows up at the top straight away',
+      'Picking a profile backdrop on an iPhone no longer hides the title and close button behind the status bar, and the search field stays above the keyboard while you type',
     ],
   },
   {
