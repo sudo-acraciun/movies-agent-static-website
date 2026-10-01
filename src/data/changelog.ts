@@ -36,6 +36,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Buttons and highlights now use the warm ember orange from our logo, with dark labels that are easier to read, and your own chat messages sit in a calmer slate bubble',
       'In a household, the "Owned by" filter now shows every member\'s name in full, on as many lines as it needs, instead of cutting names short when the household is large',
       'Search has a new Streaming tab: the best movies and series on your streaming services in your country, narrowed to one service with a tap, sorted by IMDb rating, popularity or release date, and filtered by genre or by what you have already watched. A title\'s service badge now opens that service\'s list too',
+      'Titles you bring in from Letterboxd or IMDb now show their real IMDb score straight away',
+      'Search results and the Similar Titles rail now show the same IMDb score as the title\'s own page',
     ],
   },
   {
