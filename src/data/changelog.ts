@@ -41,6 +41,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Clearer messages from the assistant when something goes wrong',
       'Your taste picks and the weekly theme now open faster, and their Watchlist badge marks only the titles on your own watchlist',
       'Switching between Library tabs no longer reloads the posters, and loading placeholders now shimmer smoothly while a page opens',
+      'Discover has a new TV Essentials section: eight lists of must-watch series, from sitcoms and crime dramas to anime and docuseries, each showing how many you have seen',
     ],
   },
   {
