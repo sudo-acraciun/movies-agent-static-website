@@ -39,6 +39,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Titles you bring in from Letterboxd or IMDb now show their real IMDb score straight away',
       'Search results and the Similar Titles rail now show the same IMDb score as the title\'s own page',
       'Clearer messages from the assistant when something goes wrong',
+      'Your taste picks and the weekly theme now open faster, and their Watchlist badge marks only the titles on your own watchlist',
+      'Switching between Library tabs no longer reloads the posters, and loading placeholders now shimmer smoothly while a page opens',
     ],
   },
   {
