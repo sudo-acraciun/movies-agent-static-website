@@ -29,6 +29,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'On the Friends page, the search box and the people it finds now stay above the keyboard while you type a name',
       'In household chat, one-to-one chat and the assistant, the newest message stays in view when the keyboard opens, and your place is kept when you are reading older messages',
       'The Library, weekly themes, lists and the Streaming tab now spend less effort loading posters, so they open and switch tabs more smoothly',
+      'Joining a household is quicker: the app no longer downloads the whole household watchlist on the way in',
     ],
   },
   {
