@@ -24,6 +24,13 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '5 October 2026',
+    entries: [
+      'On the Friends page, the search box and the people it finds now stay above the keyboard while you type a name',
+      'In household chat, one-to-one chat and the assistant, the newest message stays in view when the keyboard opens, and your place is kept when you are reading older messages',
+    ],
+  },
+  {
     week: '29 September 2026',
     entries: [
       'Tapping a grouped post in Social, such as several titles added to a watchlist at once, now opens the title shown on the card instead of the newest one in the group',
