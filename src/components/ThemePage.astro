@@ -72,10 +72,9 @@ const jsonLd = [
   <h2>The collection</h2>
   <ol class="poster-grid">
     {
-      t.items.map((item, i) => (
+      t.items.map((item) => (
         <li class="poster-card">
           <div class="poster-wrap">
-            {i === 0 && <span class="featured-badge">Featured</span>}
             {item.posterPath ? (
               <img class="poster" src={item.posterPath} alt={`${item.title} poster`} width="342" height="513" loading="lazy" />
             ) : (
@@ -148,23 +147,6 @@ const jsonLd = [
   .article .theme-week {
     color: var(--text-secondary);
     font-size: 0.92rem;
-  }
-
-  /* Featured marker over the first film's poster (the film that fronted the
-     week in the app): a gold-outlined pill, top-left, the same gold as the
-     IMDb badge. */
-  .article .featured-badge {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    padding: 2px 8px;
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.72);
-    border: 1px solid rgba(245, 197, 24, 0.7);
-    color: var(--gold);
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
   }
 
   /* Director surname above the blurb, muted, as it read in the old list. */
