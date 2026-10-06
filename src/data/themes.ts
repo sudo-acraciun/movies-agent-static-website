@@ -75,6 +75,59 @@ export function formatWeek(weekOf: string): string {
 // Newest first: the archive index and the /guides hub both read this order.
 export const WEEKLY_THEMES: WeeklyTheme[] = [
   {
+    slug: 'horror-movie-marathon',
+    title: 'Horror movie marathon: 21 films for October, from Alien to The Substance',
+    metaDescription:
+      '21 horror films for an October marathon, from Alien, The Fly and Jaws to The Host, The Babadook and The Substance, curated as a weekly collection for Hooptober.',
+    h1: 'Horror movie marathon: 21 films for October',
+    weekOf: '2026-10-02',
+    heroBackdropUrl: 'https://image.tmdb.org/t/p/w1280/3BNbh8ODH68JRLEc4YveMHuTcH1.jpg',
+    heroPosition: 'center 25%',
+    intro: [
+      "October is horror month for a lot of film fans, and Hooptober, the informal challenge of watching a run of horror films across the month, often 31 of them, is how many of them mark it. This collection goes past the usual suspects: Scott's Alien and Cronenberg's The Fly next to Bong Joon-ho's The Host, Jennifer Kent's The Babadook and Coralie Fargeat's The Substance.",
+      'These 21 films ran as the weekly theme in the I Like Movies Discover tab for the week of October 2, 2026, featuring Alien, timed for the start of Hooptober. The spread runs from a 1935 Universal sequel to 2024 body horror, through Japanese ghost stories, a Persian-language vampire western, a wartime Tehran haunting and an Australian mock documentary.',
+    ],
+    items: [
+      { title: 'Alien', year: 1979, tmdbId: 348, posterPath: 'https://image.tmdb.org/t/p/w342/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg', imdbRating: 8.2, director: 'Scott', cast: 'Tom Skerritt, Sigourney Weaver, Veronica Cartwright', blurb: "The crew of a commercial space tug answers a distress signal on a dead planet and brings back something that hunts them through the ship; the film that made Sigourney Weaver's Ripley an icon." },
+      { title: 'The Fly', year: 1986, tmdbId: 9426, posterPath: 'https://image.tmdb.org/t/p/w342/8gZWMhJHRvaXdXsNhERtqNHYpH3.jpg', imdbRating: 7.6, director: 'Cronenberg', cast: 'Jeff Goldblum, Geena Davis, John Getz', blurb: 'A scientist tests his teleportation pods on himself without noticing a housefly inside, and his body begins a slow, grotesque transformation; Cronenberg turns body horror into a tragic love story.' },
+      { title: 'Jaws', year: 1975, tmdbId: 578, posterPath: 'https://image.tmdb.org/t/p/w342/lxM6kqilAdpdhqUl2biYp5frUxE.jpg', imdbRating: 8.1, director: 'Spielberg', cast: 'Roy Scheider, Robert Shaw, Richard Dreyfuss', blurb: 'A great white shark preys on swimmers off a New England resort island, and the police chief, an oceanographer and a grizzled shark hunter go out to kill it; the first summer blockbuster.' },
+      { title: 'Dawn of the Dead', year: 1978, tmdbId: 923, posterPath: 'https://image.tmdb.org/t/p/w342/70MY8H0bLMvXf8ED2SgVMPhDVVM.jpg', imdbRating: 7.5, director: 'Romero', cast: 'David Emge, Ken Foree, Scott H. Reiniger', blurb: "As the dead rise across America, four survivors barricade themselves inside a suburban shopping mall and briefly live the consumer dream; Romero's gory zombie sequel doubles as satire." },
+      { title: 'The Evil Dead', year: 1981, tmdbId: 764, posterPath: 'https://image.tmdb.org/t/p/w342/54C1qdaiSijIU5NeNb4WsPJdNkG.jpg', imdbRating: 7.3, director: 'Raimi', cast: 'Bruce Campbell, Ellen Sandweiss, Richard DeManincor', blurb: "Five college friends at a remote cabin in the woods play a tape of ancient incantations and wake demons that possess them one by one; Sam Raimi's frantic, gleefully gory low-budget debut." },
+      { title: 'A Nightmare on Elm Street', year: 1984, tmdbId: 377, posterPath: 'https://image.tmdb.org/t/p/w342/wGTpGGRMZmyFCcrY2YoxVTIBlli.jpg', imdbRating: 7.4, director: 'Craven', cast: 'Heather Langenkamp, Johnny Depp, Robert Englund', blurb: 'Teenagers on one suburban street are stalked and killed in their dreams by a burned man with bladed fingers, so staying awake becomes survival; the film that introduced Freddy Krueger and Johnny Depp.' },
+      { title: 'Hellraiser', year: 1987, tmdbId: 9003, posterPath: 'https://image.tmdb.org/t/p/w342/3Z0oPHyLnk3Vx6ZMC1MiVwIrKhO.jpg', imdbRating: 6.9, director: 'Barker', cast: 'Andrew Robinson, Clare Higgins, Ashley Laurence', blurb: 'A puzzle box summons the Cenobites, and the man who escaped their realm needs the blood his lover lures home to rebuild his body; Clive Barker directing his own novella.' },
+      { title: 'Bride of Frankenstein', year: 1935, tmdbId: 229, posterPath: 'https://image.tmdb.org/t/p/w342/5241zUwe7rC17MNc2QpCBKKdp1N.jpg', imdbRating: 7.8, director: 'Whale', cast: 'Boris Karloff, Colin Clive, Valerie Hobson', blurb: "Dr. Pretorius pressures Henry Frankenstein into building a mate for the Monster, who has learned to speak and longs for a friend; James Whale's witty, tender sequel to his own 1931 film." },
+      { title: 'Ring', year: 1998, tmdbId: 2671, posterPath: 'https://image.tmdb.org/t/p/w342/1YINof6kN5yRdePEbcU5360ejoq.jpg', imdbRating: 7.1, director: 'Nakata', cast: 'Nanako Matsushima, Hiroyuki Sanada, Rikiya Ôtaka', blurb: 'A journalist looking into her niece\'s sudden death finds a cursed videotape that kills its viewers seven days after they watch it; the Japanese ghost story that carried J-horror abroad.' },
+      { title: 'The Host', year: 2006, tmdbId: 1255, posterPath: 'https://image.tmdb.org/t/p/w342/dEDLY3KeghKFzks5nTDWdigVikr.jpg', imdbRating: 7.1, director: 'Bong Joon-ho', cast: 'Song Kang-ho, Byun Hee-bong, Park Hae-il', blurb: "A creature born of chemicals dumped into Seoul's Han River snatches a young girl, and her bumbling family sets out to rescue her; a monster movie that is equal parts comedy and political satire." },
+      { title: '28 Days Later', year: 2002, tmdbId: 170, posterPath: 'https://image.tmdb.org/t/p/w342/sQckQRt17VaWbo39GIu0TMOiszq.jpg', imdbRating: 7.2, director: 'Boyle', cast: 'Cillian Murphy, Naomie Harris, Brendan Gleeson', blurb: 'A bicycle courier wakes from a coma in an empty London, four weeks after a rage virus has turned most of Britain into frenzied killers; Danny Boyle shot the apocalypse on digital video.' },
+      { title: 'The Babadook', year: 2014, tmdbId: 242224, posterPath: 'https://image.tmdb.org/t/p/w342/qt3fqapeo94TfvMyld8P7gkpXLz.jpg', imdbRating: 6.5, director: 'Kent', cast: 'Essie Davis, Noah Wiseman, Hayley McElhinney', blurb: "A widowed mother, worn down by grief and her difficult young son, reads him a sinister pop-up book that will not stay gone; Jennifer Kent's debut about grief that refuses to leave the house." },
+      { title: 'It Follows', year: 2015, tmdbId: 270303, posterPath: 'https://image.tmdb.org/t/p/w342/iwnQ1JH1wdWrGYkgWySptJ5284A.jpg', imdbRating: 6.6, director: 'Mitchell', cast: 'Maika Monroe, Keir Gilchrist, Daniel Zovatto', blurb: 'After a sexual encounter, a teenager is pursued by a slow, shape-shifting presence that only she can see and that walks straight toward her wherever she goes; dread built on patience and a synth score.' },
+      { title: 'The Descent', year: 2005, tmdbId: 9392, posterPath: 'https://image.tmdb.org/t/p/w342/mxFPI4KYBk5ri9cPteIS8jiDFgj.jpg', imdbRating: 7, director: 'Marshall', cast: 'Shauna Macdonald, Natalie Mendoza, Alex Reid', blurb: 'Six women on a caving trip in the Appalachians end up trapped in an uncharted cave system and discover they are not alone down there; claustrophobia first, then the creatures.' },
+      { title: 'The Substance', year: 2024, tmdbId: 933260, posterPath: 'https://image.tmdb.org/t/p/w342/lqoMzCcZYEFK729d6qzt349fB4o.jpg', imdbRating: 7.1, director: 'Fargeat', cast: 'Demi Moore, Margaret Qualley, Dennis Quaid', blurb: "A fading TV fitness star injects a black-market serum that splits off a younger, better version of herself, with strict rules for sharing one life; Coralie Fargeat's body horror satire starring Demi Moore." },
+      { title: 'A Girl Walks Home Alone at Night', year: 2014, tmdbId: 252171, posterPath: 'https://image.tmdb.org/t/p/w342/cd2rCE1nun7CESjBI8PGNEof1tb.jpg', imdbRating: 6.8, director: 'Amirpour', cast: 'Sheila Vand, Arash Marandi, Marshall Manesh', blurb: 'In a desolate Iranian ghost town called Bad City, a lonely vampire in a chador stalks the men who prey on others; a black-and-white, Persian-language vampire western shot in California.' },
+      { title: 'Under the Shadow', year: 2016, tmdbId: 375012, posterPath: 'https://image.tmdb.org/t/p/w342/bsHpzc7mVbJfZBaD0EISJkm3f3H.jpg', imdbRating: 6.5, director: 'Anvari', cast: 'Narges Rashidi, Avin Manshadi, Bobby Naderi', blurb: 'In 1988 Tehran, during the War of the Cities, a mother and her young daughter are haunted by a djinn as missile strikes empty their apartment building; Babak Anvari\'s debut.' },
+      { title: 'Saint Maud', year: 2020, tmdbId: 575776, posterPath: 'https://image.tmdb.org/t/p/w342/ArNYeeDFLVye7JpqLElYdbE6fOa.jpg', imdbRating: 6.5, director: 'Glass', cast: 'Morfydd Clark, Jennifer Ehle, Lily Frazer', blurb: 'A newly devout young nurse becomes convinced she must save the soul of her dying patient, a former dancer, and her faith curdles into something dangerous; Rose Glass\'s debut.' },
+      { title: 'His House', year: 2020, tmdbId: 575774, posterPath: 'https://image.tmdb.org/t/p/w342/s6XxJEe4ovVTMgmGmKeO87OFANU.jpg', imdbRating: 6.4, director: 'Weekes', cast: 'Ṣọpẹ́ Dìrísù, Wunmi Mosaku, Malaika Wakoli-Abigaba', blurb: 'A refugee couple who fled war in South Sudan are granted probationary asylum in an English town, and the run-down house they are given holds something that followed them; Remi Weekes\' debut.' },
+      { title: 'Kill List', year: 2011, tmdbId: 74725, posterPath: 'https://image.tmdb.org/t/p/w342/qwT2I3ons0oD58jIppKmd4qLtvB.jpg', imdbRating: 6.2, director: 'Wheatley', cast: 'Neil Maskell, MyAnna Buring, Harry Simpson', blurb: "An ex-soldier turned contract killer, short of money, takes one more job with a list of targets, and the work turns stranger and darker with every name; Ben Wheatley's genre-switching nightmare." },
+      { title: 'Lake Mungo', year: 2009, tmdbId: 27374, posterPath: 'https://image.tmdb.org/t/p/w342/5IaGu8r0t6bBaydkR6z9l9tJsCg.jpg', imdbRating: 6.1, director: 'Anderson', cast: 'Rosie Traynor, David Pledger, Martin Sharpe', blurb: 'An Australian family starts recording strange happenings at home after their teenage daughter drowns, and the footage uncovers secrets she kept; a mock documentary about grief, built on stillness.' },
+    ],
+    appNote:
+      'Thirty-one days is a lot of films to keep straight. Save this collection to your watchlist in I Like Movies, tick each film off as you watch it, and rate it so the app learns which kind of horror works for you. Every Friday the Discover tab gets a new themed collection.',
+    faqs: [
+      {
+        q: 'What horror movies should I watch for Hooptober?',
+        a: [
+          'Hooptober has no official list: the challenge is simply to watch a run of horror films through October, often 31. A balanced start is one classic (Bride of Frankenstein, Alien), one modern debut (The Babadook, Saint Maud, His House) and one film from outside Hollywood (Ring, The Host, Under the Shadow).',
+        ],
+      },
+      {
+        q: 'Is Alien a horror film or science fiction?',
+        a: [
+          'Both. It is set on a spaceship, but its structure is a horror film: a small crew trapped in a confined space and picked off one by one by a creature they barely see. Its sequel, Aliens (1986), leans further into action.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'mafia-cinema',
     title: 'Mafia cinema: 21 essential films from The Godfather to Gomorrah',
     metaDescription:

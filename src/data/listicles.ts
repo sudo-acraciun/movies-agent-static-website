@@ -243,6 +243,10 @@ export const LISTICLES: Listicle[] = [
     ],
     appNote:
       'Turning a list like this into an October project is exactly what I Like Movies, the free iPhone and Android app behind this page, is built for: keep the ones you have not seen on your watchlist, rate each film as you go, and see where it is streaming in your country before you press play.',
+    related: {
+      href: '/themes/horror-movie-marathon',
+      label: 'the Horror Marathon weekly theme, the same 21 films with cast and directors',
+    },
     faqs: [
       {
         q: 'How is this list ranked?',
