@@ -31,6 +31,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'The Library, weekly themes, lists and the Streaming tab now spend less effort loading posters, so they open and switch tabs more smoothly',
       'Joining a household is quicker: the app no longer downloads the whole household watchlist on the way in',
       'Discover opens lighter: the sections further down the page load a moment after the first screen, so what you tap next is not held back by posters you have not scrolled to',
+      'Switching between the main tabs is smoother on Android: a tab you are not looking at pauses until you come back, and tapping Discover always takes you to the top of the page',
     ],
   },
   {
