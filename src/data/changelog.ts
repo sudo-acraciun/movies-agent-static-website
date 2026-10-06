@@ -30,6 +30,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'In household chat, one-to-one chat and the assistant, the newest message stays in view when the keyboard opens, and your place is kept when you are reading older messages',
       'The Library, weekly themes, lists and the Streaming tab now spend less effort loading posters, so they open and switch tabs more smoothly',
       'Joining a household is quicker: the app no longer downloads the whole household watchlist on the way in',
+      'Discover opens lighter: the sections further down the page load a moment after the first screen, so what you tap next is not held back by posters you have not scrolled to',
     ],
   },
   {
