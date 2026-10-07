@@ -34,6 +34,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Switching between the main tabs is smoother on Android: a tab you are not looking at pauses until you come back, and tapping Discover always takes you to the top of the page',
       'The genre filter in the Library, lists and Discover pages has new Documentary and Family chips, and every chip now matches films and series alike, so Sci-Fi and Fantasy find your series too',
       'The cast row on a title\'s page now ends with a View all button that lists every credited actor on its own page, and an episode\'s cast and guest stars get the same; coming back from that page returns you to the spot you left',
+      'On a post\'s page, the comment box now stays above the keyboard on Android while you write',
+      'The Social feed no longer downloads every poster again each time more posts load, so scrolling it is lighter on data and smoother',
+      'Long-pressing your own comment, on a post\'s page or in the comments sheet, now opens the app\'s own Manage comment card with Edit, Delete and Cancel, in that order',
     ],
   },
   {
