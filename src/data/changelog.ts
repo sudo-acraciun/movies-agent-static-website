@@ -33,6 +33,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Discover opens lighter: the sections further down the page load a moment after the first screen, so what you tap next is not held back by posters you have not scrolled to',
       'Switching between the main tabs is smoother on Android: a tab you are not looking at pauses until you come back, and tapping Discover always takes you to the top of the page',
       'The genre filter in the Library, lists and Discover pages has new Documentary and Family chips, and every chip now matches films and series alike, so Sci-Fi and Fantasy find your series too',
+      'The cast row on a title\'s page now ends with a View all button that lists every credited actor on its own page, and an episode\'s cast and guest stars get the same; coming back from that page returns you to the spot you left',
     ],
   },
   {
