@@ -38,6 +38,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'The Social feed no longer downloads every poster again each time more posts load, so scrolling it is lighter on data and smoother',
       'Long-pressing your own comment, on a post\'s page or in the comments sheet, now opens the app\'s own Manage comment card with Edit, Delete and Cancel, in that order',
       'A show you have watched is coming back? The app now tells you a few days before the new season starts, and the alert counts down to the day. The alert switch in Settings is now called TV shows and covers new episodes and returning seasons',
+      'When you pick your handle during sign-up and the save fails for a moment, the app now says so and lets you try the same name again, instead of telling you the name is already taken',
     ],
   },
   {
