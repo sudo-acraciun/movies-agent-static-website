@@ -134,8 +134,9 @@ export type Feature = {
 // be a second place for an asset reference to rot. Copy lives in this module,
 // assets live with the page that renders them.
 
-// Four blocks, in the order the positioning puts them: discovery, the
-// assistant, friends, then the household.
+// Five blocks. Discovery, the assistant, friends and the household are the
+// positioning, in its order; Streaming is an added section that sits before
+// the household, so the positioning blocks keep their wording and order.
 //
 // Friends and household are separate sections rather than one "Together"
 // block because they are opposite motions. A household is inward facing, the
@@ -180,24 +181,39 @@ export const FEATURES: Feature[] = [
       'Share any title straight into a chat, and it opens in their app',
     ],
     screenshotAlt:
-      'The I Like Movies social feed showing a friend adding a series to their watchlist and another rating a film, each with likes and replies underneath',
+      'The I Like Movies social feed showing one friend rating a film and another adding two titles to their watchlist, each with likes and replies underneath',
+  },
+  {
+    id: 'streaming',
+    // The H2 carries "browse your streaming providers", the phrase the Play
+    // listing targets, so the site and the store rank for the same words.
+    title: 'Browse your streaming providers in one place.',
+    body: 'You already pay for the services. The hard part is finding what is worth watching on them. Choose the services you pay for and see the best films and series on each one, in your country, sorted by IMDb rating.',
+    bullets: [
+      'Pick your services once, then browse the best films and series on each',
+      'Sort by IMDb rating, popularity or release date, and filter by genre',
+      'Hide what you have already watched, so the list is only new to you',
+    ],
+    screenshotAlt:
+      'The Streaming tab in I Like Movies search, browsing the best films on one streaming service sorted by IMDb rating',
   },
   {
     id: 'household',
-    // "shared watchlist" is deliberate. It was "One shelf for the whole
+    // "Shared watchlists" is deliberate. It was "One shelf for the whole
     // sofa", which is a nicer line and says nothing a search engine can use.
     // "shared watchlist app" is a real query with real intent, and headings
     // carry more weight than body copy, so the noun belongs in the H2 rather
-    // than three sentences below it.
-    title: 'One shared watchlist for the whole sofa.',
-    body: 'Two people, two watchlists, and a half-finished series nobody can agree on. A household puts everyone you live with on one library, so what you add, they see.',
+    // than three sentences below it. Plural because each person keeps their
+    // own watchlist and the household can see all of them.
+    title: 'Shared watchlists for the whole sofa.',
+    body: "Two people, two watchlists, and a half-finished series nobody can agree on. A household puts everyone you live with on one library, so what you add, they see.",
     bullets: [
-      'A household shares one watchlist and one watched history',
-      'Add a film on your phone and it is on theirs before you sit down',
-      'No more working out which of you saved the film worth watching',
+      'See every watchlist in your home and switch between them in one tap',
+      'Add a film on your phone and they can see it before you sit down',
+      'A shared collection, a household chat, and assistant picks for everyone at home',
     ],
     screenshotAlt:
-      "A shared household watchlist in I Like Movies, grouped by member, with each person's saved films listed under their name",
+      'The I Like Movies watchlist picker, switching between the watchlists of each person in the household',
   },
 ];
 
@@ -212,44 +228,45 @@ export const FEATURES: Feature[] = [
 // unfinished last row.
 export const CAPABILITIES = [
   {
+    title: 'Import from Letterboxd, IMDb, Trakt or TV Time',
+    body: 'Ratings, watch history and watchlist come across, with every episode from Trakt and a saved TV Time export. You see it all first, and an import can be undone within a day.',
+  },
+  {
+    title: 'Streaming alerts',
+    body: 'Get a push when a title on your watchlist arrives on one of your streaming providers, and another when it leaves.',
+  },
+  {
+    title: 'Episode tracking and alerts',
+    body: 'Mark episodes as you watch and see how far into a season you are. Get a push for new episodes of the shows you are watching, and a heads-up before a new season starts.',
+  },
+  {
     title: 'One library, films and TV',
     body: 'Films and TV are tracked in one place, with a single history and a single watchlist, rather than two apps fighting over your evening.',
   },
   {
-    title: 'Episode tracking',
-    body: 'Mark individual episodes, see how far into a season you are, and get told when a series has actually ended.',
+    title: 'Ratings and notes',
+    body: 'Rate out of five stars and keep a note on anything, including rewatches. Share a note with your friends in their feed, or keep it just for you.',
   },
   {
-    title: 'Ratings and private notes',
-    body: 'Rate out of five stars and keep a note on anything, including rewatches. The note is yours, not a public review.',
-  },
-  {
-    title: 'Streaming availability',
-    body: 'See which services carry a title in your country, checked per region rather than assumed from a US catalogue.',
-  },
-  {
-    title: 'Your own lists',
-    body: 'Build lists for a marathon, a genre, a director, or an evening. No fixed categories to fight against.',
-  },
-  {
-    title: 'Import your history',
-    body: 'A Letterboxd .zip export or an IMDb .csv export uploads directly, ratings and watchlist included.',
+    title: 'Lists, solo or shared',
+    body: 'Build lists for a marathon, a genre or an evening, on your own or with friends who add, remove and reorder titles with you.',
   },
   {
     // No mention of badges. The badge code, the /badges route and GET_BADGES
     // all still exist, but SHOW_BADGES_ENTRY is false in the mobile app, so
     // there is no way for a user to reach the screen. Every claim below maps
-    // to a field on ProfileStats or CountryStats that renders today.
-    title: 'Your viewing profile',
-    body: 'Your profile totals the hours you have watched and your average rating, works out your top genres, breaks your history down by the country a film came from, and pins your top four films.',
+    // to a field on ProfileStats, CountryStats or watchStats that renders
+    // today.
+    title: 'Your profile and stats',
+    body: "Your profile pins your top four and breaks your history down by country. The stats page adds this year's count, your rating spread and the decades, genres, directors and actors you return to most.",
   },
   {
     title: 'No ads, ever',
     body: 'No advertising, no sponsored rows, no engagement feed. The recommendations answer to you.',
   },
   {
-    title: 'Everywhere you sign in',
-    body: 'Your library lives on the server, not the handset, so it follows you to a new phone without an export.',
+    title: 'A new theme every Friday',
+    body: 'Every Friday a new themed collection of 21 films lands in Discover, with an archive of every week before it.',
   },
 ];
 
@@ -342,8 +359,8 @@ export const FAQS: Faq[] = [
   {
     q: 'Can two people share one watchlist?',
     a: [
-      'Yes. A household in I Like Movies is a shared library for the people you live with, and everyone in it sees the same watchlist and the same watched history.',
-      'A film added by one person shows up for everyone without being sent or shared manually. It is built for the case where two people keep separate lists and then cannot remember which of them had the film worth watching.',
+      "Yes. A household in I Like Movies is a shared library for the people you live with: everyone in it can see each other’s watchlists, and the household shares one collection of the titles you own and a group chat.",
+      'For one list you both add to, create a shared list and invite each other: a film either of you adds is on it for both, without sending anything. It is built for the case where two people keep separate lists and then cannot remember which of them had the film worth watching.',
     ],
   },
   {
@@ -417,14 +434,13 @@ export const MIGRATIONS: Migration[] = [
     name: 'Coming from Letterboxd',
     move: 'Request your data export, which arrives as a .zip, and upload it under Imports. Ratings, watched films and your watchlist come across together.',
     changes:
-      'Letterboxd is built around public reviews and film criticism as a social activity. Here your notes are private by default, TV series are tracked alongside films at episode level, streaming availability is shown for your country, an AI assistant answers in plain language, and the people you live with can share a single library.',
+      'Letterboxd is built around public reviews and film criticism as a social activity. Here your notes go to your friends or stay just for you, TV series are tracked alongside films at episode level, streaming availability is shown for your country, an AI assistant answers in plain language, and the people you live with can share a single library.',
     compare: { href: '/vs/letterboxd', label: 'Read the full Letterboxd comparison' },
   },
   {
     // IMDb belongs here and belongs high. It has a larger user base than the
-    // other three put together, "export IMDb ratings" is a live query, and it
-    // is one of only two sources with a real import path in the app. Ordered
-    // second so the two rows that CAN import sit together at the top.
+    // other rows put together and "export IMDb ratings" is a live query, so it
+    // sits second, straight after Letterboxd.
     name: 'Coming from IMDb',
     move: 'Export your ratings or your watchlist from IMDb as a .csv and upload it under Imports. The app works out which kind of list the file is on its own.',
     changes:
@@ -433,33 +449,34 @@ export const MIGRATIONS: Migration[] = [
   },
   {
     name: 'Coming from Trakt',
-    move: 'There is no Trakt import. Imports read a Letterboxd .zip or an IMDb .csv, and a Trakt export is neither, so a Trakt library starts fresh here and rebuilds itself as you use the app. Marking a season watched takes a tap.',
+    move: 'Export your data from Trakt (Settings, then Data, then Export now), which downloads a .zip, and upload it under Imports. Ratings, watched films, your episode history, your watchlist and your lists come across together. It is a one-time copy, not a sync, and season and episode ratings stay behind.',
     changes:
       'Trakt is built around automatic scrobbling from media servers and players, and it is very good at that. This is a phone app with nothing to install alongside it, aimed at the moment before you press play rather than the record of having pressed it.',
     compare: { href: '/vs/trakt', label: 'Read the full Trakt comparison' },
   },
   {
-    // Simkl carries the most non-brand search impressions of any comparison
-    // page, so it earns a row on the homepage rather than sitting two hops away
-    // behind /guides. No import path, same as the Trakt and TV Time rows.
-    name: 'Coming from Simkl',
-    move: 'There is no Simkl import. Imports read a Letterboxd .zip or an IMDb .csv, and a Simkl export is neither, so a Simkl library starts fresh here. Film ratings that also live on Letterboxd or IMDb come across from those exports, and marking a season watched takes a tap.',
-    changes:
-      'Simkl is strong on anime and can auto-track from browser extensions. This is a phone app with no extensions to install: anime is carried as ordinary TV and films in one library, discovery comes first, there is no advertising, and a household shares a single library.',
-    compare: { href: '/vs/simkl', label: 'Read the full Simkl comparison' },
-  },
-  {
     name: 'Coming from TV Time',
-    move: 'TV Time closed on 15 July 2026, and there is no TV Time import here, so series progress is set as you go. Marking a season watched takes a tap.',
+    move: 'TV Time closed on 15 July 2026. If you saved your data export before then, upload the .zip under Imports: watched episodes, watched films, film ratings, your film watchlist and your lists come across. Without an export, series progress is set as you go, and marking a season watched takes a tap.',
     changes:
       'TV Time was focused on episode tracking and reminders for series. Episodes are tracked one at a time here too, films and TV sit in one library rather than being two separate concerns, discovery comes first, there is no advertising, and a household shares a single library instead of everyone keeping their own.',
     compare: { href: '/from-tv-time', label: 'Read the full guide to life after TV Time' },
   },
   {
-    name: 'Coming from Serializd',
-    move: 'There is no Serializd import. Imports read a Letterboxd .zip or an IMDb .csv, and a Serializd export is neither, so a TV library starts fresh here. Mark the seasons you are mid-way through, usually a short list, and the rest fills in as you go.',
+    // Simkl carries the most non-brand search impressions of any comparison
+    // page, so it earns a row on the homepage rather than sitting two hops away
+    // behind /guides. No import path, same as the Serializd row, so both sit
+    // after the four sources that do import.
+    name: 'Coming from Simkl',
+    move: 'There is no Simkl import. Imports read Letterboxd, IMDb, Trakt and TV Time exports, and a Simkl export is none of them, so a Simkl library starts fresh here. History that also lives on Letterboxd, IMDb or Trakt comes across from those exports, and marking a season watched takes a tap.',
     changes:
-      'Serializd is built around public TV reviews. Here notes are private, films and TV sit in one library rather than TV alone, an AI assistant helps you decide what is next, and a household shares one watchlist and watched history.',
+      'Simkl is strong on anime and can auto-track from browser extensions. This is a phone app with no extensions to install: anime is carried as ordinary TV and films in one library, discovery comes first, there is no advertising, and a household shares a single library.',
+    compare: { href: '/vs/simkl', label: 'Read the full Simkl comparison' },
+  },
+  {
+    name: 'Coming from Serializd',
+    move: 'There is no Serializd import. Imports read Letterboxd, IMDb, Trakt and TV Time exports, and a Serializd export is none of them, so a TV library starts fresh here. Mark the seasons you are mid-way through, usually a short list, and the rest fills in as you go.',
+    changes:
+      'Serializd is built around public TV reviews. Here notes go to friends, not strangers, films and TV sit in one library rather than TV alone, an AI assistant helps you decide what is next, and a household can see each other’s watchlists.',
     compare: { href: '/vs/serializd', label: 'Read the full Serializd comparison' },
   },
 ];

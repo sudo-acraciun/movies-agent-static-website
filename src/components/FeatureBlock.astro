@@ -110,15 +110,19 @@ const { feature, screenshot, flipped = false } = Astro.props;
 
   /* A quiet text link, deliberately not a second CTA: the section's job is
      still the app, this is a side door for the reader who wants the content
-     first. */
+     first. Gold, like the hub pages' links and the app's own links. */
   .more {
     margin: 18px 0 0;
     font-size: 0.95rem;
   }
 
   .more a {
-    color: var(--link);
+    color: var(--gold);
     text-underline-offset: 3px;
+  }
+
+  .more a:hover {
+    color: var(--text);
   }
 
   @media (min-width: 900px) {

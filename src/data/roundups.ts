@@ -115,11 +115,11 @@ export const ROUNDUPS: Roundup[] = [
         isUs: true,
         bestFor: 'couples who want to decide together and keep one shared library',
         blurb: [
-          'I Like Movies is a free movie and TV app for iPhone and Android built around a shared household. Two people (or everyone under one roof) share a single watchlist and a single watched history, so what one person adds, the other already sees, and a "compare taste" view shows where two people overlap and where they never will.',
+          'I Like Movies is a free movie and TV app for iPhone and Android built around a shared household. Two people (or everyone under one roof) can see each other’s watchlists and keep a shared list they both add to, so what one person adds, the other already sees, and a "compare taste" view shows where two people overlap and where they never will.',
           'It fits couples who want more than a one-off pick: the decision is made from a list you both build and keep, and the app is also a full tracker and an AI assistant for the nights you want a suggestion rather than a browse. It is the best fit here when you want the decision to stick, not just tonight.',
         ],
         pros: [
-          'One shared watchlist and watched history for the whole household, updated live',
+          "Each other's watchlists, a shared list you both add to, and a household chat",
           'A taste-comparison view built for finding common ground between two people',
           'Doubles as a full films-and-TV tracker and an AI assistant, so it earns its place after the decision is made',
           'Free, with no ads and no sponsored rows',
@@ -203,7 +203,7 @@ export const ROUNDUPS: Roundup[] = [
     table: [
       {
         feature: 'Shares one library between two people',
-        cells: ['Yes, household watchlist and history', 'No', 'No', 'No'],
+        cells: ['Yes, household watchlists and shared lists', 'No', 'No', 'No'],
       },
       {
         feature: 'Swipe-to-match',
@@ -227,7 +227,7 @@ export const ROUNDUPS: Roundup[] = [
       },
     ],
     verdict: [
-      'If the two of you want the decision to last past tonight, and you would use a shared watchlist and a record of what you have seen together, I Like Movies is the best fit because it is the only one built around a shared library rather than a single pick. If you want a fast, well-argued suggestion and nothing to file afterwards, TasteRay is excellent. If the swiping is the fun part, Matched; if you are on different phones or in a group, MatchWatch.',
+      'If the two of you want the decision to last past tonight, and you would use a shared list you both add to and each other’s watchlists, I Like Movies is the best fit because it is the only one built around a shared library rather than a single pick. If you want a fast, well-argued suggestion and nothing to file afterwards, TasteRay is excellent. If the swiping is the fun part, Matched; if you are on different phones or in a group, MatchWatch.',
       'None of them replaces the five-minute conversation, but each one shortens it, and the right choice depends on whether you want a tool for tonight or a habit for every night.',
     ],
     faqs: [
@@ -429,7 +429,7 @@ export const ROUNDUPS: Roundup[] = [
     slug: 'letterboxd-alternatives-android',
     title: 'Best Letterboxd alternatives for Android in 2026 | I Like Movies',
     metaDescription:
-      'The best Letterboxd alternatives for Android, compared honestly: TV alongside film, private notes, imports, and where Letterboxd itself is still the better choice.',
+      'The best Letterboxd alternatives for Android, compared honestly: TV alongside film, no public reviews, imports, and where Letterboxd itself is still the better choice.',
     h1: 'Best Letterboxd alternatives for Android in 2026 (we compared 5)',
     query: 'What are the best Letterboxd alternatives for Android?',
     updated: 'September 2026',
@@ -450,13 +450,13 @@ export const ROUNDUPS: Roundup[] = [
         isUs: true,
         bestFor: 'a private, Android-native alternative that also tracks TV and shares with a household',
         blurb: [
-          'I Like Movies is the closest fit if what you want is Letterboxd for Android, with TV as well as film, kept private, and shared with the people you live with. It tracks films and TV in one library down to the episode, your notes and ratings are private by default rather than public reviews, it shows per-country streaming, and it imports your Letterboxd .zip directly so a library built over years comes across.',
+          'I Like Movies is the closest fit if what you want is Letterboxd for Android, with TV as well as film, away from a public feed, and shared with the people you live with. It tracks films and TV in one library down to the episode, your notes and ratings go to friends rather than becoming public reviews, it shows per-country streaming, and it imports your Letterboxd .zip directly so a library built over years comes across.',
           'What it is not is a public film community. There is following and taste comparison between friends, not a town square of reviews to read.',
         ],
         pros: [
           'Imports your Letterboxd export directly',
           'Films and TV in one library, tracked by episode',
-          'Private notes instead of public reviews; free, no ads',
+          'Notes for friends instead of public reviews; free, no ads',
           'A shared household library for the people you live with',
         ],
         cons: [
@@ -546,7 +546,7 @@ export const ROUNDUPS: Roundup[] = [
       },
       {
         feature: 'Notes',
-        cells: ['Private by default', 'Mixed', 'Private', 'Private'],
+        cells: ['For friends or just you', 'Mixed', 'Private', 'Private'],
       },
       {
         feature: 'Shared household library',
@@ -616,13 +616,13 @@ export const ROUNDUPS: Roundup[] = [
         isUs: true,
         bestFor: 'one free, ad-free library of films and TV, shared with your household',
         blurb: [
-          'I Like Movies keeps films and TV in a single history down to the episode, with ratings, private notes and statistics, imports from Letterboxd and IMDb, and a library that lives on the server so it follows you to a new phone. A household shares one watchlist and one watched history, and the same app also handles discovery.',
+          'I Like Movies keeps films and TV in a single history down to the episode, with ratings, notes and statistics, imports from Letterboxd, IMDb, Trakt and TV Time, and a library that lives on the server so it follows you to a new phone. A household can see each other’s watchlists, and the same app also handles discovery.',
           'It does not scrobble automatically: you mark things watched yourself. For people who want a clean, free, shared record rather than a media-server integration, that is a fair trade.',
         ],
         pros: [
           'Films and TV in one library, tracked by episode',
-          'Ratings, private notes and statistics',
-          'Imports Letterboxd and IMDb; history lives on the server',
+          'Ratings, notes and statistics',
+          'Imports Letterboxd, IMDb, Trakt and TV Time; history lives on the server',
           'A shared household library; free, no ads',
         ],
         cons: [
@@ -1230,12 +1230,12 @@ export const ROUNDUPS: Roundup[] = [
         isUs: true,
         bestFor: 'deciding from your own taste, alone or as a household',
         blurb: [
-          'I Like Movies solves the decision two ways. Ask the assistant in plain language and it returns real titles you can stream now and have not already seen; or decide together from a shared household watchlist, with a taste-comparison view for finding the overlap. Its monthly discover collections are built from your own ratings, so the shortlist is always drawn from your taste.',
+          'I Like Movies solves the decision two ways. Ask the assistant in plain language and it returns real titles you can stream now and have not already seen; or decide together from the household’s watchlists, with a taste-comparison view for finding the overlap. Its monthly discover collections are built from your own ratings, so the shortlist is always drawn from your taste.',
           'It is a full app rather than a single-tap picker, which is the trade for it also keeping the record after you decide.',
         ],
         pros: [
           'Assistant that suggests from your taste and skips what you have seen',
-          'Shared household watchlist for deciding together',
+          'Household watchlists for deciding together',
           'Shows where each pick streams; free, no ads',
         ],
         cons: [
@@ -1387,12 +1387,12 @@ export const ROUNDUPS: Roundup[] = [
         isUs: true,
         bestFor: 'one free, ad-free library of films and TV, synced across devices and shared with your household',
         blurb: [
-          'I Like Movies keeps films and TV in a single history down to the episode, with ratings, private notes and statistics, imports from Letterboxd and IMDb, and a library that lives on the server so it is already there when you sign in on another iPhone or on Android. A household shares one watchlist and one watched history, and the same app also handles discovery and an AI assistant.',
+          'I Like Movies keeps films and TV in a single history down to the episode, with ratings, notes and statistics, imports from Letterboxd, IMDb, Trakt and TV Time, and a library that lives on the server so it is already there when you sign in on another iPhone or on Android. A household can see each other’s watchlists, and the same app also handles discovery and an AI assistant.',
           'It does not scrobble automatically: you mark things watched yourself. For people who want a clean, free, shared record rather than a media-server integration, that is a fair trade.',
         ],
         pros: [
           'Films and TV in one library, tracked by episode',
-          'Ratings, private notes and statistics',
+          'Ratings, notes and statistics',
           'Server-side library that syncs to any iPhone and to Android',
           'A shared household library; free, no ads',
         ],
@@ -1549,7 +1549,7 @@ export const ROUNDUPS: Roundup[] = [
         isUs: true,
         bestFor: 'a private tracker for film and TV, shared with your household',
         blurb: [
-          'I Like Movies is the closest fit if what you want is Letterboxd for iPhone with TV as well as film, kept private, and shared with the people you live with. It tracks films and TV in one library down to the episode, your notes and ratings are private by default rather than public reviews, it shows per-country streaming, and it imports your Letterboxd .zip directly so a library built over years comes across.',
+          'I Like Movies is the closest fit if what you want is Letterboxd for iPhone with TV as well as film, away from a public feed, and shared with the people you live with. It tracks films and TV in one library down to the episode, your notes and ratings go to friends rather than becoming public reviews, it shows per-country streaming, and it imports your Letterboxd .zip directly so a library built over years comes across.',
           'If public reviews and a reading community are why you use Letterboxd, that is the one thing this does not replace.',
         ],
         pros: [
@@ -1558,7 +1558,7 @@ export const ROUNDUPS: Roundup[] = [
           'Shared household library; free, no ads',
         ],
         cons: [
-          'No public review community; notes are private',
+          'No public review community; notes go to friends or stay private',
           'No web app; iPhone and Android only',
         ],
       },
@@ -1634,8 +1634,8 @@ export const ROUNDUPS: Roundup[] = [
         cells: ['Yes', 'Yes', 'TV only', 'Both, as a database'],
       },
       {
-        feature: 'Private by default',
-        cells: ['Yes', 'No, social feed', 'No, public reviews', 'Ratings are public'],
+        feature: 'Kept off the public web',
+        cells: ['Yes, friends only', 'No, social feed', 'No, public reviews', 'Ratings are public'],
       },
       {
         feature: 'Public review community',
@@ -1673,13 +1673,13 @@ export const ROUNDUPS: Roundup[] = [
       {
         q: 'Which is the most private Letterboxd alternative on iPhone?',
         a: [
-          'I Like Movies keeps ratings and notes private by default, and Cronica is a personal tracker synced through your own iCloud. Matinee and Serializd are built around a public feed and public reviews, so they are the opposite of private by design.',
+          'I Like Movies has no public reviews or profiles: ratings and notes go only to the friends you accept, any note can stay just for you, and activity can be switched to Only me. Cronica is a personal tracker synced through your own iCloud. Matinee and Serializd are built around a public feed and public reviews, so they are the opposite of private by design.',
         ],
       },
       {
         q: 'Should I just stay on Letterboxd?',
         a: [
-          'If public film reviews and the community around them are why you track films, yes, stay on Letterboxd and add one of these alongside it for TV. If you want TV in the same library, private notes, or streaming and recommendations, switching or supplementing makes sense.',
+          'If public film reviews and the community around them are why you track films, yes, stay on Letterboxd and add one of these alongside it for TV. If you want TV in the same library, notes without a public audience, or streaming and recommendations, switching or supplementing makes sense.',
         ],
       },
     ],

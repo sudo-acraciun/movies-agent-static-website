@@ -6,9 +6,10 @@ A free movie and TV tracker that helps you decide what to watch. It keeps a
 record of every film and series you have seen, with ratings, notes and episode
 progress, then uses that record to help you pick the next one: monthly
 collections built from your own ratings, an assistant you can ask in plain
-language, and streaming availability resolved for your country. People who
+language, and streaming availability resolved for your country. A Streaming
+tab browses the best films and series on the services you choose. People who
 live together can share one library; friends can follow what each other is
-watching. Letterboxd and IMDb exports import directly.
+watching. Letterboxd, IMDb, Trakt and TV Time exports import directly.
 
 Platforms
 iPhone on the App Store (app id 6805131346).

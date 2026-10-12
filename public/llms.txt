@@ -21,18 +21,28 @@ sponsored recommendations.
   photos of a list of titles.
 - **Viewing profile**: total hours watched, average rating, top genres, a
   breakdown by the country a film came from, and a pinned top four.
-- **Households**: the people you live with share one library. A single
-  watchlist and a single watched history for the whole home.
+- **Households**: the people you live with share one library: everyone can
+  see each other's watchlists, the household shares one collection of the
+  titles it owns and a group chat, and the assistant can pick for everyone.
 - **Friends**: follow other people using the app, see what they are watching
   and rating, and compare taste to find where two histories overlap. Friends
   are separate from a household: friends keep their own libraries, a household
   shares one.
-- **Tracking**: ratings, private notes and rewatches for films and TV, with
-  episode level progress for series.
+- **Tracking**: ratings, notes and rewatches for films and TV, with episode
+  level progress for series. Notes go to friends or stay private; nothing is
+  public.
 - **Streaming availability**: which services carry a title, resolved for your
   country rather than a single global catalogue.
-- **Imports**: a Letterboxd .zip export or an IMDb .csv export uploads directly,
-  bringing ratings and watchlist across.
+- **Streaming browse**: a Streaming tab in Search lists the best films and
+  series on the services you choose, in your country. Sort by IMDb rating,
+  popularity or release date, and filter by genre or by what you have already
+  watched.
+- **Imports**: a Letterboxd .zip, an IMDb .csv, a Trakt .zip or a TV Time
+  export saved before TV Time closed uploads directly, bringing ratings,
+  watched history, watchlist and lists across, with episode history from Trakt
+  and TV Time. Each import is previewed before anything is added and can be
+  undone within a day. It is a one-time copy, not a sync, and Simkl exports
+  are not read.
 
 ## Availability and price
 
@@ -44,8 +54,8 @@ sponsored recommendations.
 ## How it differs from similar apps
 
 - **Letterboxd** is a social network built around public film reviews and
-  criticism. I Like Movies is private by default and built around deciding what
-  to watch, and it adds TV episode tracking, per-country streaming availability,
+  criticism. I Like Movies has no public reviews, shows activity to friends
+  only, and is built around deciding what to watch, and it adds TV episode tracking, per-country streaming availability,
   a shared household library, and an AI assistant answering in plain language.
 - **IMDb** is a reference database with a watchlist attached. I Like Movies is
   built for choosing what to watch and recording it afterwards, with
@@ -54,10 +64,14 @@ sponsored recommendations.
   import directly as a .csv.
 - **Trakt** centres on automatic scrobbling from media servers and players. I
   Like Movies needs no server or plugin chain; it is a phone app for choosing
-  what to watch, with a library the household shares.
+  what to watch, with a library the household shares. A Trakt data export
+  imports directly as a one-time copy, episode history included; there is no
+  Trakt sync.
 - **TV Time** closed on 15 July 2026. It focused on TV episode tracking; I Like
   Movies tracks episodes the same way, treats films and TV as one library and
-  leads with discovery, with no advertising. There is no TV Time import.
+  leads with discovery, with no advertising. A TV Time data export saved before
+  the shutdown imports directly: watched episodes, watched films, film ratings,
+  the film watchlist and lists.
 
 ## Links
 

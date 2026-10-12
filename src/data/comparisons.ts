@@ -62,10 +62,10 @@ export const DISCLOSURE =
 // worst outcome a comparison page can produce: a disappointed install.
 export const NOT_DO: string[] = [
   'There is no automatic tracking. Nothing scrobbles from a media server, a browser or a streaming app; you mark things watched yourself.',
-  'There are no public reviews. Notes are private, and there is no feed of strangers to read.',
+  'There are no public reviews. Notes go to your friends or stay just for you, and there is no feed of strangers to read.',
   'There is no web app. The library lives on the server, but you reach it from the phone app.',
   'There is no offline mode. The app needs an internet connection.',
-  'Imports read a Letterboxd .zip or an IMDb .csv only. There is no importer for Trakt, Simkl or TV Time exports.',
+  'Imports read four kinds of export: a Letterboxd .zip, an IMDb .csv, a Trakt .zip and a TV Time export saved before that service closed. There is no importer for Simkl exports, and an import is a one-time copy, not a sync.',
 ];
 
 export const COMPARISONS: Comparison[] = [
@@ -74,7 +74,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Letterboxd',
     title: 'I Like Movies vs Letterboxd, compared by the developer',
     metaDescription:
-      'I Like Movies as a Letterboxd alternative for iPhone and Android: TV episode tracking, private notes vs public reviews, households, imports, and where Letterboxd is still better.',
+      'I Like Movies as a Letterboxd alternative for iPhone and Android: TV episode tracking, notes for friends vs public reviews, households, imports, and where Letterboxd is still better.',
     h1: 'I Like Movies vs Letterboxd',
     intro: [
       'Letterboxd is the social network for film lovers. It is where film culture happens online: reviews, lists, diaries, and the pleasure of reading what someone sharper than you thought of the film you just finished.',
@@ -87,7 +87,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'Reviews and film writing',
-        body: 'Writing and reading reviews is the product on Letterboxd, and the culture around it is genuinely good. Here, notes are private by default and there is no public review at all.',
+        body: 'Writing and reading reviews is the product on Letterboxd, and the culture around it is genuinely good. Here, notes go to your friends or stay just for you, and there is no public review at all.',
       },
       {
         title: 'A web app',
@@ -104,12 +104,12 @@ export const COMPARISONS: Comparison[] = [
         body: 'Letterboxd tracks films. I Like Movies tracks films and TV series in one library, down to individual episodes, and can tell a series that has ended from one between seasons.',
       },
       {
-        title: 'Private by default',
-        body: 'Ratings and notes are yours. Nothing you write is published, and there is no audience to perform for. Some people find that freeing; some people are on Letterboxd precisely for the audience.',
+        title: 'Friends, not strangers',
+        body: 'Ratings and notes reach the friends you follow and nobody else, and any note can stay just for you. Nothing you write is published, and there is no audience to perform for. Some people find that freeing; some people are on Letterboxd precisely for the audience.',
       },
       {
         title: 'A household shares one library',
-        body: 'The people you live with can share a single watchlist and watched history, so a film added on one phone is on the other before you sit down.',
+        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat.',
       },
       {
         title: 'An AI assistant you can ask in plain language',
@@ -123,12 +123,12 @@ export const COMPARISONS: Comparison[] = [
     table: [
       { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iOS, Android, web' },
       { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'No, films only' },
-      { feature: 'Public reviews', ilm: 'No, notes are private', other: 'Yes, the core of the app' },
+      { feature: 'Public reviews', ilm: 'No, notes go to friends or stay private', other: 'Yes, the core of the app' },
       { feature: 'Community and lists culture', ilm: 'Friends and taste comparison', other: 'The largest film community online' },
       { feature: 'Shared household library', ilm: 'Yes', other: 'No' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes, on film pages' },
-      { feature: 'Import', ilm: 'Letterboxd .zip, IMDb .csv', other: 'Letterboxd is the source here' },
+      { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Letterboxd is the source here' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads; Pro and Patron tiers' },
     ],
     migration: [
@@ -137,7 +137,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If film reviews and the community around them are why you track films, stay on Letterboxd. It is the best at that, and this page will not pretend otherwise.',
-      'If you want films and TV in one private library, a watchlist your household shares, and help deciding what to watch tonight, that is the problem I Like Movies is built for, and the Letterboxd import means you do not start from zero.',
+      'If you want films and TV in one private library, watchlists your household can see, and help deciding what to watch tonight, that is the problem I Like Movies is built for, and the Letterboxd import means you do not start from zero.',
     ],
     faqs: [
       {
@@ -198,7 +198,7 @@ export const COMPARISONS: Comparison[] = [
     differences: [
       {
         title: 'Nothing to set up',
-        body: 'No media server, no connections, no player integrations. Install the app, import from Letterboxd or IMDb if you have a history there, and it works.',
+        body: 'No media server, no connections, no player integrations. Install the app, upload your Trakt export (or a Letterboxd, IMDb or TV Time one) if you have a history to bring, and it works.',
       },
       {
         title: 'Built for deciding, not just recording',
@@ -206,7 +206,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'A household shares one library',
-        body: 'One watchlist and one watched history for the people you live with. Trakt accounts are personal; lists can be shared, but there is no shared household library.',
+        body: "The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. Trakt accounts are personal; lists can be shared, but there is no household.",
       },
       {
         title: 'No ads at any tier',
@@ -221,11 +221,12 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal accounts' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes' },
       { feature: 'Third-party app ecosystem', ilm: 'No', other: 'Yes, a large one' },
-      { feature: 'Import', ilm: 'Letterboxd .zip, IMDb .csv', other: 'Several importers' },
+      { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Several importers' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads; VIP subscription' },
     ],
     migration: [
-      'There is no Trakt import, and it is better you know that before installing. Imports read a Letterboxd .zip or an IMDb .csv, and a Trakt export is neither, so a Trakt library starts fresh here and rebuilds as you use the app. Marking a season watched takes a tap.',
+      'Moving is direct: export your data from Trakt (Settings, then Data, then Export now), which downloads a .zip file, and upload it in I Like Movies under Imports. Ratings, watched films, the episodes you have watched, your watchlist and your custom lists come across together, and you see what was found before anything is added.',
+      'Season and episode ratings are not imported, and a film or episode watched more than once counts once, at its latest watch. It is a one-time copy rather than a sync: nothing is sent back to Trakt, your account there is untouched, and the whole import can be undone within a day.',
     ],
     verdict: [
       'If your watching flows through Plex, Kodi or anything that scrobbles, stay on Trakt. Manual tracking after years of automatic tracking feels like a downgrade because it is one.',
@@ -235,7 +236,8 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Can I import my Trakt history into I Like Movies?',
         a: [
-          'No. Imports read a Letterboxd .zip or an IMDb .csv export, and a Trakt export is a different format. A Trakt library starts fresh here. If your ratings also live on Letterboxd or IMDb, importing from there recovers most of it.',
+          'Yes. Export your data from Trakt (Settings, then Data, then Export now), which downloads a .zip file, then upload that file in the app under Imports. Ratings, watched films, your episode history, your watchlist and your custom lists are read from the export and matched against the film and TV database.',
+          'Season and episode ratings are not imported, and the import is a one-time copy: it does not keep syncing with Trakt afterwards.',
         ],
       },
       {
@@ -284,7 +286,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'Import breadth',
-        body: 'Simkl imports from a long list of other services. I Like Movies reads a Letterboxd .zip or an IMDb .csv and nothing else.',
+        body: 'Simkl imports from a long list of other services. I Like Movies reads exports from Letterboxd, IMDb, Trakt and TV Time, and nothing else.',
       },
     ],
     differences: [
@@ -294,11 +296,11 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'A household shares one library',
-        body: 'One watchlist and one watched history for the people you live with, so nobody has to remember whose list the film is on.',
+        body: "The people you live with can see each other’s watchlists and share one collection of what you own, so nobody has to remember whose list the film is on.",
       },
       {
-        title: 'Private notes, no public profile pressure',
-        body: 'Ratings and notes are private by default. Friends you follow see activity, strangers see nothing.',
+        title: 'Friends, not strangers',
+        body: 'Ratings and notes go to the friends you follow, and any note can stay just for you. Strangers see nothing.',
       },
       {
         title: 'No ads',
@@ -313,11 +315,11 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'Limited suggestions' },
       { feature: 'Shared household library', ilm: 'Yes', other: 'No' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes' },
-      { feature: 'Import', ilm: 'Letterboxd .zip, IMDb .csv', other: 'Many sources' },
+      { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Many sources' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads; premium tiers' },
     ],
     migration: [
-      'There is no Simkl import. Imports read a Letterboxd .zip or an IMDb .csv, so a Simkl library starts fresh here. If your film ratings also live on Letterboxd or IMDb, importing from there carries those across; TV progress is set as you go, and marking a season watched takes a tap.',
+      'There is no Simkl import. Imports read Letterboxd, IMDb, Trakt and TV Time exports, so a Simkl library starts fresh here. If your history also lives on Letterboxd, IMDb or Trakt, importing from there carries it across; otherwise TV progress is set as you go, and marking a season watched takes a tap.',
     ],
     verdict: [
       'If anime is a big part of what you watch, or you want your streaming automatically logged from a browser, Simkl is the better fit and you should use it.',
@@ -340,7 +342,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Can I import my Simkl history into I Like Movies?',
         a: [
-          'No. Imports read a Letterboxd .zip or an IMDb .csv export only. A Simkl library starts fresh here, though film ratings that also exist on Letterboxd or IMDb can come across from those exports.',
+          'No. Imports read Letterboxd, IMDb, Trakt and TV Time exports only. A Simkl library starts fresh here, though history that also exists on Letterboxd, IMDb or Trakt can come across from those exports.',
         ],
       },
       {
@@ -399,7 +401,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'A household shares one library',
-        body: 'The people you live with can share a single watchlist and watched history, so a film added on one phone is on the other before you sit down. An IMDb watchlist belongs to one account.',
+        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. An IMDb watchlist belongs to one account.',
       },
       {
         title: 'Recommendations from your own taste',
@@ -422,7 +424,7 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Cast, crew and trivia depth', ilm: 'Enough to choose a film', other: 'The deepest there is' },
       { feature: 'Shared household library', ilm: 'Yes', other: 'No' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No, popularity-based' },
-      { feature: 'Export and import', ilm: 'Imports IMDb .csv and Letterboxd .zip', other: 'Exports ratings and lists as .csv' },
+      { feature: 'Export and import', ilm: 'Imports IMDb .csv, plus Letterboxd, Trakt and TV Time exports', other: 'Exports ratings and lists as .csv' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads' },
     ],
     migration: [
@@ -474,7 +476,7 @@ export const COMPARISONS: Comparison[] = [
     betterThere: [
       {
         title: 'TV reviews and the community',
-        body: 'Reviews are the product on Serializd: per season, per show, in public, with a community that reads and responds. I Like Movies has private notes and no public reviews at all. If you want your take on a finale read by strangers who care, Serializd is the place built for that.',
+        body: 'Reviews are the product on Serializd: per season, per show, in public, with a community that reads and responds. I Like Movies has notes for your friends, or just for you, and no public reviews at all. If you want your take on a finale read by strangers who care, Serializd is the place built for that.',
       },
       {
         title: 'TV-first culture',
@@ -491,12 +493,12 @@ export const COMPARISONS: Comparison[] = [
         body: 'Serializd tracks television. I Like Movies keeps films and TV series in a single library with one watched history and one watchlist, tracked to the episode.',
       },
       {
-        title: 'Private by default',
-        body: 'Ratings and notes are yours alone; there is no audience and nothing is published. On Serializd, writing for the room is the point.',
+        title: 'Friends, not strangers',
+        body: 'Ratings and notes reach your friends and nobody else, and any note can stay just for you; nothing is published. On Serializd, writing for the room is the point.',
       },
       {
         title: 'A household shares one library',
-        body: 'The people you live with share one watchlist and one watched history, so the series either of you started is on the same shelf. Serializd accounts are individual.',
+        body: "The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. Serializd accounts are individual.",
       },
       {
         title: 'Deciding, not just logging',
@@ -506,7 +508,7 @@ export const COMPARISONS: Comparison[] = [
     table: [
       { feature: 'Films', ilm: 'Yes, same library as TV', other: 'No, TV only' },
       { feature: 'TV episode progress', ilm: 'Yes, per episode', other: 'Logging by season and show' },
-      { feature: 'Public reviews', ilm: 'No, notes are private', other: 'Yes, the core of the app' },
+      { feature: 'Public reviews', ilm: 'No, notes go to friends or stay private', other: 'Yes, the core of the app' },
       { feature: 'Community', ilm: 'Friends and taste comparison', other: 'The TV-review community' },
       { feature: 'Platforms', ilm: 'iPhone, Android', other: 'Web, iOS, Android' },
       { feature: 'Shared household library', ilm: 'Yes', other: 'No' },
@@ -515,18 +517,18 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free to use' },
     ],
     migration: [
-      'There is no import path: I Like Movies reads a Letterboxd .zip or an IMDb .csv, and a Serializd export is neither. A TV library starts fresh here.',
+      'There is no Serializd import: I Like Movies reads Letterboxd, IMDb, Trakt and TV Time exports, and a Serializd export is none of them. A TV library starts fresh here, unless your shows are also on Trakt or in a TV Time export you saved.',
       'Rebuilding is smaller than it sounds: mark the current season of the shows you are actually mid-way through, which for most people is under ten, and let the back catalogue fill in as rewatches touch it.',
     ],
     verdict: [
-      'If writing and reading TV reviews is why you log shows, use Serializd. It is the best home that culture has, and a private-notes app is not a substitute for it.',
-      'If you want your TV progress next to your films, shared with your household, private, and pointed at what to watch next, that is what I Like Movies is built for, and the two philosophies are different enough that choosing is easy.',
+      'If writing and reading TV reviews is why you log shows, use Serializd. It is the best home that culture has, and an app whose notes stay among friends is not a substitute for it.',
+      'If you want your TV progress next to your films, shared with your household, never with strangers, and pointed at what to watch next, that is what I Like Movies is built for, and the two philosophies are different enough that choosing is easy.',
     ],
     faqs: [
       {
         q: 'Can I import my Serializd history into I Like Movies?',
         a: [
-          'No. Imports read a Letterboxd .zip or an IMDb .csv export only, and a Serializd export is neither. Series progress is set as you go, and marking a whole season watched takes a tap.',
+          'No. Imports read Letterboxd, IMDb, Trakt and TV Time exports only, and a Serializd export is none of them. Series progress is set as you go, and marking a whole season watched takes a tap.',
         ],
       },
       {
@@ -558,7 +560,7 @@ export const COMPARISONS: Comparison[] = [
     h1: 'I Like Movies vs Maimovie',
     intro: [
       'Maimovie is an AI finder for films and TV. You describe what you are in the mood for, and its AI, built on a large set of mood and theme prompts, comes back with titles and where they stream. It is discovery first, and good at it.',
-      'I Like Movies does discovery too, but around a library you keep: a watched history for films and TV together, tracked to the episode, and shared with the people you live with. The overlap is the recommendation; the difference is everything that happens after you pick.',
+      'I Like Movies does discovery too, but around a library you keep: a watched history for films and TV together, tracked to the episode, with a household that can see each other’s watchlists. The overlap is the recommendation; the difference is everything that happens after you pick.',
     ],
     betterThere: [
       {
@@ -581,11 +583,11 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'A household shares one library',
-        body: 'One watchlist and one watched history for the people you live with, so a film added on one phone is on the other before you sit down. Maimovie is a personal finder.',
+        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. Maimovie is a personal finder.',
       },
       {
         title: 'Bring your history with you',
-        body: 'A Letterboxd .zip or an IMDb .csv imports your ratings and watchlist directly, so a library built over years is not left behind.',
+        body: 'A Letterboxd, IMDb, Trakt or TV Time export imports your ratings and watchlist directly, so a library built over years is not left behind.',
       },
       {
         title: 'No ads',
@@ -600,12 +602,12 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'AI recommendations', ilm: 'From your own ratings and history', other: 'Yes, prompt and mood based' },
       { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes, across many providers' },
-      { feature: 'Import', ilm: 'Letterboxd .zip, IMDb .csv', other: 'Not a library to import' },
+      { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Not a library to import' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free to use' },
     ],
     migration: [
       'There is no Maimovie import, and usually little to move: Maimovie is a finder rather than a library, so there is normally no watched history or ratings export to bring across.',
-      'If your ratings live on Letterboxd or IMDb, import those and the library fills in at once; otherwise it builds up as you rate what you watch.',
+      'If your ratings live on Letterboxd, IMDb or Trakt, or in a TV Time export you saved, import those and the library fills in at once; otherwise it builds up as you rate what you watch.',
     ],
     verdict: [
       'If you want a fast AI finder on iPhone or Android and do not need to keep a library, Maimovie does that well and this page will not pretend otherwise.',
@@ -621,7 +623,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Can I import my Maimovie history into I Like Movies?',
         a: [
-          'There is usually nothing to import: Maimovie is a finder rather than a tracker, so it does not keep a watched history or ratings to export, and there is no Maimovie import path. If your ratings live on Letterboxd or IMDb, import those instead.',
+          'There is usually nothing to import: Maimovie is a finder rather than a tracker, so it does not keep a watched history or ratings to export, and there is no Maimovie import path. If your ratings live on Letterboxd, IMDb or Trakt, or in a TV Time export you saved, import those instead.',
         ],
       },
       {
@@ -656,7 +658,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'Wider imports',
-        body: 'Moviebase can pull a history in from TV Time, Trakt, Letterboxd and IMDb directly, and from SeriesGuide, Showly and Hobi through Trakt. I Like Movies reads a Letterboxd .zip or an IMDb .csv and nothing else, so a library kept anywhere but those two starts fresh here.',
+        body: 'Moviebase can pull a history in from TV Time, Trakt, Letterboxd and IMDb directly, and from SeriesGuide, Showly and Hobi through Trakt. I Like Movies reads an export file from the same four services and nothing else, as a one-time copy, so a library kept anywhere but those four starts fresh here.',
       },
       {
         title: 'Deeper statistics',
@@ -666,7 +668,7 @@ export const COMPARISONS: Comparison[] = [
     differences: [
       {
         title: 'A household shares one library',
-        body: 'The people you live with share a single watchlist and watched history, so a film added on one phone is on the other before you sit down. A Moviebase account is personal, backed up to a personal Trakt account.',
+        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. A Moviebase account is personal, backed up to a personal Trakt account.',
       },
       {
         title: 'Recommendations from your own ratings',
@@ -689,11 +691,11 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal account' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'Discovery via TMDB and Trakt' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes' },
-      { feature: 'Import', ilm: 'Letterboxd .zip, IMDb .csv', other: 'TV Time, Trakt, Letterboxd, IMDb' },
+      { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'TV Time, Trakt, Letterboxd, IMDb' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads; premium upgrade' },
     ],
     migration: [
-      'There is no Moviebase import. Imports read a Letterboxd .zip or an IMDb .csv, and a Moviebase library, even one backed up to Trakt, is neither, so it starts fresh here. If your ratings also live on Letterboxd or IMDb, importing from there carries them across; TV progress is set as you go, and marking a season watched takes a tap.',
+      'There is no direct Moviebase import, but a Moviebase library synced to Trakt can come across through Trakt: export your data there (Settings, then Data, then Export now) and upload that .zip under Imports. Ratings, watched films, your episode history, your watchlist and your custom lists come with it. Without Trakt sync, ratings that also live on Letterboxd or IMDb come across from those exports; otherwise TV progress is set as you go, and marking a season watched takes a tap.',
     ],
     verdict: [
       'If you want your history synced through Trakt across other apps, imports from wherever you kept it, or the deeper statistics of a mature product, Moviebase is the better fit and this page will not pretend otherwise.',
@@ -709,7 +711,8 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Can I import my Moviebase history into I Like Movies?',
         a: [
-          'No. Imports read a Letterboxd .zip or an IMDb .csv export only, and a Moviebase library is neither, even when it is backed up to Trakt. If your ratings also live on Letterboxd or IMDb, importing from there recovers most of it; otherwise the library builds up as you use the app.',
+          'Not directly, but a Moviebase library synced to Trakt can come across through a Trakt export.',
+          'Imports read Letterboxd, IMDb, Trakt and TV Time exports, so the route is through Trakt: export your data there (Settings, then Data, then Export now) and upload that .zip in the app under Imports. Ratings, watched films, your episode history, your watchlist and your custom lists come with it. Without Trakt sync, ratings that also live on Letterboxd or IMDb can come from those exports; otherwise the library builds up as you use the app.',
         ],
       },
       {
@@ -772,11 +775,11 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'A household shares one library',
-        body: 'The people you live with share a single watchlist and watched history, so a film added on one phone is already there on the other before you sit down. A JustWatch watchlist belongs to one personal account.',
+        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. A JustWatch watchlist belongs to one personal account.',
       },
       {
-        title: 'Private by default, friends not strangers',
-        body: 'Your ratings and notes are private, there are no public reviews, and you can follow friends to compare taste without a feed of strangers. JustWatch surfaces outside ratings from IMDb, and Rotten Tomatoes on the web, as decision signals, but it is not a place you rate or review.',
+        title: 'Friends, not strangers',
+        body: 'Your ratings and notes reach the friends you follow and nobody else, there are no public reviews, and you can compare taste without a feed of strangers. JustWatch surfaces outside ratings from IMDb, and Rotten Tomatoes on the web, as decision signals, but it is not a place you rate or review.',
       },
       {
         title: 'Recommendations from your own ratings',
@@ -788,20 +791,20 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads; optional Pro removes ads' },
       { feature: 'Watched history', ilm: 'Yes, films and TV', other: 'No, records intent not history' },
       { feature: 'Per-episode tracking', ilm: 'Yes', other: 'No' },
-      { feature: 'Ratings and notes', ilm: 'Yes, private', other: 'No (shows external ratings)' },
+      { feature: 'Ratings and notes', ilm: 'Yes, for friends or just you', other: 'No (shows external ratings)' },
       { feature: 'Household sharing', ilm: 'Yes, one shared library', other: 'No, personal watchlist' },
       { feature: 'Streaming availability', ilm: 'Per country, on every title', other: 'Core product, thousands of providers, 100+ countries' },
       { feature: 'Prices and deals', ilm: 'No', other: 'Yes, rent/buy prices and daily Price Drops' },
       { feature: 'AI recommendations', ilm: 'Yes, from your ratings, plus an assistant', other: 'No (What’s Hot by service and popularity)' },
-      { feature: 'Imports', ilm: 'Letterboxd .zip, IMDb .csv', other: 'Not applicable, no library to import' },
+      { feature: 'Imports', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Not applicable, no library to import' },
     ],
     migration: [
       'There is nothing to move across. JustWatch keeps a list of titles you mean to watch, not a history of what you have seen or how you rated it, so there is no export to carry over. Your watched library starts fresh in I Like Movies.',
-      'If your history happens to live on Letterboxd or IMDb, that is the part you can bring in, a Letterboxd .zip or an IMDb .csv, and nothing else. Anything that is only on JustWatch you would add here as you go.',
+      'If your history happens to live on Letterboxd, IMDb or Trakt, or in a TV Time export you saved, that is the part you can bring in, from that service’s export file, and nothing else. Anything that is only on JustWatch you would add here as you go.',
     ],
     verdict: [
       'If the question you keep asking is where can I watch this tonight, JustWatch is the better tool and this page will not pretend otherwise. It reaches the web and the TV in your living room, not just your phone, it covers more providers in more countries than any tracker’s built-in availability line, and it tells you when a title lands on a service you have or drops in price. As a where-to-watch finder it is hard to beat.',
-      'I Like Movies is for the other half of the habit, remembering what you watched and what you thought of it. Films and TV in one library, tracked per episode, private by default, shared with the people you live with, with monthly recommendations rebuilt from your own ratings and an assistant you can ask in plain language. The two are not really rivals, plenty of people keep a finder and a tracker side by side. It is on iPhone and Android.',
+      'I Like Movies is for the other half of the habit, remembering what you watched and what you thought of it. Films and TV in one library, tracked per episode, seen by friends rather than strangers, shared with the people you live with, with monthly recommendations rebuilt from your own ratings and an assistant you can ask in plain language. The two are not really rivals, plenty of people keep a finder and a tracker side by side. It is on iPhone and Android.',
     ],
     faqs: [
       {
@@ -825,7 +828,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Can I import my JustWatch list?',
         a: [
-          'No. JustWatch has no watched-history export, and I Like Movies imports only a Letterboxd .zip or an IMDb .csv. Your library starts fresh here, and you add titles as you go.',
+          'No. JustWatch has no watched-history export, and I Like Movies imports only Letterboxd, IMDb, Trakt and TV Time exports. Your library starts fresh here, and you add titles as you go.',
         ],
       },
       {
@@ -847,7 +850,7 @@ export const COMPARISONS: Comparison[] = [
     competitor: 'Matinee',
     title: 'I Like Movies vs Matinee, compared by the developer',
     metaDescription:
-      'Matinee alternative on iPhone and Android: films and TV in one private library, a household that shares one watchlist, recommendations built from your own taste, no ads.',
+      'Matinee alternative on iPhone and Android: films and TV in one private library, a household that sees every watchlist, recommendations built from your own taste, no ads.',
     h1: 'I Like Movies vs Matinee',
     intro: [
       'Matinee is a movie and TV tracker for iPhone and Android, with a film diary, half-star ratings, a social feed of what your friends are watching, and streaming availability across more than 30 services. Its headline is discovery: a natural-language search, an assistant you can ask for picks, and a daily suggestion, with an optional Pro tier that unlocks the smart search and removes the ads. It does that well.',
@@ -874,7 +877,7 @@ export const COMPARISONS: Comparison[] = [
     differences: [
       {
         title: 'A household shares one library',
-        body: 'The people you live with share a single watchlist and watched history, so a film added on one phone is on the other before you sit down. A Matinee account is personal, and each person keeps their own diary.',
+        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. A Matinee account is personal, and each person keeps their own diary.',
       },
       {
         title: 'Recommendations from your own taste',
@@ -892,21 +895,21 @@ export const COMPARISONS: Comparison[] = [
     table: [
       { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iOS and Android, also iPad, Mac, Apple Vision' },
       { feature: 'Films and TV', ilm: 'One library, tracked per episode', other: 'Both, tracked per episode' },
-      { feature: 'Household shared library', ilm: 'Yes, one watchlist and history', other: 'No, a personal diary' },
-      { feature: 'Privacy', ilm: 'Private by default, no public reviews', other: 'Social feed, public reviews' },
+      { feature: 'Household shared library', ilm: 'Yes', other: 'No, a personal diary' },
+      { feature: 'Privacy', ilm: 'Friends only, no public reviews', other: 'Social feed, public reviews' },
       { feature: 'Recommendations', ilm: 'Monthly Discover from your ratings, plus an assistant you ask', other: 'AI recommendations, blends your taste with friends' },
       { feature: 'Streaming availability', ilm: 'Per country, on every title', other: '30+ services, filter by your subscriptions' },
-      { feature: 'Ratings', ilm: 'Private ratings and notes', other: 'Half-star public ratings' },
-      { feature: 'Imports', ilm: 'Letterboxd .zip or IMDb .csv', other: 'None listed' },
+      { feature: 'Ratings', ilm: 'Ratings and notes for friends, not the public', other: 'Half-star public ratings' },
+      { feature: 'Imports', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'None listed' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads, optional Pro subscription' },
     ],
     migration: [
-      'Matinee keeps your diary inside its own account, and I Like Movies imports only a Letterboxd .zip or an IMDb .csv, so there is no direct Matinee import. Your Matinee history would start fresh here.',
-      'If you also log films on Letterboxd, or keep a list on IMDb, export that file and bring it in, and your ratings and watched marks land in one place. Otherwise you rebuild by adding titles as you go, which is quick once your household is sharing a single watchlist.',
+      'Matinee keeps your diary inside its own account, and I Like Movies imports only Letterboxd, IMDb, Trakt and TV Time exports, so there is no direct Matinee import. Your Matinee history would start fresh here.',
+      'If you also log films on Letterboxd or Trakt, keep a list on IMDb, or have a TV Time export from before it closed, bring that file in, and your ratings and watched marks land in one place. Otherwise you rebuild by adding titles as you go, which is quick when your household can see each other’s watchlists.',
     ],
     verdict: [
       'If your priority is a social feed and an assistant that finds things to watch, or a tracker across the Apple ecosystem, Matinee is the better fit and this page will not pretend otherwise. It is live, actively updated, and it has put real work into discovery and streaming availability.',
-      'If you want the people you live with to share one watchlist and one history, want your ratings kept private, and want recommendations built from your own taste with no ads and nothing to upgrade, I Like Movies is built for that. Both track films and TV to the episode, so the real choice is who the library belongs to, and whether your film life is public or private.',
+      'If you want the people you live with to see each other’s watchlists, want your ratings seen by friends rather than the public, and want recommendations built from your own taste with no ads and nothing to upgrade, I Like Movies is built for that. Both track films and TV to the episode, so the real choice is who the library belongs to, and whether your film life is public or private.',
     ],
     faqs: [
       {
@@ -930,13 +933,13 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Can I import my Matinee history into I Like Movies?',
         a: [
-          'Not directly. I Like Movies imports a Letterboxd .zip or an IMDb .csv only, so a Matinee library starts fresh here. If you also keep a Letterboxd or IMDb log, export that file and bring it in.',
+          'Not directly. I Like Movies imports Letterboxd, IMDb, Trakt and TV Time exports only, so a Matinee library starts fresh here. If you also keep a log on Letterboxd, IMDb or Trakt, export that file and bring it in.',
         ],
       },
       {
         q: 'Which should I choose?',
         a: [
-          'Pick Matinee if you want a public social feed and a strong finder, or a tracker across the Apple ecosystem. Pick I Like Movies if you want a household to share one watchlist and history, want your ratings kept private, and want no ads. Both track films and TV to the episode.',
+          'Pick Matinee if you want a public social feed and a strong finder, or a tracker across the Apple ecosystem. Pick I Like Movies if you want a household that sees each other’s watchlists, want your ratings seen by friends rather than the public, and want no ads. Both track films and TV to the episode.',
         ],
       },
     ],
@@ -969,7 +972,7 @@ export const COMPARISONS: Comparison[] = [
     differences: [
       {
         title: 'A household shares one library',
-        body: 'The people you live with share a single watchlist and watched history, so a film added on one phone is on the other before you sit down. Cronica is a personal tracker synced to your own iCloud, one library for one person.',
+        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. Cronica is a personal tracker synced to your own iCloud, one library for one person.',
       },
       {
         title: 'Recommendations and an AI assistant',
@@ -981,7 +984,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'Imports your existing library',
-        body: 'A Letterboxd .zip or an IMDb .csv imports your ratings and watchlist directly, so years of history come across. Cronica builds up from search rather than importing those files.',
+        body: 'A Letterboxd, IMDb, Trakt or TV Time export imports your ratings and watchlist directly, so years of history come across. Cronica builds up from search rather than importing those files.',
       },
     ],
     table: [
@@ -991,11 +994,11 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal via iCloud' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes, via JustWatch' },
-      { feature: 'Import', ilm: 'Letterboxd .zip, IMDb .csv', other: 'None; builds from search' },
+      { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'None; builds from search' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free, open source' },
     ],
     migration: [
-      'There is no Cronica import. Cronica keeps your library in your own iCloud, and I Like Movies reads a Letterboxd .zip or an IMDb .csv, so a Cronica library starts fresh here. If your ratings also live on Letterboxd or IMDb, importing from there recovers most of it; otherwise progress is set as you go, and marking a season watched takes a tap.',
+      'There is no Cronica import. Cronica keeps your library in your own iCloud, and I Like Movies reads Letterboxd, IMDb, Trakt and TV Time exports, so a Cronica library starts fresh here. If your ratings also live on Letterboxd, IMDb or Trakt, importing from there recovers most of it; otherwise progress is set as you go, and marking a season watched takes a tap.',
     ],
     verdict: [
       'If your world is entirely Apple and you want a minimal, open-source tracker on every device including the Watch and the TV, with your data in your own iCloud and no account, Cronica is the better fit and this page will not pretend otherwise.',
@@ -1017,7 +1020,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Can I import my Cronica library into I Like Movies?',
         a: [
-          'There is no direct Cronica import. I Like Movies reads a Letterboxd .zip or an IMDb .csv only, so if your ratings also live on one of those, import from there; otherwise a Cronica library is rebuilt as you go, and marking a season watched takes a tap.',
+          'There is no direct Cronica import. I Like Movies reads Letterboxd, IMDb, Trakt and TV Time exports only, so if your ratings also live on one of those, import from there; otherwise a Cronica library is rebuilt as you go, and marking a season watched takes a tap.',
         ],
       },
       {
@@ -1042,7 +1045,7 @@ export const COMPARISONS: Comparison[] = [
     betterThere: [
       {
         title: 'A social, expressive rating experience',
-        body: 'Flick is built to be shared: public reviews, real discussion, and rich reviews you assemble from stills, clips and gifs. I Like Movies keeps ratings and notes private and has following between friends, not a public feed. If posting your takes and reading other people’s is the point, Flick is made for it and this app is not.',
+        body: 'Flick is built to be shared: public reviews, real discussion, and rich reviews you assemble from stills, clips and gifs. I Like Movies shows ratings and notes to friends only, with following between friends, not a public feed. If posting your takes and reading other people’s is the point, Flick is made for it and this app is not.',
       },
       {
         title: 'The "this or that" rating game',
@@ -1055,8 +1058,8 @@ export const COMPARISONS: Comparison[] = [
     ],
     differences: [
       {
-        title: 'Private by default',
-        body: 'Ratings and notes are yours, nothing is published, and there is no feed to perform for. Flick is built around a public, social profile, which is the opposite choice on purpose.',
+        title: 'Friends, not strangers',
+        body: 'Ratings and notes reach your friends and nobody else, nothing is published, and there is no feed to perform for. Flick is built around a public, social profile, which is the opposite choice on purpose.',
       },
       {
         title: 'Films and TV in one library, tracked to the episode',
@@ -1064,39 +1067,39 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'A household shares one library',
-        body: 'The people you live with share a single watchlist and watched history, so a film added on one phone is on the other before you sit down. Flick profiles are individual.',
+        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. Flick profiles are individual.',
       },
       {
         title: 'An assistant and per-country streaming',
         body: 'Ask an assistant in plain language for something to watch, filtered against what you have already seen, and see where each title streams in your country. Flick offers personalized picks but is a rating app first.',
       },
       {
-        title: 'Imports Letterboxd and IMDb',
-        body: 'A Letterboxd .zip or an IMDb .csv imports your ratings and watchlist directly. Flick imports a Letterboxd library; if your history is on IMDb, I Like Movies reads that too.',
+        title: 'Imports Letterboxd, IMDb, Trakt and TV Time',
+        body: 'Letterboxd, IMDb, Trakt and TV Time exports import your ratings and watchlist directly. Flick imports a Letterboxd library; if your history is on IMDb or Trakt, or in a TV Time export, I Like Movies reads that too.',
       },
     ],
     table: [
       { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iPhone, Android' },
-      { feature: 'Public reviews and social feed', ilm: 'No, private by default', other: 'Yes, the core of the app' },
+      { feature: 'Public reviews and social feed', ilm: 'No, friends only', other: 'Yes, the core of the app' },
       { feature: 'Films and TV, per-episode tracking', ilm: 'Yes, per episode', other: 'Watch history, rating-first' },
       { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal profile' },
       { feature: 'AI recommendations and assistant', ilm: 'Yes, from your own ratings', other: 'Personalized picks' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Not a focus' },
-      { feature: 'Import', ilm: 'Letterboxd .zip, IMDb .csv', other: 'Letterboxd' },
+      { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Letterboxd' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with in-app purchases' },
     ],
     migration: [
-      'There is no Flick import. Imports read a Letterboxd .zip or an IMDb .csv, and a Flick export is neither, so a Flick library starts fresh here. If your ratings also live on Letterboxd or IMDb, importing from there carries them across; otherwise you rate as you go.',
+      'There is no Flick import. Imports read Letterboxd, IMDb, Trakt and TV Time exports, and a Flick export is none of them, so a Flick library starts fresh here. If your ratings also live on Letterboxd, IMDb or Trakt, importing from there carries them across; otherwise you rate as you go.',
     ],
     verdict: [
       'If you want a social, expressive rating app where reviews are public and the act of rating is playful, Flick is the better fit and this page will not pretend otherwise. It is built for sharing, and it does that well.',
-      'If you want a private library of films and TV tracked to the episode, a watchlist your household shares, an assistant and per-country streaming, that is what I Like Movies is built for. Both run on iPhone and Android, so the real choice is whether your film life is public or private.',
+      'If you want a private library of films and TV tracked to the episode, watchlists your household can see, an assistant and per-country streaming, that is what I Like Movies is built for. Both run on iPhone and Android, so the real choice is whether your film life is public or private.',
     ],
     faqs: [
       {
         q: 'What is the difference between Flick and I Like Movies?',
         a: [
-          'Flick is a social rating app: public reviews, a playful head-to-head rating system and a community to talk to. I Like Movies is a private tracker: films and TV in one library down to the episode, ratings and notes kept private, a household that shares one watchlist, an assistant and per-country streaming. Both run on iPhone and Android.',
+          'Flick is a social rating app: public reviews, a playful head-to-head rating system and a community to talk to. I Like Movies is a private tracker: films and TV in one library down to the episode, ratings and notes seen by friends only, a household that sees every watchlist, an assistant and per-country streaming. Both run on iPhone and Android.',
         ],
       },
       {
@@ -1108,7 +1111,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Can I import my Flick history into I Like Movies?',
         a: [
-          'There is no direct Flick import. I Like Movies reads a Letterboxd .zip or an IMDb .csv, so if your ratings also live on one of those, import from there; otherwise a Flick library is rebuilt as you rate and mark things watched.',
+          'There is no direct Flick import. I Like Movies reads Letterboxd, IMDb, Trakt and TV Time exports, so if your ratings also live on one of those, import from there; otherwise a Flick library is rebuilt as you rate and mark things watched.',
         ],
       },
       {

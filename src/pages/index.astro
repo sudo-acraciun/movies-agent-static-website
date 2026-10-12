@@ -10,12 +10,12 @@ import { mobileApplicationNode, webSiteNode, organizationNode } from '../data/sc
 
 // Real captures live in src/assets so astro:assets can process them into AVIF,
 // WebP and a srcset. They are attached here rather than in site.ts because a
-// data module holding image imports would couple copy to assets; site.ts keeps
-// the placeholder path until a real file exists for that screen.
+// data module holding image imports would couple copy to assets.
 import discoverShot from '../assets/screenshots/discover.png';
 import assistantShot from '../assets/screenshots/assistant.png';
 import householdShot from '../assets/screenshots/household.png';
 import feedShot from '../assets/screenshots/feed.png';
+import streamingShot from '../assets/screenshots/streaming.png';
 
 // Keyed by Feature.id. There is no placeholder fallback: every id in FEATURES
 // must have a matching entry here, or PhoneFrame's `src.width / src.height`
@@ -26,6 +26,7 @@ const SHOTS: Record<string, ImageMetadata> = {
   assistant: assistantShot,
   household: householdShot,
   friends: feedShot,
+  streaming: streamingShot,
 };
 
 // --- Structured data -------------------------------------------------------
@@ -154,7 +155,7 @@ const faqLd = {
               because it carries the most non-brand search volume of the set;
               Serializd has a row below but is left out of the heading to keep
               it readable. */}
-          <h2 id="switch-title">Switching from Letterboxd, IMDb, Trakt, Simkl or TV Time?</h2>
+          <h2 id="switch-title">Switching from Letterboxd, IMDb, Trakt, TV Time or Simkl?</h2>
           <p class="lede">
             Every movie tracker is built for a different job, and the good ones
             are genuinely good. Here is how your library moves across, and what
@@ -232,7 +233,7 @@ const faqLd = {
         <h2 id="get-the-app-title">Your next film is already on the list.</h2>
         <p class="lede">
           Free to download, free to use, and your library imports from
-          Letterboxd or IMDb in a few taps.
+          Letterboxd, IMDb, Trakt or TV Time in a few taps.
         </p>
         <StoreButtons size="large" align="center" />
       </div>
@@ -286,7 +287,7 @@ const faqLd = {
 
   .capabilities {
     background:
-      radial-gradient(70% 60% at 50% 0%, rgba(59, 130, 246, 0.09), transparent 70%),
+      radial-gradient(70% 60% at 50% 0%, rgba(232, 131, 58, 0.09), transparent 70%),
       #0c1017;
     border-top: 1px solid var(--ink-border);
     border-bottom: 1px solid var(--ink-border);
@@ -371,8 +372,12 @@ const faqLd = {
   }
 
   .row-more a {
-    color: var(--link);
+    color: var(--gold);
     text-underline-offset: 3px;
+  }
+
+  .row-more a:hover {
+    color: var(--text);
   }
 
   @media (min-width: 820px) {
