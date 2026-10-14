@@ -29,6 +29,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Badges: earn them for what you watch, rate and finish, from your first rating to a full year of weekly themes, on a page of cinematic awards that shows what each one means and how close you are to the next',
       'Pick one earned badge to show under your name on your profile, and see a friend\'s badges on theirs',
       'Six one-off badges mark your firsts: an import, a list, a note, a question to the assistant, a title marked as watching, a household',
+      'A new account now lands on a calmer first screen: one thing at a time, starting with the titles you can rate; the assistant\'s pointer waits until you have had a look',
+      'The Social tab now asks you to invite friends in one place, with a clearer card, instead of twice',
     ],
   },
   {
