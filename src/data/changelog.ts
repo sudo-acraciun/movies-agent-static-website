@@ -27,7 +27,7 @@ export const CHANGELOG: ChangelogWeek[] = [
     week: '12 October 2026',
     entries: [
       'Badges: earn them for what you watch, rate and finish, from your first rating to a full year of weekly themes, on a page of cinematic awards that shows what each one means and how close you are to the next',
-      'Pick one earned badge to show under your name on your profile, and see a friend\x27s badges on theirs',
+      'Pick one earned badge to show under your name on your profile, and see a friend\'s badges on theirs',
       'Six one-off badges mark your firsts: an import, a list, a note, a question to the assistant, a title marked as watching, a household',
     ],
   },
