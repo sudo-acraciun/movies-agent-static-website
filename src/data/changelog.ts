@@ -32,6 +32,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'A new account now lands on a calmer first screen: one thing at a time, starting with the titles you can rate; the assistant\'s pointer waits until you have had a look',
       'The Social tab now asks you to invite friends in one place, with a clearer card, instead of twice',
       'Finding someone already on the app is easier: the Friends page now opens with a search box at the top that searches everyone by handle, and it still finds them if you type an @ or their name with a space',
+      'Every Friday evening the assistant sends three picks for your weekend, led by what streams on the services you picked, each with a line on why it suits you; reply to ask about any of them',
     ],
   },
   {
