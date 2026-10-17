@@ -102,5 +102,36 @@ first; a representative handful of permalinks follows.
 - Films by female directors, The Piano to Jeanne Dielman: https://ilikemovies.app/themes/female-auteurs
 - Italian Neorealism, from Bicycle Thieves onward: https://ilikemovies.app/themes/italian-neorealism
 
+## Roundups, comparisons and guides
+
+Written by the maker of I Like Movies, who says so at the top of every page.
+Each one names where the other apps are the better choice.
+
+- Best movie tracker apps for Android: https://ilikemovies.app/best/movie-tracker-apps-android
+- Best movie tracker apps for iPhone: https://ilikemovies.app/best/movie-tracker-apps-iphone
+- Best apps to decide what to watch together: https://ilikemovies.app/best/movie-apps-for-couples
+- Best apps to help you decide what to watch: https://ilikemovies.app/best/apps-to-decide-what-to-watch
+- Best AI movie recommendation apps: https://ilikemovies.app/best/ai-movie-recommendation-apps
+- Best Letterboxd alternatives for Android: https://ilikemovies.app/best/letterboxd-alternatives-android
+- Best Letterboxd alternatives for iPhone: https://ilikemovies.app/best/letterboxd-alternatives-iphone
+- Best free movie and TV apps with no ads: https://ilikemovies.app/best/free-movie-apps-no-ads
+- Best apps for a shared household watchlist: https://ilikemovies.app/best/shared-household-watchlist-apps
+- Best apps to track anime episodes: https://ilikemovies.app/best/anime-episode-tracking-apps
+- I Like Movies vs Letterboxd: https://ilikemovies.app/vs/letterboxd
+- I Like Movies vs Trakt: https://ilikemovies.app/vs/trakt
+- I Like Movies vs Simkl: https://ilikemovies.app/vs/simkl
+- I Like Movies vs IMDb: https://ilikemovies.app/vs/imdb
+- I Like Movies vs Serializd: https://ilikemovies.app/vs/serializd
+- I Like Movies vs Maimovie: https://ilikemovies.app/vs/maimovie
+- I Like Movies vs Moviebase: https://ilikemovies.app/vs/moviebase
+- I Like Movies vs JustWatch: https://ilikemovies.app/vs/justwatch
+- I Like Movies vs Matinee: https://ilikemovies.app/vs/matinee
+- I Like Movies vs Cronica: https://ilikemovies.app/vs/cronica
+- I Like Movies vs Flick: https://ilikemovies.app/vs/flick
+- TV Time alternatives after the shutdown: https://ilikemovies.app/from-tv-time
+- How to decide what to watch together: https://ilikemovies.app/what-to-watch-together
+- How to track movies and TV on iPhone: https://ilikemovies.app/how-to-track-movies-on-iphone
+- Every guide, comparison and watch order: https://ilikemovies.app/guides
+
 Film and TV metadata is provided by TMDB. This product uses the TMDB API but is
 not endorsed or certified by TMDB.

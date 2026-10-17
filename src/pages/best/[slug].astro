@@ -2,6 +2,7 @@
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import StoreButtons from '../../components/StoreButtons.astro';
 import { ROUNDUPS } from '../../data/roundups';
+import { COMPARISONS } from '../../data/comparisons';
 import { SITE } from '../../data/site';
 import { organizationNode, organizationRef, appStubNode, appRef, webSiteRef } from '../../data/schema';
 
@@ -163,6 +164,14 @@ const breadcrumbs = [
       </ul>
     </>
   )}
+  {/* The /vs pages answer the head-to-head form of the same searches. Without
+      this line a roundup reaches them only through /guides. Same inline-join
+      shape as the /vs page's own "More comparisons" line. */}
+  <p>
+    Compared head to head: {COMPARISONS.map((other, i) => (
+      <span>{i > 0 && ', '}<a href={`/vs/${other.slug}`}>{other.competitor}</a></span>
+    ))}.
+  </p>
   <p>Browse <a href="/guides">every guide and comparison</a>.</p>
 
   <div class="cta-row">

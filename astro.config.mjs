@@ -11,9 +11,10 @@ export default defineConfig({
   // /share and /invite are the deep-link redirectors, for shared titles and
   // for friend / household invites: utility pages, noindex'd in their own
   // markup and excluded here so the sitemap only advertises pages meant to be
-  // found.
+  // found. Matched on the whole path: a substring test would also drop
+  // /best/shared-household-watchlist-apps.
   integrations: [
-    sitemap({ filter: (page) => !page.includes('/share') && !page.includes('/invite') }),
+    sitemap({ filter: (page) => !/^\/(share|invite)\/?$/.test(new URL(page).pathname) }),
   ],
   build: {
     // Emit /faq.html rather than /faq/index.html. GitHub Pages serves both,

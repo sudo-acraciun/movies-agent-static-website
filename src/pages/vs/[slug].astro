@@ -2,6 +2,7 @@
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import StoreButtons from '../../components/StoreButtons.astro';
 import { COMPARISONS, NOT_DO, SITE } from '../../data/comparisons';
+import { ROUNDUPS } from '../../data/roundups';
 import { organizationNode, organizationRef, appStubNode, appRef, webSiteRef } from '../../data/schema';
 
 export function getStaticPaths() {
@@ -143,6 +144,19 @@ const breadcrumbs = [
       <span>{i > 0 && ', '}<a href={`/vs/${other.slug}`}>{other.competitor}</a></span>
     ))}. Or browse <a href="/guides">every guide and watch order</a>.
   </p>
+
+  {/* The /best roundups are the pages AI answer engines cite for discovery
+      questions; without this list a comparison reaches them only through
+      /guides. A list, not an inline run: the roundup titles are long, the same
+      reason the roundup page lists its siblings. */}
+  <p>The best-of roundups:</p>
+  <ul>
+    {ROUNDUPS.map((roundup) => (
+      <li>
+        <a href={`/best/${roundup.slug}`}>{roundup.h1.replace(/\s*\(we compared \d+\)$/, '')}</a>
+      </li>
+    ))}
+  </ul>
 
   <div class="cta-row">
     <StoreButtons />
