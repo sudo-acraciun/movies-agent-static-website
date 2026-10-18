@@ -97,7 +97,7 @@ export const ROUNDUPS: Roundup[] = [
       'The best apps for two people to agree on a film or show without losing the evening, compared honestly by feature, with a comparison table and where each one fits.',
     h1: 'Best apps to decide what to watch together in 2026 (we compared 5)',
     query: 'app to decide what to watch together with my partner',
-    updated: 'September 2026',
+    updated: 'October 2026',
     intro: [
       'The problem is never a shortage of films. It is that two people want different ones, and the evening drains away in the menus before either of them presses play. A few apps exist just for this, and they solve it in genuinely different ways: some match your tastes, some let you swipe until you both land on the same title, and some just keep one shared list so the argument never starts.',
       'This page compares the five worth knowing, by the one thing that matters here: getting two sets of taste to a single title, tonight, without a fight. Each entry says who it is for and where it falls short.',
@@ -432,7 +432,7 @@ export const ROUNDUPS: Roundup[] = [
       'The best Letterboxd alternatives for Android, compared honestly: TV alongside film, no public reviews, imports, and where Letterboxd itself is still the better choice.',
     h1: 'Best Letterboxd alternatives for Android in 2026 (we compared 5)',
     query: 'What are the best Letterboxd alternatives for Android?',
-    updated: 'September 2026',
+    updated: 'October 2026',
     intro: [
       'Letterboxd is the film-diary social network, and nothing else matches it for reviews, lists and community. People go looking for an alternative for one of a few specific reasons: they also want to track TV, they want a more native Android app, they want statistics without a subscription, or they want something more private than a public review feed.',
       'This page compares the five worth knowing, and is honest about the one thing none of them replaces.',
@@ -598,7 +598,7 @@ export const ROUNDUPS: Roundup[] = [
       'The best apps to track the movies and TV you watch on Android, compared honestly on one library, episode tracking, automatic scrobbling, imports and price.',
     h1: 'Best movie tracker apps for Android in 2026 (we compared 5)',
     query: 'What is the best movie tracker app for Android?',
-    updated: 'September 2026',
+    updated: 'October 2026',
     intro: [
       'A tracker’s job is to keep an honest record of what you have watched and what you mean to, films and TV, without becoming a chore. The field splits three ways: film-first social apps, all-in-one trackers, and portability layers that other apps plug into.',
       'This page compares the five worth knowing on Android, by how completely they track and how little work they ask of you.',
@@ -1212,7 +1212,7 @@ export const ROUNDUPS: Roundup[] = [
       'The best apps for when you cannot decide what to watch, alone or with someone, compared honestly: smart shortlists, swipe matching, streaming filters and shared lists.',
     h1: 'Best apps to help you decide what to watch in 2026 (we compared 5)',
     query: 'apps to decide what to watch',
-    updated: 'September 2026',
+    updated: 'October 2026',
     intro: [
       'The modern problem is not finding something to watch, it is choosing, alone or with someone, before the evening drains away in the menus. Apps attack it three ways: a smart shortlist built from your taste, a swipe-match for two people, or a filter down to what you can actually stream tonight.',
       'This page compares the five worth knowing, by how quickly they get you from open to playing.',
@@ -1369,7 +1369,7 @@ export const ROUNDUPS: Roundup[] = [
       'The best apps to track the movies and TV you watch on iPhone, compared honestly on one library, episode tracking, cross-device sync, imports and price.',
     h1: 'Best movie tracker apps for iPhone in 2026 (we compared 5)',
     query: 'What is the best movie tracker app for iPhone?',
-    updated: 'September 2026',
+    updated: 'October 2026',
     intro: [
       'A tracker keeps an honest record of what you have watched and what you mean to, films and TV, without turning into a chore. On iPhone the field runs from polished single-purpose trackers to cross-platform apps that also live on the web, and they differ most in how your history is stored and synced.',
       'This page compares the five worth knowing on iPhone, by how completely they track, how they sync across your devices, and how little work they ask of you.',
@@ -1531,7 +1531,7 @@ export const ROUNDUPS: Roundup[] = [
       'The best Letterboxd alternatives for iPhone, compared honestly: TV alongside film, private tracking, diaries and reviews, and where Letterboxd itself is still the better choice.',
     h1: 'Best Letterboxd alternatives for iPhone in 2026 (we compared 5)',
     query: 'What are the best Letterboxd alternatives for iPhone?',
-    updated: 'September 2026',
+    updated: 'October 2026',
     intro: [
       'Letterboxd is the best film diary and community there is, and on iPhone it is excellent. People look for an alternative for specific reasons: they want TV tracked alongside film, they want their notes private rather than public, or they want streaming availability and recommendations Letterboxd does not do.',
       'This page compares the five worth knowing on iPhone for someone leaving or supplementing Letterboxd, and it is honest about where Letterboxd itself is still the one to keep.',
@@ -1680,6 +1680,175 @@ export const ROUNDUPS: Roundup[] = [
         q: 'Should I just stay on Letterboxd?',
         a: [
           'If public film reviews and the community around them are why you track films, yes, stay on Letterboxd and add one of these alongside it for TV. If you want TV in the same library, notes without a public audience, or streaming and recommendations, switching or supplementing makes sense.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'tv-show-tracker-apps',
+    title: 'Best TV show tracker apps in 2026 (TV Time alternatives) | I Like Movies',
+    metaDescription:
+      'The best apps to track TV shows episode by episode now that TV Time has closed, compared honestly on automatic tracking, TV Time imports, alerts, ads and price.',
+    h1: 'Best TV show tracker apps in 2026: TV Time alternatives compared',
+    query: 'What is the best TV show tracker app now that TV Time is gone?',
+    updated: 'October 2026',
+    intro: [
+      "TV Time closed on 15 July 2026 and deleted its users' data, leaving millions of people who logged every episode with nowhere to log the next one. A TV show tracker's job is simple to state: remember where you are in every series, tell you when something new airs, and ask as little of you as possible.",
+      'This page compares the five worth knowing in 2026, by how they track episodes, whether they read a TV Time export, and what they cost.',
+    ],
+    methodology: [
+      "We judged each app on the tracking itself: episode-level progress, how episodes get marked watched, alerts for new episodes, whether it imports a TV Time export, platforms and price. Facts come from each app's own site and store listings as of October 2026; we assessed what each app ships today.",
+      'We make one of these apps and say so. Where another app does a job better, automatic tracking above all, we say that.',
+    ],
+    disclosure:
+      'This roundup is published by the makers of I Like Movies, which ' + OUR_DISCLOSURE_TAIL,
+    apps: [
+      {
+        rank: 1,
+        name: 'I Like Movies',
+        isUs: true,
+        bestFor: 'films and TV in one free, ad-free app, with alerts for new episodes',
+        blurb: [
+          'I Like Movies tracks TV down to the episode, marks a whole season in a tap, and keeps films in the same library, with ratings, notes and statistics. It sends a push when a new episode of a show you are watching comes out and a heads-up before a series returns, shows where every title streams in your country, and imports a TV Time export as well as Trakt, Letterboxd and IMDb.',
+          'It does not track automatically: you mark episodes yourself, the way TV Time worked. There is no web app and no public reviews, and the TV Time import leaves episode ratings behind.',
+        ],
+        pros: [
+          'Episode tracking, with a whole season in a tap',
+          'Films and TV in one library',
+          'New-episode push and a heads-up before a series returns',
+          'Imports TV Time, Trakt, Letterboxd and IMDb; free, no ads',
+        ],
+        cons: [
+          'No automatic tracking; you mark episodes yourself',
+          'No web app; it is a phone app for iPhone and Android, not the browser',
+          'The TV Time import leaves episode ratings behind',
+        ],
+      },
+      {
+        rank: 2,
+        name: 'Trakt',
+        bestFor: 'automatic tracking from players, media servers and streaming services',
+        blurb: [
+          'Trakt is the tracking service much of the ecosystem plugs into: Plex, Kodi, Emby, Jellyfin and Infuse can log what you play to it automatically, other apps read and write its history through an open API, and its own apps cover iPhone, Android, Apple TV and Android TV. It imports IMDb, Letterboxd, Plex and TV Time data.',
+          'Logging from Netflix, Disney+ and other streaming services needs VIP, about $60 a year, and the free tier caps how many items your lists and watchlist can hold.',
+        ],
+        pros: [
+          'Automatic tracking from players and media servers',
+          'Open API, so your history works with many other apps',
+          'Imports TV Time, IMDb and Letterboxd',
+        ],
+        cons: [
+          'Tracking from streaming services requires VIP',
+          'The free tier limits list and watchlist sizes',
+        ],
+      },
+      {
+        rank: 3,
+        name: 'Simkl',
+        bestFor: 'automatic tracking without a media server, anime included',
+        blurb: [
+          'Simkl tracks TV, films and anime in one account, and can log what you watch on streaming sites through its browser extension rather than a media server. It imports from Trakt, IMDb, MyAnimeList, AniList, Netflix and Crunchyroll, and reads a TV Time export.',
+          'The core app is free; some imports and extras sit in paid tiers, and the interface is busier than a TV-only tracker.',
+        ],
+        pros: [
+          'TV, films and anime in one free account',
+          'Automatic tracking through a browser extension',
+          'Wide imports, TV Time included',
+        ],
+        cons: [
+          'Some imports and extras need a paid tier',
+          'Busier interface',
+        ],
+      },
+      {
+        rank: 4,
+        name: 'Serializd',
+        bestFor: 'rating and reviewing TV, the way Letterboxd does film',
+        blurb: [
+          'Serializd is built around TV reviews: you rate individual episodes, seasons or whole series, keep a diary, follow people and read discussion, and it also works as a next-episode tracker. It is completely free, runs on the web, iPhone and Android, and imports TV Time and Trakt data.',
+          'It covers TV only, so films need a second app.',
+        ],
+        pros: [
+          'Rate episodes, seasons and whole series',
+          'Reviews, a diary and a community around TV',
+          'Free; imports TV Time and Trakt',
+        ],
+        cons: [
+          'TV only, no films',
+        ],
+      },
+      {
+        rank: 5,
+        name: 'Bingers',
+        bestFor: "TV Time's community features, rebuilt by one of its co-founders",
+        blurb: [
+          'Bingers was launched in August 2026 by a co-founder of TV Time to bring back what its users miss: episode and film ratings, votes on characters and emotions, spoiler-free comments, stats and new-episode alerts. Its TV Time import is the fullest we found: it brings everything across, comments included.',
+          'It is very new, still on version 0.2, free with no in-app purchases so far, and how it will pay for its servers is not yet settled.',
+        ],
+        pros: [
+          "Brings back TV Time's community features",
+          'The fullest TV Time import, comments included',
+          'Free',
+        ],
+        cons: [
+          'Very new (version 0.2)',
+          'Business model still unsettled',
+        ],
+      },
+    ],
+    tableCols: ['I Like Movies', 'Trakt', 'Simkl', 'Bingers'],
+    table: [
+      {
+        feature: 'Episode-level tracking',
+        cells: ['Yes', 'Yes', 'Yes', 'Yes'],
+      },
+      {
+        feature: 'Films in the same app',
+        cells: ['Yes', 'Yes', 'Yes', 'Yes'],
+      },
+      {
+        feature: 'Automatic tracking',
+        cells: ['No, you mark it', 'Yes, from players and servers', 'Yes, via browser extension', 'No, you mark it'],
+      },
+      {
+        feature: 'Imports a TV Time export',
+        cells: ['Yes, minus episode ratings', 'Yes', 'Yes', 'Yes, comments included'],
+      },
+      {
+        feature: 'Ads in the Android app',
+        cells: ['None', 'None', 'None', 'None'],
+      },
+      {
+        feature: 'Price',
+        cells: ['Free', 'Free, VIP about $60 a year', 'Free, paid tiers', 'Free'],
+      },
+    ],
+    verdict: [
+      'If you want one free, ad-free app that tracks every episode, keeps films in the same library and tells you when a show returns, I Like Movies fits best. If you want tracking to happen by itself, Trakt (with players and media servers) and Simkl (with a browser extension) are the two that do it properly. Serializd is the place to rate and review TV, and Bingers is the closest thing to the old TV Time community, from one of the people who built it.',
+    ],
+    faqs: [
+      {
+        q: 'What is the best TV Time alternative?',
+        a: [
+          'It depends on what you used TV Time for. For episode tracking on your phone with films in the same library, I Like Movies. For automatic tracking, Trakt or Simkl. For rating and reviewing episodes, Serializd. For the community features, Bingers, launched by one of TV Time\'s co-founders.',
+        ],
+      },
+      {
+        q: 'Can I still import my TV Time history?',
+        a: [
+          'Only if you saved your export before 15 July 2026: TV Time deleted user data when it closed, and exports can no longer be requested. With the export, I Like Movies, Trakt, Simkl, Serializd and Bingers can all read it, each bringing across different parts. Without one, no app can recover the history.',
+        ],
+      },
+      {
+        q: 'Which TV show trackers track episodes automatically?',
+        a: [
+          'Trakt and Simkl. Trakt logs what you play in Plex, Kodi and other connected players, and from streaming services with VIP; Simkl uses a browser extension for streaming sites. I Like Movies, Serializd and Bingers ask you to mark episodes yourself, as TV Time did.',
+        ],
+      },
+      {
+        q: 'Is there a free TV show tracker with no ads?',
+        a: [
+          'Yes. Google Play lists no ads for I Like Movies, Trakt, Simkl, Serializd or Bingers. Trakt and Simkl also sell paid tiers for extra features, so check what sits behind them before you move years of history.',
         ],
       },
     ],

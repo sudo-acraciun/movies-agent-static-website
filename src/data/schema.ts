@@ -28,12 +28,14 @@ export const SAME_AS = [
   'https://theresanaiforthat.com/ai/i-like-movies/',
   'https://alternativeto.net/software/i-like-movies/',
   'https://www.saashub.com/ilikemovies-app',
+  'https://tools.launchllama.co/products/i-like-movies',
   'https://www.wikidata.org/wiki/Q141150329',
   'https://x.com/ilikemoviesapp',
   'https://www.tiktok.com/@ilikemoviesapp',
   'https://www.instagram.com/ilikemoviesapp',
   'https://www.youtube.com/@ilikemoviesapp',
   'https://www.facebook.com/profile.php?id=61593335430358',
+  'https://www.reddit.com/r/ilikemoviesapp/',
 ];
 
 // Stable entity identifiers. Fragment ids on the canonical origin, so the URI
