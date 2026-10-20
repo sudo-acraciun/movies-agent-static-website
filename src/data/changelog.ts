@@ -24,6 +24,12 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '19 October 2026',
+    entries: [
+      'When a friend invites you to edit a shared list you can already see, for example one they sent you in a chat, the list now shows Accept and Decline instead of a read-only view',
+    ],
+  },
+  {
     week: '12 October 2026',
     entries: [
       'Badges: earn them for what you watch, rate and finish, from your first rating to a full year of weekly themes, on a page of cinematic awards that shows what each one means and how close you are to the next',
