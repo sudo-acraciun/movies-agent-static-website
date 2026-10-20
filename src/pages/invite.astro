@@ -47,8 +47,8 @@ import { SITE } from '../data/site';
       // item 102); the app's install-referrer and typed-code paths send
       // their own values.
       target = 'moviesagentapp://friend/accept?code=' + friendCode + '&source=link';
-      // The Play badge already carries referrer=utm_source%3Dilikemovies.app
-      // (SITE.playUrl). Appending the invite code inside that same
+      // The Play badge already carries the site's URL-encoded referrer
+      // (SITE.playUrl, referrer kept last). Appending the invite code inside that same
       // URL-encoded referrer value hands it to the Play Install Referrer API,
       // so a recipient WITHOUT the app gets the invite back on first launch
       // instead of having to find this link again. The suffix decodes to
@@ -56,6 +56,12 @@ import { SITE } from '../data/site';
       var playBadge = document.querySelector('a.badge-play');
       if (playBadge) {
         playBadge.href += '%26utm_medium%3Dinvite%26code%3D' + friendCode;
+      }
+      // The App Store has no referrer to carry the code; its campaign at
+      // least counts the install as an invite.
+      var appleBadge = document.querySelector('a.badge-apple');
+      if (appleBadge) {
+        appleBadge.href = appleBadge.href.replace('ct=website', 'ct=invite');
       }
     } else if (params.has('household')) {
       target = 'moviesagentapp://household/join?code=' + encodeURIComponent(params.get('household'));

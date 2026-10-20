@@ -74,16 +74,25 @@ export const SITE = {
   //
   // The referrer param attributes Play installs back to this website with no
   // JS analytics involved: Play records it verbatim against the install and
-  // the value (a URL-encoded utm_source=ilikemovies.app) is readable from the
-  // Play Installation Referrer API on first launch. Every link on the site
-  // routes through this one constant, so the param reaches every store link
-  // without being repeated anywhere.
+  // the value (a URL-encoded utm_source=ilikemovies.app&utm_campaign=website)
+  // is readable from the Play Installation Referrer API on first launch; Play
+  // Console's acquisition report groups by that source + campaign. Every link
+  // on the site routes through this one constant, so the param reaches every
+  // store link without being repeated anywhere.
   //
-  // The App Store URL is deliberately bare: Apple campaign tokens require an
-  // App Analytics campaign, and an identity-bearing link should stay canonical.
+  // Contract with the page scripts: referrer stays the LAST query param and
+  // utm_campaign%3Dwebsite stays inside it. /invite and /share append to the
+  // end of the href, and the StoreSource script swaps the campaign for the
+  // AI engine that sent the visitor.
+  //
+  // The identity claim (SAME_AS in schema.ts) keeps its own bare literals, so
+  // tagging these links never touches it.
   playUrl:
-    'https://play.google.com/store/apps/details?id=com.moviesagent.app&referrer=utm_source%3Dilikemovies.app',
-  appStoreUrl: 'https://apps.apple.com/app/id6805131346' as string | null,
+    'https://play.google.com/store/apps/details?id=com.moviesagent.app&referrer=utm_source%3Dilikemovies.app%26utm_campaign%3Dwebsite',
+  // pt = this developer account's App Analytics provider token, ct = the
+  // campaign (App Store Connect → Analytics → Campaigns). ct is free-form, so
+  // the page scripts swap ct=website for share / invite / the AI engine.
+  appStoreUrl: 'https://apps.apple.com/app/apple-store/id6805131346?pt=129360551&ct=website&mt=8' as string | null,
 
   // Root-relative, and on this domain since the migration off
   // sudo-acraciun.github.io/movienight. That host still serves the documents

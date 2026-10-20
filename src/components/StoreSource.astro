@@ -1,0 +1,44 @@
+---
+// Tags the store links on the page with the AI engine that sent the visitor,
+// so installs from AI answers can be told apart from plain website installs:
+// the Play referrer's utm_campaign=website becomes the engine's host, and the
+// App Store's ct=website likewise.
+//
+// Landing page only, on purpose: nothing is written to cookies or storage
+// (same rule as Analytics.astro), so a visitor who moves to a second page
+// before tapping a store button counts as "website".
+---
+
+<script is:inline>
+  (function () {
+    var ENGINES = [
+      'chatgpt.com',
+      'perplexity.ai',
+      'gemini.google.com',
+      'claude.ai',
+      'copilot.microsoft.com',
+      'grok.com',
+    ];
+    var engine = null;
+    var tagged = new URLSearchParams(window.location.search).get('utm_source');
+    if (tagged && ENGINES.indexOf(tagged) !== -1) engine = tagged;
+    if (!engine && document.referrer) {
+      try {
+        var host = new URL(document.referrer).hostname.replace(/^www\./, '');
+        if (ENGINES.indexOf(host) !== -1) engine = host;
+      } catch (e) {
+        // An unparseable referrer is just "not an AI engine".
+      }
+    }
+    if (!engine) return;
+    var links = document.querySelectorAll('a[href]');
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute('href');
+      if (href.indexOf('https://play.google.com/store') === 0) {
+        links[i].setAttribute('href', href.replace('utm_campaign%3Dwebsite', 'utm_campaign%3D' + engine));
+      } else if (href.indexOf('https://apps.apple.com/') === 0) {
+        links[i].setAttribute('href', href.replace('ct=website', 'ct=' + engine));
+      }
+    }
+  })();
+</script>

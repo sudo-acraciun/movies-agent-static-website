@@ -1,7 +1,7 @@
 ---
 // Website traffic analytics, and the one place this otherwise-static site
-// loads client JS. It measures three things only: page visits, traffic source
-// (referrer), and clicks on the Google Play link.
+// loads analytics JS. It measures three things only: page visits, traffic
+// source (referrer), and clicks on the store links.
 //
 // The project key is public: it ships to every visitor's browser, exactly like
 // a Sentry DSN, so it lives here as a plain constant rather than a build
@@ -51,10 +51,14 @@
           // Collapse the badge's inter-element whitespace so the text property
           // reads "Get it on Google Play", not a newline-broken string.
           const text = link.textContent?.replace(/\s+/g, ' ').trim();
+          // The campaign StoreSource left on the link: "website", or the AI
+          // engine that sent the visitor.
           if (link.href.startsWith('https://play.google.com/store')) {
-            posthog.capture('google_play_click', { text, path: location.pathname });
+            const campaign = link.href.match(/utm_campaign%3D([^%&]+)/)?.[1] ?? null;
+            posthog.capture('google_play_click', { text, path: location.pathname, campaign });
           } else if (link.href.startsWith('https://apps.apple.com/')) {
-            posthog.capture('app_store_click', { text, path: location.pathname });
+            const campaign = link.href.match(/[?&]ct=([^&]+)/)?.[1] ?? null;
+            posthog.capture('app_store_click', { text, path: location.pathname, campaign });
           }
         };
         // click for a left/keyboard activation, auxclick for a middle-click

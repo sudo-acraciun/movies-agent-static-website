@@ -1,6 +1,7 @@
 ---
 import { SITE } from '../data/site';
 import Analytics from '../components/Analytics.astro';
+import StoreSource from '../components/StoreSource.astro';
 
 interface Props {
   title: string;
@@ -76,6 +77,8 @@ const ogImage = new URL('/og-image.png', SITE.url).href;
   </head>
   <body>
     <slot />
+    {/* After the page content: it rewrites the store links already in the DOM. */}
+    <StoreSource />
   </body>
 </html>
 

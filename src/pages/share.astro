@@ -55,6 +55,18 @@ import { SITE } from '../data/site';
       // nothing from the query string travels into the scheme URL.
       target = 'moviesagentapp://profile';
     }
+    // A recipient without the app installs from these badges, so they carry
+    // the share as the install's source: the Play referrer gains
+    // "&utm_medium=share" (same append as /invite, SITE.playUrl keeps the
+    // referrer last) and the App Store campaign reads "share".
+    var playBadge = document.querySelector('a.badge-play');
+    if (playBadge) {
+      playBadge.href += '%26utm_medium%3Dshare';
+    }
+    var appleBadge = document.querySelector('a.badge-apple');
+    if (appleBadge) {
+      appleBadge.href = appleBadge.href.replace('ct=website', 'ct=share');
+    }
     var openBtn = document.getElementById('manualOpen');
     if (target) {
       // Auto-bounce into the app; the anchor stays as the manual fallback
