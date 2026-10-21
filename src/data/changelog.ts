@@ -30,6 +30,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Search has a new Studios tab: type a studio such as Pixar, Disney or A24 and open its page, with its films and series, the sorts and filters you know from the Streaming tab, and your ticks and watchlist marks on every card',
       'A title\'s page now shows the studios behind it, filling in over the coming days, and tapping one opens that studio\'s page',
       'Sorting a studio or a streaming service by IMDb rating now orders the titles by the rating shown on each card, highest first',
+      'Export your data: Settings now saves a zip of spreadsheet files with your watched titles and ratings, Watchlist, Currently Watching, lists, notes, friends and settings, straight to a folder on your phone on Android and through Save to Files on iPhone',
     ],
   },
   {
