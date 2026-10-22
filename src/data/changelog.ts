@@ -32,6 +32,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Sorting a studio or a streaming service by IMDb rating now orders the titles by the rating shown on each card, highest first',
       'Export your data: Settings now saves a zip of spreadsheet files with your watched titles and ratings, Watchlist, Currently Watching, lists, notes, friends and settings, straight to a folder on your phone on Android and through Save to Files on iPhone',
       'Share a list as a picture: open any of your lists, tap share and send a Story-sized picture of it to Instagram, WhatsApp and more; short lists get a poster grid with titles and years, a ranked list shows its numbers, a long one shows the top of the ranking or a wall of posters',
+      'Inviting a friend from the Social tab or from a list\'s Members page now opens your phone\'s share sheet in one tap',
+      'A new account sees a calmer Profile, Stats and Friends page: cards that would only show a zero, and an empty friends list, stay hidden until there is something to show',
+      'While you have no friends on the app, your own posts on the Social tab no longer show like and comment buttons nobody else can see',
+      'Filters in the Library, lists and trackers are shorter: the Watching tab already shows what you are in the middle of',
     ],
   },
   {
