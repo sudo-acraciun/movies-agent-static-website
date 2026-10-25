@@ -39,6 +39,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'The card that asks you to rate what you have seen now sits only on your Watchlist and Watched tabs',
       'The tips that show you around the app now fade in gently, and the Assistant icon stops spinning once you have opened the Assistant',
       'Filters in the Library, lists and trackers are shorter: the Watching tab already shows what you are in the middle of',
+      'No more red dots on the tab icons. Unread chats show as a number on the Chats icon in Social',
+      'Your Library\'s Collection tab appears once you own a title',
+      'On a title page, the button for a copy you own now reads "I own it" and sits at the end of the row',
     ],
   },
   {
