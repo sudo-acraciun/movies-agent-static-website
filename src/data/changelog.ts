@@ -24,6 +24,12 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '26 October 2026',
+    entries: [
+      'Collections, franchises, categories and weekly themes now keep one steady order: titles you have watched keep their place, with their tick, instead of moving to the top, so long lists stay easy to work through',
+    ],
+  },
+  {
     week: '19 October 2026',
     entries: [
       'When a friend invites you to edit a shared list you can already see, for example one they sent you in a chat, the list now shows Accept and Decline instead of a read-only view',
