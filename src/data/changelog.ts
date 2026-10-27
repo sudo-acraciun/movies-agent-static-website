@@ -27,6 +27,7 @@ export const CHANGELOG: ChangelogWeek[] = [
     week: '26 October 2026',
     entries: [
       'Collections, franchises, categories and weekly themes now keep one steady order: titles you have watched keep their place, with their tick, instead of moving to the top, so long lists stay easy to work through',
+      'The tips and cards on your Library, Profile and Social pages now appear together with the page instead of a moment later, so nothing shifts as it opens, and the Household tip on the Social tab always fits on screen',
     ],
   },
   {
