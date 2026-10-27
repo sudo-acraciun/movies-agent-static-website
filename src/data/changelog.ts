@@ -29,6 +29,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Collections, franchises, categories and weekly themes now keep one steady order: titles you have watched keep their place, with their tick, instead of moving to the top, so long lists stay easy to work through',
       'The tips and cards on your Library, Profile and Social pages now appear together with the page instead of a moment later, so nothing shifts as it opens, and the Household tip on the Social tab always fits on screen',
       'Title pages now open without jumping: the shapes you see while a title loads match what fills in, and the synopsis no longer flickers as it settles. Going back from a title is smoother too, with the page you return to refreshing once the slide has finished',
+      'On iPhone, posters, profile photos and studio logos you have already seen now appear straight away when you scroll back to them or reopen a page, instead of fading in again',
     ],
   },
   {
