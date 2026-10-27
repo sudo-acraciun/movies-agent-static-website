@@ -30,6 +30,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'The tips and cards on your Library, Profile and Social pages now appear together with the page instead of a moment later, so nothing shifts as it opens, and the Household tip on the Social tab always fits on screen',
       'Title pages now open without jumping: the shapes you see while a title loads match what fills in, and the synopsis no longer flickers as it settles. Going back from a title is smoother too, with the page you return to refreshing once the slide has finished',
       'On iPhone, posters, profile photos and studio logos you have already seen now appear straight away when you scroll back to them or reopen a page, instead of fading in again',
+      'Your services now opens on the streaming services most people use in your country, with the rest one tap away under Show all, so finding yours no longer means scrolling through dozens of tiles',
+      'A person\'s filmography now has a Filter button like other pages: show only movies or series, what you have or have not watched, or just the titles on your Watchlist',
     ],
   },
   {
