@@ -32,6 +32,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'On iPhone, posters, profile photos and studio logos you have already seen now appear straight away when you scroll back to them or reopen a page, instead of fading in again',
       'Your services now opens on the streaming services most people use in your country, with the rest one tap away under Show all, so finding yours no longer means scrolling through dozens of tiles',
       'A person\'s filmography now has a Filter button like other pages: show only movies or series, what you have or have not watched, or just the titles on your Watchlist',
+      'The filmography Filter can now also narrow a person\'s films and series by genre, and by streaming service: pick the services you want, or just your own, to see what you can stream where you live',
     ],
   },
   {
