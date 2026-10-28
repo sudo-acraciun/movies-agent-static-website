@@ -33,6 +33,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Your services now opens on the streaming services most people use in your country, with the rest one tap away under Show all, so finding yours no longer means scrolling through dozens of tiles',
       'A person\'s filmography now has a Filter button like other pages: show only movies or series, what you have or have not watched, or just the titles on your Watchlist',
       'The filmography Filter can now also narrow a person\'s films and series by genre, and by streaming service: pick the services you want, or just your own, to see what you can stream where you live',
+      'Loading now looks the same everywhere: a page, sheet or section that opens for the first time shows an outline of what is about to appear instead of a spinner or the app logo, and a page you come back to keeps everything in place with a thin line at the top while it refreshes',
+      'Changing the sort or a filter on a streaming service or a studio keeps the titles on screen while the new order arrives and takes you back to the top; picking another country, service or household member shows the outline instead of an empty page or the previous titles',
+      'Searching for people, for titles to add to a list, for a title to share in a chat or for a profile backdrop now shows a small spinner in the search box, with nothing in the results area until the answer is in',
     ],
   },
   {
