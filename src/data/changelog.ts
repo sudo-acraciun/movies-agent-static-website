@@ -37,6 +37,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Changing the sort or a filter on a streaming service or a studio keeps the titles on screen while the new order arrives and takes you back to the top; picking another country, service or household member shows the outline instead of an empty page or the previous titles',
       'Searching for people, for titles to add to a list, for a title to share in a chat or for a profile backdrop now shows a small spinner in the search box, with nothing in the results area until the answer is in',
       'Rated titles get a tidier bottom bar with just Lists and I own it. Watched one again? Tap Add a rewatch under Rating history to score the new viewing',
+      'Your taste on Discover is now one compact row, so all three of this month\'s picks stay in view without taking over the page',
+      'If a list of titles can\'t load, for example when you are offline, the page now says so and offers Try again instead of looking empty',
     ],
   },
   {
