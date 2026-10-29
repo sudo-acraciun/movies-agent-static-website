@@ -39,6 +39,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Rated titles get a tidier bottom bar with just Lists and I own it. Watched one again? Tap Add a rewatch under Rating history to score the new viewing',
       'Your taste on Discover is now one compact row, so all three of this month\'s picks stay in view without taking over the page',
       'If a list of titles can\'t load, for example when you are offline, the page now says so and offers Try again instead of looking empty',
+      'Titles you own can go on your Watchlist too: an owned title you have not seen keeps its Watchlist button, and marking it watched is the Watched button under Your Rating',
+      'New releases now pick up their Rotten Tomatoes and IMDb scores within a few days of them appearing, instead of waiting up to a month',
     ],
   },
   {
