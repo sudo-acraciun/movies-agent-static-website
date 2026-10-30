@@ -41,6 +41,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'If a list of titles can\'t load, for example when you are offline, the page now says so and offers Try again instead of looking empty',
       'Titles you own can go on your Watchlist too: an owned title you have not seen keeps its Watchlist button, and marking it watched is the Watched button under Your Rating',
       'New releases now pick up their Rotten Tomatoes and IMDb scores within a few days of them appearing, instead of waiting up to a month',
+      'A Watchlist filter now sits on every page with filters: Currently Watching, categories, yearly releases, trackers and lists, so any of them can show just the titles you plan to watch',
+      'On a streaming service or a studio page, the Watchlist filter shows every title from your Watchlist you can watch there, sorted by IMDb rating or release date',
+      'Studio pages can now be filtered by streaming service too: pick the services you want, or just your own',
+      'Categories, yearly releases and trackers now show which services stream each title where you live, not only in the Netherlands',
     ],
   },
   {
