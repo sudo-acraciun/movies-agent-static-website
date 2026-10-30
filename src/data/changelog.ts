@@ -45,6 +45,12 @@ export const CHANGELOG: ChangelogWeek[] = [
       'On a streaming service or a studio page, the Watchlist filter shows every title from your Watchlist you can watch there, sorted by IMDb rating or release date',
       'Studio pages can now be filtered by streaming service too: pick the services you want, or just your own',
       'Categories, yearly releases and trackers now show which services stream each title where you live, not only in the Netherlands',
+      'Discover is lighter: every section shows one row, with Show more to open the rest, and each section starts with the lists and sets you are closest to finishing',
+      'Finished collections, franchises, series and categories now live on your Profile under Completed tracks, on your friends\' profiles too, instead of filling Discover',
+      'Out now and coming is one row of two tiles: what is in cinemas near you and this year\'s releases',
+      'Browse all tracks is a card of its own between the lists and your tracks, so it no longer reads as part of the cinema row',
+      'Pinning a favorite on Discover is gone: Favorites means the four titles on your Profile',
+      'Your Profile now reads Favorites, then Notes, then Completed tracks, and the countries you have explored moved to your stats page',
     ],
   },
   {
