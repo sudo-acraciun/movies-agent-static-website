@@ -51,6 +51,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Browse all tracks is a card of its own between the lists and your tracks, so it no longer reads as part of the cinema row',
       'Pinning a favorite on Discover is gone: Favorites means the four titles on your Profile',
       'Your Profile now reads Favorites, then Notes, then Completed tracks, and the countries you have explored moved to your stats page',
+      'Opening an episode now shows an outline of the episode while its details load, with its name and your Watched and rating buttons already in place, so nothing jumps when it fills in',
+      'A title with no notes now shows a single gold Add note link instead of a large prompt card, matching the other links on the page',
     ],
   },
   {
