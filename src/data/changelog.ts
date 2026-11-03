@@ -32,6 +32,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Mini-series that have ended now list their episodes straight away, with no season to open first',
       'Completed tracks on your Profile now shows every collection, franchise and list you have finished, not only the ones you were tracking',
       'Likes and comments on a grouped post, such as a run of episodes, now stay with it when your friend keeps watching',
+      'Chats, including the assistant, now open on your newest message without a jump, and long conversations scroll more smoothly',
+      'The card asking for your streaming services now steps aside after a few visits if you would rather not set them',
+      'In the assistant, picking a movie with a friend is now the second suggestion, and it names your friend when there is just one',
     ],
   },
   {
