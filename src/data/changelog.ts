@@ -29,6 +29,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Favorites now means one thing: the four titles on your Profile. The heart on Watchlist titles is gone, along with its filter and bulk action',
       'Titles you own are now called Owned everywhere: the Library chip, the filters, the badges on posters and in search, the list picker and the assistant, which now says a pick is owned instead of in your library',
       'A Profile with no favorites yet shows a small Favorites row with a Pick 4 link instead of a large empty card, and the picker now tells you how many more picks reveal how rare your taste is',
+      'Mini-series that have ended now list their episodes straight away, with no season to open first',
+      'Completed tracks on your Profile now shows every collection, franchise and list you have finished, not only the ones you were tracking',
+      'Likes and comments on a grouped post, such as a run of episodes, now stay with it when your friend keeps watching',
     ],
   },
   {
