@@ -47,6 +47,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Sheets now open more gently: the background fades in while the sheet rises, and both fade away when you close them',
       'Text links now share one gold style across the app, so it is easier to see what you can tap',
       'You can now swipe the photo sheet down to close it',
+      'Every list now shows who is on it, right on the page, with one place to choose who sees it and invite a friend to edit',
+      'Starting a list now takes just a name; add a description or rank it whenever you like from the list itself',
+      'A friend\'s profile card no longer reads "Your cinema"',
+      'The profile of someone who is not your friend yet now shows who they are and an Add friend button',
     ],
   },
   {
