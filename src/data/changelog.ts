@@ -40,6 +40,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Grouped posts, such as a run of ratings or watchlist adds, now lead with the most recent title',
       'Top genres on a Profile always show how many titles each one has, moving to a second line when they don\'t fit',
       'Notifications, Your services and the other settings pages now scroll fully clear of the tab bar',
+      'Show more and Show less on Discover now open and close each row smoothly, right where you are',
+      'Title pages hold their place while the cast loads, so the page no longer shifts down when it arrives',
+      'Similar Titles no longer says there are none before it has checked',
+      'With no badges yet, your Profile now invites you to earn your first one',
     ],
   },
   {
