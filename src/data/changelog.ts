@@ -35,6 +35,11 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Chats, including the assistant, now open on your newest message without a jump, and long conversations scroll more smoothly',
       'The card asking for your streaming services now steps aside after a few visits if you would rather not set them',
       'In the assistant, picking a movie with a friend is now the second suggestion, and it names your friend when there is just one',
+      'Your monthly reel now shows only what you watched that month: titles you logged as Can\'t remember or for an earlier year stay out',
+      'Opening a rating from your feed or a notification now shows the note that came with it, just as the feed card does',
+      'Grouped posts, such as a run of ratings or watchlist adds, now lead with the most recent title',
+      'Top genres on a Profile always show how many titles each one has, moving to a second line when they don\'t fit',
+      'Notifications, Your services and the other settings pages now scroll fully clear of the tab bar',
     ],
   },
   {
