@@ -274,8 +274,8 @@ export const CAPABILITIES = [
     body: 'No advertising, no sponsored rows, no engagement feed. The recommendations answer to you.',
   },
   {
-    title: 'A new theme every Friday',
-    body: 'Every Friday a new themed collection of 21 films lands in Discover, with an archive of every week before it.',
+    title: 'A new theme every Thursday',
+    body: 'Every Thursday a new themed collection of 21 films lands in Discover, with an archive of every week before it.',
   },
 ];
 

@@ -43,7 +43,7 @@ export type WeeklyTheme = {
   title: string;
   metaDescription: string;
   h1: string;
-  /** ISO date of the Friday the theme went live in the app. */
+  /** ISO date of the day the theme went live in the app. */
   weekOf: string;
   /**
    * The featured film's TMDB backdrop, the same hero image the app shows for
@@ -111,7 +111,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Manhattan', year: 1979, tmdbId: 696, posterPath: 'https://image.tmdb.org/t/p/w342/k4eT3EvfxW1L9Wmt04UqJqCvCR6.jpg', imdbRating: 7.8, director: 'Allen', cast: 'Woody Allen, Diane Keaton, Michael Murphy', blurb: "A twice-divorced New York TV writer dating a 17-year-old student falls for his best friend's mistress; Woody Allen's black-and-white portrait of the city, set to Gershwin." },
     ],
     appNote:
-      'Several of these films are hard to come across by chance. Add the collection to your watchlist in I Like Movies, tick each one off as you see it, and rate it so the app learns which corners of world cinema you keep coming back to. A new themed collection arrives in the Discover tab every Friday.',
+      'Several of these films are hard to come across by chance. Add the collection to your watchlist in I Like Movies, tick each one off as you see it, and rate it so the app learns which corners of world cinema you keep coming back to. A new themed collection arrives in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'Why do modern directors still shoot in black and white?',
@@ -164,7 +164,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'In a Lonely Place', year: 1950, tmdbId: 17057, posterPath: 'https://image.tmdb.org/t/p/w342/jBlYBQdDGqE0RdhEvuEdyqNOkcb.jpg', imdbRating: 7.9, director: 'Ray', cast: 'Humphrey Bogart, Gloria Grahame, Frank Lovejoy', blurb: 'A volatile Hollywood screenwriter becomes the suspect in a young woman\'s murder, and the neighbor who gives him an alibi falls in love with him, then starts to doubt him; Humphrey Bogart and Gloria Grahame.' },
     ],
     appNote:
-      'Noir rewards watching in a run, when the shadows, voice-overs and double-crosses start to echo each other. Save this collection to your watchlist in I Like Movies, mark each film as you see it, and rate it so the app learns whether you lean toward the 1940s originals or the modern reinventions. Every Friday the Discover tab gets a new themed collection.',
+      'Noir rewards watching in a run, when the shadows, voice-overs and double-crosses start to echo each other. Save this collection to your watchlist in I Like Movies, mark each film as you see it, and rate it so the app learns whether you lean toward the 1940s originals or the modern reinventions. Every Thursday the Discover tab gets a new themed collection.',
     faqs: [
       {
         q: 'What makes a movie a film noir?',
@@ -217,7 +217,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Lake Mungo', year: 2009, tmdbId: 27374, posterPath: 'https://image.tmdb.org/t/p/w342/5IaGu8r0t6bBaydkR6z9l9tJsCg.jpg', imdbRating: 6.1, director: 'Anderson', cast: 'Rosie Traynor, David Pledger, Martin Sharpe', blurb: 'An Australian family starts recording strange happenings at home after their teenage daughter drowns, and the footage uncovers secrets she kept; a mock documentary about grief, built on stillness.' },
     ],
     appNote:
-      'Thirty-one days is a lot of films to keep straight. Save this collection to your watchlist in I Like Movies, tick each film off as you watch it, and rate it so the app learns which kind of horror works for you. Every Friday the Discover tab gets a new themed collection.',
+      'Thirty-one days is a lot of films to keep straight. Save this collection to your watchlist in I Like Movies, tick each film off as you watch it, and rate it so the app learns which kind of horror works for you. Every Thursday the Discover tab gets a new themed collection.',
     faqs: [
       {
         q: 'What horror movies should I watch for Hooptober?',
@@ -270,7 +270,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'The Outlaw Josey Wales', year: 1976, tmdbId: 10747, posterPath: 'https://image.tmdb.org/t/p/w342/92BZIFPbyCPNhExyFScxA3xF1dy.jpg', imdbRating: 7.451, director: 'Eastwood', cast: 'Clint Eastwood, Chief Dan George, Sondra Locke', blurb: 'A Missouri farmer whose family is murdered by Union militiamen joins the Confederate guerrillas, refuses to surrender after the war and gathers a makeshift family as he flees; directed by and starring Clint Eastwood.' },
     ],
     appNote:
-      "Westerns reward watching across the decades, from Ford's optimism to Peckinpah's blood and the Coens' dust. Save this collection to your watchlist in I Like Movies, mark each film as you watch it, and rate it so the app learns which era of the West you like best. A new themed collection lands in the Discover tab every Friday.",
+      "Westerns reward watching across the decades, from Ford's optimism to Peckinpah's blood and the Coens' dust. Save this collection to your watchlist in I Like Movies, mark each film as you watch it, and rate it so the app learns which era of the West you like best. A new themed collection lands in the Discover tab every Thursday.",
     faqs: [
       {
         q: 'What are the best western movies to start with?',
@@ -323,7 +323,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'The Holy Mountain', year: 1973, tmdbId: 8327, posterPath: 'https://image.tmdb.org/t/p/w342/oaOyrFD4ZyZZwjO8wc4b12XHcgZ.jpg', imdbRating: 7.7, director: 'Jodorowsky', cast: 'Alejandro Jodorowsky, Horacio Salinas, Zamira Saunders', blurb: "A Christ-like thief joins an alchemist and seven powerful, corrupt figures on a quest to the summit of a sacred mountain to gain immortality; Alejandro Jodorowsky's surreal, provocative spectacle, shot in Mexico." },
     ],
     appNote:
-      "Several of these films are hard to come across by chance, especially the older Brazilian and Cuban titles. Save the collection to your watchlist in I Like Movies, mark each film as you see it, and rate it so the app learns which corner of the continent's cinema you want more of. Every Friday the Discover tab gets a new themed collection.",
+      "Several of these films are hard to come across by chance, especially the older Brazilian and Cuban titles. Save the collection to your watchlist in I Like Movies, mark each film as you see it, and rate it so the app learns which corner of the continent's cinema you want more of. Every Thursday the Discover tab gets a new themed collection.",
     faqs: [
       {
         q: 'Where should I start with Latin American cinema?',
@@ -376,7 +376,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'American Beauty', year: 1999, tmdbId: 14, posterPath: 'https://image.tmdb.org/t/p/w342/wby9315QzVKdW9BonAefg8jGTTb.jpg', imdbRating: 8.3, director: 'Mendes', cast: 'Kevin Spacey, Annette Bening, Thora Birch', blurb: "A suburban father in a midlife crisis quits his job, takes up weightlifting and becomes infatuated with his daughter's friend while his family comes apart; Sam Mendes's debut won Best Picture." },
     ],
     appNote:
-      'Festival favorites pile up fast on a watchlist. Save this collection in I Like Movies, mark each film as you see it, and rate it so the app learns which kind of prestige film actually works for you. A new themed collection arrives in the Discover tab every Friday.',
+      'Festival favorites pile up fast on a watchlist. Save this collection in I Like Movies, mark each film as you see it, and rate it so the app learns which kind of prestige film actually works for you. A new themed collection arrives in the Discover tab every Thursday.',
     faqs: [
       {
         q: "What is the TIFF People's Choice Award?",
@@ -429,7 +429,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Grease', year: 1978, tmdbId: 621, posterPath: 'https://image.tmdb.org/t/p/w342/2rM7fQKpb7cs1Iq7IBqub9LFDzJ.jpg', imdbRating: 7.367, director: 'Kleiser', cast: 'Olivia Newton-John, John Travolta, Stockard Channing', blurb: 'A greaser and a wholesome Australian transfer student who fell for each other over the summer try again at Rydell High, where their cliques get in the way; John Travolta and Olivia Newton-John.' },
     ],
     appNote:
-      'Musicals are easy to start and hard to stop. Save the collection to your watchlist in I Like Movies, tick each film off as you go, and rate it so the app learns whether you lean toward golden-age MGM or rock opera. Every Friday the Discover tab gets a new themed collection.',
+      'Musicals are easy to start and hard to stop. Save the collection to your watchlist in I Like Movies, tick each film off as you go, and rate it so the app learns whether you lean toward golden-age MGM or rock opera. Every Thursday the Discover tab gets a new themed collection.',
     faqs: [
       {
         q: 'What are the best movie musicals of all time?',
@@ -482,7 +482,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'The Krays', year: 1990, tmdbId: 21344, posterPath: 'https://image.tmdb.org/t/p/w342/e7GqmnQJRWXYs8Y8uXma6p7Amcw.jpg', imdbRating: 6, director: 'Medak', cast: 'Gary Kemp, Martin Kemp, Billie Whitelaw', blurb: "Twin brothers rule London's East End through the sixties with matching suits and psychotic tempers; the true story of Ronnie and Reggie Kray." },
     ],
     appNote:
-      'Half of these are three-hour commitments, and a watchlist turns the canon into a plan. Keep the collection in I Like Movies, mark films as you go, and rate them so your recommendations learn your taste. A new themed collection lands in the Discover tab every Friday.',
+      'Half of these are three-hour commitments, and a watchlist turns the canon into a plan. Keep the collection in I Like Movies, mark films as you go, and rate them so your recommendations learn your taste. A new themed collection lands in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'What should I watch after The Godfather films?',
@@ -535,7 +535,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Selma', year: 2014, tmdbId: 273895, posterPath: 'https://image.tmdb.org/t/p/w342/2QyUcitU0hrxy6B2zkyJ0EhNlqm.jpg', imdbRating: 7.4, director: 'DuVernay', cast: 'David Oyelowo, Carmen Ejogo, Tom Wilkinson', blurb: 'Martin Luther King Jr. plans the 1965 Selma-to-Montgomery voting-rights marches, negotiating with presidents, rivals and his own exhausted movement scene by scene.' },
     ],
     appNote:
-      'Add the films you have not seen to your watchlist in I Like Movies and mark the ones you have; the app keeps your place as you work through the collection. A new themed collection lands in the Discover tab every Friday.',
+      'Add the films you have not seen to your watchlist in I Like Movies and mark the ones you have; the app keeps your place as you work through the collection. A new themed collection lands in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'What is Jeanne Dielman and why is it famous?',
@@ -588,7 +588,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Prick Up Your Ears', year: 1987, tmdbId: 27857, posterPath: 'https://image.tmdb.org/t/p/w342/yLrWxmqPqAQFjyefJtYjoaDxGpi.jpg', imdbRating: 6.7, director: 'Frears', cast: 'Gary Oldman, Alfred Molina, Vanessa Redgrave', blurb: 'The rise of playwright Joe Orton through 1960s London, and the lover and collaborator who, eclipsed and humiliated, finally murdered him.' },
     ],
     appNote:
-      'Track which of these you have seen in I Like Movies and keep the rest on your watchlist; the app remembers your place in the collection. Every Friday a new themed collection arrives in the Discover tab.',
+      'Track which of these you have seen in I Like Movies and keep the rest on your watchlist; the app remembers your place in the collection. Every Thursday a new themed collection arrives in the Discover tab.',
     faqs: [
       {
         q: 'Is Manhunter better than The Silence of the Lambs?',
@@ -641,7 +641,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Tampopo', year: 1985, tmdbId: 11830, posterPath: 'https://image.tmdb.org/t/p/w342/ArYdSuX3zY9fMsE4LqmBl7xJq5R.jpg', imdbRating: 7.9, director: 'Itami', cast: 'Tsutomu Yamazaki, Nobuko Miyamoto, Ken Watanabe', blurb: 'A truck driver helps a widow turn her failing noodle shop into the perfect ramen joint, in a comedy that keeps wandering off into sketches about food, sex and death; a self-declared ramen western.' },
     ],
     appNote:
-      'Working through a canon takes months, and that is what I Like Movies is for: keep the collection on your watchlist, mark films as you watch them, and rate them so your recommendations learn your taste. New themed collections arrive in the Discover tab every Friday.',
+      'Working through a canon takes months, and that is what I Like Movies is for: keep the collection on your watchlist, mark films as you watch them, and rate them so your recommendations learn your taste. New themed collections arrive in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'Should I start with Kurosawa or Ozu?',
@@ -694,7 +694,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Hearts and Minds', year: 1974, tmdbId: 42449, posterPath: 'https://image.tmdb.org/t/p/w342/yXnpP2RAZbG3DQufUGcOM5hU4cF.jpg', imdbRating: 7.7, director: 'Davis', cast: 'Clark Clifford, John Foster Dulles, Georges Bidault', blurb: 'The Vietnam War argued through the words of the generals, politicians and soldiers who ran it, cut against what the cameras actually saw; it won the Oscar and caused a scandal.' },
     ],
     appNote:
-      'I Like Movies tracks documentaries the same as everything else: watchlist the ones you have not seen, rate the ones you have, and the app keeps the collection sorted by what is left. A new themed collection lands in the Discover tab every Friday.',
+      'I Like Movies tracks documentaries the same as everything else: watchlist the ones you have not seen, rate the ones you have, and the app keeps the collection sorted by what is left. A new themed collection lands in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'What is the greatest documentary ever made?',
@@ -747,7 +747,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Killer of Sheep', year: 1978, tmdbId: 27432, posterPath: 'https://image.tmdb.org/t/p/w342/z1CqJKI6gmdAMprD1NOYSCHVXEv.jpg', imdbRating: 6.5, director: 'Burnett', cast: 'Henry G. Sanders, Kaycee Moore, Charles Bracy', blurb: 'A slaughterhouse worker in 1970s Watts drifts through insomnia, family and small neighborhood moments; shot for nothing on weekends, now preserved as an American classic.' },
     ],
     appNote:
-      'Save the ones that fit your mood to your watchlist in I Like Movies; when the next heatwave hits, the list is waiting. A new themed collection arrives in the Discover tab every Friday.',
+      'Save the ones that fit your mood to your watchlist in I Like Movies; when the next heatwave hits, the list is waiting. A new themed collection arrives in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'Why is Do the Right Thing the featured film?',
@@ -800,7 +800,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'The Bear', year: 1988, tmdbId: 2383, posterPath: 'https://image.tmdb.org/t/p/w342/ry4A1Y2udvqyDlVHLtSeP1u9qwJ.jpg', imdbRating: 7.7, director: 'Annaud', cast: 'Tchéky Karyo, Bart the Bear, Douce the Bear', blurb: "An orphaned bear cub attaches itself to a huge wounded male while hunters track them through the Alps; told almost wordlessly from the animals' side." },
     ],
     appNote:
-      'Keep the collection on your I Like Movies watchlist and work through it at your own pace; the app tracks what is left. Every Friday a new themed collection lands in the Discover tab.',
+      'Keep the collection on your I Like Movies watchlist and work through it at your own pace; the app tracks what is left. Every Thursday a new themed collection lands in the Discover tab.',
     faqs: [
       {
         q: 'What is the best film about nature?',
@@ -853,7 +853,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'A Man and a Woman', year: 1966, tmdbId: 42726, posterPath: 'https://image.tmdb.org/t/p/w342/boDZQiubhyhksN8fcgM4sXZ2btW.jpg', imdbRating: 7.4, director: 'Lelouch', cast: 'Anouk Aimée, Jean-Louis Trintignant, Pierre Barouh', blurb: "A widowed script girl and a widowed race-car driver meet at their children's boarding school and circle toward love; the theme tune conquered the world, the Palme d'Or followed." },
     ],
     appNote:
-      'Twenty-one films is a season of evenings: keep them on your I Like Movies watchlist, tick them off as you go, and rate them so the app learns which side of the Wave you prefer. New themed collections arrive in the Discover tab every Friday.',
+      'Twenty-one films is a season of evenings: keep them on your I Like Movies watchlist, tick them off as you go, and rate them so the app learns which side of the Wave you prefer. New themed collections arrive in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'What was the French New Wave?',
@@ -906,7 +906,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Tenet', year: 2020, tmdbId: 577922, posterPath: 'https://image.tmdb.org/t/p/w342/aCIFMriQh8rvhxpN1IWGgvH0Tlg.jpg', imdbRating: 7.2, director: 'Nolan', cast: 'John David Washington, Robert Pattinson, Elizabeth Debicki', blurb: 'A CIA operative learns some objects and people move backwards through time and follows them into a cold-war plot around inverted entropy; Nolan at maximum, best not decoded on first watch.' },
     ],
     appNote:
-      'Watchlist the ones you have missed in I Like Movies and mark the rewatches; the app keeps the collection sorted by what is left. A new themed collection lands in the Discover tab every Friday.',
+      'Watchlist the ones you have missed in I Like Movies and mark the rewatches; the app keeps the collection sorted by what is left. A new themed collection lands in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'What is the most scientifically rigorous time travel film?',
@@ -959,7 +959,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'The Diving Bell and the Butterfly', year: 2007, tmdbId: 2013, posterPath: 'https://image.tmdb.org/t/p/w342/6NkJ4gnLrvLj0PZDW6sNM85JMbj.jpg', imdbRating: 7.6, director: 'Schnabel', cast: 'Mathieu Amalric, Emmanuelle Seigner, Marie-Josée Croze', blurb: 'Elle editor Jean-Dominique Bauby, paralyzed by a stroke at forty-three, dictates a memoir letter by letter with his one working eyelid; filmed largely from inside his gaze.' },
     ],
     appNote:
-      'These are films people mean to get to for years; a watchlist fixes that. Keep the collection in I Like Movies, mark what you watch, and the app holds your place. New themed collections arrive in the Discover tab every Friday.',
+      'These are films people mean to get to for years; a watchlist fixes that. Keep the collection in I Like Movies, mark what you watch, and the app holds your place. New themed collections arrive in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'Is Roma really autobiographical?',
@@ -1012,7 +1012,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: "The Firemen's Ball", year: 1967, tmdbId: 38442, posterPath: 'https://image.tmdb.org/t/p/w342/yylEjPttmTDar0o92StlrO5ghmw.jpg', imdbRating: 7.1, director: 'Forman', cast: 'Jan Vostrčil, Josef Šebánek, František Debelka', blurb: "A small-town fire brigade's annual ball collapses in real time: the raffle prizes are stolen, the beauty contest revolts, a house burns down; the satire that got Forman exiled after 1968." },
     ],
     appNote:
-      'Half of these are hard to stumble onto and easy to lose track of, which is what a watchlist is for. Keep the collection in I Like Movies and mark films as you find them. A new themed collection lands in the Discover tab every Friday.',
+      'Half of these are hard to stumble onto and easy to lose track of, which is what a watchlist is for. Keep the collection in I Like Movies and mark films as you find them. A new themed collection lands in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'Where do I start with the Czechoslovak New Wave?',
@@ -1065,7 +1065,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Million Dollar Baby', year: 2004, tmdbId: 70, posterPath: 'https://image.tmdb.org/t/p/w342/jcfEqKdWF1zeyvECPqp3mkWLct2.jpg', imdbRating: 8, director: 'Eastwood', cast: 'Clint Eastwood, Hilary Swank, Morgan Freeman', blurb: "A waitress in her thirties talks a crusty trainer into taking her on and rises fast through women's boxing, until the story becomes something else entirely; bring reserves." },
     ],
     appNote:
-      'Tournament summers are when these get rewatched: keep the collection on your I Like Movies watchlist and mark what you have seen between matches. New themed collections arrive in the Discover tab every Friday.',
+      'Tournament summers are when these get rewatched: keep the collection on your I Like Movies watchlist and mark what you have seen between matches. New themed collections arrive in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'What is the best football movie?',
@@ -1118,7 +1118,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'All About My Mother', year: 1999, tmdbId: 99, posterPath: 'https://image.tmdb.org/t/p/w342/hjQhzhkGYXPNM96k0mOgob6HMmn.jpg', imdbRating: 7.6, director: 'Almodóvar', cast: 'Cecilia Roth, Marisa Paredes, Candela Peña', blurb: "After her son is killed, a Madrid nurse returns to Barcelona among actresses, trans sex workers and pregnant nuns to find his father; Almodóvar's Oscar-winning melodrama of chosen family." },
     ],
     appNote:
-      'Keep the canon on your I Like Movies watchlist, mark what you have seen, and rate as you go so the app learns what to recommend next. A new themed collection lands in the Discover tab every Friday.',
+      'Keep the canon on your I Like Movies watchlist, mark what you have seen, and rate as you go so the app learns what to recommend next. A new themed collection lands in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'What is the best LGBTQ movie of all time?',
@@ -1171,7 +1171,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Victoria', year: 2015, tmdbId: 320007, posterPath: 'https://image.tmdb.org/t/p/w342/9P8QgfoMcFX7vp2Gj2cYFecHVRZ.jpg', imdbRating: 7.6, director: 'Schipper', cast: 'Laia Costa, Frederick Lau, Franz Rogowski', blurb: 'A Spanish woman in Berlin falls in with four charming strangers whose favor for a gangster becomes a bank robbery; one real 138-minute take across twenty-two locations, no hidden cuts.' },
     ],
     appNote:
-      'Keep the collection on your I Like Movies watchlist and cross films off as you watch; the app tracks what is left. Every Friday a new themed collection arrives in the Discover tab.',
+      'Keep the collection on your I Like Movies watchlist and cross films off as you watch; the app tracks what is left. Every Thursday a new themed collection arrives in the Discover tab.',
     faqs: [
       {
         q: 'Which films are really one single take?',
@@ -1224,7 +1224,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'The Battle of Algiers', year: 1966, tmdbId: 17295, posterPath: 'https://image.tmdb.org/t/p/w342/2p3AFtOHFvP6OeVMqlnL1zLKOqL.jpg', imdbRating: 8.1, director: 'Pontecorvo', cast: 'Brahim Hadjadj, Mohamed Ben Kassen, Yacef Saâdi', blurb: "The FLN's urban insurgency and the French paratroopers sent to crush it, restaged in the real Casbah with non-professionals so convincingly it opens with a disclaimer; still screened as a manual." },
     ],
     appNote:
-      'Many of these take some finding, which makes a watchlist the difference between meaning to and watching. Keep the collection in I Like Movies and mark films as you track them down. New themed collections arrive in the Discover tab every Friday.',
+      'Many of these take some finding, which makes a watchlist the difference between meaning to and watching. Keep the collection in I Like Movies and mark films as you track them down. New themed collections arrive in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'Where do I start with African cinema?',
@@ -1277,7 +1277,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Bridget Jones: The Edge of Reason', year: 2004, tmdbId: 9801, posterPath: 'https://image.tmdb.org/t/p/w342/zDthRXkGnwFIWI0zWcJyS7h6lUl.jpg', imdbRating: 6.2, director: 'Kidron', cast: 'Renée Zellweger, Colin Firth, Hugh Grant', blurb: 'Bridget, finally coupled, invents new catastrophes: jealousy over a leggy colleague, a ski disaster and a Thai prison stint; more of the diary, played broader.' },
     ],
     appNote:
-      'Comfort rewatches deserve tracking too: rate these in I Like Movies and the app learns what an easy evening looks like for you. A new themed collection lands in the Discover tab every Friday.',
+      'Comfort rewatches deserve tracking too: rate these in I Like Movies and the app learns what an easy evening looks like for you. A new themed collection lands in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'What is the best 2000s romcom?',
@@ -1330,7 +1330,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Hamlet', year: 1996, tmdbId: 10549, posterPath: 'https://image.tmdb.org/t/p/w342/ilurgUOp6SCl4cuhfjctj1qxlfZ.jpg', imdbRating: 7.3, director: 'Branagh', cast: 'Kenneth Branagh, Derek Jacobi, Kate Winslet', blurb: 'Branagh films the complete, uncut text in 70mm, a four-hour Hamlet in a bright mirrored Elsinore with an all-star cast down to the smallest role; the maximal version.' },
     ],
     appNote:
-      'Read the book, watchlist the film, or the other way round: I Like Movies keeps the screen half of the pairing tracked and rated. New themed collections arrive in the Discover tab every Friday.',
+      'Read the book, watchlist the film, or the other way round: I Like Movies keeps the screen half of the pairing tracked and rated. New themed collections arrive in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'What is the best Jane Austen film adaptation?',
@@ -1383,7 +1383,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Tout va bien', year: 1972, tmdbId: 8071, posterPath: 'https://image.tmdb.org/t/p/w342/6mJssZAMmziBP6tIe4vGTdNjeIA.jpg', imdbRating: 6.5, director: 'Godard', cast: 'Yves Montand, Jane Fonda, Vittorio Caprioli', blurb: "A strike locks a film director and his journalist wife inside a sausage factory, and the film keeps dismantling its own storytelling; Godard's return to commercial cinema, on his terms." },
     ],
     appNote:
-      'Keep the collection on your I Like Movies watchlist and work through it one evening at a time; the app remembers where you stopped. A new themed collection lands in the Discover tab every Friday.',
+      'Keep the collection on your I Like Movies watchlist and work through it one evening at a time; the app remembers where you stopped. A new themed collection lands in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'What is the best movie about unions?',
@@ -1436,7 +1436,7 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
       { title: 'Hands Over the City', year: 1963, tmdbId: 58383, posterPath: 'https://image.tmdb.org/t/p/w342/zR9uj0dtm5osrrpM7zwO5ndAtbh.jpg', imdbRating: 7.6, director: 'Rosi', cast: 'Rod Steiger, Salvo Randone, Guido Alberti', blurb: 'A Naples building collapse exposes the alliance of developers and councilmen rezoning the city for profit; Rosi names the mechanism outright, and the film still plays as current affairs.' },
     ],
     appNote:
-      'Open I Like Movies, add the films you have not seen to your watchlist, and mark the ones you have; the app keeps the collection sorted by what is left. A new themed collection lands in the Discover tab every Friday.',
+      'Open I Like Movies, add the films you have not seen to your watchlist, and mark the ones you have; the app keeps the collection sorted by what is left. A new themed collection lands in the Discover tab every Thursday.',
     faqs: [
       {
         q: 'Where do I start with Italian neorealism?',

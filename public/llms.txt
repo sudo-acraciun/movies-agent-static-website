@@ -88,7 +88,7 @@ sponsored recommendations.
 
 ## Weekly themes
 
-Every Friday the app publishes a new themed collection in its Discover tab: 21
+Every Thursday the app publishes a new themed collection in its Discover tab: 21
 hand-picked films around one idea, the featured film first, no film repeating
 across the year and at most two per director. Each collection is republished on
 the website once its week has run. The archive holds every past week, newest
