@@ -44,6 +44,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Title pages hold their place while the cast loads, so the page no longer shifts down when it arrives',
       'Similar Titles no longer says there are none before it has checked',
       'With no badges yet, your Profile now invites you to earn your first one',
+      'Sheets now open more gently: the background fades in while the sheet rises, and both fade away when you close them',
+      'Text links now share one gold style across the app, so it is easier to see what you can tap',
+      'You can now swipe the photo sheet down to close it',
     ],
   },
   {
