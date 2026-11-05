@@ -51,6 +51,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Starting a list now takes just a name; add a description or rank it whenever you like from the list itself',
       'A friend\'s profile card no longer reads "Your cinema"',
       'The profile of someone who is not your friend yet now shows who they are and an Add friend button',
+      'The weekly theme now goes up on Thursdays, and the alert reaches you around 5 pm local time, ready for the weekend',
+      'Notifications now show where each one belongs, such as Friends, Household or Currently Watching',
     ],
   },
   {
