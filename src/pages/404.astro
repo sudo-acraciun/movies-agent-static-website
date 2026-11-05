@@ -32,6 +32,30 @@ import { SITE } from '../data/site';
   path="/404"
   noindex
 >
+  <script is:inline>
+    // `format: 'file'` emits no /changelog/ folder and GitHub Pages can't
+    // redirect, so a pasted /changelog/ lands here. Sits above <main> so the
+    // 404 copy never flashes first. HEAD guards the loop on /best/, whose bare
+    // path 301s back to this page. The regex takes plain slug paths only:
+    // stripping //example.com/ would leave a URL pointing off this site.
+    var match = window.location.pathname.match(/^((?:\/[\w.-]+)+)\/$/);
+    if (match) {
+      var root = document.documentElement;
+      var show = function () {
+        root.style.visibility = '';
+      };
+      root.style.visibility = 'hidden';
+      fetch(match[1], { method: 'HEAD' })
+        .then(function (res) {
+          if (res.ok) {
+            window.location.replace(match[1] + window.location.search + window.location.hash);
+          } else {
+            show();
+          }
+        })
+        .catch(show);
+    }
+  </script>
   <main class="not-found">
     <div class="card">
       <a class="brand" href="/" aria-label={`${SITE.name} home`}>
