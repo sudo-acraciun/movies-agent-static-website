@@ -53,6 +53,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'The profile of someone who is not your friend yet now shows who they are and an Add friend button',
       'The weekly theme now goes up on Thursdays, and the alert reaches you around 5 pm local time, ready for the weekend',
       'Notifications now show where each one belongs, such as Friends, Household or Currently Watching',
+      'In cinemas, Stats, your monthly reel and friend profiles now load in place, without the page jumping when your content arrives',
     ],
   },
   {
