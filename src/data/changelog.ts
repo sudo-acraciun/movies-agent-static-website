@@ -67,6 +67,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Sheets with a text box can now be swiped down to close',
       'Browse all tracks now sits right under your Tracks on Discover',
       'Tiles now stay in place when you come back from a title, on Streaming and studio pages too',
+      'Finished tracks now leave Browse Tracks and stay on your Profile, and searching for one points you to Completed tracks',
+      'Badges now opens with the two you are closest to earning in each section, with the rest one tap away',
+      'A friend\'s Badges page now shows whose it is',
+      'Previous and Next in the episode panel now sit in a bar at the bottom, with labels',
     ],
   },
   {
