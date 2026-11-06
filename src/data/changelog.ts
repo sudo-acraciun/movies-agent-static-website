@@ -61,6 +61,12 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Inviting a friend is always one tap away, and every invite is now a link you share',
       'Finishing onboarding now lands smoothly on your Library, with no jumping',
       'The Watched tab now offers a way to rate the titles you have seen',
+      'Countries is now part of Search: pick any country and browse its movies and TV with sort and filters, even without an account',
+      'Search and Library now share one tab bar, with arrows when there is more to see',
+      'Tap your profile backdrop to change it, or clear it, and your backdrop, favorites and photo now open the same kind of sheet',
+      'Sheets with a text box can now be swiped down to close',
+      'Browse all tracks now sits right under your Tracks on Discover',
+      'Tiles now stay in place when you come back from a title, on Streaming and studio pages too',
     ],
   },
   {
