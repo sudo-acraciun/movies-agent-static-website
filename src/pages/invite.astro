@@ -44,8 +44,7 @@ import { SITE } from '../data/site';
     if (params.has('friend')) {
       var friendCode = encodeURIComponent(params.get('friend'));
       // source=link tells the app which path carried the code (attribution,
-      // item 102); the app's install-referrer and typed-code paths send
-      // their own values.
+      // item 102); the app's install-referrer path sends its own value.
       target = 'moviesagentapp://friend/accept?code=' + friendCode + '&source=link';
       // The Play badge already carries the site's URL-encoded referrer
       // (SITE.playUrl, referrer kept last). Appending the invite code inside that same

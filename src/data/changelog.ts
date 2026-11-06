@@ -54,6 +54,13 @@ export const CHANGELOG: ChangelogWeek[] = [
       'The weekly theme now goes up on Thursdays, and the alert reaches you around 5 pm local time, ready for the weekend',
       'Notifications now show where each one belongs, such as Friends, Household or Currently Watching',
       'In cinemas, Stats, your monthly reel and friend profiles now load in place, without the page jumping when your content arrives',
+      'Finding people now happens right on Social: tap the search field for your recent people, requests and friends in one dropdown',
+      'Chats and Household moved up beside the notification bell, so Social has one row of icons and a full-width search',
+      'A friend request now opens the person\'s profile, with Accept and Decline right there',
+      'After unfriending someone you stay on their profile, and can add them again',
+      'Inviting a friend is always one tap away, and every invite is now a link you share',
+      'Finishing onboarding now lands smoothly on your Library, with no jumping',
+      'The Watched tab now offers a way to rate the titles you have seen',
     ],
   },
   {
