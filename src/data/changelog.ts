@@ -72,6 +72,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'A friend\'s Badges page now shows whose it is',
       'Previous and Next in the episode panel now sit in a bar at the bottom, with labels',
       'Library tabs now show their title count beside Sort and Filter, and Watched is one clean grid, with the year you watched a title as a filter',
+      'Search now opens with the keyboard already rising, so you can type the moment the screen lands',
+      'Toasts are now a single pill that rises in and sinks out, stays clear of the tab bar or the keyboard, and swaps its words when two arrive together',
+      'Joining a household takes you to your feed as soon as the join is done, and your merged library fills in behind',
+      'The New list sheet and the description editor now open with the keyboard up',
     ],
   },
   {
