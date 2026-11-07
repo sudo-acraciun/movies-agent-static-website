@@ -71,6 +71,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Badges now opens with the two you are closest to earning in each section, with the rest one tap away',
       'A friend\'s Badges page now shows whose it is',
       'Previous and Next in the episode panel now sit in a bar at the bottom, with labels',
+      'Library tabs now show their title count beside Sort and Filter, and Watched is one clean grid, with the year you watched a title as a filter',
     ],
   },
   {
