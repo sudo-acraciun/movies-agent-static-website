@@ -76,6 +76,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Toasts are now a single pill that rises in and sinks out, stays clear of the tab bar or the keyboard, and swaps its words when two arrive together',
       'Joining a household takes you to your feed as soon as the join is done, and your merged library fills in behind',
       'The New list sheet and the description editor now open with the keyboard up',
+      'Profile and chat menus and the photo pickers now open as one kind of sheet with a title, which you can swipe down or tap outside to close',
     ],
   },
   {
