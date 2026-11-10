@@ -31,6 +31,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Show more on your Badges page now always opens the rest of the section',
       'A ranked list no longer says Ranked twice: the label is gone and Reorder sits on the left',
       'On Android, the keyboard now opens by itself when you rename a list, write a note or edit a message',
+      'A show\'s full cast page now tells you how many episodes each actor played their role in',
+      'You can now follow a studio from its page. The ones you follow sit in a Studios row on Discover',
+      'The cast row on a title page and in an episode panel now shows six people, so View all is easier to reach',
     ],
   },
   {
