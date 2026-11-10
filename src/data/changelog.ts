@@ -24,6 +24,15 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '9 November 2026',
+    entries: [
+      'Tap the cover photo on a title page to see photos from the film or show. Each picture appears once, and a page shows an outline while it loads',
+      'Your completed badges now sit as full cards at the top of each section, with the ones still to earn below them',
+      'Show more on your Badges page now always opens the rest of the section',
+      'A ranked list no longer says Ranked twice: the label is gone and Reorder sits on the left',
+    ],
+  },
+  {
     week: '2 November 2026',
     entries: [
       'Favorites now means one thing: the four titles on your Profile. The heart on Watchlist titles is gone, along with its filter and bulk action',
