@@ -30,6 +30,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Your completed badges now sit as full cards at the top of each section, with the ones still to earn below them',
       'Show more on your Badges page now always opens the rest of the section',
       'A ranked list no longer says Ranked twice: the label is gone and Reorder sits on the left',
+      'On Android, the keyboard now opens by itself when you rename a list, write a note or edit a message',
     ],
   },
   {
