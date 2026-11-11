@@ -140,9 +140,8 @@ const breadcrumbs = [
     ))
   }
 
-  {/* Same inline-join shape as WatchOrderPage's other-orders line: the comma
-      lives inside the expression so Astro's sibling whitespace never renders
-      as " , ". */}
+  {/* Inline join, short competitor names: the comma lives inside the
+      expression so Astro's sibling whitespace never renders as " , ". */}
   <p>
     More comparisons: {COMPARISONS.filter((other) => other.slug !== c.slug).map((other, i) => (
       <span>{i > 0 && ', '}<a href={`/vs/${other.slug}`}>{other.competitor}</a></span>

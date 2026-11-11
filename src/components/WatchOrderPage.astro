@@ -139,14 +139,18 @@ const KIND_LABEL = { film: 'Film', series: 'Series', special: 'Special' } as con
     slugs={['movie-tracker-apps-android', 'movie-tracker-apps-iphone']}
   />
 
-  {/* set:text-free inline join: Astro emits whitespace between sibling
-      expressions, which rendered as " , " between links. Comma lives inside
-      the same expression as the anchor to keep them glued. */}
-  <p class="other-orders">
-    More watch orders: {others.map((w, i) => (
-      <span>{i > 0 && ', '}<a href={`/${w.slug}`}>{w.franchise}</a></span>
-    ))}. Or browse <a href="/guides">every guide and comparison</a>.
-  </p>
+  {/* A list, not a comma-run sentence, same shape as the listicles' "More
+      lists" block: with every franchise named, the inline form ran to five
+      lines. */}
+  <p class="more-orders-label">More watch orders</p>
+  <ul class="more-orders">
+    {others.map((w) => (
+      <li>
+        <a href={`/${w.slug}`}>{w.franchise}</a>
+      </li>
+    ))}
+  </ul>
+  <p>Or browse <a href="/guides">every guide and comparison</a>.</p>
 
   <div class="cta-row">
     <StoreButtons />
@@ -155,9 +159,16 @@ const KIND_LABEL = { film: 'Film', series: 'Series', special: 'Special' } as con
 </ArticleLayout>
 
 <style is:global>
-  /* Only watch-order pages render an .other-orders line; the poster grid and
-     card styles are shared (PosterCardStyles). */
-  .article .other-orders {
-    margin-top: 2rem;
+  /* Only watch-order pages render a "More watch orders" list; the poster grid
+     and card styles are shared (PosterCardStyles). Same look as the "More
+     lists" and "More roundups" blocks. */
+  .article .more-orders-label {
+    margin: 34px 0 8px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .article ul.more-orders {
+    margin-bottom: 1rem;
   }
 </style>

@@ -1339,4 +1339,492 @@ export const WATCH_ORDERS: WatchOrder[] = [
       },
     ],
   },
+  {
+    slug: 'one-piece-watch-order',
+    published: '2026-11-11',
+    modified: '2026-11-11',
+    heroBackdrop: 'https://image.tmdb.org/t/p/w1280/2rmK7mnchw9Xr3XdiTFSxTTLXqv.jpg',
+    heroPosition: 'center 30%',
+    franchise: 'One Piece',
+    title: 'One Piece watch order: the anime and every movie, with where each one fits',
+    metaDescription:
+      'The One Piece watch order: the TV anime from episode 1, then the 13 original films in release order, with where each one fits and which recap films to skip.',
+    h1: 'One Piece watch order',
+    intro: [
+      "One Piece is one long TV series, more than 1,100 episodes since 1999, so the main order needs no puzzling out: start at episode 1 and keep going. The films are where the questions are. None of them is part of the manga's story, and each slots in at a point in the series where the right crew is aboard.",
+      "The list below places all 13 original films. Two more, Episode of Alabasta (2007) and Episode of Chopper Plus (2008), retell arcs the series already covers and are left out, as they are in the app's track.",
+    ],
+    sections: [
+      {
+        heading: 'Release order, the series and the films',
+        blurb: "The series first; each film's note says where it sits in the series.",
+        items: [
+          { title: 'One Piece', year: 1999, tmdbId: 37854, posterPath: 'https://image.tmdb.org/t/p/w342/dB4EDhre2dsC2kxYDavyKWqLQwi.jpg', kind: 'series', note: 'the main story, from episode 1' },
+          { title: 'One Piece: The Movie', year: 2000, tmdbId: 19576, posterPath: 'https://image.tmdb.org/t/p/w342/6QOrTYafoqzXPWLnR2K8129jTHH.jpg', kind: 'film', note: 'East Blue, before Sanji joins' },
+          { title: 'One Piece: Clockwork Island Adventure', year: 2001, tmdbId: 23446, posterPath: 'https://image.tmdb.org/t/p/w342/phrVSY5cpUkybc0gU41crWi2XIP.jpg', kind: 'film', note: 'after the Loguetown arc' },
+          {
+            title: "One Piece: Chopper's Kingdom on the Island of Strange Animals",
+            year: 2002, tmdbId: 44725, posterPath: 'https://image.tmdb.org/t/p/w342/9YFUMvTV4zOkpUsPAiPgjaMKWYd.jpg',
+            kind: 'film',
+            note: 'after the Drum Island arc',
+          },
+          { title: 'One Piece: Dead End Adventure', year: 2003, tmdbId: 44727, posterPath: 'https://image.tmdb.org/t/p/w342/tEJBIHzaW1IoOVHtgblXy76kj4G.jpg', kind: 'film', note: 'between the Alabasta and Jaya arcs' },
+          { title: 'One Piece: Curse of the Sacred Sword', year: 2004, tmdbId: 44728, posterPath: 'https://image.tmdb.org/t/p/w342/fSqxVnjHE7zGAdWkhnQNYLJ2FUj.jpg', kind: 'film', note: 'after the Skypiea arc' },
+          { title: 'One Piece: Baron Omatsuri and the Secret Island', year: 2005, tmdbId: 44729, posterPath: 'https://image.tmdb.org/t/p/w342/ueIR4LM4k8eKhSB8gGT9NMhCwGW.jpg', kind: 'film', note: 'after the Davy Back Fight' },
+          { title: 'One Piece: Giant Mecha Soldier of Karakuri Castle', year: 2006, tmdbId: 44730, posterPath: 'https://image.tmdb.org/t/p/w342/4Pu26TQNiyl8kjNe1sI3NMG2OQG.jpg', kind: 'film', note: 'before the Water 7 arc' },
+          {
+            title: 'One Piece Film: Strong World',
+            year: 2009, tmdbId: 41498, posterPath: 'https://image.tmdb.org/t/p/w342/z9S39hH4IOX9Hmtn3zho3Wdqem8.jpg',
+            kind: 'film',
+            note: 'between Thriller Bark and Sabaody; story by Oda',
+          },
+          { title: 'One Piece 3D: Straw Hat Chase', year: 2011, tmdbId: 79082, posterPath: 'https://image.tmdb.org/t/p/w342/eYm3oEPiQJ9RV5QdyudwUplb9cD.jpg', kind: 'film', note: 'a 30-minute 3D short, before the time skip' },
+          {
+            title: 'One Piece Film: Z',
+            year: 2012, tmdbId: 176983, posterPath: 'https://image.tmdb.org/t/p/w342/dd0HwfxstffjRgbBcQvtw3uqS6O.jpg',
+            kind: 'film',
+            note: 'after the time skip; lead-in episodes 575 to 578',
+          },
+          {
+            title: 'One Piece Film: Gold',
+            year: 2016, tmdbId: 374205, posterPath: 'https://image.tmdb.org/t/p/w342/9PgiOFTLZXP7emlwcIt0yRasJ9h.jpg',
+            kind: 'film',
+            note: 'after Dressrosa; lead-in episodes 747 to 750',
+          },
+          { title: 'One Piece: Stampede', year: 2019, tmdbId: 568012, posterPath: 'https://image.tmdb.org/t/p/w342/4E2lyUGLEr3yH4q6kJxPkQUhX7n.jpg', kind: 'film', note: 'between the Levely and Wano arcs' },
+          { title: 'One Piece Film: Red', year: 2022, tmdbId: 900667, posterPath: 'https://image.tmdb.org/t/p/w342/8ibfhe4P7rhmn3lrPhOZzIJHA2B.jpg', kind: 'film', note: 'after the time skip, around the Wano arc' },
+        ],
+      },
+    ],
+    hasAppTrack: true,
+    faqs: [
+      {
+        q: 'Do I need to watch the One Piece movies?',
+        a: [
+          'No. None of the films is part of the main story and no episode depends on them, so all 13 are optional. Eiichiro Oda, who writes the manga, wrote the story of Strong World and was involved in making Film Z, Film Gold, Stampede and Film Red.',
+        ],
+      },
+      {
+        q: 'When should I watch each One Piece movie?',
+        a: [
+          'At the point noted under each poster, where the right crew is aboard. The short version: the first nine films, up to Straw Hat Chase, sit before the time skip, and Film Z, Film Gold, Stampede and Film Red sit after it. Three of the later films have lead-in episodes in the series: 575 to 578 for Film Z, 747 to 750 for Film Gold, and 895 and 896 for Stampede.',
+        ],
+      },
+      {
+        q: 'Which One Piece movies are canon?',
+        a: [
+          'None, strictly. Eiichiro Oda does not count the films as part of the main story, including the ones he worked on: each borrows the crew and the world for a self-contained adventure.',
+        ],
+      },
+      {
+        q: 'What about Episode of Alabasta and Episode of Chopper Plus?',
+        a: [
+          "Skip them on a first watch. Both are shortened retellings of arcs the series already covers, Alabasta (2007) and Drum Island (2008), which is why they are not in this list or in the app's track.",
+        ],
+      },
+      {
+        q: 'Is the Netflix live-action One Piece part of the watch order?',
+        a: [
+          "No. It is a separate adaptation that retells the story from the start with a live cast: its first season covers the East Blue saga, and its second, released in March 2026, enters the Grand Line. It is not part of the anime's order or the app's track.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'jujutsu-kaisen-watch-order',
+    published: '2026-11-11',
+    modified: '2026-11-11',
+    heroBackdrop: 'https://image.tmdb.org/t/p/w1280/3US5UXJSStOVozc6EwhGSMDguol.jpg',
+    heroPosition: 'center 30%',
+    franchise: 'Jujutsu Kaisen',
+    title: 'Jujutsu Kaisen watch order: the series, JJK 0 and where the film fits',
+    metaDescription:
+      'The Jujutsu Kaisen watch order: Season 1, then the prequel film Jujutsu Kaisen 0, then Seasons 2 and 3, plus the story order and which cinema releases are recaps.',
+    h1: 'Jujutsu Kaisen watch order',
+    intro: [
+      "Jujutsu Kaisen is one TV series and one film. The series has run three seasons since 2020; the film, Jujutsu Kaisen 0, is a prequel that came out between Seasons 1 and 2, and that is the place to watch it: Season 2's final episode brings back the film's lead, Yuta Okkotsu.",
+      "Two later cinema releases, Hidden Inventory / Premature Death and Execution, are compilations of the series and are left out, as they are in the app's track.",
+    ],
+    sections: [
+      {
+        heading: 'Release order',
+        blurb: 'How it came out, which is the best first watch.',
+        items: [
+          {
+            title: 'Jujutsu Kaisen',
+            year: 2020, tmdbId: 95479, posterPath: 'https://image.tmdb.org/t/p/w342/6qQzMJG27XOJsyAEEIisoJB45j2.jpg',
+            kind: 'series',
+            note: 'Season 1 first, then the film; three seasons so far',
+          },
+          {
+            title: 'Jujutsu Kaisen 0',
+            year: 2021, tmdbId: 810693, posterPath: 'https://image.tmdb.org/t/p/w342/23oJaeBh0FDk2mQ2P240PU9Xxfh.jpg',
+            kind: 'film',
+            note: 'prequel; watch between Seasons 1 and 2',
+          },
+        ],
+      },
+    ],
+    hasAppTrack: true,
+    faqs: [
+      {
+        q: 'When should I watch Jujutsu Kaisen 0?',
+        a: [
+          "After Season 1 and before Season 2, the order it came out in. Season 2's final episode brings back the film's lead, Yuta Okkotsu, so the film is best seen by then.",
+        ],
+      },
+      {
+        q: 'Is Jujutsu Kaisen 0 canon?',
+        a: [
+          "Yes. It adapts Jujutsu Kaisen 0, Gege Akutami's prologue to the manga, and its lead returns in the series.",
+        ],
+      },
+      {
+        q: 'Is there a chronological order?',
+        a: [
+          'Yes, but it splits Season 2. Its first five episodes, the Hidden Inventory / Premature Death arc, are set years before everything else; then comes Jujutsu Kaisen 0, then Season 1, then the rest of Season 2 and Season 3. Release order is the better first watch.',
+        ],
+      },
+      {
+        q: 'Do I need the Hidden Inventory and Execution movies?',
+        a: [
+          'No. Both are cinema compilations of the series. Hidden Inventory / Premature Death (2025) re-cuts the first five episodes of Season 2, and Execution (2025) re-cuts the Shibuya Incident and premiered the first two episodes of Season 3 in cinemas. Watching the series covers both.',
+        ],
+      },
+      {
+        q: 'How many seasons of Jujutsu Kaisen are there?',
+        a: [
+          'Three so far: Season 1 (2020 to 2021, 24 episodes), Season 2 (2023, 23 episodes covering Hidden Inventory / Premature Death and the Shibuya Incident) and Season 3, The Culling Game Part 1 (2026, 12 episodes). The Culling Game continues in Part 2, announced without a date.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'demon-slayer-watch-order',
+    published: '2026-11-11',
+    modified: '2026-11-11',
+    heroBackdrop: 'https://image.tmdb.org/t/p/w1280/nTvM4mhqNlHIvUkI1gVnW6XP7GG.jpg',
+    heroPosition: 'center 30%',
+    franchise: 'Demon Slayer',
+    title: 'Demon Slayer watch order: every arc, Mugen Train and Infinity Castle',
+    metaDescription:
+      'The Demon Slayer watch order: Season 1, the Mugen Train film, the Entertainment District, Swordsmith Village and Hashira Training arcs, then Infinity Castle, and which films are recaps.',
+    h1: 'Demon Slayer watch order',
+    intro: [
+      'Demon Slayer: Kimetsu no Yaiba is one TV series told in five arcs from 2019 to 2024, plus the films that carry the story on from it. Mugen Train (2020) follows Season 1 directly, and Infinity Castle (2025), the first film of a trilogy, follows the Hashira Training arc.',
+      "Two other cinema releases, To the Swordsmith Village (2023) and To the Hashira Training (2024), are compilations of TV episodes and are left out, as they are in the app's track.",
+    ],
+    sections: [
+      {
+        heading: 'Release order',
+        blurb: 'The series, then the films in the order they continue it.',
+        items: [
+          {
+            title: 'Demon Slayer: Kimetsu no Yaiba',
+            year: 2019, tmdbId: 85937, posterPath: 'https://image.tmdb.org/t/p/w342/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg',
+            kind: 'series',
+            note: 'Season 1 first, then the film; five arcs',
+          },
+          {
+            title: 'Demon Slayer: Kimetsu no Yaiba The Movie: Mugen Train',
+            year: 2020, tmdbId: 635302, posterPath: 'https://image.tmdb.org/t/p/w342/h8Rb9gBr48ODIwYUttZNYeMWeUU.jpg',
+            kind: 'film',
+            note: 'straight after Season 1',
+          },
+          {
+            title: 'Demon Slayer: Kimetsu no Yaiba Infinity Castle',
+            year: 2025, tmdbId: 1311031, posterPath: 'https://image.tmdb.org/t/p/w342/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg',
+            kind: 'film',
+            note: 'after Hashira Training; part 1 of 3',
+          },
+        ],
+      },
+    ],
+    hasAppTrack: true,
+    faqs: [
+      {
+        q: 'Should I watch the Mugen Train movie or the Mugen Train TV arc?',
+        a: [
+          'Either. The TV arc (2021, seven episodes) is a recut of the film with one new opening episode, so it tells the same story. The film is the shorter way through; the TV arc adds that first episode.',
+        ],
+      },
+      {
+        q: 'What order are the Demon Slayer arcs in?',
+        a: [
+          'Season 1, Unwavering Resolve (2019, 26 episodes); Mugen Train, as the film (2020) or its TV version (2021); Entertainment District (2021 to 2022, 11 episodes); Swordsmith Village (2023, 11 episodes); Hashira Training (2024, 8 episodes); then the film Infinity Castle (2025).',
+        ],
+      },
+      {
+        q: 'Do I need To the Swordsmith Village and To the Hashira Training?',
+        a: [
+          'No. They were cinema events built from TV episodes: the last two episodes of Entertainment District with the first of Swordsmith Village, and the last episode of Swordsmith Village with the first of Hashira Training. The series has all of it.',
+        ],
+      },
+      {
+        q: 'When do Infinity Castle Parts 2 and 3 come out?',
+        a: [
+          'No release date has been announced for either. Part 1 opened in Japan in July 2025, and this page will add the next parts when they are dated.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'attack-on-titan-watch-order',
+    published: '2026-11-11',
+    modified: '2026-11-11',
+    heroBackdrop: 'https://image.tmdb.org/t/p/w1280/rqbCbjB19amtOtFQbb3K2lgm2zv.jpg',
+    heroPosition: 'center 30%',
+    franchise: 'Attack on Titan',
+    title: 'Attack on Titan watch order: all four seasons, The Last Attack, the OVAs and the recaps',
+    metaDescription:
+      'The Attack on Titan watch order: Seasons 1 to 4 including The Final Chapters, The Last Attack, where the OVAs fit, and which films are recaps to skip.',
+    h1: 'Attack on Titan watch order',
+    intro: [
+      'Attack on Titan is one TV series in four seasons, from 2013 to 2023: watch the seasons in order. It ended with two specials, The Final Chapters (2023), which the cinema release The Last Attack (2024) joins into one film.',
+      'Everything else is optional: eight OVA episodes with side stories, and four recap films that re-cut the series. The live-action films are a separate adaptation.',
+    ],
+    sections: [
+      {
+        heading: 'Release order',
+        blurb: 'The series, then its ending as one film.',
+        items: [
+          { title: 'Attack on Titan', year: 2013, tmdbId: 1429, posterPath: 'https://image.tmdb.org/t/p/w342/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg', kind: 'series', note: 'Seasons 1 to 4' },
+          {
+            title: 'Attack on Titan: The Last Attack',
+            year: 2024, tmdbId: 1333100, posterPath: 'https://image.tmdb.org/t/p/w342/wgwldDDlTDDMrluOMkpSA8lyKjv.jpg',
+            kind: 'film',
+            note: 'The Final Chapters specials as one film',
+          },
+        ],
+      },
+    ],
+    hasAppTrack: true,
+    faqs: [
+      {
+        q: 'What is the Attack on Titan watch order?',
+        a: [
+          'Season 1 (2013), Season 2 (2017), Season 3 (2018 to 2019), then The Final Season, which aired in two parts (2020 to 2022) and ended with The Final Chapters specials (2023).',
+        ],
+      },
+      {
+        q: 'Do I need The Last Attack if I watched The Final Chapters?',
+        a: [
+          'Not unless you want the ending on a big screen. It is the two Final Chapters specials joined into one 145-minute film, with a new post-credits scene as its only new footage.',
+        ],
+      },
+      {
+        q: 'Where do the Attack on Titan OVAs fit?',
+        a: [
+          'They are optional and were released between seasons. A common placement: the three early OVAs and No Regrets, the two-part story of Levi\'s past, after Season 1; Lost Girls\' "Wall Sina, Goodbye" after Season 2, and "Lost in the Cruel World" after the first part of Season 3. Guides differ, and some put No Regrets first because it is a prequel.',
+        ],
+      },
+      {
+        q: 'Do I need the Attack on Titan recap films?',
+        a: [
+          'No. Crimson Bow and Arrow (2014) and Wings of Freedom (2015) re-cut Season 1, Roar of Awakening (2018) re-cuts Season 2, and Chronicle (2020) recaps the first three seasons. The series covers all of it.',
+        ],
+      },
+      {
+        q: 'Is the live-action Attack on Titan part of the story?',
+        a: [
+          "No. The two live-action films from 2015 are a separate adaptation of the manga, not part of this order or the app's track.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'star-trek-watch-order',
+    published: '2026-11-11',
+    modified: '2026-11-11',
+    heroBackdrop: 'https://image.tmdb.org/t/p/w1280/ywK4VrR7vL56mDGXDLMtFypwqA8.jpg',
+    heroPosition: 'center 30%',
+    franchise: 'Star Trek',
+    title: 'Star Trek watch order: every series and movie, in release order',
+    metaDescription:
+      'The Star Trek watch order: all 11 series and 14 movies from 1966 to 2026 in release order, the movies on their own, and how the timeline fits together.',
+    h1: 'Star Trek watch order',
+    intro: [
+      'Star Trek is 60 years of television and film: 11 series and 14 movies in the list below, from The Original Series in 1966 to Starfleet Academy in 2026. Release order is the simplest way through, and it is the order the list uses.',
+      'The series overlap and jump around the timeline, so the notes say when each one is set. The three films from 2009 to 2016 take place in an alternate timeline, the Kelvin timeline, and stand apart from the rest.',
+    ],
+    sections: [
+      {
+        heading: 'Release order, series and films',
+        blurb: 'Everything, in the order it came out.',
+        items: [
+          { title: 'Star Trek: The Original Series', year: 1966, tmdbId: 253, posterPath: 'https://image.tmdb.org/t/p/w342/9byecLwsbbkAqGdxcKuuTI5kEzZ.jpg', kind: 'series', note: 'Kirk and Spock, set in the 2260s' },
+          { title: 'Star Trek: The Motion Picture', year: 1979, tmdbId: 152, posterPath: 'https://image.tmdb.org/t/p/w342/wfiAfNwH6CMKxz4vRaW8CPTabtk.jpg', kind: 'film' },
+          { title: 'Star Trek II: The Wrath of Khan', year: 1982, tmdbId: 154, posterPath: 'https://image.tmdb.org/t/p/w342/uPyLsKl8Z0LOoxeaFXsY5MxhR5s.jpg', kind: 'film' },
+          { title: 'Star Trek III: The Search for Spock', year: 1984, tmdbId: 157, posterPath: 'https://image.tmdb.org/t/p/w342/yqEj0oPfKBMCz7YcCARHDgH7VFm.jpg', kind: 'film' },
+          { title: 'Star Trek IV: The Voyage Home', year: 1986, tmdbId: 168, posterPath: 'https://image.tmdb.org/t/p/w342/xY5TzGXJOB3L9rhZ1MbbPyVlW5J.jpg', kind: 'film' },
+          { title: 'Star Trek: The Next Generation', year: 1987, tmdbId: 655, posterPath: 'https://image.tmdb.org/t/p/w342/vkLzXddgUKH5VcpnYiRzpJFrZhz.jpg', kind: 'series', note: 'Picard, set in the 2360s' },
+          { title: 'Star Trek V: The Final Frontier', year: 1989, tmdbId: 172, posterPath: 'https://image.tmdb.org/t/p/w342/uiXr41VLYsuug3CZbFrKLSNahuZ.jpg', kind: 'film' },
+          { title: 'Star Trek VI: The Undiscovered Country', year: 1991, tmdbId: 174, posterPath: 'https://image.tmdb.org/t/p/w342/tvTOJD7Gz668GLy2nNdLRQvpPsv.jpg', kind: 'film' },
+          { title: 'Star Trek: Deep Space Nine', year: 1993, tmdbId: 580, posterPath: 'https://image.tmdb.org/t/p/w342/vE6138ykaEXQkCSEHyuBIgfGlUZ.jpg', kind: 'series', note: 'runs alongside The Next Generation' },
+          { title: 'Star Trek: Generations', year: 1994, tmdbId: 193, posterPath: 'https://image.tmdb.org/t/p/w342/wqU1XiJgvgJVrFCWjZEqat3icMT.jpg', kind: 'film' },
+          { title: 'Star Trek: Voyager', year: 1995, tmdbId: 1855, posterPath: 'https://image.tmdb.org/t/p/w342/gNS5tRSG3UlXodCxznKKOKweqxh.jpg', kind: 'series', note: 'set 2371 to 2378' },
+          { title: 'Star Trek: First Contact', year: 1996, tmdbId: 199, posterPath: 'https://image.tmdb.org/t/p/w342/kYsoZC7BWVYOs2B7P1l6yck7hEG.jpg', kind: 'film' },
+          { title: 'Star Trek: Insurrection', year: 1998, tmdbId: 200, posterPath: 'https://image.tmdb.org/t/p/w342/xQCMAHeg5M9HpDIqanYbWdr4brB.jpg', kind: 'film' },
+          { title: 'Star Trek: Enterprise', year: 2001, tmdbId: 314, posterPath: 'https://image.tmdb.org/t/p/w342/tsbBTABtNgu0ycsFpnIhiQ5woOM.jpg', kind: 'series', note: 'a prequel, set in the 2150s' },
+          { title: 'Star Trek: Nemesis', year: 2002, tmdbId: 201, posterPath: 'https://image.tmdb.org/t/p/w342/cldAwhvBmOv9jrd3bXWuqRHoXyq.jpg', kind: 'film' },
+          { title: 'Star Trek', year: 2009, tmdbId: 13475, posterPath: 'https://image.tmdb.org/t/p/w342/lV5OpzAss1z06YNagOVap1I35mH.jpg', kind: 'film', note: 'Kelvin timeline' },
+          { title: 'Star Trek Into Darkness', year: 2013, tmdbId: 54138, posterPath: 'https://image.tmdb.org/t/p/w342/Aim3kVNh1MPIxPEFeJrl9e9Uf1a.jpg', kind: 'film', note: 'Kelvin timeline' },
+          { title: 'Star Trek Beyond', year: 2016, tmdbId: 188927, posterPath: 'https://image.tmdb.org/t/p/w342/wI5VghYNYLktDRPUa5rrVcVA1h7.jpg', kind: 'film', note: 'Kelvin timeline' },
+          { title: 'Star Trek: Discovery', year: 2017, tmdbId: 67198, posterPath: 'https://image.tmdb.org/t/p/w342/xwpOHgym48Ftz7fbJq5te5xoiwu.jpg', kind: 'series', note: 'starts a decade before The Original Series' },
+          { title: 'Star Trek: Picard', year: 2020, tmdbId: 85949, posterPath: 'https://image.tmdb.org/t/p/w342/nIlAKIrLKxOeoEnc0Urb65yNCp.jpg', kind: 'series', note: 'set 2399 to 2402' },
+          { title: 'Star Trek: Lower Decks', year: 2020, tmdbId: 85948, posterPath: 'https://image.tmdb.org/t/p/w342/i7Em3r7KCyNfkOwMkyqN8UMvK8S.jpg', kind: 'series', note: 'animated; set from 2380' },
+          { title: 'Star Trek: Prodigy', year: 2021, tmdbId: 106393, posterPath: 'https://image.tmdb.org/t/p/w342/Aqub3PSzLm2F398vitkbkxjopjO.jpg', kind: 'series', note: 'animated; set 2383 to 2385' },
+          { title: 'Star Trek: Strange New Worlds', year: 2022, tmdbId: 103516, posterPath: 'https://image.tmdb.org/t/p/w342/97TTJuqiSMfU0DuXx1B4NG5QNP7.jpg', kind: 'series', note: 'Captain Pike, before The Original Series' },
+          { title: 'Star Trek: Section 31', year: 2025, tmdbId: 1114894, posterPath: 'https://image.tmdb.org/t/p/w342/fNu6P4jYU55Cb3CC2SndtAKvois.jpg', kind: 'film', note: 'streaming film, set in the 2320s' },
+          { title: 'Star Trek: Starfleet Academy', year: 2026, tmdbId: 223530, posterPath: 'https://image.tmdb.org/t/p/w342/m4JnADIJkF5ck6jq7GUEcPBKxd0.jpg', kind: 'series', note: 'set in the 32nd century' },
+        ],
+      },
+      {
+        heading: 'The movies, in order',
+        blurb: 'Only the films, for a movie marathon.',
+        items: [
+          { title: 'Star Trek: The Motion Picture', year: 1979, tmdbId: 152, posterPath: 'https://image.tmdb.org/t/p/w342/wfiAfNwH6CMKxz4vRaW8CPTabtk.jpg', kind: 'film' },
+          { title: 'Star Trek II: The Wrath of Khan', year: 1982, tmdbId: 154, posterPath: 'https://image.tmdb.org/t/p/w342/uPyLsKl8Z0LOoxeaFXsY5MxhR5s.jpg', kind: 'film' },
+          { title: 'Star Trek III: The Search for Spock', year: 1984, tmdbId: 157, posterPath: 'https://image.tmdb.org/t/p/w342/yqEj0oPfKBMCz7YcCARHDgH7VFm.jpg', kind: 'film' },
+          { title: 'Star Trek IV: The Voyage Home', year: 1986, tmdbId: 168, posterPath: 'https://image.tmdb.org/t/p/w342/xY5TzGXJOB3L9rhZ1MbbPyVlW5J.jpg', kind: 'film' },
+          { title: 'Star Trek V: The Final Frontier', year: 1989, tmdbId: 172, posterPath: 'https://image.tmdb.org/t/p/w342/uiXr41VLYsuug3CZbFrKLSNahuZ.jpg', kind: 'film' },
+          { title: 'Star Trek VI: The Undiscovered Country', year: 1991, tmdbId: 174, posterPath: 'https://image.tmdb.org/t/p/w342/tvTOJD7Gz668GLy2nNdLRQvpPsv.jpg', kind: 'film' },
+          { title: 'Star Trek: Generations', year: 1994, tmdbId: 193, posterPath: 'https://image.tmdb.org/t/p/w342/wqU1XiJgvgJVrFCWjZEqat3icMT.jpg', kind: 'film' },
+          { title: 'Star Trek: First Contact', year: 1996, tmdbId: 199, posterPath: 'https://image.tmdb.org/t/p/w342/kYsoZC7BWVYOs2B7P1l6yck7hEG.jpg', kind: 'film' },
+          { title: 'Star Trek: Insurrection', year: 1998, tmdbId: 200, posterPath: 'https://image.tmdb.org/t/p/w342/xQCMAHeg5M9HpDIqanYbWdr4brB.jpg', kind: 'film' },
+          { title: 'Star Trek: Nemesis', year: 2002, tmdbId: 201, posterPath: 'https://image.tmdb.org/t/p/w342/cldAwhvBmOv9jrd3bXWuqRHoXyq.jpg', kind: 'film' },
+          { title: 'Star Trek', year: 2009, tmdbId: 13475, posterPath: 'https://image.tmdb.org/t/p/w342/lV5OpzAss1z06YNagOVap1I35mH.jpg', kind: 'film', note: 'Kelvin timeline' },
+          { title: 'Star Trek Into Darkness', year: 2013, tmdbId: 54138, posterPath: 'https://image.tmdb.org/t/p/w342/Aim3kVNh1MPIxPEFeJrl9e9Uf1a.jpg', kind: 'film', note: 'Kelvin timeline' },
+          { title: 'Star Trek Beyond', year: 2016, tmdbId: 188927, posterPath: 'https://image.tmdb.org/t/p/w342/wI5VghYNYLktDRPUa5rrVcVA1h7.jpg', kind: 'film', note: 'Kelvin timeline' },
+          { title: 'Star Trek: Section 31', year: 2025, tmdbId: 1114894, posterPath: 'https://image.tmdb.org/t/p/w342/fNu6P4jYU55Cb3CC2SndtAKvois.jpg', kind: 'film', note: 'streaming film, set in the 2320s' },
+        ],
+      },
+    ],
+    hasAppTrack: true,
+    faqs: [
+      {
+        q: 'What order should I watch Star Trek in?',
+        a: [
+          'In release order, as listed above, starting with The Original Series (1966). If you would rather start with a newer show, Strange New Worlds (2022) is often recommended as a way in, and it is set just before The Original Series.',
+        ],
+      },
+      {
+        q: 'What is the order of the Star Trek movies?',
+        a: [
+          'The Motion Picture (1979), The Wrath of Khan (1982), The Search for Spock (1984), The Voyage Home (1986), The Final Frontier (1989), The Undiscovered Country (1991), Generations (1994), First Contact (1996), Insurrection (1998), Nemesis (2002), Star Trek (2009), Into Darkness (2013), Beyond (2016) and Section 31 (2025).',
+        ],
+      },
+      {
+        q: 'Is there a chronological order for Star Trek?',
+        a: [
+          'Yes, by when each is set: Enterprise (2150s); Discovery Seasons 1 and 2 (2250s); Strange New Worlds (from 2259); The Original Series and its six films (2265 to 2293); Section 31 (2320s); The Next Generation, Deep Space Nine and Voyager with their four films (2360s and 2370s); Lower Decks and Prodigy (2380s); Picard (from 2399); and finally Discovery from Season 3 and Starfleet Academy, in the 32nd century. The three Kelvin films sit outside it, in their own timeline.',
+        ],
+      },
+      {
+        q: 'Is Star Trek: The Animated Series part of the order?',
+        a: [
+          "It aired from 1973 and is set between The Original Series and The Motion Picture, so that is where to watch it if you want it. It is not in this list because the app's track does not include it.",
+        ],
+      },
+      {
+        q: 'Are the 2009 Star Trek movies a reboot?',
+        a: [
+          'In a way. Star Trek (2009), Into Darkness (2013) and Beyond (2016) follow the original crew, with a new cast, in an alternate timeline, the Kelvin timeline, so they do not change the events of the other series and films.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'jurassic-park-watch-order',
+    published: '2026-11-11',
+    modified: '2026-11-11',
+    heroBackdrop: 'https://image.tmdb.org/t/p/w1280/f082quUW2kAtZXFZVGEfhwacZoG.jpg',
+    heroPosition: 'center 30%',
+    franchise: 'Jurassic Park',
+    title: 'Jurassic Park movies in order: all 7 films and the two animated series',
+    metaDescription:
+      'All 7 Jurassic Park and Jurassic World films in order, from 1993 to Rebirth (2025), plus where the animated series Camp Cretaceous and Chaos Theory fit.',
+    h1: 'Jurassic Park movies in order',
+    intro: [
+      'Seven films from 1993 to 2025: the Jurassic Park trilogy, the Jurassic World trilogy, and Jurassic World Rebirth, set five years after Dominion. The films came out in story order, so release order is also the timeline.',
+      'Two Netflix animated series fill in the gaps: Camp Cretaceous, which begins during the events of Jurassic World (2015), and its sequel Chaos Theory, set six years later and running into the events of Dominion.',
+    ],
+    sections: [
+      {
+        heading: 'Release order',
+        blurb: 'How everything came out.',
+        items: [
+          { title: 'Jurassic Park', year: 1993, tmdbId: 329, posterPath: 'https://image.tmdb.org/t/p/w342/d9mtMGQDLANKieb9PbD3yK7xxzo.jpg', kind: 'film' },
+          { title: 'The Lost World: Jurassic Park', year: 1997, tmdbId: 330, posterPath: 'https://image.tmdb.org/t/p/w342/s4RkAQWI9hgzctXgNFos8sJUnXJ.jpg', kind: 'film' },
+          { title: 'Jurassic Park III', year: 2001, tmdbId: 331, posterPath: 'https://image.tmdb.org/t/p/w342/oQXj4NUfS3r3gHXtDOzcJgj1lLc.jpg', kind: 'film' },
+          { title: 'Jurassic World', year: 2015, tmdbId: 135397, posterPath: 'https://image.tmdb.org/t/p/w342/rhr4y79GpxQF9IsfJItRXVaoGs4.jpg', kind: 'film' },
+          { title: 'Jurassic World: Fallen Kingdom', year: 2018, tmdbId: 351286, posterPath: 'https://image.tmdb.org/t/p/w342/x2Us3jR6ToMJjbcPbLimYoxf6xr.jpg', kind: 'film' },
+          {
+            title: 'Jurassic World: Camp Cretaceous',
+            year: 2020, tmdbId: 93741, posterPath: 'https://image.tmdb.org/t/p/w342/pwte1p4ZySI1qAVSVdSTRKjuIAa.jpg',
+            kind: 'series',
+            note: 'animated; begins during Jurassic World',
+          },
+          { title: 'Jurassic World Dominion', year: 2022, tmdbId: 507086, posterPath: 'https://image.tmdb.org/t/p/w342/jbAvCACjLf1ZG0unB2tdmx5HAf1.jpg', kind: 'film' },
+          {
+            title: 'Jurassic World: Chaos Theory',
+            year: 2024, tmdbId: 237512, posterPath: 'https://image.tmdb.org/t/p/w342/c2Od0cY2IeayDj5osUxZSAD1QK.jpg',
+            kind: 'series',
+            note: 'animated; runs into Dominion',
+          },
+          { title: 'Jurassic World Rebirth', year: 2025, tmdbId: 1234821, posterPath: 'https://image.tmdb.org/t/p/w342/1RICxzeoNCAO5NpcRMIgg1XT6fm.jpg', kind: 'film', note: 'five years after Dominion' },
+        ],
+      },
+      {
+        heading: 'Story order',
+        blurb: 'The same titles on one timeline, with the two series in their place.',
+        items: [
+          { title: 'Jurassic Park', year: 1993, tmdbId: 329, posterPath: 'https://image.tmdb.org/t/p/w342/d9mtMGQDLANKieb9PbD3yK7xxzo.jpg', kind: 'film' },
+          { title: 'The Lost World: Jurassic Park', year: 1997, tmdbId: 330, posterPath: 'https://image.tmdb.org/t/p/w342/s4RkAQWI9hgzctXgNFos8sJUnXJ.jpg', kind: 'film' },
+          { title: 'Jurassic Park III', year: 2001, tmdbId: 331, posterPath: 'https://image.tmdb.org/t/p/w342/oQXj4NUfS3r3gHXtDOzcJgj1lLc.jpg', kind: 'film' },
+          { title: 'Jurassic World', year: 2015, tmdbId: 135397, posterPath: 'https://image.tmdb.org/t/p/w342/rhr4y79GpxQF9IsfJItRXVaoGs4.jpg', kind: 'film' },
+          {
+            title: 'Jurassic World: Camp Cretaceous',
+            year: 2020, tmdbId: 93741, posterPath: 'https://image.tmdb.org/t/p/w342/pwte1p4ZySI1qAVSVdSTRKjuIAa.jpg',
+            kind: 'series',
+            note: "starts during Jurassic World; later seasons reach Fallen Kingdom's opening",
+          },
+          { title: 'Jurassic World: Fallen Kingdom', year: 2018, tmdbId: 351286, posterPath: 'https://image.tmdb.org/t/p/w342/x2Us3jR6ToMJjbcPbLimYoxf6xr.jpg', kind: 'film' },
+          {
+            title: 'Jurassic World: Chaos Theory',
+            year: 2024, tmdbId: 237512, posterPath: 'https://image.tmdb.org/t/p/w342/c2Od0cY2IeayDj5osUxZSAD1QK.jpg',
+            kind: 'series',
+            note: 'three years after Fallen Kingdom, into Dominion',
+          },
+          { title: 'Jurassic World Dominion', year: 2022, tmdbId: 507086, posterPath: 'https://image.tmdb.org/t/p/w342/jbAvCACjLf1ZG0unB2tdmx5HAf1.jpg', kind: 'film' },
+          { title: 'Jurassic World Rebirth', year: 2025, tmdbId: 1234821, posterPath: 'https://image.tmdb.org/t/p/w342/1RICxzeoNCAO5NpcRMIgg1XT6fm.jpg', kind: 'film', note: 'five years after Dominion' },
+        ],
+      },
+    ],
+    hasAppTrack: true,
+    faqs: [
+      {
+        q: 'What order are the Jurassic Park movies in?',
+        a: [
+          'Jurassic Park (1993), The Lost World: Jurassic Park (1997), Jurassic Park III (2001), Jurassic World (2015), Jurassic World: Fallen Kingdom (2018), Jurassic World Dominion (2022) and Jurassic World Rebirth (2025). Release order is also story order.',
+        ],
+      },
+      {
+        q: 'Is Jurassic World Rebirth a sequel to Dominion?',
+        a: ['Yes. It is set five years after Dominion, in the same timeline.'],
+      },
+      {
+        q: 'Do I need to watch Camp Cretaceous and Chaos Theory?',
+        a: [
+          'No, the films never depend on them. Camp Cretaceous follows a group of campers stranded on the island during Jurassic World (2015), and Chaos Theory, its sequel series, is set six years later.',
+        ],
+      },
+      {
+        q: 'Where does Camp Cretaceous fit in the timeline?',
+        a: [
+          'It starts during Jurassic World (2015): Season 1 runs alongside the film, Season 2 is set six months before the opening of Fallen Kingdom, and Season 3 reaches that opening. Chaos Theory then starts three years after Fallen Kingdom and runs into the events of Dominion.',
+        ],
+      },
+    ],
+  },
 ];
