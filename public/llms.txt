@@ -166,7 +166,7 @@ Each one names where the other apps are the better choice.
 - Blog, written by the developer: https://ilikemovies.app/blog
 - I Like Movies is now on iPhone: https://ilikemovies.app/blog/i-like-movies-is-now-on-iphone
 - The assistant that never answers from memory: https://ilikemovies.app/blog/how-the-assistant-checks-every-title
-- How I built an AI movie tracker as a solo dev: https://ilikemovies.app/blog/how-i-built-i-like-movies
+- The build story, from the developer: https://ilikemovies.app/blog/how-i-built-i-like-movies
 - What's new in the app, every update: https://ilikemovies.app/changelog
 
 Film and TV metadata is provided by TMDB. This product uses the TMDB API but is

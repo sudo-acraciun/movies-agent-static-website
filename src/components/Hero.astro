@@ -94,7 +94,9 @@ import libraryShot from '../assets/screenshots/library.png';
     </div>
   </div>
 
-  <a class="scroll-cue" href="#discover" aria-label="Scroll to features">
+  {/* Targets the press band, the section directly below, so the cue never
+      scrolls past it. The nav's "Features" links keep #discover. */}
+  <a class="scroll-cue" href="#featured" aria-label="Scroll down">
     <span aria-hidden="true"></span>
   </a>
 </section>

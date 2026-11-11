@@ -85,8 +85,8 @@ export type Roundup = PageDates & {
   verdict: string[];
   faqs: Faq[];
   /**
-   * Tracker roundups list every watch order: a franchise in order is the job
-   * a tracker app is for, and those pages are the site's widest-reaching.
+   * Tracker roundups list every watch order: following a franchise in order
+   * is the job a tracker app is for.
    */
   linksWatchOrders?: boolean;
 };
