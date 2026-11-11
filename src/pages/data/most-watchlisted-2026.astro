@@ -20,12 +20,12 @@ import { organizationNode, organizationRef, appStubNode, appRef, webSiteRef } fr
 // hero backdrop are the prod poster_url / backdrop_url, served at TMDB w342 /
 // w1280. imdb is null for the two unreleased tentpoles; the chip is omitted
 // there rather than shown blank.
-const UPDATED = 'September 2026';
+const UPDATED = 'November 2026';
 
-// "500+" is anchored to total members, not to watchlist holders. Kept as a
-// phrase, not the exact number, so a refresh does not require a re-count of the
-// headline every time.
-const MEMBER_COUNT = 'more than 500';
+// The member count (here, in the title and in the H1) is anchored to total
+// members, not to watchlist holders. Kept as a rounded phrase, not the exact
+// number, so a refresh does not require a re-count of the headline every time.
+const MEMBER_COUNT = 'more than 1,000';
 
 // A top-tracked 2026 film's TMDB backdrop, same source the app's Discover tab
 // and the /themes pages use for their hero. Decorative (empty alt in the
@@ -38,41 +38,41 @@ const POSTER = 'https://image.tmdb.org/t/p/w342';
 
 type Film = { rank: number; title: string; year: number; watchers: number; imdb: number | null; poster: string };
 
-// Distinct non-internal members with the film on their live watchlist, Sept 2026.
+// Distinct non-internal members with the film on their live watchlist, Nov 2026.
 // Equal counts keep DB order (by title); the visible chip shows the tie honestly.
 const ITEMS: Film[] = [
-  { rank: 1, title: 'Spider-Man: Brand New Day', year: 2026, watchers: 121, imdb: 8.1, poster: `${POSTER}/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg` },
-  { rank: 2, title: '2001: A Space Odyssey', year: 1968, watchers: 90, imdb: 8.3, poster: `${POSTER}/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg` },
-  { rank: 3, title: 'Ford v Ferrari', year: 2019, watchers: 84, imdb: 8.1, poster: `${POSTER}/dR1Ju50iudrOh3YgfwkAU1g2HZe.jpg` },
-  { rank: 4, title: 'Dune: Part Three', year: 2026, watchers: 65, imdb: null, poster: `${POSTER}/d43fvHQsIMa4kpyhKXw0haEJIvI.jpg` },
-  { rank: 5, title: 'The Odyssey', year: 2026, watchers: 64, imdb: 8.5, poster: `${POSTER}/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg` },
-  { rank: 6, title: 'Obsession', year: 2026, watchers: 55, imdb: 8.2, poster: `${POSTER}/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg` },
-  { rank: 7, title: 'Top Gun: Maverick', year: 2022, watchers: 49, imdb: 8.2, poster: `${POSTER}/n0YuM4f5lvGAP6MAW2kBIzugXnc.jpg` },
-  { rank: 8, title: 'Sinners', year: 2025, watchers: 47, imdb: 7.5, poster: `${POSTER}/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg` },
-  { rank: 9, title: 'The Drama', year: 2026, watchers: 45, imdb: 7.2, poster: `${POSTER}/rnIOUhzwJDfgQakx8EjoNyItKgs.jpg` },
-  { rank: 10, title: 'No Country for Old Men', year: 2007, watchers: 43, imdb: 8.2, poster: `${POSTER}/6d5XOczc226jECq0LIX0siKtgHR.jpg` },
-  { rank: 11, title: 'Parasite', year: 2019, watchers: 33, imdb: 8.5, poster: `${POSTER}/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg` },
-  { rank: 12, title: 'Before Sunrise', year: 1995, watchers: 26, imdb: 8.1, poster: `${POSTER}/kf1Jb1c2JAOqjuzA3H4oDM263uB.jpg` },
-  { rank: 13, title: 'City of God', year: 2002, watchers: 23, imdb: 8.6, poster: `${POSTER}/k7eYdWvhYQyRQoU2TB2A2Xu2TfD.jpg` },
-  { rank: 14, title: 'Spirited Away', year: 2001, watchers: 23, imdb: 8.6, poster: `${POSTER}/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg` },
-  { rank: 15, title: 'Everything Everywhere All at Once', year: 2022, watchers: 21, imdb: 7.7, poster: `${POSTER}/u68AjlvlutfEIcpmbYpKcdi09ut.jpg` },
-  { rank: 16, title: 'Avengers: Doomsday', year: 2026, watchers: 10, imdb: null, poster: `${POSTER}/jzPwsojjFStf5lR5Nm07w2hH56G.jpg` },
-  { rank: 17, title: 'Oppenheimer', year: 2023, watchers: 10, imdb: 8.0, poster: `${POSTER}/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg` },
-  { rank: 18, title: 'Project Hail Mary', year: 2026, watchers: 10, imdb: 8.2, poster: `${POSTER}/yihdXomYb5kTeSivtFndMy5iDmf.jpg` },
-  { rank: 19, title: 'The End of Oak Street', year: 2026, watchers: 10, imdb: 6.6, poster: `${POSTER}/fYXqpgPmHMphSF2W30GbTeJVIa5.jpg` },
-  { rank: 20, title: 'Mutiny', year: 2026, watchers: 9, imdb: 6.7, poster: `${POSTER}/pu2VxGlpGwffOx292w18b1tv96j.jpg` },
-  { rank: 21, title: 'Se7en', year: 1995, watchers: 8, imdb: 8.4, poster: `${POSTER}/191nKfP0ehp3uIvWqgPbFmI4lv9.jpg` },
+  { rank: 1, title: 'Spider-Man: Brand New Day', year: 2026, watchers: 245, imdb: 8.0, poster: `${POSTER}/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg` },
+  { rank: 2, title: 'The Odyssey', year: 2026, watchers: 211, imdb: 8.4, poster: `${POSTER}/krVa7rKCQb4OBfsr2LTJv4rTz5q.jpg` },
+  { rank: 3, title: 'Dune: Part Three', year: 2026, watchers: 206, imdb: null, poster: `${POSTER}/glt0v4I89rMWstDNCaFXc5SNyO1.jpg` },
+  { rank: 4, title: '2001: A Space Odyssey', year: 1968, watchers: 153, imdb: 8.3, poster: `${POSTER}/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg` },
+  { rank: 5, title: 'Obsession', year: 2026, watchers: 151, imdb: 7.8, poster: `${POSTER}/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg` },
+  { rank: 6, title: 'Ford v Ferrari', year: 2019, watchers: 149, imdb: 8.1, poster: `${POSTER}/dR1Ju50iudrOh3YgfwkAU1g2HZe.jpg` },
+  { rank: 7, title: 'The Drama', year: 2026, watchers: 117, imdb: 7.1, poster: `${POSTER}/rnIOUhzwJDfgQakx8EjoNyItKgs.jpg` },
+  { rank: 8, title: 'Top Gun: Maverick', year: 2022, watchers: 108, imdb: 8.2, poster: `${POSTER}/n0YuM4f5lvGAP6MAW2kBIzugXnc.jpg` },
+  { rank: 9, title: 'Sinners', year: 2025, watchers: 99, imdb: 7.5, poster: `${POSTER}/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg` },
+  { rank: 10, title: 'No Country for Old Men', year: 2007, watchers: 49, imdb: 8.2, poster: `${POSTER}/6d5XOczc226jECq0LIX0siKtgHR.jpg` },
+  { rank: 11, title: 'Parasite', year: 2019, watchers: 40, imdb: 8.5, poster: `${POSTER}/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg` },
+  { rank: 12, title: 'Avengers: Doomsday', year: 2026, watchers: 37, imdb: null, poster: `${POSTER}/9jlZ59UALLLOE279HMT19rP9XQs.jpg` },
+  { rank: 13, title: 'Before Sunrise', year: 1995, watchers: 29, imdb: 8.1, poster: `${POSTER}/kf1Jb1c2JAOqjuzA3H4oDM263uB.jpg` },
+  { rank: 14, title: 'Project Hail Mary', year: 2026, watchers: 28, imdb: 8.2, poster: `${POSTER}/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg` },
+  { rank: 15, title: 'Spirited Away', year: 2001, watchers: 27, imdb: 8.6, poster: `${POSTER}/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg` },
+  { rank: 16, title: 'Se7en', year: 1995, watchers: 23, imdb: 8.6, poster: `${POSTER}/191nKfP0ehp3uIvWqgPbFmI4lv9.jpg` },
+  { rank: 17, title: 'Digger', year: 2026, watchers: 22, imdb: 8.6, poster: `${POSTER}/1ATXKrIPJyKNwnJ6lcG088Sa6zi.jpg` },
+  { rank: 18, title: 'Oppenheimer', year: 2023, watchers: 22, imdb: 8.2, poster: `${POSTER}/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg` },
+  { rank: 19, title: 'Everything Everywhere All at Once', year: 2022, watchers: 21, imdb: 7.7, poster: `${POSTER}/u68AjlvlutfEIcpmbYpKcdi09ut.jpg` },
+  { rank: 20, title: 'Clayface', year: 2026, watchers: 19, imdb: 7.5, poster: `${POSTER}/9l1NuFjel2j89hiuiJbsxfblqjy.jpg` },
+  { rank: 21, title: 'City of God', year: 2002, watchers: 18, imdb: 8.6, poster: `${POSTER}/k7eYdWvhYQyRQoU2TB2A2Xu2TfD.jpg` },
 ];
 
 const path = '/data/most-watchlisted-2026';
 // PageDates rules (src/data/schema.ts): a data refresh is a content edit, so it
 // bumps `modified` along with UPDATED.
 const published = '2026-09-21';
-const modified = '2026-09-21';
-const title = 'The most-watchlisted films of 2026, from 500+ watchlists | I Like Movies';
+const modified = '2026-11-11';
+const title = 'The most-watchlisted films of 2026, from 1,000+ watchlists | I Like Movies';
 const metaDescription =
   'The films I Like Movies members are queuing up for 2026, ranked by how many separate watchlists each one sits on. A live snapshot from the app, refreshed as it moves.';
-const h1 = '500+ film fans, one watchlist: the most-tracked movies of 2026';
+const h1 = '1,000+ film fans, one watchlist: the most-tracked movies of 2026';
 
 const faqs = [
   {

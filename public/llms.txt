@@ -102,6 +102,33 @@ first; a representative handful of permalinks follows.
 - Films by female directors, The Piano to Jeanne Dielman: https://ilikemovies.app/themes/female-auteurs
 - Italian Neorealism, from Bicycle Thieves onward: https://ilikemovies.app/themes/italian-neorealism
 
+## Watch orders
+
+Every film and series in a franchise, in the order to watch them. Series sit at
+the date their first season aired.
+
+- Marvel watch order: https://ilikemovies.app/marvel-watch-order
+- Star Wars watch order: https://ilikemovies.app/star-wars-watch-order
+- Lord of the Rings watch order: https://ilikemovies.app/lord-of-the-rings-watch-order
+- Dune watch order: https://ilikemovies.app/dune-watch-order
+- Harry Potter watch order: https://ilikemovies.app/harry-potter-watch-order
+- Fast & Furious movies in order: https://ilikemovies.app/fast-and-furious-watch-order
+- Alien movies in order: https://ilikemovies.app/alien-watch-order
+- Dragon Ball watch order: https://ilikemovies.app/dragon-ball-watch-order
+- Naruto watch order: https://ilikemovies.app/naruto-watch-order
+- Evangelion watch order: https://ilikemovies.app/evangelion-watch-order
+- James Bond movies in order: https://ilikemovies.app/james-bond-watch-order
+- Mission: Impossible movies in order: https://ilikemovies.app/mission-impossible-watch-order
+- John Wick movies in order: https://ilikemovies.app/john-wick-watch-order
+
+## Film lists
+
+- The best horror films to watch this Hooptober, ranked: https://ilikemovies.app/list/best-horror-movies-hooptober
+- Every Studio Ghibli film, ranked by viewer score: https://ilikemovies.app/list/studio-ghibli-films-ranked
+- Every Christopher Nolan film, ranked by viewer score: https://ilikemovies.app/list/christopher-nolan-films-ranked
+- Great films under 100 minutes, ranked: https://ilikemovies.app/list/great-films-under-100-minutes
+- The best Dutch films, ranked: https://ilikemovies.app/list/best-dutch-films
+
 ## Roundups, comparisons and guides
 
 Written by the maker of I Like Movies, who says so at the top of every page.
@@ -133,6 +160,14 @@ Each one names where the other apps are the better choice.
 - How to decide what to watch together: https://ilikemovies.app/what-to-watch-together
 - How to track movies and TV on iPhone: https://ilikemovies.app/how-to-track-movies-on-iphone
 - Every guide, comparison and watch order: https://ilikemovies.app/guides
+
+## Blog and changelog
+
+- Blog, written by the developer: https://ilikemovies.app/blog
+- I Like Movies is now on iPhone: https://ilikemovies.app/blog/i-like-movies-is-now-on-iphone
+- The assistant that never answers from memory: https://ilikemovies.app/blog/how-the-assistant-checks-every-title
+- How I built an AI movie tracker as a solo dev: https://ilikemovies.app/blog/how-i-built-i-like-movies
+- What's new in the app, every update: https://ilikemovies.app/changelog
 
 Film and TV metadata is provided by TMDB. This product uses the TMDB API but is
 not endorsed or certified by TMDB.
