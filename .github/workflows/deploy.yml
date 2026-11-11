@@ -23,6 +23,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      indexnow: ${{ steps.indexnow.outputs.list }}
     steps:
       - uses: actions/checkout@v4
 
@@ -37,6 +39,19 @@ jobs:
 
       - run: npm run build
 
+      # Which sitemap pages this deploy changes, read before the deploy replaces
+      # the live copies. Must never block a publish, hence the two guards.
+      - id: indexnow
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          node scripts/indexnow.mjs diff > indexnow.txt
+          {
+            echo 'list<<INDEXNOW_EOF'
+            cat indexnow.txt
+            echo 'INDEXNOW_EOF'
+          } >> "$GITHUB_OUTPUT"
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
@@ -50,3 +65,22 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Tells IndexNow (Bing, and the engines that share its index) which pages
+  # changed. Runs only after a successful deploy, and only when one did. A run
+  # cancelled by a newer push skips its submission; Bing still reads the sitemap.
+  indexnow:
+    needs: [build, deploy]
+    if: needs.build.outputs.indexnow != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - env:
+          LIST: ${{ needs.build.outputs.indexnow }}
+        run: printf '%s\n' "$LIST" | node scripts/indexnow.mjs submit

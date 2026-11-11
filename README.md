@@ -27,6 +27,13 @@ npm run assets   # regenerate og-image.png and app icons from the brand SVGs
 Deployment is automatic: any push to `main` runs `.github/workflows/deploy.yml`,
 which builds and publishes to GitHub Pages.
 
+Each run also tells IndexNow, the protocol Bing reads, which pages changed:
+before publishing, `scripts/indexnow.mjs diff` compares every sitemap page in
+the new build with the bytes the live site serves, and after publishing the
+`indexnow` job submits the ones that differ. The key file
+`public/1e13a1c96f725261920289de9c647fb2.txt` must stay. To see which pages a
+push would change, run `npm run build && node scripts/indexnow.mjs diff`.
+
 ## Why the site is built the way it is
 
 The site has two jobs. One is to be a link you can paste anywhere that works on
