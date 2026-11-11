@@ -66,7 +66,7 @@ export const SITE = {
   // all clicks), so the entity token earns the front position, and the typed
   // keywords ("movie and TV app for iPhone and Android") still sit in the first clause.
   metaDescription:
-    'I Like Movies is a free movie and TV app for iPhone and Android. AI picks from your ratings, one shared household watchlist, no ads.',
+    'I Like Movies is a free movie and TV app for iPhone and Android. AI picks from your ratings, watchlists your household can see, no ads.',
 
   tagline: 'Everything you have watched. Everything you are going to.',
 

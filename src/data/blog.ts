@@ -13,9 +13,9 @@ export const POSTS: BlogPost[] = [
     path: '/blog/i-like-movies-is-now-on-iphone',
     title: 'I Like Movies is now on iPhone',
     published: '2026-09-14',
-    modified: '2026-09-14',
+    modified: '2026-11-11',
     blurb:
-      'I Like Movies is on the App Store. The same free tracker, with your library synced across iPhone and Android and shared with your household.',
+      'I Like Movies is on the App Store. The same free tracker, with your library synced across iPhone and Android.',
   },
   {
     path: '/blog/how-the-assistant-checks-every-title',
