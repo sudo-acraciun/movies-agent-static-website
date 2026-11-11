@@ -4,6 +4,7 @@ import { SITE } from '../data/site';
 import { WEEKLY_THEMES, formatWeek, type WeeklyTheme } from '../data/themes';
 import StoreButtons from './StoreButtons.astro';
 import PosterCardStyles from './PosterCardStyles.astro';
+import RoundupLinks from './RoundupLinks.astro';
 
 interface Props {
   theme: WeeklyTheme;
@@ -119,6 +120,11 @@ const jsonLd = [
       </details>
     ))
   }
+
+  <RoundupLinks
+    label="Deciding what to watch"
+    slugs={['movie-apps-for-couples', 'apps-to-decide-what-to-watch']}
+  />
 
   {/* Same inline-join shape as WatchOrderPage's other-orders line, but themes
       chain chronologically, so the neighbours come first. */}

@@ -84,7 +84,20 @@ export type Roundup = {
   table: RoundupTableRow[];
   verdict: string[];
   faqs: Faq[];
+  /**
+   * Tracker roundups list every watch order: a franchise in order is the job
+   * a tracker app is for, and those pages are the site's widest-reaching.
+   */
+  linksWatchOrders?: boolean;
 };
+
+/**
+ * The H1 without its "(we compared N)" tail, for link text: in a list of
+ * roundups the tail repeats on every row and adds nothing.
+ */
+export function shortHeading(r: Roundup): string {
+  return r.h1.replace(/\s*\(we compared \d+\)$/, '');
+}
 
 const OUR_DISCLOSURE_TAIL =
   'is one of the apps below. We say that up front, credit every other app for what it does best, place ourselves only where we genuinely fit this job, and take no payment for any placement.';
@@ -598,6 +611,7 @@ export const ROUNDUPS: Roundup[] = [
       'The best apps to track the movies and TV you watch on Android, compared honestly on one library, episode tracking, automatic scrobbling, imports and price.',
     h1: 'Best movie tracker apps for Android in 2026 (we compared 5)',
     query: 'What is the best movie tracker app for Android?',
+    linksWatchOrders: true,
     updated: 'October 2026',
     intro: [
       'A tracker’s job is to keep an honest record of what you have watched and what you mean to, films and TV, without becoming a chore. The field splits three ways: film-first social apps, all-in-one trackers, and portability layers that other apps plug into.',
@@ -1369,6 +1383,7 @@ export const ROUNDUPS: Roundup[] = [
       'The best apps to track the movies and TV you watch on iPhone, compared honestly on one library, episode tracking, cross-device sync, imports and price.',
     h1: 'Best movie tracker apps for iPhone in 2026 (we compared 5)',
     query: 'What is the best movie tracker app for iPhone?',
+    linksWatchOrders: true,
     updated: 'October 2026',
     intro: [
       'A tracker keeps an honest record of what you have watched and what you mean to, films and TV, without turning into a chore. On iPhone the field runs from polished single-purpose trackers to cross-platform apps that also live on the web, and they differ most in how your history is stored and synced.',

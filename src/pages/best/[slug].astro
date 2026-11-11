@@ -1,8 +1,9 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import StoreButtons from '../../components/StoreButtons.astro';
-import { ROUNDUPS } from '../../data/roundups';
+import { ROUNDUPS, shortHeading } from '../../data/roundups';
 import { COMPARISONS } from '../../data/comparisons';
+import { WATCH_ORDERS } from '../../data/watchOrders';
 import { SITE } from '../../data/site';
 import { organizationNode, organizationRef, appStubNode, appRef, webSiteRef } from '../../data/schema';
 
@@ -148,17 +149,15 @@ const breadcrumbs = [
   }
 
   {/* A list, not a comma-run sentence: with several roundups the inline form is
-      unreadable. The "(we compared N)" tail is stripped from the link text since
-      it repeats on every row and adds nothing in a list. The block renders only
-      when another roundup exists, so a single-page state shows just the browse
-      line. */}
+      unreadable. The block renders only when another roundup exists, so a
+      single-page state shows just the browse line. */}
   {otherRoundups.length > 0 && (
     <>
       <p class="more-roundups-label">More roundups</p>
       <ul class="more-roundups">
         {otherRoundups.map((other) => (
           <li>
-            <a href={`/best/${other.slug}`}>{other.h1.replace(/\s*\(we compared \d+\)$/, '')}</a>
+            <a href={`/best/${other.slug}`}>{shortHeading(other)}</a>
           </li>
         ))}
       </ul>
@@ -172,6 +171,18 @@ const breadcrumbs = [
       <span>{i > 0 && ', '}<a href={`/vs/${other.slug}`}>{other.competitor}</a></span>
     ))}.
   </p>
+  {r.linksWatchOrders && (
+    <>
+      <p class="more-roundups-label">Watch orders</p>
+      <ul class="more-roundups">
+        {WATCH_ORDERS.map((w) => (
+          <li>
+            <a href={`/${w.slug}`}>{w.h1}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
   <p>Browse <a href="/guides">every guide and comparison</a>.</p>
 
   <div class="cta-row">

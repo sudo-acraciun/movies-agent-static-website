@@ -4,6 +4,7 @@ import { SITE } from '../data/site';
 import { LISTICLES, type Listicle } from '../data/listicles';
 import StoreButtons from './StoreButtons.astro';
 import PosterCardStyles from './PosterCardStyles.astro';
+import RoundupLinks from './RoundupLinks.astro';
 
 interface Props {
   list: Listicle;
@@ -156,6 +157,11 @@ const jsonLd = [
       </details>
     ))
   }
+
+  <RoundupLinks
+    label="Movie apps compared"
+    slugs={['apps-to-decide-what-to-watch', 'free-movie-apps-no-ads']}
+  />
 
   {/* A list, not a comma-run sentence, same shape as the /best pages' "More
       roundups" block: list titles are long, so the inline form is unreadable

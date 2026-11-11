@@ -1,0 +1,45 @@
+---
+import { ROUNDUPS, shortHeading } from '../data/roundups';
+
+interface Props {
+  label: string;
+  /** /best slugs, in display order. */
+  slugs: string[];
+}
+
+const { label, slugs } = Astro.props;
+
+// Resolved at build time: a renamed or deleted roundup fails the build here
+// instead of shipping a dead link on every page that names it.
+const roundups = slugs.map((slug) => {
+  const r = ROUNDUPS.find((o) => o.slug === slug);
+  if (!r) throw new Error(`RoundupLinks: no roundup with slug "${slug}"`);
+  return r;
+});
+---
+
+{/* Label + list, never an inline run: roundup titles are long. */}
+<p class="roundup-links-label">{label}</p>
+<ul class="roundup-links">
+  {
+    roundups.map((r) => (
+      <li>
+        <a href={`/best/${r.slug}`}>{shortHeading(r)}</a>
+      </li>
+    ))
+  }
+</ul>
+
+<style is:global>
+  /* Same look as the "More lists" and "More roundups" blocks, prefixed .article
+     like them so it wins over the layout's own .article p rule. */
+  .article .roundup-links-label {
+    margin: 34px 0 8px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .article ul.roundup-links {
+    margin-bottom: 1rem;
+  }
+</style>

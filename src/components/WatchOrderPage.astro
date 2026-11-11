@@ -4,6 +4,7 @@ import { SITE } from '../data/site';
 import { WATCH_ORDERS, type WatchOrder } from '../data/watchOrders';
 import StoreButtons from './StoreButtons.astro';
 import PosterCardStyles from './PosterCardStyles.astro';
+import RoundupLinks from './RoundupLinks.astro';
 
 interface Props {
   order: WatchOrder;
@@ -127,6 +128,11 @@ const KIND_LABEL = { film: 'Film', series: 'Series', special: 'Special' } as con
       </details>
     ))
   }
+
+  <RoundupLinks
+    label="Tracking a franchise"
+    slugs={['movie-tracker-apps-android', 'movie-tracker-apps-iphone']}
+  />
 
   {/* set:text-free inline join: Astro emits whitespace between sibling
       expressions, which rendered as " , " between links. Comma lives inside

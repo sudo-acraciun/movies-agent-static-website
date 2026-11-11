@@ -2,7 +2,7 @@
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import StoreButtons from '../../components/StoreButtons.astro';
 import { COMPARISONS, NOT_DO, SITE } from '../../data/comparisons';
-import { ROUNDUPS } from '../../data/roundups';
+import { ROUNDUPS, shortHeading } from '../../data/roundups';
 import { organizationNode, organizationRef, appStubNode, appRef, webSiteRef } from '../../data/schema';
 
 export function getStaticPaths() {
@@ -153,7 +153,7 @@ const breadcrumbs = [
   <ul>
     {ROUNDUPS.map((roundup) => (
       <li>
-        <a href={`/best/${roundup.slug}`}>{roundup.h1.replace(/\s*\(we compared \d+\)$/, '')}</a>
+        <a href={`/best/${roundup.slug}`}>{shortHeading(roundup)}</a>
       </li>
     ))}
   </ul>
