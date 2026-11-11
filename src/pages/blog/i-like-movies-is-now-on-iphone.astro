@@ -2,6 +2,8 @@
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import StoreButtons from '../../components/StoreButtons.astro';
 import { SITE } from '../../data/site';
+import { blogPost } from '../../data/blog';
+import PostDate from '../../components/PostDate.astro';
 
 // The iPhone launch announcement. Dated post, listed on /blog. Its job is a
 // timely, shareable URL for the launch (Reddit, X, press) and a freshness
@@ -10,6 +12,7 @@ const path = '/blog/i-like-movies-is-now-on-iphone';
 const title = 'I Like Movies is now on iPhone';
 const description =
   'I Like Movies is on the App Store. The same free movie and TV tracker, with your library synced across iPhone and Android and shared with your household.';
+const post = blogPost(path);
 
 const jsonLd = [
   {
@@ -17,6 +20,8 @@ const jsonLd = [
     '@type': 'Article',
     headline: title,
     description,
+    datePublished: post.published,
+    dateModified: post.modified,
     author: { '@type': 'Person', name: 'Alexandru Craciun' },
     publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     mainEntityOfPage: new URL(path, SITE.url).href,
@@ -31,7 +36,10 @@ const jsonLd = [
   heading={title}
   jsonLd={jsonLd}
   disclosure={false}
+  published={post.published}
+  modified={post.modified}
 >
+  <PostDate iso={post.published} />
   <p>
     I Like Movies is on the App Store. After a year on Android, the same app is
     now on iPhone, free, with no ads and nothing to upgrade. If you have been

@@ -1,0 +1,21 @@
+---
+import { fmtDate } from '../data/blog';
+
+interface Props {
+  /** ISO date, rendered the way the /blog index shows it ("14 September 2026"). */
+  iso: string;
+}
+
+const { iso } = Astro.props;
+---
+
+<p class="post-date"><time datetime={iso}>{fmtDate(iso)}</time></p>
+
+<style>
+  /* Tucked under the H1 like the "Last reviewed" line on the /best pages. */
+  .post-date {
+    margin: -8px 0 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+</style>

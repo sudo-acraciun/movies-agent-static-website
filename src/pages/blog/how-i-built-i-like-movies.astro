@@ -1,6 +1,8 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { SITE } from '../../data/site';
+import { blogPost } from '../../data/blog';
+import PostDate from '../../components/PostDate.astro';
 
 const path = '/blog/how-i-built-i-like-movies';
 const title = 'How I built an AI movie tracker as a solo dev';
@@ -13,6 +15,7 @@ const description =
 //
 // Listed on the /blog index alongside the other posts; the footer links that
 // hub rather than each post directly.
+const post = blogPost(path);
 
 const jsonLd = [
   {
@@ -20,6 +23,8 @@ const jsonLd = [
     '@type': 'Article',
     headline: title,
     description,
+    datePublished: post.published,
+    dateModified: post.modified,
     author: { '@type': 'Person', name: 'Alexandru Craciun' },
     publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     mainEntityOfPage: new URL(path, SITE.url).href,
@@ -37,7 +42,10 @@ const jsonLd = [
   heading={title}
   jsonLd={jsonLd}
   disclosure={false}
+  published={post.published}
+  modified={post.modified}
 >
+  <PostDate iso={post.published} />
   <p>
     I am a full-stack developer in the Netherlands, a bit over ten years in.
     For the last year my evenings have gone into one side project: I Like

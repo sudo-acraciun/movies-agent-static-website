@@ -30,6 +30,8 @@ const jsonLd = [
     '@type': 'Article',
     headline: c.h1,
     description: c.metaDescription,
+    datePublished: c.published,
+    dateModified: c.modified,
     author: organizationRef,
     publisher: organizationRef,
     about: appRef,
@@ -63,6 +65,8 @@ const breadcrumbs = [
   heading={c.h1}
   breadcrumbs={breadcrumbs}
   jsonLd={jsonLd}
+  published={c.published}
+  modified={c.modified}
 >
   {/* The exact non-brand query for these pages is "<competitor> alternative",
       not "vs" or "comparison", so the phrase leads the body in an H2. The

@@ -7,6 +7,9 @@ const path = '/what-to-watch-together';
 const title = 'How to decide what to watch together without losing the evening';
 const description =
   'Practical ways for two people to pick a film or series without a forty-minute scroll: methods that need no app at all, and where a shared watchlist helps.';
+// PageDates rules (src/data/schema.ts): bump `modified` with a real content edit.
+const published = '2026-08-18';
+const modified = '2026-10-12';
 
 // The product sits LAST on this page by design. A guide that leads with its
 // own app is an advert, and adverts do not get cited. The methods first,
@@ -45,6 +48,8 @@ const jsonLd = [
     '@type': 'Article',
     headline: title,
     description,
+    datePublished: published,
+    dateModified: modified,
     author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     mainEntityOfPage: new URL(path, SITE.url).href,
@@ -67,6 +72,8 @@ const jsonLd = [
   path={path}
   heading="What to watch together, decided before the popcorn goes cold"
   jsonLd={jsonLd}
+  published={published}
+  modified={modified}
 >
   <p>
     The problem is never a shortage of films. It is two tired people, one remote,

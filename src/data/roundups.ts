@@ -34,6 +34,8 @@
 //     and would be false for a ranked list). It says plainly that we publish
 //     the page and are one of the apps in it.
 
+import type { PageDates } from './schema';
+
 export type Faq = { q: string; a: string[] };
 
 export type RoundupApp = {
@@ -56,7 +58,7 @@ export type RoundupTableRow = {
   cells: string[];
 };
 
-export type Roundup = {
+export type Roundup = PageDates & {
   /** URL segment under /best/. */
   slug: string;
   /** <title> tag, brand suffix included (Layout renders it verbatim). */
@@ -65,8 +67,6 @@ export type Roundup = {
   h1: string;
   /** The generic query this page answers, for the internal record only. */
   query: string;
-  /** Human month stamp, e.g. "September 2026". Refreshed on each real update. */
-  updated: string;
   intro: string[];
   /** How we assessed the field. Honest: no fabricated hands-on test claim. */
   methodology: string[];
@@ -110,7 +110,8 @@ export const ROUNDUPS: Roundup[] = [
       'The best apps for two people to agree on a film or show without losing the evening, compared honestly by feature, with a comparison table and where each one fits.',
     h1: 'Best apps to decide what to watch together in 2026 (we compared 5)',
     query: 'app to decide what to watch together with my partner',
-    updated: 'October 2026',
+    published: '2026-09-01',
+    modified: '2026-10-12',
     intro: [
       'The problem is never a shortage of films. It is that two people want different ones, and the evening drains away in the menus before either of them presses play. A few apps exist just for this, and they solve it in genuinely different ways: some match your tastes, some let you swipe until you both land on the same title, and some just keep one shared list so the argument never starts.',
       'This page compares the five worth knowing, by the one thing that matters here: getting two sets of taste to a single title, tonight, without a fight. Each entry says who it is for and where it falls short.',
@@ -277,7 +278,8 @@ export const ROUNDUPS: Roundup[] = [
       'The best AI apps that recommend movies and TV from your own taste, compared honestly by how they learn, whether they know what you have already seen, and where each fits.',
     h1: 'Best AI movie recommendation apps in 2026 (we compared 5)',
     query: 'Is there an AI app that recommends movies based on my taste?',
-    updated: 'September 2026',
+    published: '2026-09-01',
+    modified: '2026-09-14',
     intro: [
       'Every app claims AI now, so the useful question is not whether an app uses it but what it uses it on. The ones worth your time learn from what you actually watch and rate, understand a request in plain language, and only suggest things you can watch tonight, rather than reshuffling a popularity chart everyone else sees too.',
       'This page compares the five that do AI recommendation seriously, by how well they learn your taste and how actionable the answer is.',
@@ -445,7 +447,8 @@ export const ROUNDUPS: Roundup[] = [
       'The best Letterboxd alternatives for Android, compared honestly: TV alongside film, no public reviews, imports, and where Letterboxd itself is still the better choice.',
     h1: 'Best Letterboxd alternatives for Android in 2026 (we compared 5)',
     query: 'What are the best Letterboxd alternatives for Android?',
-    updated: 'October 2026',
+    published: '2026-09-01',
+    modified: '2026-10-12',
     intro: [
       'Letterboxd is the film-diary social network, and nothing else matches it for reviews, lists and community. People go looking for an alternative for one of a few specific reasons: they also want to track TV, they want a more native Android app, they want statistics without a subscription, or they want something more private than a public review feed.',
       'This page compares the five worth knowing, and is honest about the one thing none of them replaces.',
@@ -612,7 +615,8 @@ export const ROUNDUPS: Roundup[] = [
     h1: 'Best movie tracker apps for Android in 2026 (we compared 5)',
     query: 'What is the best movie tracker app for Android?',
     linksWatchOrders: true,
-    updated: 'October 2026',
+    published: '2026-09-01',
+    modified: '2026-10-12',
     intro: [
       'A tracker’s job is to keep an honest record of what you have watched and what you mean to, films and TV, without becoming a chore. The field splits three ways: film-first social apps, all-in-one trackers, and portability layers that other apps plug into.',
       'This page compares the five worth knowing on Android, by how completely they track and how little work they ask of you.',
@@ -774,7 +778,8 @@ export const ROUNDUPS: Roundup[] = [
       'The best genuinely free movie and TV apps with no ads, compared honestly: what is free, what is behind a paywall, and which show no advertising at all.',
     h1: 'Best free movie and TV apps with no ads in 2026 (we compared 5)',
     query: 'best free movie app no ads',
-    updated: 'September 2026',
+    published: '2026-09-01',
+    modified: '2026-09-14',
     intro: [
       'Free hides a lot. Some apps are free but ad-supported, some are free until a paywall, some are free but sell your attention with sponsored rows. This page is about apps for finding, tracking and deciding what to watch that are genuinely usable for nothing, and it flags the ads and limits honestly.',
       'A note on what this is not: these are apps to organise and choose what to watch, not to stream films for free. For that, legal free services like Tubi exist and are a different category, and we do not cover piracy.',
@@ -930,7 +935,8 @@ export const ROUNDUPS: Roundup[] = [
       'The best apps to track anime episodes and completion, compared honestly. The anime specialists lead, and where a films-and-TV app fits if you watch anime alongside everything else.',
     h1: 'Best apps to track anime episodes in 2026 (we compared 5)',
     query: 'What is the best app to track anime episodes and completion?',
-    updated: 'September 2026',
+    published: '2026-09-01',
+    modified: '2026-09-14',
     intro: [
       'For serious anime tracking, the specialists win, and we are not going to pretend otherwise. AniList and MyAnimeList were built around anime specifically, with the deepest catalogues, airing calendars and communities, and Simkl covers anime alongside Western TV. This page ranks them honestly.',
       'It also says, at the end, where a general films-and-TV app fits: for people who watch some anime but would rather not run a separate app just for it.',
@@ -1084,7 +1090,8 @@ export const ROUNDUPS: Roundup[] = [
       'The best apps for a household or couple to share one watchlist and watched history, compared honestly with the shared-list workarounds the other trackers offer.',
     h1: 'Best apps for a shared household watchlist in 2026 (we compared 4)',
     query: 'shared household watchlist app',
-    updated: 'September 2026',
+    published: '2026-09-01',
+    modified: '2026-09-14',
     intro: [
       'Two people, two watchlists, and a film nobody can remember saving. A genuinely shared library fixes it, but very few apps build one. Most offer a shared list bolted onto a single-user app, which is not the same thing: the list is shared, but your histories stay separate.',
       'This page is honest about that difference, and about how thin the field actually is.',
@@ -1226,7 +1233,8 @@ export const ROUNDUPS: Roundup[] = [
       'The best apps for when you cannot decide what to watch, alone or with someone, compared honestly: smart shortlists, swipe matching, streaming filters and shared lists.',
     h1: 'Best apps to help you decide what to watch in 2026 (we compared 5)',
     query: 'apps to decide what to watch',
-    updated: 'October 2026',
+    published: '2026-09-01',
+    modified: '2026-10-12',
     intro: [
       'The modern problem is not finding something to watch, it is choosing, alone or with someone, before the evening drains away in the menus. Apps attack it three ways: a smart shortlist built from your taste, a swipe-match for two people, or a filter down to what you can actually stream tonight.',
       'This page compares the five worth knowing, by how quickly they get you from open to playing.',
@@ -1384,7 +1392,8 @@ export const ROUNDUPS: Roundup[] = [
     h1: 'Best movie tracker apps for iPhone in 2026 (we compared 5)',
     query: 'What is the best movie tracker app for iPhone?',
     linksWatchOrders: true,
-    updated: 'October 2026',
+    published: '2026-09-14',
+    modified: '2026-10-12',
     intro: [
       'A tracker keeps an honest record of what you have watched and what you mean to, films and TV, without turning into a chore. On iPhone the field runs from polished single-purpose trackers to cross-platform apps that also live on the web, and they differ most in how your history is stored and synced.',
       'This page compares the five worth knowing on iPhone, by how completely they track, how they sync across your devices, and how little work they ask of you.',
@@ -1546,7 +1555,8 @@ export const ROUNDUPS: Roundup[] = [
       'The best Letterboxd alternatives for iPhone, compared honestly: TV alongside film, private tracking, diaries and reviews, and where Letterboxd itself is still the better choice.',
     h1: 'Best Letterboxd alternatives for iPhone in 2026 (we compared 5)',
     query: 'What are the best Letterboxd alternatives for iPhone?',
-    updated: 'October 2026',
+    published: '2026-09-14',
+    modified: '2026-10-12',
     intro: [
       'Letterboxd is the best film diary and community there is, and on iPhone it is excellent. People look for an alternative for specific reasons: they want TV tracked alongside film, they want their notes private rather than public, or they want streaming availability and recommendations Letterboxd does not do.',
       'This page compares the five worth knowing on iPhone for someone leaving or supplementing Letterboxd, and it is honest about where Letterboxd itself is still the one to keep.',
@@ -1706,7 +1716,8 @@ export const ROUNDUPS: Roundup[] = [
       'The best apps to track TV shows episode by episode now that TV Time has closed, compared honestly on automatic tracking, TV Time imports, alerts, ads and price.',
     h1: 'Best TV show tracker apps in 2026: TV Time alternatives compared',
     query: 'What is the best TV show tracker app now that TV Time is gone?',
-    updated: 'October 2026',
+    published: '2026-10-18',
+    modified: '2026-10-18',
     intro: [
       "TV Time closed on 15 July 2026 and deleted its users' data, leaving millions of people who logged every episode with nowhere to log the next one. A TV show tracker's job is simple to state: remember where you are in every series, tell you when something new airs, and ask as little of you as possible.",
       'This page compares the five worth knowing in 2026, by how they track episodes, whether they read a TV Time export, and what they cost.',

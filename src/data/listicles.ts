@@ -14,6 +14,8 @@
 // No streaming-availability claims (region-dependent and they rot); blurbs
 // are one specific descriptive sentence, never filler praise.
 
+import type { PageDates } from './schema';
+
 export type ListEntry = {
   title: string;
   year: number;
@@ -33,7 +35,7 @@ export type ListEntry = {
   posterPath?: string;
 };
 
-export type Listicle = {
+export type Listicle = PageDates & {
   slug: string;
   title: string;
   metaDescription: string;
@@ -59,6 +61,8 @@ export type Listicle = {
 export const LISTICLES: Listicle[] = [
   {
     slug: 'best-horror-movies-hooptober',
+    published: '2026-09-07',
+    modified: '2026-10-06',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/kJMLPj5enrZti8udTVeULlM70mz.jpg',
     heroPosition: 'center 40%',
     title: 'The best horror films to watch this Hooptober, ranked by viewer score',
@@ -282,6 +286,8 @@ export const LISTICLES: Listicle[] = [
   },
   {
     slug: 'studio-ghibli-films-ranked',
+    published: '2026-08-26',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/6oaL4DP75yABrd5EbC4H2zq5ghc.jpg',
     heroPosition: 'center 30%',
     title: 'Every Studio Ghibli film ranked by viewer score, from Spirited Away down',
@@ -531,6 +537,8 @@ export const LISTICLES: Listicle[] = [
   },
   {
     slug: 'christopher-nolan-films-ranked',
+    published: '2026-08-26',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg',
     heroPosition: 'center 15%',
     title: 'Every Christopher Nolan film ranked by viewer score',
@@ -680,6 +688,8 @@ export const LISTICLES: Listicle[] = [
   },
   {
     slug: 'great-films-under-100-minutes',
+    published: '2026-08-26',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/qqHQsStV6exghCM7zbObuYBiYxw.jpg',
     heroPosition: 'center 20%',
     title: 'Great films under 100 minutes for a tired weeknight',
@@ -918,6 +928,8 @@ export const LISTICLES: Listicle[] = [
   },
   {
     slug: 'best-dutch-films',
+    published: '2026-09-09',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/gcXbxHjkUwLV4HrE2oJcbP7UGTA.jpg',
     heroPosition: 'center 45%',
     title: 'The best Dutch films to watch, ranked by viewer score',

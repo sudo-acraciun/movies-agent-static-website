@@ -11,6 +11,9 @@ const path = '/how-to-track-movies-on-iphone';
 const title = 'How to track movies and TV on your iPhone';
 const description =
   'A practical guide to keeping a record of what you watch on iPhone: marking films and episodes watched, ratings and notes, streaming availability, syncing across devices, and importing an existing library.';
+// PageDates rules (src/data/schema.ts): bump `modified` with a real content edit.
+const published = '2026-09-14';
+const modified = '2026-10-12';
 
 const faqs = [
   {
@@ -45,6 +48,8 @@ const jsonLd = [
     '@type': 'Article',
     headline: title,
     description,
+    datePublished: published,
+    dateModified: modified,
     author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     mainEntityOfPage: new URL(path, SITE.url).href,
@@ -68,6 +73,8 @@ const jsonLd = [
   heading={title}
   jsonLd={jsonLd}
   disclosure={false}
+  published={published}
+  modified={modified}
 >
   <p>
     Tracking what you watch on an iPhone is worth the small habit: you stop

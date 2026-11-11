@@ -65,6 +65,10 @@ const ITEMS: Film[] = [
 ];
 
 const path = '/data/most-watchlisted-2026';
+// PageDates rules (src/data/schema.ts): a data refresh is a content edit, so it
+// bumps `modified` along with UPDATED.
+const published = '2026-09-21';
+const modified = '2026-09-21';
 const title = 'The most-watchlisted films of 2026, from 500+ watchlists | I Like Movies';
 const metaDescription =
   'The films I Like Movies members are queuing up for 2026, ranked by how many separate watchlists each one sits on. A live snapshot from the app, refreshed as it moves.';
@@ -102,6 +106,9 @@ const jsonLd = [
     '@type': 'Article',
     headline: h1,
     description: metaDescription,
+    datePublished: published,
+    dateModified: modified,
+    image: HERO_BACKDROP,
     author: organizationRef,
     publisher: organizationRef,
     about: appRef,
@@ -149,6 +156,8 @@ const breadcrumbs = [
   jsonLd={jsonLd}
   disclosure={false}
   heroImage={HERO_BACKDROP}
+  published={published}
+  modified={modified}
 >
   <p>
     Everyone using I Like Movies keeps a watchlist: the films they mean to get

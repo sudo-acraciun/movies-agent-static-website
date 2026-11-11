@@ -14,6 +14,8 @@
 // are published here; upcoming weeks stay unspoiled until they air, so this
 // file grows by one entry per site update.
 
+import type { PageDates } from './schema';
+
 export type ThemeMovie = {
   title: string;
   year: number;
@@ -38,7 +40,7 @@ export type ThemeMovie = {
   imdbRating?: number;
 };
 
-export type WeeklyTheme = {
+export type WeeklyTheme = PageDates & {
   slug: string;
   title: string;
   metaDescription: string;
@@ -76,6 +78,8 @@ export function formatWeek(weekOf: string): string {
 export const WEEKLY_THEMES: WeeklyTheme[] = [
   {
     slug: 'modern-black-and-white-films',
+    published: '2026-10-18',
+    modified: '2026-11-04',
     title: 'Modern black-and-white films: 21 picks from The Artist to The Lighthouse',
     metaDescription:
       '21 modern films, most of them shot in black and white long after color took over, from The Artist, Ida and Cold War to Nebraska, The Lighthouse and Mank, curated as a weekly collection.',
@@ -129,6 +133,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'film-noir',
+    published: '2026-10-18',
+    modified: '2026-11-04',
     title: 'Film noir: 21 essential films from The Third Man to Brick',
     metaDescription:
       '21 essential film noir and neo-noir titles, from The Third Man, Double Indemnity and The Maltese Falcon to Le Samouraï, Mulholland Drive and Brick, curated as a weekly collection.',
@@ -182,6 +188,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'horror-movie-marathon',
+    published: '2026-10-06',
+    modified: '2026-11-04',
     title: 'Horror movie marathon: 21 films for October, from Alien to The Substance',
     metaDescription:
       '21 horror films for an October marathon, from Alien, The Fly and Jaws to The Host, The Babadook and The Substance, curated as a weekly collection for Hooptober.',
@@ -235,6 +243,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'western-movies',
+    published: '2026-10-18',
+    modified: '2026-11-04',
     title: 'Western movies: 21 essential films from Stagecoach to Hell or High Water',
     metaDescription:
       "21 essential westerns, from John Ford's Stagecoach and The Searchers to Leone's The Good, the Bad and the Ugly, Unforgiven, No Country for Old Men and Hell or High Water, curated as a weekly collection.",
@@ -288,6 +298,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'latin-american-cinema',
+    published: '2026-10-18',
+    modified: '2026-11-04',
     title: 'Latin American cinema: 21 essential films from Los Olvidados to Birds of Passage',
     metaDescription:
       "21 essential Latin American films from Mexico, Brazil, Argentina, Chile, Cuba and Colombia, from Los Olvidados and City of God to Pan's Labyrinth, Wild Tales and Silent Light.",
@@ -341,6 +353,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'tiff-audience-favorites',
+    published: '2026-10-18',
+    modified: '2026-11-04',
     title: 'TIFF audience favorites: 21 films from Chariots of Fire to Past Lives',
     metaDescription:
       "21 films tied to the Toronto International Film Festival's audience award, from Chariots of Fire and The Princess Bride to 12 Years a Slave and Nomadland, plus three 2023 favorites.",
@@ -394,6 +408,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'movie-musicals',
+    published: '2026-10-18',
+    modified: '2026-11-04',
     title: "Movie musicals: 21 essential films from Singin' in the Rain to La La Land",
     metaDescription:
       "21 essential movie musicals, from Singin' in the Rain, The Wizard of Oz and West Side Story to Cabaret, Moulin Rouge!, Once and La La Land, curated as a weekly collection.",
@@ -447,6 +463,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'mafia-cinema',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'Mafia cinema: 21 essential films from The Godfather to Gomorrah',
     metaDescription:
       '21 essential mafia and gangster films, from The Godfather and Once Upon a Time in America to Election, New World and Gomorrah, curated as a weekly collection.',
@@ -500,6 +518,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'female-auteurs',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: '21 essential films by female directors, from The Piano to Jeanne Dielman',
     metaDescription:
       '21 essential films by female directors, from The Piano and Jeanne Dielman to Beau Travail, Lost in Translation and Toni Erdmann, curated as a weekly collection.',
@@ -553,6 +573,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'true-crime-from-the-80s',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: "True crime through '80s film grammar: 21 films from Manhunter to Pixote",
     metaDescription:
       '21 true-crime films told through 1980s film grammar, from Manhunter and Henry: Portrait of a Serial Killer to Mississippi Burning, Christiane F. and Pixote.',
@@ -606,6 +628,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'japanese-masters',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'Japanese cinema: 21 films from the masters, Seven Samurai to Drive My Car',
     metaDescription:
       '21 essential Japanese films, from Seven Samurai and Tokyo Story to Harakiri, Perfect Blue and Drive My Car, curated as a weekly collection.',
@@ -659,6 +683,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'documentary-greats',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'The greatest documentaries: 21 essential films from Hoop Dreams to Shoah',
     metaDescription:
       'The 21 essential documentaries, from Hoop Dreams and Shoah to The Act of Killing, Grey Gardens, Man with a Movie Camera and Stop Making Sense.',
@@ -712,6 +738,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'heat-and-madness',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'Heat on film: 21 movies where the temperature breaks people',
     metaDescription:
       '21 films where heat drives people over the edge, from Do the Right Thing and Dog Day Afternoon to Burning, La piscine and Wake in Fright.',
@@ -765,6 +793,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'the-wild-frame',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'Nature as protagonist: 21 films about the wild frame',
     metaDescription:
       '21 films where the natural world is the main character, from The Tree of Life and Fitzcarraldo to Princess Mononoke, Dersu Uzala and Honeyland.',
@@ -818,6 +848,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'sixties-french-cinema',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'French New Wave and beyond: 21 films from sixties France',
     metaDescription:
       '21 essential films of 1960s French cinema, from Breathless and Cléo from 5 to 7 to Playtime, Belle de Jour and The Umbrellas of Cherbourg.',
@@ -871,6 +903,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'time-travel',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'Time travel movies: 21 essential films from Back to the Future to Tenet',
     metaDescription:
       'The 21 essential time travel films, from Back to the Future, Primer and Groundhog Day to Your Name, Hi, Mom and Tenet, curated as a weekly collection.',
@@ -924,6 +958,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'autobiographies',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'Directors filming their own lives: 21 autobiographical films',
     metaDescription:
       '21 autobiographical films where directors filmed their own childhoods and wounds, from Roma and The 400 Blows to Amarcord, Persepolis and Aftersun.',
@@ -977,6 +1013,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'behind-the-iron-curtain',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'Behind the Iron Curtain: 21 films that defied the censors',
     metaDescription:
       '21 films from Cold War Eastern Europe, from Closely Watched Trains and Daisies to Come and See, Andrei Rublev and Sátántangó, curated as a weekly collection.',
@@ -1030,6 +1068,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'sports-on-film',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'Sports movies: 21 films beyond the final score',
     metaDescription:
       '21 great sports films timed to the World Cup, from Bend It Like Beckham and Offside to Raging Bull, Senna, I, Tonya and Lagaan.',
@@ -1083,6 +1123,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'pride-queer-classics',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'Queer classics: 21 essential LGBTQ films from Orpheus to Moonlight',
     metaDescription:
       '21 essential LGBTQ films, from Cocteau\'s Orpheus and Paris Is Burning to Moonlight, Carol, Happy Together and Portrait of a Lady on Fire.',
@@ -1136,6 +1178,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'the-long-take',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'The long take: 21 films built on unbroken shots',
     metaDescription:
       '21 films famous for their long takes, from Rope and Russian Ark to Children of Men, Goodfellas, Oldboy and Victoria, curated as a weekly collection.',
@@ -1189,6 +1233,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'african-cinema',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'African cinema: 21 essential films from Black Girl to Atlantics',
     metaDescription:
       "21 essential films of African cinema, from Sembène's Black Girl and Touki Bouki to Timbuktu, Atlantics and The Battle of Algiers.",
@@ -1242,6 +1288,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'y2k-romcoms',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: "Y2K romcoms: 21 films from the genre's last golden age",
     metaDescription:
       "21 romantic comedies from the flip-phone era, from Bridget Jones's Diary and Notting Hill to Amélie, Hitch and The Proposal, curated as a weekly collection.",
@@ -1295,6 +1343,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'classical-books',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'Classic literature on screen: 21 great adaptations',
     metaDescription:
       '21 film adaptations of the literary canon, from Pride & Prejudice and Sense and Sensibility to Barry Lyndon, The Trial and Frankenstein.',
@@ -1348,6 +1398,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'workers-cinema',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: "Workers' cinema: 21 films about labor and dignity",
     metaDescription:
       '21 films about labor, strikes and the dignity of work, from Norma Rae and Modern Times to Office Space, I, Daniel Blake and Two Days, One Night.',
@@ -1401,6 +1453,8 @@ export const WEEKLY_THEMES: WeeklyTheme[] = [
   },
   {
     slug: 'italian-neorealism',
+    published: '2026-08-26',
+    modified: '2026-11-04',
     title: 'Italian Neorealism: 21 essential films from Bicycle Thieves onward',
     metaDescription:
       'The 21 essential Italian neorealist films, from Bicycle Thieves and Rome, Open City to Umberto D., La Strada and Hands Over the City.',

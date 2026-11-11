@@ -1,6 +1,8 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { SITE } from '../../data/site';
+import { blogPost } from '../../data/blog';
+import PostDate from '../../components/PostDate.astro';
 
 const path = '/blog/how-the-assistant-checks-every-title';
 const title = 'The assistant that never answers from memory';
@@ -10,6 +12,7 @@ const description =
 // Canonical home of this post. The Dev.to, Medium and HackerNoon copies set
 // their canonical URL to this one, so the slug is load-bearing once those are
 // published: renaming it strands the canonical reference on the other side.
+const post = blogPost(path);
 
 const jsonLd = [
   {
@@ -17,6 +20,8 @@ const jsonLd = [
     '@type': 'Article',
     headline: title,
     description,
+    datePublished: post.published,
+    dateModified: post.modified,
     author: { '@type': 'Person', name: 'Alexandru Craciun' },
     publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     mainEntityOfPage: new URL(path, SITE.url).href,
@@ -33,7 +38,10 @@ const jsonLd = [
   heading={title}
   jsonLd={jsonLd}
   disclosure={false}
+  published={post.published}
+  modified={post.modified}
 >
+  <PostDate iso={post.published} />
   <p>
     The chat assistant in I Like Movies is a language model with tools, the
     same kind of thing you have used elsewhere. The difference is a rule I

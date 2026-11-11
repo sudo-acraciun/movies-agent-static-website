@@ -7,6 +7,9 @@ const path = '/from-tv-time';
 const title = 'TV Time alternatives: where to track your shows now';
 const description =
   'TV Time closed on 15 July 2026. An honest guide to the replacements: Simkl and Trakt for automatic tracking, Serializd for TV reviews, and I Like Movies for episode tracking with a shared household library, which imports a TV Time export you saved.';
+// PageDates rules (src/data/schema.ts): bump `modified` with a real content edit.
+const published = '2026-08-18';
+const modified = '2026-10-18';
 
 // Every recommendation here that is not the author's own app is deliberate.
 // A page for displaced TV Time users that only offers its own product would
@@ -48,6 +51,8 @@ const jsonLd = [
     '@type': 'Article',
     headline: title,
     description,
+    datePublished: published,
+    dateModified: modified,
     author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     mainEntityOfPage: new URL(path, SITE.url).href,
@@ -70,6 +75,8 @@ const jsonLd = [
   path={path}
   heading="TV Time alternatives after the shutdown"
   jsonLd={jsonLd}
+  published={published}
+  modified={modified}
 >
   <p>
     TV Time shut down on 15 July 2026, and years of episode check-ins went with

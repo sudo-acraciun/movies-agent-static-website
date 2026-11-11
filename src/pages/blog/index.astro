@@ -1,48 +1,12 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { SITE } from '../../data/site';
+import { POSTS, fmtDate } from '../../data/blog';
 
 const path = '/blog';
 const title = 'The I Like Movies blog: build notes and how it works | I Like Movies';
 const description =
   'Posts from the developer of I Like Movies: how the app was built, and how its parts actually work under the hood.';
-
-// Posts newest first. Listed by hand rather than from a data module: two posts
-// do not need one, and the same inline-list pattern is used for the standalone
-// guides on /guides. Each post owns its copy in its own page frontmatter; the
-// title and description here are kept in sync with it by hand.
-const POSTS = [
-  {
-    path: '/blog/i-like-movies-is-now-on-iphone',
-    title: 'I Like Movies is now on iPhone',
-    date: '2026-09-14',
-    blurb:
-      'I Like Movies is on the App Store. The same free tracker, with your library synced across iPhone and Android and shared with your household.',
-  },
-  {
-    path: '/blog/how-the-assistant-checks-every-title',
-    title: 'The assistant that never answers from memory',
-    date: '2026-09-02',
-    blurb:
-      'Every film the assistant recommends is looked up, checked against what you have seen, and filtered to what you can actually stream. Here is how.',
-  },
-  {
-    path: '/blog/how-i-built-i-like-movies',
-    title: 'How I built an AI movie tracker as a solo dev',
-    date: '2026-08-21',
-    blurb:
-      'The build story: a solo-built movie tracker for iPhone and Android in Go, GraphQL and React Native, and the decisions that mattered.',
-  },
-];
-
-// Build-time only (Node), so this runs once at astro build, not per request.
-const fmtDate = (iso: string) =>
-  new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'UTC',
-  });
 
 const jsonLd = [
   {
@@ -82,7 +46,7 @@ const jsonLd = [
       POSTS.map((post) => (
         <li>
           <a href={post.path}>{post.title}</a>
-          <p class="post-date">{fmtDate(post.date)}</p>
+          <p class="post-date">{fmtDate(post.published)}</p>
           <p>{post.blurb}</p>
         </li>
       ))

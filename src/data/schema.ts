@@ -13,6 +13,15 @@
 
 import { SITE } from './site';
 
+/**
+ * The two dates a content page states in its Article node and its
+ * article:published_time / article:modified_time tags. ISO YYYY-MM-DD.
+ * `published` is the day the page first went live; `modified` is its last
+ * real content change, bumped by hand in the same edit (not for a new link or
+ * a layout change). On-page only: the sitemap carries no lastmod.
+ */
+export type PageDates = { published: string; modified: string };
+
 // sameAs is the corroboration a Knowledge Graph node is built from: it tells an
 // engine that the Play listing, the directory pages, the Wikidata item and the
 // social profiles all describe ONE thing. Only pages we control or have

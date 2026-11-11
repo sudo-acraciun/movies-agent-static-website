@@ -12,11 +12,16 @@ interface Props {
   jsonLd?: unknown[];
   /** Keeps utility pages (the /share redirector) out of search results. */
   noindex?: boolean;
+  /** Absolute URL of the page's own share image; the site card when absent. */
+  image?: string;
+  /** ISO dates. Passing `published` marks the page as an article for Open Graph. */
+  published?: string;
+  modified?: string;
 }
 
-const { title, description, path = '/', jsonLd = [], noindex = false } = Astro.props;
+const { title, description, path = '/', jsonLd = [], noindex = false, image, published, modified } = Astro.props;
 const canonical = new URL(path, SITE.url).href;
-const ogImage = new URL('/og-image.png', SITE.url).href;
+const ogImage = image ?? new URL('/og-image.png', SITE.url).href;
 ---
 
 <html lang="en">
@@ -44,19 +49,24 @@ const ogImage = new URL('/og-image.png', SITE.url).href;
       comments in markup are copied verbatim into the shipped page. Expression
       comments like this one are stripped at build time, so internal notes use
       this form and never <!-- -->.
+
+      The size and alt tags describe the site card only: a page's own image
+      is a TMDB backdrop whose size varies and whose alt we cannot vouch for.
+      Each conditional tag is its own expression because a fragment holding
+      several renders spaces between them, and pages without these props must
+      keep their exact markup.
     */}
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={published ? 'article' : 'website'} />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="I Like Movies. Everything you have watched. Everything you are going to."
-    />
+    {!image && <meta property="og:image:width" content="1200" />}
+    {!image && <meta property="og:image:height" content="630" />}
+    {!image && <meta property="og:image:alt" content="I Like Movies. Everything you have watched. Everything you are going to." />}
+    {published && <meta property="article:published_time" content={published} />}
+    {modified && <meta property="article:modified_time" content={modified} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

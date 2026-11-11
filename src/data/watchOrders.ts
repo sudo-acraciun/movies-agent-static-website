@@ -16,6 +16,8 @@
 // once; alternate-universe and anthology entries carry a note rather than a
 // forced timeline slot; upcoming titles carry their year and no promise.
 
+import type { PageDates } from './schema';
+
 export type OrderItem = {
   title: string;
   year: number;
@@ -36,7 +38,7 @@ export type OrderSection = {
   items: OrderItem[];
 };
 
-export type WatchOrder = {
+export type WatchOrder = PageDates & {
   slug: string;
   franchise: string;
   title: string;
@@ -56,6 +58,8 @@ export type WatchOrder = {
 export const WATCH_ORDERS: WatchOrder[] = [
   {
     slug: 'marvel-watch-order',
+    published: '2026-08-18',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg',
     heroPosition: 'center 35%',
     franchise: 'Marvel Cinematic Universe',
@@ -201,6 +205,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'star-wars-watch-order',
+    published: '2026-08-18',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/8BTsTfln4jlQrLXUBquXJ0ASQy9.jpg',
     heroPosition: 'center 40%',
     franchise: 'Star Wars',
@@ -303,6 +309,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'lord-of-the-rings-watch-order',
+    published: '2026-08-18',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/oiwc338EoBgS4sEI2ixAny4KQKg.jpg',
     heroPosition: 'center 60%',
     franchise: 'Middle-earth',
@@ -384,6 +392,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'dune-watch-order',
+    published: '2026-08-18',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/zRKQW58MBEY078AxkHxEJzUskCl.jpg',
     heroPosition: 'center 30%',
     franchise: 'Dune',
@@ -450,6 +460,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'harry-potter-watch-order',
+    published: '2026-08-26',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/cbcpDn6XJaIGoOil1bKuskU8ds4.jpg',
     heroPosition: 'center 30%',
     franchise: 'Wizarding World',
@@ -552,6 +564,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'fast-and-furious-watch-order',
+    published: '2026-08-26',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/c1Q8jLoaruQ9m5lCrVlXOaJJtu7.jpg',
     heroPosition: 'center 25%',
     franchise: 'Fast & Furious',
@@ -655,6 +669,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'alien-watch-order',
+    published: '2026-08-26',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/AmR3JG1VQVxU8TfAvljUhfSFUOx.jpg',
     heroPosition: 'center 35%',
     franchise: 'Alien',
@@ -741,6 +757,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'dragon-ball-watch-order',
+    published: '2026-08-26',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/felXFRjJXF40NPzK1IPib8ojF2X.jpg',
     heroPosition: 'center 30%',
     franchise: 'Dragon Ball',
@@ -859,6 +877,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'naruto-watch-order',
+    published: '2026-08-26',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/z0YhJvomqedHF85bplUJEotkN5l.jpg',
     heroPosition: 'center 25%',
     franchise: 'Naruto',
@@ -949,6 +969,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'evangelion-watch-order',
+    published: '2026-08-26',
+    modified: '2026-09-21',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/1EAxNqdkVnp48a7NUuNBHGflowM.jpg',
     heroPosition: 'center 35%',
     franchise: 'Neon Genesis Evangelion',
@@ -1029,6 +1051,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'james-bond-watch-order',
+    published: '2026-10-18',
+    modified: '2026-10-18',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/wkA622CCN2X0uwpgqYEOnUYEDf5.jpg',
     heroPosition: 'center 20%',
     franchise: 'James Bond',
@@ -1149,6 +1173,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'mission-impossible-watch-order',
+    published: '2026-10-18',
+    modified: '2026-10-18',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/hqyjzDRCs1N5gEsh2gklzPdsEFD.jpg',
     heroPosition: 'center 25%',
     franchise: 'Mission: Impossible',
@@ -1226,6 +1252,8 @@ export const WATCH_ORDERS: WatchOrder[] = [
   },
   {
     slug: 'john-wick-watch-order',
+    published: '2026-10-18',
+    modified: '2026-10-18',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/7I6VUdPj6tQECNHdviJkUHD2u89.jpg',
     heroPosition: 'center 30%',
     franchise: 'John Wick',

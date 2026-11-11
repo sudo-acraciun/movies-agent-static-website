@@ -28,6 +28,9 @@ const jsonLd = [
     '@type': 'Article',
     headline: t.h1,
     description: t.metaDescription,
+    datePublished: t.published,
+    dateModified: t.modified,
+    image: t.heroBackdropUrl,
     author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     mainEntityOfPage: new URL(path, SITE.url).href,
@@ -64,6 +67,8 @@ const jsonLd = [
   disclosure={false}
   heroImage={t.heroBackdropUrl}
   heroPosition={t.heroPosition}
+  published={t.published}
+  modified={t.modified}
 >
   <PosterCardStyles />
   <p class="theme-week">Weekly collection in the app for the week of {formatWeek(t.weekOf)}.</p>

@@ -34,6 +34,8 @@ const jsonLd = [
     '@type': 'Article',
     headline: r.h1,
     description: r.metaDescription,
+    datePublished: r.published,
+    dateModified: r.modified,
     author: organizationRef,
     publisher: organizationRef,
     about: appRef,
@@ -69,6 +71,14 @@ const breadcrumbs = [
   { label: 'Guides', href: '/guides' },
   { label: r.h1 },
 ];
+
+// The visible "Last reviewed" month and the schema's dateModified come from
+// one field, so they cannot disagree.
+const reviewed = new Date(`${r.modified}T00:00:00Z`).toLocaleDateString('en-US', {
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
 ---
 
 <ArticleLayout
@@ -79,6 +89,8 @@ const breadcrumbs = [
   breadcrumbs={breadcrumbs}
   jsonLd={jsonLd}
   disclosure={false}
+  published={r.published}
+  modified={r.modified}
 >
   {r.intro.map((paragraph) => <p>{paragraph}</p>)}
 
@@ -87,7 +99,7 @@ const breadcrumbs = [
       plainly that we publish the page and are one of the apps in it. */}
   <p class="disclosure">{r.disclosure}</p>
 
-  <p class="updated">Last reviewed {r.updated}.</p>
+  <p class="updated">Last reviewed {reviewed}.</p>
 
   <h2>The ranking</h2>
   {

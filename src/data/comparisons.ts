@@ -20,6 +20,7 @@
 //     quoted just as readily as a helpful one, and reads worse.
 
 import { SITE } from './site';
+import type { PageDates } from './schema';
 
 export type Faq = { q: string; a: string[] };
 
@@ -33,7 +34,7 @@ export type TableRow = {
 
 export type Point = { title: string; body: string };
 
-export type Comparison = {
+export type Comparison = PageDates & {
   /** URL segment under /vs/. */
   slug: string;
   competitor: string;
@@ -71,6 +72,8 @@ export const NOT_DO: string[] = [
 export const COMPARISONS: Comparison[] = [
   {
     slug: 'letterboxd',
+    published: '2026-08-18',
+    modified: '2026-10-12',
     competitor: 'Letterboxd',
     title: 'I Like Movies vs Letterboxd, compared by the developer',
     metaDescription:
@@ -168,6 +171,8 @@ export const COMPARISONS: Comparison[] = [
   },
   {
     slug: 'trakt',
+    published: '2026-08-18',
+    modified: '2026-10-12',
     competitor: 'Trakt',
     title: 'I Like Movies vs Trakt, compared by the developer',
     metaDescription:
@@ -262,6 +267,8 @@ export const COMPARISONS: Comparison[] = [
   },
   {
     slug: 'simkl',
+    published: '2026-08-18',
+    modified: '2026-10-12',
     competitor: 'Simkl',
     title: 'I Like Movies vs Simkl, compared by the developer',
     metaDescription:
@@ -367,6 +374,8 @@ export const COMPARISONS: Comparison[] = [
   },
   {
     slug: 'imdb',
+    published: '2026-08-26',
+    modified: '2026-10-12',
     competitor: 'IMDb',
     title: 'I Like Movies vs IMDb, compared by the developer',
     metaDescription:
@@ -464,6 +473,8 @@ export const COMPARISONS: Comparison[] = [
   },
   {
     slug: 'serializd',
+    published: '2026-08-26',
+    modified: '2026-10-12',
     competitor: 'Serializd',
     title: 'I Like Movies vs Serializd, compared by the developer',
     metaDescription:
@@ -553,6 +564,8 @@ export const COMPARISONS: Comparison[] = [
   },
   {
     slug: 'maimovie',
+    published: '2026-08-31',
+    modified: '2026-10-12',
     competitor: 'Maimovie',
     title: 'I Like Movies vs Maimovie, compared by the developer',
     metaDescription:
@@ -642,6 +655,8 @@ export const COMPARISONS: Comparison[] = [
   },
   {
     slug: 'moviebase',
+    published: '2026-09-08',
+    modified: '2026-10-12',
     competitor: 'Moviebase',
     title: 'I Like Movies vs Moviebase, compared by the developer',
     metaDescription:
@@ -737,6 +752,8 @@ export const COMPARISONS: Comparison[] = [
   },
   {
     slug: 'justwatch',
+    published: '2026-09-08',
+    modified: '2026-10-12',
     competitor: 'JustWatch',
     title: 'I Like Movies vs JustWatch, compared by the developer',
     metaDescription:
@@ -847,6 +864,8 @@ export const COMPARISONS: Comparison[] = [
   },
   {
     slug: 'matinee',
+    published: '2026-09-08',
+    modified: '2026-10-12',
     competitor: 'Matinee',
     title: 'I Like Movies vs Matinee, compared by the developer',
     metaDescription:
@@ -946,6 +965,8 @@ export const COMPARISONS: Comparison[] = [
   },
   {
     slug: 'cronica',
+    published: '2026-09-14',
+    modified: '2026-10-12',
     competitor: 'Cronica',
     title: 'I Like Movies vs Cronica, compared by the developer',
     metaDescription:
@@ -1033,6 +1054,8 @@ export const COMPARISONS: Comparison[] = [
   },
   {
     slug: 'flick',
+    published: '2026-09-14',
+    modified: '2026-10-12',
     competitor: 'Flick',
     title: 'I Like Movies vs Flick, compared by the developer',
     metaDescription:

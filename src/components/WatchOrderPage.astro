@@ -26,6 +26,9 @@ const jsonLd = [
     '@type': 'Article',
     headline: o.h1,
     description: o.metaDescription,
+    datePublished: o.published,
+    dateModified: o.modified,
+    ...(o.heroBackdrop ? { image: o.heroBackdrop } : {}),
     author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     mainEntityOfPage: new URL(path, SITE.url).href,
@@ -65,6 +68,8 @@ const KIND_LABEL = { film: 'Film', series: 'Series', special: 'Special' } as con
   disclosure={false}
   heroImage={o.heroBackdrop}
   heroPosition={o.heroPosition}
+  published={o.published}
+  modified={o.modified}
 >
   <PosterCardStyles />
   {o.intro.map((paragraph) => <p>{paragraph}</p>)}

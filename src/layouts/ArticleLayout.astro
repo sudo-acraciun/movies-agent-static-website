@@ -40,9 +40,16 @@ interface Props {
    * than rendering a disclaimer for a claim they never make.
    */
   disclosure?: boolean;
+  /** ISO dates, forwarded to Layout for the article:* Open Graph tags. */
+  published?: string;
+  modified?: string;
 }
 
-const { title, description, path, heading, jsonLd = [], disclosure = true, heroImage, heroPosition, breadcrumbs } = Astro.props;
+const { title, description, path, heading, jsonLd = [], disclosure = true, heroImage, heroPosition, breadcrumbs, published, modified } = Astro.props;
+
+// The hero doubles as the page's share image, one TMDB size down: a preview
+// renders small, and a lighter file unfurls faster in chat apps.
+const shareImage = heroImage?.replace('/t/p/w1280/', '/t/p/w780/');
 
 // One source feeds both the visible nav and the structured data: append the
 // BreadcrumbList node only when a trail was passed, so other page types are
@@ -50,7 +57,15 @@ const { title, description, path, heading, jsonLd = [], disclosure = true, heroI
 const allJsonLd = breadcrumbs && breadcrumbs.length ? [...jsonLd, breadcrumbList(breadcrumbs)] : jsonLd;
 ---
 
-<Layout title={title} description={description} path={path} jsonLd={allJsonLd}>
+<Layout
+  title={title}
+  description={description}
+  path={path}
+  jsonLd={allJsonLd}
+  image={shareImage}
+  published={published}
+  modified={modified}
+>
   <a class="skip-link" href="#main">Skip to content</a>
   <Header />
   {
