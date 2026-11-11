@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import PressLine from '../components/PressLine.astro';
 import FeatureBlock from '../components/FeatureBlock.astro';
 import StoreButtons from '../components/StoreButtons.astro';
 import Footer from '../components/Footer.astro';
@@ -92,6 +93,7 @@ const faqLd = {
       header. Not in the Tab order, so nobody tabs onto it by accident. */}
   <main id="main" tabindex="-1">
     <Hero />
+    <PressLine />
 
     {
       FEATURES.map((feature, index) => (

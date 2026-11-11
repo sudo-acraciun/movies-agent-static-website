@@ -1,0 +1,107 @@
+---
+import { COVERAGE } from '../data/coverage';
+
+// Press proof directly under the hero: every outlet that covered the app, then
+// one short line from Rich on Tech, the English-language piece. The line is
+// read from COVERAGE rather than typed here, so the homepage can only ever
+// repeat what /press already quotes.
+const featured = COVERAGE.find((c) => c.outlet === 'Rich on Tech');
+if (!featured) {
+  throw new Error('PressLine: COVERAGE has no Rich on Tech entry to quote');
+}
+---
+
+<section class="press-line" aria-label="Featured by">
+  <div class="wrap">
+    <p class="label">Featured by</p>
+    <ul class="outlets">
+      {
+        COVERAGE.map((c) => (
+          <li>
+            <a href={c.url} target="_blank" rel="noopener">{c.outlet}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <figure>
+      <blockquote>
+        <p>“{featured.quote}”</p>
+      </blockquote>
+      <figcaption>{featured.outlet}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .press-line {
+    padding: clamp(28px, 4vw, 44px) 0;
+    border-top: 1px solid var(--ink-border);
+    border-bottom: 1px solid var(--ink-border);
+    text-align: center;
+  }
+
+  .label {
+    margin: 0 0 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .outlets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* The separator is an empty box with a background, not a "·" character,
+     so a screen reader reads three links and nothing between them. */
+  .outlets li + li::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 0 18px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    vertical-align: middle;
+  }
+
+  .outlets a {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .outlets a:hover,
+  .outlets a:focus-visible {
+    text-decoration: underline;
+  }
+
+  figure {
+    margin: 18px auto 0;
+    max-width: 40rem;
+  }
+
+  blockquote {
+    margin: 0;
+  }
+
+  blockquote p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  figcaption {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+</style>

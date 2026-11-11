@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import { SITE } from '../data/site';
+import { COVERAGE } from '../data/coverage';
 import shotLibrary from '../assets/screenshots/library.png';
 import shotDiscover from '../assets/screenshots/discover.png';
 import shotAssistant from '../assets/screenshots/assistant.png';
@@ -12,13 +13,9 @@ import shotStreaming from '../assets/screenshots/streaming.png';
 // Press page: one URL a journalist or a newsletter writer can open and have
 // everything (facts, assets, bio, contact) without a reply from us. Written
 // for the recommender-column pitches; the facts here must stay identical to
-// the store listings and the FAQ, so most of them come from SITE.
-//
-// Coverage quotes one short line per piece, attributed and linked to the
-// source: a quotation of that size for reference sits inside quotation right
-// (NL Auteurswet art. 15a; fair use elsewhere). Courtesy permission requests
-// went to the Rich on Tech and Bug.hr writers on 2026-09-04; a "no" removes
-// the line, not the link.
+// the store listings and the FAQ, so most of them come from SITE. The
+// Coverage list comes from src/data/coverage.ts, which holds the quotation
+// rules.
 const path = '/press';
 const title = 'Press kit';
 const description =
@@ -54,30 +51,6 @@ const screenshots = [
   { name: 'Streaming', img: shotStreaming },
 ];
 
-const coverage: { quote: string; outlet: string; piece: string; url: string; note?: string }[] = [
-  {
-    quote: 'This might be my new favorite movie tracking app.',
-    outlet: 'Rich on Tech',
-    piece: 'newsletter, 22 August 2026',
-    url: 'https://richontech.tv/p/the-best-way-to-stop-a-scam-is-to',
-  },
-  {
-    quote:
-      'This is where I Like Movies steps in: a personal catalogue of films and TV series that can recommend what is worth watching next, from your own profile and collection.',
-    outlet: 'Bug.hr',
-    piece: 'App dana, 26 August 2026',
-    url: 'https://www.bug.hr/appdana/i-like-movies-osobni-mobilni-filmski-dnevnik-s-prilagodjenim-preporukama-62291',
-    note: 'translated from Croatian',
-  },
-  {
-    quote:
-      'After too many meals where the food went cold while he and his partner picked a film, Alex Crăciun built I Like Movies.',
-    outlet: 'start-up.ro',
-    piece: 'interview, 28 October 2026',
-    url: 'https://start-up.ro/ce-film-vedem-pana-nu-se-raceste-mancarea-un-roman-din-olanda-a-creat-i-like-movies-aplicatia-care-cauta-raspunsul-cu-ai/',
-    note: 'translated from Romanian',
-  },
-];
 ---
 
 <ArticleLayout
@@ -137,7 +110,7 @@ const coverage: { quote: string; outlet: string; piece: string; url: string; not
   <h2>Coverage</h2>
   <ul class="coverage">
     {
-      coverage.map((c) => (
+      COVERAGE.map((c) => (
         <li>
           <p class="quote">“{c.quote}”</p>
           <p class="source">
