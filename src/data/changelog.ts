@@ -24,6 +24,17 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '16 November 2026',
+    entries: [
+      'Households are now watch groups. Make one for each circle you watch with, and be in as many as you like',
+      'Every watch group has its own chat and its own Watch next list that everyone in it can add to',
+      'Share any of your lists with a watch group from the list\'s share menu, and the whole group can add and remove titles',
+      'A watch group\'s page now shows its lists as well as its chat',
+      'The Assistant can pick a movie for a whole watch group',
+      'Your watchlist and the titles you own are now yours alone, in every group you are in',
+    ],
+  },
+  {
     week: '9 November 2026',
     entries: [
       'Tap the cover photo on a title page to see photos from the film or show. Each picture appears once, and a page shows an outline while it loads',
