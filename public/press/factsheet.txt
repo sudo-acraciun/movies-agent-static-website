@@ -7,9 +7,10 @@ record of every film and series you have seen, with ratings, notes and episode
 progress, then uses that record to help you pick the next one: monthly
 collections built from your own ratings, an assistant you can ask in plain
 language, and streaming availability resolved for your country. A Streaming
-tab browses the best films and series on the services you choose. People who
-live together can share one library; friends can follow what each other is
-watching. Letterboxd, IMDb, Trakt and TV Time exports import directly.
+tab browses the best films and series on the services you choose. Partners,
+families and friends can decide together in a watch group, with a group chat
+and lists they all edit; friends can follow what each other is watching.
+Letterboxd, IMDb, Trakt and TV Time exports import directly.
 
 Platforms
 iPhone on the App Store (app id 6805131346).

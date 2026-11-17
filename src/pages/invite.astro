@@ -3,10 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import StoreButtons from '../components/StoreButtons.astro';
 import { SITE } from '../data/site';
 
-// Deep-link redirector for friend and household invites. An invite is sent
+// Deep-link redirector for friend and watch group invites. An invite is sent
 // through a messenger, and messengers only make https URLs tappable, so the
 // app builds its invite links against this page (/invite?friend=<code>,
-// ?household=<code>, ?householdInvite=<id>) and this page bounces the tap
+// ?household=<code>, ?householdInvite=<id>; the parameter names predate watch
+// groups and stay, because the app reads them) and this page bounces the tap
 // into the app's custom scheme. It also has to serve the recipient who does
 // not have the app yet, which a bare scheme link cannot: that person needs a
 // store link and an instruction to come back to this URL afterwards.
@@ -14,7 +15,7 @@ import { SITE } from '../data/site';
 
 <Layout
   title={`Invite · ${SITE.name}`}
-  description="Accept a friend or household invite in the I Like Movies app, or get the app first."
+  description="Accept a friend or watch group invite in the I Like Movies app, or get the app first."
   path="/invite"
   noindex
 >

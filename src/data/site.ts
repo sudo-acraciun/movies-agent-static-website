@@ -55,18 +55,18 @@ export const SITE = {
   // this is the single most-quoted sentence on the site and it is the only
   // one guaranteed to be read.
   definition:
-    'I Like Movies is a free movie and TV app for iPhone and Android with an AI assistant that helps you discover what to watch next, share one library with the people you live with, and keep a record of everything you have seen.',
+    'I Like Movies is a free movie and TV app for iPhone and Android with an AI assistant that helps you discover what to watch next, decide together with your partner, family or friends in a watch group, and keep a record of everything you have seen.',
 
   // The meta description is a SEPARATE string, not the definitional sentence.
   // They are built for different readers and cannot be the same text: the
-  // definition is optimised for being quoted whole and runs 230 characters,
+  // definition is optimised for being quoted whole and runs 246 characters,
   // while a search snippet is cut at roughly 155 and would truncate it
   // mid-clause. It now leads with the brand name: Search Console shows the
   // brand has real volume ("i like movies app" ranks pos 2 and drives nearly
   // all clicks), so the entity token earns the front position, and the typed
   // keywords ("movie and TV app for iPhone and Android") still sit in the first clause.
   metaDescription:
-    'I Like Movies is a free movie and TV app for iPhone and Android. AI picks from your ratings, watchlists your household can see, no ads.',
+    'I Like Movies is a free movie and TV app for iPhone and Android. AI picks from your ratings, watch groups for your partner, family or friends, no ads.',
 
   tagline: 'Everything you have watched. Everything you are going to.',
 
@@ -143,14 +143,14 @@ export type Feature = {
 // be a second place for an asset reference to rot. Copy lives in this module,
 // assets live with the page that renders them.
 
-// Five blocks. Discovery, the assistant, friends and the household are the
+// Five blocks. Discovery, the assistant, friends and watch groups are the
 // positioning, in its order; Streaming is an added section that sits before
-// the household, so the positioning blocks keep their wording and order.
+// watch groups, so the positioning blocks keep their wording and order.
 //
-// Friends and household are separate sections rather than one "Together"
-// block because they are opposite motions. A household is inward facing, the
-// people on your sofa sharing one shelf. Friends are outward facing, people
-// whose taste you borrow from. Merging them described neither clearly.
+// Friends and watch groups are separate sections rather than one "Together"
+// block because they are opposite motions. A watch group is inward facing,
+// the people you sit down with deciding together. Friends are outward facing,
+// people whose taste you borrow from. Merging them described neither clearly.
 //
 // There is no tracking block. Its substance lives in CAPABILITIES below, so
 // the page stays short without losing the words the category is searched by.
@@ -186,7 +186,7 @@ export const FEATURES: Feature[] = [
     body: 'The best recommendation you ever got came from a person, not a homepage row. Follow the people whose taste you trust, see what they are watching, and take what looks good.',
     bullets: [
       'Follow friends and see what they are watching and rating right now',
-      'Compare taste to find where you overlap and where you never will',
+      'See each friend’s top genres and Favorites on their profile',
       'Share any title straight into a chat, and it opens in their app',
     ],
     screenshotAlt:
@@ -208,18 +208,18 @@ export const FEATURES: Feature[] = [
   },
   {
     id: 'household',
-    // "Shared watchlists" is deliberate. It was "One shelf for the whole
+    // "Shared watchlist" is deliberate. It was "One shelf for the whole
     // sofa", which is a nicer line and says nothing a search engine can use.
     // "shared watchlist app" is a real query with real intent, and headings
     // carry more weight than body copy, so the noun belongs in the H2 rather
-    // than three sentences below it. Plural because each person keeps their
-    // own watchlist and the household can see all of them.
-    title: 'Shared watchlists for the whole sofa.',
-    body: "Two people, two watchlists, and a half-finished series nobody can agree on. A household puts everyone you live with on one library, so what you add, they see.",
+    // than three sentences below it. Every watch group's Watch next list is
+    // that shared watchlist; each person's own Watchlist stays theirs.
+    title: 'A shared watchlist for every group you watch with.',
+    body: 'Two people, two watchlists, and a half-finished series nobody can agree on. Make a watch group with your partner, family, flatmates or friends, and the film one of you adds to the group’s list is there for everyone.',
     bullets: [
-      'See every watchlist in your home and switch between them in one tap',
-      'Add a film on your phone and they can see it before you sit down',
-      'A shared collection, a household chat, and assistant picks for everyone at home',
+      'A Watch next list in every group that everyone in it can add to',
+      'A group chat to settle it, and any list of yours shared with the group',
+      'Ask the assistant for a pick that suits the whole group',
     ],
     screenshotAlt:
       'The I Like Movies watchlist picker, switching between the watchlists of each person in the household',
@@ -368,16 +368,16 @@ export const FAQS: Faq[] = [
   {
     q: 'Can two people share one watchlist?',
     a: [
-      "Yes. A household in I Like Movies is a shared library for the people you live with: everyone in it can see each other’s watchlists, and the household shares one collection of the titles you own and a group chat.",
-      'For one list you both add to, create a shared list and invite each other: a film either of you adds is on it for both, without sending anything. It is built for the case where two people keep separate lists and then cannot remember which of them had the film worth watching.',
+      'Yes. Make a watch group with them: every group starts with its own Watch next list that everyone in it can add to, and you can share any of your other lists with the group too. A film either of you adds is on it for both, without sending anything.',
+      'A watch group also has its own chat, and the assistant can pick for everyone in it. Your own watchlist, ratings and history stay yours: the group shares only what you put in its lists.',
     ],
   },
   {
     q: 'Can I follow friends and see what they are watching?',
     a: [
       'Yes. You can follow other people using the app and see what they are watching, what they have rated, and what they have added to their lists.',
-      'Comparing taste with someone shows where your histories overlap, which is usually a faster route to a good recommendation than any algorithm manages.',
-      'Following someone is separate from a household. Friends keep their own libraries; a household shares one.',
+      'A friend’s profile shows their top genres, their last rating and their four Favorites, which is usually a faster route to a good recommendation than any algorithm manages.',
+      'Following someone is separate from a watch group. A watch group is for the people you decide with: it has a chat and lists you all edit, and you can be in as many as you like.',
     ],
   },
   {
@@ -406,7 +406,7 @@ export const FAQS: Faq[] = [
     q: 'Does I Like Movies work offline?',
     a: [
       'No. I Like Movies needs an internet connection.',
-      'Your library syncs across your devices and your household, and film data including streaming availability is fetched live rather than bundled into the app. There is no offline mode and no local-only library.',
+      'Your library syncs across your devices, and film data including streaming availability is fetched live rather than bundled into the app. There is no offline mode and no local-only library.',
     ],
   },
 ];
@@ -443,7 +443,7 @@ export const MIGRATIONS: Migration[] = [
     name: 'Coming from Letterboxd',
     move: 'Request your data export, which arrives as a .zip, and upload it under Imports. Ratings, watched films and your watchlist come across together.',
     changes:
-      'Letterboxd is built around public reviews and film criticism as a social activity. Here your notes go to your friends or stay just for you, TV series are tracked alongside films at episode level, streaming availability is shown for your country, an AI assistant answers in plain language, and the people you live with can share a single library.',
+      'Letterboxd is built around public reviews and film criticism as a social activity. Here your notes go to your friends or stay just for you, TV series are tracked alongside films at episode level, streaming availability is shown for your country, an AI assistant answers in plain language, and a watch group lets you decide with your partner, family or friends.',
     compare: { href: '/vs/letterboxd', label: 'Read the full Letterboxd comparison' },
   },
   {
@@ -453,7 +453,7 @@ export const MIGRATIONS: Migration[] = [
     name: 'Coming from IMDb',
     move: 'Export your ratings or your watchlist from IMDb as a .csv and upload it under Imports. The app works out which kind of list the file is on its own.',
     changes:
-      'IMDb is a reference database with a watchlist attached, and it is still the best place to look up who directed what. This is built for the other half of the problem: choosing something tonight and keeping the record afterwards, with recommendations drawn from your own ratings, streaming availability for your country, and a library your household shares.',
+      'IMDb is a reference database with a watchlist attached, and it is still the best place to look up who directed what. This is built for the other half of the problem: choosing something tonight and keeping the record afterwards, with recommendations drawn from your own ratings, streaming availability for your country, and watch groups for deciding together.',
     compare: { href: '/vs/imdb', label: 'Read the full IMDb comparison' },
   },
   {
@@ -467,7 +467,7 @@ export const MIGRATIONS: Migration[] = [
     name: 'Coming from TV Time',
     move: 'TV Time closed on 15 July 2026. If you saved your data export before then, upload the .zip under Imports: watched episodes, watched films, film ratings, your film watchlist and your lists come across. Without an export, series progress is set as you go, and marking a season watched takes a tap.',
     changes:
-      'TV Time was focused on episode tracking and reminders for series. Episodes are tracked one at a time here too, films and TV sit in one library rather than being two separate concerns, discovery comes first, there is no advertising, and a household shares a single library instead of everyone keeping their own.',
+      'TV Time was focused on episode tracking and reminders for series. Episodes are tracked one at a time here too, films and TV sit in one library rather than being two separate concerns, discovery comes first, there is no advertising, and a watch group gives the people you watch with a chat and lists they all edit.',
     compare: { href: '/from-tv-time', label: 'Read the full guide to life after TV Time' },
   },
   {
@@ -478,14 +478,14 @@ export const MIGRATIONS: Migration[] = [
     name: 'Coming from Simkl',
     move: 'There is no Simkl import. Imports read Letterboxd, IMDb, Trakt and TV Time exports, and a Simkl export is none of them, so a Simkl library starts fresh here. History that also lives on Letterboxd, IMDb or Trakt comes across from those exports, and marking a season watched takes a tap.',
     changes:
-      'Simkl is strong on anime and can auto-track from browser extensions. This is a phone app with no extensions to install: anime is carried as ordinary TV and films in one library, discovery comes first, there is no advertising, and a household shares a single library.',
+      'Simkl is strong on anime and can auto-track from browser extensions. This is a phone app with no extensions to install: anime is carried as ordinary TV and films in one library, discovery comes first, there is no advertising, and watch groups let you decide together.',
     compare: { href: '/vs/simkl', label: 'Read the full Simkl comparison' },
   },
   {
     name: 'Coming from Serializd',
     move: 'There is no Serializd import. Imports read Letterboxd, IMDb, Trakt and TV Time exports, and a Serializd export is none of them, so a TV library starts fresh here. Mark the seasons you are mid-way through, usually a short list, and the rest fills in as you go.',
     changes:
-      'Serializd is built around public TV reviews. Here notes go to friends, not strangers, films and TV sit in one library rather than TV alone, an AI assistant helps you decide what is next, and a household can see each other’s watchlists.',
+      'Serializd is built around public TV reviews. Here notes go to friends, not strangers, films and TV sit in one library rather than TV alone, an AI assistant helps you decide what is next, and a watch group lets you decide it together.',
     compare: { href: '/vs/serializd', label: 'Read the full Serializd comparison' },
   },
 ];

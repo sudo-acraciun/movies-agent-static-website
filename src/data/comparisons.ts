@@ -73,20 +73,20 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'letterboxd',
     published: '2026-08-18',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     competitor: 'Letterboxd',
     title: 'I Like Movies vs Letterboxd, compared by the developer',
     metaDescription:
-      'I Like Movies as a Letterboxd alternative for iPhone and Android: TV episode tracking, notes for friends vs public reviews, households, imports, and where Letterboxd is still better.',
+      'I Like Movies as a Letterboxd alternative for iPhone and Android: TV episode tracking, notes for friends vs public reviews, watch groups, imports, and where Letterboxd is still better.',
     h1: 'I Like Movies vs Letterboxd',
     intro: [
       'Letterboxd is the social network for film lovers. It is where film culture happens online: reviews, lists, diaries, and the pleasure of reading what someone sharper than you thought of the film you just finished.',
-      'I Like Movies is a different kind of app. It is built for deciding what to watch tonight and keeping the record afterwards, for films and TV together, privately, with the people you live with. This page lays out where each one fits.',
+      'I Like Movies is a different kind of app. It is built for deciding what to watch tonight and keeping the record afterwards, for films and TV together, privately, and in a watch group with your partner, family or friends. This page lays out where each one fits.',
     ],
     betterThere: [
       {
         title: 'The community',
-        body: 'Letterboxd has the largest film community on the internet. If you want your reviews read, want to follow critics and friends, or discover films through other people’s lists, nothing else comes close. I Like Movies has following and taste comparison between friends, not a public town square.',
+        body: 'Letterboxd has the largest film community on the internet. If you want your reviews read, want to follow critics and friends, or discover films through other people’s lists, nothing else comes close. I Like Movies has friends you follow and watch groups you decide with, not a public town square.',
       },
       {
         title: 'Reviews and film writing',
@@ -111,8 +111,8 @@ export const COMPARISONS: Comparison[] = [
         body: 'Ratings and notes reach the friends you follow and nobody else, and any note can stay just for you. Nothing you write is published, and there is no audience to perform for. Some people find that freeing; some people are on Letterboxd precisely for the audience.',
       },
       {
-        title: 'A household shares one library',
-        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat.',
+        title: 'Watch groups for the people you watch with',
+        body: 'Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group.',
       },
       {
         title: 'An AI assistant you can ask in plain language',
@@ -127,8 +127,8 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iOS, Android, web' },
       { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'No, films only' },
       { feature: 'Public reviews', ilm: 'No, notes go to friends or stay private', other: 'Yes, the core of the app' },
-      { feature: 'Community and lists culture', ilm: 'Friends and taste comparison', other: 'The largest film community online' },
-      { feature: 'Shared household library', ilm: 'Yes', other: 'No' },
+      { feature: 'Community and lists culture', ilm: 'Friends and watch groups', other: 'The largest film community online' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'No, lists are edited by one member' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes, on film pages' },
       { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Letterboxd is the source here' },
@@ -140,7 +140,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If film reviews and the community around them are why you track films, stay on Letterboxd. It is the best at that, and this page will not pretend otherwise.',
-      'If you want films and TV in one private library, watchlists your household can see, and help deciding what to watch tonight, that is the problem I Like Movies is built for, and the Letterboxd import means you do not start from zero.',
+      'If you want films and TV in one private library, lists you share with your watch group, and help deciding what to watch tonight, that is the problem I Like Movies is built for, and the Letterboxd import means you do not start from zero.',
     ],
     faqs: [
       {
@@ -158,7 +158,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Is I Like Movies a social network like Letterboxd?',
         a: [
-          'Not in the same sense. You can follow friends, see what they watch and rate, and compare taste, but there are no public reviews and no feed of strangers. Letterboxd is a public community; I Like Movies is closer to a private library with friends attached.',
+          'Not in the same sense. You can follow friends and see what they watch and rate, but there are no public reviews and no feed of strangers. Letterboxd is a public community; I Like Movies is closer to a private library with friends attached.',
         ],
       },
       {
@@ -172,11 +172,11 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'trakt',
     published: '2026-08-18',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     competitor: 'Trakt',
     title: 'I Like Movies vs Trakt, compared by the developer',
     metaDescription:
-      'I Like Movies as a Trakt alternative for iPhone and Android: automatic scrobbling vs a phone-first app, ecosystems, households, AI recommendations, and where Trakt is still better.',
+      'I Like Movies as a Trakt alternative for iPhone and Android: automatic scrobbling vs a phone-first app, ecosystems, watch groups, AI recommendations, and where Trakt is still better.',
     h1: 'I Like Movies vs Trakt',
     intro: [
       'Trakt is the tracking backbone of the home-media world. It records what you watch automatically from media servers and players, and a whole ecosystem of apps is built on top of it.',
@@ -210,8 +210,8 @@ export const COMPARISONS: Comparison[] = [
         body: 'AI collections rebuilt monthly from your own ratings, an assistant you can ask in plain language, and streaming availability per country. Trakt records what you watched; this is mostly about what you watch next.',
       },
       {
-        title: 'A household shares one library',
-        body: "The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. Trakt accounts are personal; lists can be shared, but there is no household.",
+        title: 'Watch groups for the people you watch with',
+        body: "Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group. Trakt accounts are personal; VIP members can invite others to edit a list.",
       },
       {
         title: 'No ads at any tier',
@@ -223,7 +223,7 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Automatic scrobbling', ilm: 'No', other: 'Yes, from media servers and players' },
       { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'Yes, per episode' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No' },
-      { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal accounts' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'Collaborative lists for VIP members' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes' },
       { feature: 'Third-party app ecosystem', ilm: 'No', other: 'Yes, a large one' },
       { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Several importers' },
@@ -235,7 +235,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If your watching flows through Plex, Kodi or anything that scrobbles, stay on Trakt. Manual tracking after years of automatic tracking feels like a downgrade because it is one.',
-      'If you watch on streaming apps, track by hand anyway, and want the deciding half of the problem solved on your phone, with your household on one list, I Like Movies is built for exactly that.',
+      'If you watch on streaming apps, track by hand anyway, and want the deciding half of the problem solved on your phone, with your watch group on one list, I Like Movies is built for exactly that.',
     ],
     faqs: [
       {
@@ -268,15 +268,15 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'simkl',
     published: '2026-08-18',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     competitor: 'Simkl',
     title: 'I Like Movies vs Simkl, compared by the developer',
     metaDescription:
-      'I Like Movies as a Simkl alternative for iPhone and Android: anime tracking, auto-tracking extensions, households, AI recommendations, and where Simkl is still better.',
+      'I Like Movies as a Simkl alternative for iPhone and Android: anime tracking, auto-tracking extensions, watch groups, AI recommendations, and where Simkl is still better.',
     h1: 'I Like Movies vs Simkl',
     intro: [
       'Simkl tracks TV, anime and films across the web and mobile, with browser extensions that can record what you watch on streaming sites automatically. It is especially strong for anime.',
-      'I Like Movies is a phone-first app for films and TV, built around deciding what to watch next and sharing one library with the people you live with. The overlap is real, and so are the differences.',
+      'I Like Movies is a phone-first app for films and TV, built around deciding what to watch next, alone or together in a watch group. The overlap is real, and so are the differences.',
     ],
     betterThere: [
       {
@@ -302,8 +302,8 @@ export const COMPARISONS: Comparison[] = [
         body: 'AI collections rebuilt monthly from your own ratings, an assistant you can ask in plain language, and streaming availability per country, all pointed at the question of what to watch tonight.',
       },
       {
-        title: 'A household shares one library',
-        body: "The people you live with can see each other’s watchlists and share one collection of what you own, so nobody has to remember whose list the film is on.",
+        title: 'Watch groups for the people you watch with',
+        body: "Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, so nobody has to remember whose list the film is on.",
       },
       {
         title: 'Friends, not strangers',
@@ -320,7 +320,7 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Automatic tracking', ilm: 'No', other: 'Yes, via browser extensions' },
       { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'Yes, per episode' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'Limited suggestions' },
-      { feature: 'Shared household library', ilm: 'Yes', other: 'No' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'Collaborative lists for VIP members' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes' },
       { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Many sources' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads; premium tiers' },
@@ -330,7 +330,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If anime is a big part of what you watch, or you want your streaming automatically logged from a browser, Simkl is the better fit and you should use it.',
-      'If your watching is films and TV on a phone, you want help deciding what is next, and the people you live with should see one list instead of three, that is what I Like Movies is for.',
+      'If your watching is films and TV on a phone, you want help deciding what is next, and the people you live with should share one list instead of three, that is what I Like Movies is for.',
     ],
     faqs: [
       {
@@ -343,7 +343,7 @@ export const COMPARISONS: Comparison[] = [
         q: 'Is Simkl safe?',
         a: [
           'Yes. Simkl is a long-running, legitimate tracking service, and using it is safe in the ordinary sense. It is free with ads and sells premium tiers.',
-          'I Like Movies is a separate app with no ads. Which one fits depends on whether you want anime-first tracking and browser auto-logging, or a private films-and-TV library your household shares.',
+          'I Like Movies is a separate app with no ads. Which one fits depends on whether you want anime-first tracking and browser auto-logging, or a private films-and-TV library with watch groups for deciding together.',
         ],
       },
       {
@@ -375,7 +375,7 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'imdb',
     published: '2026-08-26',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     competitor: 'IMDb',
     title: 'I Like Movies vs IMDb, compared by the developer',
     metaDescription:
@@ -409,8 +409,8 @@ export const COMPARISONS: Comparison[] = [
         body: 'IMDb records what you rate; it is not built around what you have watched. I Like Movies keeps a watched history for films and TV in one library, tracks series at episode level, and can tell a show that has ended from one between seasons.',
       },
       {
-        title: 'A household shares one library',
-        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. An IMDb watchlist belongs to one account.',
+        title: 'Watch groups for the people you watch with',
+        body: 'Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group. An IMDb watchlist belongs to one account.',
       },
       {
         title: 'Recommendations from your own taste',
@@ -431,7 +431,7 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Watched history', ilm: 'Yes, films and TV', other: 'No, ratings and lists' },
       { feature: 'TV episode progress', ilm: 'Yes, per episode', other: 'Episodes can be rated, not tracked' },
       { feature: 'Cast, crew and trivia depth', ilm: 'Enough to choose a film', other: 'The deepest there is' },
-      { feature: 'Shared household library', ilm: 'Yes', other: 'No' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'Lists you can share by link' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No, popularity-based' },
       { feature: 'Export and import', ilm: 'Imports IMDb .csv, plus Letterboxd, Trakt and TV Time exports', other: 'Exports ratings and lists as .csv' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with ads' },
@@ -442,7 +442,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'Keep IMDb. That is not a concession, it is the point: as a reference it has no substitute, and nothing here tries to replace it.',
-      'The question is only what tracks your watching. If a ratings list on IMDb has been quietly standing in for a tracker, the .csv import moves it into a real one in a few taps: watched history, episode progress, a household watchlist and recommendations from your own taste.',
+      'The question is only what tracks your watching. If a ratings list on IMDb has been quietly standing in for a tracker, the .csv import moves it into a real one in a few taps: watched history, episode progress, watch groups with shared lists and recommendations from your own taste.',
     ],
     faqs: [
       {
@@ -474,15 +474,15 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'serializd',
     published: '2026-08-26',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     competitor: 'Serializd',
     title: 'I Like Movies vs Serializd, compared by the developer',
     metaDescription:
-      'I Like Movies as a Serializd alternative for iPhone and Android: public TV reviews vs a private films-and-TV library, communities, households, and where Serializd is still better.',
+      'I Like Movies as a Serializd alternative for iPhone and Android: public TV reviews vs a private films-and-TV library, communities, watch groups, and where Serializd is still better.',
     h1: 'I Like Movies vs Serializd',
     intro: [
       'Serializd is Letterboxd for TV: a place to log shows and seasons, write reviews, and read what a community of TV watchers thought. Since TV Time closed, it is where much of that culture moved.',
-      'I Like Movies tracks TV too, but privately and alongside films, with the people you live with. The two apps overlap on logging and part ways on everything social, and this page lays the split out honestly.',
+      'I Like Movies tracks TV too, but privately and alongside films, with watch groups for deciding together. The two apps overlap on logging and part ways on everything social, and this page lays the split out honestly.',
     ],
     betterThere: [
       {
@@ -508,8 +508,8 @@ export const COMPARISONS: Comparison[] = [
         body: 'Ratings and notes reach your friends and nobody else, and any note can stay just for you; nothing is published. On Serializd, writing for the room is the point.',
       },
       {
-        title: 'A household shares one library',
-        body: "The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. Serializd accounts are individual.",
+        title: 'Watch groups for the people you watch with',
+        body: "Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group. Serializd accounts are individual.",
       },
       {
         title: 'Deciding, not just logging',
@@ -520,9 +520,9 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Films', ilm: 'Yes, same library as TV', other: 'No, TV only' },
       { feature: 'TV episode progress', ilm: 'Yes, per episode', other: 'Logging by season and show' },
       { feature: 'Public reviews', ilm: 'No, notes go to friends or stay private', other: 'Yes, the core of the app' },
-      { feature: 'Community', ilm: 'Friends and taste comparison', other: 'The TV-review community' },
+      { feature: 'Community', ilm: 'Friends and watch groups', other: 'The TV-review community' },
       { feature: 'Platforms', ilm: 'iPhone, Android', other: 'Web, iOS, Android' },
-      { feature: 'Shared household library', ilm: 'Yes', other: 'No' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'Public lists and discussions' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'No' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free to use' },
@@ -533,7 +533,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If writing and reading TV reviews is why you log shows, use Serializd. It is the best home that culture has, and an app whose notes stay among friends is not a substitute for it.',
-      'If you want your TV progress next to your films, shared with your household, never with strangers, and pointed at what to watch next, that is what I Like Movies is built for, and the two philosophies are different enough that choosing is easy.',
+      'If you want your TV progress next to your films, shared with friends and your watch groups, never with strangers, and pointed at what to watch next, that is what I Like Movies is built for, and the two philosophies are different enough that choosing is easy.',
     ],
     faqs: [
       {
@@ -551,7 +551,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Which is better after TV Time shut down?',
         a: [
-          'It depends on what you used TV Time for. If it was the community and the reviews, Serializd continues that culture best. If it was episode-level progress tracking on your phone, I Like Movies covers it with films in the same library and a household to share it with.',
+          'It depends on what you used TV Time for. If it was the community and the reviews, Serializd continues that culture best. If it was episode-level progress tracking on your phone, I Like Movies covers it with films in the same library and watch groups to decide with.',
         ],
       },
       {
@@ -565,15 +565,15 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'maimovie',
     published: '2026-08-31',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     competitor: 'Maimovie',
     title: 'I Like Movies vs Maimovie, compared by the developer',
     metaDescription:
-      'I Like Movies as a Maimovie alternative for iPhone and Android: an AI finder vs a library you keep, episode tracking, households, imports, and where Maimovie is still better.',
+      'I Like Movies as a Maimovie alternative for iPhone and Android: an AI finder vs a library you keep, episode tracking, watch groups, imports, and where Maimovie is still better.',
     h1: 'I Like Movies vs Maimovie',
     intro: [
       'Maimovie is an AI finder for films and TV. You describe what you are in the mood for, and its AI, built on a large set of mood and theme prompts, comes back with titles and where they stream. It is discovery first, and good at it.',
-      'I Like Movies does discovery too, but around a library you keep: a watched history for films and TV together, tracked to the episode, with a household that can see each other’s watchlists. The overlap is the recommendation; the difference is everything that happens after you pick.',
+      'I Like Movies does discovery too, but around a library you keep: a watched history for films and TV together, tracked to the episode, with watch groups for deciding together. The overlap is the recommendation; the difference is everything that happens after you pick.',
     ],
     betterThere: [
       {
@@ -595,8 +595,8 @@ export const COMPARISONS: Comparison[] = [
         body: 'Discover collections are rebuilt monthly from your ratings, your most-watched genre and the director or actor you return to, and the assistant filters against what you have already seen. The more you rate, the more the suggestions are yours rather than the catalogue’s.',
       },
       {
-        title: 'A household shares one library',
-        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. Maimovie is a personal finder.',
+        title: 'Watch groups for the people you watch with',
+        body: 'Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group. Maimovie is a personal finder.',
       },
       {
         title: 'Bring your history with you',
@@ -613,7 +613,7 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Watched history', ilm: 'Yes, films and TV', other: 'Discovery focused' },
       { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'Not the focus' },
       { feature: 'AI recommendations', ilm: 'From your own ratings and history', other: 'Yes, prompt and mood based' },
-      { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'No, personal' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes, across many providers' },
       { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Not a library to import' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free to use' },
@@ -624,7 +624,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If you want a fast AI finder on iPhone or Android and do not need to keep a library, Maimovie does that well and this page will not pretend otherwise.',
-      'If you want the deciding half and the keeping half in one place, films and TV tracked to the episode, shared with your household, that is the problem I Like Movies is built for.',
+      'If you want the deciding half and the keeping half in one place, films and TV tracked to the episode, with watch groups for deciding together, that is the problem I Like Movies is built for.',
     ],
     faqs: [
       {
@@ -656,15 +656,15 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'moviebase',
     published: '2026-09-08',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     competitor: 'Moviebase',
     title: 'I Like Movies vs Moviebase, compared by the developer',
     metaDescription:
-      'I Like Movies as a Moviebase alternative for iPhone and Android: a shared household library, recommendations from your own ratings, no ads, and where Moviebase is still better.',
+      'I Like Movies as a Moviebase alternative for iPhone and Android: watch groups for deciding together, recommendations from your own ratings, no ads, and where Moviebase is still better.',
     h1: 'I Like Movies vs Moviebase',
     intro: [
       'Moviebase is an established tracker for films and TV, on iPhone and Android, built on TMDB data with a release calendar, statistics and two-way Trakt sync. It presents itself as the app that keeps your history after TV Time closed, and it does that well.',
-      'I Like Movies is a phone app aimed at the moment before you press play as much as the record afterwards, for films and TV together, privately, shared with the people you live with. The two overlap on tracking and part ways on sync, ads and who the library belongs to. This page lays the split out.',
+      'I Like Movies is a phone app aimed at the moment before you press play as much as the record afterwards, for films and TV together, privately, with watch groups for deciding together. The two overlap on tracking and part ways on sync, ads and who the library belongs to. This page lays the split out.',
     ],
     betterThere: [
       {
@@ -682,8 +682,8 @@ export const COMPARISONS: Comparison[] = [
     ],
     differences: [
       {
-        title: 'A household shares one library',
-        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. A Moviebase account is personal, backed up to a personal Trakt account.',
+        title: 'Watch groups for the people you watch with',
+        body: 'Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group. A Moviebase account is personal, backed up to a personal Trakt account.',
       },
       {
         title: 'Recommendations from your own ratings',
@@ -703,7 +703,7 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'TV and episode tracking', ilm: 'Yes, per episode', other: 'Yes, per episode' },
       { feature: 'Two-way Trakt sync', ilm: 'No', other: 'Yes' },
       { feature: 'Watch statistics', ilm: 'Yes, lighter', other: 'Yes, detailed' },
-      { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal account' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'No, personal account' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'Discovery via TMDB and Trakt' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes' },
       { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'TV Time, Trakt, Letterboxd, IMDb' },
@@ -714,7 +714,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If you want your history synced through Trakt across other apps, imports from wherever you kept it, or the deeper statistics of a mature product, Moviebase is the better fit and this page will not pretend otherwise.',
-      'If you want films and TV in one private library your household shares, recommendations built from your own ratings, streaming availability per country and no ads at any point, that is the problem I Like Movies is built for.',
+      'If you want films and TV in one private library, watch groups for deciding together, recommendations built from your own ratings, streaming availability per country and no ads at any point, that is the problem I Like Movies is built for.',
     ],
     faqs: [
       {
@@ -753,15 +753,15 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'justwatch',
     published: '2026-09-08',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     competitor: 'JustWatch',
     title: 'I Like Movies vs JustWatch, compared by the developer',
     metaDescription:
-      'JustWatch alternative that remembers what you watched: films and TV in one private library, per episode, shared with your household, free with no ads.',
+      'JustWatch alternative that remembers what you watched: films and TV in one private library, per episode, with watch groups for deciding together, free with no ads.',
     h1: 'I Like Movies vs JustWatch',
     intro: [
       'JustWatch calls itself The Streaming Guide, and that is exactly what it is. It is a where-to-watch search engine with a watchlist attached, on the web, on your phone and on the TV in your living room, across more than a hundred countries. You search a film or show, it tells you where it streams, rents or buys, filtered down to the services you actually pay for, and it can alert you to price drops and new releases. It records what you want to watch, not what you have already seen.',
-      'I Like Movies is a phone app built for the record after you press play as much as the search before it, films and TV together, tracked per episode, private, shared with the people you live with. The two overlap on the watchlist and on the where-to-watch line under a title, and part ways on almost everything else. This page lays the split out.',
+      'I Like Movies is a phone app built for the record after you press play as much as the search before it, films and TV together, tracked per episode, private, with watch groups for deciding together. The two overlap on the watchlist and on the where-to-watch line under a title, and part ways on almost everything else. This page lays the split out.',
     ],
     betterThere: [
       {
@@ -791,12 +791,12 @@ export const COMPARISONS: Comparison[] = [
         body: 'Films and shows sit in one place, each show tracked episode by episode rather than marked watched as a single lump. JustWatch is a finder, not a library you fill, so there is no watched shelf to keep in the first place.',
       },
       {
-        title: 'A household shares one library',
-        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. A JustWatch watchlist belongs to one personal account.',
+        title: 'Watch groups for the people you watch with',
+        body: 'Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group. A JustWatch watchlist belongs to one personal account.',
       },
       {
         title: 'Friends, not strangers',
-        body: 'Your ratings and notes reach the friends you follow and nobody else, there are no public reviews, and you can compare taste without a feed of strangers. JustWatch surfaces outside ratings from IMDb, and Rotten Tomatoes on the web, as decision signals, but it is not a place you rate or review.',
+        body: 'Your ratings and notes reach the friends you follow and nobody else, there are no public reviews, and no feed of strangers. JustWatch surfaces outside ratings from IMDb, and Rotten Tomatoes on the web, as decision signals, but it is not a place you rate or review.',
       },
       {
         title: 'Recommendations from your own ratings',
@@ -809,7 +809,7 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Watched history', ilm: 'Yes, films and TV', other: 'No, records intent not history' },
       { feature: 'Per-episode tracking', ilm: 'Yes', other: 'No' },
       { feature: 'Ratings and notes', ilm: 'Yes, for friends or just you', other: 'No (shows external ratings)' },
-      { feature: 'Household sharing', ilm: 'Yes, one shared library', other: 'No, personal watchlist' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'Lists you can share' },
       { feature: 'Streaming availability', ilm: 'Per country, on every title', other: 'Core product, thousands of providers, 100+ countries' },
       { feature: 'Prices and deals', ilm: 'No', other: 'Yes, rent/buy prices and daily Price Drops' },
       { feature: 'AI recommendations', ilm: 'Yes, from your ratings, plus an assistant', other: 'No (What’s Hot by service and popularity)' },
@@ -821,7 +821,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If the question you keep asking is where can I watch this tonight, JustWatch is the better tool and this page will not pretend otherwise. It reaches the web and the TV in your living room, not just your phone, it covers more providers in more countries than any tracker’s built-in availability line, and it tells you when a title lands on a service you have or drops in price. As a where-to-watch finder it is hard to beat.',
-      'I Like Movies is for the other half of the habit, remembering what you watched and what you thought of it. Films and TV in one library, tracked per episode, seen by friends rather than strangers, shared with the people you live with, with monthly recommendations rebuilt from your own ratings and an assistant you can ask in plain language. The two are not really rivals, plenty of people keep a finder and a tracker side by side. It is on iPhone and Android.',
+      'I Like Movies is for the other half of the habit, remembering what you watched and what you thought of it. Films and TV in one library, tracked per episode, seen by friends rather than strangers, with watch groups for deciding together and monthly recommendations rebuilt from your own ratings and an assistant you can ask in plain language. The two are not really rivals, plenty of people keep a finder and a tracker side by side. It is on iPhone and Android.',
     ],
     faqs: [
       {
@@ -839,7 +839,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Is I Like Movies a JustWatch alternative?',
         a: [
-          'Partly. Both show where to stream a title in your country. Beyond that they do different jobs. I Like Movies is a private tracker with a shared household library and recommendations built from your own ratings. JustWatch is a where-to-watch finder with the broadest availability data and a deals feed. Plenty of people use both.',
+          'Partly. Both show where to stream a title in your country. Beyond that they do different jobs. I Like Movies is a private tracker with watch groups and recommendations built from your own ratings. JustWatch is a where-to-watch finder with the broadest availability data and a deals feed. Plenty of people use both.',
         ],
       },
       {
@@ -865,15 +865,15 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'matinee',
     published: '2026-09-08',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     competitor: 'Matinee',
     title: 'I Like Movies vs Matinee, compared by the developer',
     metaDescription:
-      'Matinee alternative on iPhone and Android: films and TV in one private library, a household that sees every watchlist, recommendations built from your own taste, no ads.',
+      'Matinee alternative on iPhone and Android: films and TV in one private library, watch groups for deciding together, recommendations built from your own taste, no ads.',
     h1: 'I Like Movies vs Matinee',
     intro: [
       'Matinee is a movie and TV tracker for iPhone and Android, with a film diary, half-star ratings, a social feed of what your friends are watching, and streaming availability across more than 30 services. Its headline is discovery: a natural-language search, an assistant you can ask for picks, and a daily suggestion, with an optional Pro tier that unlocks the smart search and removes the ads. It does that well.',
-      'I Like Movies is a phone app for films and TV together, kept privately, and shared with the people you live with. It is free with no ads, and it leans on the moment before you press play as much as the record after. The two overlap on tracking and part ways on ads, on who sees your ratings, and on who the library belongs to. This page lays the split out.',
+      'I Like Movies is a phone app for films and TV together, kept privately, with watch groups for deciding together. It is free with no ads, and it leans on the moment before you press play as much as the record after. The two overlap on tracking and part ways on ads, on who sees your ratings, and on who the library belongs to. This page lays the split out.',
     ],
     betterThere: [
       {
@@ -895,8 +895,8 @@ export const COMPARISONS: Comparison[] = [
     ],
     differences: [
       {
-        title: 'A household shares one library',
-        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. A Matinee account is personal, and each person keeps their own diary.',
+        title: 'Watch groups for the people you watch with',
+        body: 'Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group. A Matinee account is personal, and each person keeps their own diary.',
       },
       {
         title: 'Recommendations from your own taste',
@@ -914,7 +914,7 @@ export const COMPARISONS: Comparison[] = [
     table: [
       { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iOS and Android, also iPad, Mac, Apple Vision' },
       { feature: 'Films and TV', ilm: 'One library, tracked per episode', other: 'Both, tracked per episode' },
-      { feature: 'Household shared library', ilm: 'Yes', other: 'No, a personal diary' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'A personal diary' },
       { feature: 'Privacy', ilm: 'Friends only, no public reviews', other: 'Social feed, public reviews' },
       { feature: 'Recommendations', ilm: 'Monthly Discover from your ratings, plus an assistant you ask', other: 'AI recommendations, blends your taste with friends' },
       { feature: 'Streaming availability', ilm: 'Per country, on every title', other: '30+ services, filter by your subscriptions' },
@@ -924,11 +924,11 @@ export const COMPARISONS: Comparison[] = [
     ],
     migration: [
       'Matinee keeps your diary inside its own account, and I Like Movies imports only Letterboxd, IMDb, Trakt and TV Time exports, so there is no direct Matinee import. Your Matinee history would start fresh here.',
-      'If you also log films on Letterboxd or Trakt, keep a list on IMDb, or have a TV Time export from before it closed, bring that file in, and your ratings and watched marks land in one place. Otherwise you rebuild by adding titles as you go, which is quick when your household can see each other’s watchlists.',
+      'If you also log films on Letterboxd or Trakt, keep a list on IMDb, or have a TV Time export from before it closed, bring that file in, and your ratings and watched marks land in one place. Otherwise you rebuild by adding titles as you go.',
     ],
     verdict: [
       'If your priority is a social feed and an assistant that finds things to watch, or a tracker across the Apple ecosystem, Matinee is the better fit and this page will not pretend otherwise. It is live, actively updated, and it has put real work into discovery and streaming availability.',
-      'If you want the people you live with to see each other’s watchlists, want your ratings seen by friends rather than the public, and want recommendations built from your own taste with no ads and nothing to upgrade, I Like Movies is built for that. Both track films and TV to the episode, so the real choice is who the library belongs to, and whether your film life is public or private.',
+      'If you want watch groups for deciding together, want your ratings seen by friends rather than the public, and want recommendations built from your own taste with no ads and nothing to upgrade, I Like Movies is built for that. Both track films and TV to the episode, so the real choice is who the library belongs to, and whether your film life is public or private.',
     ],
     faqs: [
       {
@@ -958,7 +958,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Which should I choose?',
         a: [
-          'Pick Matinee if you want a public social feed and a strong finder, or a tracker across the Apple ecosystem. Pick I Like Movies if you want a household that sees each other’s watchlists, want your ratings seen by friends rather than the public, and want no ads. Both track films and TV to the episode.',
+          'Pick Matinee if you want a public social feed and a strong finder, or a tracker across the Apple ecosystem. Pick I Like Movies if you want watch groups for deciding together, want your ratings seen by friends rather than the public, and want no ads. Both track films and TV to the episode.',
         ],
       },
     ],
@@ -966,15 +966,15 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'cronica',
     published: '2026-09-14',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     competitor: 'Cronica',
     title: 'I Like Movies vs Cronica, compared by the developer',
     metaDescription:
-      'I Like Movies as a Cronica alternative for iPhone and Android: a shared household library, recommendations and an AI assistant, versus a minimalist iCloud tracker, and where Cronica is still better.',
+      'I Like Movies as a Cronica alternative for iPhone and Android: watch groups, recommendations and an AI assistant, versus a minimalist iCloud tracker, and where Cronica is still better.',
     h1: 'I Like Movies vs Cronica',
     intro: [
       'Cronica is a clean, open-source watchlist and tracker for the Apple ecosystem: films and TV on iPhone, iPad, Mac, Apple Watch, Apple TV and Vision Pro, synced through your own iCloud, with no account and no social layer. It is deliberately minimal, and good at that.',
-      'I Like Movies is a phone app for iPhone and Android built around deciding what to watch as much as recording it, with recommendations, an assistant, and a library the people you live with can share. The two overlap on tracking and part ways on scope, sync and platform. This page lays the split out.',
+      'I Like Movies is a phone app for iPhone and Android built around deciding what to watch as much as recording it, with recommendations, an assistant, and watch groups for deciding together. The two overlap on tracking and part ways on scope, sync and platform. This page lays the split out.',
     ],
     betterThere: [
       {
@@ -983,7 +983,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'Open source and account-free',
-        body: 'Cronica is open source and keeps your data in your own iCloud with no account to create and nothing on someone else’s server. I Like Movies keeps your library on its own server behind an account, which is what lets a household share it. If you want no account and your data staying in iCloud, Cronica is built that way and this app is not.',
+        body: 'Cronica is open source and keeps your data in your own iCloud with no account to create and nothing on someone else’s server. I Like Movies keeps your library on its own server behind an account, which is what lets a watch group share lists and a chat. If you want no account and your data staying in iCloud, Cronica is built that way and this app is not.',
       },
       {
         title: 'Minimalist by design',
@@ -992,8 +992,8 @@ export const COMPARISONS: Comparison[] = [
     ],
     differences: [
       {
-        title: 'A household shares one library',
-        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. Cronica is a personal tracker synced to your own iCloud, one library for one person.',
+        title: 'Watch groups for the people you watch with',
+        body: 'Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group. Cronica is a personal tracker synced to your own iCloud, one library for one person.',
       },
       {
         title: 'Recommendations and an AI assistant',
@@ -1001,7 +1001,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'On Android as well, on one account',
-        body: 'The same account works on iPhone and Android, so a mixed-phone household is on one shared library. Cronica is Apple-only, so a household with an Android phone in it cannot all be on it.',
+        body: 'The same account works on iPhone and Android, so a watch group can mix iPhones and Android phones. Cronica is Apple-only, so a family with an Android phone in it cannot all be on it.',
       },
       {
         title: 'Imports your existing library',
@@ -1012,7 +1012,7 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iPhone, iPad, Mac, Apple Watch, Apple TV, Vision Pro' },
       { feature: 'Films and TV in one library', ilm: 'Yes', other: 'Yes' },
       { feature: 'Episode-level tracking', ilm: 'Yes, per episode', other: 'Yes, per episode' },
-      { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal via iCloud' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'No, personal via iCloud' },
       { feature: 'AI recommendations', ilm: 'Yes, from your own ratings', other: 'No' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Yes, via JustWatch' },
       { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'None; builds from search' },
@@ -1023,7 +1023,7 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If your world is entirely Apple and you want a minimal, open-source tracker on every device including the Watch and the TV, with your data in your own iCloud and no account, Cronica is the better fit and this page will not pretend otherwise.',
-      'If you want films and TV in one library shared with your household, recommendations built from your own ratings and an assistant you can ask, and the same account on Android as well as iPhone, that is what I Like Movies is built for.',
+      'If you want films and TV in one library, watch groups for deciding together, recommendations built from your own ratings and an assistant you can ask, and the same account on Android as well as iPhone, that is what I Like Movies is built for.',
     ],
     faqs: [
       {
@@ -1035,7 +1035,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Does Cronica sync across devices?',
         a: [
-          'Yes, through iCloud across your Apple devices, including iPhone, iPad, Mac, Apple Watch, Apple TV and Vision Pro. I Like Movies syncs through your account instead, which works across iPhone and Android and is what lets a household share one library.',
+          'Yes, through iCloud across your Apple devices, including iPhone, iPad, Mac, Apple Watch, Apple TV and Vision Pro. I Like Movies syncs through your account instead, which works across iPhone and Android and is what lets a watch group share lists across both.',
         ],
       },
       {
@@ -1055,15 +1055,15 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'flick',
     published: '2026-09-14',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     competitor: 'Flick',
     title: 'I Like Movies vs Flick, compared by the developer',
     metaDescription:
-      'I Like Movies as a Flick alternative for iPhone and Android: a private films-and-TV library with a shared household, versus a social rating app with visual reviews, and where Flick is still better.',
+      'I Like Movies as a Flick alternative for iPhone and Android: a private films-and-TV library with watch groups, versus a social rating app with visual reviews, and where Flick is still better.',
     h1: 'I Like Movies vs Flick',
     intro: [
       'Flick is a social movie and TV rating app on iPhone and Android. It leans into expression and community: a playful "this or that" rating system, rich reviews you build with stills, clips and gifs, a watch history, personalized picks and a year-in-review, and it imports a Letterboxd library to get you started.',
-      'I Like Movies is a phone app built around a private library and deciding what to watch, shared with the people you live with. The two overlap on rating and tracking, and part ways on whether your film life is public or private. This page lays the split out.',
+      'I Like Movies is a phone app built around a private library and deciding what to watch, alone or in a watch group. The two overlap on rating and tracking, and part ways on whether your film life is public or private. This page lays the split out.',
     ],
     betterThere: [
       {
@@ -1089,8 +1089,8 @@ export const COMPARISONS: Comparison[] = [
         body: 'I Like Movies tracks films and TV in one library down to the episode, with a watchlist, and it tells a series that has ended from one between seasons. Flick centres on rating and reviewing rather than episode-level progress.',
       },
       {
-        title: 'A household shares one library',
-        body: 'The people you live with can see each other’s watchlists, share one collection of what you own, and decide in a household chat. Flick profiles are individual.',
+        title: 'Watch groups for the people you watch with',
+        body: 'Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group. Flick profiles are individual.',
       },
       {
         title: 'An assistant and per-country streaming',
@@ -1105,7 +1105,7 @@ export const COMPARISONS: Comparison[] = [
       { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iPhone, Android' },
       { feature: 'Public reviews and social feed', ilm: 'No, friends only', other: 'Yes, the core of the app' },
       { feature: 'Films and TV, per-episode tracking', ilm: 'Yes, per episode', other: 'Watch history, rating-first' },
-      { feature: 'Shared household library', ilm: 'Yes', other: 'No, personal profile' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'Lists you can share' },
       { feature: 'AI recommendations and assistant', ilm: 'Yes, from your own ratings', other: 'Personalized picks' },
       { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Not a focus' },
       { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Letterboxd' },
@@ -1116,13 +1116,13 @@ export const COMPARISONS: Comparison[] = [
     ],
     verdict: [
       'If you want a social, expressive rating app where reviews are public and the act of rating is playful, Flick is the better fit and this page will not pretend otherwise. It is built for sharing, and it does that well.',
-      'If you want a private library of films and TV tracked to the episode, watchlists your household can see, an assistant and per-country streaming, that is what I Like Movies is built for. Both run on iPhone and Android, so the real choice is whether your film life is public or private.',
+      'If you want a private library of films and TV tracked to the episode, watch groups for deciding together, an assistant and per-country streaming, that is what I Like Movies is built for. Both run on iPhone and Android, so the real choice is whether your film life is public or private.',
     ],
     faqs: [
       {
         q: 'What is the difference between Flick and I Like Movies?',
         a: [
-          'Flick is a social rating app: public reviews, a playful head-to-head rating system and a community to talk to. I Like Movies is a private tracker: films and TV in one library down to the episode, ratings and notes seen by friends only, a household that sees every watchlist, an assistant and per-country streaming. Both run on iPhone and Android.',
+          'Flick is a social rating app: public reviews, a playful head-to-head rating system and a community to talk to. I Like Movies is a private tracker: films and TV in one library down to the episode, ratings and notes seen by friends only, watch groups for deciding together, an assistant and per-country streaming. Both run on iPhone and Android.',
         ],
       },
       {

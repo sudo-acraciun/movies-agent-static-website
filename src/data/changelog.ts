@@ -32,6 +32,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'A watch group\'s page now shows its lists as well as its chat',
       'The Assistant can pick a movie for a whole watch group',
       'Your watchlist and the titles you own are now yours alone, in every group you are in',
+      'Deleting a list you shared with a watch group now says so in the group\'s chat',
     ],
   },
   {

@@ -104,8 +104,8 @@ export const mobileApplicationNode = {
   featureList: [
     'AI movie and TV recommendations generated from your own ratings',
     'AI chat assistant for recommendations in plain language',
-    'Follow friends and compare taste',
-    "Household members see each other’s watchlists",
+    'Follow friends and see their taste',
+    'Watch groups with a group chat and shared lists',
     'Streaming availability by country',
     'Browse the best films and series on your streaming services',
     'TV episode level progress tracking',

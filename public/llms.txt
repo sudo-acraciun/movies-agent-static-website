@@ -1,8 +1,9 @@
 # I Like Movies
 
 > I Like Movies is a free movie and TV app for iPhone and Android with an AI
-> assistant that helps you discover what to watch next, share one library with
-> the people you live with, and keep a record of everything you have seen.
+> assistant that helps you discover what to watch next, decide together with
+> your partner, family or friends in a watch group, and keep a record of
+> everything you have seen.
 
 I Like Movies is an independent app built by one developer in the Netherlands.
 It is free to download and free to use, carries no advertising, and shows no
@@ -21,13 +22,15 @@ sponsored recommendations.
   photos of a list of titles.
 - **Viewing profile**: total hours watched, average rating, top genres, a
   breakdown by the country a film came from, and a pinned top four.
-- **Households**: the people you live with share one library: everyone can
-  see each other's watchlists, the household shares one collection of the
-  titles it owns and a group chat, and the assistant can pick for everyone.
+- **Watch groups**: make a group with your partner, family, flatmates or
+  friends. Each group has a chat and lists everyone in it can edit, starting
+  with its own Watch next list, and the assistant can pick for the group. You
+  can be in several groups; each person's watchlist, ratings and history stay
+  their own.
 - **Friends**: follow other people using the app, see what they are watching
-  and rating, and compare taste to find where two histories overlap. Friends
-  are separate from a household: friends keep their own libraries, a household
-  shares one.
+  and rating, and see their taste on their profile. Friends are separate from
+  watch groups: following someone shows you their activity, a watch group
+  shares a chat and lists.
 - **Tracking**: ratings, notes and rewatches for films and TV, with episode
   level progress for series. Notes go to friends or stay private; nothing is
   public.
@@ -56,15 +59,15 @@ sponsored recommendations.
 - **Letterboxd** is a social network built around public film reviews and
   criticism. I Like Movies has no public reviews, shows activity to friends
   only, and is built around deciding what to watch, and it adds TV episode tracking, per-country streaming availability,
-  a shared household library, and an AI assistant answering in plain language.
+  watch groups, and an AI assistant answering in plain language.
 - **IMDb** is a reference database with a watchlist attached. I Like Movies is
   built for choosing what to watch and recording it afterwards, with
   recommendations drawn from the user's own ratings, per-country streaming
-  availability, and a library a household shares. IMDb ratings and watchlists
+  availability, and watch groups for deciding together. IMDb ratings and watchlists
   import directly as a .csv.
 - **Trakt** centres on automatic scrobbling from media servers and players. I
   Like Movies needs no server or plugin chain; it is a phone app for choosing
-  what to watch, with a library the household shares. A Trakt data export
+  what to watch, with watch groups for deciding together. A Trakt data export
   imports directly as a one-time copy, episode history included; there is no
   Trakt sync.
 - **TV Time** closed on 15 July 2026. It focused on TV episode tracking; I Like
@@ -149,6 +152,7 @@ Each one names where the other apps are the better choice.
 - Best Letterboxd alternatives for iPhone: https://ilikemovies.app/best/letterboxd-alternatives-iphone
 - Best free movie and TV apps with no ads: https://ilikemovies.app/best/free-movie-apps-no-ads
 - Best apps for a shared household watchlist: https://ilikemovies.app/best/shared-household-watchlist-apps
+- Best apps to pick a movie together tonight: https://ilikemovies.app/best/apps-to-pick-a-movie-together
 - Best apps to track anime episodes: https://ilikemovies.app/best/anime-episode-tracking-apps
 - Best TV show tracker apps (TV Time alternatives): https://ilikemovies.app/best/tv-show-tracker-apps
 - I Like Movies vs Letterboxd: https://ilikemovies.app/vs/letterboxd

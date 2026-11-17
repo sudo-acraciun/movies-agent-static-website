@@ -13,7 +13,7 @@ export const POSTS: BlogPost[] = [
     path: '/blog/i-like-movies-is-now-on-iphone',
     title: 'I Like Movies is now on iPhone',
     published: '2026-09-14',
-    modified: '2026-11-11',
+    modified: '2026-11-17',
     blurb:
       'I Like Movies is on the App Store. The same free tracker, with your library synced across iPhone and Android.',
   },
@@ -29,7 +29,7 @@ export const POSTS: BlogPost[] = [
     path: '/blog/how-i-built-i-like-movies',
     title: 'How I built an AI movie tracker as a solo dev',
     published: '2026-08-21',
-    modified: '2026-09-14',
+    modified: '2026-11-17',
     blurb:
       'The build story: a solo-built movie tracker for iPhone and Android in Go, GraphQL and React Native, and the decisions that mattered.',
   },

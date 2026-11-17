@@ -111,7 +111,7 @@ export const ROUNDUPS: Roundup[] = [
     h1: 'Best apps to decide what to watch together in 2026 (we compared 5)',
     query: 'app to decide what to watch together with my partner',
     published: '2026-09-01',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     intro: [
       'The problem is never a shortage of films. It is that two people want different ones, and the evening drains away in the menus before either of them presses play. A few apps exist just for this, and they solve it in genuinely different ways: some match your tastes, some let you swipe until you both land on the same title, and some just keep one shared list so the argument never starts.',
       'This page compares the five worth knowing, by the one thing that matters here: getting two sets of taste to a single title, tonight, without a fight. Each entry says who it is for and where it falls short.',
@@ -127,20 +127,20 @@ export const ROUNDUPS: Roundup[] = [
         rank: 1,
         name: 'I Like Movies',
         isUs: true,
-        bestFor: 'couples who want to decide together and keep one shared library',
+        bestFor: 'couples who want to decide together and keep a list they both add to',
         blurb: [
-          'I Like Movies is a free movie and TV app for iPhone and Android built around a shared household. Two people (or everyone under one roof) can see each other’s watchlists and keep a shared list they both add to, so what one person adds, the other already sees, and a "compare taste" view shows where two people overlap and where they never will.',
+          'I Like Movies is a free movie and TV app for iPhone and Android with watch groups: make one for the two of you and you get a group chat and a Watch next list you both add to, so what one person adds, the other already sees, and the assistant can pick for both of you.',
           'It fits couples who want more than a one-off pick: the decision is made from a list you both build and keep, and the app is also a full tracker and an AI assistant for the nights you want a suggestion rather than a browse. It is the best fit here when you want the decision to stick, not just tonight.',
         ],
         pros: [
-          "Each other's watchlists, a shared list you both add to, and a household chat",
-          'A taste-comparison view built for finding common ground between two people',
+          'A watch group with its own chat and a Watch next list you both add to',
+          'The assistant picks for both of you from what each of you shares',
           'Doubles as a full films-and-TV tracker and an AI assistant, so it earns its place after the decision is made',
           'Free, with no ads and no sponsored rows',
         ],
         cons: [
           'No web app: both of you decide from the phone app, not a browser',
-          'No Tinder-style swipe game: deciding is done through shared lists and taste comparison, which some couples find less playful',
+          'No Tinder-style swipe game: deciding is done through shared lists and the assistant, which some couples find less playful',
         ],
       },
       {
@@ -216,8 +216,8 @@ export const ROUNDUPS: Roundup[] = [
     tableCols: ['I Like Movies', 'TasteRay', 'Matched', 'MatchWatch'],
     table: [
       {
-        feature: 'Shares one library between two people',
-        cells: ['Yes, household watchlists and shared lists', 'No', 'No', 'No'],
+        feature: 'What you share with the others',
+        cells: ['Watch groups: chat and shared lists', 'Nothing: one person chats with the AI', 'Swipe matches for two', 'Swipe matches for up to six'],
       },
       {
         feature: 'Swipe-to-match',
@@ -241,14 +241,14 @@ export const ROUNDUPS: Roundup[] = [
       },
     ],
     verdict: [
-      'If the two of you want the decision to last past tonight, and you would use a shared list you both add to and each other’s watchlists, I Like Movies is the best fit because it is the only one built around a shared library rather than a single pick. If you want a fast, well-argued suggestion and nothing to file afterwards, TasteRay is excellent. If the swiping is the fun part, Matched; if you are on different phones or in a group, MatchWatch.',
+      'If the two of you want the decision to last past tonight, and you would use a list you both add to and a chat to settle it, I Like Movies is the best fit because it keeps the decision in a list you both build, rather than a single pick. If you want a fast, well-argued suggestion and nothing to file afterwards, TasteRay is excellent. If the swiping is the fun part, Matched; if you are on different phones or in a group, MatchWatch.',
       'None of them replaces the five-minute conversation, but each one shortens it, and the right choice depends on whether you want a tool for tonight or a habit for every night.',
     ],
     faqs: [
       {
         q: 'What is the best app for couples to decide what to watch?',
         a: [
-          'It depends on what you want afterwards. For couples who want a shared watchlist and a lasting record, I Like Movies fits best because it is built around a shared household library. For a fast one-off pick with a reason attached, TasteRay is the strongest. For a playful swipe-to-match game, Matched.',
+          'It depends on what you want afterwards. For couples who want a shared watchlist and a lasting record, I Like Movies fits best because a watch group gives the two of you a shared list and a chat. For a fast one-off pick with a reason attached, TasteRay is the strongest. For a playful swipe-to-match game, Matched.',
         ],
       },
       {
@@ -448,7 +448,7 @@ export const ROUNDUPS: Roundup[] = [
     h1: 'Best Letterboxd alternatives for Android in 2026 (we compared 5)',
     query: 'What are the best Letterboxd alternatives for Android?',
     published: '2026-09-01',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     intro: [
       'Letterboxd is the film-diary social network, and nothing else matches it for reviews, lists and community. People go looking for an alternative for one of a few specific reasons: they also want to track TV, they want a more native Android app, they want statistics without a subscription, or they want something more private than a public review feed.',
       'This page compares the five worth knowing, and is honest about the one thing none of them replaces.',
@@ -464,16 +464,16 @@ export const ROUNDUPS: Roundup[] = [
         rank: 1,
         name: 'I Like Movies',
         isUs: true,
-        bestFor: 'a private, Android-native alternative that also tracks TV and shares with a household',
+        bestFor: 'a private, Android-native alternative that also tracks TV and has watch groups',
         blurb: [
-          'I Like Movies is the closest fit if what you want is Letterboxd for Android, with TV as well as film, away from a public feed, and shared with the people you live with. It tracks films and TV in one library down to the episode, your notes and ratings go to friends rather than becoming public reviews, it shows per-country streaming, and it imports your Letterboxd .zip directly so a library built over years comes across.',
-          'What it is not is a public film community. There is following and taste comparison between friends, not a town square of reviews to read.',
+          'I Like Movies is the closest fit if what you want is Letterboxd for Android, with TV as well as film, away from a public feed, with watch groups for the people you watch with. It tracks films and TV in one library down to the episode, your notes and ratings go to friends rather than becoming public reviews, it shows per-country streaming, and it imports your Letterboxd .zip directly so a library built over years comes across.',
+          'What it is not is a public film community. There are friends you follow and watch groups you decide with, not a town square of reviews to read.',
         ],
         pros: [
           'Imports your Letterboxd export directly',
           'Films and TV in one library, tracked by episode',
           'Notes for friends instead of public reviews; free, no ads',
-          'A shared household library for the people you live with',
+          'Watch groups with a chat and shared lists',
         ],
         cons: [
           'Not a public film community; no review culture',
@@ -565,8 +565,8 @@ export const ROUNDUPS: Roundup[] = [
         cells: ['For friends or just you', 'Mixed', 'Private', 'Private'],
       },
       {
-        feature: 'Shared household library',
-        cells: ['Yes', 'No', 'No', 'No'],
+        feature: 'Watch groups (chat and shared lists)',
+        cells: ['Yes', 'Collaborative lists for VIP members', 'No, personal account', 'Collaborative lists for VIP members'],
       },
       {
         feature: 'Ads',
@@ -578,13 +578,13 @@ export const ROUNDUPS: Roundup[] = [
       },
     ],
     verdict: [
-      'If you use Letterboxd for its community and film writing, keep it: nothing here replaces that, and the honest move is to run an alternative alongside it rather than instead of it. For an Android-native app that adds TV, keeps things private and shares with a household, I Like Movies fits best, and it imports your Letterboxd library so nothing is lost. Simkl gives the widest coverage, Moviebase the nicest native polish, Trakt the most portable history, and Serializd the social diary for TV.',
+      'If you use Letterboxd for its community and film writing, keep it: nothing here replaces that, and the honest move is to run an alternative alongside it rather than instead of it. For an Android-native app that adds TV, keeps things private and has watch groups for deciding together, I Like Movies fits best, and it imports your Letterboxd library so nothing is lost. Simkl gives the widest coverage, Moviebase the nicest native polish, Trakt the most portable history, and Serializd the social diary for TV.',
     ],
     faqs: [
       {
         q: 'Is there a Letterboxd for Android?',
         a: [
-          'Several apps cover the same ground on Android. I Like Movies is the closest for someone who wants private tracking of films and TV with a household; Moviebase is the most polished native tracker; Simkl covers the most ground. Letterboxd itself also has an Android app, so an alternative is usually about features it lacks, not the platform.',
+          'Several apps cover the same ground on Android. I Like Movies is the closest for someone who wants private tracking of films and TV with watch groups; Moviebase is the most polished native tracker; Simkl covers the most ground. Letterboxd itself also has an Android app, so an alternative is usually about features it lacks, not the platform.',
         ],
       },
       {
@@ -602,7 +602,7 @@ export const ROUNDUPS: Roundup[] = [
       {
         q: 'What is the best free Letterboxd alternative?',
         a: [
-          'For a free, ad-free option, I Like Movies and Simkl both qualify and both import your Letterboxd export. Moviebase is free too but shows ads on its free tier. Which is best depends on whether you want privacy and a household (I Like Movies) or the widest catalogue coverage (Simkl).',
+          'For a free, ad-free option, I Like Movies and Simkl both qualify and both import your Letterboxd export. Moviebase is free too but shows ads on its free tier. Which is best depends on whether you want privacy and watch groups (I Like Movies) or the widest catalogue coverage (Simkl).',
         ],
       },
     ],
@@ -616,7 +616,7 @@ export const ROUNDUPS: Roundup[] = [
     query: 'What is the best movie tracker app for Android?',
     linksWatchOrders: true,
     published: '2026-09-01',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     intro: [
       'A tracker’s job is to keep an honest record of what you have watched and what you mean to, films and TV, without becoming a chore. The field splits three ways: film-first social apps, all-in-one trackers, and portability layers that other apps plug into.',
       'This page compares the five worth knowing on Android, by how completely they track and how little work they ask of you.',
@@ -632,16 +632,16 @@ export const ROUNDUPS: Roundup[] = [
         rank: 1,
         name: 'I Like Movies',
         isUs: true,
-        bestFor: 'one free, ad-free library of films and TV, shared with your household',
+        bestFor: 'one free, ad-free library of films and TV, with watch groups for deciding together',
         blurb: [
-          'I Like Movies keeps films and TV in a single history down to the episode, with ratings, notes and statistics, imports from Letterboxd, IMDb, Trakt and TV Time, and a library that lives on the server so it follows you to a new phone. A household can see each other’s watchlists, and the same app also handles discovery.',
+          'I Like Movies keeps films and TV in a single history down to the episode, with ratings, notes and statistics, imports from Letterboxd, IMDb, Trakt and TV Time, and a library that lives on the server so it follows you to a new phone. Watch groups give your partner, family or friends a chat and lists you all edit, and the same app also handles discovery.',
           'It does not scrobble automatically: you mark things watched yourself. For people who want a clean, free, shared record rather than a media-server integration, that is a fair trade.',
         ],
         pros: [
           'Films and TV in one library, tracked by episode',
           'Ratings, notes and statistics',
           'Imports Letterboxd, IMDb, Trakt and TV Time; history lives on the server',
-          'A shared household library; free, no ads',
+          'Watch groups with shared lists; free, no ads',
         ],
         cons: [
           'No automatic scrobbling; you mark things watched yourself',
@@ -742,13 +742,13 @@ export const ROUNDUPS: Roundup[] = [
       },
     ],
     verdict: [
-      'If you want one free, ad-free app that tracks films and TV together, keeps your history on the server and shares it with your household, I Like Movies fits best. If you want tracking to happen automatically as you watch, Trakt is the backbone to build on. Simkl is the strongest all-in-one when anime is in the mix, Moviebase has the nicest native interface, and Letterboxd is unmatched if tracking means a public film diary.',
+      'If you want one free, ad-free app that tracks films and TV together, keeps your history on the server and has watch groups for deciding together, I Like Movies fits best. If you want tracking to happen automatically as you watch, Trakt is the backbone to build on. Simkl is the strongest all-in-one when anime is in the mix, Moviebase has the nicest native interface, and Letterboxd is unmatched if tracking means a public film diary.',
     ],
     faqs: [
       {
         q: 'What is the best free movie tracker for Android?',
         a: [
-          'For a free, ad-free tracker of films and TV, I Like Movies and Simkl both qualify. Trakt has a capable free tier too. Moviebase is free but shows ads. The best one depends on whether you want a shared household (I Like Movies), automatic scrobbling (Trakt) or the widest coverage (Simkl).',
+          'For a free, ad-free tracker of films and TV, I Like Movies and Simkl both qualify. Trakt has a capable free tier too. Moviebase is free but shows ads. The best one depends on whether you want watch groups (I Like Movies), automatic scrobbling (Trakt) or the widest coverage (Simkl).',
         ],
       },
       {
@@ -779,7 +779,7 @@ export const ROUNDUPS: Roundup[] = [
     h1: 'Best free movie and TV apps with no ads in 2026 (we compared 5)',
     query: 'best free movie app no ads',
     published: '2026-09-01',
-    modified: '2026-09-14',
+    modified: '2026-11-17',
     intro: [
       'Free hides a lot. Some apps are free but ad-supported, some are free until a paywall, some are free but sell your attention with sponsored rows. This page is about apps for finding, tracking and deciding what to watch that are genuinely usable for nothing, and it flags the ads and limits honestly.',
       'A note on what this is not: these are apps to organise and choose what to watch, not to stream films for free. For that, legal free services like Tubi exist and are a different category, and we do not cover piracy.',
@@ -797,12 +797,12 @@ export const ROUNDUPS: Roundup[] = [
         isUs: true,
         bestFor: 'a full tracker and recommender with no ads and no sponsored rows',
         blurb: [
-          'I Like Movies is free to use with no advertising, no sponsored recommendations and no engagement feed, and today nothing in the core is paywalled. It tracks films and TV, recommends from your own taste, checks streaming availability and shares with a household, all without an ad in sight.',
+          'I Like Movies is free to use with no advertising, no sponsored recommendations and no engagement feed, and today nothing in the core is paywalled. It tracks films and TV, recommends from your own taste, checks streaming availability and has watch groups, all without an ad in sight.',
           'It is honest to say the makers may add a paid tier in future, but nothing is behind one today, and the recommendations answer to you rather than to a sponsor.',
         ],
         pros: [
           'No ads, no sponsored rows, no engagement feed',
-          'Full tracker, recommender and household in the free app',
+          'Full tracker, recommender and watch groups in the free app',
           'History lives on the server and follows you',
         ],
         cons: [
@@ -936,7 +936,7 @@ export const ROUNDUPS: Roundup[] = [
     h1: 'Best apps to track anime episodes in 2026 (we compared 5)',
     query: 'What is the best app to track anime episodes and completion?',
     published: '2026-09-01',
-    modified: '2026-09-14',
+    modified: '2026-11-17',
     intro: [
       'For serious anime tracking, the specialists win, and we are not going to pretend otherwise. AniList and MyAnimeList were built around anime specifically, with the deepest catalogues, airing calendars and communities, and Simkl covers anime alongside Western TV. This page ranks them honestly.',
       'It also says, at the end, where a general films-and-TV app fits: for people who watch some anime but would rather not run a separate app just for it.',
@@ -1002,12 +1002,12 @@ export const ROUNDUPS: Roundup[] = [
         isUs: true,
         bestFor: 'watching anime inside one library with your films and TV',
         blurb: [
-          'I Like Movies tracks anime as TV, at episode level, inside a single films-and-TV library, so a season of an anime sits next to the films you watched that week. It fits the narrower case: you watch some anime but do not want a second app for it, and would rather keep everything in one place with one watchlist and one household.',
+          'I Like Movies tracks anime as TV, at episode level, inside a single films-and-TV library, so a season of an anime sits next to the films you watched that week. It fits the narrower case: you watch some anime but do not want a second app for it, and would rather keep everything in one place with one watchlist and the same watch groups.',
           'It is honestly not an anime-only power tool. There is no dedicated airing calendar and no MyAnimeList or AniList sync, and the catalogue is TMDB-based rather than a specialist anime database. For anime as your main thing, the three above are better.',
         ],
         pros: [
           'Anime, films and TV in one library, tracked by episode',
-          'Ratings, notes and a shared household; free, no ads',
+          'Ratings, notes and watch groups; free, no ads',
         ],
         cons: [
           'No airing calendar and no MyAnimeList or AniList sync',
@@ -1085,20 +1085,20 @@ export const ROUNDUPS: Roundup[] = [
   },
   {
     slug: 'shared-household-watchlist-apps',
-    title: 'Best shared watchlist apps for households in 2026 | I Like Movies',
+    title: 'Best shared watchlist apps for households and groups in 2026 | I Like Movies',
     metaDescription:
-      'The best apps for a household or couple to share one watchlist and watched history, compared honestly with the shared-list workarounds the other trackers offer.',
+      'The best apps for a household, a couple or a group of friends to share a watchlist, compared honestly: group lists everyone edits, collaborative lists and shared servers.',
     h1: 'Best apps for a shared household watchlist in 2026 (we compared 4)',
     query: 'shared household watchlist app',
     published: '2026-09-01',
-    modified: '2026-09-14',
+    modified: '2026-11-17',
     intro: [
-      'Two people, two watchlists, and a film nobody can remember saving. A genuinely shared library fixes it, but very few apps build one. Most offer a shared list bolted onto a single-user app, which is not the same thing: the list is shared, but your histories stay separate.',
-      'This page is honest about that difference, and about how thin the field actually is.',
+      'Two people, two watchlists, and a film nobody can remember saving. The fix is a list everyone in the house can add to, live, without passing a phone around. Apps get there in different ways: a group with its own shared list, a collaborative list you invite people to, or one media server everyone signs in to.',
+      'This page compares the four worth knowing, and is honest about what each one shares and what stays personal.',
     ],
     methodology: [
-      'We judged each app on one question: can two or more people under one roof share a single watchlist and, ideally, a single watched history, live, without passing a phone around. We separated a true shared library from a shared list, and assessed what each app ships today.',
-      'We make one of these apps, and it is built for exactly this, so we say so up front and are careful to credit the workarounds the others offer.',
+      'We judged each app on one question: can two or more people share a watchlist they all add to, live, without passing a phone around. We looked at what is shared (a list, a chat, a history) and what stays with each person, from each app’s own documentation and store listing.',
+      'We make one of these apps, so we say so up front and are careful to credit what the others offer.',
     ],
     disclosure:
       'This roundup is published by the makers of I Like Movies, which ' + OUR_DISCLOSURE_TAIL,
@@ -1107,52 +1107,52 @@ export const ROUNDUPS: Roundup[] = [
         rank: 1,
         name: 'I Like Movies',
         isUs: true,
-        bestFor: 'a purpose-built shared household library',
+        bestFor: 'a household or group that wants a shared list and a chat to decide in',
         blurb: [
-          'I Like Movies is built around the household. Everyone under one roof shares a single watchlist and a single watched history, live: add a film on your phone and it is on theirs before you sit down, and a taste-comparison view helps you find the overlap. It is a shared library, not a shared list bolted onto a single-user app.',
-          'The limits are honest: a household is the people you live with, not a public group.',
+          'I Like Movies has watch groups. Make one with the people you live with, or a partner, family or friends, and it starts with a Watch next list that everyone in it can add to and edit, live: add a film on your phone and it is on theirs before you sit down. You can share any of your other lists with the group too, talk it over in the group chat, and ask the assistant for a pick that suits everyone.',
+          'What it is not: a merged library. Each person keeps their own watchlist, ratings and watched history; the group shares the lists you put in it.',
         ],
         pros: [
-          'One shared watchlist and one shared watched history, live',
-          'Taste comparison to find common ground',
-          'Free, no ads',
+          'A Watch next list in every group that everyone edits, live',
+          'A group chat and assistant picks for the whole group',
+          'Be in as many groups as you like; free, no ads',
         ],
         cons: [
-          'A household is people you live with, not an open group',
+          'Each person’s watchlist and history stay their own; only the group’s lists are shared',
           'No web app; it is a phone app for iPhone and Android, not the browser',
         ],
       },
       {
         rank: 2,
         name: 'Trakt',
-        bestFor: 'sharing specific lists if you already use it',
+        bestFor: 'collaborative lists if you already use it',
         blurb: [
-          'Trakt lets you build lists and share them, and its history is portable across the many apps that read it. If you and your partner already live in the Trakt ecosystem, a shared or collaborative list is a workable approximation.',
-          'It is a shared list rather than a shared library: your individual watch histories stay separate.',
+          'Trakt lets a VIP member invite other members to collaborate on a personal list, with full access to add and remove items. If you and the people you live with already use Trakt, a collaborative list is a workable shared watchlist, and the history is portable across the many apps that read it.',
+          'Each account keeps its own watchlist and watched history; the sharing is per list.',
         ],
         pros: [
-          'Shareable and collaborative lists',
+          'Collaborative lists (VIP)',
           'Portable history across many clients',
         ],
         cons: [
-          'A shared list, not a merged household library',
-          'Individual histories stay separate',
+          'Inviting collaborators needs VIP ($5.99 a month or $59.99 a year)',
+          'Individual watchlists and histories stay separate',
         ],
       },
       {
         rank: 3,
         name: 'Simkl',
-        bestFor: 'shareable lists across films, TV and anime',
+        bestFor: 'collaborative lists across films, TV and anime',
         blurb: [
-          'Simkl lets you make lists and share them, across films, TV and anime, for free. As with Trakt, the sharing is per list rather than a single unified household, but it covers the widest range of content.',
+          'Simkl VIP members can create a collaborative list with up to 10 people, who can add, remove and reorder titles, across films, TV and anime. Its Watch With Friends room also compares the plan-to-watch lists of up to four people to find the overlap.',
         ],
         pros: [
-          'Shareable lists across films, TV and anime',
-          'Free',
+          'Collaborative lists for up to 10 people (VIP)',
+          'Covers films, TV and anime',
         ],
         cons: [
-          'Per-list sharing, not a unified household',
-          'No merged watched history',
+          'Collaborative lists need VIP',
+          'Watched history stays per person',
         ],
       },
       {
@@ -1160,28 +1160,28 @@ export const ROUNDUPS: Roundup[] = [
         name: 'Plex',
         bestFor: 'households that already run a Plex server',
         blurb: [
-          'If your household already runs Plex, everyone signs in to one server, each person gets a watchlist, and Plex Discover surfaces what is available across services. For a Plex household it is a reasonable shared surface.',
-          'It is a media server first, not a tracker, and it does not merge everyone into one shared watchlist and history the way a purpose-built household does.',
+          'If your household already runs Plex, Plex Home puts up to 15 people on one account, each with their own watchlist, watch history and recommendations. Plex Lists can be shared with friends to view, and Plex Discover surfaces what is available across services.',
+          'It is a media server first, not a tracker, and the Watchlist itself is personal and not shareable.',
         ],
         pros: [
-          'One shared server for the whole household',
-          'Watchlists tied to each account, plus Plex Discover',
+          'Plex Home: one account for the whole household',
+          'Lists you can share with friends',
         ],
         cons: [
           'A media server, not a tracker',
-          'No single merged household watchlist or history',
+          'Each person’s Watchlist is personal and cannot be shared',
         ],
       },
     ],
     tableCols: ['I Like Movies', 'Trakt', 'Simkl', 'Plex'],
     table: [
       {
-        feature: 'One merged household watchlist',
-        cells: ['Yes', 'Shared lists only', 'Per-list only', 'Per-user on a shared server'],
+        feature: 'A shared list everyone in the group edits',
+        cells: ['Yes, in every watch group', 'Collaborative lists (VIP)', 'Collaborative lists (VIP)', 'Lists to view, not edit'],
       },
       {
-        feature: 'Shared watched history',
-        cells: ['Yes', 'No', 'No', 'Within the server'],
+        feature: 'Each person keeps their own history',
+        cells: ['Yes', 'Yes', 'Yes', 'Yes'],
       },
       {
         feature: 'Live sync across members',
@@ -1193,35 +1193,35 @@ export const ROUNDUPS: Roundup[] = [
       },
       {
         feature: 'Price',
-        cells: ['Free', 'Free plus VIP', 'Free', 'Free plus Plex Pass'],
+        cells: ['Free', 'Free plus VIP', 'Free plus VIP', 'Free plus Plex Pass'],
       },
     ],
     verdict: [
-      'A truly merged household watchlist and watched history is rare, and I Like Movies is built around it, so it is the natural fit for couples and families who want one shelf everyone shares. Trakt and Simkl can approximate it with shared lists if you already use them, and Plex works as a shared surface if your household already runs a Plex server. If the goal is genuinely one library for the whole sofa, a purpose-built household beats a shared list.',
+      'For a household, a couple or a group of friends who want one list they all add to and a place to talk it over, I Like Movies fits best: every watch group comes with a shared Watch next list and a chat, free. If you already use Trakt or Simkl, a collaborative list does the same job for a VIP member, and Plex Home suits a household that already runs a Plex server. None of the four merges everyone’s watched history into one, and for most homes that is fine: the shared list is the part you decide from.',
     ],
     faqs: [
       {
         q: 'Can two people share one watchlist?',
         a: [
-          'Yes. A household in I Like Movies is a shared library for the people you live with: everyone sees the same watchlist and the same watched history, and a film one person adds shows up for everyone without being sent manually. It is built for exactly this case.',
+          'Yes. In I Like Movies, make a watch group: it starts with a Watch next list that everyone in it can add to and edit, and a film one person adds shows up for everyone without being sent. Trakt and Simkl offer collaborative lists to their VIP members.',
         ],
       },
       {
         q: 'Do any apps merge two watch histories, not just a list?',
         a: [
-          'Very few. Most trackers offer a shared or collaborative list on top of separate personal histories. A merged household where the watched history itself is shared is rare; I Like Movies is built around it. Trakt and Simkl share lists but keep individual histories separate.',
+          'Not among these four: each keeps a watched history per person and shares lists instead.',
         ],
       },
       {
         q: 'Can we share a watchlist on Trakt or Simkl?',
         a: [
-          'You can share a list on both, and collaborate on it, which covers a lot of the need. What you do not get is a single merged library where both of your watched histories live together; for that a purpose-built household is the better fit.',
+          'Yes, with VIP. Trakt VIP members can invite others to edit a personal list, and Simkl VIP members can create a collaborative list with up to 10 people. Without VIP you can share a list for others to view.',
         ],
       },
       {
         q: 'Is a shared watchlist app free?',
         a: [
-          'The shared watchlist in I Like Movies is free with no ads, and Trakt and Simkl offer list sharing on their free tiers. Plex is free for the basics, with a Plex Pass for more. None of the core sharing here costs anything.',
+          'Watch groups in I Like Movies are free with no ads. Collaborative lists on Trakt and Simkl need their VIP plans, and Plex Home is free for the basics, with a Plex Pass for more.',
         ],
       },
     ],
@@ -1234,7 +1234,7 @@ export const ROUNDUPS: Roundup[] = [
     h1: 'Best apps to help you decide what to watch in 2026 (we compared 5)',
     query: 'apps to decide what to watch',
     published: '2026-09-01',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     intro: [
       'The modern problem is not finding something to watch, it is choosing, alone or with someone, before the evening drains away in the menus. Apps attack it three ways: a smart shortlist built from your taste, a swipe-match for two people, or a filter down to what you can actually stream tonight.',
       'This page compares the five worth knowing, by how quickly they get you from open to playing.',
@@ -1250,14 +1250,14 @@ export const ROUNDUPS: Roundup[] = [
         rank: 1,
         name: 'I Like Movies',
         isUs: true,
-        bestFor: 'deciding from your own taste, alone or as a household',
+        bestFor: 'deciding from your own taste, alone or in a watch group',
         blurb: [
-          'I Like Movies solves the decision two ways. Ask the assistant in plain language and it returns real titles you can stream now and have not already seen; or decide together from the household’s watchlists, with a taste-comparison view for finding the overlap. Its monthly discover collections are built from your own ratings, so the shortlist is always drawn from your taste.',
+          'I Like Movies solves the decision two ways. Ask the assistant in plain language and it returns real titles you can stream now and have not already seen; or decide together in a watch group, from lists you all add to, with picks for the whole group. Its monthly discover collections are built from your own ratings, so the shortlist is always drawn from your taste.',
           'It is a full app rather than a single-tap picker, which is the trade for it also keeping the record after you decide.',
         ],
         pros: [
           'Assistant that suggests from your taste and skips what you have seen',
-          'Household watchlists for deciding together',
+          'Watch groups for deciding together',
           'Shows where each pick streams; free, no ads',
         ],
         cons: [
@@ -1339,7 +1339,7 @@ export const ROUNDUPS: Roundup[] = [
       },
       {
         feature: 'Helps two people decide',
-        cells: ['Yes, shared household', 'Somewhat', 'Group mode', 'No'],
+        cells: ['Yes, watch groups', 'Somewhat', 'Group mode', 'No'],
       },
       {
         feature: 'Shows where to stream',
@@ -1355,7 +1355,7 @@ export const ROUNDUPS: Roundup[] = [
       },
     ],
     verdict: [
-      'For deciding from your own taste and keeping the record afterwards, alone or as a household, I Like Movies fits best. For a quick standalone shortlist, TasteRay; for one firm pick tonight, Movik; for two people who want the swipe game, Matched; and to filter the field to what you can actually stream, JustWatch. Most nights, a smart shortlist plus a shared list does the job.',
+      'For deciding from your own taste and keeping the record afterwards, alone or in a watch group, I Like Movies fits best. For a quick standalone shortlist, TasteRay; for one firm pick tonight, Movik; for two people who want the swipe game, Matched; and to filter the field to what you can actually stream, JustWatch. Most nights, a smart shortlist plus a shared list does the job.',
     ],
     faqs: [
       {
@@ -1373,7 +1373,7 @@ export const ROUNDUPS: Roundup[] = [
       {
         q: 'How do you decide what to watch with someone else?',
         a: [
-          'The fastest ways are a shared watchlist you both add to, or a swipe-match app that finds where your tastes overlap. A shared household library like the one in I Like Movies keeps the decision from restarting every night; a swipe app like Matched makes the one-off choice a game. See our roundup of apps for deciding what to watch together for the full comparison.',
+          'The fastest ways are a shared watchlist you both add to, or a swipe-match app that finds where your tastes overlap. A watch group in I Like Movies keeps a shared list, so the decision does not restart every night; a swipe app like Matched makes the one-off choice a game. See our roundup of apps for deciding what to watch together for the full comparison.',
         ],
       },
       {
@@ -1393,7 +1393,7 @@ export const ROUNDUPS: Roundup[] = [
     query: 'What is the best movie tracker app for iPhone?',
     linksWatchOrders: true,
     published: '2026-09-14',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     intro: [
       'A tracker keeps an honest record of what you have watched and what you mean to, films and TV, without turning into a chore. On iPhone the field runs from polished single-purpose trackers to cross-platform apps that also live on the web, and they differ most in how your history is stored and synced.',
       'This page compares the five worth knowing on iPhone, by how completely they track, how they sync across your devices, and how little work they ask of you.',
@@ -1409,16 +1409,16 @@ export const ROUNDUPS: Roundup[] = [
         rank: 1,
         name: 'I Like Movies',
         isUs: true,
-        bestFor: 'one free, ad-free library of films and TV, synced across devices and shared with your household',
+        bestFor: 'one free, ad-free library of films and TV, synced across devices, with watch groups for deciding together',
         blurb: [
-          'I Like Movies keeps films and TV in a single history down to the episode, with ratings, notes and statistics, imports from Letterboxd, IMDb, Trakt and TV Time, and a library that lives on the server so it is already there when you sign in on another iPhone or on Android. A household can see each other’s watchlists, and the same app also handles discovery and an AI assistant.',
+          'I Like Movies keeps films and TV in a single history down to the episode, with ratings, notes and statistics, imports from Letterboxd, IMDb, Trakt and TV Time, and a library that lives on the server so it is already there when you sign in on another iPhone or on Android. Watch groups give your partner, family or friends a chat and lists you all edit, and the same app also handles discovery and an AI assistant.',
           'It does not scrobble automatically: you mark things watched yourself. For people who want a clean, free, shared record rather than a media-server integration, that is a fair trade.',
         ],
         pros: [
           'Films and TV in one library, tracked by episode',
           'Ratings, notes and statistics',
           'Server-side library that syncs to any iPhone and to Android',
-          'A shared household library; free, no ads',
+          'Watch groups with shared lists; free, no ads',
         ],
         cons: [
           'No automatic scrobbling; you mark things watched yourself',
@@ -1519,13 +1519,13 @@ export const ROUNDUPS: Roundup[] = [
       },
     ],
     verdict: [
-      'If you want one free, ad-free app that tracks films and TV together, syncs to every device on your account and shares with your household, I Like Movies fits best on iPhone. If you want tracking to happen automatically as you watch, Trakt is the backbone to build on. Simkl is the strongest all-in-one when anime is in the mix, Matinee is the most polished iPhone-first tracker with real discovery, and Cronica is the cleanest minimalist option with iCloud sync.',
+      'If you want one free, ad-free app that tracks films and TV together, syncs to every device on your account and has watch groups for deciding together, I Like Movies fits best on iPhone. If you want tracking to happen automatically as you watch, Trakt is the backbone to build on. Simkl is the strongest all-in-one when anime is in the mix, Matinee is the most polished iPhone-first tracker with real discovery, and Cronica is the cleanest minimalist option with iCloud sync.',
     ],
     faqs: [
       {
         q: 'What is the best free movie tracker for iPhone?',
         a: [
-          'For a free, ad-free tracker of films and TV, I Like Movies and Simkl both qualify, and Cronica is free too. Trakt has a capable free tier; Matinee is free with ads. The best one depends on whether you want a shared household (I Like Movies), automatic scrobbling (Trakt), the widest coverage (Simkl) or a minimalist iCloud app (Cronica).',
+          'For a free, ad-free tracker of films and TV, I Like Movies and Simkl both qualify, and Cronica is free too. Trakt has a capable free tier; Matinee is free with ads. The best one depends on whether you want watch groups (I Like Movies), automatic scrobbling (Trakt), the widest coverage (Simkl) or a minimalist iCloud app (Cronica).',
         ],
       },
       {
@@ -1556,7 +1556,7 @@ export const ROUNDUPS: Roundup[] = [
     h1: 'Best Letterboxd alternatives for iPhone in 2026 (we compared 5)',
     query: 'What are the best Letterboxd alternatives for iPhone?',
     published: '2026-09-14',
-    modified: '2026-10-12',
+    modified: '2026-11-17',
     intro: [
       'Letterboxd is the best film diary and community there is, and on iPhone it is excellent. People look for an alternative for specific reasons: they want TV tracked alongside film, they want their notes private rather than public, or they want streaming availability and recommendations Letterboxd does not do.',
       'This page compares the five worth knowing on iPhone for someone leaving or supplementing Letterboxd, and it is honest about where Letterboxd itself is still the one to keep.',
@@ -1572,15 +1572,15 @@ export const ROUNDUPS: Roundup[] = [
         rank: 1,
         name: 'I Like Movies',
         isUs: true,
-        bestFor: 'a private tracker for film and TV, shared with your household',
+        bestFor: 'a private tracker for film and TV, with watch groups',
         blurb: [
-          'I Like Movies is the closest fit if what you want is Letterboxd for iPhone with TV as well as film, away from a public feed, and shared with the people you live with. It tracks films and TV in one library down to the episode, your notes and ratings go to friends rather than becoming public reviews, it shows per-country streaming, and it imports your Letterboxd .zip directly so a library built over years comes across.',
+          'I Like Movies is the closest fit if what you want is Letterboxd for iPhone with TV as well as film, away from a public feed, with watch groups for the people you watch with. It tracks films and TV in one library down to the episode, your notes and ratings go to friends rather than becoming public reviews, it shows per-country streaming, and it imports your Letterboxd .zip directly so a library built over years comes across.',
           'If public reviews and a reading community are why you use Letterboxd, that is the one thing this does not replace.',
         ],
         pros: [
           'Film and TV in one private library, tracked by episode',
           'Imports your Letterboxd .zip; per-country streaming',
-          'Shared household library; free, no ads',
+          'Watch groups with shared lists; free, no ads',
         ],
         cons: [
           'No public review community; notes go to friends or stay private',
@@ -1680,7 +1680,7 @@ export const ROUNDUPS: Roundup[] = [
       },
     ],
     verdict: [
-      'If you want a private tracker for film and TV that imports your Letterboxd library and shares with your household, I Like Movies fits best on iPhone. If you want the public-diary feel with TV included, Matinee is the closest to Letterboxd for television, and Serializd is the place for public TV reviews. Cronica is the tidiest private option, and IMDb is the one to keep for ratings and reference. If public film reviews and the community around them are the point, the honest answer is to stay on Letterboxd, and use one of these alongside it for TV.',
+      'If you want a private tracker for film and TV that imports your Letterboxd library and has watch groups for deciding together, I Like Movies fits best on iPhone. If you want the public-diary feel with TV included, Matinee is the closest to Letterboxd for television, and Serializd is the place for public TV reviews. Cronica is the tidiest private option, and IMDb is the one to keep for ratings and reference. If public film reviews and the community around them are the point, the honest answer is to stay on Letterboxd, and use one of these alongside it for TV.',
     ],
     faqs: [
       {
@@ -1875,6 +1875,172 @@ export const ROUNDUPS: Roundup[] = [
         q: 'Is there a free TV show tracker with no ads?',
         a: [
           'Yes. Google Play lists no ads for I Like Movies, Trakt, Simkl, Serializd or Bingers. Trakt and Simkl also sell paid tiers for extra features, so check what sits behind them before you move years of history.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'apps-to-pick-a-movie-together',
+    title: 'Best apps to pick a movie together tonight (2026) | I Like Movies',
+    metaDescription:
+      'The best apps for a group to agree on a film tonight, whether it is your partner, family, flatmates or friends, compared honestly: swipe matching, group picks and shared lists.',
+    h1: 'Best apps to pick a movie together tonight in 2026 (we compared 5)',
+    query: 'app to pick a movie with friends or family',
+    published: '2026-11-17',
+    modified: '2026-11-17',
+    intro: [
+      'Friday night, four people, four phones, and forty minutes of “I don’t mind, you pick”. Picking a film together gets harder the more of you there are, whether it is your partner, the family, your flatmates or friends over. A few apps are built for exactly this moment, and they work in different ways: everyone swipes until you match, one person asks a recommender for the group, or the group keeps a shared list and a chat so the decision builds on last time.',
+      'This page compares five, by the one thing that matters here: getting a group of different tastes to one title tonight.',
+    ],
+    methodology: [
+      'We judged each app on the job in the title: how a group of two or more reaches one title tonight, whether everyone can take part from their own phone, and whether anything is kept for next time. We used each app’s own store listing, site and documentation as of November 2026.',
+      'We make one of these apps, so this is not a neutral test and we have not pretended otherwise. Where another app is the better answer for a particular group, we say so.',
+    ],
+    disclosure:
+      'This roundup is published by the makers of I Like Movies, which ' + OUR_DISCLOSURE_TAIL,
+    apps: [
+      {
+        rank: 1,
+        name: 'I Like Movies',
+        isUs: true,
+        bestFor: 'a group that decides together and keeps the list for next time',
+        blurb: [
+          'I Like Movies has watch groups: one for your partner, one for the family, one for the flat or your friends. Each group gets a chat and a Watch next list everyone can add to, and the assistant can pick for up to six of you at once from what each person shares with friends, with the streaming services in your country.',
+          'It is not a swipe game. It fits the group that watches together often and wants the decision to build on last time, not start from zero every night.',
+        ],
+        pros: [
+          'A watch group for each circle: partner, family, flatmates, friends',
+          'A shared Watch next list and a group chat',
+          'Assistant picks for up to six people, with where to stream it in your country',
+          'Free, no ads',
+        ],
+        cons: [
+          'No swipe game',
+          'Everyone needs the app on iPhone or Android; there is no web version',
+        ],
+      },
+      {
+        rank: 2,
+        name: 'ReelMatch',
+        bestFor: 'a group that wants to swipe tonight, across iPhone and Android',
+        blurb: [
+          'ReelMatch has everyone swipe through trailers on their own phone and shows only the titles two or more of you said yes to. It works for two people or a whole group, and iPhone and Android phones can match with each other.',
+          'The free version allows 15 swipes a day; filtering by streaming service is part of Pro.',
+        ],
+        pros: [
+          'Swipe matching for two people or a whole group',
+          'iPhone and Android phones match together',
+        ],
+        cons: [
+          '15 swipes a day on the free version',
+          'Streaming-service filter needs Pro',
+        ],
+      },
+      {
+        rank: 3,
+        name: 'MatchWatch',
+        bestFor: 'a group of up to six, with nothing to install',
+        blurb: [
+          'MatchWatch is a web app: everyone opens it on their own phone and swipes, and a title matches when everyone agrees. It handles groups of up to six and is free, with streaming availability for the United States, the United Kingdom, Australia and New Zealand.',
+          'Each person can keep their own watchlist in it.',
+        ],
+        pros: [
+          'Nothing to install: works in any phone’s browser',
+          'Groups of up to six, free',
+        ],
+        cons: [
+          'Streaming availability covers four countries',
+          'Built for tonight’s pick rather than a lasting list',
+        ],
+      },
+      {
+        rank: 4,
+        name: 'TasteRay',
+        bestFor: 'one person asking for the whole group',
+        blurb: [
+          'TasteRay is a recommendation chat: describe everyone’s taste to it and it finds the overlap, with where to watch on your services. One person does the asking, in the app, on the web or on WhatsApp.',
+          'It suits a group where one person is happy to steer; nobody else needs to install anything, and saves are personal rather than shared.',
+        ],
+        pros: [
+          'Explains why each pick fits',
+          'iPhone, Android, web and WhatsApp',
+        ],
+        cons: [
+          'One person describes everyone’s taste; the others do not vote',
+          'Saves are personal, not shared',
+        ],
+      },
+      {
+        rank: 5,
+        name: 'JustWatch',
+        bestFor: 'narrowing the field to what you can all stream',
+        blurb: [
+          'JustWatch is a streaming guide, not a group picker, but half of “what should we watch” is “what can we watch”. Filter by the services you pay for, in any of its 140 markets, and the impossible titles disappear.',
+          'It does not help a group choose between what is left; pair it with any app above.',
+        ],
+        pros: [
+          'The broadest where-to-watch data, in 140 markets',
+          'Lists you can share with friends and family',
+        ],
+        cons: [
+          'Built for one person, not a group deciding together',
+          'No matching or group picks',
+        ],
+      },
+    ],
+    tableCols: ['I Like Movies', 'ReelMatch', 'MatchWatch', 'TasteRay'],
+    table: [
+      {
+        feature: 'How it picks',
+        cells: ['Assistant picks from everyone’s shared taste', 'Everyone swipes; shared yeses show', 'Everyone swipes; all must agree', 'One person describes everyone’s taste'],
+      },
+      {
+        feature: 'Group size',
+        cells: ['Up to 20 per group; picks for up to six', 'Two or more', 'Up to six', 'Not stated'],
+      },
+      {
+        feature: 'Kept for next time',
+        cells: ['The group’s Watch next list', 'Liked lists you can compare', 'A personal watchlist', 'Personal saves'],
+      },
+      {
+        feature: 'Streaming by country',
+        cells: ['Yes', 'Filter by service (Pro)', 'United States, United Kingdom, Australia, New Zealand', 'Your services'],
+      },
+      {
+        feature: 'Platforms',
+        cells: ['iPhone, Android', 'iPhone, iPad, Android', 'Web (any phone)', 'iPhone, Android, web, WhatsApp'],
+      },
+      {
+        feature: 'Price',
+        cells: ['Free, no ads', 'Free for 15 swipes a day, paid plans', 'Free', 'Free for now'],
+      },
+    ],
+    verdict: [
+      'If your group watches together often and wants the decision to build on last time, I Like Movies fits best: a watch group keeps a shared list and a chat, and the assistant picks for everyone. If you want to swipe tonight, ReelMatch works across iPhone and Android for any size of group, and MatchWatch needs no install for up to six. If one person is happy to steer, TasteRay gets you a reasoned pick quickly, and JustWatch narrows any shortlist to what you can stream.',
+    ],
+    faqs: [
+      {
+        q: 'What is the best app to pick a movie with friends?',
+        a: [
+          'It depends on how often you watch together. For a group that watches together often and wants a shared list, I Like Movies with a watch group. For a one-off swipe-until-you-match night, ReelMatch or MatchWatch. For one person asking on behalf of everyone, TasteRay.',
+        ],
+      },
+      {
+        q: 'Is there an app that picks a movie for a group, not just a couple?',
+        a: [
+          'Yes. ReelMatch works for two people or a whole group, MatchWatch handles up to six, and in I Like Movies the assistant picks for up to six people at once from a watch group.',
+        ],
+      },
+      {
+        q: 'Can everyone pick from their own phone?',
+        a: [
+          'In ReelMatch and MatchWatch everyone swipes on their own phone, and ReelMatch matches iPhones with Android phones. In I Like Movies everyone in the watch group adds to the shared list and talks in the chat from their own phone. TasteRay is driven by one person.',
+        ],
+      },
+      {
+        q: 'Are these apps free?',
+        a: [
+          'I Like Movies and MatchWatch are free. ReelMatch is free for 15 swipes a day, with paid plans for more, TasteRay is currently free, and JustWatch is free with an optional paid tier.',
         ],
       },
     ],
