@@ -39,6 +39,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Search puts the titles you typed first, in a more sensible order, and any rating it shows matches the title\'s page',
       'New tracks for series that span shows and films, including Game of Thrones, Breaking Bad, Stranger Things, The Boys, The Walking Dead and Avatar: The Last Airbender',
       'The sheet where you choose who sees a list and invite friends now fits what it holds',
+      'Franchise tracks now hold only the films that belong to them, with nothing unreleased, so you can finish every one',
     ],
   },
   {
