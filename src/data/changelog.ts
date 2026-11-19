@@ -36,6 +36,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Lots of small things feel smoother, from sending a comment and pulling to refresh to folding a section on Discover and filtering a tracker',
       'For a show that is still airing, marking a season watched now ticks only the episodes already out, and the season shows as watched once you are caught up',
       'Search results stay on screen while you type instead of blinking empty, and a new sort or filter in your Library or on a list keeps your titles in view and starts from the top',
+      'Search puts the titles you typed first, in a more sensible order, and any rating it shows matches the title\'s page',
+      'New tracks for series that span shows and films, including Game of Thrones, Breaking Bad, Stranger Things, The Boys, The Walking Dead and Avatar: The Last Airbender',
+      'The sheet where you choose who sees a list and invite friends now fits what it holds',
     ],
   },
   {
