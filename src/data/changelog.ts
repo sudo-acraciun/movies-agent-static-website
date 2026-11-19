@@ -44,6 +44,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Voice messages to the Assistant are more dependable: one message per press, and sliding away always cancels',
       'Colours now mean the same thing everywhere: gold for what you pick, amber for a rating, green for watched, red for deleting',
       'Titles you own wear a violet label on posters and in search, and small grey text is easier to read',
+      'Adding a title to your lists shows an outline while they load, and says so right in the sheet if something did not save',
+      'New notifications stay highlighted for your whole visit, and removing a title from a list shows it is working and takes the poster away at once',
+      'Discover categories now say they are in curated order, and you can switch back to it after trying another sort',
     ],
   },
   {
