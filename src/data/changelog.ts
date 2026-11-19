@@ -42,6 +42,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Franchise tracks now hold only the films that belong to them, with nothing unreleased, so you can finish every one',
       'Clearing a rating now tells you exactly what it does before you confirm',
       'Voice messages to the Assistant are more dependable: one message per press, and sliding away always cancels',
+      'Colours now mean the same thing everywhere: gold for what you pick, amber for a rating, green for watched, red for deleting',
+      'Titles you own wear a violet label on posters and in search, and small grey text is easier to read',
     ],
   },
   {
