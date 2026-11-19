@@ -34,6 +34,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Your watchlist and the titles you own are now yours alone, in every group you are in',
       'Deleting a list you shared with a watch group now says so in the group\'s chat',
       'Lots of small things feel smoother, from sending a comment and pulling to refresh to folding a section on Discover and filtering a tracker',
+      'For a show that is still airing, marking a season watched now ticks only the episodes already out, and the season shows as watched once you are caught up',
+      'Search results stay on screen while you type instead of blinking empty, and a new sort or filter in your Library or on a list keeps your titles in view and starts from the top',
     ],
   },
   {
