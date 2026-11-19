@@ -40,6 +40,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'New tracks for series that span shows and films, including Game of Thrones, Breaking Bad, Stranger Things, The Boys, The Walking Dead and Avatar: The Last Airbender',
       'The sheet where you choose who sees a list and invite friends now fits what it holds',
       'Franchise tracks now hold only the films that belong to them, with nothing unreleased, so you can finish every one',
+      'Clearing a rating now tells you exactly what it does before you confirm',
+      'Voice messages to the Assistant are more dependable: one message per press, and sliding away always cancels',
     ],
   },
   {
