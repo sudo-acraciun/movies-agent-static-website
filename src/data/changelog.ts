@@ -49,6 +49,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Discover categories now say they are in curated order, and you can switch back to it after trying another sort',
       'When something cannot load, the app now says so plainly and offers a Try again button, instead of an empty page or a message you cannot act on',
       'After an import, a link on the results page shows every title we could not match',
+      'An empty Watchlist now offers a shortcut to this week\'s collection',
     ],
   },
   {
