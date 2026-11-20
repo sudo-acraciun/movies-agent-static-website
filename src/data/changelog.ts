@@ -47,6 +47,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Adding a title to your lists shows an outline while they load, and says so right in the sheet if something did not save',
       'New notifications stay highlighted for your whole visit, and removing a title from a list shows it is working and takes the poster away at once',
       'Discover categories now say they are in curated order, and you can switch back to it after trying another sort',
+      'When something cannot load, the app now says so plainly and offers a Try again button, instead of an empty page or a message you cannot act on',
+      'After an import, a link on the results page shows every title we could not match',
     ],
   },
   {
