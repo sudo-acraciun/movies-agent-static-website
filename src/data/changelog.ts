@@ -50,6 +50,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'When something cannot load, the app now says so plainly and offers a Try again button, instead of an empty page or a message you cannot act on',
       'After an import, a link on the results page shows every title we could not match',
       'An empty Watchlist now offers a shortcut to this week\'s collection',
+      'Lists now show which of their titles you own and which are on your watchlist, and a list\'s filter can narrow it to the titles you own',
+      'Start a new list right from a watch group\'s page: it is shared with the whole group from the first moment',
     ],
   },
   {
