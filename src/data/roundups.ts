@@ -1113,7 +1113,7 @@ export const ROUNDUPS: Roundup[] = [
           'What it is not: a merged library. Each person keeps their own watchlist, ratings and watched history; the group shares the lists you put in it.',
         ],
         pros: [
-          'A Watch next list in every group that everyone edits, live',
+          'Every group starts with a Watch next list that everyone edits, live',
           'A group chat and assistant picks for the whole group',
           'Be in as many groups as you like; free, no ads',
         ],

@@ -217,7 +217,7 @@ export const FEATURES: Feature[] = [
     title: 'A shared watchlist for every group you watch with.',
     body: 'Two people, two watchlists, and a half-finished series nobody can agree on. Make a watch group with your partner, family, flatmates or friends, and the film one of you adds to the group’s list is there for everyone.',
     bullets: [
-      'A Watch next list in every group that everyone in it can add to',
+      'Every group starts with a Watch next list that everyone in it can add to',
       'A group chat to settle it, and any list of yours shared with the group',
       'Ask the assistant for a pick that suits the whole group',
     ],

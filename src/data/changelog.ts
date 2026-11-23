@@ -43,6 +43,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'The Assistant\'s daily counter now simply shows how many questions you have left today',
       'Send the Assistant up to four photos in one message, or just a photo with no question',
       'Ask the Assistant to copy everything you own, your whole watchlist or another list into a list, and every title makes it in',
+      'A watch group\'s admin can now delete the group\'s Watch next list',
+      'Leaving a watch group deletes the empty lists you shared with it, so they no longer clutter your Lists',
+      'Inviting people to a watch group is now one button: pick friends or share an invite link from the same place',
     ],
   },
   {
