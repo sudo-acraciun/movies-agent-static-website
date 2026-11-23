@@ -40,6 +40,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Tapping a notification takes you to the right place: a new episode opens on its season, and someone joining your watch group opens the group\'s page',
       'Sharing a list has moved into the list\'s menu, giving the list\'s name more room',
       'Notifications from people who have left the app no longer linger in your bell',
+      'The Assistant\'s daily counter now simply shows how many questions you have left today',
+      'Send the Assistant up to four photos in one message, or just a photo with no question',
+      'Ask the Assistant to copy everything you own, your whole watchlist or another list into a list, and every title makes it in',
     ],
   },
   {
