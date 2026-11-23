@@ -24,6 +24,18 @@ export type ChangelogWeek = {
 
 export const CHANGELOG: ChangelogWeek[] = [
   {
+    week: '23 November 2026',
+    entries: [
+      'Rating, marking watched and managing lists stay quick however large your lists are',
+      'Adding a title to your lists opens faster',
+      'Clear all in any filter now clears and applies in one tap',
+      'Duplicate a list from its menu to start a new one with the same titles',
+      'On the Watched tab, a title you have not rated yet offers Rate right on its card',
+      'Rating a show you watched in an earlier year keeps it under that year',
+      'Recently Watched now orders titles by when you last watched them',
+    ],
+  },
+  {
     week: '16 November 2026',
     entries: [
       'Households are now watch groups. Make one for each circle you watch with, and be in as many as you like',
