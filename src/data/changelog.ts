@@ -33,6 +33,9 @@ export const CHANGELOG: ChangelogWeek[] = [
       'On the Watched tab, a title you have not rated yet offers Rate right on its card',
       'Rating a show you watched in an earlier year keeps it under that year',
       'Recently Watched now orders titles by when you last watched them',
+      'Track progress shown on a title\'s page updates the moment you rate or watch it, and is current when you come back to it',
+      'Rating or clearing a season or an episode updates your track progress right away',
+      'The one-time tips that point out features have a new look',
     ],
   },
   {
