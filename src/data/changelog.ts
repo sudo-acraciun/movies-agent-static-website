@@ -36,6 +36,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Track progress shown on a title\'s page updates the moment you rate or watch it, and is current when you come back to it',
       'Rating or clearing a season or an episode updates your track progress right away',
       'The one-time tips that point out features have a new look',
+      'The bell now counts your unread messages too, so new chats show up the moment you open the app',
+      'Tapping a notification takes you to the right place: a new episode opens on its season, and someone joining your watch group opens the group\'s page',
+      'Sharing a list has moved into the list\'s menu, giving the list\'s name more room',
+      'Notifications from people who have left the app no longer linger in your bell',
     ],
   },
   {
