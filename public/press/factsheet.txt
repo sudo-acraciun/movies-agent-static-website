@@ -38,8 +38,8 @@ Contact:      hi@ilikemovies.app
 
 Assets in this kit
 ilikemovies-icon-512.png, alexandru-craciun.jpg (maker photo, 400 x 400) and
-six screenshots (library, discover, assistant, movie-detail, feed, household),
-all PNG. Use freely in coverage of the app.
+seven screenshots (library, discover, assistant, movie-detail, feed,
+watch-group, streaming), all PNG. Use freely in coverage of the app.
 
 Film and TV metadata is provided by TMDB. This product uses the TMDB API but is
 not endorsed or certified by TMDB.

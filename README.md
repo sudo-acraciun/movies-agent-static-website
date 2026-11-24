@@ -69,7 +69,7 @@ vendors rename and add agents.
 
 ## Screenshots
 
-Six captures live in `src/assets/screenshots/`, each from a real screen:
+Seven captures live in `src/assets/screenshots/`, each from a real screen:
 
 | File | App screen | Used by |
 | --- | --- | --- |
@@ -78,7 +78,8 @@ Six captures live in `src/assets/screenshots/`, each from a real screen:
 | `discover.png` | `app/(tabs)/discover.tsx` | Discover block |
 | `assistant.png` | `app/chat.tsx` | Assistant block |
 | `feed.png` | `app/(tabs)/feed.tsx` | Friends block |
-| `household.png` | `app/(tabs)/library.tsx`, grouped view | Household block |
+| `streaming.png` | `app/(tabs)/find.tsx`, Streaming | Streaming block |
+| `household.png` | `app/groups/[groupId].tsx` | Watch group block |
 
 The hero uses `library` and `movie-detail` specifically because no section
 below repeats them, so the first thing a visitor scrolls into is new rather

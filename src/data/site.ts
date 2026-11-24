@@ -190,7 +190,7 @@ export const FEATURES: Feature[] = [
       'Share any title straight into a chat, and it opens in their app',
     ],
     screenshotAlt:
-      'The I Like Movies social feed showing one friend rating a film and another adding two titles to their watchlist, each with likes and replies underneath',
+      'The I Like Movies social feed showing one friend who watched six films and another who rated A Quiet Place, each with likes and a comment underneath',
   },
   {
     id: 'streaming',
@@ -215,14 +215,15 @@ export const FEATURES: Feature[] = [
     // than three sentences below it. Every watch group's Watch next list is
     // that shared watchlist; each person's own Watchlist stays theirs.
     title: 'A shared watchlist for every group you watch with.',
-    body: 'Two people, two watchlists, and a half-finished series nobody can agree on. Make a watch group with your partner, family, flatmates or friends, and the film one of you adds to the group’s list is there for everyone.',
+    body: 'Two people, two watchlists, and a half-finished series nobody can agree on. Make a watch group for each circle you watch with: your partner, your family, your flatmates, your friends. What one of you adds to the group’s lists is there for everyone, and your own watchlist, ratings and history stay yours.',
     bullets: [
-      'Every group starts with a Watch next list that everyone in it can add to',
-      'A group chat to settle it, and any list of yours shared with the group',
-      'Ask the assistant for a pick that suits the whole group',
+      'Every group starts with its own Watch next list, where everyone can add and remove titles',
+      'Make more lists from the group’s page, or share ones you already have',
+      'A group chat to settle it, and an assistant pick that suits the whole group',
+      'Be in several groups at once, and invite friends or send a join link',
     ],
     screenshotAlt:
-      'The I Like Movies watchlist picker, switching between the watchlists of each person in the household',
+      'A watch group called Family in I Like Movies, with its four members, a button that opens the group chat and the group’s Watch next list',
   },
 ];
 
@@ -377,7 +378,7 @@ export const FAQS: Faq[] = [
     a: [
       'Yes. You can follow other people using the app and see what they are watching, what they have rated, and what they have added to their lists.',
       'A friend’s profile shows their top genres, their last rating and their four Favorites, which is usually a faster route to a good recommendation than any algorithm manages.',
-      'Following someone is separate from a watch group. A watch group is for the people you decide with: it has a chat and lists you all edit, and you can be in as many as you like.',
+      'Following someone is separate from a watch group. A watch group is for the people you decide with: it has a chat and lists you all edit, and you can be in up to 20 groups.',
     ],
   },
   {
