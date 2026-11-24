@@ -46,6 +46,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'A watch group\'s admin can now delete the group\'s Watch next list',
       'Leaving a watch group deletes the empty lists you shared with it, so they no longer clutter your Lists',
       'Inviting people to a watch group is now one button: pick friends or share an invite link from the same place',
+      'Share your film taste as a picture from Your stats, with your five-star titles, top genres and most-watched directors',
     ],
   },
   {
