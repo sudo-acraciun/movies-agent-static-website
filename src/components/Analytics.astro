@@ -52,7 +52,7 @@
           // reads "Get it on Google Play", not a newline-broken string.
           const text = link.textContent?.replace(/\s+/g, ' ').trim();
           // The campaign StoreSource left on the link: "website", or the AI
-          // engine that sent the visitor.
+          // engine or social platform that sent the visitor.
           if (link.href.startsWith('https://play.google.com/store')) {
             const campaign = link.href.match(/utm_campaign%3D([^%&]+)/)?.[1] ?? null;
             posthog.capture('google_play_click', { text, path: location.pathname, campaign });

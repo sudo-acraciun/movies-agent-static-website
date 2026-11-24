@@ -1,8 +1,12 @@
 ---
-// Tags the store links on the page with the AI engine that sent the visitor,
-// so installs from AI answers can be told apart from plain website installs:
-// the Play referrer's utm_campaign=website becomes the engine's host, and the
-// App Store's ct=website likewise.
+// Tags the store links on the page with what sent the visitor, an AI engine
+// or one of our social profiles, so those installs can be told apart from
+// plain website installs: the Play referrer's utm_campaign=website becomes
+// the engine's host or the platform's name, and the App Store's ct=website
+// likewise.
+//
+// A social platform counts only through utm_source, which our own profile and
+// post links carry; an engine also counts through the referrer.
 //
 // Landing page only, on purpose: nothing is written to cookies or storage
 // (same rule as Analytics.astro), so a visitor who moves to a second page
@@ -19,25 +23,26 @@
       'copilot.microsoft.com',
       'grok.com',
     ];
-    var engine = null;
+    var SOCIAL = ['instagram', 'tiktok', 'youtube', 'x'];
+    var source = null;
     var tagged = new URLSearchParams(window.location.search).get('utm_source');
-    if (tagged && ENGINES.indexOf(tagged) !== -1) engine = tagged;
-    if (!engine && document.referrer) {
+    if (tagged && ENGINES.concat(SOCIAL).indexOf(tagged) !== -1) source = tagged;
+    if (!source && document.referrer) {
       try {
         var host = new URL(document.referrer).hostname.replace(/^www\./, '');
-        if (ENGINES.indexOf(host) !== -1) engine = host;
+        if (ENGINES.indexOf(host) !== -1) source = host;
       } catch (e) {
         // An unparseable referrer is just "not an AI engine".
       }
     }
-    if (!engine) return;
+    if (!source) return;
     var links = document.querySelectorAll('a[href]');
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (href.indexOf('https://play.google.com/store') === 0) {
-        links[i].setAttribute('href', href.replace('utm_campaign%3Dwebsite', 'utm_campaign%3D' + engine));
+        links[i].setAttribute('href', href.replace('utm_campaign%3Dwebsite', 'utm_campaign%3D' + source));
       } else if (href.indexOf('https://apps.apple.com/') === 0) {
-        links[i].setAttribute('href', href.replace('ct=website', 'ct=' + engine));
+        links[i].setAttribute('href', href.replace('ct=website', 'ct=' + source));
       }
     }
   })();
