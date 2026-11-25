@@ -10,6 +10,8 @@
 // site and the app answer with the same catalogue, including the curatorial
 // exclusions (anime recap films, non-canon crossovers). The page's
 // hasAppTrack flag exists for any future franchise page that lacks a track.
+// A run-up list to a release (Before Avengers: Doomsday) is someone else's list,
+// named as such in its blurb, and may hold titles outside the page's track.
 //
 // Editorial rules on top of the site-wide ones (no em dashes, only true
 // claims): series sit in release order at their FIRST season's date, stated
@@ -59,7 +61,7 @@ export const WATCH_ORDERS: WatchOrder[] = [
   {
     slug: 'marvel-watch-order',
     published: '2026-08-18',
-    modified: '2026-09-21',
+    modified: '2026-11-25',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg',
     heroPosition: 'center 35%',
     franchise: 'Marvel Cinematic Universe',
@@ -180,9 +182,42 @@ export const WATCH_ORDERS: WatchOrder[] = [
           { title: 'Spider-Man: Brand New Day', year: 2026, tmdbId: 969681, posterPath: 'https://image.tmdb.org/t/p/w342/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg', kind: 'film' },
         ],
       },
+      {
+        heading: 'Before Avengers: Doomsday',
+        blurb: 'Disney+ runs a Countdown to Avengers: Doomsday collection. These are the titles it opened with, in release order. X-Men and X2 are Fox films and sit outside the orders above.',
+        items: [
+          { title: 'X-Men', year: 2000, tmdbId: 36657, posterPath: 'https://image.tmdb.org/t/p/w342/bRDAc4GogyS9ci3ow7UnInOcriN.jpg', kind: 'film', note: 'Fox film, outside the MCU' },
+          { title: 'X2', year: 2003, tmdbId: 36658, posterPath: 'https://image.tmdb.org/t/p/w342/bst4alFUXCxISwdRUKSMhhkrX1M.jpg', kind: 'film', note: 'Fox film, outside the MCU' },
+          { title: 'Captain America: The First Avenger', year: 2011, tmdbId: 1771, posterPath: 'https://image.tmdb.org/t/p/w342/vSNxAJTlD0r02V9sPYpOjqDZXUK.jpg', kind: 'film' },
+          { title: 'The Avengers', year: 2012, tmdbId: 24428, posterPath: 'https://image.tmdb.org/t/p/w342/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg', kind: 'film' },
+          { title: 'Avengers: Infinity War', year: 2018, tmdbId: 299536, posterPath: 'https://image.tmdb.org/t/p/w342/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg', kind: 'film' },
+          { title: 'Avengers: Endgame', year: 2019, tmdbId: 299534, posterPath: 'https://image.tmdb.org/t/p/w342/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg', kind: 'film' },
+          { title: 'Loki', year: 2021, tmdbId: 84958, posterPath: 'https://image.tmdb.org/t/p/w342/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg', kind: 'series', note: 'both seasons' },
+          { title: 'Shang-Chi and the Legend of the Ten Rings', year: 2021, tmdbId: 566525, posterPath: 'https://image.tmdb.org/t/p/w342/9f2Q0U3IOsLgrI2HkvldwSABZy5.jpg', kind: 'film' },
+          { title: 'Spider-Man: No Way Home', year: 2021, tmdbId: 634649, posterPath: 'https://image.tmdb.org/t/p/w342/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg', kind: 'film' },
+          { title: 'Doctor Strange in the Multiverse of Madness', year: 2022, tmdbId: 453395, posterPath: 'https://image.tmdb.org/t/p/w342/ddJcSKbcp4rKZTmuyWaMhuwcfMz.jpg', kind: 'film' },
+          { title: 'Black Panther: Wakanda Forever', year: 2022, tmdbId: 505642, posterPath: 'https://image.tmdb.org/t/p/w342/sv1xJUazXeYqALzczSZ3O6nkH75.jpg', kind: 'film' },
+          { title: 'Deadpool & Wolverine', year: 2024, tmdbId: 533535, posterPath: 'https://image.tmdb.org/t/p/w342/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg', kind: 'film' },
+          { title: 'Captain America: Brave New World', year: 2025, tmdbId: 822119, posterPath: 'https://image.tmdb.org/t/p/w342/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg', kind: 'film' },
+          { title: 'Thunderbolts*', year: 2025, tmdbId: 986056, posterPath: 'https://image.tmdb.org/t/p/w342/hqcexYHbiTBfDIdDWxrxPtVndBX.jpg', kind: 'film' },
+          { title: 'The Fantastic Four: First Steps', year: 2025, tmdbId: 617126, posterPath: 'https://image.tmdb.org/t/p/w342/nf5qaSEvyYSNeFH0YhSs5EsBLX9.jpg', kind: 'film' },
+        ],
+      },
     ],
     hasAppTrack: true,
     faqs: [
+      {
+        q: 'What should I watch before Avengers: Doomsday?',
+        a: [
+          'Disney+ has its own run-up, the Countdown to Avengers: Doomsday collection. Its opening titles are listed on this page: X-Men and X2, The First Avenger, The Avengers, Infinity War, Endgame, both seasons of Loki, and the recent films from Shang-Chi to The Fantastic Four: First Steps.',
+        ],
+      },
+      {
+        q: 'When does Avengers: Doomsday come out?',
+        a: [
+          'December 18, 2026 in the US and Canada. It opens on December 16 in many countries, among them the UK, France, Germany, Italy, the Netherlands, Australia, Brazil and Mexico, and on December 17 or 18 in most others. Check your local cinema.',
+        ],
+      },
       {
         q: 'What is the best order to watch the Marvel movies?',
         a: [
@@ -199,6 +234,66 @@ export const WATCH_ORDERS: WatchOrder[] = [
         q: 'How many MCU movies and series are there?',
         a: [
           'As of 2026 the list above carries around forty films and specials and close to twenty Disney+ series, and it keeps growing. The count is exactly what renders on this page, which is updated as new titles arrive.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'x-men-watch-order',
+    published: '2026-11-25',
+    modified: '2026-11-25',
+    heroBackdrop: 'https://image.tmdb.org/t/p/w1280/s8ftvFvafWWEhApISamHx32bx6h.jpg',
+    heroPosition: 'center 12%',
+    franchise: 'X-Men',
+    title: 'X-Men movies in order: every film, plus X-Men \'97',
+    metaDescription:
+      'The X-Men movies in release order, from X-Men (2000) to Deadpool & Wolverine (2024), with the Wolverine films, The New Mutants and X-Men \'97.',
+    h1: 'X-Men movies in order',
+    intro: [
+      'Fourteen films and one animated series make up the X-Men story on screen. Release order is the one to follow: later films lean on faces and endings from earlier ones, and the dates in the story jump back and forth.',
+      'The team films run from X-Men to Dark Phoenix. Wolverine and Deadpool have films of their own and The New Mutants follows a younger group, so the notes mark those as side stories you can skip.',
+    ],
+    sections: [
+      {
+        heading: 'Release order',
+        blurb: 'Every film and the animated series, in the order they came out.',
+        items: [
+          { title: 'X-Men', year: 2000, tmdbId: 36657, posterPath: 'https://image.tmdb.org/t/p/w342/bRDAc4GogyS9ci3ow7UnInOcriN.jpg', kind: 'film' },
+          { title: 'X2', year: 2003, tmdbId: 36658, posterPath: 'https://image.tmdb.org/t/p/w342/bst4alFUXCxISwdRUKSMhhkrX1M.jpg', kind: 'film' },
+          { title: 'X-Men: The Last Stand', year: 2006, tmdbId: 36668, posterPath: 'https://image.tmdb.org/t/p/w342/a2xicU8DpKtRizOHjQLC1JyCSRS.jpg', kind: 'film' },
+          { title: 'X-Men Origins: Wolverine', year: 2009, tmdbId: 2080, posterPath: 'https://image.tmdb.org/t/p/w342/yj8LbTju1p7CUJg7US2unSBk33s.jpg', kind: 'film', note: 'side story' },
+          { title: 'X-Men: First Class', year: 2011, tmdbId: 49538, posterPath: 'https://image.tmdb.org/t/p/w342/hNEokmUke0dazoBhttFN0o3L7Xv.jpg', kind: 'film', note: 'set in the 1960s, with a younger cast' },
+          { title: 'The Wolverine', year: 2013, tmdbId: 76170, posterPath: 'https://image.tmdb.org/t/p/w342/t2wVAcoRlKvEIVSbiYDb8d0QqqS.jpg', kind: 'film', note: 'side story' },
+          { title: 'X-Men: Days of Future Past', year: 2014, tmdbId: 127585, posterPath: 'https://image.tmdb.org/t/p/w342/tYfijzolzgoMOtegh1Y7j2Enorg.jpg', kind: 'film', note: 'joins the original and the younger cast' },
+          { title: 'Deadpool', year: 2016, tmdbId: 293660, posterPath: 'https://image.tmdb.org/t/p/w342/3E53WEZJqP6aM84D8CckXx4pIHw.jpg', kind: 'film', note: 'side story, comedy' },
+          { title: 'X-Men: Apocalypse', year: 2016, tmdbId: 246655, posterPath: 'https://image.tmdb.org/t/p/w342/ikA8UhYdTGpqbatFa93nIf6noSr.jpg', kind: 'film', note: 'set in the 1980s' },
+          { title: 'Logan', year: 2017, tmdbId: 263115, posterPath: 'https://image.tmdb.org/t/p/w342/fnbjcRDYn6YviCcePDnGdyAkYsB.jpg', kind: 'film', note: 'side story' },
+          { title: 'Deadpool 2', year: 2018, tmdbId: 383498, posterPath: 'https://image.tmdb.org/t/p/w342/gyfPKfFYcVW54MoqhYlwwDDIfJR.jpg', kind: 'film', note: 'side story, comedy' },
+          { title: 'Dark Phoenix', year: 2019, tmdbId: 320288, posterPath: 'https://image.tmdb.org/t/p/w342/cCTJPelKGLhALq3r51A9uMonxKj.jpg', kind: 'film', note: 'set in the 1990s' },
+          { title: 'The New Mutants', year: 2020, tmdbId: 340102, posterPath: 'https://image.tmdb.org/t/p/w342/xiDGcXJTvu1lazFRYip6g1eLt9c.jpg', kind: 'film', note: 'side story' },
+          { title: 'X-Men \'97', year: 2024, tmdbId: 138502, posterPath: 'https://image.tmdb.org/t/p/w342/2HKBc5UiFw8JrruHq8S1Y7TnlW0.jpg', kind: 'series', note: 'animated, continues the 1990s series' },
+          { title: 'Deadpool & Wolverine', year: 2024, tmdbId: 533535, posterPath: 'https://image.tmdb.org/t/p/w342/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg', kind: 'film', note: 'side story, also part of the MCU' },
+        ],
+      },
+    ],
+    hasAppTrack: true,
+    faqs: [
+      {
+        q: 'Is there a chronological order for the X-Men movies?',
+        a: [
+          'Only loosely. First Class goes back to the 1960s and Days of Future Past joins the two casts, so the films jump in time. Release order avoids the tangle.',
+        ],
+      },
+      {
+        q: 'Which X-Men movies should I watch before Avengers: Doomsday?',
+        a: [
+          'Start with X-Men and X2. They open the Countdown to Avengers: Doomsday collection on Disney+, and several actors from the original films are in the cast of Avengers: Doomsday.',
+        ],
+      },
+      {
+        q: 'Is X-Men \'97 connected to the X-Men movies?',
+        a: [
+          'No. It continues X-Men, the animated series that ran from 1992 to 1997. You do not need the films to follow it.',
         ],
       },
     ],
@@ -393,7 +488,7 @@ export const WATCH_ORDERS: WatchOrder[] = [
   {
     slug: 'dune-watch-order',
     published: '2026-08-18',
-    modified: '2026-09-21',
+    modified: '2026-11-25',
     heroBackdrop: 'https://image.tmdb.org/t/p/w1280/zRKQW58MBEY078AxkHxEJzUskCl.jpg',
     heroPosition: 'center 30%',
     franchise: 'Dune',
@@ -453,7 +548,7 @@ export const WATCH_ORDERS: WatchOrder[] = [
       {
         q: 'When does Dune: Part Three come out?',
         a: [
-          'December 2026 in cinemas. It continues directly from Dune: Part Two.',
+          'December 18, 2026 in the US, Canada and the UK. It opens on December 16 in Australia, France, Italy and the Netherlands, among others, and on December 17 in Germany, Brazil, Mexico and much of Latin America. It continues directly from Dune: Part Two.',
         ],
       },
     ],
