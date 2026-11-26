@@ -50,6 +50,10 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Your stats and your monthly Reel have a new look, with posters, faces and charts that come to life as you scroll',
       'Your stats share picture has a new look: your favorite posters behind it, your top genre up front and your most-watched directors',
       'In a watch group, each member can choose to show the titles they own, and everyone sees them together in one list they can sort, filter and narrow to one person',
+      'A film and a show that share a listing are now two choices in the profile backdrop picker, and your profile shows the one you picked',
+      'When the film database cannot be reached, the app says so, and a title that no longer exists says it could not be found',
+      'Asking the Assistant to rate or clear a season or an episode updates your track progress right away',
+      'Reminders to come back no longer arrive in a week when you rated titles or ticked episodes',
     ],
   },
   {
