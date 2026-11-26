@@ -108,13 +108,13 @@ export const ROUNDUPS: Roundup[] = [
     title: 'Best apps to decide what to watch with your partner (2026) | I Like Movies',
     metaDescription:
       'The best apps for two people to agree on a film or show without losing the evening, compared honestly by feature, with a comparison table and where each one fits.',
-    h1: 'Best apps to decide what to watch together in 2026 (we compared 5)',
+    h1: 'Best apps to decide what to watch together in 2026 (we compared 4)',
     query: 'app to decide what to watch together with my partner',
     published: '2026-09-01',
-    modified: '2026-11-17',
+    modified: '2026-11-26',
     intro: [
       'The problem is never a shortage of films. It is that two people want different ones, and the evening drains away in the menus before either of them presses play. A few apps exist just for this, and they solve it in genuinely different ways: some match your tastes, some let you swipe until you both land on the same title, and some just keep one shared list so the argument never starts.',
-      'This page compares the five worth knowing, by the one thing that matters here: getting two sets of taste to a single title, tonight, without a fight. Each entry says who it is for and where it falls short.',
+      'This page compares the four worth knowing, by the one thing that matters here: getting two sets of taste to a single title, tonight, without a fight. Each entry says who it is for and where it falls short.',
     ],
     methodology: [
       'We judged each app on the specific job in the title, not on overall polish: how quickly two people reach one title they are both happy with, and whether the decision survives to next time. We looked at what each app actually ships today, from its store listing and hands-on use, and we weighed the failure modes (a dead app, a broken account link, a lopsided platform) as heavily as the features.',
@@ -163,40 +163,23 @@ export const ROUNDUPS: Roundup[] = [
       },
       {
         rank: 3,
-        name: 'Matched',
-        bestFor: 'the playful "we both swipe until it is a match" experience',
+        name: 'MatchWatch',
+        bestFor: 'mixed phones or a group bigger than two',
         blurb: [
-          'Matched is the best-known "Tinder for movies": each partner swipes through titles on their own phone and the app flags a title you both liked. It is the most fun of the options if the swiping itself is the point.',
-          'The experience is strongest on iPhone; confirm the account-linking works on both your phones before you rely on it for the evening.',
+          'MatchWatch has apps for iPhone and Android and also runs in any phone’s browser, and it supports groups of up to six as well as couples. That makes it the pragmatic choice when the two of you are on different phones or a few friends are joining.',
+          'Everyone swipes on their own phone and a title matches when everyone says yes, and the group shares a watchlist it can all add to. It is free, with no ads and no swipe limits.',
         ],
         pros: [
-          'The swipe-to-match format is genuinely fun for two people',
-          'Filters to titles on the streaming services you both have',
+          'Apps for iPhone and Android, or the browser with nothing to install',
+          'Handles couples and groups up to six',
         ],
         cons: [
-          'Best on iPhone; the couple-linking has been less reliable on Android, so test it first',
-          'A one-trick app: no tracking, no history, little reason to open it once the film starts',
+          'Streaming availability covers four countries: the United States, the United Kingdom, Australia and New Zealand',
+          'The apps need an account (Apple, Google or email)',
         ],
       },
       {
         rank: 4,
-        name: 'MatchWatch',
-        bestFor: 'mixed phones or a group bigger than two',
-        blurb: [
-          'MatchWatch is a web app rather than a native install, so it works from any phone regardless of platform, and it supports groups of up to six as well as couples. That makes it the pragmatic choice when the two of you are on different phones or a few friends are joining.',
-          'Because it runs in the browser, it is a decision tool and nothing more: there is no library, no history and no app to keep.',
-        ],
-        pros: [
-          'No install and platform-agnostic: works on any phone with a browser',
-          'Handles couples and groups up to six',
-        ],
-        cons: [
-          'Web only, so it lives outside your phone and keeps no lasting record',
-          'A shared link is less frictionless than a native app for a nightly habit',
-        ],
-      },
-      {
-        rank: 5,
         name: 'JustWatch',
         bestFor: 'filtering the field to what you can both actually stream',
         blurb: [
@@ -213,54 +196,54 @@ export const ROUNDUPS: Roundup[] = [
         ],
       },
     ],
-    tableCols: ['I Like Movies', 'TasteRay', 'Matched', 'MatchWatch'],
+    tableCols: ['I Like Movies', 'TasteRay', 'MatchWatch'],
     table: [
       {
         feature: 'What you share with the others',
-        cells: ['Watch groups: chat and shared lists', 'Nothing: one person chats with the AI', 'Swipe matches for two', 'Swipe matches for up to six'],
+        cells: ['Watch groups: chat and shared lists', 'Nothing: one person chats with the AI', 'Swipe matches and a shared watchlist, up to six'],
       },
       {
         feature: 'Swipe-to-match',
-        cells: ['No', 'No', 'Yes', 'Yes'],
+        cells: ['No', 'No', 'Yes'],
       },
       {
         feature: 'Explains why a title fits',
-        cells: ['Yes, via the assistant', 'Yes', 'No', 'No'],
+        cells: ['Yes, via the assistant', 'Yes', 'No'],
       },
       {
         feature: 'Tracks what you have watched',
-        cells: ['Yes, films and TV', 'No', 'No', 'No'],
+        cells: ['Yes, films and TV', 'No', 'No'],
       },
       {
         feature: 'Platform',
-        cells: ['iPhone, Android', 'iPhone, Android, web', 'iPhone, Android', 'Web (any phone)'],
+        cells: ['iPhone, Android', 'iPhone, Android, web', 'iPhone, Android, web'],
       },
       {
         feature: 'Price',
-        cells: ['Free, no ads', 'Free', 'Free', 'Free'],
+        cells: ['Free, no ads', 'Free', 'Free'],
       },
     ],
     verdict: [
-      'If the two of you want the decision to last past tonight, and you would use a list you both add to and a chat to settle it, I Like Movies is the best fit because it keeps the decision in a list you both build, rather than a single pick. If you want a fast, well-argued suggestion and nothing to file afterwards, TasteRay is excellent. If the swiping is the fun part, Matched; if you are on different phones or in a group, MatchWatch.',
+      'If the two of you want the decision to last past tonight, and you would use a list you both add to and a chat to settle it, I Like Movies is the best fit because it keeps the decision in a list you both build, rather than a single pick. If you want a fast, well-argued suggestion and nothing to file afterwards, TasteRay is excellent. If the swiping is the fun part, or you are on different phones or in a group, MatchWatch.',
       'None of them replaces the five-minute conversation, but each one shortens it, and the right choice depends on whether you want a tool for tonight or a habit for every night.',
     ],
     faqs: [
       {
         q: 'What is the best app for couples to decide what to watch?',
         a: [
-          'It depends on what you want afterwards. For couples who want a shared watchlist and a lasting record, I Like Movies fits best because a watch group gives the two of you a shared list and a chat. For a fast one-off pick with a reason attached, TasteRay is the strongest. For a playful swipe-to-match game, Matched.',
+          'It depends on what you want afterwards. For couples who want a shared watchlist and a lasting record, I Like Movies fits best because a watch group gives the two of you a shared list and a chat. For a fast one-off pick with a reason attached, TasteRay is the strongest. For a swipe-to-match game that works on any phone, MatchWatch.',
         ],
       },
       {
         q: 'Is there a free app to pick a movie with your partner?',
         a: [
-          'Yes. Every app on this list is free to use. I Like Movies, TasteRay, Matched, MatchWatch and JustWatch all have a free tier that covers deciding what to watch together; some add paid tiers for extra features, but the core decision does not cost anything.',
+          'Yes. Every app on this list is free to use. I Like Movies, TasteRay, MatchWatch and JustWatch all have a free tier that covers deciding what to watch together; some add paid tiers for extra features, but the core decision does not cost anything.',
         ],
       },
       {
         q: 'What about couples on different phones, one iPhone and one Android?',
         a: [
-          'A web-based tool like MatchWatch works from any phone and sidesteps the platform question entirely. TasteRay and I Like Movies both run on iPhone and Android, so a mixed-phone couple is covered either way; MatchWatch adds the browser if one of you would rather not install anything.',
+          'MatchWatch has apps for iPhone and Android and also runs in any phone’s browser, so it sidesteps the platform question entirely. TasteRay and I Like Movies both run on iPhone and Android, so a mixed-phone couple is covered either way; MatchWatch’s browser version also works if one of you would rather not install anything.',
         ],
       },
       {
@@ -1231,13 +1214,13 @@ export const ROUNDUPS: Roundup[] = [
     title: 'Best apps to help you decide what to watch in 2026 | I Like Movies',
     metaDescription:
       'The best apps for when you cannot decide what to watch, alone or with someone, compared honestly: smart shortlists, swipe matching, streaming filters and shared lists.',
-    h1: 'Best apps to help you decide what to watch in 2026 (we compared 5)',
+    h1: 'Best apps to help you decide what to watch in 2026 (we compared 4)',
     query: 'apps to decide what to watch',
     published: '2026-09-01',
-    modified: '2026-11-17',
+    modified: '2026-11-26',
     intro: [
-      'The modern problem is not finding something to watch, it is choosing, alone or with someone, before the evening drains away in the menus. Apps attack it three ways: a smart shortlist built from your taste, a swipe-match for two people, or a filter down to what you can actually stream tonight.',
-      'This page compares the five worth knowing, by how quickly they get you from open to playing.',
+      'The modern problem is not finding something to watch, it is choosing, alone or with someone, before the evening drains away in the menus. Apps attack it three ways: a smart shortlist built from your taste, a shared list for deciding with someone, or a filter down to what you can actually stream tonight.',
+      'This page compares the four worth knowing, by how quickly they get you from open to playing.',
     ],
     methodology: [
       'We judged each app on the decision itself: how fast it gets you to a title you are happy with, whether it works from your own taste, whether it helps two people agree, and whether it points you to where the result streams. We assessed what each app ships today.',
@@ -1297,22 +1280,6 @@ export const ROUNDUPS: Roundup[] = [
       },
       {
         rank: 4,
-        name: 'Matched',
-        bestFor: 'deciding with someone by swiping',
-        blurb: [
-          'Matched is the swipe-to-match app for two: you each swipe and it flags what you both liked. It is the most playful way for a couple to land on something, and it is strongest on iPhone.',
-        ],
-        pros: [
-          'Fun swipe-to-match for two',
-          'Filters by shared streaming services',
-        ],
-        cons: [
-          'Best on iPhone; test the couple-linking first',
-          'A one-off decision tool, nothing kept after',
-        ],
-      },
-      {
-        rank: 5,
         name: 'JustWatch',
         bestFor: 'narrowing to what you can actually stream',
         blurb: [
@@ -1355,13 +1322,13 @@ export const ROUNDUPS: Roundup[] = [
       },
     ],
     verdict: [
-      'For deciding from your own taste and keeping the record afterwards, alone or in a watch group, I Like Movies fits best. For a quick standalone shortlist, TasteRay; for one firm pick tonight, Movik; for two people who want the swipe game, Matched; and to filter the field to what you can actually stream, JustWatch. Most nights, a smart shortlist plus a shared list does the job.',
+      'For deciding from your own taste and keeping the record afterwards, alone or in a watch group, I Like Movies fits best. For a quick standalone shortlist, TasteRay; for one firm pick tonight, Movik; and to filter the field to what you can actually stream, JustWatch. Most nights, a smart shortlist plus a shared list does the job.',
     ],
     faqs: [
       {
         q: 'What is the best app to decide what to watch?',
         a: [
-          'It depends on the situation. For deciding from your own taste and keeping a record, I Like Movies fits best. For a fast standalone shortlist, TasteRay; for a single decisive pick, Movik; for two people, a swipe app like Matched; and to filter by what you can stream, JustWatch.',
+          'It depends on the situation. For deciding from your own taste and keeping a record, I Like Movies fits best. For a fast standalone shortlist, TasteRay; for a single decisive pick, Movik; and to filter by what you can stream, JustWatch.',
         ],
       },
       {
@@ -1373,13 +1340,13 @@ export const ROUNDUPS: Roundup[] = [
       {
         q: 'How do you decide what to watch with someone else?',
         a: [
-          'The fastest ways are a shared watchlist you both add to, or a swipe-match app that finds where your tastes overlap. A watch group in I Like Movies keeps a shared list, so the decision does not restart every night; a swipe app like Matched makes the one-off choice a game. See our roundup of apps for deciding what to watch together for the full comparison.',
+          'The fastest ways are a shared watchlist you both add to, or a swipe-match app that finds where your tastes overlap. A watch group in I Like Movies keeps a shared list, so the decision does not restart every night; a swipe-to-match app makes the one-off choice a game. See our roundup of apps for deciding what to watch together for the full comparison.',
         ],
       },
       {
         q: 'Are these apps free?',
         a: [
-          'All five have a free way to decide what to watch. I Like Movies, TasteRay and JustWatch are free to use; Movik is free to download with a paid tier for its full features; and swipe apps like Matched are free for the core matching. Check each listing, since free tiers change.',
+          'All four have a free way to decide what to watch. I Like Movies, TasteRay and JustWatch are free to use, and Movik is free to download with a paid tier for its full features. Check each listing, since free tiers change.',
         ],
       },
     ],
@@ -1393,7 +1360,7 @@ export const ROUNDUPS: Roundup[] = [
     query: 'What is the best movie tracker app for iPhone?',
     linksWatchOrders: true,
     published: '2026-09-14',
-    modified: '2026-11-17',
+    modified: '2026-11-26',
     intro: [
       'A tracker keeps an honest record of what you have watched and what you mean to, films and TV, without turning into a chore. On iPhone the field runs from polished single-purpose trackers to cross-platform apps that also live on the web, and they differ most in how your history is stored and synced.',
       'This page compares the five worth knowing on iPhone, by how completely they track, how they sync across your devices, and how little work they ask of you.',
@@ -1463,14 +1430,14 @@ export const ROUNDUPS: Roundup[] = [
         bestFor: 'a polished iPhone-first tracker with discovery',
         blurb: [
           'Matinee is an iPhone-first tracker for films and TV, with a diary, half-star ratings, a social feed and streaming availability across more than 30 services, and it also runs on iPad, Mac and Apple Vision. Its headline is discovery: a natural-language search and a daily pick.',
-          'The smart search and watchlist optimiser sit behind a Pro subscription, and the free tier carries ads.',
+          'The free tier carries ads; Pro removes them and adds Tonight Mode, unlimited Movie Night sessions and unlimited lists.',
         ],
         pros: [
           'Polished, iPhone-first, and across the Apple ecosystem',
           'Strong discovery and streaming filters',
         ],
         cons: [
-          'Smart search and optimiser need Pro',
+          'Tonight Mode and unlimited Movie Night need Pro',
           'Free tier has ads',
         ],
       },
@@ -1556,7 +1523,7 @@ export const ROUNDUPS: Roundup[] = [
     h1: 'Best Letterboxd alternatives for iPhone in 2026 (we compared 5)',
     query: 'What are the best Letterboxd alternatives for iPhone?',
     published: '2026-09-14',
-    modified: '2026-11-17',
+    modified: '2026-11-26',
     intro: [
       'Letterboxd is the best film diary and community there is, and on iPhone it is excellent. People look for an alternative for specific reasons: they want TV tracked alongside film, they want their notes private rather than public, or they want streaming availability and recommendations Letterboxd does not do.',
       'This page compares the five worth knowing on iPhone for someone leaving or supplementing Letterboxd, and it is honest about where Letterboxd itself is still the one to keep.',
@@ -1599,7 +1566,7 @@ export const ROUNDUPS: Roundup[] = [
           'Strong discovery and streaming filters',
         ],
         cons: [
-          'Smart search and optimiser need Pro; free tier has ads',
+          'Tonight Mode and unlimited Movie Night need Pro; free tier has ads',
           'A public feed, so less private than a tracker',
         ],
       },
@@ -1887,7 +1854,7 @@ export const ROUNDUPS: Roundup[] = [
     h1: 'Best apps to pick a movie together tonight in 2026 (we compared 5)',
     query: 'app to pick a movie with friends or family',
     published: '2026-11-17',
-    modified: '2026-11-17',
+    modified: '2026-11-26',
     intro: [
       'Friday night, four people, four phones, and forty minutes of “I don’t mind, you pick”. Picking a film together gets harder the more of you there are, whether it is your partner, the family, your flatmates or friends over. A few apps are built for exactly this moment, and they work in different ways: everyone swipes until you match, one person asks a recommender for the group, or the group keeps a shared list and a chat so the decision builds on last time.',
       'This page compares five, by the one thing that matters here: getting a group of different tastes to one title tonight.',
@@ -1941,8 +1908,8 @@ export const ROUNDUPS: Roundup[] = [
         name: 'MatchWatch',
         bestFor: 'a group of up to six, with nothing to install',
         blurb: [
-          'MatchWatch is a web app: everyone opens it on their own phone and swipes, and a title matches when everyone agrees. It handles groups of up to six and is free, with streaming availability for the United States, the United Kingdom, Australia and New Zealand.',
-          'Each person can keep their own watchlist in it.',
+          'MatchWatch runs on iPhone, Android or in any phone’s browser: everyone swipes on their own phone, and a title matches when everyone agrees. It handles groups of up to six and is free, with streaming availability for the United States, the United Kingdom, Australia and New Zealand.',
+          'The group also shares a watchlist everyone can add to.',
         ],
         pros: [
           'Nothing to install: works in any phone’s browser',
@@ -1950,7 +1917,7 @@ export const ROUNDUPS: Roundup[] = [
         ],
         cons: [
           'Streaming availability covers four countries',
-          'Built for tonight’s pick rather than a lasting list',
+          'The apps need an account (Apple, Google or email)',
         ],
       },
       {
@@ -2000,7 +1967,7 @@ export const ROUNDUPS: Roundup[] = [
       },
       {
         feature: 'Kept for next time',
-        cells: ['The group’s Watch next list', 'Liked lists you can compare', 'A personal watchlist', 'Personal saves'],
+        cells: ['The group’s Watch next list', 'Liked lists you can compare', 'A shared watchlist', 'Personal saves'],
       },
       {
         feature: 'Streaming by country',
@@ -2008,7 +1975,7 @@ export const ROUNDUPS: Roundup[] = [
       },
       {
         feature: 'Platforms',
-        cells: ['iPhone, Android', 'iPhone, iPad, Android', 'Web (any phone)', 'iPhone, Android, web, WhatsApp'],
+        cells: ['iPhone, Android', 'iPhone, iPad, Android', 'iPhone, Android, web', 'iPhone, Android, web, WhatsApp'],
       },
       {
         feature: 'Price',

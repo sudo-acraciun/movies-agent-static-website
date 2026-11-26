@@ -865,14 +865,14 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'matinee',
     published: '2026-09-08',
-    modified: '2026-11-17',
+    modified: '2026-11-26',
     competitor: 'Matinee',
     title: 'I Like Movies vs Matinee, compared by the developer',
     metaDescription:
       'Matinee alternative on iPhone and Android: films and TV in one private library, watch groups for deciding together, recommendations built from your own taste, no ads.',
     h1: 'I Like Movies vs Matinee',
     intro: [
-      'Matinee is a movie and TV tracker for iPhone and Android, with a film diary, half-star ratings, a social feed of what your friends are watching, and streaming availability across more than 30 services. Its headline is discovery: a natural-language search, an assistant you can ask for picks, and a daily suggestion, with an optional Pro tier that unlocks the smart search and removes the ads. It does that well.',
+      'Matinee is a movie and TV tracker for iPhone and Android, with a film diary, half-star ratings, a social feed of what your friends are watching, and streaming availability across more than 30 services. Its headline is discovery: a natural-language search, an assistant you can ask for picks, and a daily suggestion, plus a Movie Night mode where friends swipe a shared deck together. An optional Pro tier removes the ads and adds Tonight Mode and unlimited Movie Night sessions. It does that well.',
       'I Like Movies is a phone app for films and TV together, kept privately, with watch groups for deciding together. It is free with no ads, and it leans on the moment before you press play as much as the record after. The two overlap on tracking and part ways on ads, on who sees your ratings, and on who the library belongs to. This page lays the split out.',
     ],
     betterThere: [
@@ -882,7 +882,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'Discovery you ask in plain words',
-        body: 'Matinee leads with discovery. You search in plain language, ask its assistant for a pick, and it surfaces a suggestion each day, with a smart optimiser that turns your watchlist into one thing to watch tonight. The AI smart search is a Pro feature, and the whole finder is clean and polished.',
+        body: 'Matinee leads with discovery. You search in plain language, ask its assistant for a pick, and it surfaces a suggestion each day, with a Watchlist Optimizer that surfaces the best thing to watch next. Pro adds Tonight Mode, a mood-based deck to swipe, and the whole finder is clean and polished.',
       },
       {
         title: 'Filter by the services you pay for',
@@ -896,7 +896,7 @@ export const COMPARISONS: Comparison[] = [
     differences: [
       {
         title: 'Watch groups for the people you watch with',
-        body: 'Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group. A Matinee account is personal, and each person keeps their own diary.',
+        body: 'Make a watch group with your partner, family or friends: a group chat and lists everyone in it can edit, starting with Watch next, plus assistant picks for the whole group. Matinee’s Movie Night is a session: invite friends, swipe a shared deck built for the group and land a match, with unlimited sessions and up to 10 friends on Pro.',
       },
       {
         title: 'Recommendations from your own taste',
@@ -904,7 +904,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'Free, with no ads and nothing to upgrade',
-        body: 'I Like Movies is free, with no ads and no paid tier. Matinee is free to download with ads, and it keeps its smart search and watchlist optimiser behind a Pro subscription. Nothing here is gated or interrupted.',
+        body: 'I Like Movies is free, with no ads and no paid tier. Matinee is free to download with ads, and keeps Tonight Mode and unlimited Movie Night behind a Pro subscription. Nothing here is gated or interrupted.',
       },
       {
         title: 'Films and TV in one library',
@@ -914,7 +914,7 @@ export const COMPARISONS: Comparison[] = [
     table: [
       { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iOS and Android, also iPad, Mac, Apple Vision' },
       { feature: 'Films and TV', ilm: 'One library, tracked per episode', other: 'Both, tracked per episode' },
-      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'A personal diary' },
+      { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'Movie Night: friends swipe a shared deck (unlimited with Pro)' },
       { feature: 'Privacy', ilm: 'Friends only, no public reviews', other: 'Social feed, public reviews' },
       { feature: 'Recommendations', ilm: 'Monthly Discover from your ratings, plus an assistant you ask', other: 'AI recommendations, blends your taste with friends' },
       { feature: 'Streaming availability', ilm: 'Per country, on every title', other: '30+ services, filter by your subscriptions' },
@@ -940,7 +940,7 @@ export const COMPARISONS: Comparison[] = [
       {
         q: 'Is Matinee free?',
         a: [
-          'Yes, it is a free download with ads. An optional Matinee Pro subscription unlocks the smart search and the watchlist optimiser and removes the ads. The core logging, watchlist, social and streaming information are free.',
+          'Yes, it is a free download with ads. An optional Matinee Pro subscription removes the ads and adds Tonight Mode, unlimited Movie Night sessions with up to 10 friends, unlimited lists and more release alerts. The core logging, watchlist, social and streaming information are free.',
         ],
       },
       {
@@ -1055,14 +1055,14 @@ export const COMPARISONS: Comparison[] = [
   {
     slug: 'flick',
     published: '2026-09-14',
-    modified: '2026-11-17',
+    modified: '2026-11-26',
     competitor: 'Flick',
     title: 'I Like Movies vs Flick, compared by the developer',
     metaDescription:
-      'I Like Movies as a Flick alternative for iPhone and Android: a private films-and-TV library with watch groups, versus a social rating app with visual reviews, and where Flick is still better.',
+      'I Like Movies as a Flick alternative for iPhone and Android: a private films-and-TV library with watch groups, versus an app that picks what to watch tonight and rates with visual reviews, and where Flick is still better.',
     h1: 'I Like Movies vs Flick',
     intro: [
-      'Flick is a social movie and TV rating app on iPhone and Android. It leans into expression and community: a playful "this or that" rating system, rich reviews you build with stills, clips and gifs, a watch history, personalized picks and a year-in-review, and it imports a Letterboxd library to get you started.',
+      'Flick, listed on the stores as Flick: What to Watch Tonight, is a movie and TV app on iPhone and Android that leads with picks for tonight: tell its Curator your mood and it suggests three titles, each with the reason it fits you. Around that sit a playful "this or that" rating that builds your all-time ranking, reviews you build with stills, clips and gifs, episode tracking, a Wrapped-style recap, and imports from Letterboxd in the app and from TV Time and IMDb on its website.',
       'I Like Movies is a phone app built around a private library and deciding what to watch, alone or in a watch group. The two overlap on rating and tracking, and part ways on whether your film life is public or private. This page lays the split out.',
     ],
     betterThere: [
@@ -1075,8 +1075,8 @@ export const COMPARISONS: Comparison[] = [
         body: 'Flick’s head-to-head rating turns scoring into something quick and playful, like filling out a bracket for your taste. I Like Movies uses ordinary star ratings. If the act of rating is meant to be fun in itself, Flick does that deliberately.',
       },
       {
-        title: 'A social-first newcomer',
-        body: 'Flick is a newer app built around sharing, with a community and a wrapped-style year in review. If you want a fresh, social-first place to rate and talk about films, that is its lane.',
+        title: 'Three picks for tonight, with reasons',
+        body: 'Flick’s Curator takes your mood and returns three titles for tonight, each with the reason it suits you and how fans of your favorites rated it, and it turns your ratings into short written taste cards. If you want an app to hand you a shortlist with its reasoning, that is now what Flick leads with.',
       },
     ],
     differences: [
@@ -1086,7 +1086,7 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'Films and TV in one library, tracked to the episode',
-        body: 'I Like Movies tracks films and TV in one library down to the episode, with a watchlist, and it tells a series that has ended from one between seasons. Flick centres on rating and reviewing rather than episode-level progress.',
+        body: 'I Like Movies tracks films and TV in one library down to the episode, with a watchlist, and it tells a series that has ended from one between seasons. Flick tracks episodes too, with a season heatmap, so the difference is how an ended and a between-seasons series read at a glance.',
       },
       {
         title: 'Watch groups for the people you watch with',
@@ -1094,35 +1094,35 @@ export const COMPARISONS: Comparison[] = [
       },
       {
         title: 'An assistant and per-country streaming',
-        body: 'Ask an assistant in plain language for something to watch, filtered against what you have already seen, and see where each title streams in your country. Flick offers personalized picks but is a rating app first.',
+        body: 'Ask an assistant in plain language for something to watch, filtered against what you have already seen, and see where each title streams in your country. Flick’s Curator picks three titles for tonight from the mood you choose.',
       },
       {
         title: 'Imports Letterboxd, IMDb, Trakt and TV Time',
-        body: 'Letterboxd, IMDb, Trakt and TV Time exports import your ratings and watchlist directly. Flick imports a Letterboxd library; if your history is on IMDb or Trakt, or in a TV Time export, I Like Movies reads that too.',
+        body: 'Letterboxd, IMDb, Trakt and TV Time exports import your ratings and watchlist directly. Flick imports Letterboxd in the app, and TV Time and IMDb through its website; I Like Movies reads a Trakt export as well.',
       },
     ],
     table: [
       { feature: 'Platforms', ilm: 'iPhone, Android', other: 'iPhone, Android' },
-      { feature: 'Public reviews and social feed', ilm: 'No, friends only', other: 'Yes, the core of the app' },
-      { feature: 'Films and TV, per-episode tracking', ilm: 'Yes, per episode', other: 'Watch history, rating-first' },
+      { feature: 'Public reviews and social feed', ilm: 'No, friends only', other: 'Yes, reviews with comments' },
+      { feature: 'Films and TV, per-episode tracking', ilm: 'Yes, per episode', other: 'Both, with episode tracking' },
       { feature: 'Watch groups (chat and shared lists)', ilm: 'Yes', other: 'Lists you can share' },
-      { feature: 'AI recommendations and assistant', ilm: 'Yes, from your own ratings', other: 'Personalized picks' },
-      { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Not a focus' },
-      { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Letterboxd' },
+      { feature: 'AI recommendations and assistant', ilm: 'Yes, from your own ratings', other: 'Three picks for tonight from your mood' },
+      { feature: 'Streaming availability', ilm: 'Yes, per country', other: 'Where-to-watch links on your lists' },
+      { feature: 'Import', ilm: 'Letterboxd, IMDb, Trakt and TV Time exports', other: 'Letterboxd; TV Time and IMDb on its website' },
       { feature: 'Price', ilm: 'Free, no ads', other: 'Free with in-app purchases' },
     ],
     migration: [
       'There is no Flick import. Imports read Letterboxd, IMDb, Trakt and TV Time exports, and a Flick export is none of them, so a Flick library starts fresh here. If your ratings also live on Letterboxd, IMDb or Trakt, importing from there carries them across; otherwise you rate as you go.',
     ],
     verdict: [
-      'If you want a social, expressive rating app where reviews are public and the act of rating is playful, Flick is the better fit and this page will not pretend otherwise. It is built for sharing, and it does that well.',
+      'If you want an app that hands you three picks for tonight with its reasons, playful head-to-head rating and reviews built from stills and gifs, Flick is the better fit and this page will not pretend otherwise. It does those well.',
       'If you want a private library of films and TV tracked to the episode, watch groups for deciding together, an assistant and per-country streaming, that is what I Like Movies is built for. Both run on iPhone and Android, so the real choice is whether your film life is public or private.',
     ],
     faqs: [
       {
         q: 'What is the difference between Flick and I Like Movies?',
         a: [
-          'Flick is a social rating app: public reviews, a playful head-to-head rating system and a community to talk to. I Like Movies is a private tracker: films and TV in one library down to the episode, ratings and notes seen by friends only, watch groups for deciding together, an assistant and per-country streaming. Both run on iPhone and Android.',
+          'Flick leads with picks for tonight from your mood, alongside a playful head-to-head rating system, reviews built from stills and gifs, and comments. I Like Movies is a private tracker: films and TV in one library down to the episode, ratings and notes seen by friends only, watch groups for deciding together, an assistant and per-country streaming. Both run on iPhone and Android.',
         ],
       },
       {
