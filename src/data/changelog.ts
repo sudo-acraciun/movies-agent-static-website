@@ -49,6 +49,7 @@ export const CHANGELOG: ChangelogWeek[] = [
       'Share your film taste as a picture from Your stats, with your five-star titles, top genres and most-watched directors',
       'Your stats and your monthly Reel have a new look, with posters, faces and charts that come to life as you scroll',
       'Your stats share picture has a new look: your favorite posters behind it, your top genre up front and your most-watched directors',
+      'In a watch group, each member can choose to show the titles they own, and everyone sees them together in one list they can sort, filter and narrow to one person',
     ],
   },
   {
