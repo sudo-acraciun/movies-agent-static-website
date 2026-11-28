@@ -54,6 +54,8 @@ export const CHANGELOG: ChangelogWeek[] = [
       'When the film database cannot be reached, the app says so, and a title that no longer exists says it could not be found',
       'Asking the Assistant to rate or clear a season or an episode updates your track progress right away',
       'Reminders to come back no longer arrive in a week when you rated titles or ticked episodes',
+      'Your profile backdrop can now come from any film or show, not only ones you have watched, and your profile shows the exact picture you picked',
+      'Streaming lists for smaller services such as Crunchyroll now show far more of what they carry',
     ],
   },
   {
